@@ -247,6 +247,7 @@
 <li>Finally, if needed, <strong>GET</strong> the contents of the widget (usually done in a function)</li>
 </ul>
 <h2 id="label">Label</h2>
+<hr />
 <p>Labels are used for displaying basic text on the screen.<br />
 <img alt="Label" src="../img/1_labels.gif" />  </p>
 <pre><code class="python">from rwbatools import gui
@@ -313,6 +314,7 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 </ul>
 <p>See the relevant section for a description of what the widget does.</p>
 <h2 id="entry">Entry</h2>
+<hr />
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
 <p>There are two special-case entries:</p>
 <ul>
@@ -376,6 +378,7 @@ The text is centered, shown in a light gray font, and will not be returned by <c
 </li>
 </ul>
 <h2 id="button">Button</h2>
+<hr />
 <p>A clickable button, that will call a function.<br />
 These are the key to starting an interactive application.<br />
 The GUI is looping, waiting for something to happen.<br />
@@ -431,6 +434,7 @@ The name will be displayed on the button, and the title passed to the function.<
 </li>
 </ul>
 <h2 id="radiobutton">RadioButton</h2>
+<hr />
 <p>A group of round boxes, only one of which can be selected.<br />
 These are great for getting a single value, for a multiple choice question.</p>
 <p><img alt="Radios" src="../img/t_radios.gif" />  </p>
@@ -485,6 +489,7 @@ Setting tick to True will convert all the radio-buttons for this title to tick b
 </code></pre>
 
 <h2 id="checkbox">CheckBox</h2>
+<hr />
 <p>A simple tick-box, with a label, that can be either ON or OFF.</p>
 <p><img alt="CheckBoxes" src="../img/1_checks.gif" />  </p>
 <pre><code class="python">from rwbatools import gui
@@ -524,6 +529,7 @@ app.go()
 </li>
 </ul>
 <h2 id="optionbox">OptionBox</h2>
+<hr />
 <p>A drop-down single-select option</p>
 <h4 id="add-optionboxes">Add OptionBoxes</h4>
 <ul>
@@ -548,6 +554,7 @@ app.go()
 <li><code>.getOptionBox(title)</code></li>
 </ul>
 <h2 id="spinbox">SpinBox</h2>
+<hr />
 <p>A scrollable option</p>
 <h4 id="add-spinboxes">Add SpinBoxes</h4>
 <ul>
@@ -564,6 +571,7 @@ app.go()
 <li><code>.getSpinBox(title)</code></li>
 </ul>
 <h2 id="listbox">ListBox</h2>
+<hr />
 <p>A box containing a list of items, single or multi-select</p>
 <h4 id="add-listboxes">Add ListBoxes</h4>
 <ul>
@@ -585,6 +593,7 @@ app.go()
 <li><code>.getListItems(title)</code></li>
 </ul>
 <h2 id="scale">Scale</h2>
+<hr />
 <p>A slider, that has a minimum &amp; maximum value</p>
 <h4 id="add-scales">Add Scales</h4>
 <ul>
@@ -602,6 +611,7 @@ app.go()
 <li><code>.getScale(title)</code></li>
 </ul>
 <h2 id="message">Message</h2>
+<hr />
 <p>Like a multi-line label</p>
 <h4 id="add-messages">Add Messages</h4>
 <ul>
@@ -614,6 +624,7 @@ app.go()
 <li><code>.setMessage(title, text)</code></li>
 </ul>
 <h2 id="textarea">TextArea</h2>
+<hr />
 <p>A multi-line box for typing text</p>
 <h4 id="add-textareas">Add TextAreas</h4>
 <ul>
@@ -632,6 +643,7 @@ app.go()
 <li><code>.getTextArea(title)</code></li>
 </ul>
 <h2 id="meter">Meter</h2>
+<hr />
 <p>Used for showing progress</p>
 <ul>
 <li>
@@ -666,11 +678,13 @@ app.go()
 </li>
 </ul>
 <h2 id="separator">Separator</h2>
+<hr />
 <p>Shows a horizontal line</p>
 <ul>
 <li><code>.addSeparator()</code></li>
 </ul>
 <h2 id="linkweblink">Link/WebLink</h2>
+<hr />
 <p>Clickable text to call a function or launch a URL</p>
 <h4 id="add-links">Add Links</h4>
 <ul>
@@ -684,6 +698,7 @@ app.go()
 </li>
 </ul>
 <h2 id="image">Image</h2>
+<hr />
 <p>Shows an image, there are lots of things you can do with an image.</p>
 <h4 id="add-images">Add Images</h4>
 <ul>
