@@ -244,10 +244,28 @@
 <ul>
 <li>First, <strong>ADD</strong> a widget</li>
 <li>Then, <strong>SET</strong> any paramters for the widget</li>
-<li>Finally, if needed, <strong>GET</strong> the contents of the widget</li>
+<li>Finally, if needed, <strong>GET</strong> the contents of the widget (usually done in a function)</li>
 </ul>
 <h2 id="label">Label</h2>
-<p>Labels are used for displaying basic text on the screen.</p>
+<p>Labels are used for displaying basic text on the screen.<br />
+<img alt="Label" src="../img/1_labels.gif" />  </p>
+<pre><code class="python">from rwbatools import gui
+
+app = gui()
+
+app.addLabel(&quot;l1&quot;, &quot;Label 1&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Label 2&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Label 3&quot;)
+app.addLabel(&quot;l4&quot;, &quot;Label 4&quot;)
+
+app.setLabelBg(&quot;l1&quot;, &quot;red&quot;)
+app.setLabelBg(&quot;l2&quot;, &quot;yellow&quot;)
+app.setLabelBg(&quot;l3&quot;, &quot;purple&quot;)
+app.setLabelBg(&quot;l4&quot;, &quot;orange&quot;)
+
+app.go()
+</code></pre>
+
 <h4 id="add-labels">Add Labels</h4>
 <ul>
 <li>
@@ -301,11 +319,29 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <li>NumericEntry - this only allows numbrs to be typed in.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 </ul>
+<p><img alt="Entries" src="../img/1_entries.gif" /></p>
+<pre><code class="python">from rwbatools import gui
+
+app=gui()
+
+app.addEntry(&quot;e1&quot;)
+app.addEntry(&quot;e2&quot;)
+app.addEntry(&quot;e3&quot;)
+app.addLabelEntry(&quot;Name&quot;)
+
+app.setEntryDefault(&quot;e2&quot;, &quot;Age here&quot;)
+
+app.go()
+</code></pre>
+
 <h4 id="add-entries">Add Entries</h4>
 <ul>
 <li><code>.addEntry(title)</code></li>
 <li><code>.addNumericEntry(title)</code></li>
-<li><code>.addSecretEntry(title)</code></li>
+<li>
+<p><code>.addSecretEntry(title)</code></p>
+<p>Each of these will add the specified type of Entry, using the title provided.</p>
+</li>
 </ul>
 <h4 id="change-entries">Change Entries</h4>
 <ul>
@@ -354,6 +390,7 @@ That way, multiple widgets can use the same function, but diffrent actions can b
 A function should be specified, which will be called when the button is clicked.</p>
 </li>
 </ul>
+<p><img alt="Buttons" src="../img/1_buttons.gif" /></p>
 <pre><code class="python">    from rwbatools import gui
 
     def press(btn):                 # the title of the button will be received as a parameter
@@ -396,6 +433,16 @@ The name will be displayed on the button, and the title passed to the function.<
 <h2 id="radiobutton">RadioButton</h2>
 <p>A group of round boxes, only one of which can be selected.<br />
 These are great for getting a single value, for a multiple choice question.</p>
+<p><img alt="Radios" src="../img/t_radios.gif" />  </p>
+<pre><code class="python">from rwbatools import gui
+
+app=gui()
+app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Parklife&quot;)
+app.go()
+</code></pre>
+
 <h4 id="add-radiobuttons">Add RadioButtons</h4>
 <ul>
 <li>
@@ -405,15 +452,6 @@ This button will have the value of name.<br />
 Radio buttons are usually used in groups:</p>
 </li>
 </ul>
-<pre><code class="python">    from rwbatools import gui
-
-    app=gui()
-    app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
-    app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
-    app.addRadioButton(&quot;song&quot;, &quot;Parklife&quot;)
-    app.go()
-</code></pre>
-
 <h4 id="change-radiobuttons">Change RadioButtons</h4>
 <ul>
 <li>
@@ -448,6 +486,22 @@ Setting tick to True will convert all the radio-buttons for this title to tick b
 
 <h2 id="checkbox">CheckBox</h2>
 <p>A simple tick-box, with a label, that can be either ON or OFF.</p>
+<p><img alt="CheckBoxes" src="../img/1_checks.gif" />  </p>
+<pre><code class="python">from rwbatools import gui
+
+app=gui()
+app.setFont(20)
+
+app.addCheckBox(&quot;Apples&quot;)
+app.addCheckBox(&quot;Pears&quot;)
+app.addCheckBox(&quot;Oranges&quot;)
+app.addCheckBox(&quot;Kiwis&quot;)
+
+app.setCheckBox(&quot;Oranges&quot;)
+
+app.go()
+</code></pre>
+
 <h4 id="add-checkboxes">Add CheckBoxes</h4>
 <ul>
 <li>
