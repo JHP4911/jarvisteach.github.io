@@ -216,10 +216,12 @@
             <div class="col-md-9" role="main">
 
 <h1 id="background">Background</h1>
+<hr />
 <p>RWBAtools was designed to make building a functional GUI as simple as possible.  </p>
 <p>It is designed with teaching in mind. Rather than pupils having to focus on the GUI code, they should be focusing on the algorithms that get the work done.</p>
 <p>To that end, at it's simplest, you simply keep adding widgets to the GUI, and they will render in sequence.</p>
-<h2 id="simple-layout">Simple Layout</h2>
+<h3 id="simple-layout">Simple Layout</h3>
+<hr />
 <p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
 <pre><code class="python">from rwbatools import gui  
 
@@ -235,7 +237,8 @@ app.go()
 </code></pre>
 
 <p><img alt="Simple Layout" src="../img/1_layout.png" /></p>
-<h2 id="grid-layout">Grid Layout</h2>
+<h3 id="grid-layout">Grid Layout</h3>
+<hr />
 <p>If, however, you want more than that, then a basic GRID layout is supported.</p>
 <p>Each time you add a widget, you can specify a column, row, and even a column-span to position it in.</p>
 <pre><code class="python">from rwbatools import gui

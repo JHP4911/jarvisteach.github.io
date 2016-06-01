@@ -204,24 +204,28 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#toolbars-menus-statusbars">Toolbars, Menus &amp; StatusBars</a></li>
+        <li class="main active"><a href="#toolbars-menubars-statusbars">Toolbars, Menubars &amp; StatusBars</a></li>
         
-            <li><a href="#toolbar">ToolBar</a></li>
+            <li><a href="#toolbar">Toolbar</a></li>
         
-            <li><a href="#menu">Menu</a></li>
+            <li><a href="#menubar">Menubar</a></li>
         
-            <li><a href="#status">Status</a></li>
+            <li><a href="#statusbar">Statusbar</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="toolbars-menus-statusbars">Toolbars, Menus &amp; StatusBars</h1>
+<h1 id="toolbars-menubars-statusbars">Toolbars, Menubars &amp; StatusBars</h1>
 <hr />
-<h2 id="toolbar">ToolBar</h2>
-<p>Adds a toolbar along the top of the GUI</p>
-<h4 id="create-toolbars">Create Toolbars</h4>
+<p>Toolbars and Menubars are features common to GUIs, you'll be used to seeing them along the top of apps, such as MS Word.<br />
+Statusbars are also useful features, they allow you to show information about what's going on in a GUI, along the bottom of the app.  </p>
+<h2 id="toolbar">Toolbar</h2>
+<hr />
+<p>Toolbars (sometimes known as ribbons) appear across the top og a GUI.<br />
+They offer a series of buttons to click, which change settings/functionality in a GUI.</p>
+<h3 id="create-toolbars">Create Toolbars</h3>
 <ul>
 <li>
 <p><code>.addToolbar(names, funcs)</code></p>
@@ -230,14 +234,15 @@ If only one function is supplied, they will all call the same function.<br />
 A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.  </p>
 </li>
 </ul>
-<h4 id="change-toolbars">Change Toolbars</h4>
+<h3 id="change-toolbars">Change Toolbars</h3>
 <ul>
 <li><code>.setToolbarImage(name, image)</code>
 Will set an image for the corresponding button in the toolbar.</li>
 </ul>
-<h2 id="menu">Menu</h2>
-<p>Adds a standard Menu bar along the top of the GUI
-The menu bar will show, once the first menu has been added.
+<h2 id="menubar">Menubar</h2>
+<hr />
+<p>Adds a standard Menubar along the top of the GUI
+The menubar will show, once the first menu has been added.
 You can add a single menu option, or a list of menu options.</p>
 <h4 id="create-menus">Create Menus</h4>
 <ul>
@@ -299,14 +304,15 @@ If the menu name is a '-', then a separator will be added to the menu.</p>
 <p>Returns the value of the checked radio button.</p>
 </li>
 </ul>
-<h2 id="status">Status</h2>
-<p>Adds a status bar along the bottom of the GUI.
+<h2 id="statusbar">Statusbar</h2>
+<hr />
+<p>Adds a statusbar along the bottom of the GUI.
 This can be used for easy debugging, or as info for the user.</p>
 <h4 id="create-statuses">Create Statuses</h4>
 <ul>
 <li>
 <p><code>.addStatus(header="", fields=1, side=None)</code></p>
-<p>This turns the status bar on, and if a header is supplied, will prepend the header before every message.<br />
+<p>This turns the statusbar on, and if a header is supplied, will prepend the header before every message.<br />
 If fields is populated, it''s possible to have multiple status bixes, each addressable by a number.<br />
 Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.</p>
 </li>
@@ -315,12 +321,12 @@ Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt sid
 <ul>
 <li>
 <p><code>.setStatus(text, field=0)</code></p>
-<p>This updates the contents of the status bar. Again, if a header was set when adding the status bar, that will be prepended to the message.<br />
+<p>This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message.<br />
 If multiple fields were created, a position can be supplied to populate.</p>
 </li>
 <li>
 <p><code>.clearStatus(field=0)</code></p>
-<p>Clear anything displayed in the status bar, along with any header that might be set.</p>
+<p>Clear anything displayed in the statusbar, along with any header that might be set.</p>
 </li>
 <li>
 <p><code>.setStatusWidth(width, field=0)</code></p>

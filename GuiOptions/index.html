@@ -221,7 +221,10 @@
 
 <h1 id="gui-options">GUI Options</h1>
 <hr />
-<h2 id="configuration">Configuration</h2>
+<p>There are a number of generic configurations available, which will affect the whole GUI.<br />
+Some of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.  </p>
+<h3 id="configuration">Configuration</h3>
+<hr />
 <p>Some basic configuration for the size, position, transparency, etc. of the GUI.</p>
 <h4 id="size-locaiton">Size &amp; Locaiton</h4>
 <ul>
@@ -260,7 +263,7 @@ Or, sets it fullscreen</p>
 <p>Sets how transparent the GUI is. Between 0 and 100%.</p>
 </li>
 </ul>
-<h2 id="design">Design</h2>
+<h3 id="design">Design</h3>
 <hr />
 <p>It's possible to change the default colours and fonts for widgets in the GUI.</p>
 <h4 id="colour">Colour</h4>
@@ -306,7 +309,7 @@ Or, sets it fullscreen</p>
 <p>These can be used to increase or decrease the font of all butotn-type widgets.</p>
 </li>
 </ul>
-<h2 id="widget-positioning">Widget Positioning</h2>
+<h3 id="widget-positioning">Widget Positioning</h3>
 <hr />
 <p>The below commands allow the user to change how RWBAtools lays out widgets on the screen.</p>
 <h4 id="location">Location</h4>
@@ -320,9 +323,9 @@ Or, sets it fullscreen</p>
 <p><code>setSticky()</code></p>
 <p>This determines which side of the grid-cell the widget will stick to:</p>
 <ul>
-<li>left - stick to the left side</li>
-<li>right - stick to the right side</li>
-<li>both - stick to both sides, stretch the widget</li>
+<li><code>left</code> - stick to the left side</li>
+<li><code>right</code> - stick to the right side</li>
+<li><code>both</code> - stick to both sides, stretch the widget</li>
 </ul>
 </li>
 </ul>
@@ -333,10 +336,10 @@ Or, sets it fullscreen</p>
 <p>This tells widgets what to do when the GUI is resized.<br />
 It allows widgets to be configured to stretch or not:</p>
 <ul>
-<li>none - don't expand</li>
-<li>row - expand with rows only</li>
-<li>column - expand with columns only</li>
-<li>all - expand in all directions</li>
+<li><code>none</code> - don't expand</li>
+<li><code>row</code> - expand with rows only</li>
+<li><code>column</code> - expand with columns only</li>
+<li><code>all</code> - expand in all directions</li>
 </ul>
 </li>
 </ul>
@@ -351,7 +354,7 @@ It allows widgets to be configured to stretch or not:</p>
 <p>Returns the current row number, before adding one to it.</p>
 </li>
 </ul>
-<h2 id="gui-actions">GUI Actions</h2>
+<h3 id="gui-actions">GUI Actions</h3>
 <hr />
 <h4 id="repeated-events">Repeated Events</h4>
 <p>When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.<br />
@@ -359,7 +362,7 @@ That means, you should never have your own loops running, as that will stop the 
 Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
 <ul>
 <li>
-<p><code>registerEvents(func)</code></p>
+<p><code>registerEvent(func)</code></p>
 <p>Pass this a function, and the GUI will call that function every second.</p>
 </li>
 <li>
@@ -371,7 +374,7 @@ Instead, if you want your own loop to run, you need to ask the GUi to run it for
 <ul>
 <li>
 <p><code>enableEnter(func)</code></p>
-<p>Link a function to the <code>&lt;Enter&gt;</code>  key</p>
+<p>Link a function to the <code>&lt;Enter&gt;</code> key</p>
 </li>
 <li>
 <p><code>disableEnter()</code></p>

@@ -206,11 +206,11 @@
     
         <li class="main active"><a href="#sound">Sound</a></li>
         
-            <li><a href="#sound-files">Sound Files</a></li>
+            <li><a href="#playing-sound-files">Playing Sound Files</a></li>
         
-            <li><a href="#built-in-sounds">Built-In Sounds</a></li>
+            <li><a href="#playing-built-in-sounds">Playing Built-In Sounds</a></li>
         
-            <li><a href="#musical-notes">Musical Notes</a></li>
+            <li><a href="#playing-musical-notes">Playing Musical Notes</a></li>
         
     
     </ul>
@@ -219,9 +219,10 @@
 
 <h1 id="sound">Sound</h1>
 <hr />
-<p>The GUI can also make SOUND (on Windows).<br />
-This uses the winsound API, so is very limited - must be a WAV file.</p>
-<h2 id="sound-files">Sound Files</h2>
+<p>Sound is only supported in Windows, using the Winsound API.<br />
+Therefore, only <code>.WAV</code> files will work.</p>
+<h3 id="playing-sound-files">Playing Sound Files</h3>
+<hr />
 <ul>
 <li>
 <p><code>.playSound(sound, wait=False)</code></p>
@@ -238,7 +239,8 @@ It is possible to override this, by setting wait to True. This is not recommende
 <p>This will play the named sound in a loop.</p>
 </li>
 </ul>
-<h2 id="built-in-sounds">Built-In Sounds</h2>
+<h3 id="playing-built-in-sounds">Playing Built-In Sounds</h3>
+<hr />
 <ul>
 <li>
 <p><code>.soundError()</code></p>
@@ -249,7 +251,8 @@ It is possible to override this, by setting wait to True. This is not recommende
 <p>This will sound a simple warning beep.</p>
 </li>
 </ul>
-<h2 id="musical-notes">Musical Notes</h2>
+<h3 id="playing-musical-notes">Playing Musical Notes</h3>
+<hr />
 <ul>
 <li>
 <p><code>.playNote(note, duration=200)</code></p>

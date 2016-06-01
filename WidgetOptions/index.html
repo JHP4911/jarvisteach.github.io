@@ -206,9 +206,13 @@
     
         <li class="main active"><a href="#widget-options">Widget Options</a></li>
         
-            <li><a href="#basic-configuration">Basic Configuration</a></li>
+            <li><a href="#basic-appearance">Basic Appearance</a></li>
         
-            <li><a href="#advanced-configuration">Advanced Configuration</a></li>
+            <li><a href="#extended-appearance">Extended Appearance</a></li>
+        
+            <li><a href="#advanced-appearance">Advanced Appearance</a></li>
+        
+            <li><a href="#widget-interaction">Widget Interaction</a></li>
         
             <li><a href="#widget-manipulaiton">Widget Manipulaiton</a></li>
         
@@ -221,8 +225,8 @@
 
 <h1 id="widget-options">Widget Options</h1>
 <hr />
-<p>There are a lot of things that can be configured on a widget.</p>
-<p>There is a pattern to how this works, you simply specify the widget type and the parameter, eg:</p>
+<p>There are a lot of things that can be configured on a widget.<br />
+There is a pattern to how this works, you simply specify the widget type and the parameter, eg:</p>
 <ul>
 <li><code>.setLabelBg(name, value)</code></li>
 <li><code>.setButtonFg(name, value)</code></li>
@@ -230,7 +234,7 @@
 </ul>
 <p>The list of widgets is defined in <code>gui.WIDGETS</code>, it contains:
 Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook</p>
-<h3 id="basic-configuration">Basic Configuration</h3>
+<h3 id="basic-appearance">Basic Appearance</h3>
 <hr />
 <p>The following options are available for all widgets:</p>
 <ul>
@@ -243,11 +247,7 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p>Sets the foregound colour (usually the text) of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX DisabledBg(name, value)</code></p>
-<p>Sets the disabled background colour of the named widget.</p>
-</li>
-<li>
-<p><code>set XXX EnabledFg(name, value)</code></p>
+<p><code>set XXX DisabledFg(name, value)</code></p>
 <p>Sets the disabled foreground colour (usually the text) of the named widget.</p>
 </li>
 <li>
@@ -258,33 +258,56 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p><code>set XXX Height(name, value)</code></p>
 <p>Set the height of the named widget.</p>
 </li>
-<li>
-<p><code>set XXX State(name, value)</code></p>
-<p>Sets the state of the named widget.<br />
-One of: NORMAL, ACTIVE, DISABLED  </p>
-</li>
 </ul>
-<h3 id="advanced-configuration">Advanced Configuration</h3>
+<h3 id="extended-appearance">Extended Appearance</h3>
 <hr />
-<p>The following are supported by most widgets:</p>
 <ul>
-<li>
-<p><code>set XXX Relief(name, value)</code></p>
-<p>Sets the border for the widget.<br />
-One of: SUNKEN, RAISED, GROOVE, RIDGE, FLAT  </p>
-</li>
-<li>
-<p><code>set XXX Align(name, value)</code></p>
-</li>
-<li>
-<p><code>set XXX Anchor(name, value)</code></p>
-<p>Sets where the text is positioned within the widget.<br />
-One of: CENTER, N, S, E, W, NE, SE, SW, NW  </p>
-</li>
 <li>
 <p><code>set XXX Tooltip(name, value)</code></p>
 <p>Sets a tooltip for the widget.
 The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
+</li>
+<li>
+<p><code>set XXX Cursor(name, value)</code></p>
+<p>Sets the cursor shown, when the mouse goes over this widget.<br />
+There are lots of cursors avalable, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
+</li>
+<li>
+<p><code>set XXX Relief(name, value)</code></p>
+<p>Sets the border for the widget.<br />
+One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
+</li>
+<li>
+<p><code>set XXX State(name, value)</code></p>
+<p>Sets the state of the named widget.<br />
+One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
+</li>
+</ul>
+<h3 id="advanced-appearance">Advanced Appearance</h3>
+<hr />
+<p>The following are supported by most widgets:</p>
+<ul>
+<li>
+<p><code>set XXX Align(name, value)</code></p>
+<p>Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
+</li>
+<li>
+<p><code>set XXX Anchor(name, value)</code></p>
+<p>Sets where the text is positioned within the widget.<br />
+One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
+</li>
+<li>
+<p><code>set XXX Sticky(name, value)</code></p>
+<p>Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
+</li>
+</ul>
+<h3 id="widget-interaction">Widget Interaction</h3>
+<hr />
+<p>The following allow widgets to be interacted with:</p>
+<ul>
+<li>
+<p><code>set XXX Focus(name)</code></p>
+<p>Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
 </li>
 <li>
 <p><code>set XXX Function(name, value, key=None)</code></p>
@@ -296,33 +319,52 @@ The funcion will be called when some widgets are clicked.  </p>
 <p><code>set XXX DragFunction(name, value, key=None)</code></p>
 </li>
 <li><code>set XXX OverFunction(name, value, key=None)</code></li>
-<li><code>set XXX Cursor(name, value)</code></li>
-<li>
-<p><code>set XXX Focus(name)</code></p>
-<p>Gives focus to the specified widget.</p>
-</li>
-<li>
-<p><code>set XXX Sticky(name, value)</code></p>
-</li>
 </ul>
 <h3 id="widget-manipulaiton">Widget Manipulaiton</h3>
 <hr />
-<p>The following allow widgets to be manipulated:</p>
+<p>The following allow widgets to be manipulated on screen:</p>
 <ul>
-<li><code>.show XXX (name)</code></li>
-<li><code>.hide XXX (name)</code></li>
-<li><code>.remove XXX (name)</code></li>
-<li><code>.removeAllWidgets()</code></li>
-<li><code>.enable XXX (name)</code></li>
-<li><code>.disable XXX (name)</code></li>
+<li>
+<p><code>.hide XXX (name)</code></p>
+<p>Temporarily hides the widget form view.</p>
+</li>
+<li>
+<p><code>.show XXX (name)</code></p>
+<p>Show the widget, if it was already hidden.</p>
+</li>
+<li>
+<p><code>.remove XXX (name)</code></p>
+<p>Permanently emove the widget (deletes it).</p>
+</li>
+<li>
+<p><code>.removeAllWidgets()</code></p>
+<p>Permanenently remove all widgets.</p>
+</li>
+<li>
+<p><code>.disable XXX (name)</code></p>
+<p>Disable the widget - stops the user from interacting with it, but keeps it visible.</p>
+</li>
+<li>
+<p><code>.enable XXX (name)</code></p>
+<p>Enable a disabled widget.</p>
+</li>
 </ul>
 <h3 id="grouped-options">Grouped Options</h3>
 <hr />
+<p>The following are convenience functions, for modifying a group of widgets:</p>
 <ul>
 <li><code>set XXX Widths(names, val)</code></li>
-<li><code>set XXX Heights(names, val)</code></li>
-<li><code>setAll XXX Widths(val)</code></li>
-<li><code>setAll XXX Heights(val)</code></li>
+<li>
+<p><code>set XXX Heights(names, val)</code></p>
+<p>Sets the widths/heights of the specified widgets.</p>
+</li>
+<li>
+<p><code>setAll XXX Widths(val)</code></p>
+</li>
+<li>
+<p><code>setAll XXX Heights(val)</code></p>
+<p>Sets the widths/heights of all widgets of the specified type.</p>
+</li>
 </ul></div>
         </div>
 

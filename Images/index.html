@@ -204,7 +204,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#image">Image</a></li>
+        <li class="main active"><a href="#images">Images</a></li>
         
             <li><a href="#add-images">Add Images</a></li>
         
@@ -212,44 +212,81 @@
         
             <li><a href="#change-image-animation">Change Image Animation</a></li>
         
-            <li><a href="#change-background-images">Change Background Images</a></li>
+            <li><a href="#set-background-images">Set Background Images</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="image">Image</h2>
+<h1 id="images">Images</h1>
 <hr />
-<p>Shows an image, there are lots of things you can do with an image.</p>
-<h4 id="add-images">Add Images</h4>
+<p>Default image support in RWBAtools assumes no extra libraries. That means it should only support .GIF and .PPM images.<br />
+However, code is included to allow the use of .PNG and .JPG files. RWBAtools will convert these to .GIF files, before loading.<br />
+Converting image files is <strong>SLOW</strong>, so it's best to stick to .GIF files!</p>
+<p>Getting the path for images right can be <strong>TRICKY</strong><br />
+It's therefore best to put images in the same folder as your Python code.</p>
+<h3 id="add-images">Add Images</h3>
 <ul>
-<li><code>.addImage(name, file)</code></li>
-<li><code>.addAnimatedImage(name, file)</code> </li>
-</ul>
-<h4 id="change-images">Change Images</h4>
-<ul>
-<li><code>.setImage(name, image)</code></li>
-<li><code>.setImageSize(name, width, height)</code></li>
 <li>
-<p><code>.zoomImage(name, mod)</code></p>
-<p>Negative will shrink, positive will grow.</p>
+<p><code>.addImage(title, file)</code></p>
+<p>Adding an image is exactly the same as adding any other widget.<br />
+Simply give the image a title, and pass the filename.</p>
+<p>RWBAtools will confirm the file is valid, and will also check the file contains the type specified.</p>
+<p>If an animated GIF is found, then it will be animated within the GUI.</p>
+</li>
+</ul>
+<h3 id="change-images">Change Images</h3>
+<ul>
+<li>
+<p><code>.setImage(title, image)</code></p>
+<p>This will replace the existing image with the new one.</p>
 </li>
 <li>
-<p><code>.shrinkImage(name, mod)</code></p>
+<p><code>.setImageSize(title, width, height)</code></p>
+<p>This will set the size of the container for the image, cropping anything that doesn't fit.</p>
 </li>
-<li><code>.growImage(name, mod)</code></li>
+<li>
+<p><code>.zoomImage(title, mod)</code></p>
+<p>This will attempt to change the size of the image.<br />
+It is very rudimentary, and usually doesn't look very good - but is fun to play around with (try adding a slider under an image...)<br />
+Negative values will shrink the image, positive will enlarge the image.  </p>
+</li>
+<li>
+<p><code>.shrinkImage(title, mod)</code></p>
+</li>
+<li>
+<p><code>.growImage(title, mod)</code></p>
+<p>These are wrappers for the above function, simply causing the image to shrink or grow accordingly.</p>
+</li>
 </ul>
-<h4 id="change-image-animation">Change Image Animation</h4>
+<h3 id="change-image-animation">Change Image Animation</h3>
+<p>If an image is animated, it's possible to control it.</p>
 <ul>
-<li><code>.setAnimationSpeed(name, speed)</code></li>
-<li><code>.stopAnimation(name)</code></li>
-<li><code>.startAnimation(name)</code></li>
+<li>
+<p><code>.setAnimationSpeed(title, speed)</code></p>
+<p>This will change the speed an image is animated at.</p>
+</li>
+<li>
+<p><code>.stopAnimation(title)</code></p>
+</li>
+<li>
+<p><code>.startAnimation(title)</code></p>
+<p>These will start and stop the animation of an image.</p>
+</li>
 </ul>
-<h4 id="change-background-images">Change Background Images</h4>
+<h3 id="set-background-images">Set Background Images</h3>
+<p>It's also possible to add a background image to your GUI.<br />
+If you have lots of grouped widgets, this can look quite <strong>UGLY</strong>, as all of the widgets are drawn on top.  </p>
 <ul>
-<li><code>.setBgImage(image)</code></li>
-<li><code>.removeBgImage(image)</code></li>
+<li>
+<p><code>.setBgImage(image)</code></p>
+<p>Set the image for the background.</p>
+</li>
+<li>
+<p><code>.removeBgImage(image)</code></p>
+<p>Remove the image form the background.</p>
+</li>
 </ul></div>
         </div>
 
