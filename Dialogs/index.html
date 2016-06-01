@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Dialogs - RWBAtools</title>
+	<title>Pop-ups - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Home</a>
+                    <a href="..">Welcome</a>
                 </li>
             
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Creating a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -86,13 +86,13 @@
                     
                         
 <li class="active">
-    <a href="./">Dialogs</a>
+    <a href="./">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../DevWidgets/">More to come...</a>
 </li>
 
                     
@@ -102,30 +102,45 @@
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Layout/">Positioning Widgets</a>
+    <a href="../Layout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping Widgets</a>
+    <a href="../Grouping2/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">GUI Options</a>
+    <a href="../WidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="../GuiOptions/">Extras</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../empty/">Lesson 1</a>
 </li>
 
                     
@@ -140,19 +155,19 @@
                     
                         
 <li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release Notes</a>
+    <a href="../ReleaseNotes/">Release notes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -204,7 +219,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#dialogs">Dialogs</a></li>
+        <li class="main active"><a href="#pop-ups">Pop-ups</a></li>
         
             <li><a href="#message-boxes">Message Boxes</a></li>
         
@@ -219,56 +234,56 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="dialogs">Dialogs</h1>
+<h1 id="pop-ups">Pop-ups</h1>
 <hr />
-<p>A number of dialogs (aka pop-ups) are available, to add a different user experience, notify the user of information, or get one off pieces of data.</p>
+<p>A number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.</p>
 <h3 id="message-boxes">Message Boxes</h3>
 <ul>
 <li>
-<p><code>.infoBox(title, message)</code></p>
-<p>Shows a simple information message, with an OK button.<br />
+<p><code>.infoBox(title, message)</code><br />
+    Shows a simple information message, with an OK button.<br />
 <img alt="InfoBox" src="../img/dialogs/info.gif" /></p>
 </li>
 <li>
-<p><code>.errorBox(title, message)</code></p>
-<p>Shows a simple error message, with an OK button.<br />
+<p><code>.errorBox(title, message)</code><br />
+    Shows a simple error message, with an OK button.<br />
 <img alt="ErrorBox" src="../img/dialogs/error.gif" /></p>
 </li>
 <li>
-<p><code>.warningBox(title, message)</code></p>
-<p>Shows a simple warning message, with an OK message.<br />
+<p><code>.warningBox(title, message)</code><br />
+    Shows a simple warning message, with an OK message.<br />
 <img alt="WarningBox" src="../img/dialogs/warning.gif" /></p>
 </li>
 </ul>
 <h3 id="question-boxes">Question Boxes</h3>
 <ul>
 <li>
-<p><code>.yesNoBox(title, message)</code></p>
-<p>Shows a question, with Yes/No buttons. Returns True/False.<br />
+<p><code>.yesNoBox(title, message)</code><br />
+    Shows a question, with Yes/No buttons. Returns True/False.<br />
 <img alt="yesNoBox" src="../img/dialogs/yesno.gif" /></p>
 </li>
 <li>
-<p><code>.questionBox(title, message)</code></p>
-<p>Shows a question, with Yes/No buttons. Returns True/False.<br />
+<p><code>.questionBox(title, message)</code><br />
+    Shows a question, with Yes/No buttons. Returns True/False.<br />
 <img alt="QuestionBox" src="../img/dialogs/question.gif" /></p>
 </li>
 <li>
-<p><code>.okBox(title, message)</code></p>
-<p>Shows a question, with OK/Cancel buttons. Returns True/False.<br />
+<p><code>.okBox(title, message)</code><br />
+    Shows a question, with OK/Cancel buttons. Returns True/False.<br />
 <img alt="OkBox" src="../img/dialogs/ok.gif" /></p>
 </li>
 <li>
-<p><code>.retryBox(title, message)</code></p>
-<p>Shows a question, with Cancel/Retry buttons. Returns True/False.<br />
+<p><code>.retryBox(title, message)</code><br />
+    Shows a question, with Cancel/Retry buttons. Returns True/False.<br />
 <img alt="RetryBox" src="../img/dialogs/retry.gif" /></p>
 </li>
 <li>
-<p><code>.textBox(title, message)</code></p>
-<p>Shows a question requesting a text response. Returns a String, or None if Cancel pressed.<br />
+<p><code>.textBox(title, message)</code><br />
+    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.<br />
 <img alt="TextBox" src="../img/dialogs/text.gif" /></p>
 </li>
 <li>
-<p><code>.numberBox(title, message)</code>
+<p><code>.numberBox(title, message)</code><br />
     Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.<br />
 <img alt="NumberBox" src="../img/dialogs/num.gif" /></p>
 </li>

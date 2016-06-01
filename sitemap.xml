@@ -58,13 +58,7 @@
     </url>
         
     <url>
-     <loc>None/Grouping/</loc>
-     <lastmod>2016-06-01</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/GuiOptions/</loc>
+     <loc>None/Grouping2/</loc>
      <lastmod>2016-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -75,15 +69,25 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/GuiOptions/</loc>
+     <lastmod>2016-06-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
         
     <url>
-     <loc>None/License/</loc>
+     <loc>None/empty/</loc>
      <lastmod>2016-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    
+
+    
         
     <url>
      <loc>None/Install/</loc>
@@ -93,6 +97,12 @@
         
     <url>
      <loc>None/ReleaseNotes/</loc>
+     <lastmod>2016-06-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/License/</loc>
      <lastmod>2016-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>

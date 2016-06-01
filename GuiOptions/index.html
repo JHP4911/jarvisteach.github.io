@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>GUI Options - RWBAtools</title>
+	<title>Extras - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Home</a>
+                    <a href="..">Welcome</a>
                 </li>
             
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Creating a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -86,13 +86,13 @@
                     
                         
 <li >
-    <a href="../Dialogs/">Dialogs</a>
+    <a href="../Dialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../DevWidgets/">More to come...</a>
 </li>
 
                     
@@ -102,30 +102,45 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Layout/">Positioning Widgets</a>
+    <a href="../Layout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping Widgets</a>
+    <a href="../Grouping2/">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../WidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li class="active">
-    <a href="./">GUI Options</a>
+    <a href="./">Extras</a>
 </li>
 
                     
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
                         
 <li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="../empty/">Lesson 1</a>
 </li>
 
                     
@@ -140,19 +155,19 @@
                     
                         
 <li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release Notes</a>
+    <a href="../ReleaseNotes/">Release notes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -176,12 +191,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Grouping/">
+                    <a rel="next" href="../WidgetOptions/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../WidgetOptions/">
+                    <a rel="prev" href="../empty/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -228,39 +243,43 @@ Some of these are also available at a widghet level, where you can specify indiv
 <p>Some basic configuration for the size, position, transparency, etc. of the GUI.</p>
 <h4 id="size-locaiton">Size &amp; Locaiton</h4>
 <ul>
-<li><code>setGeometry(geom)</code></li>
+<li><code>setGeometry(geom)</code>  </li>
 <li>
-<p><code>setGeometry(width, height)</code></p>
-<p>Sets the height &amp; width of the GUI, either as a single String widthxheight.<br />
-Or, sets it fullscreen</p>
+<p><code>setGeometry(width, height)</code><br />
+    Sets the height &amp; width of the GUI:  </p>
+<ul>
+<li>Either as a single String <code>.setGeometry("200x100")</code> (widthxheight)  </li>
+<li>As two seperate parameters <code>.setGeometry(200,100)</code></li>
+<li>Or to go <em>Fullscreen</em> <code>.setGeometry("Fullscreen")</code>  </li>
+</ul>
 </li>
 <li>
-<p><code>exitFullscreen()</code></p>
-<p>Leave fullscreen, if set in the geometry.<br />
-<code>&lt;Escape&gt;</code> will call this automatically, while in fullscreen.</p>
+<p><code>exitFullscreen()</code><br />
+    Leave fullscreen, if set in the geometry.  <br />
+<code>&lt;Escape&gt;</code> will call this automatically, while in fullscreen.  </p>
 </li>
 <li>
-<p><code>setResizable(canResize=True)</code></p>
-<p>Sets whether the GUI can be resized or not.</p>
+<p><code>setResizable(canResize=True)</code><br />
+    Sets whether the GUI can be resized or not.  </p>
 </li>
 <li>
-<p><code>setLocation(x, y)</code></p>
-<p>Sets the position of the GUI</p>
+<p><code>setLocation(x, y)</code><br />
+    Sets the position of the GUI  </p>
 </li>
 </ul>
 <h4 id="look-feel">Look &amp; Feel</h4>
 <ul>
 <li>
-<p><code>setTitle(title)</code></p>
-<p>Sets the title of the GUI. By default it is the name of the script.</p>
+<p><code>setTitle(title)</code><br />
+    Sets the title of the GUI. By default it is the name of the script.</p>
 </li>
 <li>
-<p><code>setIcon(fileName)</code></p>
-<p>Sets an icon for the GUI.</p>
+<p><code>setIcon(fileName)</code><br />
+    Sets an icon for the GUI.</p>
 </li>
 <li>
-<p><code>setTransparency(percentage)</code></p>
-<p>Sets how transparent the GUI is. Between 0 and 100%.</p>
+<p><code>setTransparency(percentage)</code><br />
+    Sets how transparent the GUI is. Between 0 and 100%.</p>
 </li>
 </ul>
 <h3 id="design">Design</h3>
@@ -268,45 +287,34 @@ Or, sets it fullscreen</p>
 <p>It's possible to change the default colours and fonts for widgets in the GUI.</p>
 <h4 id="colour">Colour</h4>
 <ul>
-<li>
-<p><code>setBg(colour)</code></p>
-<p>Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.</p>
-</li>
+<li><code>setBg(colour)</code><br />
+    Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.</li>
 </ul>
 <h4 id="font">Font</h4>
 <ul>
 <li>
-<p><code>setFont(size, font=None)</code></p>
-<p>This can be used to set the font size and style for all widgets.</p>
+<p><code>setFont(size, font=None)</code><br />
+    This can be used to set the font size and style for all widgets.</p>
 </li>
 <li>
-<p><code>decreaseFont()</code></p>
+<p><code>decreaseFont()</code> &amp; <code>increaseFont()</code><br />
+    These can be used to increase or decrease the font of all widgets.</p>
 </li>
 <li>
-<p><code>increaseFont()</code></p>
-<p>These can be used to increase or decrease the font of all widgets.</p>
+<p><code>setLabelFont(size, family=None)</code><br />
+    This can be used to set the font size and style for all label-type widgets.</p>
 </li>
 <li>
-<p><code>setLabelFont(size, family=None)</code></p>
-<p>This can be used to set the font size and style for all label-type widgets.</p>
+<p><code>increaseLabelFont()</code> &amp; <code>decreaseLabelFont()</code><br />
+    These can be used to increase or decrease the font of all label-type widgets.</p>
 </li>
 <li>
-<p><code>increaseLabelFont()</code></p>
+<p><code>setButtonFont()</code><br />
+    This can be used to set the font size and style for all button-type widgets.</p>
 </li>
 <li>
-<p><code>decreaseLabelFont()</code></p>
-<p>These can be used to increase or decrease the font of all label-type widgets.</p>
-</li>
-<li>
-<p><code>setButtonFont()</code></p>
-<p>This can be used to set the font size and style for all button-type widgets.</p>
-</li>
-<li>
-<p><code>increaseButtonFont()</code></p>
-</li>
-<li>
-<p><code>decreaseButtonFont()</code></p>
-<p>These can be used to increase or decrease the font of all butotn-type widgets.</p>
+<p><code>increaseButtonFont()</code> &amp; <code>decreaseButtonFont()</code><br />
+    These can be used to increase or decrease the font of all butotn-type widgets.</p>
 </li>
 </ul>
 <h3 id="widget-positioning">Widget Positioning</h3>
@@ -314,14 +322,13 @@ Or, sets it fullscreen</p>
 <p>The below commands allow the user to change how RWBAtools lays out widgets on the screen.</p>
 <h4 id="location">Location</h4>
 <ul>
-<li><code>setPadX()</code></li>
 <li>
-<p><code>setPadY()</code></p>
-<p>These set how much empty padding is included around a widget, within its grid-cell.</p>
+<p><code>setPadX()</code> &amp; <code>setPadY()</code><br />
+    These set how much empty padding is included around a widget, within its grid-cell.</p>
 </li>
 <li>
-<p><code>setSticky()</code></p>
-<p>This determines which side of the grid-cell the widget will stick to:</p>
+<p><code>setSticky()</code><br />
+    This determines which side of the grid-cell the widget will stick to:</p>
 <ul>
 <li><code>left</code> - stick to the left side</li>
 <li><code>right</code> - stick to the right side</li>
@@ -332,9 +339,9 @@ Or, sets it fullscreen</p>
 <h4 id="resize">Resize</h4>
 <ul>
 <li>
-<p><code>setExpand()</code></p>
-<p>This tells widgets what to do when the GUI is resized.<br />
-It allows widgets to be configured to stretch or not:</p>
+<p><code>setExpand()</code><br />
+    This tells widgets what to do when the GUI is resized.<br />
+    It allows widgets to be configured to stretch or not:</p>
 <ul>
 <li><code>none</code> - don't expand</li>
 <li><code>row</code> - expand with rows only</li>
@@ -346,12 +353,12 @@ It allows widgets to be configured to stretch or not:</p>
 <h4 id="row-helpers">Row Helpers</h4>
 <ul>
 <li>
-<p><code>getRow()</code></p>
-<p>Returns the row number currently being used.</p>
+<p><code>getRow()</code><br />
+    Returns the row number currently being used.</p>
 </li>
 <li>
-<p><code>getNextRow()</code></p>
-<p>Returns the current row number, before adding one to it.</p>
+<p><code>getNextRow()</code><br />
+    Returns the current row number, before adding one to it.</p>
 </li>
 </ul>
 <h3 id="gui-actions">GUI Actions</h3>
@@ -362,34 +369,34 @@ That means, you should never have your own loops running, as that will stop the 
 Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
 <ul>
 <li>
-<p><code>registerEvent(func)</code></p>
-<p>Pass this a function, and the GUI will call that function every second.</p>
+<p><code>registerEvent(func)</code><br />
+    Pass this a function, and the GUI will call that function every second.</p>
 </li>
 <li>
-<p><code>setPollTime(time)</code></p>
-<p>If you want your events to be called more or less frequently, set the frequency here.</p>
+<p><code>setPollTime(time)</code><br />
+    If you want your events to be called more or less frequently, set the frequency here.</p>
 </li>
 </ul>
 <h4 id="enter-key">Enter Key</h4>
 <ul>
 <li>
-<p><code>enableEnter(func)</code></p>
-<p>Link a function to the <code>&lt;Enter&gt;</code> key</p>
+<p><code>enableEnter(func)</code><br />
+    Link a function to the <code>&lt;Enter&gt;</code> key</p>
 </li>
 <li>
-<p><code>disableEnter()</code></p>
-<p>Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
+<p><code>disableEnter()</code><br />
+    Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
 </li>
 </ul>
 <h4 id="other-keys">Other Keys</h4>
 <ul>
 <li>
-<p><code>bindKey(key, func)</code></p>
-<p>Link the specified key to the specified function.</p>
+<p><code>bindKey(key, func)</code><br />
+    Link the specified key to the specified function.</p>
 </li>
 <li>
-<p><code>unbindKey(key)</code></p>
-<p>Unlink the specified key from any functions bound to it.</p>
+<p><code>unbindKey(key)</code><br />
+    Unlink the specified key from any functions bound to it.</p>
 </li>
 </ul></div>
         </div>

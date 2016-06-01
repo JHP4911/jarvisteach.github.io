@@ -2,42 +2,37 @@
     "docs": [
         {
             "location": "/",
-            "text": "To Begin\n\n\nTo build a GUI, requires a minimum of three steps:\n\n\n1) \nIMPORT\n the library\n\n2) \nCREATE\n the GUI\n\n3) \nSTART\n the GUI  \n\n\nfrom rwbatools import gui   # import the library\napp = gui()                 # create the GUI\napp.go()                    # start the GUI  \n\n\n\n\nIn-between creating & starting the GUI, you \nADD\n any widgets you want, and \nSET\n their properties.  \n\n\nWhen adding a widget, you usually have to give it a title - this is used later if you want to change the widget.  \n\n\nThen, you set any appropriate properties, for the widget, using its title.\n\n\nfrom rwbatools import gui\n\napp = gui()\napp.addLabel(\"title\", \"Welcome to RWBAtools\")   # add a label\napp.setLabelBg(\"title\", \"red\")                           # set the label's background to be red\napp.go()\n\n\n\n\nWidgets will be added consecutively, each on a new line:\n\nSimple Layout\n\n\nIf you want more than that, you will need to consider their layout.\n\nGrid Layout\n\n\nWidgets can be positioned in a grid, simply by providing a \nROW\n and \nCOLUMN\n position for each widget. It's also possible to specify how many columns to \nSPAN\n.\n\n\nThere are also a number of things you can configure about the GUI:\n\nGUI Options\n\n\n\n\nWidgets\n\n\nThe following widgets are available:\n\n\n\n\nLabel\n - Used for displaying writing\n\n\nFlashLabel - a label that flashes\n\n\n\n\n\n\nEntry\n - A single line box for typing text\n\n\nSecretEntry - an entry box that displays stars as the user types\n\n\nNumericEntry - an entry box that only accepts numbers\n\n\n\n\n\n\nButton\n - A clickable button, that will call a function\n\n\nRadioButton\n - A group of round boxes, only one of which can be selected\n\n\nCheckBox\n - A box, with a label, that can be either ON or OFF\n\n\nOptionBox\n - A drop-down single-select option\n\n\nSpinBox\n - A scrollable option\n\n\nListBox\n - A box containing a list of items, single or multi-select\n\n\nScale\n - A slider, that has a minimum & maximum value\n\n\nMessage\n - Like a multi-line label\n\n\nTextArea\n - A multi-line box for typing text\n\n\nMeter\n - Used for showing progress\n\n\nSplitMeter\n - Shows two values, left & right\n\n\nDualMeter\n - shows percentage left & right\n\n\n\n\n\n\nSeparator\n - shows a horizontal line\n\n\nLink/WebLink\n - Clickable text to call a function or launch a URL\n\n\nImage\n - shows an image\n\n\n\n\nThe following widgets are under deveopment\n\n\n\n\nPieChart\n - will show a pie chart\n\n\nTree\n - will show a tree-style interface\n\n\nGrid\n - will show a table interface\n\n\n\n\n\n\nBar Widgets\n\n\nThere are 3 bars available to add extra functionality to your GUI:\n\n\n\n\nToolBar\n - adds a toolbar along the top of the GUI\n\n\nMenu\n - adds a standard Menu bar along the top of the GUI\n\n\nStatus\n - adds a status bar along the bottom of the GUI\n\n\n\n\n\n\nDialogs\n\n\nA number of dialogs are available:\n\n\n\n\ninfoBox\n\n\nerrorBox\n\n\nwarningBox\n\n\nyesNoBox\n\n\nquestionBox\n\n\nokBox\n\n\nretryBox\n\n\nopenBox\n\n\nsaveBox\n\n\ndirectoryBox\n\n\ncolourBox\n\n\ntextBox\n\n\nnumBox\n\n\n\n\n\n\nLayouts\n\n\nFinally, a number of layouts are available:\n\n\n\n\nLabelFrame\n - will put a border around the widgets, with a title\n\n\nNoteBook\n - will create a tabbed interface, with a number of pages\n\n\nPanedWindow\n - will create a split view, with draggable panes\n\n\nSubWindow\n - used to create additional windows\n\n\n\n\n\n\nSound\n\n\nThe GUI can also make SOUND (on Windows)\n\n\n\n\n.playSound(sound, wait=False)\n\n\n.stopSound()\n\n\n.loopSound()\n\n\n.soundError()\n\n\n.soundWarning()\n\n\n.playNote(note, duration=200)",
-            "title": "Home"
+            "text": "Welcome\n\n\n\n\nThis library was designed to use in the \nclassroom\n  \n\n\nIt has no dependencies, other than \nPython 3.x\n\nIt does not require \ninstalling\n, simply unzip and go  \n\n\nIt is meant to be as \nsimple\n as possible to get started with\n\nAllowing pupils to focus on learning programming & problem solving, not \ntkinter\n and GUI building  \n\n\nLet's make a sandwich\n\n\n\n\nBuilding a \nGUI\n is just like making a \nsandwich\n!  \n\n\nYou need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...\n\n\n# import the library\nfrom rwbatools import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\n# fillings go here...\n\napp.go()                    # bottom slice - START the GUI\n\n\n\n\nIf you forget the bread on the bottom, everything falls apart!\n\nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!\n\n\nAdd some fillings...\n\n\n\n\nWhen making a sandwich, you could just stuff it with fillings:  \n\n\n\n\naddFilling('cheese', 'chedar')\n  \n\n\naddFilling('ham', 'smoked')\n  \n\n\n\n\nBut it's often nice to prepare the fillings too:  \n\n\n\n\nsetFilling('cheese', 'grated')\n \n\n\nsetFilling('ham', 'sliced')\n \n\n\n\n\n# import the library\nfrom rwbatools import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\napp.addLabel(\"title\", \"Welcome to RWBAtools\")   # add a label\napp.setLabelBg(\"title\", \"red\")                  # set the label's background to be red\n\napp.go()                    # bottom slice - START the GUI\n\n\n\n\n\n\nAnd, that's it...\n\nThe more fillings you put in your sandwich, and the more time you spend making them look nice, the better it will taste!\n\n\nFoot-long sub?\n\n\n\n\nOf course, for most of us, a simple sandwich isn't enough...\n\nWe want to make a meal out of it!  \n\n\nIn which case, you're going to want to arrange your fillings a bit more cleverly!\n\n\n\n\nMeat on the bottom  \n\n\nThen the cheese  \n\n\nThen some salad  \n\n\nFinally the sauce!\n\n\n\n\nThe arrangement is paramount, nobody wants the sauce under the meat!\n\n\nBy default, the fillings are simply stacked on top of each other.  \n\n\nHowever, filling a sub is very similar to filling a spreadsheet.\n\nSimply tell each filling what row it's on, and what column it's in.\n\nAnd, if you're not planning on chopping a filling, it might span across more than one column.  \n\n\nfrom rwbatools import gui\n\n# function called by pressing the buttons\ndef press(btn):\n    if btn==\"Cancel\":\n        app.stop()\n    else:\n        print(\"User:\", app.getEntry('user'), \"Pass:\", app.getEntry('pass'))\n\napp = gui()\n\napp.addLabel(\"title\", \"Welcome to RWBAtools\", 0, 0, 2)  # Row 0, Column 0, Span 2\napp.addLabel(\"user\", \"Username:\", 1, 0)                 # Row 1, Column 0, no span\napp.addEntry(\"user\", 1, 1)                              # Row 1, Column 1, no span\napp.addLabel(\"pass\", \"Password:\", 2, 0)                 # Row 2, Column 0, no span\napp.addSecretEntry(\"pass\", 2, 1)                        # Row 2, Column 1, no span\napp.addButtons([\"Submit\", \"Cancel\"], press, 3, 0, 2)    # Row 3, Column 0, Span 2\n\napp.setEntryFocus(\"user\")\n\napp.go()\n\n\n\n\n\n\nYour turn\n\n\n\n\nThat's about it from here.\n\nHave a look around, discover all of the different fillings available",
+            "title": "Welcome"
         },
         {
-            "location": "/#to-begin",
-            "text": "To build a GUI, requires a minimum of three steps:  1)  IMPORT  the library \n2)  CREATE  the GUI \n3)  START  the GUI    from rwbatools import gui   # import the library\napp = gui()                 # create the GUI\napp.go()                    # start the GUI    In-between creating & starting the GUI, you  ADD  any widgets you want, and  SET  their properties.    When adding a widget, you usually have to give it a title - this is used later if you want to change the widget.    Then, you set any appropriate properties, for the widget, using its title.  from rwbatools import gui\n\napp = gui()\napp.addLabel(\"title\", \"Welcome to RWBAtools\")   # add a label\napp.setLabelBg(\"title\", \"red\")                           # set the label's background to be red\napp.go()  Widgets will be added consecutively, each on a new line: Simple Layout  If you want more than that, you will need to consider their layout. Grid Layout  Widgets can be positioned in a grid, simply by providing a  ROW  and  COLUMN  position for each widget. It's also possible to specify how many columns to  SPAN .  There are also a number of things you can configure about the GUI: GUI Options",
-            "title": "To Begin"
+            "location": "/#welcome",
+            "text": "This library was designed to use in the  classroom     It has no dependencies, other than  Python 3.x \nIt does not require  installing , simply unzip and go    It is meant to be as  simple  as possible to get started with \nAllowing pupils to focus on learning programming & problem solving, not  tkinter  and GUI building",
+            "title": "Welcome"
         },
         {
-            "location": "/#widgets",
-            "text": "The following widgets are available:   Label  - Used for displaying writing  FlashLabel - a label that flashes    Entry  - A single line box for typing text  SecretEntry - an entry box that displays stars as the user types  NumericEntry - an entry box that only accepts numbers    Button  - A clickable button, that will call a function  RadioButton  - A group of round boxes, only one of which can be selected  CheckBox  - A box, with a label, that can be either ON or OFF  OptionBox  - A drop-down single-select option  SpinBox  - A scrollable option  ListBox  - A box containing a list of items, single or multi-select  Scale  - A slider, that has a minimum & maximum value  Message  - Like a multi-line label  TextArea  - A multi-line box for typing text  Meter  - Used for showing progress  SplitMeter  - Shows two values, left & right  DualMeter  - shows percentage left & right    Separator  - shows a horizontal line  Link/WebLink  - Clickable text to call a function or launch a URL  Image  - shows an image   The following widgets are under deveopment   PieChart  - will show a pie chart  Tree  - will show a tree-style interface  Grid  - will show a table interface",
-            "title": "Widgets"
+            "location": "/#lets-make-a-sandwich",
+            "text": "Building a  GUI  is just like making a  sandwich !    You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...  # import the library\nfrom rwbatools import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\n# fillings go here...\n\napp.go()                    # bottom slice - START the GUI  If you forget the bread on the bottom, everything falls apart! \nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!",
+            "title": "Let's make a sandwich"
         },
         {
-            "location": "/#bar-widgets",
-            "text": "There are 3 bars available to add extra functionality to your GUI:   ToolBar  - adds a toolbar along the top of the GUI  Menu  - adds a standard Menu bar along the top of the GUI  Status  - adds a status bar along the bottom of the GUI",
-            "title": "Bar Widgets"
+            "location": "/#add-some-fillings",
+            "text": "When making a sandwich, you could just stuff it with fillings:     addFilling('cheese', 'chedar')     addFilling('ham', 'smoked')      But it's often nice to prepare the fillings too:     setFilling('cheese', 'grated')    setFilling('ham', 'sliced')     # import the library\nfrom rwbatools import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\napp.addLabel(\"title\", \"Welcome to RWBAtools\")   # add a label\napp.setLabelBg(\"title\", \"red\")                  # set the label's background to be red\n\napp.go()                    # bottom slice - START the GUI   And, that's it... \nThe more fillings you put in your sandwich, and the more time you spend making them look nice, the better it will taste!",
+            "title": "Add some fillings..."
         },
         {
-            "location": "/#dialogs",
-            "text": "A number of dialogs are available:   infoBox  errorBox  warningBox  yesNoBox  questionBox  okBox  retryBox  openBox  saveBox  directoryBox  colourBox  textBox  numBox",
-            "title": "Dialogs"
+            "location": "/#foot-long-sub",
+            "text": "Of course, for most of us, a simple sandwich isn't enough... \nWe want to make a meal out of it!    In which case, you're going to want to arrange your fillings a bit more cleverly!   Meat on the bottom    Then the cheese    Then some salad    Finally the sauce!   The arrangement is paramount, nobody wants the sauce under the meat!  By default, the fillings are simply stacked on top of each other.    However, filling a sub is very similar to filling a spreadsheet. \nSimply tell each filling what row it's on, and what column it's in. \nAnd, if you're not planning on chopping a filling, it might span across more than one column.    from rwbatools import gui\n\n# function called by pressing the buttons\ndef press(btn):\n    if btn==\"Cancel\":\n        app.stop()\n    else:\n        print(\"User:\", app.getEntry('user'), \"Pass:\", app.getEntry('pass'))\n\napp = gui()\n\napp.addLabel(\"title\", \"Welcome to RWBAtools\", 0, 0, 2)  # Row 0, Column 0, Span 2\napp.addLabel(\"user\", \"Username:\", 1, 0)                 # Row 1, Column 0, no span\napp.addEntry(\"user\", 1, 1)                              # Row 1, Column 1, no span\napp.addLabel(\"pass\", \"Password:\", 2, 0)                 # Row 2, Column 0, no span\napp.addSecretEntry(\"pass\", 2, 1)                        # Row 2, Column 1, no span\napp.addButtons([\"Submit\", \"Cancel\"], press, 3, 0, 2)    # Row 3, Column 0, Span 2\n\napp.setEntryFocus(\"user\")\n\napp.go()",
+            "title": "Foot-long sub?"
         },
         {
-            "location": "/#layouts",
-            "text": "Finally, a number of layouts are available:   LabelFrame  - will put a border around the widgets, with a title  NoteBook  - will create a tabbed interface, with a number of pages  PanedWindow  - will create a split view, with draggable panes  SubWindow  - used to create additional windows",
-            "title": "Layouts"
-        },
-        {
-            "location": "/#sound",
-            "text": "The GUI can also make SOUND (on Windows)   .playSound(sound, wait=False)  .stopSound()  .loopSound()  .soundError()  .soundWarning()  .playNote(note, duration=200)",
-            "title": "Sound"
+            "location": "/#your-turn",
+            "text": "That's about it from here. \nHave a look around, discover all of the different fillings available",
+            "title": "Your turn"
         },
         {
             "location": "/Widgets/",
-            "text": "Widgets\n\n\n\n\nBelow is a comprehensive list of all the widgets that can be included in a GUI.\n\n\nThey are all used in the same way:\n\n\n\n\nFirst, \nADD\n a widget\n\n\nThen, \nSET\n any paramters for the widget\n\n\nFinally, if needed, \nGET\n the contents of the widget (usually done in a function)\n\n\n\n\nLabel\n\n\n\n\nLabels are used for displaying basic text on the screen.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp = gui()\n\napp.addLabel(\"l1\", \"Label 1\")\napp.addLabel(\"l2\", \"Label 2\")\napp.addLabel(\"l3\", \"Label 3\")\napp.addLabel(\"l4\", \"Label 4\")\n\napp.setLabelBg(\"l1\", \"red\")\napp.setLabelBg(\"l2\", \"yellow\")\napp.setLabelBg(\"l3\", \"purple\")\napp.setLabelBg(\"l4\", \"orange\")\n\napp.go()\n\n\n\n\nAdd Labels\n\n\n\n\n\n\n.addLabel(title, text=None)\n\n\nAt a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.\n\n\n\n\n\n\n.addEmptyLabel(title)\n\n\nDoes the same as add a label, except there''s no parameter to set any text.\n\n\n\n\n\n\n.addFlashLabel(title, text=None)\n\n\nThis adds a flashing label, that will alternate between the foreground and background colours.\n\n\n\n\n\n\nChange Labels\n\n\n\n\n\n\n.setLabel(title, text)\n\n\nChange the contents of the label.\n\n\n\n\n\n\n.clearLabel(title)\n\n\nClear the contents of the label.\n\n\n\n\n\n\nGet Labels\n\n\n\n\n\n\n.getLabel(title)\n\n\nGet the contents of the label.\n\n\n\n\n\n\nAuto-Labelled Widgets\n\n\n\n\nIt's possible to autoimatically include a label alongside some widgets.\n\nBoth the label and widget will be placed in the same grid space.\n\nSimply add the word \nLabel\n to the command when adding the widget:  \n\n\n\n\n.addLabelEntry(title)\n\n\n.addLabelNumericlEntry(title)\n\n\n.addLabelSecretlEntry(title)\n\n\n.addLabelOptionBox(title, values)\n\n\n.addLabelSpinBox(title, values)\n\n\n.addLabelSpinBoxRange(title, from, to)\n  \n\n\n\n\nSee the relevant section for a description of what the widget does.\n\n\nEntry\n\n\n\n\nEntries are used to capture input from the user. They take a single parameter - a title.\n\n\nThere are two special-case entries:\n\n\n\n\nNumericEntry - this only allows numbrs to be typed in.\n\n\nSecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.\n\n\n\n\n\n\nfrom rwbatools import gui\n\napp=gui()\n\napp.addEntry(\"e1\")\napp.addEntry(\"e2\")\napp.addEntry(\"e3\")\napp.addLabelEntry(\"Name\")\n\napp.setEntryDefault(\"e2\", \"Age here\")\n\napp.go()\n\n\n\n\nAdd Entries\n\n\n\n\n.addEntry(title)\n\n\n.addNumericEntry(title)\n\n\n\n\n.addSecretEntry(title)\n\n\nEach of these will add the specified type of Entry, using the title provided.\n\n\n\n\n\n\nChange Entries\n\n\n\n\n\n\n.setEntry(title, text)\n\n\nThis sets the contents of the specified entry box.\n\n\n\n\n\n\n.setEntryDefault(title, text)\n\n\nThis sets a default value to display in an entry box.\n\nOnce the user starts typing, it will disappear.\n\nThe text is centered, shown in a light gray font, and will not be returned by \n.getEntry(title)\n  \n\n\n\n\n\n\n.clearEntry(title)\n\n\nThis will clear the contents of the specified entry box.\n\n\n\n\n\n\n.clearAllEntries()\n\n\nThis will clear all the entry boxes in the GUI.\n\n\n\n\n\n\n.setFocus(title)\n\n\nThis will put the cursor in the specified entry box, so that the user can start typing without needing to click.\n\n\n\n\n\n\nGet Entries\n\n\n\n\n\n\n.getEntry(title)\n\n\nThis will return the contents of the spcified entry box.\n\n\n\n\n\n\nButton\n\n\n\n\nA clickable button, that will call a function.\n\nThese are the key to starting an interactive application.\n\nThe GUI is looping, waiting for something to happen.\n\nA button click is the classic way to start interacting with a GUI.\n\n\nWhenever any function is called by the GUI, the title of the widget that called it is passed as a parameter.\n\nThat way, multiple widgets can use the same function, but diffrent actions can be performed, depening on the name passed as a parameter.\n\n\nAdd Buttons\n\n\n\n\n\n\n.addButton(title, function)\n\n\nAdd a single button to the GUI, the text on the button will be the same as the button's title.\n\nA function should be specified, which will be called when the button is clicked.\n\n\n\n\n\n\n\n\n    from rwbatools import gui\n\n    def press(btn):                 # the title of the button will be received as a parameter\n        print(btn)\n\n    app=gui()\n    app.addButton(\"One\", press)     # 3 buttons, each calling the same function\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()\n\n\n\n\n\n\n\n\n.addButtons(titles, functions)\n\n\nIt's possible to add a list of buttons to the GUI.\n\nPass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\nA single funciton can be passed, to use for all buttons.\nOr a list of functions can be passed, which MUST correspond to the buttons.\n\n\n\n\n\n\n.addNamedButton(name, title, function)\n\n\nBy default, it's not possible to have two buttons with the same text.\n\nIf that's required, a named button should be used.\n\nThis allows a name and title to be set for a button.\n\nThe name will be displayed on the button, and the title passed to the function.\n\n\n\n\n\n\nChange Buttons\n\n\n\n\n\n\n.setButton(name, text)\n\n\nThis will change the text displayed on a button, but \nNOT\n the value passed as a paramter to the function.\n\n\n\n\n\n\n.setButtonImage(title, image)\n\n\nThis allows an image to be placed on a button, instead of the usual text.\n\n\n\n\n\n\nRadioButton\n\n\n\n\nA group of round boxes, only one of which can be selected.\n\nThese are great for getting a single value, for a multiple choice question.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp=gui()\napp.addRadioButton(\"song\", \"Killer Queen\")\napp.addRadioButton(\"song\", \"Paradise City\")\napp.addRadioButton(\"song\", \"Parklife\")\napp.go()\n\n\n\n\nAdd RadioButtons\n\n\n\n\n\n\n.addRadioButton(title, name)\n\n\nThis will create a RadioButton grouped by the specified title.\n\nThis button will have the value of name.\n\nRadio buttons are usually used in groups:\n\n\n\n\n\n\nChange RadioButtons\n\n\n\n\n\n\n.setRadioButton(title, value)\n\n\nThis will tick the specified RadioButton.\n\n\n\n\n\n\n.setRadioTick(title, tick=True)\n\n\nIt is possible to use tick-boxes instead of the classic circular radio-button.\n\nSetting tick to True will convert all the radio-buttons for this title to tick boxes.\n\n\n\n\n\n\nGet RadioButtons\n\n\n\n\n\n\n.getRadioButton(title)\n\n\nGets the value of the selcted RadioButton, for the specified title.\n\n\n\n\n\n\n    from rwbatools import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()\n\n\n\n\nCheckBox\n\n\n\n\nA simple tick-box, with a label, that can be either ON or OFF.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp=gui()\napp.setFont(20)\n\napp.addCheckBox(\"Apples\")\napp.addCheckBox(\"Pears\")\napp.addCheckBox(\"Oranges\")\napp.addCheckBox(\"Kiwis\")\n\napp.setCheckBox(\"Oranges\")\n\napp.go()\n\n\n\n\nAdd CheckBoxes\n\n\n\n\n\n\n.addCheckBox(title)\n\n\nThis creates a CheckBox, with the specified title.\n\n\n\n\n\n\nChange CheckBoxes\n\n\n\n\n\n\n.setCheckBox(title, ticked=True)\n\n\nThis will tick the CheckBox, or untick it if ticked is set to False.\n\n\n\n\n\n\nGet CheckBoxes\n\n\n\n\n\n\n.getCheckBox(title)\n\n\nThis will return True or False, depending on the state of the CheckBox.\n\n\n\n\n\n\nOptionBox\n\n\n\n\nA drop-down single-select option\n\n\nAdd OptionBoxes\n\n\n\n\n\n\n.addOptionBox(title, values)\n\n\nThis will create an OptionBox, adding the contents of the values list, in the order specified.\n\n\n\n\n\n\nChange OptionBoxes\n\n\n\n\n\n\n.changeOptionBox(title, newOptions)\n\n\nThis will replace the contents of the OptionBox, with the new list provided.\n\n\n\n\n\n\n.setOptionBox(title, position)\n\n\nThis will select the item in the list, at the position specified.\n\n\n\n\n\n\nGet OptionBoxes\n\n\n\n\n.getOptionBox(title)\n\n\n\n\nSpinBox\n\n\n\n\nA scrollable option\n\n\nAdd SpinBoxes\n\n\n\n\n.addSpinBox(title, values)\n\n\n.addSpinBoxRange(title, from, to)\n\n\n\n\nChange SpinBoxes\n\n\n\n\n.setSpinBox(title, value)\n\n\n.setSpinBoxPos(title, pos)\n\n\n\n\nGet SpinBoxes\n\n\n\n\n.getSpinBox(title)\n\n\n\n\nListBox\n\n\n\n\nA box containing a list of items, single or multi-select\n\n\nAdd ListBoxes\n\n\n\n\n.addListBox(title, values)\n\n\n.addListItem(title, item)\n\n\n.addListItems(title, items)\n\n\n\n\nChange ListBoxes\n\n\n\n\n.setListBoxRows(title)\n\n\n.setListSingle(list, single)\n\n\n.selectListItem(title, item)\n\n\n.updateListItems(title, items)\n\n\n.removeListItem(title, item)\n\n\n.clearListBox(title)\n\n\n\n\nGet ListBoxes\n\n\n\n\n.getListItems(title)\n\n\n\n\nScale\n\n\n\n\nA slider, that has a minimum & maximum value\n\n\nAdd Scales\n\n\n\n\n.addScale(title)\n\n\n\n\nChange Scales\n\n\n\n\n.setScaleRange(title from, to, curr=0)\n\n\n.orientScaleHor(title, hor=True)\n\n\n.setScale(title, pos)\n\n\n.showScaleValue(title, show=True)\n\n\n\n\nGet Scales\n\n\n\n\n.getScale(title)\n\n\n\n\nMessage\n\n\n\n\nLike a multi-line label\n\n\nAdd Messages\n\n\n\n\n.addMessage(title, text)\n\n\n.addEmptyMessage(title)\n\n\n\n\nChange Messages\n\n\n\n\n.clearMessage(title)\n\n\n.setMessage(title, text)\n\n\n\n\nTextArea\n\n\n\n\nA multi-line box for typing text\n\n\nAdd TextAreas\n\n\n\n\n.addTextArea(title)\n\n\n.addScrolledTextArea(title)\n\n\n\n\nChange TextAreas\n\n\n\n\n.setTextArea(title, text)\n\n\n.clearTextArea(title)\n\n\n.logTextArea(title)\n\n\n.textAreaChanged(title)\n\n\n\n\nGet TextAreas\n\n\n\n\n.getTextArea(title)\n\n\n\n\nMeter\n\n\n\n\nUsed for showing progress\n\n\n\n\n\n\nMeter\n\n\nShows a simple progress meter\n\n\n\n\n\n\naddMeter(name)\n\n\nAdds a meter with the specified name.\n\n\n\n\n\n\nsetMeter(name, value, text=None)\n\n\nChanges the specified meter to the specified value, between 0 and 100, with the optional text.\n\n\n\n\n\n\nsetMeterFill(name, colour)\n\n\nChanges the fill colour of the specified meter.\n\n\n\n\n\n\ngetMeter(name)\n\n\nGets the value of the specified meter.\n\n\n\n\n\n\n\n\n\n\nSplitMeter\n\n\nShows two values, left & right\n\n\n\n\n\n\nDualMeter\n\n\nShows percentage left & right\n\n\n\n\n\n\nSeparator\n\n\n\n\nShows a horizontal line\n\n\n\n\n.addSeparator()\n\n\n\n\nLink/WebLink\n\n\n\n\nClickable text to call a function or launch a URL\n\n\nAdd Links\n\n\n\n\n\n\n.addLink(title, func)\n\n\nAdds a \nhyperlink\n, that when clicked, will call the spcified function.\n\n\n\n\n\n\n.addWebLink(title, page)\n\n\nAdds a \nhyperlink\n, that when clicked, will launch the default browser, and load the page parameter.",
+            "text": "Widgets\n\n\n\n\nBelow is a comprehensive list of all the widgets that can be included in a GUI.\n\n\nThey are all used in the same way:\n\n\n\n\nFirst, \nADD\n a widget\n\n\nThen, \nSET\n any paramters for the widget\n\n\nFinally, if needed, \nGET\n the contents of the widget (usually done in a function)\n\n\n\n\nLabel\n\n\n\n\nLabels are used for displaying basic text on the screen.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp = gui()\n\napp.addLabel(\"l1\", \"Label 1\")\napp.addLabel(\"l2\", \"Label 2\")\napp.addLabel(\"l3\", \"Label 3\")\napp.addLabel(\"l4\", \"Label 4\")\n\napp.setLabelBg(\"l1\", \"red\")\napp.setLabelBg(\"l2\", \"yellow\")\napp.setLabelBg(\"l3\", \"purple\")\napp.setLabelBg(\"l4\", \"orange\")\n\napp.go()\n\n\n\n\nAdd Labels\n\n\n\n\n\n\n.addLabel(title, text=None)\n\n    At a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.\n\n\n\n\n\n\n.addEmptyLabel(title)\n\n    Does the same as add a label, except there''s no parameter to set any text.\n\n\n\n\n\n\n.addFlashLabel(title, text=None)\n\n    This adds a flashing label, that will alternate between the foreground and background colours.\n\n\n\n\n\n\nChange Labels\n\n\n\n\n\n\n.setLabel(title, text)\n\n    Change the contents of the label.\n\n\n\n\n\n\n.clearLabel(title)\n\n    Clear the contents of the label.\n\n\n\n\n\n\nGet Labels\n\n\n\n\n.getLabel(title)\n\n    Get the contents of the label.\n\n\n\n\nAuto-Labelled Widgets\n\n\n\n\nIt's possible to autoimatically include a label alongside some widgets.\n\nBoth the label and widget will be placed in the same grid space.\n\nSimply add the word \nLabel\n to the command when adding the widget:  \n\n\n\n\n.addLabelEntry(title)\n\n\n.addLabelNumericlEntry(title)\n\n\n.addLabelSecretlEntry(title)\n\n\n.addLabelOptionBox(title, values)\n\n\n.addLabelSpinBox(title, values)\n\n\n.addLabelSpinBoxRange(title, from, to)\n  \n\n\n\n\nSee the relevant section for a description of what the widget does.\n\n\nEntry\n\n\n\n\nEntries are used to capture input from the user. They take a single parameter - a title.\n\n\nThere are two special-case entries:\n\n\n\n\nNumericEntry - this only allows numbrs to be typed in.\n\n\nSecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.\n\n\n\n\n\n\nfrom rwbatools import gui\n\napp=gui()\n\napp.addEntry(\"e1\")\napp.addEntry(\"e2\")\napp.addEntry(\"e3\")\napp.addLabelEntry(\"Name\")\n\napp.setEntryDefault(\"e2\", \"Age here\")\n\napp.go()\n\n\n\n\nAdd Entries\n\n\n\n\n.addEntry(title)\n\n\n.addNumericEntry(title)\n\n\n\n\n.addSecretEntry(title)\n\n\nEach of these will add the specified type of Entry, using the title provided.\n\n\n\n\n\n\nChange Entries\n\n\n\n\n\n\n.setEntry(title, text)\n\n    This sets the contents of the specified entry box.\n\n\n\n\n\n\n.setEntryDefault(title, text)\n\n    This sets a default value to display in an entry box.\n\n    Once the user starts typing, it will disappear.\n\n    The text is centered, shown in a light gray font, and will not be returned by \n.getEntry(title)\n  \n\n\n\n\n\n\n.clearEntry(title)\n\n    This will clear the contents of the specified entry box.\n\n\n\n\n\n\n.clearAllEntries()\n\n    This will clear all the entry boxes in the GUI.\n\n\n\n\n\n\n.setFocus(title)\n\n    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.\n\n\n\n\n\n\nGet Entries\n\n\n\n\n.getEntry(title)\n\n    This will return the contents of the spcified entry box.\n\n\n\n\nButton\n\n\n\n\nA clickable button, that will call a function.\n\nThese are the key to starting an interactive application.\n\nThe GUI is looping, waiting for something to happen.\n\nA button click is the classic way to start interacting with a GUI.\n\n\nWhenever any function is called by the GUI, the title of the widget that called it is passed as a parameter.\n\nThat way, multiple widgets can use the same function, but diffrent actions can be performed, depening on the name passed as a parameter.\n\n\nAdd Buttons\n\n\n\n\n.addButton(title, function)\n\n    Add a single button to the GUI, the text on the button will be the same as the button's title.\n\n    A function should be specified, which will be called when the button is clicked.\n\n\n\n\n\n\n    from rwbatools import gui\n\n    def press(btn):                 # the title of the button will be received as a parameter\n        print(btn)\n\n    app=gui()\n    app.addButton(\"One\", press)     # 3 buttons, each calling the same function\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()\n\n\n\n\n\n\n\n\n.addButtons(titles, functions)\n\n    It's possible to add a list of buttons to the GUI.\n\n    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\n    A single funciton can be passed, to use for all buttons.\n    Or a list of functions can be passed, which MUST correspond to the buttons.\n\n\n\n\n\n\n.addNamedButton(name, title, function)\n\n    By default, it's not possible to have two buttons with the same text.\n\n    If that's required, a named button should be used.\n\n    This allows a name and title to be set for a button.\n\n    The name will be displayed on the button, and the title passed to the function.\n\n\n\n\n\n\nChange Buttons\n\n\n\n\n\n\n.setButton(name, text)\n\n    This will change the text displayed on a button, but \nNOT\n the value passed as a paramter to the function.\n\n\n\n\n\n\n.setButtonImage(title, image)\n\n    This allows an image to be placed on a button, instead of the usual text.\n\n\n\n\n\n\nRadioButton\n\n\n\n\nA group of round boxes, only one of which can be selected.\n\nThese are great for getting a single value, for a multiple choice question.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp=gui()\napp.addRadioButton(\"song\", \"Killer Queen\")\napp.addRadioButton(\"song\", \"Paradise City\")\napp.addRadioButton(\"song\", \"Parklife\")\napp.go()\n\n\n\n\nAdd RadioButtons\n\n\n\n\n.addRadioButton(title, name)\n\n    This will create a RadioButton grouped by the specified title.\n\n    This button will have the value of name.\n\n    Radio buttons are usually used in groups:\n\n\n\n\nChange RadioButtons\n\n\n\n\n\n\n.setRadioButton(title, value)\n\n    This will tick the specified RadioButton.\n\n\n\n\n\n\n.setRadioTick(title, tick=True)\n\n    It is possible to use tick-boxes instead of the classic circular radio-button.\n\n    Setting tick to True will convert all the radio-buttons for this title to tick boxes.\n\n\n\n\n\n\nGet RadioButtons\n\n\n\n\n.getRadioButton(title)\n\n    Gets the value of the selcted RadioButton, for the specified title.\n\n\n\n\n    from rwbatools import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()\n\n\n\n\nCheckBox\n\n\n\n\nA simple tick-box, with a label, that can be either ON or OFF.\n\n\n  \n\n\nfrom rwbatools import gui\n\napp=gui()\napp.setFont(20)\n\napp.addCheckBox(\"Apples\")\napp.addCheckBox(\"Pears\")\napp.addCheckBox(\"Oranges\")\napp.addCheckBox(\"Kiwis\")\n\napp.setCheckBox(\"Oranges\")\n\napp.go()\n\n\n\n\nAdd CheckBoxes\n\n\n\n\n.addCheckBox(title)\n\n    This creates a CheckBox, with the specified title.\n\n\n\n\nChange CheckBoxes\n\n\n\n\n.setCheckBox(title, ticked=True)\n\n    This will tick the CheckBox, or untick it if ticked is set to False.\n\n\n\n\nGet CheckBoxes\n\n\n\n\n.getCheckBox(title)\n\n    This will return True or False, depending on the state of the CheckBox.\n\n\n\n\nOptionBox\n\n\n\n\nA drop-down single-select option\n\n\nAdd OptionBoxes\n\n\n\n\n.addOptionBox(title, values)\n\n    This will create an OptionBox, adding the contents of the values list, in the order specified.\n\n\n\n\nChange OptionBoxes\n\n\n\n\n\n\n.changeOptionBox(title, newOptions)\n\n    This will replace the contents of the OptionBox, with the new list provided.\n\n\n\n\n\n\n.setOptionBox(title, position)\n\n    This will select the item in the list, at the position specified.\n\n\n\n\n\n\nGet OptionBoxes\n\n\n\n\n.getOptionBox(title)\n\n\n\n\nSpinBox\n\n\n\n\nA scrollable option\n\n\nAdd SpinBoxes\n\n\n\n\n.addSpinBox(title, values)\n\n\n.addSpinBoxRange(title, from, to)\n\n\n\n\nChange SpinBoxes\n\n\n\n\n.setSpinBox(title, value)\n\n\n.setSpinBoxPos(title, pos)\n\n\n\n\nGet SpinBoxes\n\n\n\n\n.getSpinBox(title)\n\n\n\n\nListBox\n\n\n\n\nA box containing a list of items, single or multi-select\n\n\nAdd ListBoxes\n\n\n\n\n.addListBox(title, values)\n\n\n.addListItem(title, item)\n\n\n.addListItems(title, items)\n\n\n\n\nChange ListBoxes\n\n\n\n\n.setListBoxRows(title)\n\n\n.setListSingle(list, single)\n\n\n.selectListItem(title, item)\n\n\n.updateListItems(title, items)\n\n\n.removeListItem(title, item)\n\n\n.clearListBox(title)\n\n\n\n\nGet ListBoxes\n\n\n\n\n.getListItems(title)\n\n\n\n\nScale\n\n\n\n\nA slider, that has a minimum & maximum value\n\n\nAdd Scales\n\n\n\n\n.addScale(title)\n\n\n\n\nChange Scales\n\n\n\n\n.setScaleRange(title from, to, curr=0)\n\n\n.orientScaleHor(title, hor=True)\n\n\n.setScale(title, pos)\n\n\n.showScaleValue(title, show=True)\n\n\n\n\nGet Scales\n\n\n\n\n.getScale(title)\n\n\n\n\nMessage\n\n\n\n\nLike a multi-line label\n\n\nAdd Messages\n\n\n\n\n.addMessage(title, text)\n\n\n.addEmptyMessage(title)\n\n\n\n\nChange Messages\n\n\n\n\n.clearMessage(title)\n\n\n.setMessage(title, text)\n\n\n\n\nTextArea\n\n\n\n\nA multi-line box for typing text\n\n\nAdd TextAreas\n\n\n\n\n.addTextArea(title)\n\n\n.addScrolledTextArea(title)\n\n\n\n\nChange TextAreas\n\n\n\n\n.setTextArea(title, text)\n\n\n.clearTextArea(title)\n\n\n.logTextArea(title)\n\n\n.textAreaChanged(title)\n\n\n\n\nGet TextAreas\n\n\n\n\n.getTextArea(title)\n\n\n\n\nMeter\n\n\n\n\nUsed for showing progress\n\n\n\n\n\n\nMeter\n\n\nShows a simple progress meter:  \n\n\n\n\n\n\naddMeter(name)\n\n    Adds a meter with the specified name.\n\n\n\n\n\n\nsetMeter(name, value, text=None)\n\n    Changes the specified meter to the specified value, between 0 and 100, with the optional text.\n\n\n\n\n\n\nsetMeterFill(name, colour)\n\n    Changes the fill colour of the specified meter.\n\n\n\n\n\n\ngetMeter(name)\n\n    Gets the value of the specified meter.\n\n\n\n\n\n\n\n\n\n\nSplitMeter\n\n\nShows two values, left & right\n\n\n\n\n\n\nDualMeter\n\n\nShows percentage left & right\n\n\n\n\n\n\nSeparator\n\n\n\n\nShows a horizontal line\n\n\n\n\n.addSeparator()\n\n\n\n\nLink/WebLink\n\n\n\n\nClickable text to call a function or launch a URL\n\n\nAdd Links\n\n\n\n\n\n\n.addLink(title, func)\n\n    Adds a \nhyperlink\n, that when clicked, will call the spcified function.\n\n\n\n\n\n\n.addWebLink(title, page)\n\n    Adds a \nhyperlink\n, that when clicked, will launch the default browser, and load the page parameter.",
             "title": "Widgets"
         },
         {
@@ -52,17 +47,17 @@
         },
         {
             "location": "/Widgets/#add-labels",
-            "text": ".addLabel(title, text=None)  At a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.    .addEmptyLabel(title)  Does the same as add a label, except there''s no parameter to set any text.    .addFlashLabel(title, text=None)  This adds a flashing label, that will alternate between the foreground and background colours.",
+            "text": ".addLabel(title, text=None) \n    At a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.    .addEmptyLabel(title) \n    Does the same as add a label, except there''s no parameter to set any text.    .addFlashLabel(title, text=None) \n    This adds a flashing label, that will alternate between the foreground and background colours.",
             "title": "Add Labels"
         },
         {
             "location": "/Widgets/#change-labels",
-            "text": ".setLabel(title, text)  Change the contents of the label.    .clearLabel(title)  Clear the contents of the label.",
+            "text": ".setLabel(title, text) \n    Change the contents of the label.    .clearLabel(title) \n    Clear the contents of the label.",
             "title": "Change Labels"
         },
         {
             "location": "/Widgets/#get-labels",
-            "text": ".getLabel(title)  Get the contents of the label.",
+            "text": ".getLabel(title) \n    Get the contents of the label.",
             "title": "Get Labels"
         },
         {
@@ -82,12 +77,12 @@
         },
         {
             "location": "/Widgets/#change-entries",
-            "text": ".setEntry(title, text)  This sets the contents of the specified entry box.    .setEntryDefault(title, text)  This sets a default value to display in an entry box. \nOnce the user starts typing, it will disappear. \nThe text is centered, shown in a light gray font, and will not be returned by  .getEntry(title)       .clearEntry(title)  This will clear the contents of the specified entry box.    .clearAllEntries()  This will clear all the entry boxes in the GUI.    .setFocus(title)  This will put the cursor in the specified entry box, so that the user can start typing without needing to click.",
+            "text": ".setEntry(title, text) \n    This sets the contents of the specified entry box.    .setEntryDefault(title, text) \n    This sets a default value to display in an entry box. \n    Once the user starts typing, it will disappear. \n    The text is centered, shown in a light gray font, and will not be returned by  .getEntry(title)       .clearEntry(title) \n    This will clear the contents of the specified entry box.    .clearAllEntries() \n    This will clear all the entry boxes in the GUI.    .setFocus(title) \n    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.",
             "title": "Change Entries"
         },
         {
             "location": "/Widgets/#get-entries",
-            "text": ".getEntry(title)  This will return the contents of the spcified entry box.",
+            "text": ".getEntry(title) \n    This will return the contents of the spcified entry box.",
             "title": "Get Entries"
         },
         {
@@ -97,12 +92,12 @@
         },
         {
             "location": "/Widgets/#add-buttons",
-            "text": ".addButton(title, function)  Add a single button to the GUI, the text on the button will be the same as the button's title. \nA function should be specified, which will be called when the button is clicked.         from rwbatools import gui\n\n    def press(btn):                 # the title of the button will be received as a parameter\n        print(btn)\n\n    app=gui()\n    app.addButton(\"One\", press)     # 3 buttons, each calling the same function\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()    .addButtons(titles, functions)  It's possible to add a list of buttons to the GUI. \nPass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\nA single funciton can be passed, to use for all buttons.\nOr a list of functions can be passed, which MUST correspond to the buttons.    .addNamedButton(name, title, function)  By default, it's not possible to have two buttons with the same text. \nIf that's required, a named button should be used. \nThis allows a name and title to be set for a button. \nThe name will be displayed on the button, and the title passed to the function.",
+            "text": ".addButton(title, function) \n    Add a single button to the GUI, the text on the button will be the same as the button's title. \n    A function should be specified, which will be called when the button is clicked.        from rwbatools import gui\n\n    def press(btn):                 # the title of the button will be received as a parameter\n        print(btn)\n\n    app=gui()\n    app.addButton(\"One\", press)     # 3 buttons, each calling the same function\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()    .addButtons(titles, functions) \n    It's possible to add a list of buttons to the GUI. \n    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\n    A single funciton can be passed, to use for all buttons.\n    Or a list of functions can be passed, which MUST correspond to the buttons.    .addNamedButton(name, title, function) \n    By default, it's not possible to have two buttons with the same text. \n    If that's required, a named button should be used. \n    This allows a name and title to be set for a button. \n    The name will be displayed on the button, and the title passed to the function.",
             "title": "Add Buttons"
         },
         {
             "location": "/Widgets/#change-buttons",
-            "text": ".setButton(name, text)  This will change the text displayed on a button, but  NOT  the value passed as a paramter to the function.    .setButtonImage(title, image)  This allows an image to be placed on a button, instead of the usual text.",
+            "text": ".setButton(name, text) \n    This will change the text displayed on a button, but  NOT  the value passed as a paramter to the function.    .setButtonImage(title, image) \n    This allows an image to be placed on a button, instead of the usual text.",
             "title": "Change Buttons"
         },
         {
@@ -112,17 +107,17 @@
         },
         {
             "location": "/Widgets/#add-radiobuttons",
-            "text": ".addRadioButton(title, name)  This will create a RadioButton grouped by the specified title. \nThis button will have the value of name. \nRadio buttons are usually used in groups:",
+            "text": ".addRadioButton(title, name) \n    This will create a RadioButton grouped by the specified title. \n    This button will have the value of name. \n    Radio buttons are usually used in groups:",
             "title": "Add RadioButtons"
         },
         {
             "location": "/Widgets/#change-radiobuttons",
-            "text": ".setRadioButton(title, value)  This will tick the specified RadioButton.    .setRadioTick(title, tick=True)  It is possible to use tick-boxes instead of the classic circular radio-button. \nSetting tick to True will convert all the radio-buttons for this title to tick boxes.",
+            "text": ".setRadioButton(title, value) \n    This will tick the specified RadioButton.    .setRadioTick(title, tick=True) \n    It is possible to use tick-boxes instead of the classic circular radio-button. \n    Setting tick to True will convert all the radio-buttons for this title to tick boxes.",
             "title": "Change RadioButtons"
         },
         {
             "location": "/Widgets/#get-radiobuttons",
-            "text": ".getRadioButton(title)  Gets the value of the selcted RadioButton, for the specified title.        from rwbatools import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()",
+            "text": ".getRadioButton(title) \n    Gets the value of the selcted RadioButton, for the specified title.       from rwbatools import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()",
             "title": "Get RadioButtons"
         },
         {
@@ -132,17 +127,17 @@
         },
         {
             "location": "/Widgets/#add-checkboxes",
-            "text": ".addCheckBox(title)  This creates a CheckBox, with the specified title.",
+            "text": ".addCheckBox(title) \n    This creates a CheckBox, with the specified title.",
             "title": "Add CheckBoxes"
         },
         {
             "location": "/Widgets/#change-checkboxes",
-            "text": ".setCheckBox(title, ticked=True)  This will tick the CheckBox, or untick it if ticked is set to False.",
+            "text": ".setCheckBox(title, ticked=True) \n    This will tick the CheckBox, or untick it if ticked is set to False.",
             "title": "Change CheckBoxes"
         },
         {
             "location": "/Widgets/#get-checkboxes",
-            "text": ".getCheckBox(title)  This will return True or False, depending on the state of the CheckBox.",
+            "text": ".getCheckBox(title) \n    This will return True or False, depending on the state of the CheckBox.",
             "title": "Get CheckBoxes"
         },
         {
@@ -152,12 +147,12 @@
         },
         {
             "location": "/Widgets/#add-optionboxes",
-            "text": ".addOptionBox(title, values)  This will create an OptionBox, adding the contents of the values list, in the order specified.",
+            "text": ".addOptionBox(title, values) \n    This will create an OptionBox, adding the contents of the values list, in the order specified.",
             "title": "Add OptionBoxes"
         },
         {
             "location": "/Widgets/#change-optionboxes",
-            "text": ".changeOptionBox(title, newOptions)  This will replace the contents of the OptionBox, with the new list provided.    .setOptionBox(title, position)  This will select the item in the list, at the position specified.",
+            "text": ".changeOptionBox(title, newOptions) \n    This will replace the contents of the OptionBox, with the new list provided.    .setOptionBox(title, position) \n    This will select the item in the list, at the position specified.",
             "title": "Change OptionBoxes"
         },
         {
@@ -267,7 +262,7 @@
         },
         {
             "location": "/Widgets/#meter_1",
-            "text": "Shows a simple progress meter    addMeter(name)  Adds a meter with the specified name.    setMeter(name, value, text=None)  Changes the specified meter to the specified value, between 0 and 100, with the optional text.    setMeterFill(name, colour)  Changes the fill colour of the specified meter.    getMeter(name)  Gets the value of the specified meter.",
+            "text": "Shows a simple progress meter:      addMeter(name) \n    Adds a meter with the specified name.    setMeter(name, value, text=None) \n    Changes the specified meter to the specified value, between 0 and 100, with the optional text.    setMeterFill(name, colour) \n    Changes the fill colour of the specified meter.    getMeter(name) \n    Gets the value of the specified meter.",
             "title": "Meter"
         },
         {
@@ -292,7 +287,7 @@
         },
         {
             "location": "/Widgets/#add-links",
-            "text": ".addLink(title, func)  Adds a  hyperlink , that when clicked, will call the spcified function.    .addWebLink(title, page)  Adds a  hyperlink , that when clicked, will launch the default browser, and load the page parameter.",
+            "text": ".addLink(title, func) \n    Adds a  hyperlink , that when clicked, will call the spcified function.    .addWebLink(title, page) \n    Adds a  hyperlink , that when clicked, will launch the default browser, and load the page parameter.",
             "title": "Add Links"
         },
         {
@@ -412,22 +407,22 @@
         },
         {
             "location": "/Dialogs/",
-            "text": "Dialogs\n\n\n\n\nA number of dialogs (aka pop-ups) are available, to add a different user experience, notify the user of information, or get one off pieces of data.\n\n\nMessage Boxes\n\n\n\n\n\n\n.infoBox(title, message)\n\n\nShows a simple information message, with an OK button.\n\n\n\n\n\n\n\n\n.errorBox(title, message)\n\n\nShows a simple error message, with an OK button.\n\n\n\n\n\n\n\n\n.warningBox(title, message)\n\n\nShows a simple warning message, with an OK message.\n\n\n\n\n\n\n\n\nQuestion Boxes\n\n\n\n\n\n\n.yesNoBox(title, message)\n\n\nShows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.questionBox(title, message)\n\n\nShows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.okBox(title, message)\n\n\nShows a question, with OK/Cancel buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.retryBox(title, message)\n\n\nShows a question, with Cancel/Retry buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.textBox(title, message)\n\n\nShows a question requesting a text response. Returns a String, or None if Cancel pressed.\n\n\n\n\n\n\n\n\n.numberBox(title, message)\n\n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.\n\n\n\n\n\n\n\n\nFile Boxes\n\n\n\n\n.openBox()\n\n\n.saveBox()\n\n\n.directoryBox()\n\n\n\n\nOther Boxes\n\n\n\n\n.colourBox()",
-            "title": "Dialogs"
+            "text": "Pop-ups\n\n\n\n\nA number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.\n\n\nMessage Boxes\n\n\n\n\n\n\n.infoBox(title, message)\n\n    Shows a simple information message, with an OK button.\n\n\n\n\n\n\n\n\n.errorBox(title, message)\n\n    Shows a simple error message, with an OK button.\n\n\n\n\n\n\n\n\n.warningBox(title, message)\n\n    Shows a simple warning message, with an OK message.\n\n\n\n\n\n\n\n\nQuestion Boxes\n\n\n\n\n\n\n.yesNoBox(title, message)\n\n    Shows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.questionBox(title, message)\n\n    Shows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.okBox(title, message)\n\n    Shows a question, with OK/Cancel buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.retryBox(title, message)\n\n    Shows a question, with Cancel/Retry buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.textBox(title, message)\n\n    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.\n\n\n\n\n\n\n\n\n.numberBox(title, message)\n\n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.\n\n\n\n\n\n\n\n\nFile Boxes\n\n\n\n\n.openBox()\n\n\n.saveBox()\n\n\n.directoryBox()\n\n\n\n\nOther Boxes\n\n\n\n\n.colourBox()",
+            "title": "Pop-ups"
         },
         {
-            "location": "/Dialogs/#dialogs",
-            "text": "A number of dialogs (aka pop-ups) are available, to add a different user experience, notify the user of information, or get one off pieces of data.",
-            "title": "Dialogs"
+            "location": "/Dialogs/#pop-ups",
+            "text": "A number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.",
+            "title": "Pop-ups"
         },
         {
             "location": "/Dialogs/#message-boxes",
-            "text": ".infoBox(title, message)  Shows a simple information message, with an OK button.     .errorBox(title, message)  Shows a simple error message, with an OK button.     .warningBox(title, message)  Shows a simple warning message, with an OK message.",
+            "text": ".infoBox(title, message) \n    Shows a simple information message, with an OK button.     .errorBox(title, message) \n    Shows a simple error message, with an OK button.     .warningBox(title, message) \n    Shows a simple warning message, with an OK message.",
             "title": "Message Boxes"
         },
         {
             "location": "/Dialogs/#question-boxes",
-            "text": ".yesNoBox(title, message)  Shows a question, with Yes/No buttons. Returns True/False.     .questionBox(title, message)  Shows a question, with Yes/No buttons. Returns True/False.     .okBox(title, message)  Shows a question, with OK/Cancel buttons. Returns True/False.     .retryBox(title, message)  Shows a question, with Cancel/Retry buttons. Returns True/False.     .textBox(title, message)  Shows a question requesting a text response. Returns a String, or None if Cancel pressed.     .numberBox(title, message) \n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.",
+            "text": ".yesNoBox(title, message) \n    Shows a question, with Yes/No buttons. Returns True/False.     .questionBox(title, message) \n    Shows a question, with Yes/No buttons. Returns True/False.     .okBox(title, message) \n    Shows a question, with OK/Cancel buttons. Returns True/False.     .retryBox(title, message) \n    Shows a question, with Cancel/Retry buttons. Returns True/False.     .textBox(title, message) \n    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.     .numberBox(title, message) \n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.",
             "title": "Question Boxes"
         },
         {
@@ -443,7 +438,7 @@
         {
             "location": "/DevWidgets/",
             "text": "Widgets Under Development\n\n\n\n\nThe following widgets are \nunder development\n. They're included in the library, but offer limited functionality, and are stilll quite buggy.\n\n\nPieChart\n\n\n\n\nShows a pie chart\n\n\n\n\n.addPieChart(name, values, size=100)\n\n\n\n\nTree\n\n\n\n\nThis widget is still in development. It takes an arbitrary XML string, and converts it into a tree structure.\n\n\n\n\n\n\n.addTree(title, xml_data)\n\n\nCreate a tree from the xml data\n\n\n\n\n\n\n.addTreeFunction(title, func)\n\n\nRegister he function with double click\n\n\n\n\n\n\n.getTree(title)\n\n\nReturn the tree\n\n\n\n\n\n\nGrid\n\n\n\n\nThis widget is still in development.  \n\n\n\n\n\n\n.addGrid(title, data, action=None, addRow=False)\n  \n\n\nReceives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  \n\n\nIf action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.  \n\n\n\n\n\n\n.updateGrid(title, data, addRow=False)\n\n\n\n\n.setGridGeom(title, width, height)\n\n\n.getGridEntries(title)\n\n\n.setGridBackground(title, colour)",
-            "title": "Under Development"
+            "title": "More to come..."
         },
         {
             "location": "/DevWidgets/#widgets-under-development",
@@ -467,18 +462,18 @@
         },
         {
             "location": "/Layout/",
-            "text": "Background\n\n\n\n\nRWBAtools was designed to make building a functional GUI as simple as possible.  \n\n\nIt is designed with teaching in mind. Rather than pupils having to focus on the GUI code, they should be focusing on the algorithms that get the work done.\n\n\nTo that end, at it's simplest, you simply keep adding widgets to the GUI, and they will render in sequence.\n\n\nSimple Layout\n\n\n\n\nBy default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:\n\n\nfrom rwbatools import gui  \n\ndef changeLabel(btn):  \n    app.setLabel(\"l2\", app.getEntry(\"text\"))  \n\napp = gui()  \napp.addLabel(\"l1\", \"Simple Demo\")\napp.addEntry(\"text\")\napp.addButton(\"OK\", changeLabel)\napp.addEmptyLabel(\"l2\")\napp.go()\n\n\n\n\n\n\nGrid Layout\n\n\n\n\nIf, however, you want more than that, then a basic GRID layout is supported.\n\n\nEach time you add a widget, you can specify a column, row, and even a column-span to position it in.\n\n\nfrom rwbatools import gui\n\ndef press(btn):\n    if btn==\"Save\":\n        n=app.getEntry(\"name\")\n        a=app.getEntry(\"age\")\n        r=app.getOptionBox(\"role\")\n        app.infoBox(\"Details\", \"You entered: {}, {}, {}\".format(n, str(a), r))\n    elif btn==\"Quit\":\n        app.stop()\n\napp=gui()\n\napp.addLabel(\"l1\", \"Name\", 0, 0)\napp.addLabel(\"l2\", \"Age\", 1, 0)\napp.addLabel(\"l3\", \"Role\", 2, 0)\n\napp.addEntry(\"name\", 0, 1)\napp.addNumericEntry(\"age\", 1, 1)\napp.addOptionBox(\"role\", [\"Teacher\", \"Student\", \"Developer\", \"Volunteer\"], 2, 1)\n\napp.addButtons([\"Save\", \"Quit\"], press, 3, 0, 2)\n\napp.go()",
-            "title": "Positioning Widgets"
+            "text": "Arranging Widgets\n\n\n\n\nSequential programming\n\n\n\n\nBy default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:\n\n\nfrom rwbatools import gui  \n\ndef changeLabel(btn):  \n    app.setLabel(\"l2\", app.getEntry(\"text\"))  \n\napp = gui()  \napp.addLabel(\"l1\", \"Simple Demo\")\napp.addEntry(\"text\")\napp.addButton(\"OK\", changeLabel)\napp.addEmptyLabel(\"l2\")\napp.go()\n\n\n\n\n\n\nGrid Layout\n\n\n\n\nIf, however, you want more than that, then a basic GRID layout is supported.\n\n\nEach time you add a widget, you can specify a column, row, and even a column-span to position it in.\n\n\nfrom rwbatools import gui\n\ndef press(btn):\n    if btn==\"Save\":\n        n=app.getEntry(\"name\")\n        a=app.getEntry(\"age\")\n        r=app.getOptionBox(\"role\")\n        app.infoBox(\"Details\", \"You entered: {}, {}, {}\".format(n, str(a), r))\n    elif btn==\"Quit\":\n        app.stop()\n\napp=gui()\n\napp.addLabel(\"l1\", \"Name\", 0, 0)\napp.addLabel(\"l2\", \"Age\", 1, 0)\napp.addLabel(\"l3\", \"Role\", 2, 0)\n\napp.addEntry(\"name\", 0, 1)\napp.addNumericEntry(\"age\", 1, 1)\napp.addOptionBox(\"role\", [\"Teacher\", \"Student\", \"Developer\", \"Volunteer\"], 2, 1)\n\napp.addButtons([\"Save\", \"Quit\"], press, 3, 0, 2)\n\napp.go()",
+            "title": "Arranging widgets"
         },
         {
-            "location": "/Layout/#background",
-            "text": "RWBAtools was designed to make building a functional GUI as simple as possible.    It is designed with teaching in mind. Rather than pupils having to focus on the GUI code, they should be focusing on the algorithms that get the work done.  To that end, at it's simplest, you simply keep adding widgets to the GUI, and they will render in sequence.",
-            "title": "Background"
+            "location": "/Layout/#arranging-widgets",
+            "text": "",
+            "title": "Arranging Widgets"
         },
         {
-            "location": "/Layout/#simple-layout",
+            "location": "/Layout/#sequential-programming",
             "text": "By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:  from rwbatools import gui  \n\ndef changeLabel(btn):  \n    app.setLabel(\"l2\", app.getEntry(\"text\"))  \n\napp = gui()  \napp.addLabel(\"l1\", \"Simple Demo\")\napp.addEntry(\"text\")\napp.addButton(\"OK\", changeLabel)\napp.addEmptyLabel(\"l2\")\napp.go()",
-            "title": "Simple Layout"
+            "title": "Sequential programming"
         },
         {
             "location": "/Layout/#grid-layout",
@@ -486,119 +481,59 @@
             "title": "Grid Layout"
         },
         {
-            "location": "/Grouping/",
-            "text": "Grouping Widgets\n\n\n\n\nOnce you have got to grips with laying out your widgets, it is possible to group them together.\n\nEach of these groups is treated like an individual widget.\n\nWhen you \nSTART\n the group, you place it in a cell in your layout.\n\nThen, when you place widgets inside the group, you start a new grid.\n\nAfter you \nSTOP\n the group, you go back to your previous grid layout.\n\nThree main styles are currently supported:\n\n\nLabelFrame\n\n\n\n\nWill put a border around the widgets, with a title\n\n\n\n\n.startLabelFrame(title)\n\n\n.stopLabelFrame()\n\n\n.setLabelFrameAnchor(title, anchor)\n\n\n\n\n\n\nNoteBook\n\n\n\n\nWill create a tabbed interface, with a number of pages\n\n\n\n\n.startNoteBook(note)\n\n\n.startNoteTab(tab)\n\n\n.stopNoteTab()\n\n\n.stopNoteBook()\n\n\n.setNoteTab(note, tab)\n\n\n.setNoteBookBg(note, active, inactive)\n\n\n.setNoteBookFg(note, active, inactive)\n\n\n.setNoteTabBg(note, tab, bg)\n\n\n\n\n\n\nPanedWindow\n\n\n\n\nWill create a split view, with draggable panes\n\n\n\n\n.startPanedWindow(title)\n\n\n.stopPanedFrame()\n\n\n.setPanedWindowVertical(title)\n\n\n\n\nSubWindow\n\n\n\n\nAllows the creation of additional windows.\nThe window is hidden until \n.showSubWindow(title)\n is called.\n\n\n\n\n.startSubWindow(name, title=None)\n\n\n.stopSubWindow()\n\n\n.showSubWindow(title)\n\n\n.hideSubWindow(title)\n\n\n.destroySubWindow(title)",
-            "title": "Grouping Widgets"
+            "location": "/Grouping2/",
+            "text": "Container Options\n\n\n\n\nLabel Frame\n\n\n\n\nA way of grouping widgets into a box, with a label at the top of the box.\n\n\n\n\n\n\nPosition the \nLabelFrame\n within the grid, then position widgets inside the \nLabelFrame\n\n\n.startLabelFrame(name)\n  \n\n\n.stopLabelFrame()\n\n    Used to start and stop a labelFrame  \n\n\n.setSticky(coords)\n\n    Used to specify how widgets should be positioned inside the \nLabelFrame\n  \n\n\n\n\nNoteBook\n\n\n\n\nA way to create a (basic) tabbed-style interface.\n\n\n  \n\n\n\n\nPosition the \nNoteBook\n within the grid, start a \nTab\n, then position widgets inside the \nTab\n  \n\n\n.startNoteBook(name)\n  \n\n\n.stopNoteBook()\n\n    Used to start & stop the main \nNoteBook\n  \n\n\n.startNoteTab(name)\n\n\n.stopNoteTab()\n\n    Used to start and stop each of the tabs in the \nNoteBook\n.  \n\n\n\n\nPanedWindow\n\n\n\n\nA way to arrange re-sizable frames, with drag-bars.  \n\n\n\n\nCall \n.startPanedWindow(name)\n to create the initial pane  \n\n\nThen keep calling it to add additional panes  \n\n\nCalling \n.setPanedWindowVertical(name)\n will change the layout to vertical, allowing more configurations.  \n\n\n\n\nHorizontal Panes\n\n\n\n\nCreate an initial pane  \n\n\nKeep adding panes to the initial pane\n\n\n  \n\n\n\n\nVertical Panes\n\n\n\n\nCreate an initial pane  \n\n\nMake it vertical  \n\n\nAdd a second pane  \n\n\nKeep adding panes to the inittial pane\n\n\n  \n\n\n\n\nE-Pane\n\n\n\n\nCreate an initial pane  \n\n\nAdd a second pane\n\n\nMake the second pane vertical  \n\n\nThe remaining panes are added to frame 2\n\n\n  \n\n\n\n\nT-Pane\n\n\n\n\nCreate an initial pane\n\n\nMake it vertical\n\n\nAdd a second pane\n\n\nAdd the remaining panes to pane 2\n\n\n  \n\n\n\n\nSubWindow\n\n\n\n\nA way to add additional windows, which can be hidden and shown.  \n\n\n\n\n.startSubwindow(name)\n  \n\n\n.stopSubwindow()\n\n    Used to start and stop defining a \nSubWindow\n  \n\n\n.showSubWindow(name)\n  \n\n\n.hideSubWindow(name)\n\n    Used to show and hide the specified \nSubWindow",
+            "title": "Grouping widgets"
         },
         {
-            "location": "/Grouping/#grouping-widgets",
-            "text": "Once you have got to grips with laying out your widgets, it is possible to group them together. \nEach of these groups is treated like an individual widget. \nWhen you  START  the group, you place it in a cell in your layout. \nThen, when you place widgets inside the group, you start a new grid. \nAfter you  STOP  the group, you go back to your previous grid layout. \nThree main styles are currently supported:",
-            "title": "Grouping Widgets"
+            "location": "/Grouping2/#container-options",
+            "text": "",
+            "title": "Container Options"
         },
         {
-            "location": "/Grouping/#labelframe",
-            "text": "Will put a border around the widgets, with a title   .startLabelFrame(title)  .stopLabelFrame()  .setLabelFrameAnchor(title, anchor)",
-            "title": "LabelFrame"
+            "location": "/Grouping2/#label-frame",
+            "text": "A way of grouping widgets into a box, with a label at the top of the box.    Position the  LabelFrame  within the grid, then position widgets inside the  LabelFrame  .startLabelFrame(name)     .stopLabelFrame() \n    Used to start and stop a labelFrame    .setSticky(coords) \n    Used to specify how widgets should be positioned inside the  LabelFrame",
+            "title": "Label Frame"
         },
         {
-            "location": "/Grouping/#notebook",
-            "text": "Will create a tabbed interface, with a number of pages   .startNoteBook(note)  .startNoteTab(tab)  .stopNoteTab()  .stopNoteBook()  .setNoteTab(note, tab)  .setNoteBookBg(note, active, inactive)  .setNoteBookFg(note, active, inactive)  .setNoteTabBg(note, tab, bg)",
+            "location": "/Grouping2/#notebook",
+            "text": "A way to create a (basic) tabbed-style interface.       Position the  NoteBook  within the grid, start a  Tab , then position widgets inside the  Tab     .startNoteBook(name)     .stopNoteBook() \n    Used to start & stop the main  NoteBook     .startNoteTab(name)  .stopNoteTab() \n    Used to start and stop each of the tabs in the  NoteBook .",
             "title": "NoteBook"
         },
         {
-            "location": "/Grouping/#panedwindow",
-            "text": "Will create a split view, with draggable panes   .startPanedWindow(title)  .stopPanedFrame()  .setPanedWindowVertical(title)",
+            "location": "/Grouping2/#panedwindow",
+            "text": "A way to arrange re-sizable frames, with drag-bars.     Call  .startPanedWindow(name)  to create the initial pane    Then keep calling it to add additional panes    Calling  .setPanedWindowVertical(name)  will change the layout to vertical, allowing more configurations.",
             "title": "PanedWindow"
         },
         {
-            "location": "/Grouping/#subwindow",
-            "text": "Allows the creation of additional windows.\nThe window is hidden until  .showSubWindow(title)  is called.   .startSubWindow(name, title=None)  .stopSubWindow()  .showSubWindow(title)  .hideSubWindow(title)  .destroySubWindow(title)",
+            "location": "/Grouping2/#horizontal-panes",
+            "text": "Create an initial pane    Keep adding panes to the initial pane",
+            "title": "Horizontal Panes"
+        },
+        {
+            "location": "/Grouping2/#vertical-panes",
+            "text": "Create an initial pane    Make it vertical    Add a second pane    Keep adding panes to the inittial pane",
+            "title": "Vertical Panes"
+        },
+        {
+            "location": "/Grouping2/#e-pane",
+            "text": "Create an initial pane    Add a second pane  Make the second pane vertical    The remaining panes are added to frame 2",
+            "title": "E-Pane"
+        },
+        {
+            "location": "/Grouping2/#t-pane",
+            "text": "Create an initial pane  Make it vertical  Add a second pane  Add the remaining panes to pane 2",
+            "title": "T-Pane"
+        },
+        {
+            "location": "/Grouping2/#subwindow",
+            "text": "A way to add additional windows, which can be hidden and shown.     .startSubwindow(name)     .stopSubwindow() \n    Used to start and stop defining a  SubWindow     .showSubWindow(name)     .hideSubWindow(name) \n    Used to show and hide the specified  SubWindow",
             "title": "SubWindow"
-        },
-        {
-            "location": "/GuiOptions/",
-            "text": "GUI Options\n\n\n\n\nThere are a number of generic configurations available, which will affect the whole GUI.\n\nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.  \n\n\nConfiguration\n\n\n\n\nSome basic configuration for the size, position, transparency, etc. of the GUI.\n\n\nSize & Locaiton\n\n\n\n\nsetGeometry(geom)\n\n\n\n\nsetGeometry(width, height)\n\n\nSets the height & width of the GUI, either as a single String widthxheight.\n\nOr, sets it fullscreen\n\n\n\n\n\n\nexitFullscreen()\n\n\nLeave fullscreen, if set in the geometry.\n\n\n<Escape>\n will call this automatically, while in fullscreen.\n\n\n\n\n\n\nsetResizable(canResize=True)\n\n\nSets whether the GUI can be resized or not.\n\n\n\n\n\n\nsetLocation(x, y)\n\n\nSets the position of the GUI\n\n\n\n\n\n\nLook & Feel\n\n\n\n\n\n\nsetTitle(title)\n\n\nSets the title of the GUI. By default it is the name of the script.\n\n\n\n\n\n\nsetIcon(fileName)\n\n\nSets an icon for the GUI.\n\n\n\n\n\n\nsetTransparency(percentage)\n\n\nSets how transparent the GUI is. Between 0 and 100%.\n\n\n\n\n\n\nDesign\n\n\n\n\nIt's possible to change the default colours and fonts for widgets in the GUI.\n\n\nColour\n\n\n\n\n\n\nsetBg(colour)\n\n\nSet the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.\n\n\n\n\n\n\nFont\n\n\n\n\n\n\nsetFont(size, font=None)\n\n\nThis can be used to set the font size and style for all widgets.\n\n\n\n\n\n\ndecreaseFont()\n\n\n\n\n\n\nincreaseFont()\n\n\nThese can be used to increase or decrease the font of all widgets.\n\n\n\n\n\n\nsetLabelFont(size, family=None)\n\n\nThis can be used to set the font size and style for all label-type widgets.\n\n\n\n\n\n\nincreaseLabelFont()\n\n\n\n\n\n\ndecreaseLabelFont()\n\n\nThese can be used to increase or decrease the font of all label-type widgets.\n\n\n\n\n\n\nsetButtonFont()\n\n\nThis can be used to set the font size and style for all button-type widgets.\n\n\n\n\n\n\nincreaseButtonFont()\n\n\n\n\n\n\ndecreaseButtonFont()\n\n\nThese can be used to increase or decrease the font of all butotn-type widgets.\n\n\n\n\n\n\nWidget Positioning\n\n\n\n\nThe below commands allow the user to change how RWBAtools lays out widgets on the screen.\n\n\nLocation\n\n\n\n\nsetPadX()\n\n\n\n\nsetPadY()\n\n\nThese set how much empty padding is included around a widget, within its grid-cell.\n\n\n\n\n\n\nsetSticky()\n\n\nThis determines which side of the grid-cell the widget will stick to:\n\n\n\n\nleft\n - stick to the left side\n\n\nright\n - stick to the right side\n\n\nboth\n - stick to both sides, stretch the widget\n\n\n\n\n\n\n\n\nResize\n\n\n\n\n\n\nsetExpand()\n\n\nThis tells widgets what to do when the GUI is resized.\n\nIt allows widgets to be configured to stretch or not:\n\n\n\n\nnone\n - don't expand\n\n\nrow\n - expand with rows only\n\n\ncolumn\n - expand with columns only\n\n\nall\n - expand in all directions\n\n\n\n\n\n\n\n\nRow Helpers\n\n\n\n\n\n\ngetRow()\n\n\nReturns the row number currently being used.\n\n\n\n\n\n\ngetNextRow()\n\n\nReturns the current row number, before adding one to it.\n\n\n\n\n\n\nGUI Actions\n\n\n\n\nRepeated Events\n\n\nWhen you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.\n\nThat means, you should never have your own loops running, as that will stop the GUI from working properly.\n\nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:  \n\n\n\n\n\n\nregisterEvent(func)\n\n\nPass this a function, and the GUI will call that function every second.\n\n\n\n\n\n\nsetPollTime(time)\n\n\nIf you want your events to be called more or less frequently, set the frequency here.\n\n\n\n\n\n\nEnter Key\n\n\n\n\n\n\nenableEnter(func)\n\n\nLink a function to the \n<Enter>\n key\n\n\n\n\n\n\ndisableEnter()\n\n\nUnlink a function form the \n<Enter>\n  key\n\n\n\n\n\n\nOther Keys\n\n\n\n\n\n\nbindKey(key, func)\n\n\nLink the specified key to the specified function.\n\n\n\n\n\n\nunbindKey(key)\n\n\nUnlink the specified key from any functions bound to it.",
-            "title": "GUI Options"
-        },
-        {
-            "location": "/GuiOptions/#gui-options",
-            "text": "There are a number of generic configurations available, which will affect the whole GUI. \nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.",
-            "title": "GUI Options"
-        },
-        {
-            "location": "/GuiOptions/#configuration",
-            "text": "Some basic configuration for the size, position, transparency, etc. of the GUI.",
-            "title": "Configuration"
-        },
-        {
-            "location": "/GuiOptions/#size-locaiton",
-            "text": "setGeometry(geom)   setGeometry(width, height)  Sets the height & width of the GUI, either as a single String widthxheight. \nOr, sets it fullscreen    exitFullscreen()  Leave fullscreen, if set in the geometry.  <Escape>  will call this automatically, while in fullscreen.    setResizable(canResize=True)  Sets whether the GUI can be resized or not.    setLocation(x, y)  Sets the position of the GUI",
-            "title": "Size &amp; Locaiton"
-        },
-        {
-            "location": "/GuiOptions/#look-feel",
-            "text": "setTitle(title)  Sets the title of the GUI. By default it is the name of the script.    setIcon(fileName)  Sets an icon for the GUI.    setTransparency(percentage)  Sets how transparent the GUI is. Between 0 and 100%.",
-            "title": "Look &amp; Feel"
-        },
-        {
-            "location": "/GuiOptions/#design",
-            "text": "It's possible to change the default colours and fonts for widgets in the GUI.",
-            "title": "Design"
-        },
-        {
-            "location": "/GuiOptions/#colour",
-            "text": "setBg(colour)  Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.",
-            "title": "Colour"
-        },
-        {
-            "location": "/GuiOptions/#font",
-            "text": "setFont(size, font=None)  This can be used to set the font size and style for all widgets.    decreaseFont()    increaseFont()  These can be used to increase or decrease the font of all widgets.    setLabelFont(size, family=None)  This can be used to set the font size and style for all label-type widgets.    increaseLabelFont()    decreaseLabelFont()  These can be used to increase or decrease the font of all label-type widgets.    setButtonFont()  This can be used to set the font size and style for all button-type widgets.    increaseButtonFont()    decreaseButtonFont()  These can be used to increase or decrease the font of all butotn-type widgets.",
-            "title": "Font"
-        },
-        {
-            "location": "/GuiOptions/#widget-positioning",
-            "text": "The below commands allow the user to change how RWBAtools lays out widgets on the screen.",
-            "title": "Widget Positioning"
-        },
-        {
-            "location": "/GuiOptions/#location",
-            "text": "setPadX()   setPadY()  These set how much empty padding is included around a widget, within its grid-cell.    setSticky()  This determines which side of the grid-cell the widget will stick to:   left  - stick to the left side  right  - stick to the right side  both  - stick to both sides, stretch the widget",
-            "title": "Location"
-        },
-        {
-            "location": "/GuiOptions/#resize",
-            "text": "setExpand()  This tells widgets what to do when the GUI is resized. \nIt allows widgets to be configured to stretch or not:   none  - don't expand  row  - expand with rows only  column  - expand with columns only  all  - expand in all directions",
-            "title": "Resize"
-        },
-        {
-            "location": "/GuiOptions/#row-helpers",
-            "text": "getRow()  Returns the row number currently being used.    getNextRow()  Returns the current row number, before adding one to it.",
-            "title": "Row Helpers"
-        },
-        {
-            "location": "/GuiOptions/#gui-actions",
-            "text": "",
-            "title": "GUI Actions"
-        },
-        {
-            "location": "/GuiOptions/#repeated-events",
-            "text": "When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something. \nThat means, you should never have your own loops running, as that will stop the GUI from working properly. \nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:      registerEvent(func)  Pass this a function, and the GUI will call that function every second.    setPollTime(time)  If you want your events to be called more or less frequently, set the frequency here.",
-            "title": "Repeated Events"
-        },
-        {
-            "location": "/GuiOptions/#enter-key",
-            "text": "enableEnter(func)  Link a function to the  <Enter>  key    disableEnter()  Unlink a function form the  <Enter>   key",
-            "title": "Enter Key"
-        },
-        {
-            "location": "/GuiOptions/#other-keys",
-            "text": "bindKey(key, func)  Link the specified key to the specified function.    unbindKey(key)  Unlink the specified key from any functions bound to it.",
-            "title": "Other Keys"
         },
         {
             "location": "/WidgetOptions/",
             "text": "Widget Options\n\n\n\n\nThere are a lot of things that can be configured on a widget.\n\nThere is a pattern to how this works, you simply specify the widget type and the parameter, eg:\n\n\n\n\n.setLabelBg(name, value)\n\n\n.setButtonFg(name, value)\n\n\n.setListBoxState(name, value)\n\n\n\n\nThe list of widgets is defined in \ngui.WIDGETS\n, it contains:\nLabel, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook\n\n\nBasic Appearance\n\n\n\n\nThe following options are available for all widgets:\n\n\n\n\n\n\nset XXX Bg(name, value)\n\n\nSets the background colour of the named widget.\n\n\n\n\n\n\nset XXX Fg(name, value)\n\n\nSets the foregound colour (usually the text) of the named widget.\n\n\n\n\n\n\nset XXX DisabledFg(name, value)\n\n\nSets the disabled foreground colour (usually the text) of the named widget.\n\n\n\n\n\n\nset XXX Width(name, value)\n\n\nSets the width of the named widget.\n\n\n\n\n\n\nset XXX Height(name, value)\n\n\nSet the height of the named widget.\n\n\n\n\n\n\nExtended Appearance\n\n\n\n\n\n\n\n\nset XXX Tooltip(name, value)\n\n\nSets a tooltip for the widget.\nThe specified text will be displayed in a small pop-up, when the mouse is left over the widget.\n\n\n\n\n\n\nset XXX Cursor(name, value)\n\n\nSets the cursor shown, when the mouse goes over this widget.\n\nThere are lots of cursors avalable, for different platforms, see \nhere\n\n\n\n\n\n\nset XXX Relief(name, value)\n\n\nSets the border for the widget.\n\nOne of: \nSUNKEN\n, \nRAISED\n, \nGROOVE\n, \nRIDGE\n, \nFLAT\n  \n\n\n\n\n\n\nset XXX State(name, value)\n\n\nSets the state of the named widget.\n\nOne of: \nNORMAL\n, \nACTIVE\n, \nDISABLED\n  \n\n\n\n\n\n\nAdvanced Appearance\n\n\n\n\nThe following are supported by most widgets:\n\n\n\n\n\n\nset XXX Align(name, value)\n\n\nSpecifies how to align text within the widget: \nLEFT\n, \nRIGHT\n, \nCENTER\n\n\n\n\n\n\nset XXX Anchor(name, value)\n\n\nSets where the text is positioned within the widget.\n\nOne of: \nCENTER\n, \nN\n, \nS\n, \nE\n, \nW\n, \nNE\n, \nNW\n, \nSE\n, \nSW\n  \n\n\n\n\n\n\nset XXX Sticky(name, value)\n\n\nSpecifies which side of the cell to stick the widget to, as the GUI expands: \nLEFT\n, \nRIGHT\n, \nBOTH\n\n\n\n\n\n\nWidget Interaction\n\n\n\n\nThe following allow widgets to be interacted with:\n\n\n\n\n\n\nset XXX Focus(name)\n\n\nGives focus to the specified widget. This is the widget where the user will be able to start typing.\n\n\n\n\n\n\nset XXX Function(name, value, key=None)\n\n\nThis binds a function to the widget.\n\nThe function will be called every time an interactive-widget changes. \nThe funcion will be called when some widgets are clicked.  \n\n\n\n\n\n\nset XXX DragFunction(name, value, key=None)\n\n\n\n\nset XXX OverFunction(name, value, key=None)\n\n\n\n\nWidget Manipulaiton\n\n\n\n\nThe following allow widgets to be manipulated on screen:\n\n\n\n\n\n\n.hide XXX (name)\n\n\nTemporarily hides the widget form view.\n\n\n\n\n\n\n.show XXX (name)\n\n\nShow the widget, if it was already hidden.\n\n\n\n\n\n\n.remove XXX (name)\n\n\nPermanently emove the widget (deletes it).\n\n\n\n\n\n\n.removeAllWidgets()\n\n\nPermanenently remove all widgets.\n\n\n\n\n\n\n.disable XXX (name)\n\n\nDisable the widget - stops the user from interacting with it, but keeps it visible.\n\n\n\n\n\n\n.enable XXX (name)\n\n\nEnable a disabled widget.\n\n\n\n\n\n\nGrouped Options\n\n\n\n\nThe following are convenience functions, for modifying a group of widgets:\n\n\n\n\nset XXX Widths(names, val)\n\n\n\n\nset XXX Heights(names, val)\n\n\nSets the widths/heights of the specified widgets.\n\n\n\n\n\n\nsetAll XXX Widths(val)\n\n\n\n\n\n\nsetAll XXX Heights(val)\n\n\nSets the widths/heights of all widgets of the specified type.",
-            "title": "Widget Options"
+            "title": "Changing widgets"
         },
         {
             "location": "/WidgetOptions/#widget-options",
@@ -636,9 +571,89 @@
             "title": "Grouped Options"
         },
         {
-            "location": "/License/",
+            "location": "/GuiOptions/",
+            "text": "GUI Options\n\n\n\n\nThere are a number of generic configurations available, which will affect the whole GUI.\n\nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.  \n\n\nConfiguration\n\n\n\n\nSome basic configuration for the size, position, transparency, etc. of the GUI.\n\n\nSize & Locaiton\n\n\n\n\nsetGeometry(geom)\n  \n\n\n\n\nsetGeometry(width, height)\n\n    Sets the height & width of the GUI:  \n\n\n\n\nEither as a single String \n.setGeometry(\"200x100\")\n (widthxheight)  \n\n\nAs two seperate parameters \n.setGeometry(200,100)\n\n\nOr to go \nFullscreen\n \n.setGeometry(\"Fullscreen\")\n  \n\n\n\n\n\n\n\n\nexitFullscreen()\n\n    Leave fullscreen, if set in the geometry.  \n\n\n<Escape>\n will call this automatically, while in fullscreen.  \n\n\n\n\n\n\nsetResizable(canResize=True)\n\n    Sets whether the GUI can be resized or not.  \n\n\n\n\n\n\nsetLocation(x, y)\n\n    Sets the position of the GUI  \n\n\n\n\n\n\nLook & Feel\n\n\n\n\n\n\nsetTitle(title)\n\n    Sets the title of the GUI. By default it is the name of the script.\n\n\n\n\n\n\nsetIcon(fileName)\n\n    Sets an icon for the GUI.\n\n\n\n\n\n\nsetTransparency(percentage)\n\n    Sets how transparent the GUI is. Between 0 and 100%.\n\n\n\n\n\n\nDesign\n\n\n\n\nIt's possible to change the default colours and fonts for widgets in the GUI.\n\n\nColour\n\n\n\n\nsetBg(colour)\n\n    Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.\n\n\n\n\nFont\n\n\n\n\n\n\nsetFont(size, font=None)\n\n    This can be used to set the font size and style for all widgets.\n\n\n\n\n\n\ndecreaseFont()\n & \nincreaseFont()\n\n    These can be used to increase or decrease the font of all widgets.\n\n\n\n\n\n\nsetLabelFont(size, family=None)\n\n    This can be used to set the font size and style for all label-type widgets.\n\n\n\n\n\n\nincreaseLabelFont()\n & \ndecreaseLabelFont()\n\n    These can be used to increase or decrease the font of all label-type widgets.\n\n\n\n\n\n\nsetButtonFont()\n\n    This can be used to set the font size and style for all button-type widgets.\n\n\n\n\n\n\nincreaseButtonFont()\n & \ndecreaseButtonFont()\n\n    These can be used to increase or decrease the font of all butotn-type widgets.\n\n\n\n\n\n\nWidget Positioning\n\n\n\n\nThe below commands allow the user to change how RWBAtools lays out widgets on the screen.\n\n\nLocation\n\n\n\n\n\n\nsetPadX()\n & \nsetPadY()\n\n    These set how much empty padding is included around a widget, within its grid-cell.\n\n\n\n\n\n\nsetSticky()\n\n    This determines which side of the grid-cell the widget will stick to:\n\n\n\n\nleft\n - stick to the left side\n\n\nright\n - stick to the right side\n\n\nboth\n - stick to both sides, stretch the widget\n\n\n\n\n\n\n\n\nResize\n\n\n\n\n\n\nsetExpand()\n\n    This tells widgets what to do when the GUI is resized.\n\n    It allows widgets to be configured to stretch or not:\n\n\n\n\nnone\n - don't expand\n\n\nrow\n - expand with rows only\n\n\ncolumn\n - expand with columns only\n\n\nall\n - expand in all directions\n\n\n\n\n\n\n\n\nRow Helpers\n\n\n\n\n\n\ngetRow()\n\n    Returns the row number currently being used.\n\n\n\n\n\n\ngetNextRow()\n\n    Returns the current row number, before adding one to it.\n\n\n\n\n\n\nGUI Actions\n\n\n\n\nRepeated Events\n\n\nWhen you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.\n\nThat means, you should never have your own loops running, as that will stop the GUI from working properly.\n\nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:  \n\n\n\n\n\n\nregisterEvent(func)\n\n    Pass this a function, and the GUI will call that function every second.\n\n\n\n\n\n\nsetPollTime(time)\n\n    If you want your events to be called more or less frequently, set the frequency here.\n\n\n\n\n\n\nEnter Key\n\n\n\n\n\n\nenableEnter(func)\n\n    Link a function to the \n<Enter>\n key\n\n\n\n\n\n\ndisableEnter()\n\n    Unlink a function form the \n<Enter>\n  key\n\n\n\n\n\n\nOther Keys\n\n\n\n\n\n\nbindKey(key, func)\n\n    Link the specified key to the specified function.\n\n\n\n\n\n\nunbindKey(key)\n\n    Unlink the specified key from any functions bound to it.",
+            "title": "Extras"
+        },
+        {
+            "location": "/GuiOptions/#gui-options",
+            "text": "There are a number of generic configurations available, which will affect the whole GUI. \nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.",
+            "title": "GUI Options"
+        },
+        {
+            "location": "/GuiOptions/#configuration",
+            "text": "Some basic configuration for the size, position, transparency, etc. of the GUI.",
+            "title": "Configuration"
+        },
+        {
+            "location": "/GuiOptions/#size-locaiton",
+            "text": "setGeometry(geom)      setGeometry(width, height) \n    Sets the height & width of the GUI:     Either as a single String  .setGeometry(\"200x100\")  (widthxheight)    As two seperate parameters  .setGeometry(200,100)  Or to go  Fullscreen   .setGeometry(\"Fullscreen\")        exitFullscreen() \n    Leave fullscreen, if set in the geometry.    <Escape>  will call this automatically, while in fullscreen.      setResizable(canResize=True) \n    Sets whether the GUI can be resized or not.      setLocation(x, y) \n    Sets the position of the GUI",
+            "title": "Size &amp; Locaiton"
+        },
+        {
+            "location": "/GuiOptions/#look-feel",
+            "text": "setTitle(title) \n    Sets the title of the GUI. By default it is the name of the script.    setIcon(fileName) \n    Sets an icon for the GUI.    setTransparency(percentage) \n    Sets how transparent the GUI is. Between 0 and 100%.",
+            "title": "Look &amp; Feel"
+        },
+        {
+            "location": "/GuiOptions/#design",
+            "text": "It's possible to change the default colours and fonts for widgets in the GUI.",
+            "title": "Design"
+        },
+        {
+            "location": "/GuiOptions/#colour",
+            "text": "setBg(colour) \n    Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.",
+            "title": "Colour"
+        },
+        {
+            "location": "/GuiOptions/#font",
+            "text": "setFont(size, font=None) \n    This can be used to set the font size and style for all widgets.    decreaseFont()  &  increaseFont() \n    These can be used to increase or decrease the font of all widgets.    setLabelFont(size, family=None) \n    This can be used to set the font size and style for all label-type widgets.    increaseLabelFont()  &  decreaseLabelFont() \n    These can be used to increase or decrease the font of all label-type widgets.    setButtonFont() \n    This can be used to set the font size and style for all button-type widgets.    increaseButtonFont()  &  decreaseButtonFont() \n    These can be used to increase or decrease the font of all butotn-type widgets.",
+            "title": "Font"
+        },
+        {
+            "location": "/GuiOptions/#widget-positioning",
+            "text": "The below commands allow the user to change how RWBAtools lays out widgets on the screen.",
+            "title": "Widget Positioning"
+        },
+        {
+            "location": "/GuiOptions/#location",
+            "text": "setPadX()  &  setPadY() \n    These set how much empty padding is included around a widget, within its grid-cell.    setSticky() \n    This determines which side of the grid-cell the widget will stick to:   left  - stick to the left side  right  - stick to the right side  both  - stick to both sides, stretch the widget",
+            "title": "Location"
+        },
+        {
+            "location": "/GuiOptions/#resize",
+            "text": "setExpand() \n    This tells widgets what to do when the GUI is resized. \n    It allows widgets to be configured to stretch or not:   none  - don't expand  row  - expand with rows only  column  - expand with columns only  all  - expand in all directions",
+            "title": "Resize"
+        },
+        {
+            "location": "/GuiOptions/#row-helpers",
+            "text": "getRow() \n    Returns the row number currently being used.    getNextRow() \n    Returns the current row number, before adding one to it.",
+            "title": "Row Helpers"
+        },
+        {
+            "location": "/GuiOptions/#gui-actions",
             "text": "",
-            "title": "License"
+            "title": "GUI Actions"
+        },
+        {
+            "location": "/GuiOptions/#repeated-events",
+            "text": "When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something. \nThat means, you should never have your own loops running, as that will stop the GUI from working properly. \nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:      registerEvent(func) \n    Pass this a function, and the GUI will call that function every second.    setPollTime(time) \n    If you want your events to be called more or less frequently, set the frequency here.",
+            "title": "Repeated Events"
+        },
+        {
+            "location": "/GuiOptions/#enter-key",
+            "text": "enableEnter(func) \n    Link a function to the  <Enter>  key    disableEnter() \n    Unlink a function form the  <Enter>   key",
+            "title": "Enter Key"
+        },
+        {
+            "location": "/GuiOptions/#other-keys",
+            "text": "bindKey(key, func) \n    Link the specified key to the specified function.    unbindKey(key) \n    Unlink the specified key from any functions bound to it.",
+            "title": "Other Keys"
+        },
+        {
+            "location": "/empty/",
+            "text": "",
+            "title": "Lesson 1"
         },
         {
             "location": "/Install/",
@@ -673,7 +688,12 @@
         {
             "location": "/ReleaseNotes/",
             "text": "",
-            "title": "Release Notes"
+            "title": "Release notes"
+        },
+        {
+            "location": "/License/",
+            "text": "",
+            "title": "License"
         },
         {
             "location": "/Thanks/",

@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Home</a>
+                    <a href="..">Welcome</a>
                 </li>
             
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Creating a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -86,13 +86,13 @@
                     
                         
 <li >
-    <a href="../Dialogs/">Dialogs</a>
+    <a href="../Dialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../DevWidgets/">More to come...</a>
 </li>
 
                     
@@ -102,30 +102,45 @@
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Layout/">Positioning Widgets</a>
+    <a href="../Layout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping Widgets</a>
+    <a href="../Grouping2/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">GUI Options</a>
+    <a href="../WidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="../GuiOptions/">Extras</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../empty/">Lesson 1</a>
 </li>
 
                     
@@ -140,19 +155,19 @@
                     
                         
 <li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release Notes</a>
+    <a href="../ReleaseNotes/">Release notes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -274,35 +289,33 @@ app.go()
 <h4 id="add-labels">Add Labels</h4>
 <ul>
 <li>
-<p><code>.addLabel(title, text=None)</code></p>
-<p>At a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.</p>
+<p><code>.addLabel(title, text=None)</code><br />
+    At a minimum, a title must be provided - to identify the label. This is then followed by an optional piece of text to display.</p>
 </li>
 <li>
-<p><code>.addEmptyLabel(title)</code></p>
-<p>Does the same as add a label, except there''s no parameter to set any text.</p>
+<p><code>.addEmptyLabel(title)</code><br />
+    Does the same as add a label, except there''s no parameter to set any text.</p>
 </li>
 <li>
-<p><code>.addFlashLabel(title, text=None)</code></p>
-<p>This adds a flashing label, that will alternate between the foreground and background colours.</p>
+<p><code>.addFlashLabel(title, text=None)</code><br />
+    This adds a flashing label, that will alternate between the foreground and background colours.</p>
 </li>
 </ul>
 <h4 id="change-labels">Change Labels</h4>
 <ul>
 <li>
-<p><code>.setLabel(title, text)</code></p>
-<p>Change the contents of the label.</p>
+<p><code>.setLabel(title, text)</code><br />
+    Change the contents of the label.</p>
 </li>
 <li>
-<p><code>.clearLabel(title)</code></p>
-<p>Clear the contents of the label.</p>
+<p><code>.clearLabel(title)</code><br />
+    Clear the contents of the label.</p>
 </li>
 </ul>
 <h4 id="get-labels">Get Labels</h4>
 <ul>
-<li>
-<p><code>.getLabel(title)</code></p>
-<p>Get the contents of the label.</p>
-</li>
+<li><code>.getLabel(title)</code><br />
+    Get the contents of the label.</li>
 </ul>
 <h2 id="auto-labelled-widgets">Auto-Labelled Widgets</h2>
 <hr />
@@ -353,34 +366,32 @@ app.go()
 <h4 id="change-entries">Change Entries</h4>
 <ul>
 <li>
-<p><code>.setEntry(title, text)</code></p>
-<p>This sets the contents of the specified entry box.</p>
+<p><code>.setEntry(title, text)</code><br />
+    This sets the contents of the specified entry box.</p>
 </li>
 <li>
-<p><code>.setEntryDefault(title, text)</code></p>
-<p>This sets a default value to display in an entry box.<br />
-Once the user starts typing, it will disappear.<br />
-The text is centered, shown in a light gray font, and will not be returned by <code>.getEntry(title)</code>  </p>
+<p><code>.setEntryDefault(title, text)</code><br />
+    This sets a default value to display in an entry box.<br />
+    Once the user starts typing, it will disappear.<br />
+    The text is centered, shown in a light gray font, and will not be returned by <code>.getEntry(title)</code>  </p>
 </li>
 <li>
-<p><code>.clearEntry(title)</code></p>
-<p>This will clear the contents of the specified entry box.</p>
+<p><code>.clearEntry(title)</code><br />
+    This will clear the contents of the specified entry box.</p>
 </li>
 <li>
-<p><code>.clearAllEntries()</code></p>
-<p>This will clear all the entry boxes in the GUI.</p>
+<p><code>.clearAllEntries()</code><br />
+    This will clear all the entry boxes in the GUI.</p>
 </li>
 <li>
-<p><code>.setFocus(title)</code></p>
-<p>This will put the cursor in the specified entry box, so that the user can start typing without needing to click.</p>
+<p><code>.setFocus(title)</code><br />
+    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.</p>
 </li>
 </ul>
 <h4 id="get-entries">Get Entries</h4>
 <ul>
-<li>
-<p><code>.getEntry(title)</code></p>
-<p>This will return the contents of the spcified entry box.</p>
-</li>
+<li><code>.getEntry(title)</code><br />
+    This will return the contents of the spcified entry box.</li>
 </ul>
 <h2 id="button">Button</h2>
 <hr />
@@ -392,11 +403,9 @@ A button click is the classic way to start interacting with a GUI.</p>
 That way, multiple widgets can use the same function, but diffrent actions can be performed, depening on the name passed as a parameter.</p>
 <h4 id="add-buttons">Add Buttons</h4>
 <ul>
-<li>
-<p><code>.addButton(title, function)</code></p>
-<p>Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
-A function should be specified, which will be called when the button is clicked.</p>
-</li>
+<li><code>.addButton(title, function)</code><br />
+    Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
+    A function should be specified, which will be called when the button is clicked.</li>
 </ul>
 <p><img alt="Buttons" src="../img/1_buttons.gif" /></p>
 <pre><code class="python">    from rwbatools import gui
@@ -413,29 +422,29 @@ A function should be specified, which will be called when the button is clicked.
 
 <ul>
 <li>
-<p><code>.addButtons(titles, functions)</code></p>
-<p>It's possible to add a list of buttons to the GUI.<br />
-Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.
-A single funciton can be passed, to use for all buttons.
-Or a list of functions can be passed, which MUST correspond to the buttons.</p>
+<p><code>.addButtons(titles, functions)</code><br />
+    It's possible to add a list of buttons to the GUI.<br />
+    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.
+    A single funciton can be passed, to use for all buttons.
+    Or a list of functions can be passed, which MUST correspond to the buttons.</p>
 </li>
 <li>
-<p><code>.addNamedButton(name, title, function)</code></p>
-<p>By default, it's not possible to have two buttons with the same text.<br />
-If that's required, a named button should be used.<br />
-This allows a name and title to be set for a button.<br />
-The name will be displayed on the button, and the title passed to the function.</p>
+<p><code>.addNamedButton(name, title, function)</code><br />
+    By default, it's not possible to have two buttons with the same text.<br />
+    If that's required, a named button should be used.<br />
+    This allows a name and title to be set for a button.<br />
+    The name will be displayed on the button, and the title passed to the function.</p>
 </li>
 </ul>
 <h4 id="change-buttons">Change Buttons</h4>
 <ul>
 <li>
-<p><code>.setButton(name, text)</code></p>
-<p>This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a paramter to the function.</p>
+<p><code>.setButton(name, text)</code><br />
+    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a paramter to the function.</p>
 </li>
 <li>
-<p><code>.setButtonImage(title, image)</code></p>
-<p>This allows an image to be placed on a button, instead of the usual text.</p>
+<p><code>.setButtonImage(title, image)</code><br />
+    This allows an image to be placed on a button, instead of the usual text.</p>
 </li>
 </ul>
 <h2 id="radiobutton">RadioButton</h2>
@@ -454,31 +463,27 @@ app.go()
 
 <h4 id="add-radiobuttons">Add RadioButtons</h4>
 <ul>
-<li>
-<p><code>.addRadioButton(title, name)</code></p>
-<p>This will create a RadioButton grouped by the specified title.<br />
-This button will have the value of name.<br />
-Radio buttons are usually used in groups:</p>
-</li>
+<li><code>.addRadioButton(title, name)</code><br />
+    This will create a RadioButton grouped by the specified title.<br />
+    This button will have the value of name.<br />
+    Radio buttons are usually used in groups:</li>
 </ul>
 <h4 id="change-radiobuttons">Change RadioButtons</h4>
 <ul>
 <li>
-<p><code>.setRadioButton(title, value)</code></p>
-<p>This will tick the specified RadioButton.</p>
+<p><code>.setRadioButton(title, value)</code><br />
+    This will tick the specified RadioButton.</p>
 </li>
 <li>
-<p><code>.setRadioTick(title, tick=True)</code></p>
-<p>It is possible to use tick-boxes instead of the classic circular radio-button.<br />
-Setting tick to True will convert all the radio-buttons for this title to tick boxes.</p>
+<p><code>.setRadioTick(title, tick=True)</code><br />
+    It is possible to use tick-boxes instead of the classic circular radio-button.<br />
+    Setting tick to True will convert all the radio-buttons for this title to tick boxes.</p>
 </li>
 </ul>
 <h4 id="get-radiobuttons">Get RadioButtons</h4>
 <ul>
-<li>
-<p><code>.getRadioButton(title)</code></p>
-<p>Gets the value of the selcted RadioButton, for the specified title.</p>
-</li>
+<li><code>.getRadioButton(title)</code><br />
+    Gets the value of the selcted RadioButton, for the specified title.</li>
 </ul>
 <pre><code class="python">    from rwbatools import gui
 
@@ -514,44 +519,36 @@ app.go()
 
 <h4 id="add-checkboxes">Add CheckBoxes</h4>
 <ul>
-<li>
-<p><code>.addCheckBox(title)</code></p>
-<p>This creates a CheckBox, with the specified title.</p>
-</li>
+<li><code>.addCheckBox(title)</code><br />
+    This creates a CheckBox, with the specified title.</li>
 </ul>
 <h4 id="change-checkboxes">Change CheckBoxes</h4>
 <ul>
-<li>
-<p><code>.setCheckBox(title, ticked=True)</code></p>
-<p>This will tick the CheckBox, or untick it if ticked is set to False.</p>
-</li>
+<li><code>.setCheckBox(title, ticked=True)</code><br />
+    This will tick the CheckBox, or untick it if ticked is set to False.</li>
 </ul>
 <h4 id="get-checkboxes">Get CheckBoxes</h4>
 <ul>
-<li>
-<p><code>.getCheckBox(title)</code></p>
-<p>This will return True or False, depending on the state of the CheckBox.</p>
-</li>
+<li><code>.getCheckBox(title)</code><br />
+    This will return True or False, depending on the state of the CheckBox.</li>
 </ul>
 <h2 id="optionbox">OptionBox</h2>
 <hr />
 <p>A drop-down single-select option</p>
 <h4 id="add-optionboxes">Add OptionBoxes</h4>
 <ul>
-<li>
-<p><code>.addOptionBox(title, values)</code></p>
-<p>This will create an OptionBox, adding the contents of the values list, in the order specified.</p>
-</li>
+<li><code>.addOptionBox(title, values)</code><br />
+    This will create an OptionBox, adding the contents of the values list, in the order specified.</li>
 </ul>
 <h4 id="change-optionboxes">Change OptionBoxes</h4>
 <ul>
 <li>
-<p><code>.changeOptionBox(title, newOptions)</code></p>
-<p>This will replace the contents of the OptionBox, with the new list provided.</p>
+<p><code>.changeOptionBox(title, newOptions)</code><br />
+    This will replace the contents of the OptionBox, with the new list provided.</p>
 </li>
 <li>
-<p><code>.setOptionBox(title, position)</code></p>
-<p>This will select the item in the list, at the position specified.</p>
+<p><code>.setOptionBox(title, position)</code><br />
+    This will select the item in the list, at the position specified.</p>
 </li>
 </ul>
 <h4 id="get-optionboxes">Get OptionBoxes</h4>
@@ -653,23 +650,23 @@ app.go()
 <ul>
 <li>
 <h3 id="meter_1">Meter</h3>
-<p>Shows a simple progress meter</p>
+<p>Shows a simple progress meter:  </p>
 <ul>
 <li>
-<p><code>addMeter(name)</code></p>
-<p>Adds a meter with the specified name.</p>
+<p><code>addMeter(name)</code><br />
+    Adds a meter with the specified name.</p>
 </li>
 <li>
-<p><code>setMeter(name, value, text=None)</code></p>
-<p>Changes the specified meter to the specified value, between 0 and 100, with the optional text.</p>
+<p><code>setMeter(name, value, text=None)</code><br />
+    Changes the specified meter to the specified value, between 0 and 100, with the optional text.</p>
 </li>
 <li>
-<p><code>setMeterFill(name, colour)</code></p>
-<p>Changes the fill colour of the specified meter.</p>
+<p><code>setMeterFill(name, colour)</code><br />
+    Changes the fill colour of the specified meter.</p>
 </li>
 <li>
-<p><code>getMeter(name)</code></p>
-<p>Gets the value of the specified meter.</p>
+<p><code>getMeter(name)</code><br />
+    Gets the value of the specified meter.</p>
 </li>
 </ul>
 </li>
@@ -694,12 +691,12 @@ app.go()
 <h4 id="add-links">Add Links</h4>
 <ul>
 <li>
-<p><code>.addLink(title, func)</code></p>
-<p>Adds a <strong>hyperlink</strong>, that when clicked, will call the spcified function.</p>
+<p><code>.addLink(title, func)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will call the spcified function.</p>
 </li>
 <li>
-<p><code>.addWebLink(title, page)</code></p>
-<p>Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.</p>
+<p><code>.addWebLink(title, page)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.</p>
 </li>
 </ul></div>
         </div>

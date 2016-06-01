@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Positioning Widgets - RWBAtools</title>
+	<title>Arranging widgets - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Home</a>
+                    <a href="..">Welcome</a>
                 </li>
             
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Creating a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -86,13 +86,13 @@
                     
                         
 <li >
-    <a href="../Dialogs/">Dialogs</a>
+    <a href="../Dialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../DevWidgets/">More to come...</a>
 </li>
 
                     
@@ -102,30 +102,45 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li class="active">
-    <a href="./">Positioning Widgets</a>
+    <a href="./">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping Widgets</a>
+    <a href="../Grouping2/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">GUI Options</a>
+    <a href="../WidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="../GuiOptions/">Extras</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../empty/">Lesson 1</a>
 </li>
 
                     
@@ -140,19 +155,19 @@
                     
                         
 <li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release Notes</a>
+    <a href="../ReleaseNotes/">Release notes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -181,7 +196,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Grouping/">
+                    <a rel="prev" href="../Grouping2/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -204,9 +219,9 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#background">Background</a></li>
+        <li class="main active"><a href="#arranging-widgets">Arranging Widgets</a></li>
         
-            <li><a href="#simple-layout">Simple Layout</a></li>
+            <li><a href="#sequential-programming">Sequential programming</a></li>
         
             <li><a href="#grid-layout">Grid Layout</a></li>
         
@@ -215,12 +230,9 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="background">Background</h1>
+<h1 id="arranging-widgets">Arranging Widgets</h1>
 <hr />
-<p>RWBAtools was designed to make building a functional GUI as simple as possible.  </p>
-<p>It is designed with teaching in mind. Rather than pupils having to focus on the GUI code, they should be focusing on the algorithms that get the work done.</p>
-<p>To that end, at it's simplest, you simply keep adding widgets to the GUI, and they will render in sequence.</p>
-<h3 id="simple-layout">Simple Layout</h3>
+<h3 id="sequential-programming">Sequential programming</h3>
 <hr />
 <p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
 <pre><code class="python">from rwbatools import gui  

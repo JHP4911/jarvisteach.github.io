@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Grouping Widgets - RWBAtools</title>
+	<title>Lesson 1 - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -51,13 +51,13 @@
             
             
                 <li >
-                    <a href="..">Home</a>
+                    <a href="..">Welcome</a>
                 </li>
             
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Creating a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -86,13 +86,46 @@
                     
                         
 <li >
-    <a href="../Dialogs/">Dialogs</a>
+    <a href="../Dialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../DevWidgets/">More to come...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../Layout/">Arranging widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Grouping2/">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../WidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../GuiOptions/">Extras</a>
 </li>
 
                     
@@ -102,30 +135,12 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li >
-    <a href="../Layout/">Positioning Widgets</a>
-</li>
-
-                    
-                        
 <li class="active">
-    <a href="./">Grouping Widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../GuiOptions/">GUI Options</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="./">Lesson 1</a>
 </li>
 
                     
@@ -140,19 +155,19 @@
                     
                         
 <li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release Notes</a>
+    <a href="../ReleaseNotes/">Release notes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -176,12 +191,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Layout/">
+                    <a rel="next" href="../GuiOptions/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../GuiOptions/">
+                    <a rel="prev" href="../Install/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -204,71 +219,11 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#grouping-widgets">Grouping Widgets</a></li>
-        
-            <li><a href="#labelframe">LabelFrame</a></li>
-        
-            <li><a href="#notebook">NoteBook</a></li>
-        
-            <li><a href="#panedwindow">PanedWindow</a></li>
-        
-            <li><a href="#subwindow">SubWindow</a></li>
-        
-    
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="grouping-widgets">Grouping Widgets</h1>
-<hr />
-<p>Once you have got to grips with laying out your widgets, it is possible to group them together.<br />
-Each of these groups is treated like an individual widget.<br />
-When you <strong>START</strong> the group, you place it in a cell in your layout.<br />
-Then, when you place widgets inside the group, you start a new grid.<br />
-After you <strong>STOP</strong> the group, you go back to your previous grid layout.<br />
-Three main styles are currently supported:</p>
-<h3 id="labelframe">LabelFrame</h3>
-<hr />
-<p>Will put a border around the widgets, with a title</p>
-<ul>
-<li><code>.startLabelFrame(title)</code></li>
-<li><code>.stopLabelFrame()</code></li>
-<li><code>.setLabelFrameAnchor(title, anchor)</code></li>
-</ul>
-<p><img alt="LabelFrame" src="../img/10_lf_layout.png" /></p>
-<h3 id="notebook">NoteBook</h3>
-<hr />
-<p>Will create a tabbed interface, with a number of pages</p>
-<ul>
-<li><code>.startNoteBook(note)</code></li>
-<li><code>.startNoteTab(tab)</code></li>
-<li><code>.stopNoteTab()</code></li>
-<li><code>.stopNoteBook()</code></li>
-<li><code>.setNoteTab(note, tab)</code></li>
-<li><code>.setNoteBookBg(note, active, inactive)</code></li>
-<li><code>.setNoteBookFg(note, active, inactive)</code></li>
-<li><code>.setNoteTabBg(note, tab, bg)</code></li>
-</ul>
-<p><img alt="NoteBook" src="../img/11_nb_layout.png" /></p>
-<h3 id="panedwindow">PanedWindow</h3>
-<hr />
-<p>Will create a split view, with draggable panes</p>
-<ul>
-<li><code>.startPanedWindow(title)</code></li>
-<li><code>.stopPanedFrame()</code></li>
-<li><code>.setPanedWindowVertical(title)</code></li>
-</ul>
-<h3 id="subwindow">SubWindow</h3>
-<hr />
-<p>Allows the creation of additional windows.
-The window is hidden until <code>.showSubWindow(title)</code> is called.</p>
-<ul>
-<li><code>.startSubWindow(name, title=None)</code></li>
-<li><code>.stopSubWindow()</code></li>
-<li><code>.showSubWindow(title)</code></li>
-<li><code>.hideSubWindow(title)</code></li>
-<li><code>.destroySubWindow(title)</code></li>
-</ul></div>
+</div>
         </div>
 
         <footer class="col-md-12">
