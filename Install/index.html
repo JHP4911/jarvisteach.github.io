@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Positioning Widgets - RWBAtools</title>
+	<title>Installation - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -101,13 +101,13 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Positioning Widgets</a>
+<li >
+    <a href="../Layout/">Positioning Widgets</a>
 </li>
 
                     
@@ -134,7 +134,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -145,8 +145,8 @@
 
                     
                         
-<li >
-    <a href="../Install/">Installation</a>
+<li class="active">
+    <a href="./">Installation</a>
 </li>
 
                     
@@ -176,12 +176,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../DevWidgets/">
+                    <a rel="next" href="../License/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Grouping/">
+                    <a rel="prev" href="../ReleaseNotes/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -204,67 +204,88 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#background">Background</a></li>
+        <li class="main active"><a href="#preparing-the-library">Preparing the library</a></li>
         
-            <li><a href="#simple-layout">Simple Layout</a></li>
+    
+        <li class="main "><a href="#windows-installation">Windows Installation</a></li>
         
-            <li><a href="#grid-layout">Grid Layout</a></li>
+    
+        <li class="main "><a href="#linux-installation">Linux Installation</a></li>
+        
+    
+        <li class="main "><a href="#mac-installation">MAC Installation</a></li>
+        
+    
+        <li class="main "><a href="#using-the-library">Using the library</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="background">Background</h1>
-<p>RWBAtools was designed to make building a functional GUI as simple as possible.  </p>
-<p>It is designed with teaching in mind. Rather than pupils having to focus on the GUI code, they should be focusing on the algorithms that get the work done.</p>
-<p>To that end, at it's simplest, you simply keep adding widgets to the GUI, and they will render in sequence.</p>
-<h2 id="simple-layout">Simple Layout</h2>
-<p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
-<pre><code class="python">from rwbatools import gui  
-
-def changeLabel(btn):  
-    app.setLabel(&quot;l2&quot;, app.getEntry(&quot;text&quot;))  
-
-app = gui()  
-app.addLabel(&quot;l1&quot;, &quot;Simple Demo&quot;)
-app.addEntry(&quot;text&quot;)
-app.addButton(&quot;OK&quot;, changeLabel)
-app.addEmptyLabel(&quot;l2&quot;)
-app.go()
+<h2 id="preparing-the-library">Preparing the library</h2>
+<hr />
+<p>All installations start the same:</p>
+<ul>
+<li>Download the ZIP file.</li>
+<li>Unzip it.</li>
+<li>Make sure the folder is called <code>rwbatools</code> (it might be called rwbatools-master if you got it from github)</li>
+<li>Put the folder in a sensible place <code>~/Documents/PYLIB/</code></li>
+</ul>
+<p>Now, it's ready to go, at the top of your code, you can include the following:</p>
+<pre><code class="python"># add the rwbatools folder to your PATH
+import sys
+sys.path.append(&quot;~/Documents/PYLIB&quot;) # replce this with the correct path
+# import the library
+from rwbatools import gui
 </code></pre>
 
-<p><img alt="Simple Layout" src="../img/1_layout.png" /></p>
-<h2 id="grid-layout">Grid Layout</h2>
-<p>If, however, you want more than that, then a basic GRID layout is supported.</p>
-<p>Each time you add a widget, you can specify a column, row, and even a column-span to position it in.</p>
-<pre><code class="python">from rwbatools import gui
-
-def press(btn):
-    if btn==&quot;Save&quot;:
-        n=app.getEntry(&quot;name&quot;)
-        a=app.getEntry(&quot;age&quot;)
-        r=app.getOptionBox(&quot;role&quot;)
-        app.infoBox(&quot;Details&quot;, &quot;You entered: {}, {}, {}&quot;.format(n, str(a), r))
-    elif btn==&quot;Quit&quot;:
-        app.stop()
-
-app=gui()
-
-app.addLabel(&quot;l1&quot;, &quot;Name&quot;, 0, 0)
-app.addLabel(&quot;l2&quot;, &quot;Age&quot;, 1, 0)
-app.addLabel(&quot;l3&quot;, &quot;Role&quot;, 2, 0)
-
-app.addEntry(&quot;name&quot;, 0, 1)
-app.addNumericEntry(&quot;age&quot;, 1, 1)
-app.addOptionBox(&quot;role&quot;, [&quot;Teacher&quot;, &quot;Student&quot;, &quot;Developer&quot;, &quot;Volunteer&quot;], 2, 1)
-
-app.addButtons([&quot;Save&quot;, &quot;Quit&quot;], press, 3, 0, 2)
-
-app.go()
+<p>If you want a more permanent solution, you can add the above folder to your path. See below. </p>
+<h2 id="windows-installation">Windows Installation</h2>
+<hr />
+<ul>
+<li>Open <strong>Control Panel</strong></li>
+<li>Navigate to <strong>System -&gt; Advanced System Settings</strong>
+<img alt="System" src="../img/w_install_1.png" /></li>
+<li>Click the <strong>Advanced</strong> tab
+<img alt="System" src="../img/w_install_2.png" /></li>
+<li>Under <strong>System vartiables</strong>, click the <strong>New..</strong> button
+<img alt="System" src="../img/w_install_3.png" /></li>
+<li>Set the <strong>Variable name:</strong> to be <strong>PYTHONPATH</strong></li>
+<li>Set the <strong>Path:</strong> as the folder you put <strong>rwbatools</strong> in (eg. c:\COMPUTINC\PYLIB")
+<img alt="System" src="../img/w_install_4.png" /></li>
+<li>Press <strong>OK</strong>, and you're ready to go:</li>
+</ul>
+<h2 id="linux-installation">Linux Installation</h2>
+<hr />
+<ul>
+<li>Launch a <strong>Terminal</strong></li>
+<li>Type the following:</li>
+</ul>
+<pre><code class="bash">    echo 'export PYTHONPATH=&quot;${PYTHONPATH}:~Documents/PYLIB&quot;' &gt;&gt; ~/.bashrc
 </code></pre>
 
-<p><img alt="Grid Layout" src="../img/2_layout.png" /></p></div>
+<ul>
+<li>Close the terminal, and you're ready to go</li>
+</ul>
+<h2 id="mac-installation">MAC Installation</h2>
+<hr />
+<ul>
+<li>It's a little trickier on MAC</li>
+<li>First off, run the Linux installation above. That will make it available form the command line.</li>
+<li>In OSX&lt;=10.9:<ul>
+<li>Edit the <code>/etc/launchd.conf</code> file</li>
+<li>Add the line: <code>setenv PYTHONPATH /Users/myname/Documents/PYLIB</code></li>
+<li>And you're done</li>
+</ul>
+</li>
+</ul>
+<h2 id="using-the-library">Using the library</h2>
+<hr />
+<p>If the rwbatools folder is in your path, you can access it simply though an import:</p>
+<pre><code class="python"># import the library
+from rwbatools import gui
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

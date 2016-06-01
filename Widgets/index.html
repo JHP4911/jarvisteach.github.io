@@ -61,12 +61,6 @@
                     <ul class="dropdown-menu">
                     
                         
-<li >
-    <a href="../Layout/">Layout</a>
-</li>
-
-                    
-                        
 <li class="active">
     <a href="./">Widgets</a>
 </li>
@@ -74,7 +68,13 @@
                     
                         
 <li >
-    <a href="../WidgetOptions/">Widget Options</a>
+    <a href="../Images/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Sound/">Sounds</a>
 </li>
 
                     
@@ -92,13 +92,22 @@
                     
                         
 <li >
-    <a href="../Sound/">Sound</a>
+    <a href="../DevWidgets/">Under Development</a>
 </li>
 
                     
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring a GUI <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
                         
 <li >
-    <a href="../GuiOptions/">GUI Options</a>
+    <a href="../Layout/">Positioning Widgets</a>
 </li>
 
                     
@@ -110,22 +119,13 @@
                     
                         
 <li >
-    <a href="../DevWidgets/">Under Development</a>
+    <a href="../GuiOptions/">GUI Options</a>
 </li>
 
                     
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Recipes <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
                         
 <li >
-    <a href="../Empty/">Empty</a>
+    <a href="../WidgetOptions/">Widget Options</a>
 </li>
 
                     
@@ -146,13 +146,19 @@
                     
                         
 <li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../ReleaseNotes/">Release Notes</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Thanks</a>
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -170,12 +176,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Layout/">
+                    <a rel="next" href="..">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../WidgetOptions/">
+                    <a rel="prev" href="../Images/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -229,8 +235,6 @@
             <li><a href="#separator">Separator</a></li>
         
             <li><a href="#linkweblink">Link/WebLink</a></li>
-        
-            <li><a href="#image">Image</a></li>
         
     
     </ul>
@@ -697,38 +701,6 @@ app.go()
 <p><code>.addWebLink(title, page)</code></p>
 <p>Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.</p>
 </li>
-</ul>
-<h2 id="image">Image</h2>
-<hr />
-<p>Shows an image, there are lots of things you can do with an image.</p>
-<h4 id="add-images">Add Images</h4>
-<ul>
-<li><code>.addImage(name, file)</code></li>
-<li><code>.addAnimatedImage(name, file)</code> </li>
-</ul>
-<h4 id="change-images">Change Images</h4>
-<ul>
-<li><code>.setImage(name, image)</code></li>
-<li><code>.setImageSize(name, width, height)</code></li>
-<li>
-<p><code>.zoomImage(name, mod)</code></p>
-<p>Negative will shrink, positive will grow.</p>
-</li>
-<li>
-<p><code>.shrinkImage(name, mod)</code></p>
-</li>
-<li><code>.growImage(name, mod)</code></li>
-</ul>
-<h4 id="change-image-animation">Change Image Animation</h4>
-<ul>
-<li><code>.setAnimationSpeed(name, speed)</code></li>
-<li><code>.stopAnimation(name)</code></li>
-<li><code>.startAnimation(name)</code></li>
-</ul>
-<h4 id="change-background-images">Change Background Images</h4>
-<ul>
-<li><code>.setBgImage(image)</code></li>
-<li><code>.removeBgImage(image)</code></li>
 </ul></div>
         </div>
 
