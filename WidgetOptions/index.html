@@ -254,48 +254,46 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p>The following options are available for all widgets:</p>
 <ul>
 <li>
-<p><code>set XXX Bg(name, value)</code></p>
-<p>Sets the background colour of the named widget.</p>
+<p><code>set XXX Bg(name, value)</code><br />
+    Sets the background colour of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Fg(name, value)</code></p>
-<p>Sets the foregound colour (usually the text) of the named widget.</p>
+<p><code>set XXX Fg(name, value)</code><br />
+    Sets the foregound colour (usually the text) of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX DisabledFg(name, value)</code></p>
-<p>Sets the disabled foreground colour (usually the text) of the named widget.</p>
+<p><code>set XXX DisabledFg(name, value)</code><br />
+    Sets the disabled foreground colour (usually the text) of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Width(name, value)</code></p>
-<p>Sets the width of the named widget.</p>
+<p><code>set XXX Width(name, value)</code><br />
+    Sets the width of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Height(name, value)</code></p>
-<p>Set the height of the named widget.</p>
+<p><code>set XXX Height(name, value)</code><br />
+    Set the height of the named widget.</p>
 </li>
 </ul>
 <h3 id="extended-appearance">Extended Appearance</h3>
 <hr />
 <ul>
 <li>
-<p><code>set XXX Tooltip(name, value)</code></p>
-<p>Sets a tooltip for the widget.
-The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
+<p><code>set XXX Tooltip(name, value)</code><br />
+    Sets a tooltip for the widget.
+    The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
 </li>
 <li>
-<p><code>set XXX Cursor(name, value)</code></p>
-<p>Sets the cursor shown, when the mouse goes over this widget.<br />
-There are lots of cursors avalable, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
+<p><code>set XXX Cursor(name, value)</code><br />
+    Sets the cursor shown, when the mouse goes over this widget.<br />
+    There are lots of cursors avalable, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
 </li>
 <li>
-<p><code>set XXX Relief(name, value)</code></p>
-<p>Sets the border for the widget.<br />
-One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
+<p><code>set XXX Relief(name, value)</code><br />
+    Sets the border for the widget. One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
 </li>
 <li>
-<p><code>set XXX State(name, value)</code></p>
-<p>Sets the state of the named widget.<br />
-One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
+<p><code>set XXX State(name, value)</code><br />
+    Sets the state of the named widget. One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
 </li>
 </ul>
 <h3 id="advanced-appearance">Advanced Appearance</h3>
@@ -303,17 +301,16 @@ One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
 <p>The following are supported by most widgets:</p>
 <ul>
 <li>
-<p><code>set XXX Align(name, value)</code></p>
-<p>Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
+<p><code>set XXX Align(name, value)</code><br />
+    Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
 </li>
 <li>
-<p><code>set XXX Anchor(name, value)</code></p>
-<p>Sets where the text is positioned within the widget.<br />
-One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
+<p><code>set XXX Anchor(name, value)</code><br />
+    Sets where the text is positioned within the widget. One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
 </li>
 <li>
-<p><code>set XXX Sticky(name, value)</code></p>
-<p>Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
+<p><code>set XXX Sticky(name, value)</code><br />
+    Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
 </li>
 </ul>
 <h3 id="widget-interaction">Widget Interaction</h3>
@@ -321,65 +318,86 @@ One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <co
 <p>The following allow widgets to be interacted with:</p>
 <ul>
 <li>
-<p><code>set XXX Focus(name)</code></p>
-<p>Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
+<p><code>set XXX Focus(name)</code><br />
+    Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
 </li>
 <li>
-<p><code>set XXX Function(name, value, key=None)</code></p>
-<p>This binds a function to the widget.<br />
-The function will be called every time an interactive-widget changes. 
-The funcion will be called when some widgets are clicked.  </p>
+<p><code>set XXX Function(name, value, key=None)</code><br />
+    This binds a function to the widget.<br />
+    The function will be called every time an interactive-widget changes. 
+    The funcion will be called when some widgets are clicked.  </p>
 </li>
 <li>
-<p><code>set XXX DragFunction(name, value, key=None)</code></p>
+<p><code>set XXX OverFunction(name, values)</code><br />
+    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
+    The first function is called when the mouse first enters the widget.<br />
+    The second function is called when the mouse leaves the widget.<br />
+    If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </p>
 </li>
-<li><code>set XXX OverFunction(name, value, key=None)</code></li>
+</ul>
+<pre><code class="python">    from rwbatools import gui
+
+    def enter(wdgt): 
+        print(&quot;IN&quot;, wdgt)
+    def leave(wdgt):
+        print(&quot;OUT&quot;, wdgt)
+
+    app=gui()
+    app.addLabel(&quot;l1&quot;, &quot;Testing...&quot;)
+    app.setLabelOverFunction(&quot;l1&quot;, [enter, leave])
+    app.go()
+</code></pre>
+
+<ul>
+<li><code>set XXX DragFunction(name, values)</code><br />
+    Set functions to call whenever the mouse button is clicked and dragged.<br />
+    The first function will be called when the mouse is initially clicked.<br />
+    The second function will be called when the mouse is released.<br />
+    The same rules for passing functions apply as above.  </li>
 </ul>
 <h3 id="widget-manipulaiton">Widget Manipulaiton</h3>
 <hr />
 <p>The following allow widgets to be manipulated on screen:</p>
 <ul>
 <li>
-<p><code>.hide XXX (name)</code></p>
-<p>Temporarily hides the widget form view.</p>
+<p><code>.hide XXX (name)</code><br />
+    Temporarily hides the widget form view.</p>
 </li>
 <li>
-<p><code>.show XXX (name)</code></p>
-<p>Show the widget, if it was already hidden.</p>
+<p><code>.show XXX (name)</code><br />
+    Show the widget, if it was already hidden.</p>
 </li>
 <li>
-<p><code>.remove XXX (name)</code></p>
-<p>Permanently emove the widget (deletes it).</p>
+<p><code>.remove XXX (name)</code><br />
+    Permanently remove the widget (deletes it).</p>
 </li>
 <li>
-<p><code>.removeAllWidgets()</code></p>
-<p>Permanenently remove all widgets.</p>
+<p><code>.removeAllWidgets()</code><br />
+    Permanenently remove all widgets.</p>
 </li>
 <li>
-<p><code>.disable XXX (name)</code></p>
-<p>Disable the widget - stops the user from interacting with it, but keeps it visible.</p>
+<p><code>.disable XXX (name)</code><br />
+    Disable the widget - stops the user from interacting with it, but keeps it visible.</p>
 </li>
 <li>
-<p><code>.enable XXX (name)</code></p>
-<p>Enable a disabled widget.</p>
+<p><code>.enable XXX (name)</code><br />
+    Enable a disabled widget.</p>
 </li>
 </ul>
 <h3 id="grouped-options">Grouped Options</h3>
 <hr />
 <p>The following are convenience functions, for modifying a group of widgets:</p>
 <ul>
-<li><code>set XXX Widths(names, val)</code></li>
+<li><code>set XXX Widths(names, val)</code>  </li>
 <li>
-<p><code>set XXX Heights(names, val)</code></p>
-<p>Sets the widths/heights of the specified widgets.</p>
+<p><code>set XXX Heights(names, val)</code><br />
+    Sets the widths/heights of the specified widgets.</p>
 </li>
 <li>
-<p><code>setAll XXX Widths(val)</code></p>
+<p><code>setAll XXX Widths(val)</code>  </p>
 </li>
-<li>
-<p><code>setAll XXX Heights(val)</code></p>
-<p>Sets the widths/heights of all widgets of the specified type.</p>
-</li>
+<li><code>setAll XXX Heights(val)</code><br />
+    Sets the widths/heights of all widgets of the specified type.</li>
 </ul></div>
         </div>
 
