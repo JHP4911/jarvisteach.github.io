@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Release notes - RWBAtools</title>
+	<title>Grouping widgets - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -92,7 +92,7 @@
                     
                         
 <li >
-    <a href="../DevWidgets/">More to come...</a>
+    <a href="../DevWidgets/">Still to come...</a>
 </li>
 
                     
@@ -101,7 +101,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -112,8 +112,8 @@
 
                     
                         
-<li >
-    <a href="../Grouping2/">Grouping widgets</a>
+<li class="active">
+    <a href="./">Grouping widgets</a>
 </li>
 
                     
@@ -149,7 +149,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -160,20 +160,14 @@
 
                     
                         
-<li class="active">
-    <a href="./">Release notes</a>
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
                         
 <li >
     <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -191,12 +185,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Install/">
+                    <a rel="next" href="../Layout/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../License/">
+                    <a rel="prev" href="../WidgetOptions/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -219,11 +213,98 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
+        <li class="main active"><a href="#container-options">Container Options</a></li>
+        
+            <li><a href="#label-frame">Label Frame</a></li>
+        
+            <li><a href="#notebook">NoteBook</a></li>
+        
+            <li><a href="#panedwindow">PanedWindow</a></li>
+        
+            <li><a href="#subwindow">SubWindow</a></li>
+        
+    
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-</div>
+<h1 id="container-options">Container Options</h1>
+<hr />
+<h3 id="label-frame">Label Frame</h3>
+<hr />
+<p>A way of grouping widgets into a box, with a label at the top of the box.<br />
+<img alt="LabelFrame" src="../img/layouts/labelFrame.PNG" /></p>
+<ul>
+<li>Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em></li>
+<li><code>.startLabelFrame(name)</code>  </li>
+<li><code>.stopLabelFrame()</code><br />
+    Used to start and stop a labelFrame  </li>
+<li><code>.setSticky(coords)</code><br />
+    Used to specify how widgets should be positioned inside the <em>LabelFrame</em>  </li>
+</ul>
+<h3 id="notebook">NoteBook</h3>
+<hr />
+<p>A way to create a (basic) tabbed-style interface.<br />
+<img alt="NoteBook" src="../img/layouts/noteBook.PNG" />  </p>
+<ul>
+<li>Position the <em>NoteBook</em> within the grid, start a <em>Tab</em>, then position widgets inside the <em>Tab</em>  </li>
+<li><code>.startNoteBook(name)</code>  </li>
+<li><code>.stopNoteBook()</code><br />
+    Used to start &amp; stop the main <em>NoteBook</em>  </li>
+<li><code>.startNoteTab(name)</code></li>
+<li><code>.stopNoteTab()</code><br />
+    Used to start and stop each of the tabs in the <em>NoteBook</em>.  </li>
+</ul>
+<h3 id="panedwindow">PanedWindow</h3>
+<hr />
+<p>A way to arrange re-sizable frames, with drag-bars.  </p>
+<ul>
+<li>Call <code>.startPanedWindow(name)</code> to create the initial pane  </li>
+<li>Then keep calling it to add additional panes  </li>
+<li>Calling <code>.setPanedWindowVertical(name)</code> will change the layout to vertical, allowing more configurations.  </li>
+</ul>
+<h4 id="horizontal-panes">Horizontal Panes</h4>
+<ul>
+<li>Create an initial pane  </li>
+<li>Keep adding panes to the initial pane<br />
+<img alt="Horizontal Panes" src="../img/layouts/pane1.PNG" />  </li>
+</ul>
+<h4 id="vertical-panes">Vertical Panes</h4>
+<ul>
+<li>Create an initial pane  </li>
+<li>Make it vertical  </li>
+<li>Add a second pane  </li>
+<li>Keep adding panes to the inittial pane<br />
+<img alt="Vertical Panes" src="../img/layouts/pane2.PNG" />  </li>
+</ul>
+<h4 id="e-pane">E-Pane</h4>
+<ul>
+<li>Create an initial pane  </li>
+<li>Add a second pane</li>
+<li>Make the second pane vertical  </li>
+<li>The remaining panes are added to frame 2<br />
+<img alt="E-Panes" src="../img/layouts/pane3.PNG" />  </li>
+</ul>
+<h4 id="t-pane">T-Pane</h4>
+<ul>
+<li>Create an initial pane</li>
+<li>Make it vertical</li>
+<li>Add a second pane</li>
+<li>Add the remaining panes to pane 2<br />
+<img alt="T-Panes" src="../img/layouts/pane4.PNG" />  </li>
+</ul>
+<h3 id="subwindow">SubWindow</h3>
+<hr />
+<p>A way to add additional windows, which can be hidden and shown.  </p>
+<ul>
+<li><code>.startSubwindow(name)</code>  </li>
+<li><code>.stopSubwindow()</code><br />
+    Used to start and stop defining a <em>SubWindow</em>  </li>
+<li><code>.showSubWindow(name)</code>  </li>
+<li><code>.hideSubWindow(name)</code><br />
+    Used to show and hide the specified <em>SubWindow</em><br />
+<img alt="SubWindow" src="../img/layouts/SubWin.PNG" /></li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

@@ -92,7 +92,7 @@
                     
                         
 <li >
-    <a href="DevWidgets/">More to come...</a>
+    <a href="DevWidgets/">Still to come...</a>
 </li>
 
                     
@@ -113,7 +113,7 @@
                     
                         
 <li >
-    <a href="Grouping2/">Grouping widgets</a>
+    <a href="Grouping/">Grouping widgets</a>
 </li>
 
                     
@@ -161,19 +161,13 @@
                     
                         
 <li >
-    <a href="ReleaseNotes/">Release notes</a>
+    <a href="Thanks/">Acknowledgements</a>
 </li>
 
                     
                         
 <li >
     <a href="License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -227,7 +221,9 @@
         
             <li><a href="#foot-long-sub">Foot-long sub?</a></li>
         
-            <li><a href="#your-turn">Your turn</a></li>
+            <li><a href="#any-extras">Any extras?</a></li>
+        
+            <li><a href="#make-your-own">Make your own!</a></li>
         
     
     </ul>
@@ -282,7 +278,7 @@ app.go()                    # bottom slice - START the GUI
 
 <p><img alt="simpleApp" src="./img/simpleApp.PNG" /></p>
 <p>And, that's it...<br />
-The more fillings you put in your sandwich, and the more time you spend making them look nice, the better it will taste!</p>
+The more <a href="Widgets/">fillings</a> you put in your sandwich, and the more time you spend making them <a href="WidgetOptions/">look nice</a>, the better it will taste!</p>
 <h3 id="foot-long-sub">Foot-long sub?</h3>
 <hr />
 <p>Of course, for most of us, a simple sandwich isn't enough...<br />
@@ -297,8 +293,9 @@ We want to make a meal out of it!  </p>
 <p>The arrangement is paramount, nobody wants the sauce under the meat!</p>
 <p>By default, the fillings are simply stacked on top of each other.  </p>
 <p>However, filling a sub is very similar to filling a spreadsheet.<br />
-Simply tell each filling what row it's on, and what column it's in.<br />
-And, if you're not planning on chopping a filling, it might span across more than one column.  </p>
+Simply tell each filling what layer (row) it's on, and what column it's in.<br />
+And, if you're not planning on chopping a filling, it might stretch (span) across more than one column.  </p>
+<p><a href="Layout/">See here</a> for more.  </p>
 <pre><code class="python">from rwbatools import gui
 
 # function called by pressing the buttons
@@ -323,11 +320,25 @@ app.go()
 </code></pre>
 
 <p><img alt="testLog" src="./img/testLog.PNG" /></p>
-<h3 id="your-turn">Your turn</h3>
+<h3 id="any-extras">Any extras?</h3>
+<hr />
+<p>It's possible to make changes to how the GUI looks<br />
+For starters, you can specify a name and size for your GUI when you make it:  </p>
+<ul>
+<li><code>app=gui("Login Window", "400x200")</code>  </li>
+</ul>
+<p>And, you can choose what kind of bread, and whether it's toasted:   </p>
+<ul>
+<li><code>app.setBg("Brown")</code></li>
+<li><code>app.setFont(20)</code></li>
+</ul>
+<p><a href="GuiOptions/">See here</a> for more.  </p>
+<p><img alt="testLog" src="./img/testLog2.PNG" /></p>
+<h3 id="make-your-own">Make your own!</h3>
 <hr />
 <p>That's about it for now.<br />
 Have a look around, discover all of the different fillings available.<br />
-And, investigate how best to present your sandwich!</p></div>
+And, investigate how best to <a href="Grouping/">present </a> your sandwich!</p></div>
         </div>
 
         <footer class="col-md-12">

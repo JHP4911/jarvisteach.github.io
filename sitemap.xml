@@ -58,7 +58,7 @@
     </url>
         
     <url>
-     <loc>None/Grouping2/</loc>
+     <loc>None/Grouping/</loc>
      <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -96,19 +96,13 @@
     </url>
         
     <url>
-     <loc>None/ReleaseNotes/</loc>
+     <loc>None/Thanks/</loc>
      <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/License/</loc>
-     <lastmod>2016-06-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/Thanks/</loc>
      <lastmod>2016-06-02</lastmod>
      <changefreq>daily</changefreq>
     </url>

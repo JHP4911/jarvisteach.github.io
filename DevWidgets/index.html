@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>More to come... - RWBAtools</title>
+	<title>Still to come... - RWBAtools</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -92,7 +92,7 @@
                     
                         
 <li class="active">
-    <a href="./">More to come...</a>
+    <a href="./">Still to come...</a>
 </li>
 
                     
@@ -113,7 +113,7 @@
                     
                         
 <li >
-    <a href="../Grouping2/">Grouping widgets</a>
+    <a href="../Grouping/">Grouping widgets</a>
 </li>
 
                     
@@ -161,19 +161,13 @@
                     
                         
 <li >
-    <a href="../ReleaseNotes/">Release notes</a>
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
                         
 <li >
     <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -227,6 +221,8 @@
         
             <li><a href="#grid">Grid</a></li>
         
+            <li><a href="#properties">Properties</a></li>
+        
     
     </ul>
 </div></div>
@@ -237,42 +233,86 @@
 <p>The following widgets are <strong>under development</strong>. They're included in the library, but offer limited functionality, and are stilll quite buggy.</p>
 <h3 id="piechart">PieChart</h3>
 <hr />
-<p>Shows a pie chart</p>
+<p>Shows a pie chart  </p>
 <ul>
-<li><code>.addPieChart(name, values, size=100)</code></li>
+<li><code>.addPieChart(name, values, size=100)</code><br />
+    Takes a list of integers, which will be converted to percentages, and plotted on the chart.<br />
+    An optional size parameter can be passed, to adjust the size of the chart.  </li>
 </ul>
+<p><img alt="PieChart" src="../img/dev/pie.png" />  </p>
+<pre><code class="python">    from rwbatools import gui
+
+    app=gui()
+    app.addPieChart(&quot;p1&quot;, [50, 200, 75, 300, 150], size=300)
+    app.go()
+</code></pre>
+
 <h3 id="tree">Tree</h3>
 <hr />
-<p>This widget is still in development. It takes an arbitrary XML string, and converts it into a tree structure.</p>
+<p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
 <ul>
-<li>
-<p><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the xml data</p>
-</li>
-<li>
-<p><code>.addTreeFunction(title, func)</code><br />
-    Register he function with double click</p>
-</li>
-<li>
-<p><code>.getTree(title)</code><br />
-    Return the tree</p>
-</li>
+<li><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </li>
+<li><code>.addTreeFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked  </li>
+<li><code>.getTree(title)</code><br />
+    Return the tree as XML  </li>
 </ul>
+<p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
+<pre><code class="python">from rwbatools import gui
+
+app=gui()
+app.addTree(&quot;t1&quot;,
+            &quot;&quot;&quot;&lt;people&gt;
+            &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Tina&lt;/name&gt;&lt;age&gt;37&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;CLive&lt;/name&gt;&lt;age&gt;28&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Betty&lt;/name&gt;&lt;age&gt;51&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;/people&gt;&quot;&quot;&quot;)
+app.go()
+</code></pre>
+
 <h3 id="grid">Grid</h3>
 <hr />
-<p>This widget is still in development.  </p>
-<ul>
-<li>
-<p><code>.addGrid(title, data, action=None, addRow=False)</code><br />
+<p>Used to create a spreadsheet like interface.<br />
+* <code>.addGrid(title, data, action=None, addRow=False)</code><br />
     Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
     If action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.  </p>
-</li>
-<li>
-<p><code>.updateGrid(title, data, addRow=False)</code>  </p>
-</li>
+<ul>
+<li><code>.updateGrid(title, data, addRow=False)</code>  </li>
 <li><code>.setGridGeom(title, width, height)</code>  </li>
 <li><code>.getGridEntries(title)</code>  </li>
 <li><code>.setGridBackground(title, colour)</code>  </li>
+</ul>
+<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
+<pre><code class="python">    from rwbatools import gui
+
+    app=gui()
+    app.setFont(20)
+    app.addGrid(&quot;g1&quot;,
+        [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+        [&quot;Fred&quot;, 45, &quot;Male&quot;],
+        [&quot;Tina&quot;, 37, &quot;Female&quot;],
+        [&quot;Clive&quot;, 28, &quot;Male&quot;],
+        [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+    app.go()
+</code></pre>
+
+<h3 id="properties">Properties</h3>
+<hr />
+<p>A quick-to-create set of radio/check boxes.  </p>
+<ul>
+<li><code>.addProperties(props)</code><br />
+    Creates the properties box, with the list of properties.<br />
+    The properties can be passed in as dictionary, but the order will be random.  </li>
+<li><code>.addProperty(title, value=False)</code><br />
+    Adds the named property to the end of the properties list.  </li>
+<li><code>.getProperties()</code><br />
+    Returns the properties as a dictionary.  </li>
+<li><code>.getProperty(title)</code><br />
+    Gets the named property.  </li>
+<li><code>.setProperty(title, value=True)</code><br />
+    Sets the named property.</li>
 </ul></div>
         </div>
 
