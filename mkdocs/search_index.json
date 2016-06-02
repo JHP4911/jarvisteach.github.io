@@ -732,6 +732,11 @@
         },
         {
             "location": "/License/",
+            "text": "License",
+            "title": "License"
+        },
+        {
+            "location": "/License/#license",
             "text": "",
             "title": "License"
         }
