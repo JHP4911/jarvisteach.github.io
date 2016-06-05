@@ -234,18 +234,23 @@ Therefore, only <code>.WAV</code> files will work.</p>
 <hr />
 <ul>
 <li>
-<p><code>.playSound(sound, wait=False)</code></p>
-<p>Play the named sound file.<br />
-By default, the sound is played asynchronously, meaning the function will return immediately, even though the sound hasn't finished playing.<br />
-It is possible to override this, by setting wait to True. This is not recommended though, as the GUI will become unresponsive.</p>
+<p><code>.playSound(sound, wait=False)</code><br />
+    Play the named sound file.<br />
+    By default, the sound is played asynchronously, meaning the function will return immediately, even though the sound hasn't finished playing.<br />
+    It is possible to override this, by setting wait to True. This is not recommended though, as the GUI will become unresponsive.</p>
 </li>
 <li>
-<p><code>.stopSound()</code></p>
-<p>This will stop whatever sound is currently being played.</p>
+<p><code>.stopSound()</code><br />
+    This will stop whatever sound is currently being played.</p>
 </li>
 <li>
-<p><code>.loopSound(sound)</code></p>
-<p>This will play the named sound in a loop.</p>
+<p><code>.loopSound(sound)</code><br />
+    This will play the named sound in a loop.</p>
+</li>
+<li>
+<p><code>.setSoundLocation(location)</code><br />
+    Set a folder for the sound files.<br />
+    This will be put before the names of any sound files used.  </p>
 </li>
 </ul>
 <h3 id="playing-built-in-sounds">Playing Built-In Sounds</h3>
