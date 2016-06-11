@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Arranging widgets - RWBAtools</title>
+	<title>Arranging widgets - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">RWBAtools</a>
+            <a class="navbar-brand" href="..">appJar</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -140,11 +140,47 @@
                     
                         
 <li >
-    <a href="../empty/">Lesson 1</a>
+    <a href="../Empty/">Basic Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Advanced Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Turtle Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">GUI Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Files & Databases</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Object-Oriented Programming</a>
 </li>
 
                     
                     </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../PythonBasics/">Python</a>
                 </li>
             
             
@@ -229,7 +265,7 @@
 <h3 id="sequential-programming">Sequential programming</h3>
 <hr />
 <p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
-<pre><code class="python">from rwbatools import gui  
+<pre><code class="python">from appJar import gui  
 
 def changeLabel(btn):  
     app.setLabel(&quot;l2&quot;, app.getEntry(&quot;text&quot;))  
@@ -247,7 +283,7 @@ app.go()
 <hr />
 <p>If, however, you want more than that, then a basic GRID layout is supported.</p>
 <p>Each time you add a widget, you can specify a column, row, and even a column-span to position it in.</p>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 def press(btn):
     if btn==&quot;Save&quot;:

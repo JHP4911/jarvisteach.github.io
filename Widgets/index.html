@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Widgets - RWBAtools</title>
+	<title>Widgets - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href="..">RWBAtools</a>
+            <a class="navbar-brand" href="..">appJar</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -140,11 +140,47 @@
                     
                         
 <li >
-    <a href="../empty/">Lesson 1</a>
+    <a href="../Empty/">Basic Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Advanced Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Turtle Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">GUI Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Files & Databases</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Empty/">Object-Oriented Programming</a>
 </li>
 
                     
                     </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../PythonBasics/">Python</a>
                 </li>
             
             
@@ -277,7 +313,7 @@ As well as some specialist functions, unique to each widget (see below).  </p>
 <li>And, they're very helpful at the bottom of the GUI, to show the results of an action.<br />
 <img alt="Label" src="../img/1_labels.gif" />  </li>
 </ul>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 app = gui()
 
@@ -348,7 +384,7 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 </ul>
 <p><img alt="Entries" src="../img/1_entries.gif" /></p>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 app=gui()
 
@@ -416,7 +452,7 @@ That way, multiple widgets can use the same function, but diffrent actions can b
     A function should be specified, which will be called when the button is clicked.</li>
 </ul>
 <p><img alt="Buttons" src="../img/1_buttons.gif" /></p>
-<pre><code class="python">    from rwbatools import gui
+<pre><code class="python">    from appJar import gui
 
     def press(btn):                 # the title of the button will be received as a parameter
         print(btn)
@@ -460,7 +496,7 @@ That way, multiple widgets can use the same function, but diffrent actions can b
 <p>A group of round boxes, only one of which can be selected.<br />
 These are great for getting a single value, for a multiple choice question.</p>
 <p><img alt="Radios" src="../img/t_radios.gif" />  </p>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 app=gui()
 app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
@@ -493,7 +529,7 @@ app.go()
 <li><code>.getRadioButton(title)</code><br />
     Gets the value of the selcted RadioButton, for the specified title.</li>
 </ul>
-<pre><code class="python">    from rwbatools import gui
+<pre><code class="python">    from appJar import gui
 
     def press(rb):
         print(app.getRadioButton(&quot;song&quot;))
@@ -510,7 +546,7 @@ app.go()
 <hr />
 <p>A simple tick-box, with a label, that can be either ON or OFF.</p>
 <p><img alt="CheckBoxes" src="../img/1_checks.gif" />  </p>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 app=gui()
 app.setFont(20)

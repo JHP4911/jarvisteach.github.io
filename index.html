@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>RWBAtools</title>
+	<title>appJar</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">RWBAtools</a>
+            <a class="navbar-brand" href=".">appJar</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -140,11 +140,47 @@
                     
                         
 <li >
-    <a href="empty/">Lesson 1</a>
+    <a href="Empty/">Basic Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="Empty/">Advanced Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="Empty/">Turtle Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="Empty/">GUI Programming</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="Empty/">Files & Databases</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="Empty/">Object-Oriented Programming</a>
 </li>
 
                     
                     </ul>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="PythonBasics/">Python</a>
                 </li>
             
             
@@ -242,7 +278,7 @@ Allowing pupils to focus on learning programming &amp; problem solving, not <a h
 <p>Building a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> is just like making a <a href="https://en.wikipedia.org/wiki/Sandwich">sandwich</a>!  </p>
 <p>You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...</p>
 <pre><code class="python"># import the library
-from rwbatools import gui
+from appJar import gui
 
 app = gui()                 # top slice - CREATE the GUI
 
@@ -266,11 +302,11 @@ Oh, and if you try to put fillings under the bottom-slice, they won't be in the 
 <li><code>setFilling('ham', 'sliced')</code> </li>
 </ul>
 <pre><code class="python"># import the library
-from rwbatools import gui
+from appJar import gui
 
 app = gui()                 # top slice - CREATE the GUI
 
-app.addLabel(&quot;title&quot;, &quot;Welcome to RWBAtools&quot;)   # add a label
+app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)   # add a label
 app.setLabelBg(&quot;title&quot;, &quot;red&quot;)                  # set the label's background to be red
 
 app.go()                    # bottom slice - START the GUI
@@ -296,7 +332,7 @@ We want to make a meal out of it!  </p>
 Simply tell each filling what layer (row) it's on, and what column it's in.<br />
 And, if you're not planning on chopping a filling, it might stretch (span) across more than one column.  </p>
 <p><a href="Layout/">See here</a> for more.  </p>
-<pre><code class="python">from rwbatools import gui
+<pre><code class="python">from appJar import gui
 
 # function called by pressing the buttons
 def press(btn):
@@ -307,7 +343,7 @@ def press(btn):
 
 app = gui()
 
-app.addLabel(&quot;title&quot;, &quot;Welcome to RWBAtools&quot;, 0, 0, 2)  # Row 0, Column 0, Span 2
+app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;, 0, 0, 2)     # Row 0, Column 0, Span 2
 app.addLabel(&quot;user&quot;, &quot;Username:&quot;, 1, 0)                 # Row 1, Column 0, no span
 app.addEntry(&quot;user&quot;, 1, 1)                              # Row 1, Column 1, no span
 app.addLabel(&quot;pass&quot;, &quot;Password:&quot;, 2, 0)                 # Row 2, Column 0, no span
