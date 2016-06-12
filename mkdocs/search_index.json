@@ -677,7 +677,7 @@
         },
         {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "Basic Python"
         },
         {
@@ -686,8 +686,13 @@
             "title": "Some data will go here..."
         },
         {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
+        },
+        {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "Advanced Python"
         },
         {
@@ -696,8 +701,13 @@
             "title": "Some data will go here..."
         },
         {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
+        },
+        {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "Turtle Programming"
         },
         {
@@ -706,8 +716,13 @@
             "title": "Some data will go here..."
         },
         {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
+        },
+        {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "GUI Programming"
         },
         {
@@ -716,8 +731,13 @@
             "title": "Some data will go here..."
         },
         {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
+        },
+        {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "Files & Databases"
         },
         {
@@ -726,14 +746,24 @@
             "title": "Some data will go here..."
         },
         {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
+        },
+        {
             "location": "/Empty/",
-            "text": "Some data will go here...",
+            "text": "Some data will go here...\n\n\nAnd here!",
             "title": "Object-Oriented Programming"
         },
         {
             "location": "/Empty/#some-data-will-go-here",
             "text": "",
             "title": "Some data will go here..."
+        },
+        {
+            "location": "/Empty/#and-here",
+            "text": "",
+            "title": "And here!"
         },
         {
             "location": "/PythonBasics/",
