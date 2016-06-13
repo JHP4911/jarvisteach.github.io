@@ -11,7 +11,7 @@
         <link rel="shortcut icon" href="../img/favicon3.ico">
         
 
-	<title>Arranging widgets - appJar</title>
+	<title>License - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -113,13 +113,13 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Arranging widgets</a>
+<li >
+    <a href="../Layout/">Arranging widgets</a>
 </li>
 
                     
@@ -146,7 +146,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -169,8 +169,8 @@
 
                     
                         
-<li >
-    <a href="../License/">License</a>
+<li class="active">
+    <a href="./">License</a>
 </li>
 
                     
@@ -188,12 +188,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../DevWidgets/">
+                    <a rel="next" href="../PythonBasics/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="../Grouping/">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -221,67 +221,15 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#arranging-widgets">Arranging Widgets</a></li>
-        
-            <li><a href="#sequential-programming">Sequential programming</a></li>
-        
-            <li><a href="#grid-layout">Grid Layout</a></li>
+        <li class="main active"><a href="#license">License</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="arranging-widgets">Arranging Widgets</h1>
-<hr />
-<h3 id="sequential-programming">Sequential programming</h3>
-<hr />
-<p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
-<pre><code class="python">from appJar import gui  
-
-def changeLabel(btn):  
-    app.setLabel(&quot;l2&quot;, app.getEntry(&quot;text&quot;))  
-
-app = gui()  
-app.addLabel(&quot;l1&quot;, &quot;Simple Demo&quot;)
-app.addEntry(&quot;text&quot;)
-app.addButton(&quot;OK&quot;, changeLabel)
-app.addEmptyLabel(&quot;l2&quot;)
-app.go()
-</code></pre>
-
-<p><img alt="Simple Layout" src="../img/1_layout.png" /></p>
-<h3 id="grid-layout">Grid Layout</h3>
-<hr />
-<p>If, however, you want more than that, then a basic GRID layout is supported.</p>
-<p>Each time you add a widget, you can specify a column, row, and even a column-span to position it in.</p>
-<pre><code class="python">from appJar import gui
-
-def press(btn):
-    if btn==&quot;Save&quot;:
-        n=app.getEntry(&quot;name&quot;)
-        a=app.getEntry(&quot;age&quot;)
-        r=app.getOptionBox(&quot;role&quot;)
-        app.infoBox(&quot;Details&quot;, &quot;You entered: {}, {}, {}&quot;.format(n, str(a), r))
-    elif btn==&quot;Quit&quot;:
-        app.stop()
-
-app=gui()
-
-app.addLabel(&quot;l1&quot;, &quot;Name&quot;, 0, 0)
-app.addLabel(&quot;l2&quot;, &quot;Age&quot;, 1, 0)
-app.addLabel(&quot;l3&quot;, &quot;Role&quot;, 2, 0)
-
-app.addEntry(&quot;name&quot;, 0, 1)
-app.addNumericEntry(&quot;age&quot;, 1, 1)
-app.addOptionBox(&quot;role&quot;, [&quot;Teacher&quot;, &quot;Student&quot;, &quot;Developer&quot;, &quot;Volunteer&quot;], 2, 1)
-
-app.addButtons([&quot;Save&quot;, &quot;Quit&quot;], press, 3, 0, 2)
-
-app.go()
-</code></pre>
-
-<p><img alt="Grid Layout" src="../img/2_layout.png" /></p></div>
+<h2 id="license">License</h2>
+<hr /></div>
         </div>
 
         <footer class="col-md-12">
