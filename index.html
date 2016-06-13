@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://use.fontawesome.com/cd51af4656.js"></script>
         
         
         
@@ -12,7 +13,7 @@
 	<title>appJar</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
+        <!--<link href="./css/font-awesome-4.0.3.css" rel="stylesheet">-->
         <link rel="stylesheet" href="./css/highlight.css">
         <link href="./css/base.css" rel="stylesheet">
 
@@ -145,57 +146,6 @@
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lessons <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="Empty/">Basic Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Empty/">Advanced Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Empty/">Turtle Programming</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Empty/">GUI Programming</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Empty/">Files & Databases</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="Empty/">Object-Oriented Programming</a>
-</li>
-
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="PythonBasics/">Python</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -208,6 +158,12 @@
                         
 <li >
     <a href="Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="PythonBasics/">Python</a>
 </li>
 
                     
@@ -226,8 +182,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
+                    <a href="http://teach.appJar.info">
+                    <i class="fa fa-graduation-cap"></i> Learn
                     </a>
                 </li>
                 <li class="disabled">
@@ -238,6 +194,11 @@
                 <li >
                     <a rel="prev" href="Widgets/">
                         Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
                     </a>
                 </li>
                 
@@ -259,7 +220,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#welcome">Welcome</a></li>
+        <li class="main active"><a href="#appjar">appJar</a></li>
         
             <li><a href="#lets-make-a-sandwich">Let's make a sandwich</a></li>
         
@@ -276,13 +237,11 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="welcome">Welcome</h1>
+<h1 id="appjar">appJar</h1>
 <hr />
-<p>This library was designed to use in the <em>classroom</em>  </p>
-<p>It has no dependencies, other than <a href="https://www.python.org/downloads/">Python 3.x</a><br />
-It does not require <a href="Install/"><em>installing</em></a>, simply unzip and go  </p>
-<p>It is meant to be as <em>simple</em> as possible to get started with<br />
-Allowing pupils to focus on learning programming &amp; problem solving, not <a href="https://docs.python.org/3.5/library/tkinter.html">tkinter</a> and GUI building  </p>
+<p>This is a Python library for creating <strong>quick</strong> and <strong>easy</strong> GUIs, designed pimarily for use in the <strong>classroom</strong>.  </p>
+<p>It has no dependencies, other than <a href="https://www.python.org/downloads/">Python 3.x</a> and relies on Pyhton's built-in support of <a href="https://docs.python.org/3.5/library/tkinter.html">tkinter</a>.  </p>
+<p>See the <a href="Install/">installtion guidelines</a> for more information.</p>
 <h3 id="lets-make-a-sandwich">Let's make a sandwich</h3>
 <hr />
 <p>Building a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> is just like making a <a href="https://en.wikipedia.org/wiki/Sandwich">sandwich</a>!  </p>
@@ -290,14 +249,16 @@ Allowing pupils to focus on learning programming &amp; problem solving, not <a h
 <pre><code class="python"># import the library
 from appJar import gui
 
-app = gui()                 # top slice - CREATE the GUI
+# top slice - CREATE the GUI
+app = gui()
 
-# fillings go here...
+### fillings go here ###
 
-app.go()                    # bottom slice - START the GUI
+# bottom slice - START the GUI
+app.go()
 </code></pre>
 
-<p>If you forget the bread on the bottom, everything falls apart!<br />
+<p>If you forget  a slice of bread - you haven't got a sandwich!<br />
 Oh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!</p>
 <h3 id="add-some-fillings">Add some fillings...</h3>
 <hr />
@@ -314,12 +275,15 @@ Oh, and if you try to put fillings under the bottom-slice, they won't be in the 
 <pre><code class="python"># import the library
 from appJar import gui
 
-app = gui()                 # top slice - CREATE the GUI
+# top slice - CREATE the GUI
+app = gui()
 
-app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)   # add a label
-app.setLabelBg(&quot;title&quot;, &quot;red&quot;)                  # set the label's background to be red
+### fillings go here ###
+app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)
+app.setLabelBg(&quot;title&quot;, &quot;red&quot;)
 
-app.go()                    # bottom slice - START the GUI
+# bottom slice - START the GUI
+app.go()
 </code></pre>
 
 <p><img alt="simpleApp" src="./img/simpleApp.png" /></p>
@@ -383,7 +347,7 @@ For starters, you can specify a name and size for your GUI when you make it:  </
 <h3 id="make-your-own">Make your own!</h3>
 <hr />
 <p>That's about it for now.<br />
-Have a look around, discover all of the different fillings available.<br />
+Have a look around, discover all of the different <a href="Widgets/">fillings</a> available.<br />
 And, investigate how best to <a href="Grouping/">present </a> your sandwich!</p></div>
         </div>
 

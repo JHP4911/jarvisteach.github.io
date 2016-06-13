@@ -40,8 +40,8 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
+                    <a href="http://teach.appJar.info">
+                    <i class="fa fa-graduation-cap"></i> Learn
                     </a>
                 </li>
                 <li {% if not previous_page %}class="disabled"{% endif %}>
@@ -52,6 +52,11 @@
                 <li {% if not next_page %}class="disabled"{% endif %}>
                     <a rel="prev" {% if next_page %}href="{{ next_page.url }}"{% endif %}>
                         Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
                     </a>
                 </li>
                 {% if repo_url %}

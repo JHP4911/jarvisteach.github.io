@@ -2,22 +2,22 @@
     "docs": [
         {
             "location": "/",
-            "text": "Welcome\n\n\n\n\nThis library was designed to use in the \nclassroom\n  \n\n\nIt has no dependencies, other than \nPython 3.x\n\nIt does not require \ninstalling\n, simply unzip and go  \n\n\nIt is meant to be as \nsimple\n as possible to get started with\n\nAllowing pupils to focus on learning programming & problem solving, not \ntkinter\n and GUI building  \n\n\nLet's make a sandwich\n\n\n\n\nBuilding a \nGUI\n is just like making a \nsandwich\n!  \n\n\nYou need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...\n\n\n# import the library\nfrom appJar import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\n# fillings go here...\n\napp.go()                    # bottom slice - START the GUI\n\n\n\n\nIf you forget the bread on the bottom, everything falls apart!\n\nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!\n\n\nAdd some fillings...\n\n\n\n\nWhen making a sandwich, you could just stuff it with fillings:  \n\n\n\n\naddFilling('cheese', 'chedar')\n  \n\n\naddFilling('ham', 'smoked')\n  \n\n\n\n\nBut it's often nice to prepare the fillings too:  \n\n\n\n\nsetFilling('cheese', 'grated')\n \n\n\nsetFilling('ham', 'sliced')\n \n\n\n\n\n# import the library\nfrom appJar import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\napp.addLabel(\"title\", \"Welcome to appJar\")   # add a label\napp.setLabelBg(\"title\", \"red\")                  # set the label's background to be red\n\napp.go()                    # bottom slice - START the GUI\n\n\n\n\n\n\nAnd, that's it...\n\nThe more \nfillings\n you put in your sandwich, and the more time you spend making them \nlook nice\n, the better it will taste!\n\n\nFoot-long sub?\n\n\n\n\nOf course, for most of us, a simple sandwich isn't enough...\n\nWe want to make a meal out of it!  \n\n\nIn which case, you're going to want to arrange your fillings a bit more cleverly!\n\n\n\n\nMeat on the bottom  \n\n\nThen the cheese  \n\n\nThen some salad  \n\n\nFinally the sauce!\n\n\n\n\nThe arrangement is paramount, nobody wants the sauce under the meat!\n\n\nBy default, the fillings are simply stacked on top of each other.  \n\n\nHowever, filling a sub is very similar to filling a spreadsheet.\n\nSimply tell each filling what layer (row) it's on, and what column it's in.\n\nAnd, if you're not planning on chopping a filling, it might stretch (span) across more than one column.  \n\n\nSee here\n for more.  \n\n\nfrom appJar import gui\n\n# function called by pressing the buttons\ndef press(btn):\n    if btn==\"Cancel\":\n        app.stop()\n    else:\n        print(\"User:\", app.getEntry('user'), \"Pass:\", app.getEntry('pass'))\n\napp = gui()\n\napp.addLabel(\"title\", \"Welcome to appJar\", 0, 0, 2)     # Row 0, Column 0, Span 2\napp.addLabel(\"user\", \"Username:\", 1, 0)                 # Row 1, Column 0, no span\napp.addEntry(\"user\", 1, 1)                              # Row 1, Column 1, no span\napp.addLabel(\"pass\", \"Password:\", 2, 0)                 # Row 2, Column 0, no span\napp.addSecretEntry(\"pass\", 2, 1)                        # Row 2, Column 1, no span\napp.addButtons([\"Submit\", \"Cancel\"], press, 3, 0, 2)    # Row 3, Column 0, Span 2\n\napp.setEntryFocus(\"user\")\n\napp.go()\n\n\n\n\n\n\nAny extras?\n\n\n\n\nIt's possible to make changes to how the GUI looks\n\nFor starters, you can specify a name and size for your GUI when you make it:  \n\n\n\n\napp=gui(\"Login Window\", \"400x200\")\n  \n\n\n\n\nAnd, you can choose what kind of bread, and whether it's toasted:   \n\n\n\n\napp.setBg(\"Brown\")\n\n\napp.setFont(20)\n\n\n\n\nSee here\n for more.  \n\n\n\n\nMake your own!\n\n\n\n\nThat's about it for now.\n\nHave a look around, discover all of the different fillings available.\n\nAnd, investigate how best to \npresent \n your sandwich!",
+            "text": "appJar\n\n\n\n\nThis is a Python library for creating \nquick\n and \neasy\n GUIs, designed pimarily for use in the \nclassroom\n.  \n\n\nIt has no dependencies, other than \nPython 3.x\n and relies on Pyhton's built-in support of \ntkinter\n.  \n\n\nSee the \ninstalltion guidelines\n for more information.\n\n\nLet's make a sandwich\n\n\n\n\nBuilding a \nGUI\n is just like making a \nsandwich\n!  \n\n\nYou need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...\n\n\n# import the library\nfrom appJar import gui\n\n# top slice - CREATE the GUI\napp = gui()\n\n### fillings go here ###\n\n# bottom slice - START the GUI\napp.go()\n\n\n\n\nIf you forget  a slice of bread - you haven't got a sandwich!\n\nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!\n\n\nAdd some fillings...\n\n\n\n\nWhen making a sandwich, you could just stuff it with fillings:  \n\n\n\n\naddFilling('cheese', 'chedar')\n  \n\n\naddFilling('ham', 'smoked')\n  \n\n\n\n\nBut it's often nice to prepare the fillings too:  \n\n\n\n\nsetFilling('cheese', 'grated')\n \n\n\nsetFilling('ham', 'sliced')\n \n\n\n\n\n# import the library\nfrom appJar import gui\n\n# top slice - CREATE the GUI\napp = gui()\n\n### fillings go here ###\napp.addLabel(\"title\", \"Welcome to appJar\")\napp.setLabelBg(\"title\", \"red\")\n\n# bottom slice - START the GUI\napp.go()\n\n\n\n\n\n\nAnd, that's it...\n\nThe more \nfillings\n you put in your sandwich, and the more time you spend making them \nlook nice\n, the better it will taste!\n\n\nFoot-long sub?\n\n\n\n\nOf course, for most of us, a simple sandwich isn't enough...\n\nWe want to make a meal out of it!  \n\n\nIn which case, you're going to want to arrange your fillings a bit more cleverly!\n\n\n\n\nMeat on the bottom  \n\n\nThen the cheese  \n\n\nThen some salad  \n\n\nFinally the sauce!\n\n\n\n\nThe arrangement is paramount, nobody wants the sauce under the meat!\n\n\nBy default, the fillings are simply stacked on top of each other.  \n\n\nHowever, filling a sub is very similar to filling a spreadsheet.\n\nSimply tell each filling what layer (row) it's on, and what column it's in.\n\nAnd, if you're not planning on chopping a filling, it might stretch (span) across more than one column.  \n\n\nSee here\n for more.  \n\n\nfrom appJar import gui\n\n# function called by pressing the buttons\ndef press(btn):\n    if btn==\"Cancel\":\n        app.stop()\n    else:\n        print(\"User:\", app.getEntry('user'), \"Pass:\", app.getEntry('pass'))\n\napp = gui()\n\napp.addLabel(\"title\", \"Welcome to appJar\", 0, 0, 2)     # Row 0, Column 0, Span 2\napp.addLabel(\"user\", \"Username:\", 1, 0)                 # Row 1, Column 0, no span\napp.addEntry(\"user\", 1, 1)                              # Row 1, Column 1, no span\napp.addLabel(\"pass\", \"Password:\", 2, 0)                 # Row 2, Column 0, no span\napp.addSecretEntry(\"pass\", 2, 1)                        # Row 2, Column 1, no span\napp.addButtons([\"Submit\", \"Cancel\"], press, 3, 0, 2)    # Row 3, Column 0, Span 2\n\napp.setEntryFocus(\"user\")\n\napp.go()\n\n\n\n\n\n\nAny extras?\n\n\n\n\nIt's possible to make changes to how the GUI looks\n\nFor starters, you can specify a name and size for your GUI when you make it:  \n\n\n\n\napp=gui(\"Login Window\", \"400x200\")\n  \n\n\n\n\nAnd, you can choose what kind of bread, and whether it's toasted:   \n\n\n\n\napp.setBg(\"Brown\")\n\n\napp.setFont(20)\n\n\n\n\nSee here\n for more.  \n\n\n\n\nMake your own!\n\n\n\n\nThat's about it for now.\n\nHave a look around, discover all of the different \nfillings\n available.\n\nAnd, investigate how best to \npresent \n your sandwich!",
             "title": "Welcome"
         },
         {
-            "location": "/#welcome",
-            "text": "This library was designed to use in the  classroom     It has no dependencies, other than  Python 3.x \nIt does not require  installing , simply unzip and go    It is meant to be as  simple  as possible to get started with \nAllowing pupils to focus on learning programming & problem solving, not  tkinter  and GUI building",
-            "title": "Welcome"
+            "location": "/#appjar",
+            "text": "This is a Python library for creating  quick  and  easy  GUIs, designed pimarily for use in the  classroom .    It has no dependencies, other than  Python 3.x  and relies on Pyhton's built-in support of  tkinter .    See the  installtion guidelines  for more information.",
+            "title": "appJar"
         },
         {
             "location": "/#lets-make-a-sandwich",
-            "text": "Building a  GUI  is just like making a  sandwich !    You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...  # import the library\nfrom appJar import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\n# fillings go here...\n\napp.go()                    # bottom slice - START the GUI  If you forget the bread on the bottom, everything falls apart! \nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!",
+            "text": "Building a  GUI  is just like making a  sandwich !    You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle...  # import the library\nfrom appJar import gui\n\n# top slice - CREATE the GUI\napp = gui()\n\n### fillings go here ###\n\n# bottom slice - START the GUI\napp.go()  If you forget  a slice of bread - you haven't got a sandwich! \nOh, and if you try to put fillings under the bottom-slice, they won't be in the sandwich!",
             "title": "Let's make a sandwich"
         },
         {
             "location": "/#add-some-fillings",
-            "text": "When making a sandwich, you could just stuff it with fillings:     addFilling('cheese', 'chedar')     addFilling('ham', 'smoked')      But it's often nice to prepare the fillings too:     setFilling('cheese', 'grated')    setFilling('ham', 'sliced')     # import the library\nfrom appJar import gui\n\napp = gui()                 # top slice - CREATE the GUI\n\napp.addLabel(\"title\", \"Welcome to appJar\")   # add a label\napp.setLabelBg(\"title\", \"red\")                  # set the label's background to be red\n\napp.go()                    # bottom slice - START the GUI   And, that's it... \nThe more  fillings  you put in your sandwich, and the more time you spend making them  look nice , the better it will taste!",
+            "text": "When making a sandwich, you could just stuff it with fillings:     addFilling('cheese', 'chedar')     addFilling('ham', 'smoked')      But it's often nice to prepare the fillings too:     setFilling('cheese', 'grated')    setFilling('ham', 'sliced')     # import the library\nfrom appJar import gui\n\n# top slice - CREATE the GUI\napp = gui()\n\n### fillings go here ###\napp.addLabel(\"title\", \"Welcome to appJar\")\napp.setLabelBg(\"title\", \"red\")\n\n# bottom slice - START the GUI\napp.go()   And, that's it... \nThe more  fillings  you put in your sandwich, and the more time you spend making them  look nice , the better it will taste!",
             "title": "Add some fillings..."
         },
         {
@@ -32,7 +32,7 @@
         },
         {
             "location": "/#make-your-own",
-            "text": "That's about it for now. \nHave a look around, discover all of the different fillings available. \nAnd, investigate how best to  present   your sandwich!",
+            "text": "That's about it for now. \nHave a look around, discover all of the different  fillings  available. \nAnd, investigate how best to  present   your sandwich!",
             "title": "Make your own!"
         },
         {
@@ -676,94 +676,64 @@
             "title": "Other Keys"
         },
         {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "Basic Python"
+            "location": "/Install/",
+            "text": "Installation Instructions\n\n\n\n\nThis library is designed to be as simple as possible to \ninstall\n.\n\nAs long as the \nappJar\n folder is in Python's path, you are good to go.  \n\n\nPreparing the library\n\n\n\n\nAll installations start the same:\n\n\n\n\nDownload\n the ZIP file.\n\n\nUnzip it.\n\n\nMake sure the folder is called \nappJar\n  \n\n\nPut the folder in a sensible place \n~/Documents/PYLIB/\n\n\n\n\nNow, it's ready to go, at the top of your code, you can include the following:\n\n\n# add the appJar folder to your PATH\nimport sys\nsys.path.append(\"~/Documents/PYLIB\") # replce this with the correct path\n# import the library\nfrom appJar import gui\n\n\n\n\nIf you want a more permanent solution, you can add the above folder to your path. See below. \n\n\nWindows Installation\n\n\n\n\n\n\nOpen \nControl Panel\n\n\nNavigate to \nSystem -> Advanced System Settings\n\n\n\n\nClick the \nAdvanced\n tab\n\n\n\nUnder \nSystem vartiables\n, click the \nNew..\n button\n\n\n\nSet the \nVariable name:\n to be \nPYTHONPATH\n\n\nSet the \nPath:\n as the folder you put \nappJar\n in (eg. c:\\COMPUTINC\\PYLIB\")\n\n\n\nPress \nOK\n, and you're ready to go:\n\n\n\n\nLinux Installation\n\n\n\n\n\n\nLaunch a \nTerminal\n\n\nType the following:\n\n\n\n\n    echo 'export PYTHONPATH=\"${PYTHONPATH}:~Documents/PYLIB\"' >> ~/.bashrc\n\n\n\n\n\n\nClose the terminal, and you're ready to go\n\n\n\n\nMAC Installation\n\n\n\n\n\n\nIt's a little trickier on MAC\n\n\nFirst off, run the Linux installation above. That will make it available form the command line.\n\n\nIn OSX<=10.9:\n\n\nEdit the \n/etc/launchd.conf\n file\n\n\nAdd the line: \nsetenv PYTHONPATH /Users/myname/Documents/PYLIB\n\n\nAnd you're done\n\n\n\n\n\n\n\n\nUsing the library\n\n\n\n\nIf the appJar folder is in your path, you can access it simply though an import:\n\n\n# import the library\nfrom appJar import gui",
+            "title": "Installation"
         },
         {
-            "location": "/Empty/#some-data-will-go-here",
+            "location": "/Install/#installation-instructions",
+            "text": "This library is designed to be as simple as possible to  install . \nAs long as the  appJar  folder is in Python's path, you are good to go.",
+            "title": "Installation Instructions"
+        },
+        {
+            "location": "/Install/#preparing-the-library",
+            "text": "All installations start the same:   Download  the ZIP file.  Unzip it.  Make sure the folder is called  appJar     Put the folder in a sensible place  ~/Documents/PYLIB/   Now, it's ready to go, at the top of your code, you can include the following:  # add the appJar folder to your PATH\nimport sys\nsys.path.append(\"~/Documents/PYLIB\") # replce this with the correct path\n# import the library\nfrom appJar import gui  If you want a more permanent solution, you can add the above folder to your path. See below.",
+            "title": "Preparing the library"
+        },
+        {
+            "location": "/Install/#windows-installation",
+            "text": "Open  Control Panel  Navigate to  System -> Advanced System Settings   Click the  Advanced  tab  Under  System vartiables , click the  New..  button  Set the  Variable name:  to be  PYTHONPATH  Set the  Path:  as the folder you put  appJar  in (eg. c:\\COMPUTINC\\PYLIB\")  Press  OK , and you're ready to go:",
+            "title": "Windows Installation"
+        },
+        {
+            "location": "/Install/#linux-installation",
+            "text": "Launch a  Terminal  Type the following:       echo 'export PYTHONPATH=\"${PYTHONPATH}:~Documents/PYLIB\"' >> ~/.bashrc   Close the terminal, and you're ready to go",
+            "title": "Linux Installation"
+        },
+        {
+            "location": "/Install/#mac-installation",
+            "text": "It's a little trickier on MAC  First off, run the Linux installation above. That will make it available form the command line.  In OSX<=10.9:  Edit the  /etc/launchd.conf  file  Add the line:  setenv PYTHONPATH /Users/myname/Documents/PYLIB  And you're done",
+            "title": "MAC Installation"
+        },
+        {
+            "location": "/Install/#using-the-library",
+            "text": "If the appJar folder is in your path, you can access it simply though an import:  # import the library\nfrom appJar import gui",
+            "title": "Using the library"
+        },
+        {
+            "location": "/Thanks/",
+            "text": "Thanks to:\n\n\n\n\nHelpful Resources\n\n\n\n\nhttp://effbot.org/tkinterbook/ - The GURU of all things tkinter & Python\n\n\nhttp://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html - another great resource\n\n\nhttp://tkinter.unpythonic.net/wiki/FrontPage - another good resource\n\n\n\n\nIncorporated Libraries\n\n\n\n\nhttps://github.com/drj11/pypng - supplies basic PNG support\n\n\nhttps://bitbucket.org/hokaze/tkinter-png - allows PNGs to be treated as PhotoImages\n\n\nhttps://github.com/sullerandras/nanojpeg-python - provides BASIC jpeg support\n\n\nhttp://tkinter.unpythonic.net/wiki/ToolTip - provides ToolTips\n\n\n\n\nDocumentation\n\n\n\n\nhttp://www.mkdocs.org - used to generate this documentation",
+            "title": "Acknowledgements"
+        },
+        {
+            "location": "/Thanks/#thanks-to",
             "text": "",
-            "title": "Some data will go here..."
+            "title": "Thanks to:"
         },
         {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
+            "location": "/Thanks/#helpful-resources",
+            "text": "http://effbot.org/tkinterbook/ - The GURU of all things tkinter & Python  http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html - another great resource  http://tkinter.unpythonic.net/wiki/FrontPage - another good resource",
+            "title": "Helpful Resources"
         },
         {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "Advanced Python"
+            "location": "/Thanks/#incorporated-libraries",
+            "text": "https://github.com/drj11/pypng - supplies basic PNG support  https://bitbucket.org/hokaze/tkinter-png - allows PNGs to be treated as PhotoImages  https://github.com/sullerandras/nanojpeg-python - provides BASIC jpeg support  http://tkinter.unpythonic.net/wiki/ToolTip - provides ToolTips",
+            "title": "Incorporated Libraries"
         },
         {
-            "location": "/Empty/#some-data-will-go-here",
-            "text": "",
-            "title": "Some data will go here..."
-        },
-        {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
-        },
-        {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "Turtle Programming"
-        },
-        {
-            "location": "/Empty/#some-data-will-go-here",
-            "text": "",
-            "title": "Some data will go here..."
-        },
-        {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
-        },
-        {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "GUI Programming"
-        },
-        {
-            "location": "/Empty/#some-data-will-go-here",
-            "text": "",
-            "title": "Some data will go here..."
-        },
-        {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
-        },
-        {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "Files & Databases"
-        },
-        {
-            "location": "/Empty/#some-data-will-go-here",
-            "text": "",
-            "title": "Some data will go here..."
-        },
-        {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
-        },
-        {
-            "location": "/Empty/",
-            "text": "Some data will go here...\n\n\nAnd here!",
-            "title": "Object-Oriented Programming"
-        },
-        {
-            "location": "/Empty/#some-data-will-go-here",
-            "text": "",
-            "title": "Some data will go here..."
-        },
-        {
-            "location": "/Empty/#and-here",
-            "text": "",
-            "title": "And here!"
+            "location": "/Thanks/#documentation",
+            "text": "http://www.mkdocs.org - used to generate this documentation",
+            "title": "Documentation"
         },
         {
             "location": "/PythonBasics/",
@@ -959,66 +929,6 @@
             "location": "/PythonBasics/#colour-map",
             "text": "Below is a useful colour map to use when doing Turtle or GUI programming.",
             "title": "Colour Map"
-        },
-        {
-            "location": "/Install/",
-            "text": "Installation Instructions\n\n\n\n\nThis library is designed to be as simple as possible to \ninstall\n.\n\nAs long as the \nappJar\n folder is in Python's path, you are good to go.  \n\n\nPreparing the library\n\n\n\n\nAll installations start the same:\n\n\n\n\nDownload\n the ZIP file.\n\n\nUnzip it.\n\n\nMake sure the folder is called \nappJar\n  \n\n\nPut the folder in a sensible place \n~/Documents/PYLIB/\n\n\n\n\nNow, it's ready to go, at the top of your code, you can include the following:\n\n\n# add the appJar folder to your PATH\nimport sys\nsys.path.append(\"~/Documents/PYLIB\") # replce this with the correct path\n# import the library\nfrom appJar import gui\n\n\n\n\nIf you want a more permanent solution, you can add the above folder to your path. See below. \n\n\nWindows Installation\n\n\n\n\n\n\nOpen \nControl Panel\n\n\nNavigate to \nSystem -> Advanced System Settings\n\n\n\n\nClick the \nAdvanced\n tab\n\n\n\nUnder \nSystem vartiables\n, click the \nNew..\n button\n\n\n\nSet the \nVariable name:\n to be \nPYTHONPATH\n\n\nSet the \nPath:\n as the folder you put \nappJar\n in (eg. c:\\COMPUTINC\\PYLIB\")\n\n\n\nPress \nOK\n, and you're ready to go:\n\n\n\n\nLinux Installation\n\n\n\n\n\n\nLaunch a \nTerminal\n\n\nType the following:\n\n\n\n\n    echo 'export PYTHONPATH=\"${PYTHONPATH}:~Documents/PYLIB\"' >> ~/.bashrc\n\n\n\n\n\n\nClose the terminal, and you're ready to go\n\n\n\n\nMAC Installation\n\n\n\n\n\n\nIt's a little trickier on MAC\n\n\nFirst off, run the Linux installation above. That will make it available form the command line.\n\n\nIn OSX<=10.9:\n\n\nEdit the \n/etc/launchd.conf\n file\n\n\nAdd the line: \nsetenv PYTHONPATH /Users/myname/Documents/PYLIB\n\n\nAnd you're done\n\n\n\n\n\n\n\n\nUsing the library\n\n\n\n\nIf the appJar folder is in your path, you can access it simply though an import:\n\n\n# import the library\nfrom appJar import gui",
-            "title": "Installation"
-        },
-        {
-            "location": "/Install/#installation-instructions",
-            "text": "This library is designed to be as simple as possible to  install . \nAs long as the  appJar  folder is in Python's path, you are good to go.",
-            "title": "Installation Instructions"
-        },
-        {
-            "location": "/Install/#preparing-the-library",
-            "text": "All installations start the same:   Download  the ZIP file.  Unzip it.  Make sure the folder is called  appJar     Put the folder in a sensible place  ~/Documents/PYLIB/   Now, it's ready to go, at the top of your code, you can include the following:  # add the appJar folder to your PATH\nimport sys\nsys.path.append(\"~/Documents/PYLIB\") # replce this with the correct path\n# import the library\nfrom appJar import gui  If you want a more permanent solution, you can add the above folder to your path. See below.",
-            "title": "Preparing the library"
-        },
-        {
-            "location": "/Install/#windows-installation",
-            "text": "Open  Control Panel  Navigate to  System -> Advanced System Settings   Click the  Advanced  tab  Under  System vartiables , click the  New..  button  Set the  Variable name:  to be  PYTHONPATH  Set the  Path:  as the folder you put  appJar  in (eg. c:\\COMPUTINC\\PYLIB\")  Press  OK , and you're ready to go:",
-            "title": "Windows Installation"
-        },
-        {
-            "location": "/Install/#linux-installation",
-            "text": "Launch a  Terminal  Type the following:       echo 'export PYTHONPATH=\"${PYTHONPATH}:~Documents/PYLIB\"' >> ~/.bashrc   Close the terminal, and you're ready to go",
-            "title": "Linux Installation"
-        },
-        {
-            "location": "/Install/#mac-installation",
-            "text": "It's a little trickier on MAC  First off, run the Linux installation above. That will make it available form the command line.  In OSX<=10.9:  Edit the  /etc/launchd.conf  file  Add the line:  setenv PYTHONPATH /Users/myname/Documents/PYLIB  And you're done",
-            "title": "MAC Installation"
-        },
-        {
-            "location": "/Install/#using-the-library",
-            "text": "If the appJar folder is in your path, you can access it simply though an import:  # import the library\nfrom appJar import gui",
-            "title": "Using the library"
-        },
-        {
-            "location": "/Thanks/",
-            "text": "Thanks to:\n\n\n\n\nHelpful Resources\n\n\n\n\nhttp://effbot.org/tkinterbook/ - The GURU of all things tkinter & Python\n\n\nhttp://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html - another great resource\n\n\nhttp://tkinter.unpythonic.net/wiki/FrontPage - another good resource\n\n\n\n\nIncorporated Libraries\n\n\n\n\nhttps://github.com/drj11/pypng - supplies basic PNG support\n\n\nhttps://bitbucket.org/hokaze/tkinter-png - allows PNGs to be treated as PhotoImages\n\n\nhttps://github.com/sullerandras/nanojpeg-python - provides BASIC jpeg support\n\n\nhttp://tkinter.unpythonic.net/wiki/ToolTip - provides ToolTips\n\n\n\n\nDocumentation\n\n\n\n\nhttp://www.mkdocs.org - used to generate this documentation",
-            "title": "Acknowledgements"
-        },
-        {
-            "location": "/Thanks/#thanks-to",
-            "text": "",
-            "title": "Thanks to:"
-        },
-        {
-            "location": "/Thanks/#helpful-resources",
-            "text": "http://effbot.org/tkinterbook/ - The GURU of all things tkinter & Python  http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html - another great resource  http://tkinter.unpythonic.net/wiki/FrontPage - another good resource",
-            "title": "Helpful Resources"
-        },
-        {
-            "location": "/Thanks/#incorporated-libraries",
-            "text": "https://github.com/drj11/pypng - supplies basic PNG support  https://bitbucket.org/hokaze/tkinter-png - allows PNGs to be treated as PhotoImages  https://github.com/sullerandras/nanojpeg-python - provides BASIC jpeg support  http://tkinter.unpythonic.net/wiki/ToolTip - provides ToolTips",
-            "title": "Incorporated Libraries"
-        },
-        {
-            "location": "/Thanks/#documentation",
-            "text": "http://www.mkdocs.org - used to generate this documentation",
-            "title": "Documentation"
         },
         {
             "location": "/License/",
