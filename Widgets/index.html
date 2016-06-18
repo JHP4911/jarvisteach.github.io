@@ -416,27 +416,29 @@ These are the key to starting an interactive application.<br />
 The GUI is looping, waiting for something to happen.<br />
 A button click is the classic way to start interacting with a GUI.</p>
 <p>Whenever any function is called by the GUI, the title of the widget that called it is passed as a parameter.<br />
-That way, multiple widgets can use the same function, but diffrent actions can be performed, depening on the name passed as a parameter.</p>
-<h4 id="add-buttons">Add Buttons</h4>
-<ul>
-<li><code>.addButton(title, function)</code><br />
-    Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
-    A function should be specified, which will be called when the button is clicked.</li>
-</ul>
+That way, multiple widgets can use the same function, but different actions can be performed, depending on the name passed as a parameter.</p>
 <p><img alt="Buttons" src="../img/1_buttons.gif" /></p>
 <pre><code class="python">    from appJar import gui
 
-    def press(btn):                 # the title of the button will be received as a parameter
+    # the title of the button will be received as a parameter
+    def press(btn):
         print(btn)
 
     app=gui()
-    app.addButton(&quot;One&quot;, press)     # 3 buttons, each calling the same function
+    # 3 buttons, each calling the same function
+    app.addButton(&quot;One&quot;, press)
     app.addButton(&quot;Two&quot;, press)
     app.addButton(&quot;Three&quot;, press)
     app.go()
 </code></pre>
 
+<h4 id="add-buttons">Add Buttons</h4>
 <ul>
+<li>
+<p><code>.addButton(title, function)</code><br />
+    Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
+    A function should be specified, which will be called when the button is clicked.</p>
+</li>
 <li>
 <p><code>.addButtons(titles, functions)</code><br />
     It's possible to add a list of buttons to the GUI.<br />
@@ -550,7 +552,17 @@ app.go()
 </ul>
 <h2 id="optionbox">OptionBox</h2>
 <hr />
-<p>A drop-down single-select option</p>
+<p>Creates a simple drop-down box. It is only possible to select one option form this drop-down.<br />
+Pass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.  </p>
+<p><img alt="OptionBox" src="../img/1_optBox.png" /> <img alt="OptionBox" src="../img/2_optBox.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addLabelOptionBox(&quot;Options&quot;, [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Pear&quot;, &quot;kiwi&quot;])
+app.go()
+</code></pre>
+
 <h4 id="add-optionboxes">Add OptionBoxes</h4>
 <ul>
 <li><code>.addOptionBox(title, values)</code><br />
@@ -569,96 +581,192 @@ app.go()
 </ul>
 <h4 id="get-optionboxes">Get OptionBoxes</h4>
 <ul>
-<li><code>.getOptionBox(title)</code></li>
+<li><code>.getOptionBox(title)</code><br />
+    This will return the currently displayed value in the OptionBox.</li>
 </ul>
 <h2 id="spinbox">SpinBox</h2>
 <hr />
-<p>A scrollable option</p>
+<p>A scrollable list of options. Up and down buttons are provided to scroll from one item to the next.<br />
+Unlike the OptionBox, you do not get a drop-down of choices, instead it spins to the next/previous option.  </p>
+<p><img alt="SpinBox" src="../img/1_spinBox.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addLabelSpinBox(&quot;options&quot;, [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Pear&quot;, &quot;kiwi&quot;])
+app.go()
+</code></pre>
+
 <h4 id="add-spinboxes">Add SpinBoxes</h4>
 <ul>
-<li><code>.addSpinBox(title, values)</code></li>
-<li><code>.addSpinBoxRange(title, from, to)</code></li>
+<li><code>.addSpinBox(title, values)</code><br />
+    This will create a SpinBox, adding the contents of the values list, in the order specified.</li>
+<li>
+<p><code>.addSpinBoxRange(title, from, to)</code><br />
+    This will create a SpinBox, with a numeric range of items.  </p>
+<p><img alt="SpinBox" src="../img/3_spinBox.png" />  </p>
+</li>
 </ul>
+<pre><code class="python">    from appJar import gui
+
+    app=gui()
+    app.setFont(20)
+    app.addSpinBoxRange(&quot;Numbers&quot;, 1, 12)
+    app.go()
+</code></pre>
+
 <h4 id="set-spinboxes">Set SpinBoxes</h4>
 <ul>
-<li><code>.setSpinBox(title, value)</code></li>
-<li><code>.setSpinBoxPos(title, pos)</code></li>
+<li><code>.setSpinBox(title, value)</code><br />
+    This will change the SpinBox to show the specified value.  </li>
+<li><code>.setSpinBoxPos(title, pos)</code><br />
+    This will change the SpinBox to show the value at the specified position.  </li>
 </ul>
 <h4 id="get-spinboxes">Get SpinBoxes</h4>
 <ul>
-<li><code>.getSpinBox(title)</code></li>
+<li><code>.getSpinBox(title)</code><br />
+    This will get the selected value from the specified SpinBox.  </li>
 </ul>
 <h2 id="listbox">ListBox</h2>
 <hr />
 <p>A box containing a list of items, single or multi-select</p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addListBox(&quot;list&quot;, [&quot;apple&quot;, &quot;orange&quot;, &quot;pear&quot;, &quot;kiwi&quot;])
+app.go()
+</code></pre>
+
+<p><img alt="ListBox" src="../img/1_listBox.png" />  </p>
 <h4 id="add-listboxes">Add ListBoxes</h4>
 <ul>
-<li><code>.addListBox(title, values)</code></li>
-<li><code>.addListItem(title, item)</code></li>
-<li><code>.addListItems(title, items)</code></li>
+<li><code>.addListBox(title, values)</code><br />
+    Creates a ListBox with the specified values.  </li>
+<li><code>.addListItem(title, item)</code><br />
+    Adds a single item to the the end of the ListBox, and selects it.  </li>
+<li><code>.addListItems(title, items)</code><br />
+    Adds a list of items to the end of the List Box, selecting the last one.  </li>
 </ul>
 <h4 id="set-listboxes">Set ListBoxes</h4>
 <ul>
-<li><code>.setListBoxRows(title)</code></li>
-<li><code>.setListSingle(list, single)</code></li>
-<li><code>.selectListItem(title, item)</code></li>
-<li><code>.updateListItems(title, items)</code></li>
-<li><code>.removeListItem(title, item)</code></li>
-<li><code>.clearListBox(title)</code></li>
+<li><code>.updateListItems(title, items)</code><br />
+    Replace the contents of the specified ListBox with the new values.  </li>
+<li><code>.removeListItem(title, item)</code><br />
+    Remove the specified item from teh specified ListBox.  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+def press(btn):
+    items = app.getListItems(&quot;list&quot;)
+    if len(items)&gt; 0:
+        app.removeListItem(&quot;list&quot;, items[0])
+
+app=gui()
+app.setFont(20)
+app.addListBox(&quot;list&quot;, [&quot;apple&quot;, &quot;orange&quot;, &quot;pear&quot;, &quot;kiwi&quot;])
+app.addButton(&quot;press&quot;,  press)
+app.go()
+</code></pre>
+
+<ul>
+<li><code>.clearListBox(title)</code><br />
+    Removes all items from the specified ListBox.  </li>
+<li><code>.setListBoxRows(title)</code><br />
+    Sets how many rows to display in the specified ListBox.  </li>
+<li><code>.setListBoxMulti(list, multi=True)</code><br />
+    Configures whether the specified ListBox is single or multi select.  </li>
+<li><code>.selectListItem(title, item)</code><br />
+    Selects the specified item in the specified ListBox.  </li>
 </ul>
 <h4 id="get-listboxes">Get ListBoxes</h4>
 <ul>
-<li><code>.getListItems(title)</code></li>
+<li><code>.getListItems(title)</code><br />
+    Gets all of the selected items from the specified ListBox.  </li>
 </ul>
 <h2 id="scale">Scale</h2>
 <hr />
-<p>A slider, that has a minimum &amp; maximum value</p>
+<p>A slider, that has a minimum &amp; maximum value.  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addScale(&quot;scale&quot;)
+app.go()
+</code></pre>
+
+<p><img alt="Scale" src="../img/1_scale.png" />  </p>
 <h4 id="add-scales">Add Scales</h4>
 <ul>
-<li><code>.addScale(title)</code></li>
+<li><code>.addScale(title)</code><br />
+    Adds a scale, with a default range between 0 and 100.  </li>
 </ul>
 <h4 id="set-scales">Set Scales</h4>
 <ul>
-<li><code>.setScaleRange(title from, to, curr=0)</code></li>
-<li><code>.orientScaleHor(title, hor=True)</code></li>
-<li><code>.setScale(title, pos)</code></li>
-<li><code>.showScaleValue(title, show=True)</code></li>
+<li><code>.setScale(title, pos)</code><br />
+    Sets the selected pos for the specified Scale.  </li>
+<li><code>.setScaleRange(title from, to, curr=0)</code><br />
+    Allows you to change the range available in the Scale. If <code>curr</code> is provided, then the Scale will be set to that value.  </li>
+<li><code>.showScaleValue(title, show=True)</code><br />
+    Configures the Scale to show the currently selected value.<br />
+<img alt="Scale" src="../img/2_scale.png" />  </li>
+<li><code>.orientScaleHor(title, hor=True)</code><br />
+    Changes the Scale's orientation. If <code>hor</code> is not set, it will be <em>horizontal</em>, if False is passed in, it will be <em>vertical</em>.<br />
+<img alt="Scale" src="../img/3_scale.png" />  </li>
 </ul>
 <h4 id="get-scales">Get Scales</h4>
 <ul>
-<li><code>.getScale(title)</code></li>
+<li><code>.getScale(title)</code><br />
+    Gets the currently selected value from the scale.  </li>
 </ul>
 <h2 id="message">Message</h2>
 <hr />
-<p>Like a multi-line label</p>
+<p>Similar to a Label, except it will wrap the text over multiple lines.  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(12)
+app.addMessage(&quot;mess&quot;, &quot;&quot;&quot;You can put a lot of text in this widget.
+The text will be wrapped over multiple lines.
+It's not possible to apply different styles to different words.&quot;&quot;&quot;)
+app.go()
+</code></pre>
+
+<p><img alt="Message" src="../img/1_mess.png" />  </p>
 <h4 id="add-messages">Add Messages</h4>
 <ul>
-<li><code>.addMessage(title, text)</code></li>
-<li><code>.addEmptyMessage(title)</code></li>
+<li><code>.addMessage(title, text)</code><br />
+    Adds a Message widget, with the specified text.  </li>
+<li><code>.addEmptyMessage(title)</code><br />
+    Adds an empty Message widget.  </li>
 </ul>
 <h4 id="set-messages">Set Messages</h4>
 <ul>
-<li><code>.clearMessage(title)</code></li>
-<li><code>.setMessage(title, text)</code></li>
+<li><code>.clearMessage(title)</code><br />
+    Clears the specifed Message widget.  </li>
+<li><code>.setMessage(title, text)</code><br />
+    Sets the contents of the specifed Message widget, to the specified text.  </li>
 </ul>
 <h2 id="textarea">TextArea</h2>
 <hr />
-<p>A multi-line box for typing text</p>
+<p>Similar to an Entry box, but allows you to type text over multiple lines.  </p>
 <h4 id="add-textareas">Add TextAreas</h4>
 <ul>
-<li><code>.addTextArea(title)</code></li>
-<li><code>.addScrolledTextArea(title)</code></li>
+<li><code>.addTextArea(title)</code><br />
+    Adds an empty TextArea, with the specified title.  </li>
+<li><code>.addScrolledTextArea(title)</code><br />
+    Adds a scrollable TextArea with the specified title.  </li>
 </ul>
 <h4 id="set-textareas">Set TextAreas</h4>
 <ul>
-<li><code>.setTextArea(title, text)</code></li>
-<li><code>.clearTextArea(title)</code></li>
-<li><code>.logTextArea(title)</code></li>
-<li><code>.textAreaChanged(title)</code></li>
+<li><code>.setTextArea(title, text)</code><br />
+    Changes the contents of the specified TextArea, to the specified text.  </li>
+<li><code>.clearTextArea(title)</code><br />
+    Clears the contents of the specified TextArea.  </li>
 </ul>
 <h4 id="get-textareas">Get TextAreas</h4>
 <ul>
-<li><code>.getTextArea(title)</code></li>
+<li><code>.getTextArea(title)</code><br />
+    Gets the contents of the specified TextArea.  </li>
 </ul>
 <h2 id="meter">Meter</h2>
 <hr />
