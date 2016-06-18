@@ -17,6 +17,7 @@
         <link href="../css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/highlight.css">
         <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -104,7 +105,7 @@
                     
                         
 <li >
-    <a href="../DevWidgets/">Still to come...</a>
+    <a href="../DevWidgets/">In the works...</a>
 </li>
 
                     
@@ -302,21 +303,26 @@ app.setLabelBg(&quot;l4&quot;, &quot;orange&quot;)
 app.go()
 </code></pre>
 
-<h4 id="add-labels">Add Labels</h4>
-<ul>
-<li>
-<p><code>.addLabel(title, text=None)</code><br />
-    As with all widgets, when you add a <em>label</em>, a title must be provided - to identify the <em>label</em>. This is then followed by an optional piece of text to display.</p>
-</li>
-<li>
-<p><code>.addEmptyLabel(title)</code><br />
-    Does the same as add a <em>label</em>, except there''s no parameter to set any text.</p>
-</li>
-<li>
-<p><code>.addFlashLabel(title, text=None)</code><br />
-    This adds a flashing <em>label</em>, that will alternate between the foreground and background colours.</p>
-</li>
-</ul>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Panel info</h3>
+    </div>
+    <div class="panel-body">
+
+####Add Labels
+* `.addLabel(title, text=None)`  
+    As with all widgets, when you add a *label*, a title must be provided - to identify the *label*. This is then followed by an optional piece of text to display.
+
+* `.addEmptyLabel(title)`  
+    Does the same as add a *label*, except there''s no parameter to set any text.
+
+* `.addFlashLabel(title, text=None)`  
+    This adds a flashing *label*, that will alternate between the foreground and background colours.
+
+    </div>
+
+</div>
+
 <h4 id="set-labels">Set Labels</h4>
 <ul>
 <li>
@@ -770,58 +776,72 @@ app.go()
 </ul>
 <h2 id="meter">Meter</h2>
 <hr />
-<p>Used for showing progress</p>
+<p>Shows a simple progress meter  </p>
+<pre><code>from appJar import gui
+
+app=gui()
+app.setGeometry(&quot;200x50&quot;)
+app.setFont(20)
+app.addMeter(&quot;progress&quot;)
+app.go()
+</code></pre>
+
+<p><img alt="Meter" src="../img/1_meter.png" />  </p>
 <ul>
-<li>
-<h3 id="meter_1">Meter</h3>
-<p>Shows a simple progress meter:  </p>
-<ul>
-<li>
-<p><code>addMeter(name)</code><br />
-    Adds a meter with the specified name.</p>
-</li>
+<li><code>addMeter(name)</code><br />
+    Adds a meter with the specified name.  </li>
 <li>
 <p><code>setMeter(name, value, text=None)</code><br />
-    Changes the specified meter to the specified value, between 0 and 100, with the optional text.</p>
+    Changes the specified meter to the specified value, between 0 and 100, with the optional text.<br />
+<img alt="Meter" src="../img/2_meter.png" />  </p>
 </li>
 <li>
 <p><code>setMeterFill(name, colour)</code><br />
-    Changes the fill colour of the specified meter.</p>
+    Changes the fill colour of the specified meter.<br />
+<img alt="Meter" src="../img/3_meter.png" />  </p>
 </li>
 <li>
 <p><code>getMeter(name)</code><br />
-    Gets the value of the specified meter.</p>
-</li>
-</ul>
-</li>
-<li>
-<h3 id="splitmeter">SplitMeter</h3>
-<p>Shows two values, left &amp; right</p>
-</li>
-<li>
-<h3 id="dualmeter">DualMeter</h3>
-<p>Shows percentage left &amp; right</p>
+    Gets the value of the specified meter.  </p>
 </li>
 </ul>
 <h2 id="separator">Separator</h2>
 <hr />
 <p>Shows a horizontal line</p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.addSeparator()
+app.go()
+</code></pre>
+
+<p><img alt="Separator" src="../img/1_sep.png" />  </p>
 <ul>
-<li><code>.addSeparator()</code></li>
+<li><code>.addSeparator()</code><br />
+    Adds a separator - a horizontal line, spanning the entire cell.  </li>
 </ul>
 <h2 id="linkweblink">Link/WebLink</h2>
 <hr />
 <p>Clickable text to call a function or launch a URL</p>
+<pre><code class="python">from appJar import gui
+def press(link):
+    app.infoBox(&quot;Info&quot;, &quot;You clicked the link!&quot;)
+
+app=gui()
+app.setFont(20)
+app.addLink(&quot;Click me&quot;, press)
+app.addWebLink(&quot;appJar.info&quot;, &quot;http://appJar.info&quot;)
+app.go()
+</code></pre>
+
+<p><img alt="Link" src="../img/1_link.png" />  </p>
 <h4 id="add-links">Add Links</h4>
 <ul>
-<li>
-<p><code>.addLink(title, func)</code><br />
-    Adds a <strong>hyperlink</strong>, that when clicked, will call the spcified function.</p>
-</li>
-<li>
-<p><code>.addWebLink(title, page)</code><br />
-    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.</p>
-</li>
+<li><code>.addLink(title, func)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will call the specified function.  </li>
+<li><code>.addWebLink(title, page)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.<br />
+    It must be a fully formed link, including <code>http://</code>  </li>
 </ul></div>
         </div>
 
