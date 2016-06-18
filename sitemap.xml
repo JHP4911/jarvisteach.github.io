@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>http://appjar.info/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -12,65 +12,37 @@
     
         
     <url>
-     <loc>None/Widgets/</loc>
+     <loc>http://appjar.info/Widgets/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Images/</loc>
+     <loc>http://appjar.info/Images/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Sound/</loc>
+     <loc>http://appjar.info/Sound/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Bars/</loc>
+     <loc>http://appjar.info/Bars/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Dialogs/</loc>
+     <loc>http://appjar.info/Dialogs/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/DevWidgets/</loc>
-     <lastmod>2016-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>None/Layout/</loc>
-     <lastmod>2016-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/Grouping/</loc>
-     <lastmod>2016-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/WidgetOptions/</loc>
-     <lastmod>2016-06-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/GuiOptions/</loc>
+     <loc>http://appjar.info/DevWidgets/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -80,25 +52,53 @@
     
         
     <url>
-     <loc>None/Install/</loc>
+     <loc>http://appjar.info/Layout/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Thanks/</loc>
+     <loc>http://appjar.info/Grouping/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/PythonBasics/</loc>
+     <loc>http://appjar.info/WidgetOptions/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/License/</loc>
+     <loc>http://appjar.info/GuiOptions/</loc>
+     <lastmod>2016-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>http://appjar.info/Install/</loc>
+     <lastmod>2016-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/Thanks/</loc>
+     <lastmod>2016-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/PythonBasics/</loc>
+     <lastmod>2016-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/License/</loc>
      <lastmod>2016-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
