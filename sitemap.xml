@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://appjar.info/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,38 +12,38 @@
     
         
     <url>
-     <loc>http://appjar.info/Widgets/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonWidgets/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/Images/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonImages/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/Sound/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonSound/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/Bars/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonBars/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/Dialogs/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonDialogs/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/DevWidgets/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonDevWidgets/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -52,26 +52,26 @@
     
         
     <url>
-     <loc>http://appjar.info/Layout/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonWidgetLayout/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/Grouping/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonWidgetGrouping/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/WidgetOptions/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonWidgetOptions/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/GuiOptions/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonGuiOptions/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,25 +81,25 @@
         
     <url>
      <loc>http://appjar.info/Install/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/Thanks/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>http://appjar.info/PythonBasics/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <loc>http://appjar.info/pythonBasics/</loc>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/License/</loc>
-     <lastmod>2016-06-19</lastmod>
+     <lastmod>2016-06-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

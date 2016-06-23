@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/Bars/">
+        <link rel="canonical" href="http://appjar.info/pythonDevWidgets/">
         <link rel="shortcut icon" href="../img/favicon3.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Bars - appJar</title>
+        <title>In the works... - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -77,37 +77,37 @@
                     
                         
 <li >
-    <a href="../Widgets/">Widgets</a>
+    <a href="../pythonWidgets/">Widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Images/">Images</a>
+    <a href="../pythonImages/">Images</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Sound/">Sounds</a>
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li class="active">
-    <a href="./">Bars</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Dialogs/">Pop-ups</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../DevWidgets/">In the works...</a>
+    <a href="./">In the works...</a>
 </li>
 
                     
@@ -122,25 +122,25 @@
                     
                         
 <li >
-    <a href="../Layout/">Arranging widgets</a>
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping widgets</a>
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../WidgetOptions/">Changing widgets</a>
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">Extras</a>
+    <a href="../pythonGuiOptions/">Extras</a>
 </li>
 
                     
@@ -167,7 +167,7 @@
                     
                         
 <li >
-    <a href="../PythonBasics/">Python</a>
+    <a href="../pythonBasics/">Python</a>
 </li>
 
                     
@@ -191,12 +191,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Sound/">
+                    <a rel="next" href="../pythonDialogs/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Dialogs/">
+                    <a rel="prev" href="../pythonWidgetLayout/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -224,130 +224,116 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</a></li>
+        <li class="main active"><a href="#widgets-under-development">Widgets Under Development</a></li>
         
-            <li><a href="#toolbar">Toolbar</a></li>
+            <li><a href="#piechart">PieChart</a></li>
         
-            <li><a href="#menubar">Menubar</a></li>
+            <li><a href="#tree">Tree</a></li>
         
-            <li><a href="#statusbar">Statusbar</a></li>
+            <li><a href="#grid">Grid</a></li>
+        
+            <li><a href="#meters">Meters</a></li>
+        
+            <li><a href="#properties">Properties</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</h1>
+<h1 id="widgets-under-development">Widgets Under Development</h1>
 <hr />
-<p>Toolbars and Menubars are features common to most GUIs, you'll be used to seeing them along the top of apps, such as MS Word.<br />
-Statusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.  </p>
-<h2 id="toolbar">Toolbar</h2>
+<p>The following widgets are <strong>under development</strong>. They're included in the library, but offer limited functionality, and are stilll quite buggy.</p>
+<h3 id="piechart">PieChart</h3>
 <hr />
-<p>Toolbars (sometimes known as ribbons) appear across the top og a GUI.<br />
-They offer a series of buttons to click, which change settings/functionality in a GUI.</p>
-<h4 id="create-toolbars">Create Toolbars</h4>
+<p>Shows a pie chart  </p>
 <ul>
-<li><code>.addToolbar(names, funcs)</code><br />
-    Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.<br />
-    If only one function is supplied, they will all call the same function.<br />
-    A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.  </li>
+<li><code>.addPieChart(name, values, size=100)</code><br />
+    Takes a list of integers, which will be converted to percentages, and plotted on the chart.<br />
+    An optional size parameter can be passed, to adjust the size of the chart.  </li>
 </ul>
-<h4 id="set-toolbars">Set Toolbars</h4>
-<ul>
-<li><code>.setToolbarImage(name, image)</code><br />
-Will set an image for the corresponding button in the toolbar.</li>
-</ul>
-<h2 id="menubar">Menubar</h2>
+<p><img alt="PieChart" src="../img/dev/pie.png" />  </p>
+<pre><code class="python">    from appJar import gui
+
+    app=gui()
+    app.addPieChart(&quot;p1&quot;, [50, 200, 75, 300, 150], size=300)
+    app.go()
+</code></pre>
+
+<h3 id="tree">Tree</h3>
 <hr />
-<p>Adds a standard Menubar along the top of the GUI
-The menubar will show, once the first menu has been added.
-You can add a single menu option, or a list of menu options.</p>
-<h4 id="create-menus">Create Menus</h4>
+<p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
 <ul>
-<li>
-<p><code>.addMenu(title, function)</code><br />
-    Adds a single menu option, that will call the specified function.</p>
-</li>
-<li>
-<p><code>.addMenuList(title, names, functions, tearable=False)</code><br />
-    Will create a top-level menu, with the specified title.<br />
-    Within the menu will be the list of names, each calling the corresponding function in the function list.<br />
-    If only one function is provided, all menus will call the same function.<br />
-    If the menu name is a '-', then a separator will be added to the menu.<br />
-    If tearable is set to True, then the menu can be undocked.  </p>
-</li>
-<li>
-<p><code>.createMenu(title, tearable=False)</code><br />
-    Will create a top-level menu, to add memnu items to.</p>
-</li>
-<li>
-<p><code>.addMenuItem(title, item, func=None)</code><br />
-    Add a sub-menu to the named top-level menu, with the specified function
-    If the menu name is a '-', then a separator will be added to the menu.</p>
-</li>
-<li>
-<p><code>.addMenuSeparator(title)</code><br />
-    Add a separator to the named menu.</p>
-</li>
-<li>
-<p><code>.addMenuCheckBox(title, name)</code><br />
-    Add a check box, to the named menu, with the specified name.</p>
-</li>
-<li>
-<p><code>.addMenuRadioButton(title, menu, name, value)</code><br />
-    Add a radio button, to the named menu, grouped by name, with the specified value.</p>
-</li>
+<li><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </li>
+<li><code>.addTreeFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked  </li>
+<li><code>.getTree(title)</code><br />
+    Return the tree as XML  </li>
 </ul>
-<h4 id="set-menus">Set Menus</h4>
-<ul>
-<li>
-<p><code>.setMenuCheckBox(title, menu)</code><br />
-    Inverts the specified check box, in the named menu.</p>
-</li>
-<li>
-<p><code>.setMenuRadioButton(title, menu, value)</code><br />
-    Selects the specified value, of the specified radio button, in the named menu.</p>
-</li>
-</ul>
-<h4 id="get-menus">Get Menus</h4>
-<ul>
-<li>
-<p><code>.getMenuCheckBox(title, menu)</code><br />
-    Get the value of the specified check box, from the named menu.<br />
-    Returns True or False.</p>
-</li>
-<li>
-<p><code>.getMenuRadioButton(title, menu)</code><br />
-    Get the value of the specified radio button, from the named menu.<br />
-    Returns the value of the checked radio button.</p>
-</li>
-</ul>
-<h2 id="statusbar">Statusbar</h2>
+<p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.addTree(&quot;t1&quot;,
+            &quot;&quot;&quot;&lt;people&gt;
+            &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Tina&lt;/name&gt;&lt;age&gt;37&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;CLive&lt;/name&gt;&lt;age&gt;28&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Betty&lt;/name&gt;&lt;age&gt;51&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;/people&gt;&quot;&quot;&quot;)
+app.go()
+</code></pre>
+
+<h3 id="grid">Grid</h3>
 <hr />
-<p>Adds a statusbar along the bottom of the GUI.
-This can be used for easy debugging, or as info for the user.</p>
-<h4 id="create-statuses">Create Statuses</h4>
+<p>Used to create a spreadsheet like interface.<br />
+* <code>.addGrid(title, data, action=None, addRow=False)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
+    If action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.  </p>
 <ul>
-<li><code>.addStatus(header="", fields=1, side=None)</code><br />
-    This turns the statusbar on, and if a header is supplied, will prepend the header before every message.<br />
-    If fields is populated, it''s possible to have multiple status bixes, each addressable by a number.<br />
-    Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.</li>
+<li><code>.updateGrid(title, data, addRow=False)</code>  </li>
+<li><code>.setGridGeom(title, width, height)</code>  </li>
+<li><code>.getGridEntries(title)</code>  </li>
+<li><code>.setGridBackground(title, colour)</code>  </li>
 </ul>
-<h4 id="set-statuses">Set Statuses</h4>
+<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
+<pre><code class="python">    from appJar import gui
+
+    app=gui()
+    app.setFont(20)
+    app.addGrid(&quot;g1&quot;,
+        [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+        [&quot;Fred&quot;, 45, &quot;Male&quot;],
+        [&quot;Tina&quot;, 37, &quot;Female&quot;],
+        [&quot;Clive&quot;, 28, &quot;Male&quot;],
+        [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+    app.go()
+</code></pre>
+
+<h3 id="meters">Meters</h3>
+<p>Working on some different styles for the Meter.<br />
+And, a better look - gradiated colour...  </p>
+<h4 id="splitmeter">SplitMeter</h4>
+<p>Shows two values, left &amp; right  </p>
+<p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
+<h4 id="dualmeter">DualMeter</h4>
+<p>Shows percentage left &amp; right  </p>
+<h3 id="properties">Properties</h3>
+<hr />
+<p>A quick-to-create set of radio/check boxes.  </p>
 <ul>
-<li>
-<p><code>.setStatus(text, field=0)</code><br />
-    This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message.<br />
-    If multiple fields were created, a position can be supplied to populate.</p>
-</li>
-<li>
-<p><code>.clearStatus(field=0)</code><br />
-    Clear anything displayed in the statusbar, along with any header that might be set.</p>
-</li>
-<li>
-<p><code>.setStatusWidth(width, field=0)</code><br />
-    Set the width of the specified status field.</p>
-</li>
+<li><code>.addProperties(props)</code><br />
+    Creates the properties box, with the list of properties.<br />
+    The properties can be passed in as dictionary, but the order will be random.  </li>
+<li><code>.addProperty(title, value=False)</code><br />
+    Adds the named property to the end of the properties list.  </li>
+<li><code>.getProperties()</code><br />
+    Returns the properties as a dictionary.  </li>
+<li><code>.getProperty(title)</code><br />
+    Gets the named property.  </li>
+<li><code>.setProperty(title, value=True)</code><br />
+    Sets the named property.</li>
 </ul></div>
         </div>
 

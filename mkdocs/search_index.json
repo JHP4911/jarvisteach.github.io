@@ -36,642 +36,642 @@
             "title": "Make your own!"
         },
         {
-            "location": "/Widgets/",
+            "location": "/pythonWidgets/",
             "text": "Widgets\n\n\n\n\nIn a GUI, the fillings are known as \nwidgets\n.\n\nThere are lots of different widgets to chose from, each suited to a specific task.  \n\n\nEvery widget needs a \nTITLE\n.\n\nThis is a unique name for the widget, so that later you can get information from that widget, or change it.  \n\n\nGeneral Usage\n\n\n\n\nNearly all widgets provide the same three functions:\n\n\n\n\nAlways - \nADD\n a widget (with a unique title) - this creates the widget\n\n\nSometimes - \nGET\n the widget (using its unique title) - this gets the contents of the widget (usually done in a function)\n\n\nRarely - \nSET\n the widget (using its unique title) - this changes what's in the widget\n\n\n\n\nOn top of these, there is a common set of functions for \nchanging widgets\n.\n\nAs well as some specialist functions, unique to each widget (see below).  \n\n\nLabel\n\n\n\n\nLabels\n are used for displaying text in the GUI.  \n\n\n\n\nThey are great for titles, at the top of the GUI, usually spanning multiple columns.  \n\n\nThey are really useful before \nEntries\n and \nDrop-downs\n to explain their purpose.  \n\n\nAnd, they're very helpful at the bottom of the GUI, to show the results of an action.\n\n\n  \n\n\n\n\nfrom appJar import gui\n\napp = gui()\n\napp.addLabel(\"l1\", \"Label 1\")\napp.addLabel(\"l2\", \"Label 2\")\napp.addLabel(\"l3\", \"Label 3\")\napp.addLabel(\"l4\", \"Label 4\")\n# common set functions\napp.setLabelBg(\"l1\", \"red\")\napp.setLabelBg(\"l2\", \"yellow\")\napp.setLabelBg(\"l3\", \"purple\")\napp.setLabelBg(\"l4\", \"orange\")\n\napp.go()\n\n\n\n\nAdd Labels\n\n\n\n\n\n\n.addLabel(title, text=None)\n\n    As with all widgets, when you add a \nlabel\n, a title must be provided - to identify the \nlabel\n. This is then followed by an optional piece of text to display.\n\n\n\n\n\n\n.addEmptyLabel(title)\n\n    Does the same as add a \nlabel\n, except there''s no parameter to set any text.\n\n\n\n\n\n\n.addFlashLabel(title, text=None)\n\n    This adds a flashing \nlabel\n, that will alternate between the foreground and background colours.\n\n\n\n\n\n\nSet Labels\n\n\n\n\n\n\n.setLabel(title, text)\n\n    Change the contents of the \nlabel\n.\n\n\n\n\n\n\n.clearLabel(title)\n\n    Clear the contents of the \nlabel\n.\n\n\n\n\n\n\nGet Labels\n\n\n\n\n.getLabel(title)\n\n    Get the contents of the \nlabel\n.\n\n\n\n\nAuto-Labelled Widgets\n\n\n\n\nIt's possible to automatically include a \nlabel\n alongside some widgets.\n\nBoth the label and widget will be placed in the same grid space.\n\nSimply add the word \nLabel\n to the command when adding the widget:  \n\n\n\n\n.addLabelEntry(title)\n\n\n.addLabelNumericlEntry(title)\n\n\n.addLabelSecretlEntry(title)\n\n\n.addLabelOptionBox(title, values)\n\n\n.addLabelSpinBox(title, values)\n\n\n.addLabelSpinBoxRange(title, from, to)\n  \n\n\n\n\nSee the relevant section for a description of what the widget does.\n\n\nEntry\n\n\n\n\nEntries are used to capture input from the user. They take a single parameter - a title.\n\n\nThere are two special-case entries:\n\n\n\n\nNumericEntry - this only allows numbrs to be typed in.\n\n\nSecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.\n\n\n\n\n\n\nfrom appJar import gui\n\napp=gui()\n\napp.addEntry(\"e1\")\napp.addEntry(\"e2\")\napp.addEntry(\"e3\")\napp.addLabelEntry(\"Name\")\n\napp.setEntryDefault(\"e2\", \"Age here\")\n\napp.go()\n\n\n\n\nAdd Entries\n\n\n\n\n.addEntry(title)\n\n\n.addNumericEntry(title)\n\n\n\n\n.addSecretEntry(title)\n\n\nEach of these will add the specified type of Entry, using the title provided.\n\n\n\n\n\n\nSet Entries\n\n\n\n\n\n\n.setEntry(title, text)\n\n    This sets the contents of the specified entry box.\n\n\n\n\n\n\n.setEntryDefault(title, text)\n\n    This sets a default value to display in an entry box.\n\n    Once the user starts typing, it will disappear.\n\n    The text is centered, shown in a light gray font, and will not be returned by \n.getEntry(title)\n  \n\n\n\n\n\n\n.clearEntry(title)\n\n    This will clear the contents of the specified entry box.\n\n\n\n\n\n\n.clearAllEntries()\n\n    This will clear all the entry boxes in the GUI.\n\n\n\n\n\n\n.setFocus(title)\n\n    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.\n\n\n\n\n\n\nGet Entries\n\n\n\n\n.getEntry(title)\n\n    This will return the contents of the spcified entry box.\n\n\n\n\nButton\n\n\n\n\nA clickable button, that will call a function.\n\nThese are the key to starting an interactive application.\n\nThe GUI is looping, waiting for something to happen.\n\nA button click is the classic way to start interacting with a GUI.\n\n\nWhenever any function is called by the GUI, the title of the widget that called it is passed as a parameter.\n\nThat way, multiple widgets can use the same function, but different actions can be performed, depending on the name passed as a parameter.\n\n\n\n\n    from appJar import gui\n\n    # the title of the button will be received as a parameter\n    def press(btn):\n        print(btn)\n\n    app=gui()\n    # 3 buttons, each calling the same function\n    app.addButton(\"One\", press)\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()\n\n\n\n\nAdd Buttons\n\n\n\n\n\n\n.addButton(title, function)\n\n    Add a single button to the GUI, the text on the button will be the same as the button's title.\n\n    A function should be specified, which will be called when the button is clicked.\n\n\n\n\n\n\n.addButtons(titles, functions)\n\n    It's possible to add a list of buttons to the GUI.\n\n    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\n    A single funciton can be passed, to use for all buttons.\n    Or a list of functions can be passed, which MUST correspond to the buttons.\n\n\n\n\n\n\n.addNamedButton(name, title, function)\n\n    By default, it's not possible to have two buttons with the same text.\n\n    If that's required, a named button should be used.\n\n    This allows a name and title to be set for a button.\n\n    The name will be displayed on the button, and the title passed to the function.\n\n\n\n\n\n\nSet Buttons\n\n\n\n\n\n\n.setButton(name, text)\n\n    This will change the text displayed on a button, but \nNOT\n the value passed as a paramter to the function.\n\n\n\n\n\n\n.setButtonImage(title, image)\n\n    This allows an image to be placed on a button, instead of the usual text.\n\n\n\n\n\n\nRadioButton\n\n\n\n\nA group of round boxes, only one of which can be selected.\n\nThese are great for getting a single value, for a multiple choice question.\n\n\n  \n\n\nfrom appJar import gui\n\napp=gui()\napp.addRadioButton(\"song\", \"Killer Queen\")\napp.addRadioButton(\"song\", \"Paradise City\")\napp.addRadioButton(\"song\", \"Parklife\")\napp.go()\n\n\n\n\nAdd RadioButtons\n\n\n\n\n.addRadioButton(title, name)\n\n    This will create a RadioButton grouped by the specified title.\n\n    This button will have the value of name.\n\n    Radio buttons are usually used in groups:\n\n\n\n\nSet RadioButtons\n\n\n\n\n\n\n.setRadioButton(title, value)\n\n    This will tick the specified RadioButton.\n\n\n\n\n\n\n.setRadioTick(title, tick=True)\n\n    It is possible to use tick-boxes instead of the classic circular radio-button.\n\n    Setting tick to True will convert all the radio-buttons for this title to tick boxes.\n\n\n\n\n\n\nGet RadioButtons\n\n\n\n\n.getRadioButton(title)\n\n    Gets the value of the selcted RadioButton, for the specified title.\n\n\n\n\n    from appJar import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()\n\n\n\n\nCheckBox\n\n\n\n\nA simple tick-box, with a label, that can be either ON or OFF.\n\n\n  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(20)\n\napp.addCheckBox(\"Apples\")\napp.addCheckBox(\"Pears\")\napp.addCheckBox(\"Oranges\")\napp.addCheckBox(\"Kiwis\")\n\napp.setCheckBox(\"Oranges\")\n\napp.go()\n\n\n\n\nAdd CheckBoxes\n\n\n\n\n.addCheckBox(title)\n\n    This creates a CheckBox, with the specified title.\n\n\n\n\nSet CheckBoxes\n\n\n\n\n.setCheckBox(title, ticked=True)\n\n    This will tick the CheckBox, or untick it if ticked is set to False.\n\n\n\n\nGet CheckBoxes\n\n\n\n\n.getCheckBox(title)\n\n    This will return True or False, depending on the state of the CheckBox.\n\n\n\n\nOptionBox\n\n\n\n\nCreates a simple drop-down box. It is only possible to select one option form this drop-down.\n\nPass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.  \n\n\n \n  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addLabelOptionBox(\"Options\", [\"Apple\", \"Orange\", \"Pear\", \"kiwi\"])\napp.go()\n\n\n\n\nAdd OptionBoxes\n\n\n\n\n.addOptionBox(title, values)\n\n    This will create an OptionBox, adding the contents of the values list, in the order specified.\n\n\n\n\nSet OptionBoxes\n\n\n\n\n\n\n.changeOptionBox(title, newOptions)\n\n    This will replace the contents of the OptionBox, with the new list provided.\n\n\n\n\n\n\n.setOptionBox(title, position)\n\n    This will select the item in the list, at the position specified.\n\n\n\n\n\n\nGet OptionBoxes\n\n\n\n\n.getOptionBox(title)\n\n    This will return the currently displayed value in the OptionBox.\n\n\n\n\nSpinBox\n\n\n\n\nA scrollable list of options. Up and down buttons are provided to scroll from one item to the next.\n\nUnlike the OptionBox, you do not get a drop-down of choices, instead it spins to the next/previous option.  \n\n\n  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addLabelSpinBox(\"options\", [\"Apple\", \"Orange\", \"Pear\", \"kiwi\"])\napp.go()\n\n\n\n\nAdd SpinBoxes\n\n\n\n\n.addSpinBox(title, values)\n\n    This will create a SpinBox, adding the contents of the values list, in the order specified.\n\n\n\n\n.addSpinBoxRange(title, from, to)\n\n    This will create a SpinBox, with a numeric range of items.  \n\n\n  \n\n\n\n\n\n\n    from appJar import gui\n\n    app=gui()\n    app.setFont(20)\n    app.addSpinBoxRange(\"Numbers\", 1, 12)\n    app.go()\n\n\n\n\nSet SpinBoxes\n\n\n\n\n.setSpinBox(title, value)\n\n    This will change the SpinBox to show the specified value.  \n\n\n.setSpinBoxPos(title, pos)\n\n    This will change the SpinBox to show the value at the specified position.  \n\n\n\n\nGet SpinBoxes\n\n\n\n\n.getSpinBox(title)\n\n    This will get the selected value from the specified SpinBox.  \n\n\n\n\nListBox\n\n\n\n\nA box containing a list of items, single or multi-select\n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addListBox(\"list\", [\"apple\", \"orange\", \"pear\", \"kiwi\"])\napp.go()\n\n\n\n\n  \n\n\nAdd ListBoxes\n\n\n\n\n.addListBox(title, values)\n\n    Creates a ListBox with the specified values.  \n\n\n.addListItem(title, item)\n\n    Adds a single item to the the end of the ListBox, and selects it.  \n\n\n.addListItems(title, items)\n\n    Adds a list of items to the end of the List Box, selecting the last one.  \n\n\n\n\nSet ListBoxes\n\n\n\n\n.updateListItems(title, items)\n\n    Replace the contents of the specified ListBox with the new values.  \n\n\n.removeListItem(title, item)\n\n    Remove the specified item from teh specified ListBox.  \n\n\n\n\nfrom appJar import gui\ndef press(btn):\n    items = app.getListItems(\"list\")\n    if len(items)> 0:\n        app.removeListItem(\"list\", items[0])\n\napp=gui()\napp.setFont(20)\napp.addListBox(\"list\", [\"apple\", \"orange\", \"pear\", \"kiwi\"])\napp.addButton(\"press\",  press)\napp.go()\n\n\n\n\n\n\n.clearListBox(title)\n\n    Removes all items from the specified ListBox.  \n\n\n.setListBoxRows(title)\n\n    Sets how many rows to display in the specified ListBox.  \n\n\n.setListBoxMulti(list, multi=True)\n\n    Configures whether the specified ListBox is single or multi select.  \n\n\n.selectListItem(title, item)\n\n    Selects the specified item in the specified ListBox.  \n\n\n\n\nGet ListBoxes\n\n\n\n\n.getListItems(title)\n\n    Gets all of the selected items from the specified ListBox.  \n\n\n\n\nScale\n\n\n\n\nA slider, that has a minimum & maximum value.  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addScale(\"scale\")\napp.go()\n\n\n\n\n  \n\n\nAdd Scales\n\n\n\n\n.addScale(title)\n\n    Adds a scale, with a default range between 0 and 100.  \n\n\n\n\nSet Scales\n\n\n\n\n.setScale(title, pos)\n\n    Sets the selected pos for the specified Scale.  \n\n\n.setScaleRange(title from, to, curr=0)\n\n    Allows you to change the range available in the Scale. If \ncurr\n is provided, then the Scale will be set to that value.  \n\n\n.showScaleValue(title, show=True)\n\n    Configures the Scale to show the currently selected value.\n\n\n  \n\n\n.orientScaleHor(title, hor=True)\n\n    Changes the Scale's orientation. If \nhor\n is not set, it will be \nhorizontal\n, if False is passed in, it will be \nvertical\n.\n\n\n  \n\n\n\n\nGet Scales\n\n\n\n\n.getScale(title)\n\n    Gets the currently selected value from the scale.  \n\n\n\n\nMessage\n\n\n\n\nSimilar to a Label, except it will wrap the text over multiple lines.  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setFont(12)\napp.addMessage(\"mess\", \"\"\"You can put a lot of text in this widget.\nThe text will be wrapped over multiple lines.\nIt's not possible to apply different styles to different words.\"\"\")\napp.go()\n\n\n\n\n  \n\n\nAdd Messages\n\n\n\n\n.addMessage(title, text)\n\n    Adds a Message widget, with the specified text.  \n\n\n.addEmptyMessage(title)\n\n    Adds an empty Message widget.  \n\n\n\n\nSet Messages\n\n\n\n\n.clearMessage(title)\n\n    Clears the specifed Message widget.  \n\n\n.setMessage(title, text)\n\n    Sets the contents of the specifed Message widget, to the specified text.  \n\n\n\n\nTextArea\n\n\n\n\nSimilar to an Entry box, but allows you to type text over multiple lines.  \n\n\nAdd TextAreas\n\n\n\n\n.addTextArea(title)\n\n    Adds an empty TextArea, with the specified title.  \n\n\n.addScrolledTextArea(title)\n\n    Adds a scrollable TextArea with the specified title.  \n\n\n\n\nSet TextAreas\n\n\n\n\n.setTextArea(title, text)\n\n    Changes the contents of the specified TextArea, to the specified text.  \n\n\n.clearTextArea(title)\n\n    Clears the contents of the specified TextArea.  \n\n\n\n\nGet TextAreas\n\n\n\n\n.getTextArea(title)\n\n    Gets the contents of the specified TextArea.  \n\n\n\n\nMeter\n\n\n\n\nShows a simple progress meter  \n\n\nfrom appJar import gui\n\napp=gui()\napp.setGeometry(\"200x50\")\napp.setFont(20)\napp.addMeter(\"progress\")\napp.go()\n\n\n\n\n  \n\n\n\n\naddMeter(name)\n\n    Adds a meter with the specified name.  \n\n\n\n\nsetMeter(name, value, text=None)\n\n    Changes the specified meter to the specified value, between 0 and 100, with the optional text.\n\n\n  \n\n\n\n\n\n\nsetMeterFill(name, colour)\n\n    Changes the fill colour of the specified meter.\n\n\n  \n\n\n\n\n\n\ngetMeter(name)\n\n    Gets the value of the specified meter.  \n\n\n\n\n\n\nSeparator\n\n\n\n\nShows a horizontal line\n\n\nfrom appJar import gui\n\napp=gui()\napp.addSeparator()\napp.go()\n\n\n\n\n  \n\n\n\n\n.addSeparator()\n\n    Adds a separator - a horizontal line, spanning the entire cell.  \n\n\n\n\nLink/WebLink\n\n\n\n\nClickable text to call a function or launch a URL\n\n\nfrom appJar import gui\ndef press(link):\n    app.infoBox(\"Info\", \"You clicked the link!\")\n\napp=gui()\napp.setFont(20)\napp.addLink(\"Click me\", press)\napp.addWebLink(\"appJar.info\", \"http://appJar.info\")\napp.go()\n\n\n\n\n  \n\n\nAdd Links\n\n\n\n\n.addLink(title, func)\n\n    Adds a \nhyperlink\n, that when clicked, will call the specified function.  \n\n\n.addWebLink(title, page)\n\n    Adds a \nhyperlink\n, that when clicked, will launch the default browser, and load the page parameter.\n\n    It must be a fully formed link, including \nhttp://",
             "title": "Widgets"
         },
         {
-            "location": "/Widgets/#widgets",
+            "location": "/pythonWidgets/#widgets",
             "text": "In a GUI, the fillings are known as  widgets . \nThere are lots of different widgets to chose from, each suited to a specific task.    Every widget needs a  TITLE . \nThis is a unique name for the widget, so that later you can get information from that widget, or change it.",
             "title": "Widgets"
         },
         {
-            "location": "/Widgets/#general-usage",
+            "location": "/pythonWidgets/#general-usage",
             "text": "Nearly all widgets provide the same three functions:   Always -  ADD  a widget (with a unique title) - this creates the widget  Sometimes -  GET  the widget (using its unique title) - this gets the contents of the widget (usually done in a function)  Rarely -  SET  the widget (using its unique title) - this changes what's in the widget   On top of these, there is a common set of functions for  changing widgets . \nAs well as some specialist functions, unique to each widget (see below).",
             "title": "General Usage"
         },
         {
-            "location": "/Widgets/#label",
+            "location": "/pythonWidgets/#label",
             "text": "Labels  are used for displaying text in the GUI.     They are great for titles, at the top of the GUI, usually spanning multiple columns.    They are really useful before  Entries  and  Drop-downs  to explain their purpose.    And, they're very helpful at the bottom of the GUI, to show the results of an action.       from appJar import gui\n\napp = gui()\n\napp.addLabel(\"l1\", \"Label 1\")\napp.addLabel(\"l2\", \"Label 2\")\napp.addLabel(\"l3\", \"Label 3\")\napp.addLabel(\"l4\", \"Label 4\")\n# common set functions\napp.setLabelBg(\"l1\", \"red\")\napp.setLabelBg(\"l2\", \"yellow\")\napp.setLabelBg(\"l3\", \"purple\")\napp.setLabelBg(\"l4\", \"orange\")\n\napp.go()",
             "title": "Label"
         },
         {
-            "location": "/Widgets/#add-labels",
+            "location": "/pythonWidgets/#add-labels",
             "text": ".addLabel(title, text=None) \n    As with all widgets, when you add a  label , a title must be provided - to identify the  label . This is then followed by an optional piece of text to display.    .addEmptyLabel(title) \n    Does the same as add a  label , except there''s no parameter to set any text.    .addFlashLabel(title, text=None) \n    This adds a flashing  label , that will alternate between the foreground and background colours.",
             "title": "Add Labels"
         },
         {
-            "location": "/Widgets/#set-labels",
+            "location": "/pythonWidgets/#set-labels",
             "text": ".setLabel(title, text) \n    Change the contents of the  label .    .clearLabel(title) \n    Clear the contents of the  label .",
             "title": "Set Labels"
         },
         {
-            "location": "/Widgets/#get-labels",
+            "location": "/pythonWidgets/#get-labels",
             "text": ".getLabel(title) \n    Get the contents of the  label .",
             "title": "Get Labels"
         },
         {
-            "location": "/Widgets/#auto-labelled-widgets",
+            "location": "/pythonWidgets/#auto-labelled-widgets",
             "text": "It's possible to automatically include a  label  alongside some widgets. \nBoth the label and widget will be placed in the same grid space. \nSimply add the word  Label  to the command when adding the widget:     .addLabelEntry(title)  .addLabelNumericlEntry(title)  .addLabelSecretlEntry(title)  .addLabelOptionBox(title, values)  .addLabelSpinBox(title, values)  .addLabelSpinBoxRange(title, from, to)      See the relevant section for a description of what the widget does.",
             "title": "Auto-Labelled Widgets"
         },
         {
-            "location": "/Widgets/#entry",
+            "location": "/pythonWidgets/#entry",
             "text": "Entries are used to capture input from the user. They take a single parameter - a title.  There are two special-case entries:   NumericEntry - this only allows numbrs to be typed in.  SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.    from appJar import gui\n\napp=gui()\n\napp.addEntry(\"e1\")\napp.addEntry(\"e2\")\napp.addEntry(\"e3\")\napp.addLabelEntry(\"Name\")\n\napp.setEntryDefault(\"e2\", \"Age here\")\n\napp.go()",
             "title": "Entry"
         },
         {
-            "location": "/Widgets/#add-entries",
+            "location": "/pythonWidgets/#add-entries",
             "text": ".addEntry(title)  .addNumericEntry(title)   .addSecretEntry(title)  Each of these will add the specified type of Entry, using the title provided.",
             "title": "Add Entries"
         },
         {
-            "location": "/Widgets/#set-entries",
+            "location": "/pythonWidgets/#set-entries",
             "text": ".setEntry(title, text) \n    This sets the contents of the specified entry box.    .setEntryDefault(title, text) \n    This sets a default value to display in an entry box. \n    Once the user starts typing, it will disappear. \n    The text is centered, shown in a light gray font, and will not be returned by  .getEntry(title)       .clearEntry(title) \n    This will clear the contents of the specified entry box.    .clearAllEntries() \n    This will clear all the entry boxes in the GUI.    .setFocus(title) \n    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.",
             "title": "Set Entries"
         },
         {
-            "location": "/Widgets/#get-entries",
+            "location": "/pythonWidgets/#get-entries",
             "text": ".getEntry(title) \n    This will return the contents of the spcified entry box.",
             "title": "Get Entries"
         },
         {
-            "location": "/Widgets/#button",
+            "location": "/pythonWidgets/#button",
             "text": "A clickable button, that will call a function. \nThese are the key to starting an interactive application. \nThe GUI is looping, waiting for something to happen. \nA button click is the classic way to start interacting with a GUI.  Whenever any function is called by the GUI, the title of the widget that called it is passed as a parameter. \nThat way, multiple widgets can use the same function, but different actions can be performed, depending on the name passed as a parameter.       from appJar import gui\n\n    # the title of the button will be received as a parameter\n    def press(btn):\n        print(btn)\n\n    app=gui()\n    # 3 buttons, each calling the same function\n    app.addButton(\"One\", press)\n    app.addButton(\"Two\", press)\n    app.addButton(\"Three\", press)\n    app.go()",
             "title": "Button"
         },
         {
-            "location": "/Widgets/#add-buttons",
+            "location": "/pythonWidgets/#add-buttons",
             "text": ".addButton(title, function) \n    Add a single button to the GUI, the text on the button will be the same as the button's title. \n    A function should be specified, which will be called when the button is clicked.    .addButtons(titles, functions) \n    It's possible to add a list of buttons to the GUI. \n    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.\n    A single funciton can be passed, to use for all buttons.\n    Or a list of functions can be passed, which MUST correspond to the buttons.    .addNamedButton(name, title, function) \n    By default, it's not possible to have two buttons with the same text. \n    If that's required, a named button should be used. \n    This allows a name and title to be set for a button. \n    The name will be displayed on the button, and the title passed to the function.",
             "title": "Add Buttons"
         },
         {
-            "location": "/Widgets/#set-buttons",
+            "location": "/pythonWidgets/#set-buttons",
             "text": ".setButton(name, text) \n    This will change the text displayed on a button, but  NOT  the value passed as a paramter to the function.    .setButtonImage(title, image) \n    This allows an image to be placed on a button, instead of the usual text.",
             "title": "Set Buttons"
         },
         {
-            "location": "/Widgets/#radiobutton",
+            "location": "/pythonWidgets/#radiobutton",
             "text": "A group of round boxes, only one of which can be selected. \nThese are great for getting a single value, for a multiple choice question.      from appJar import gui\n\napp=gui()\napp.addRadioButton(\"song\", \"Killer Queen\")\napp.addRadioButton(\"song\", \"Paradise City\")\napp.addRadioButton(\"song\", \"Parklife\")\napp.go()",
             "title": "RadioButton"
         },
         {
-            "location": "/Widgets/#add-radiobuttons",
+            "location": "/pythonWidgets/#add-radiobuttons",
             "text": ".addRadioButton(title, name) \n    This will create a RadioButton grouped by the specified title. \n    This button will have the value of name. \n    Radio buttons are usually used in groups:",
             "title": "Add RadioButtons"
         },
         {
-            "location": "/Widgets/#set-radiobuttons",
+            "location": "/pythonWidgets/#set-radiobuttons",
             "text": ".setRadioButton(title, value) \n    This will tick the specified RadioButton.    .setRadioTick(title, tick=True) \n    It is possible to use tick-boxes instead of the classic circular radio-button. \n    Setting tick to True will convert all the radio-buttons for this title to tick boxes.",
             "title": "Set RadioButtons"
         },
         {
-            "location": "/Widgets/#get-radiobuttons",
+            "location": "/pythonWidgets/#get-radiobuttons",
             "text": ".getRadioButton(title) \n    Gets the value of the selcted RadioButton, for the specified title.       from appJar import gui\n\n    def press(rb):\n        print(app.getRadioButton(\"song\"))\n\n    app=gui()\n    app.addRadioButton(\"song\", \"Killer Queen\")\n    app.addRadioButton(\"song\", \"Paradise City\")\n    app.setRadioButtonFunction(\"song\", press)   # call this funciton, when the RadioButton changes\n    app.addButton(\"PLAY\", press)\n    app.go()",
             "title": "Get RadioButtons"
         },
         {
-            "location": "/Widgets/#checkbox",
+            "location": "/pythonWidgets/#checkbox",
             "text": "A simple tick-box, with a label, that can be either ON or OFF.      from appJar import gui\n\napp=gui()\napp.setFont(20)\n\napp.addCheckBox(\"Apples\")\napp.addCheckBox(\"Pears\")\napp.addCheckBox(\"Oranges\")\napp.addCheckBox(\"Kiwis\")\n\napp.setCheckBox(\"Oranges\")\n\napp.go()",
             "title": "CheckBox"
         },
         {
-            "location": "/Widgets/#add-checkboxes",
+            "location": "/pythonWidgets/#add-checkboxes",
             "text": ".addCheckBox(title) \n    This creates a CheckBox, with the specified title.",
             "title": "Add CheckBoxes"
         },
         {
-            "location": "/Widgets/#set-checkboxes",
+            "location": "/pythonWidgets/#set-checkboxes",
             "text": ".setCheckBox(title, ticked=True) \n    This will tick the CheckBox, or untick it if ticked is set to False.",
             "title": "Set CheckBoxes"
         },
         {
-            "location": "/Widgets/#get-checkboxes",
+            "location": "/pythonWidgets/#get-checkboxes",
             "text": ".getCheckBox(title) \n    This will return True or False, depending on the state of the CheckBox.",
             "title": "Get CheckBoxes"
         },
         {
-            "location": "/Widgets/#optionbox",
+            "location": "/pythonWidgets/#optionbox",
             "text": "Creates a simple drop-down box. It is only possible to select one option form this drop-down. \nPass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.          from appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addLabelOptionBox(\"Options\", [\"Apple\", \"Orange\", \"Pear\", \"kiwi\"])\napp.go()",
             "title": "OptionBox"
         },
         {
-            "location": "/Widgets/#add-optionboxes",
+            "location": "/pythonWidgets/#add-optionboxes",
             "text": ".addOptionBox(title, values) \n    This will create an OptionBox, adding the contents of the values list, in the order specified.",
             "title": "Add OptionBoxes"
         },
         {
-            "location": "/Widgets/#set-optionboxes",
+            "location": "/pythonWidgets/#set-optionboxes",
             "text": ".changeOptionBox(title, newOptions) \n    This will replace the contents of the OptionBox, with the new list provided.    .setOptionBox(title, position) \n    This will select the item in the list, at the position specified.",
             "title": "Set OptionBoxes"
         },
         {
-            "location": "/Widgets/#get-optionboxes",
+            "location": "/pythonWidgets/#get-optionboxes",
             "text": ".getOptionBox(title) \n    This will return the currently displayed value in the OptionBox.",
             "title": "Get OptionBoxes"
         },
         {
-            "location": "/Widgets/#spinbox",
+            "location": "/pythonWidgets/#spinbox",
             "text": "A scrollable list of options. Up and down buttons are provided to scroll from one item to the next. \nUnlike the OptionBox, you do not get a drop-down of choices, instead it spins to the next/previous option.        from appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addLabelSpinBox(\"options\", [\"Apple\", \"Orange\", \"Pear\", \"kiwi\"])\napp.go()",
             "title": "SpinBox"
         },
         {
-            "location": "/Widgets/#add-spinboxes",
+            "location": "/pythonWidgets/#add-spinboxes",
             "text": ".addSpinBox(title, values) \n    This will create a SpinBox, adding the contents of the values list, in the order specified.   .addSpinBoxRange(title, from, to) \n    This will create a SpinBox, with a numeric range of items.              from appJar import gui\n\n    app=gui()\n    app.setFont(20)\n    app.addSpinBoxRange(\"Numbers\", 1, 12)\n    app.go()",
             "title": "Add SpinBoxes"
         },
         {
-            "location": "/Widgets/#set-spinboxes",
+            "location": "/pythonWidgets/#set-spinboxes",
             "text": ".setSpinBox(title, value) \n    This will change the SpinBox to show the specified value.    .setSpinBoxPos(title, pos) \n    This will change the SpinBox to show the value at the specified position.",
             "title": "Set SpinBoxes"
         },
         {
-            "location": "/Widgets/#get-spinboxes",
+            "location": "/pythonWidgets/#get-spinboxes",
             "text": ".getSpinBox(title) \n    This will get the selected value from the specified SpinBox.",
             "title": "Get SpinBoxes"
         },
         {
-            "location": "/Widgets/#listbox",
+            "location": "/pythonWidgets/#listbox",
             "text": "A box containing a list of items, single or multi-select  from appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addListBox(\"list\", [\"apple\", \"orange\", \"pear\", \"kiwi\"])\napp.go()",
             "title": "ListBox"
         },
         {
-            "location": "/Widgets/#add-listboxes",
+            "location": "/pythonWidgets/#add-listboxes",
             "text": ".addListBox(title, values) \n    Creates a ListBox with the specified values.    .addListItem(title, item) \n    Adds a single item to the the end of the ListBox, and selects it.    .addListItems(title, items) \n    Adds a list of items to the end of the List Box, selecting the last one.",
             "title": "Add ListBoxes"
         },
         {
-            "location": "/Widgets/#set-listboxes",
+            "location": "/pythonWidgets/#set-listboxes",
             "text": ".updateListItems(title, items) \n    Replace the contents of the specified ListBox with the new values.    .removeListItem(title, item) \n    Remove the specified item from teh specified ListBox.     from appJar import gui\ndef press(btn):\n    items = app.getListItems(\"list\")\n    if len(items)> 0:\n        app.removeListItem(\"list\", items[0])\n\napp=gui()\napp.setFont(20)\napp.addListBox(\"list\", [\"apple\", \"orange\", \"pear\", \"kiwi\"])\napp.addButton(\"press\",  press)\napp.go()   .clearListBox(title) \n    Removes all items from the specified ListBox.    .setListBoxRows(title) \n    Sets how many rows to display in the specified ListBox.    .setListBoxMulti(list, multi=True) \n    Configures whether the specified ListBox is single or multi select.    .selectListItem(title, item) \n    Selects the specified item in the specified ListBox.",
             "title": "Set ListBoxes"
         },
         {
-            "location": "/Widgets/#get-listboxes",
+            "location": "/pythonWidgets/#get-listboxes",
             "text": ".getListItems(title) \n    Gets all of the selected items from the specified ListBox.",
             "title": "Get ListBoxes"
         },
         {
-            "location": "/Widgets/#scale",
+            "location": "/pythonWidgets/#scale",
             "text": "A slider, that has a minimum & maximum value.    from appJar import gui\n\napp=gui()\napp.setFont(20)\napp.addScale(\"scale\")\napp.go()",
             "title": "Scale"
         },
         {
-            "location": "/Widgets/#add-scales",
+            "location": "/pythonWidgets/#add-scales",
             "text": ".addScale(title) \n    Adds a scale, with a default range between 0 and 100.",
             "title": "Add Scales"
         },
         {
-            "location": "/Widgets/#set-scales",
+            "location": "/pythonWidgets/#set-scales",
             "text": ".setScale(title, pos) \n    Sets the selected pos for the specified Scale.    .setScaleRange(title from, to, curr=0) \n    Allows you to change the range available in the Scale. If  curr  is provided, then the Scale will be set to that value.    .showScaleValue(title, show=True) \n    Configures the Scale to show the currently selected value.      .orientScaleHor(title, hor=True) \n    Changes the Scale's orientation. If  hor  is not set, it will be  horizontal , if False is passed in, it will be  vertical .",
             "title": "Set Scales"
         },
         {
-            "location": "/Widgets/#get-scales",
+            "location": "/pythonWidgets/#get-scales",
             "text": ".getScale(title) \n    Gets the currently selected value from the scale.",
             "title": "Get Scales"
         },
         {
-            "location": "/Widgets/#message",
+            "location": "/pythonWidgets/#message",
             "text": "Similar to a Label, except it will wrap the text over multiple lines.    from appJar import gui\n\napp=gui()\napp.setFont(12)\napp.addMessage(\"mess\", \"\"\"You can put a lot of text in this widget.\nThe text will be wrapped over multiple lines.\nIt's not possible to apply different styles to different words.\"\"\")\napp.go()",
             "title": "Message"
         },
         {
-            "location": "/Widgets/#add-messages",
+            "location": "/pythonWidgets/#add-messages",
             "text": ".addMessage(title, text) \n    Adds a Message widget, with the specified text.    .addEmptyMessage(title) \n    Adds an empty Message widget.",
             "title": "Add Messages"
         },
         {
-            "location": "/Widgets/#set-messages",
+            "location": "/pythonWidgets/#set-messages",
             "text": ".clearMessage(title) \n    Clears the specifed Message widget.    .setMessage(title, text) \n    Sets the contents of the specifed Message widget, to the specified text.",
             "title": "Set Messages"
         },
         {
-            "location": "/Widgets/#textarea",
+            "location": "/pythonWidgets/#textarea",
             "text": "Similar to an Entry box, but allows you to type text over multiple lines.",
             "title": "TextArea"
         },
         {
-            "location": "/Widgets/#add-textareas",
+            "location": "/pythonWidgets/#add-textareas",
             "text": ".addTextArea(title) \n    Adds an empty TextArea, with the specified title.    .addScrolledTextArea(title) \n    Adds a scrollable TextArea with the specified title.",
             "title": "Add TextAreas"
         },
         {
-            "location": "/Widgets/#set-textareas",
+            "location": "/pythonWidgets/#set-textareas",
             "text": ".setTextArea(title, text) \n    Changes the contents of the specified TextArea, to the specified text.    .clearTextArea(title) \n    Clears the contents of the specified TextArea.",
             "title": "Set TextAreas"
         },
         {
-            "location": "/Widgets/#get-textareas",
+            "location": "/pythonWidgets/#get-textareas",
             "text": ".getTextArea(title) \n    Gets the contents of the specified TextArea.",
             "title": "Get TextAreas"
         },
         {
-            "location": "/Widgets/#meter",
+            "location": "/pythonWidgets/#meter",
             "text": "Shows a simple progress meter    from appJar import gui\n\napp=gui()\napp.setGeometry(\"200x50\")\napp.setFont(20)\napp.addMeter(\"progress\")\napp.go()       addMeter(name) \n    Adds a meter with the specified name.     setMeter(name, value, text=None) \n    Changes the specified meter to the specified value, between 0 and 100, with the optional text.        setMeterFill(name, colour) \n    Changes the fill colour of the specified meter.        getMeter(name) \n    Gets the value of the specified meter.",
             "title": "Meter"
         },
         {
-            "location": "/Widgets/#separator",
+            "location": "/pythonWidgets/#separator",
             "text": "Shows a horizontal line  from appJar import gui\n\napp=gui()\napp.addSeparator()\napp.go()       .addSeparator() \n    Adds a separator - a horizontal line, spanning the entire cell.",
             "title": "Separator"
         },
         {
-            "location": "/Widgets/#linkweblink",
+            "location": "/pythonWidgets/#linkweblink",
             "text": "Clickable text to call a function or launch a URL  from appJar import gui\ndef press(link):\n    app.infoBox(\"Info\", \"You clicked the link!\")\n\napp=gui()\napp.setFont(20)\napp.addLink(\"Click me\", press)\napp.addWebLink(\"appJar.info\", \"http://appJar.info\")\napp.go()",
             "title": "Link/WebLink"
         },
         {
-            "location": "/Widgets/#add-links",
+            "location": "/pythonWidgets/#add-links",
             "text": ".addLink(title, func) \n    Adds a  hyperlink , that when clicked, will call the specified function.    .addWebLink(title, page) \n    Adds a  hyperlink , that when clicked, will launch the default browser, and load the page parameter. \n    It must be a fully formed link, including  http://",
             "title": "Add Links"
         },
         {
-            "location": "/Images/",
+            "location": "/pythonImages/",
             "text": "Images\n\n\n\n\nDefault image support in appJar assumes no extra libraries. That means it should only support \n.GIF\n and \n.PPM\n images.\n\nHowever, code is included to allow the use of \n.PNG\n and \n.JPG\n files. appJar will convert these to \n.GIF\n files, before loading.\n\nConverting image files is \nSLOW\n, so it's best to stick to \n.GIF\n files!\n\n\nGetting the path for images right can be \nTRICKY\n\nIt's therefore best to put images in the same folder as your Python code.\n\n\nAdd Images\n\n\n\n\n\n\n.addImage(title, file)\n\n    Adding an image is exactly the same as adding any other widget.\n\n    Simply give the image a title, and pass the filename.\n\n\nappJar will confirm the file is valid, and will also check the file contains the type specified.\n\n\nIf an animated \n.GIF\n is found, then it will be animated within the GUI.\n\n\n\n\n\n\n.setImageLocation(location)\n\n    Set a folder for image files.\n\n    This will be put before the names of any image files used.  \n\n\n\n\n\n\nChange Images\n\n\n\n\n\n\n.setImage(title, image)\n\n    This will replace the existing image with the new one.\n\n\n\n\n\n\n.setImageMouseOver(title, image)\n\n    Set an image to show, instead of the stored image, while the mouse is over this widget.  \n\n\n\n\n\n\n.setImageSize(title, width, height)\n\n    This will set the size of the container for the image, cropping anything that doesn't fit.\n\n\n\n\n\n\n.zoomImage(title, mod)\n\n    This will attempt to change the size of the image.\n\n    It's very rudimentary, and usually doesn't look good - but is fun to play around with (try adding a slider under an image...)\n\n    Negative values will shrink the image, positive will enlarge the image.  \n\n\n\n\n\n\n.shrinkImage(title, mod)\n & \n.growImage(title, mod)\n\n    These are wrappers for the above function, simply causing the image to shrink or grow accordingly.\n\n\n\n\n\n\nChange Image Animation\n\n\nIf an image is animated, it's possible to control it.\n\n\n\n\n\n\n.setAnimationSpeed(title, speed)\n\n    This will change the speed an image is animated at.\n\n\n\n\n\n\n.stopAnimation(title)\n & \n.startAnimation(title)\n\n    These will start and stop the animation of an image.\n\n\n\n\n\n\nSet Background Images\n\n\nIt's also possible to add a background image to your GUI.\n\nIf you have lots of grouped widgets, this can look quite \nUGLY\n, as all of the widgets are drawn on top.  \n\n\n\n\n\n\n.setBgImage(image)\n\n    Set the image for the background.\n\n\n\n\n\n\n.removeBgImage(image)\n\n    Remove the image form the background.",
             "title": "Images"
         },
         {
-            "location": "/Images/#images",
+            "location": "/pythonImages/#images",
             "text": "Default image support in appJar assumes no extra libraries. That means it should only support  .GIF  and  .PPM  images. \nHowever, code is included to allow the use of  .PNG  and  .JPG  files. appJar will convert these to  .GIF  files, before loading. \nConverting image files is  SLOW , so it's best to stick to  .GIF  files!  Getting the path for images right can be  TRICKY \nIt's therefore best to put images in the same folder as your Python code.",
             "title": "Images"
         },
         {
-            "location": "/Images/#add-images",
+            "location": "/pythonImages/#add-images",
             "text": ".addImage(title, file) \n    Adding an image is exactly the same as adding any other widget. \n    Simply give the image a title, and pass the filename.  appJar will confirm the file is valid, and will also check the file contains the type specified.  If an animated  .GIF  is found, then it will be animated within the GUI.    .setImageLocation(location) \n    Set a folder for image files. \n    This will be put before the names of any image files used.",
             "title": "Add Images"
         },
         {
-            "location": "/Images/#change-images",
+            "location": "/pythonImages/#change-images",
             "text": ".setImage(title, image) \n    This will replace the existing image with the new one.    .setImageMouseOver(title, image) \n    Set an image to show, instead of the stored image, while the mouse is over this widget.      .setImageSize(title, width, height) \n    This will set the size of the container for the image, cropping anything that doesn't fit.    .zoomImage(title, mod) \n    This will attempt to change the size of the image. \n    It's very rudimentary, and usually doesn't look good - but is fun to play around with (try adding a slider under an image...) \n    Negative values will shrink the image, positive will enlarge the image.      .shrinkImage(title, mod)  &  .growImage(title, mod) \n    These are wrappers for the above function, simply causing the image to shrink or grow accordingly.",
             "title": "Change Images"
         },
         {
-            "location": "/Images/#change-image-animation",
+            "location": "/pythonImages/#change-image-animation",
             "text": "If an image is animated, it's possible to control it.    .setAnimationSpeed(title, speed) \n    This will change the speed an image is animated at.    .stopAnimation(title)  &  .startAnimation(title) \n    These will start and stop the animation of an image.",
             "title": "Change Image Animation"
         },
         {
-            "location": "/Images/#set-background-images",
+            "location": "/pythonImages/#set-background-images",
             "text": "It's also possible to add a background image to your GUI. \nIf you have lots of grouped widgets, this can look quite  UGLY , as all of the widgets are drawn on top.      .setBgImage(image) \n    Set the image for the background.    .removeBgImage(image) \n    Remove the image form the background.",
             "title": "Set Background Images"
         },
         {
-            "location": "/Sound/",
+            "location": "/pythonSound/",
             "text": "Sound\n\n\n\n\nSound is only supported in Windows, using the Winsound API.\n\nTherefore, only \n.WAV\n files will work.\n\n\nPlaying Sound Files\n\n\n\n\n\n\n\n\n.playSound(sound, wait=False)\n\n    Play the named sound file.\n\n    By default, the sound is played asynchronously, meaning the function will return immediately, even though the sound hasn't finished playing.\n\n    It is possible to override this, by setting wait to True. This is not recommended though, as the GUI will become unresponsive.\n\n\n\n\n\n\n.stopSound()\n\n    This will stop whatever sound is currently being played.\n\n\n\n\n\n\n.loopSound(sound)\n\n    This will play the named sound in a loop.\n\n\n\n\n\n\n.setSoundLocation(location)\n\n    Set a folder for the sound files.\n\n    This will be put before the names of any sound files used.  \n\n\n\n\n\n\nPlaying Built-In Sounds\n\n\n\n\n\n\n\n\n.soundError()\n\n\nThis will sound a simple error beep.\n\n\n\n\n\n\n.soundWarning()\n\n\nThis will sound a simple warning beep.\n\n\n\n\n\n\nPlaying Musical Notes\n\n\n\n\n\n\n\n\n.playNote(note, duration=200)\n\n\nSupport is built in for playing musical notes, using winsound.\nThe note can be a numeric frequency, or a String note.\nThe duration can be a number in milliseconds, or a String duration.\n\n\nOver 50 String notes are available, such as:\n\n\n\n\nf#1 = 46\n\n\nb7 = 3951\n\n\ng9 = 12543  \n\n\n\n\nThe following String durations are supported:\n\n\n\n\nBREVE = 2000\n\n\nSEMIBREVE = 1000\n\n\nMINIM = 500\n\n\nCROTCHET = 250\n\n\nQUAVER = 125\n\n\nSEMIQUAVER = 63\n\n\nDEMISEMIQUAVER = 32\n\n\nHEMIDEMISEMIQUAVER = 16\n\n\n\n\nThese can be accessed through the variables \ngui.NOTES\n and \ngui.DURATIONS",
             "title": "Sounds"
         },
         {
-            "location": "/Sound/#sound",
+            "location": "/pythonSound/#sound",
             "text": "Sound is only supported in Windows, using the Winsound API. \nTherefore, only  .WAV  files will work.",
             "title": "Sound"
         },
         {
-            "location": "/Sound/#playing-sound-files",
+            "location": "/pythonSound/#playing-sound-files",
             "text": ".playSound(sound, wait=False) \n    Play the named sound file. \n    By default, the sound is played asynchronously, meaning the function will return immediately, even though the sound hasn't finished playing. \n    It is possible to override this, by setting wait to True. This is not recommended though, as the GUI will become unresponsive.    .stopSound() \n    This will stop whatever sound is currently being played.    .loopSound(sound) \n    This will play the named sound in a loop.    .setSoundLocation(location) \n    Set a folder for the sound files. \n    This will be put before the names of any sound files used.",
             "title": "Playing Sound Files"
         },
         {
-            "location": "/Sound/#playing-built-in-sounds",
+            "location": "/pythonSound/#playing-built-in-sounds",
             "text": ".soundError()  This will sound a simple error beep.    .soundWarning()  This will sound a simple warning beep.",
             "title": "Playing Built-In Sounds"
         },
         {
-            "location": "/Sound/#playing-musical-notes",
+            "location": "/pythonSound/#playing-musical-notes",
             "text": ".playNote(note, duration=200)  Support is built in for playing musical notes, using winsound.\nThe note can be a numeric frequency, or a String note.\nThe duration can be a number in milliseconds, or a String duration.  Over 50 String notes are available, such as:   f#1 = 46  b7 = 3951  g9 = 12543     The following String durations are supported:   BREVE = 2000  SEMIBREVE = 1000  MINIM = 500  CROTCHET = 250  QUAVER = 125  SEMIQUAVER = 63  DEMISEMIQUAVER = 32  HEMIDEMISEMIQUAVER = 16   These can be accessed through the variables  gui.NOTES  and  gui.DURATIONS",
             "title": "Playing Musical Notes"
         },
         {
-            "location": "/Bars/",
+            "location": "/pythonBars/",
             "text": "Toolbars, Menubars & Statusbars\n\n\n\n\nToolbars and Menubars are features common to most GUIs, you'll be used to seeing them along the top of apps, such as MS Word.\n\nStatusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.  \n\n\nToolbar\n\n\n\n\nToolbars (sometimes known as ribbons) appear across the top og a GUI.\n\nThey offer a series of buttons to click, which change settings/functionality in a GUI.\n\n\nCreate Toolbars\n\n\n\n\n.addToolbar(names, funcs)\n\n    Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.\n\n    If only one function is supplied, they will all call the same function.\n\n    A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.  \n\n\n\n\nSet Toolbars\n\n\n\n\n.setToolbarImage(name, image)\n\nWill set an image for the corresponding button in the toolbar.\n\n\n\n\nMenubar\n\n\n\n\nAdds a standard Menubar along the top of the GUI\nThe menubar will show, once the first menu has been added.\nYou can add a single menu option, or a list of menu options.\n\n\nCreate Menus\n\n\n\n\n\n\n.addMenu(title, function)\n\n    Adds a single menu option, that will call the specified function.\n\n\n\n\n\n\n.addMenuList(title, names, functions, tearable=False)\n\n    Will create a top-level menu, with the specified title.\n\n    Within the menu will be the list of names, each calling the corresponding function in the function list.\n\n    If only one function is provided, all menus will call the same function.\n\n    If the menu name is a '-', then a separator will be added to the menu.\n\n    If tearable is set to True, then the menu can be undocked.  \n\n\n\n\n\n\n.createMenu(title, tearable=False)\n\n    Will create a top-level menu, to add memnu items to.\n\n\n\n\n\n\n.addMenuItem(title, item, func=None)\n\n    Add a sub-menu to the named top-level menu, with the specified function\n    If the menu name is a '-', then a separator will be added to the menu.\n\n\n\n\n\n\n.addMenuSeparator(title)\n\n    Add a separator to the named menu.\n\n\n\n\n\n\n.addMenuCheckBox(title, name)\n\n    Add a check box, to the named menu, with the specified name.\n\n\n\n\n\n\n.addMenuRadioButton(title, menu, name, value)\n\n    Add a radio button, to the named menu, grouped by name, with the specified value.\n\n\n\n\n\n\nSet Menus\n\n\n\n\n\n\n.setMenuCheckBox(title, menu)\n\n    Inverts the specified check box, in the named menu.\n\n\n\n\n\n\n.setMenuRadioButton(title, menu, value)\n\n    Selects the specified value, of the specified radio button, in the named menu.\n\n\n\n\n\n\nGet Menus\n\n\n\n\n\n\n.getMenuCheckBox(title, menu)\n\n    Get the value of the specified check box, from the named menu.\n\n    Returns True or False.\n\n\n\n\n\n\n.getMenuRadioButton(title, menu)\n\n    Get the value of the specified radio button, from the named menu.\n\n    Returns the value of the checked radio button.\n\n\n\n\n\n\nStatusbar\n\n\n\n\nAdds a statusbar along the bottom of the GUI.\nThis can be used for easy debugging, or as info for the user.\n\n\nCreate Statuses\n\n\n\n\n.addStatus(header=\"\", fields=1, side=None)\n\n    This turns the statusbar on, and if a header is supplied, will prepend the header before every message.\n\n    If fields is populated, it''s possible to have multiple status bixes, each addressable by a number.\n\n    Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.\n\n\n\n\nSet Statuses\n\n\n\n\n\n\n.setStatus(text, field=0)\n\n    This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message.\n\n    If multiple fields were created, a position can be supplied to populate.\n\n\n\n\n\n\n.clearStatus(field=0)\n\n    Clear anything displayed in the statusbar, along with any header that might be set.\n\n\n\n\n\n\n.setStatusWidth(width, field=0)\n\n    Set the width of the specified status field.",
             "title": "Bars"
         },
         {
-            "location": "/Bars/#toolbars-menubars-statusbars",
+            "location": "/pythonBars/#toolbars-menubars-statusbars",
             "text": "Toolbars and Menubars are features common to most GUIs, you'll be used to seeing them along the top of apps, such as MS Word. \nStatusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.",
             "title": "Toolbars, Menubars &amp; Statusbars"
         },
         {
-            "location": "/Bars/#toolbar",
+            "location": "/pythonBars/#toolbar",
             "text": "Toolbars (sometimes known as ribbons) appear across the top og a GUI. \nThey offer a series of buttons to click, which change settings/functionality in a GUI.",
             "title": "Toolbar"
         },
         {
-            "location": "/Bars/#create-toolbars",
+            "location": "/pythonBars/#create-toolbars",
             "text": ".addToolbar(names, funcs) \n    Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function. \n    If only one function is supplied, they will all call the same function. \n    A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.",
             "title": "Create Toolbars"
         },
         {
-            "location": "/Bars/#set-toolbars",
+            "location": "/pythonBars/#set-toolbars",
             "text": ".setToolbarImage(name, image) \nWill set an image for the corresponding button in the toolbar.",
             "title": "Set Toolbars"
         },
         {
-            "location": "/Bars/#menubar",
+            "location": "/pythonBars/#menubar",
             "text": "Adds a standard Menubar along the top of the GUI\nThe menubar will show, once the first menu has been added.\nYou can add a single menu option, or a list of menu options.",
             "title": "Menubar"
         },
         {
-            "location": "/Bars/#create-menus",
+            "location": "/pythonBars/#create-menus",
             "text": ".addMenu(title, function) \n    Adds a single menu option, that will call the specified function.    .addMenuList(title, names, functions, tearable=False) \n    Will create a top-level menu, with the specified title. \n    Within the menu will be the list of names, each calling the corresponding function in the function list. \n    If only one function is provided, all menus will call the same function. \n    If the menu name is a '-', then a separator will be added to the menu. \n    If tearable is set to True, then the menu can be undocked.      .createMenu(title, tearable=False) \n    Will create a top-level menu, to add memnu items to.    .addMenuItem(title, item, func=None) \n    Add a sub-menu to the named top-level menu, with the specified function\n    If the menu name is a '-', then a separator will be added to the menu.    .addMenuSeparator(title) \n    Add a separator to the named menu.    .addMenuCheckBox(title, name) \n    Add a check box, to the named menu, with the specified name.    .addMenuRadioButton(title, menu, name, value) \n    Add a radio button, to the named menu, grouped by name, with the specified value.",
             "title": "Create Menus"
         },
         {
-            "location": "/Bars/#set-menus",
+            "location": "/pythonBars/#set-menus",
             "text": ".setMenuCheckBox(title, menu) \n    Inverts the specified check box, in the named menu.    .setMenuRadioButton(title, menu, value) \n    Selects the specified value, of the specified radio button, in the named menu.",
             "title": "Set Menus"
         },
         {
-            "location": "/Bars/#get-menus",
+            "location": "/pythonBars/#get-menus",
             "text": ".getMenuCheckBox(title, menu) \n    Get the value of the specified check box, from the named menu. \n    Returns True or False.    .getMenuRadioButton(title, menu) \n    Get the value of the specified radio button, from the named menu. \n    Returns the value of the checked radio button.",
             "title": "Get Menus"
         },
         {
-            "location": "/Bars/#statusbar",
+            "location": "/pythonBars/#statusbar",
             "text": "Adds a statusbar along the bottom of the GUI.\nThis can be used for easy debugging, or as info for the user.",
             "title": "Statusbar"
         },
         {
-            "location": "/Bars/#create-statuses",
+            "location": "/pythonBars/#create-statuses",
             "text": ".addStatus(header=\"\", fields=1, side=None) \n    This turns the statusbar on, and if a header is supplied, will prepend the header before every message. \n    If fields is populated, it''s possible to have multiple status bixes, each addressable by a number. \n    Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.",
             "title": "Create Statuses"
         },
         {
-            "location": "/Bars/#set-statuses",
+            "location": "/pythonBars/#set-statuses",
             "text": ".setStatus(text, field=0) \n    This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message. \n    If multiple fields were created, a position can be supplied to populate.    .clearStatus(field=0) \n    Clear anything displayed in the statusbar, along with any header that might be set.    .setStatusWidth(width, field=0) \n    Set the width of the specified status field.",
             "title": "Set Statuses"
         },
         {
-            "location": "/Dialogs/",
+            "location": "/pythonDialogs/",
             "text": "Pop-ups\n\n\n\n\nA number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.\n\n\nMessage Boxes\n\n\n\n\n\n\n.infoBox(title, message)\n\n    Shows a simple information message, with an OK button.\n\n\n\n\n\n\n\n\n.errorBox(title, message)\n\n    Shows a simple error message, with an OK button.\n\n\n\n\n\n\n\n\n.warningBox(title, message)\n\n    Shows a simple warning message, with an OK message.\n\n\n\n\n\n\n\n\nQuestion Boxes\n\n\n\n\n\n\n.yesNoBox(title, message)\n\n    Shows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.questionBox(title, message)\n\n    Shows a question, with Yes/No buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.okBox(title, message)\n\n    Shows a question, with OK/Cancel buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.retryBox(title, message)\n\n    Shows a question, with Cancel/Retry buttons. Returns True/False.\n\n\n\n\n\n\n\n\n.textBox(title, message)\n\n    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.\n\n\n\n\n\n\n\n\n.numberBox(title, message)\n\n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.\n\n\n\n\n\n\n\n\nFile Boxes\n\n\n\n\n.openBox()\n\n\n.saveBox()\n\n\n.directoryBox()\n\n\n\n\nOther Boxes\n\n\n\n\n.colourBox()",
             "title": "Pop-ups"
         },
         {
-            "location": "/Dialogs/#pop-ups",
+            "location": "/pythonDialogs/#pop-ups",
             "text": "A number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.",
             "title": "Pop-ups"
         },
         {
-            "location": "/Dialogs/#message-boxes",
+            "location": "/pythonDialogs/#message-boxes",
             "text": ".infoBox(title, message) \n    Shows a simple information message, with an OK button.     .errorBox(title, message) \n    Shows a simple error message, with an OK button.     .warningBox(title, message) \n    Shows a simple warning message, with an OK message.",
             "title": "Message Boxes"
         },
         {
-            "location": "/Dialogs/#question-boxes",
+            "location": "/pythonDialogs/#question-boxes",
             "text": ".yesNoBox(title, message) \n    Shows a question, with Yes/No buttons. Returns True/False.     .questionBox(title, message) \n    Shows a question, with Yes/No buttons. Returns True/False.     .okBox(title, message) \n    Shows a question, with OK/Cancel buttons. Returns True/False.     .retryBox(title, message) \n    Shows a question, with Cancel/Retry buttons. Returns True/False.     .textBox(title, message) \n    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.     .numberBox(title, message) \n    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.",
             "title": "Question Boxes"
         },
         {
-            "location": "/Dialogs/#file-boxes",
+            "location": "/pythonDialogs/#file-boxes",
             "text": ".openBox()  .saveBox()  .directoryBox()",
             "title": "File Boxes"
         },
         {
-            "location": "/Dialogs/#other-boxes",
+            "location": "/pythonDialogs/#other-boxes",
             "text": ".colourBox()",
             "title": "Other Boxes"
         },
         {
-            "location": "/DevWidgets/",
+            "location": "/pythonDevWidgets/",
             "text": "Widgets Under Development\n\n\n\n\nThe following widgets are \nunder development\n. They're included in the library, but offer limited functionality, and are stilll quite buggy.\n\n\nPieChart\n\n\n\n\nShows a pie chart  \n\n\n\n\n.addPieChart(name, values, size=100)\n\n    Takes a list of integers, which will be converted to percentages, and plotted on the chart.\n\n    An optional size parameter can be passed, to adjust the size of the chart.  \n\n\n\n\n  \n\n\n    from appJar import gui\n\n    app=gui()\n    app.addPieChart(\"p1\", [50, 200, 75, 300, 150], size=300)\n    app.go()\n\n\n\n\nTree\n\n\n\n\nTakes an arbitrary XML string, and converts it into a tree structure.  \n\n\n\n\n.addTree(title, xml_data)\n\n    Create a tree from the specified XML data  \n\n\n.addTreeFunction(title, func)\n\n    Register a function to call when an item is double-clicked  \n\n\n.getTree(title)\n\n    Return the tree as XML  \n\n\n\n\n\n\nfrom appJar import gui\n\napp=gui()\napp.addTree(\"t1\",\n            \"\"\"<people>\n            <person><name>Fred</name><age>45</age><gender>Male</gender></person>\n            <person><name>Tina</name><age>37</age><gender>Female</gender></person>\n            <person><name>CLive</name><age>28</age><gender>Male</gender></person>\n            <person><name>Betty</name><age>51</age><gender>Female</gender></person>\n            </people>\"\"\")\napp.go()\n\n\n\n\nGrid\n\n\n\n\nUsed to create a spreadsheet like interface.\n\n* \n.addGrid(title, data, action=None, addRow=False)\n\n    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.\n\n    If action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.  \n\n\n\n\n.updateGrid(title, data, addRow=False)\n  \n\n\n.setGridGeom(title, width, height)\n  \n\n\n.getGridEntries(title)\n  \n\n\n.setGridBackground(title, colour)\n  \n\n\n\n\n  \n\n\n    from appJar import gui\n\n    app=gui()\n    app.setFont(20)\n    app.addGrid(\"g1\",\n        [[\"Name\", \"Age\", \"Gender\"],\n        [\"Fred\", 45, \"Male\"],\n        [\"Tina\", 37, \"Female\"],\n        [\"Clive\", 28, \"Male\"],\n        [\"Betty\", 51, \"Female\"]])\n    app.go()\n\n\n\n\nMeters\n\n\nWorking on some different styles for the Meter.\n\nAnd, a better look - gradiated colour...  \n\n\nSplitMeter\n\n\nShows two values, left & right  \n\n\n\n\nDualMeter\n\n\nShows percentage left & right  \n\n\nProperties\n\n\n\n\nA quick-to-create set of radio/check boxes.  \n\n\n\n\n.addProperties(props)\n\n    Creates the properties box, with the list of properties.\n\n    The properties can be passed in as dictionary, but the order will be random.  \n\n\n.addProperty(title, value=False)\n\n    Adds the named property to the end of the properties list.  \n\n\n.getProperties()\n\n    Returns the properties as a dictionary.  \n\n\n.getProperty(title)\n\n    Gets the named property.  \n\n\n.setProperty(title, value=True)\n\n    Sets the named property.",
             "title": "In the works..."
         },
         {
-            "location": "/DevWidgets/#widgets-under-development",
+            "location": "/pythonDevWidgets/#widgets-under-development",
             "text": "The following widgets are  under development . They're included in the library, but offer limited functionality, and are stilll quite buggy.",
             "title": "Widgets Under Development"
         },
         {
-            "location": "/DevWidgets/#piechart",
+            "location": "/pythonDevWidgets/#piechart",
             "text": "Shows a pie chart     .addPieChart(name, values, size=100) \n    Takes a list of integers, which will be converted to percentages, and plotted on the chart. \n    An optional size parameter can be passed, to adjust the size of the chart.             from appJar import gui\n\n    app=gui()\n    app.addPieChart(\"p1\", [50, 200, 75, 300, 150], size=300)\n    app.go()",
             "title": "PieChart"
         },
         {
-            "location": "/DevWidgets/#tree",
+            "location": "/pythonDevWidgets/#tree",
             "text": "Takes an arbitrary XML string, and converts it into a tree structure.     .addTree(title, xml_data) \n    Create a tree from the specified XML data    .addTreeFunction(title, func) \n    Register a function to call when an item is double-clicked    .getTree(title) \n    Return the tree as XML      from appJar import gui\n\napp=gui()\napp.addTree(\"t1\",\n            \"\"\"<people>\n            <person><name>Fred</name><age>45</age><gender>Male</gender></person>\n            <person><name>Tina</name><age>37</age><gender>Female</gender></person>\n            <person><name>CLive</name><age>28</age><gender>Male</gender></person>\n            <person><name>Betty</name><age>51</age><gender>Female</gender></person>\n            </people>\"\"\")\napp.go()",
             "title": "Tree"
         },
         {
-            "location": "/DevWidgets/#grid",
+            "location": "/pythonDevWidgets/#grid",
             "text": "Used to create a spreadsheet like interface. \n*  .addGrid(title, data, action=None, addRow=False) \n    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values. \n    If action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.     .updateGrid(title, data, addRow=False)     .setGridGeom(title, width, height)     .getGridEntries(title)     .setGridBackground(title, colour)              from appJar import gui\n\n    app=gui()\n    app.setFont(20)\n    app.addGrid(\"g1\",\n        [[\"Name\", \"Age\", \"Gender\"],\n        [\"Fred\", 45, \"Male\"],\n        [\"Tina\", 37, \"Female\"],\n        [\"Clive\", 28, \"Male\"],\n        [\"Betty\", 51, \"Female\"]])\n    app.go()",
             "title": "Grid"
         },
         {
-            "location": "/DevWidgets/#meters",
+            "location": "/pythonDevWidgets/#meters",
             "text": "Working on some different styles for the Meter. \nAnd, a better look - gradiated colour...",
             "title": "Meters"
         },
         {
-            "location": "/DevWidgets/#splitmeter",
+            "location": "/pythonDevWidgets/#splitmeter",
             "text": "Shows two values, left & right",
             "title": "SplitMeter"
         },
         {
-            "location": "/DevWidgets/#dualmeter",
+            "location": "/pythonDevWidgets/#dualmeter",
             "text": "Shows percentage left & right",
             "title": "DualMeter"
         },
         {
-            "location": "/DevWidgets/#properties",
+            "location": "/pythonDevWidgets/#properties",
             "text": "A quick-to-create set of radio/check boxes.     .addProperties(props) \n    Creates the properties box, with the list of properties. \n    The properties can be passed in as dictionary, but the order will be random.    .addProperty(title, value=False) \n    Adds the named property to the end of the properties list.    .getProperties() \n    Returns the properties as a dictionary.    .getProperty(title) \n    Gets the named property.    .setProperty(title, value=True) \n    Sets the named property.",
             "title": "Properties"
         },
         {
-            "location": "/Layout/",
+            "location": "/pythonWidgetLayout/",
             "text": "Arranging Widgets\n\n\n\n\nSequential programming\n\n\n\n\nBy default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:\n\n\nfrom appJar import gui  \n\ndef changeLabel(btn):  \n    app.setLabel(\"l2\", app.getEntry(\"text\"))  \n\napp = gui()  \napp.addLabel(\"l1\", \"Simple Demo\")\napp.addEntry(\"text\")\napp.addButton(\"OK\", changeLabel)\napp.addEmptyLabel(\"l2\")\napp.go()\n\n\n\n\n\n\nGrid Layout\n\n\n\n\nIf, however, you want more than that, then a basic GRID layout is supported.\n\n\nEach time you add a widget, you can specify a column, row, and even a column-span to position it in.\n\n\nfrom appJar import gui\n\ndef press(btn):\n    if btn==\"Save\":\n        n=app.getEntry(\"name\")\n        a=app.getEntry(\"age\")\n        r=app.getOptionBox(\"role\")\n        app.infoBox(\"Details\", \"You entered: {}, {}, {}\".format(n, str(a), r))\n    elif btn==\"Quit\":\n        app.stop()\n\napp=gui()\n\napp.addLabel(\"l1\", \"Name\", 0, 0)\napp.addLabel(\"l2\", \"Age\", 1, 0)\napp.addLabel(\"l3\", \"Role\", 2, 0)\n\napp.addEntry(\"name\", 0, 1)\napp.addNumericEntry(\"age\", 1, 1)\napp.addOptionBox(\"role\", [\"Teacher\", \"Student\", \"Developer\", \"Volunteer\"], 2, 1)\n\napp.addButtons([\"Save\", \"Quit\"], press, 3, 0, 2)\n\napp.go()",
             "title": "Arranging widgets"
         },
         {
-            "location": "/Layout/#arranging-widgets",
+            "location": "/pythonWidgetLayout/#arranging-widgets",
             "text": "",
             "title": "Arranging Widgets"
         },
         {
-            "location": "/Layout/#sequential-programming",
+            "location": "/pythonWidgetLayout/#sequential-programming",
             "text": "By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:  from appJar import gui  \n\ndef changeLabel(btn):  \n    app.setLabel(\"l2\", app.getEntry(\"text\"))  \n\napp = gui()  \napp.addLabel(\"l1\", \"Simple Demo\")\napp.addEntry(\"text\")\napp.addButton(\"OK\", changeLabel)\napp.addEmptyLabel(\"l2\")\napp.go()",
             "title": "Sequential programming"
         },
         {
-            "location": "/Layout/#grid-layout",
+            "location": "/pythonWidgetLayout/#grid-layout",
             "text": "If, however, you want more than that, then a basic GRID layout is supported.  Each time you add a widget, you can specify a column, row, and even a column-span to position it in.  from appJar import gui\n\ndef press(btn):\n    if btn==\"Save\":\n        n=app.getEntry(\"name\")\n        a=app.getEntry(\"age\")\n        r=app.getOptionBox(\"role\")\n        app.infoBox(\"Details\", \"You entered: {}, {}, {}\".format(n, str(a), r))\n    elif btn==\"Quit\":\n        app.stop()\n\napp=gui()\n\napp.addLabel(\"l1\", \"Name\", 0, 0)\napp.addLabel(\"l2\", \"Age\", 1, 0)\napp.addLabel(\"l3\", \"Role\", 2, 0)\n\napp.addEntry(\"name\", 0, 1)\napp.addNumericEntry(\"age\", 1, 1)\napp.addOptionBox(\"role\", [\"Teacher\", \"Student\", \"Developer\", \"Volunteer\"], 2, 1)\n\napp.addButtons([\"Save\", \"Quit\"], press, 3, 0, 2)\n\napp.go()",
             "title": "Grid Layout"
         },
         {
-            "location": "/Grouping/",
+            "location": "/pythonWidgetGrouping/",
             "text": "Container Options\n\n\n\n\nLabel Frame\n\n\n\n\nA way of grouping widgets into a box, with a label at the top of the box.\n\n\n\n\n\n\nPosition the \nLabelFrame\n within the grid, then position widgets inside the \nLabelFrame\n\n\n.startLabelFrame(name)\n  \n\n\n.stopLabelFrame()\n\n    Used to start and stop a labelFrame  \n\n\n.setSticky(coords)\n\n    Used to specify how widgets should be positioned inside the \nLabelFrame\n  \n\n\n\n\nNoteBook\n\n\n\n\nA way to create a (basic) tabbed-style interface.\n\n\n  \n\n\n\n\nPosition the \nNoteBook\n within the grid, start a \nTab\n, then position widgets inside the \nTab\n  \n\n\n.startNoteBook(name)\n  \n\n\n.stopNoteBook()\n\n    Used to start & stop the main \nNoteBook\n  \n\n\n.startNoteTab(name)\n\n\n.stopNoteTab()\n\n    Used to start and stop each of the tabs in the \nNoteBook\n.  \n\n\n\n\nPanedWindow\n\n\n\n\nA way to arrange re-sizable frames, with drag-bars.  \n\n\n\n\nCall \n.startPanedWindow(name)\n to create the initial pane  \n\n\nThen keep calling it to add additional panes  \n\n\nCalling \n.setPanedWindowVertical(name)\n will change the layout to vertical, allowing more configurations.  \n\n\n\n\nHorizontal Panes\n\n\n\n\nCreate an initial pane  \n\n\nKeep adding panes to the initial pane\n\n\n  \n\n\n\n\nVertical Panes\n\n\n\n\nCreate an initial pane  \n\n\nMake it vertical  \n\n\nAdd a second pane  \n\n\nKeep adding panes to the inittial pane\n\n\n  \n\n\n\n\nE-Pane\n\n\n\n\nCreate an initial pane  \n\n\nAdd a second pane\n\n\nMake the second pane vertical  \n\n\nThe remaining panes are added to frame 2\n\n\n  \n\n\n\n\nT-Pane\n\n\n\n\nCreate an initial pane\n\n\nMake it vertical\n\n\nAdd a second pane\n\n\nAdd the remaining panes to pane 2\n\n\n  \n\n\n\n\nSubWindow\n\n\n\n\nA way to add additional windows, which can be hidden and shown.  \n\n\n\n\n.startSubwindow(name)\n  \n\n\n.stopSubwindow()\n\n    Used to start and stop defining a \nSubWindow\n  \n\n\n.showSubWindow(name)\n  \n\n\n.hideSubWindow(name)\n\n    Used to show and hide the specified \nSubWindow\n\n\n\n\n\n\nContainers Under Development\n\n\n\n\nScroll Pane\n\n\n\n\nA scrollable frame, to contain widgets.\n\n\n\n\n.startScrollPane(title)\n  \n\n\n.stopScrollPane(title)",
             "title": "Grouping widgets"
         },
         {
-            "location": "/Grouping/#container-options",
+            "location": "/pythonWidgetGrouping/#container-options",
             "text": "",
             "title": "Container Options"
         },
         {
-            "location": "/Grouping/#label-frame",
+            "location": "/pythonWidgetGrouping/#label-frame",
             "text": "A way of grouping widgets into a box, with a label at the top of the box.    Position the  LabelFrame  within the grid, then position widgets inside the  LabelFrame  .startLabelFrame(name)     .stopLabelFrame() \n    Used to start and stop a labelFrame    .setSticky(coords) \n    Used to specify how widgets should be positioned inside the  LabelFrame",
             "title": "Label Frame"
         },
         {
-            "location": "/Grouping/#notebook",
+            "location": "/pythonWidgetGrouping/#notebook",
             "text": "A way to create a (basic) tabbed-style interface.       Position the  NoteBook  within the grid, start a  Tab , then position widgets inside the  Tab     .startNoteBook(name)     .stopNoteBook() \n    Used to start & stop the main  NoteBook     .startNoteTab(name)  .stopNoteTab() \n    Used to start and stop each of the tabs in the  NoteBook .",
             "title": "NoteBook"
         },
         {
-            "location": "/Grouping/#panedwindow",
+            "location": "/pythonWidgetGrouping/#panedwindow",
             "text": "A way to arrange re-sizable frames, with drag-bars.     Call  .startPanedWindow(name)  to create the initial pane    Then keep calling it to add additional panes    Calling  .setPanedWindowVertical(name)  will change the layout to vertical, allowing more configurations.",
             "title": "PanedWindow"
         },
         {
-            "location": "/Grouping/#horizontal-panes",
+            "location": "/pythonWidgetGrouping/#horizontal-panes",
             "text": "Create an initial pane    Keep adding panes to the initial pane",
             "title": "Horizontal Panes"
         },
         {
-            "location": "/Grouping/#vertical-panes",
+            "location": "/pythonWidgetGrouping/#vertical-panes",
             "text": "Create an initial pane    Make it vertical    Add a second pane    Keep adding panes to the inittial pane",
             "title": "Vertical Panes"
         },
         {
-            "location": "/Grouping/#e-pane",
+            "location": "/pythonWidgetGrouping/#e-pane",
             "text": "Create an initial pane    Add a second pane  Make the second pane vertical    The remaining panes are added to frame 2",
             "title": "E-Pane"
         },
         {
-            "location": "/Grouping/#t-pane",
+            "location": "/pythonWidgetGrouping/#t-pane",
             "text": "Create an initial pane  Make it vertical  Add a second pane  Add the remaining panes to pane 2",
             "title": "T-Pane"
         },
         {
-            "location": "/Grouping/#subwindow",
+            "location": "/pythonWidgetGrouping/#subwindow",
             "text": "A way to add additional windows, which can be hidden and shown.     .startSubwindow(name)     .stopSubwindow() \n    Used to start and stop defining a  SubWindow     .showSubWindow(name)     .hideSubWindow(name) \n    Used to show and hide the specified  SubWindow",
             "title": "SubWindow"
         },
         {
-            "location": "/Grouping/#containers-under-development",
+            "location": "/pythonWidgetGrouping/#containers-under-development",
             "text": "",
             "title": "Containers Under Development"
         },
         {
-            "location": "/Grouping/#scroll-pane",
+            "location": "/pythonWidgetGrouping/#scroll-pane",
             "text": "A scrollable frame, to contain widgets.   .startScrollPane(title)     .stopScrollPane(title)",
             "title": "Scroll Pane"
         },
         {
-            "location": "/WidgetOptions/",
+            "location": "/pythonWidgetOptions/",
             "text": "Widget Options\n\n\n\n\nThere are a lot of things that can be configured on a widget.\n\nThere is a pattern to how this works, you simply specify the widget type and the parameter, eg:\n\n\n\n\n.setLabelBg(name, value)\n\n\n.setButtonFg(name, value)\n\n\n.setListBoxState(name, value)\n\n\n\n\nThe list of widgets is defined in \ngui.WIDGETS\n, it contains:\nLabel, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook\n\n\nBasic Appearance\n\n\n\n\nThe following options are available for all widgets:\n\n\n\n\n\n\nset XXX Bg(name, value)\n\n    Sets the background colour of the named widget.\n\n\n\n\n\n\nset XXX Fg(name, value)\n\n    Sets the foregound colour (usually the text) of the named widget.\n\n\n\n\n\n\nset XXX DisabledFg(name, value)\n\n    Sets the disabled foreground colour (usually the text) of the named widget.\n\n\n\n\n\n\nset XXX Width(name, value)\n\n    Sets the width of the named widget.\n\n\n\n\n\n\nset XXX Height(name, value)\n\n    Set the height of the named widget.\n\n\n\n\n\n\nExtended Appearance\n\n\n\n\n\n\n\n\nset XXX Tooltip(name, value)\n\n    Sets a tooltip for the widget.\n    The specified text will be displayed in a small pop-up, when the mouse is left over the widget.\n\n\n\n\n\n\nset XXX Cursor(name, value)\n\n    Sets the cursor shown, when the mouse goes over this widget.\n\n    There are lots of cursors avalable, for different platforms, see \nhere\n\n\n\n\n\n\nset XXX Relief(name, value)\n\n    Sets the border for the widget. One of: \nSUNKEN\n, \nRAISED\n, \nGROOVE\n, \nRIDGE\n, \nFLAT\n  \n\n\n\n\n\n\nset XXX State(name, value)\n\n    Sets the state of the named widget. One of: \nNORMAL\n, \nACTIVE\n, \nDISABLED\n  \n\n\n\n\n\n\nAdvanced Appearance\n\n\n\n\nThe following are supported by most widgets:\n\n\n\n\n\n\nset XXX Align(name, value)\n\n    Specifies how to align text within the widget: \nLEFT\n, \nRIGHT\n, \nCENTER\n\n\n\n\n\n\nset XXX Anchor(name, value)\n\n    Sets where the text is positioned within the widget. One of: \nCENTER\n, \nN\n, \nS\n, \nE\n, \nW\n, \nNE\n, \nNW\n, \nSE\n, \nSW\n  \n\n\n\n\n\n\nset XXX Sticky(name, value)\n\n    Specifies which side of the cell to stick the widget to, as the GUI expands: \nLEFT\n, \nRIGHT\n, \nBOTH\n\n\n\n\n\n\nWidget Interaction\n\n\n\n\nThe following allow widgets to be interacted with:\n\n\n\n\n\n\nset XXX Focus(name)\n\n    Gives focus to the specified widget. This is the widget where the user will be able to start typing.\n\n\n\n\n\n\nset XXX Function(name, value, key=None)\n\n    This binds a function to the widget.\n\n    The function will be called every time an interactive-widget changes. \n    The funcion will be called when some widgets are clicked.  \n\n\n\n\n\n\nset XXX OverFunction(name, values)\n\n    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.\n\n    The first function is called when the mouse first enters the widget.\n\n    The second function is called when the mouse leaves the widget.\n\n    If you only want a function to be called when the mouse leaves the widget, pass an array like: \n[None, leave]\n  \n\n\n\n\n\n\n    from appJar import gui\n\n    def enter(wdgt): \n        print(\"IN\", wdgt)\n    def leave(wdgt):\n        print(\"OUT\", wdgt)\n\n    app=gui()\n    app.addLabel(\"l1\", \"Testing...\")\n    app.setLabelOverFunction(\"l1\", [enter, leave])\n    app.go()\n\n\n\n\n\n\nset XXX DragFunction(name, values)\n\n    Set functions to call whenever the mouse button is clicked and dragged.\n\n    The first function will be called when the mouse is initially clicked.\n\n    The second function will be called when the mouse is released.\n\n    The same rules for passing functions apply as above.  \n\n\n\n\nWidget Manipulaiton\n\n\n\n\nThe following allow widgets to be manipulated on screen:\n\n\n\n\n\n\n.hide XXX (name)\n\n    Temporarily hides the widget form view.\n\n\n\n\n\n\n.show XXX (name)\n\n    Show the widget, if it was already hidden.\n\n\n\n\n\n\n.remove XXX (name)\n\n    Permanently remove the widget (deletes it).\n\n\n\n\n\n\n.removeAllWidgets()\n\n    Permanenently remove all widgets.\n\n\n\n\n\n\n.disable XXX (name)\n\n    Disable the widget - stops the user from interacting with it, but keeps it visible.\n\n\n\n\n\n\n.enable XXX (name)\n\n    Enable a disabled widget.\n\n\n\n\n\n\nGrouped Options\n\n\n\n\nThe following are convenience functions, for modifying a group of widgets:\n\n\n\n\nset XXX Widths(names, val)\n  \n\n\n\n\nset XXX Heights(names, val)\n\n    Sets the widths/heights of the specified widgets.\n\n\n\n\n\n\nsetAll XXX Widths(val)\n  \n\n\n\n\nsetAll XXX Heights(val)\n\n    Sets the widths/heights of all widgets of the specified type.",
             "title": "Changing widgets"
         },
         {
-            "location": "/WidgetOptions/#widget-options",
+            "location": "/pythonWidgetOptions/#widget-options",
             "text": "There are a lot of things that can be configured on a widget. \nThere is a pattern to how this works, you simply specify the widget type and the parameter, eg:   .setLabelBg(name, value)  .setButtonFg(name, value)  .setListBoxState(name, value)   The list of widgets is defined in  gui.WIDGETS , it contains:\nLabel, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook",
             "title": "Widget Options"
         },
         {
-            "location": "/WidgetOptions/#basic-appearance",
+            "location": "/pythonWidgetOptions/#basic-appearance",
             "text": "The following options are available for all widgets:    set XXX Bg(name, value) \n    Sets the background colour of the named widget.    set XXX Fg(name, value) \n    Sets the foregound colour (usually the text) of the named widget.    set XXX DisabledFg(name, value) \n    Sets the disabled foreground colour (usually the text) of the named widget.    set XXX Width(name, value) \n    Sets the width of the named widget.    set XXX Height(name, value) \n    Set the height of the named widget.",
             "title": "Basic Appearance"
         },
         {
-            "location": "/WidgetOptions/#extended-appearance",
+            "location": "/pythonWidgetOptions/#extended-appearance",
             "text": "set XXX Tooltip(name, value) \n    Sets a tooltip for the widget.\n    The specified text will be displayed in a small pop-up, when the mouse is left over the widget.    set XXX Cursor(name, value) \n    Sets the cursor shown, when the mouse goes over this widget. \n    There are lots of cursors avalable, for different platforms, see  here    set XXX Relief(name, value) \n    Sets the border for the widget. One of:  SUNKEN ,  RAISED ,  GROOVE ,  RIDGE ,  FLAT       set XXX State(name, value) \n    Sets the state of the named widget. One of:  NORMAL ,  ACTIVE ,  DISABLED",
             "title": "Extended Appearance"
         },
         {
-            "location": "/WidgetOptions/#advanced-appearance",
+            "location": "/pythonWidgetOptions/#advanced-appearance",
             "text": "The following are supported by most widgets:    set XXX Align(name, value) \n    Specifies how to align text within the widget:  LEFT ,  RIGHT ,  CENTER    set XXX Anchor(name, value) \n    Sets where the text is positioned within the widget. One of:  CENTER ,  N ,  S ,  E ,  W ,  NE ,  NW ,  SE ,  SW       set XXX Sticky(name, value) \n    Specifies which side of the cell to stick the widget to, as the GUI expands:  LEFT ,  RIGHT ,  BOTH",
             "title": "Advanced Appearance"
         },
         {
-            "location": "/WidgetOptions/#widget-interaction",
+            "location": "/pythonWidgetOptions/#widget-interaction",
             "text": "The following allow widgets to be interacted with:    set XXX Focus(name) \n    Gives focus to the specified widget. This is the widget where the user will be able to start typing.    set XXX Function(name, value, key=None) \n    This binds a function to the widget. \n    The function will be called every time an interactive-widget changes. \n    The funcion will be called when some widgets are clicked.      set XXX OverFunction(name, values) \n    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget. \n    The first function is called when the mouse first enters the widget. \n    The second function is called when the mouse leaves the widget. \n    If you only want a function to be called when the mouse leaves the widget, pass an array like:  [None, leave]           from appJar import gui\n\n    def enter(wdgt): \n        print(\"IN\", wdgt)\n    def leave(wdgt):\n        print(\"OUT\", wdgt)\n\n    app=gui()\n    app.addLabel(\"l1\", \"Testing...\")\n    app.setLabelOverFunction(\"l1\", [enter, leave])\n    app.go()   set XXX DragFunction(name, values) \n    Set functions to call whenever the mouse button is clicked and dragged. \n    The first function will be called when the mouse is initially clicked. \n    The second function will be called when the mouse is released. \n    The same rules for passing functions apply as above.",
             "title": "Widget Interaction"
         },
         {
-            "location": "/WidgetOptions/#widget-manipulaiton",
+            "location": "/pythonWidgetOptions/#widget-manipulaiton",
             "text": "The following allow widgets to be manipulated on screen:    .hide XXX (name) \n    Temporarily hides the widget form view.    .show XXX (name) \n    Show the widget, if it was already hidden.    .remove XXX (name) \n    Permanently remove the widget (deletes it).    .removeAllWidgets() \n    Permanenently remove all widgets.    .disable XXX (name) \n    Disable the widget - stops the user from interacting with it, but keeps it visible.    .enable XXX (name) \n    Enable a disabled widget.",
             "title": "Widget Manipulaiton"
         },
         {
-            "location": "/WidgetOptions/#grouped-options",
+            "location": "/pythonWidgetOptions/#grouped-options",
             "text": "The following are convenience functions, for modifying a group of widgets:   set XXX Widths(names, val)      set XXX Heights(names, val) \n    Sets the widths/heights of the specified widgets.    setAll XXX Widths(val)      setAll XXX Heights(val) \n    Sets the widths/heights of all widgets of the specified type.",
             "title": "Grouped Options"
         },
         {
-            "location": "/GuiOptions/",
+            "location": "/pythonGuiOptions/",
             "text": "GUI Options\n\n\n\n\nThere are a number of generic configurations available, which will affect the whole GUI.\n\nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.  \n\n\nConfiguration\n\n\n\n\nSome basic configuration for the size, position, transparency, etc. of the GUI.\n\n\nLook & Feel\n\n\n\n\n\n\nsetTitle(title)\n\n    Sets the title of the GUI. By default it is the name of the script.\n\n\n\n\n\n\nsetIcon(fileName)\n\n    Sets an icon for the GUI.\n\n\n\n\n\n\nsetTransparency(percentage)\n\n    Sets how transparent the GUI is. Between 0 and 100%.\n\n\n\n\n\n\nSize & Locaiton\n\n\n\n\nsetGeometry(geom)\n  \n\n\n\n\nsetGeometry(width, height)\n\n    Sets the height & width of the GUI:  \n\n\n\n\nEither as a single String \n.setGeometry(\"200x100\")\n (widthxheight)  \n\n\nAs two seperate parameters \n.setGeometry(200,100)\n\n\nOr to go \nFullscreen\n \n.setGeometry(\"Fullscreen\")\n  \n\n\n\n\n\n\n\n\nexitFullscreen()\n\n    Leave fullscreen, if set in the geometry.  \n\n\n<Escape>\n will call this automatically, while in fullscreen.  \n\n\n\n\n\n\nsetResizable(canResize=True)\n\n    Sets whether the GUI can be resized or not.  \n\n\n\n\n\n\nsetLocation(x, y)\n\n    Sets the position of the GUI  \n\n\n\n\n\n\nDesign\n\n\n\n\nIt's possible to change the default colours and fonts for widgets in the GUI.\n\n\nColour\n\n\n\n\nsetBg(colour)\n\n    Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.\n\n\n\n\nFont\n\n\n\n\n\n\nsetFont(size, font=None)\n\n    This can be used to set the font size and style for all widgets.\n\n\n\n\n\n\ndecreaseFont()\n & \nincreaseFont()\n\n    These can be used to increase or decrease the font of all widgets.\n\n\n\n\n\n\nsetLabelFont(size, family=None)\n\n    This can be used to set the font size and style for all label-type widgets.\n\n\n\n\n\n\nincreaseLabelFont()\n & \ndecreaseLabelFont()\n\n    These can be used to increase or decrease the font of all label-type widgets.\n\n\n\n\n\n\nsetButtonFont()\n\n    This can be used to set the font size and style for all button-type widgets.\n\n\n\n\n\n\nincreaseButtonFont()\n & \ndecreaseButtonFont()\n\n    These can be used to increase or decrease the font of all butotn-type widgets.\n\n\n\n\n\n\nWidget Positioning\n\n\n\n\nThe below commands allow the user to change how appJar lays out widgets on the screen.\n\n\nLocation\n\n\n\n\n\n\nsetPadX()\n & \nsetPadY()\n\n    These set how much empty padding is included around a widget, within its grid-cell.\n\n\n\n\n\n\nsetSticky()\n\n    This determines which side of the grid-cell the widget will stick to:\n\n\n\n\nleft\n - stick to the left side\n\n\nright\n - stick to the right side\n\n\nboth\n - stick to both sides, stretch the widget\n\n\n\n\n\n\n\n\nResize\n\n\n\n\n\n\nsetExpand()\n\n    This tells widgets what to do when the GUI is resized.\n\n    It allows widgets to be configured to stretch or not:\n\n\n\n\nnone\n - don't expand\n\n\nrow\n - expand with rows only\n\n\ncolumn\n - expand with columns only\n\n\nall\n - expand in all directions\n\n\n\n\n\n\n\n\nRow Helpers\n\n\n\n\n\n\ngetRow()\n\n    Returns the row number currently being used.\n\n\n\n\n\n\ngetNextRow()\n\n    Returns the current row number, before adding one to it.\n\n\n\n\n\n\nGUI Actions\n\n\n\n\nRepeated Events\n\n\nWhen you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.\n\nThat means, you should never have your own loops running, as that will stop the GUI from working properly.\n\nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:  \n\n\n\n\n\n\nregisterEvent(func)\n\n    Pass this a function, and the GUI will call that function every second.\n\n\n\n\n\n\nsetPollTime(time)\n\n    If you want your events to be called more or less frequently, set the frequency here.\n\n\n\n\n\n\nEnter Key\n\n\n\n\n\n\nenableEnter(func)\n\n    Link a function to the \n<Enter>\n key\n\n\n\n\n\n\ndisableEnter()\n\n    Unlink a function form the \n<Enter>\n  key\n\n\n\n\n\n\nOther Keys\n\n\n\n\n\n\nbindKey(key, func)\n\n    Link the specified key to the specified function.\n\n\n\n\n\n\nunbindKey(key)\n\n    Unlink the specified key from any functions bound to it.",
             "title": "Extras"
         },
         {
-            "location": "/GuiOptions/#gui-options",
+            "location": "/pythonGuiOptions/#gui-options",
             "text": "There are a number of generic configurations available, which will affect the whole GUI. \nSome of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.",
             "title": "GUI Options"
         },
         {
-            "location": "/GuiOptions/#configuration",
+            "location": "/pythonGuiOptions/#configuration",
             "text": "Some basic configuration for the size, position, transparency, etc. of the GUI.",
             "title": "Configuration"
         },
         {
-            "location": "/GuiOptions/#look-feel",
+            "location": "/pythonGuiOptions/#look-feel",
             "text": "setTitle(title) \n    Sets the title of the GUI. By default it is the name of the script.    setIcon(fileName) \n    Sets an icon for the GUI.    setTransparency(percentage) \n    Sets how transparent the GUI is. Between 0 and 100%.",
             "title": "Look &amp; Feel"
         },
         {
-            "location": "/GuiOptions/#size-locaiton",
+            "location": "/pythonGuiOptions/#size-locaiton",
             "text": "setGeometry(geom)      setGeometry(width, height) \n    Sets the height & width of the GUI:     Either as a single String  .setGeometry(\"200x100\")  (widthxheight)    As two seperate parameters  .setGeometry(200,100)  Or to go  Fullscreen   .setGeometry(\"Fullscreen\")        exitFullscreen() \n    Leave fullscreen, if set in the geometry.    <Escape>  will call this automatically, while in fullscreen.      setResizable(canResize=True) \n    Sets whether the GUI can be resized or not.      setLocation(x, y) \n    Sets the position of the GUI",
             "title": "Size &amp; Locaiton"
         },
         {
-            "location": "/GuiOptions/#design",
+            "location": "/pythonGuiOptions/#design",
             "text": "It's possible to change the default colours and fonts for widgets in the GUI.",
             "title": "Design"
         },
         {
-            "location": "/GuiOptions/#colour",
+            "location": "/pythonGuiOptions/#colour",
             "text": "setBg(colour) \n    Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.",
             "title": "Colour"
         },
         {
-            "location": "/GuiOptions/#font",
+            "location": "/pythonGuiOptions/#font",
             "text": "setFont(size, font=None) \n    This can be used to set the font size and style for all widgets.    decreaseFont()  &  increaseFont() \n    These can be used to increase or decrease the font of all widgets.    setLabelFont(size, family=None) \n    This can be used to set the font size and style for all label-type widgets.    increaseLabelFont()  &  decreaseLabelFont() \n    These can be used to increase or decrease the font of all label-type widgets.    setButtonFont() \n    This can be used to set the font size and style for all button-type widgets.    increaseButtonFont()  &  decreaseButtonFont() \n    These can be used to increase or decrease the font of all butotn-type widgets.",
             "title": "Font"
         },
         {
-            "location": "/GuiOptions/#widget-positioning",
+            "location": "/pythonGuiOptions/#widget-positioning",
             "text": "The below commands allow the user to change how appJar lays out widgets on the screen.",
             "title": "Widget Positioning"
         },
         {
-            "location": "/GuiOptions/#location",
+            "location": "/pythonGuiOptions/#location",
             "text": "setPadX()  &  setPadY() \n    These set how much empty padding is included around a widget, within its grid-cell.    setSticky() \n    This determines which side of the grid-cell the widget will stick to:   left  - stick to the left side  right  - stick to the right side  both  - stick to both sides, stretch the widget",
             "title": "Location"
         },
         {
-            "location": "/GuiOptions/#resize",
+            "location": "/pythonGuiOptions/#resize",
             "text": "setExpand() \n    This tells widgets what to do when the GUI is resized. \n    It allows widgets to be configured to stretch or not:   none  - don't expand  row  - expand with rows only  column  - expand with columns only  all  - expand in all directions",
             "title": "Resize"
         },
         {
-            "location": "/GuiOptions/#row-helpers",
+            "location": "/pythonGuiOptions/#row-helpers",
             "text": "getRow() \n    Returns the row number currently being used.    getNextRow() \n    Returns the current row number, before adding one to it.",
             "title": "Row Helpers"
         },
         {
-            "location": "/GuiOptions/#gui-actions",
+            "location": "/pythonGuiOptions/#gui-actions",
             "text": "",
             "title": "GUI Actions"
         },
         {
-            "location": "/GuiOptions/#repeated-events",
+            "location": "/pythonGuiOptions/#repeated-events",
             "text": "When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something. \nThat means, you should never have your own loops running, as that will stop the GUI from working properly. \nInstead, if you want your own loop to run, you need to ask the GUi to run it for you:      registerEvent(func) \n    Pass this a function, and the GUI will call that function every second.    setPollTime(time) \n    If you want your events to be called more or less frequently, set the frequency here.",
             "title": "Repeated Events"
         },
         {
-            "location": "/GuiOptions/#enter-key",
+            "location": "/pythonGuiOptions/#enter-key",
             "text": "enableEnter(func) \n    Link a function to the  <Enter>  key    disableEnter() \n    Unlink a function form the  <Enter>   key",
             "title": "Enter Key"
         },
         {
-            "location": "/GuiOptions/#other-keys",
+            "location": "/pythonGuiOptions/#other-keys",
             "text": "bindKey(key, func) \n    Link the specified key to the specified function.    unbindKey(key) \n    Unlink the specified key from any functions bound to it.",
             "title": "Other Keys"
         },
@@ -736,197 +736,197 @@
             "title": "Documentation"
         },
         {
-            "location": "/PythonBasics/",
+            "location": "/pythonBasics/",
             "text": "Python Basics\n\n\n\n\nCheat Sheets\n\n\nHelp can be found at:\n\n\n\n\nPython Cheat Sheet\n\n\nTurtle Cheat Sheet\n\n\nGUI Cheat Sheet\n\n\n\n\n\n\nData\n\n\nVariables\n\n\nVariables are the most important thing in programming.\n\nThey let your program remember information.\n\nVariables can store someone's name, their age, or even their favourite food.\n\n\nA variable needs three things:\n\n\n\n\nA \nname\n - the label given to the information\n\n\nA \nvalue\n - the information the\u00a0program needs to remember\n\n\nA \ndata type\n - this tells the program what type of data it is (words, numbers, lists, etc.)\n\n\n\n\n# this declares three variables: name, age, male\n# and initialises each one with a starting value\nname = \"Alan Shearer\"\nage = 45\nmale = True\n\n\n\n\nVariables generally go through a three stage process:\n\n\n\n\nCreate\n - The variable name is declared, and the variable is initialised with a starting value\n\n\nChange\n - The variable's value is modified\n\n\nCheck\n - The variable's value is checked, in decisions & loops\n\n\n\n\nAt various points along this route, the variable will be \nused\n.\n\n\nConstants\n\n\nSometimes, variables don't change - these are known as \nconstants\n.\n\nThey are \ncreated\n in the same way, but can't be \nchanged\n.\n\nIn Python, it is common to write the name of constants in \nall uppercase\n.\n\n\n# declare a constant, that we don't want to change\nWINNING_SCORE = 100\n\n\n\n\nData Types\n\n\nData types are very important, as they allow the program to have rules: if you add two numbers together, the program should do some maths, but if you add two words together (\nconcatenation\n) the program will just make a new sentence.\n\n\nThere are five main data types:\n\n\n\n\nString\n - words, letter, sentences. Defined using speech marks.\n\n\nInt\n - whole numbers\n\n\nReal\n - (floats) numbers with fractions (decimal points)\n\n\nBoolean\n - True or False (On or Off)\n\n\nList\n - a collection of things (any of the above, or even a collection of lists)\n\n\n\n\nPython tries to work out the data type automatically, but it occasionally needs some help, if you want to tell Python what the data type is, try one of the following:\n\n\n# create 3 new variables by changing the type of var1/var2/var3\nname = str(var1)\nage = int(var2)\nprice = float(var3)\n\n\n\n\nArithmetic Operators\n\n\nPython allows you to easliy perform maths on your data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n+\n\n\nAddition\n\n\na = b + c\n\n\n\n\n\n\n-\n\n\nSubtraction\n\n\na = b - c\n\n\n\n\n\n\n*\n\n\nMultiplication\n\n\na = b * c\n\n\n\n\n\n\n/\n\n\nDivision\n\n\na = b / c\n\n\n\n\n\n\n//\n\n\nModulus division\n\n\na = b // c\n\n\n\n\n\n\n%\n\n\nRemainder division\n\n\na = b % c\n\n\n\n\n\n\n**\n\n\nExponent\n\n\na**b\n\n\n\n\n\n\nround()\n\n\nRound\n\n\nRounds the number to the nearest place\n\n\n\n\n\n\nsum()\n\n\nSum\n\n\nAdds together all the items in the list\n\n\n\n\n\n\n\n\n\n\nSelection & Operators\n\n\nSelection is the ability to make a decision. It allows us to do different things, depending on what information is in a variable.\n\nThis is done using\u00a0\nIF\n statements:\n\n\n# if they are 18 or over, print \"You can vote\"\nif age >= 18:\n    print(\"You can vote\")\nelse:\n    print(\"You can't vote\")\n\n\n\n\nMaking decisions is all about comparing things; is one variable bigger than another, are two other variables the same...\n\n\nTo compare things we use standard operators, just like in maths.\n\n\nEquality Operators\n\n\nThese let us test if things are equal or not:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n==\n\n\nEqual to\n\n\nCheck if two items are the same\n\n\n\n\n\n\n!=\n\n\nNot equal to\n\n\nCheck if two items are not the same\n\n\n\n\n\n\n\n\nComparison Operators\n\n\nThese let us compare things:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n>\n\n\nGreater than\n\n\nCheck if the first item is bigger than the second item\n\n\n\n\n\n\n<\n\n\nLess than\n\n\nCheck if the first item is smaller than the second item\n\n\n\n\n\n\n>=\n\n\nGreater than or equal to\n\n\nCheck if the first item is bigger than or the same as the second item\n\n\n\n\n\n\n<=\n\n\nLess than or equal to\n\n\nCheck if the first item is smaller than or the same as the second item\n\n\n\n\n\n\n\n\nLogical Operators\n\n\nThese let us use logic to combine lots of operators:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nand\n\n\nBoth comparisons have to be True\n\n\n\n\n\n\nor\n\n\nEither or both comparisons have to be True\n\n\n\n\n\n\nnot\n\n\nThis will change the result from True to False, or vice-versa\n\n\n\n\n\n\n\n\n\n\nIteration\n\n\nBeing able to do selection (make decisions) on its own is nearly enough.\n\nHowever, if we want our programs to be really useful, we want them to be able to repeat stuff.\n\n\nWe call this \niteration\n.\n\n\nWhile Loops\n\n\nLet us repeat something until we can make a decision (this may never occur)\n\n\nInfinite While Loops\n\n\nwhile True:\n    print ( \"Looping!\" )\n\n\n\n\nConditional While Loops\n\n\nnum = -1 # keep looping WHILE they don't guess 21\nwhile num != 21:\n    num = int ( input ( \"Guess a number: \" ) )\n    print ( \"You guessed:\", num )\nprint ( \"You finally got it!!!\" )\n\n\n\n\nFor Loops\n\n\nLet us repeat something a set number of times\u00a0\n\n\nFor Loop Through an Array\n\n\n# make a list of fruits\nfruits = ['banana', 'apple',  'mango']\nfor item in fruits:\n    print ( 'Current fruit :', item)\n\n\n\n\nFor Loop x Times\n\n\nfor index in range ( 10 ):\n    print ( \"Position:\", index )\n\n\n\n\nFor Loop from x to y\n\n\nfor index in range ( 0, 6 ):\n    print ( \"Position:\", index )\n\n\n\n\nFor Loop in Steps\n\n\nfor index in range ( 10, 21, 2 ):\n    print ( \"Position:\", index )\n\n\n\n\nLoop Control\n\n\nPyhton provides two really useful commands to help in loop control:\n\n\n\n\nbreak\n - Ends the loop immediatley\n\n\ncontinue\n - Goes back to the start of the loop, skipping anything not yet done\n\n\n\n\nwhile True:\n    guess = int(input(\"Guess a number: \"))\n    if guess = answer:\n        print(\"You got it!\")\n        break\n    else:\n        print(\"Wrong!\")\n\n\n\n\n\n\nLists\n\n\nThis does exactly what it says on the tin - we can store lots of information all with the same name.\nIf you have 100 books, you don't want to make 100 variables to remember all the names.\n\nInstead, you make one variable called \nbooks\n and then give each book a number...\n\n\n# make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\n# print the first pupil in the list - item 0\nprint(pupils[0])\n\n# add a pupil to the list\npupils.append(\"Jordan\")\n\n# get the number of pupils in the list\nnum_of_pupils = len(pupils)\n\n# remove a pupil from the list\nlist.remove(\"Edd\")\n\n\n\n\nWe can also iterate through a list, make decisions based on a list, and change items in a list:\n\n\n# make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\n# print each pupil in the list\nfor item in pupils:\n   print ( item )\n\n# change an item in the list\npupils [ 2 ] = \"Kimberly\"\n\n# check if an item is in a list\nif \"Kat\" in pupils:\n   print ( \"Found her\" )\n\n\n\n\nWe can also slice up or join lists:\n\n\n# make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\npupils[2:4]     # items from 2 until before 4 = Kim & Kat\npupils[2:]      # items from 2 until the end = Kim, Kat, Tim & Tam\npupils[:3]      # items from the beginning until before 3 = Edd, Clive & Kim\npupils[:]       # everything\n\n# you can also count backwards\npupils[-1]      #last item in the array = Tam\npupils[-2:]     # last two items in the array = Tim & Tam\npupils[:-2]     # items from the beginning until 2 before the end = Edd, CLive, Kim & Kat\npupils[1:-1]    # remove first & last = Clive, Kim, Kat & Ti\n\n# join an array into a String of items\nsentence = \", \".join(pupils)    # makes the String \"Edd, Clive, Kim, Kat, Tim, Tam\"\n\n\n\n\n\n\nModular Development\n\n\nA modular program is made up of lots of seperate parts (modules). Each of these should work independently of the others. In Python, we acheive this by writing \nfunctions\n.  \n\n\nPython has lots of \nbuilt-in functions\n that you might have met already: \nprint()\n, \ninput()\n, \nint()\n, \nstr()\n, \nlen()\n, \nround()\n, etc... These work by themselves, without needing to be changed. You simply give them some information to work with, and they (sometimes) give you some information back.  \n\n\nWriting a Function\n\n\nSo, how do we write a function? Well, it's pretty simple - you give it a name, and then everything that is indented after the name, is in that function:\n\n\ndef myFunction():\n    print(\"This is in the function\")\n    print(\"This is also in the function\")\n\nprint(\"This is not in the function.\")\n\n\n\n\n\nThis funciton is called \nmyFunction\n, but it could be called anything (except for the built-in function names or \nkeywords\n). Whenever you tell your program to do \nmyFunction\n it should print the two messages inside.\n\n\n\n\nFunctions\n\n\nWhen you are writing a program, you might want to keep doing the same things again and again. It is not a good idea (or any fun) to keep typing the same stuff again and again. Sometimes a loop can solve thi , but other times it might not be enough.\n\n\n# define a function to draw a square\n# the size parameter sets the length of the sides\ndef square ( size ):\n   for loop in range ( 4 ) :\n        t.forward ( size )\n        t.right ( 90 )\n\n# call the function - very important\n# setting size to 77\nsquare ( 77 )\n\n\n\n\n\n\nLibraries\n\n\nLibraries are just other people's code that we want to use. To access them, we simply import them. We have learnt about three libraries so far:\n\n\n\n\nrandom\n - this lets us generate random numbers\n\n\nturtle\n - this lets us draw turtle shapes\n\n\nappJar\n - this lets us create simple GUIs\n\n\n\n\nHere is an example of importing and using a library:\n\n\nimport random\n\ncolours = [ \"red\", \"yellow\", \"green\", \"blue\" ]\n\n# generate a random number between 1 & 100\nnum = random.randint ( 1, 100 )\n\n# generate a random colour (using the list above)\ncolour = random.choice ( colours )\n\n\n\n\n\n\nFile Access\n\n\nAccessing files in Python is easy. You simply open the file, read from or write to it, then close it:\n\n\noutFile = open ( \"myfile.txt\", \"a\" )\noutFile.write ( \"hi there\\n\" )\noutFile.close ( )\n\n\n\n\nThis can be simplified even further, using the \nwith\n command. The with command will ensure the file is closed once you've finished with it:\n\n\nwith open ( \"myfile.txt\", \"a\" ) as outFile :\n    outFile.write ( \"hi there\\n\" )\n\n\n\n\nWhen you open a file, you pass the name of the file you want, and an access mode. The following access modes are most commonly used:\n\n\n\n\nr\n - opens a file for reading.\n\n\nw\n - creates a new file for writing (overwrites existng file).\n\n\na\n - opens a file to append to (will create a file if needed).\n\n\n\n\nWhen reading from a file, it is most common to read it line-by-line. Again, it is more convenient to use \nwith\n:\n\n\nwith open ( \"myFile.txt\", \"r\") as inFile :\n    # read the file into data\n    data = inFile.read ( ) \n    # make a list of lines\n    myList = data.splitlines ( ) \n\n\n\n\nThis will create a list called \nmyList\n, with one entry for each line.\n\n\n\n\nDatabases in Python\n\n\nDatabase Recap\n\n\nIn order to be able to follow this guide, you will need to understand the basics of a database:\n\n\n\n\nEntity\n - an item in the real world, we want to model (pupils in a school)\n\n\nTable\n - a container to hold information about an entity, often named after the entity (pupils)\n\n\nRecord\n - a single item/row in the table (an actual pupil)\n\n\nField\n - the columns in the table, each storing an attribute about the entity (name, age, etc)\n\n\nPrimary Key\n - something unique to each record in a table (pupil ID)\n\n\nForeign Key\n - when another table links to records in a table, you use their primary key\n\n\nRelationships\n - how tables link to each other\n\n\n\n\nExample\n\n\nSo, to model pupils in the real world - we would create a table, let's call it \npupils\n\nEach \nfield\n in \npupils\n will store a piece of information about a pupil\n\nEach \nrecord\n in \npupils\n will hold all the information about a single pupil\n\nWe can summarise this in a data-dictionary:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nField Name\n\n\nData Type\n\n\nInformation\n\n\nRules\n\n\n\n\n\n\nPupilID\n\n\nInteger\n\n\nPrimary Key\n\n\n\n\n\n\n\n\nFirst Name\n\n\nString\n\n\n\n\nbetween\n 1 and 30 characters\n\n\n\n\n\n\nLast Name\n\n\nString\n\n\n\n\nbetween\n 1 and 30 characters\n\n\n\n\n\n\nDOB\n\n\nDate\n\n\n\n\nmatches format\n DD/MM/YYYY\n\n\n\n\n\n\nGender\n\n\nString\n\n\n\n\none of\n Male/Female/Unspecified\n\n\n\n\n\n\n\n\nTo talk to a database you use \nSQL\n (\nStructured Query Language\n). There are two parts to SQL:\n\n\n\n\nDDL (Data Definition Language) - used to build and modify tables\n\n\nCREATE TABLE ...\n\n\nALTER TABLE ...\n\n\nDROP TABLE ...\n\n\nTRUNCATE TABLE ...\n\n\n\n\n\n\nDML (Data Manipulation Language) - used to get or modify data in tables\n\n\nSELECT ... FROM ... WHERE ...\n\n\nINSERT INTO ... VALUES ...\n\n\nUPDATE ... SET ... WHERE ...\n\n\nDELETE FROM ... WHERE ...\n\n\n\n\n\n\n\n\nPython comes with a built-in database: \nSQLite\n. To gain access to it, you simply import the library:\n\n\nimport sqlite3\n\n\n\n\nHaving done that, we simply connect to the database, perform some SQL, and dosconnect:\n\n\ndb = sqlite3.connect('pupils.db')\n# perform SQL statements\ndb.close()\n\n\n\n\nAs with file access, this can wrapped up using with, to ensure we always disconnect:\n\n\nwith sqlite3.connect(\"pupils.db\") as db:\n    # perform SQL statements\n\n\n\n\nBoth of these will either open an existing database called pupils.db or create a new one with that name. This means that the information will always be saved to a file, so every time you run your program, all the old data will still be there. If you don't want to create a file, and would instead like to temporarily create a database in RAM, replace the database name with the String \n:memory:\n\n\n\n\nDefensive Programming\n\n\nDefensive programming is a way of designing your program, so that it will continue to work, even when unexpected things happen.  \n\n\nDefensive programming should improve:  \n\n\n\n\nQuality\n by reducing the number of bugs\n\n\nReadability\n making your code more readable, and easier to understand\n\n\nReliability\n preventing the program from crashing when it receives unexpected inputs\n\n\n\n\nDefensive programming can sometimes go too far - you shouldn't try to prevent errors that can't happen, as this could slow your program down, and make it harder to maintain.  \n\n\nIt's also important not to be too vague, otherwise you might miss important errors, that need to be found.\n\n\nStyles of Defensive Programming\n\n\nThere are two primary styles of dealing with potential errors:  \n\n\n\n\nEAFP\n - \nE\nasier to \nA\nsk for \nF\norgiveness than \nP\nermission\n\n\nLBYL\n - \nL\nook \nB\nefore \nY\nou \nL\neap  \n\n\n\n\nGenerally, \nEAFP\n is preferred in Python.\n\n\nExamples of Defensive Programming\n\n\nA common place programs can crash is when you expect NUMERIC input, but the user types a STRING:\n\n\nchoice = int(input( \"Enter your choice: \" ))\n\n\n\n\nEAFP\n\n\nTry to do what you wanted to do, then if it breaks, deal with it:\n\n\ntry:\n    choice = int(input( \"Enter your choice: \" ))\nexcept ValueError:\n    print( \"Invalid number\" )\n\n\n\n\nIn this example we simply (try to) convert the input into a number - if it fails, we deal with it.\n\n\nWe can then wrap this in a \nloop\n, to make it keep repeating until the data is valid:\n\n\nwhile True:\n    try:\n        choice = int(input( \"Enter your choice: \" ))\n        break\n    except ValueError:\n        print( \"Invalid number\" )\n        continue\n\n\n\n\nLBYL\n\n\nCheck you can do something first, then only do it if it's OK.\n\n\nchoice = input( \"Enter your choice: \" )\nif choice.isdigit():\n    choice = int(choice)\nelse:\n    print( \"Invalid number\" )\n\n\n\n\nIn this example, we get the input, check it's a number, and then convert it.  \n\n\nWe can then wrap this in a \nloop\n, to make it keep repeating until the data is valid:\n\n\nwhile True:\n    choice = input( \"Enter your choice: \" )\n    if choice.isdigit():\n        choice = int(choice)\n        break\n    else:\n        print( \"Invalid number\" )\n        continue\n\n\n\n\nAs can be seen, \nEAFP\n only catches \nValueErrors\n, it will still crash if some other error occurs.\n\nBut that complies with what we said earlier, we don't want to miss strange/important errors.\n\nAnd, in \nLBYL\n, it doesn't actually deal with any errors, but simply tries to prevent them - less reliable?\n\n\n\n\nTurtle Basics\n\n\nTo create a turtle, and get it to move, try the following:\n\n\n# get the library\nimport turtle\nt = turtle.Pen()\n\n# draw a square\nfor loop in range(4):\n    t.forward(100)\n    t.right(90)\n\n\n\n\n\n\nGUI Basics\n\n\nTo create a GUI, and show a label, try the following:\n\n\n# import the library\nfrom appJar import gui\n\n# create the GUI\napp = gui(\"Hello\")\napp.addLabel(\"l1\", \"Hello World!\")\napp.go()\n\n\n\n\n\n\nColour Map\n\n\nBelow is a useful colour map to use when doing Turtle or GUI programming.",
             "title": "Python"
         },
         {
-            "location": "/PythonBasics/#python-basics",
+            "location": "/pythonBasics/#python-basics",
             "text": "",
             "title": "Python Basics"
         },
         {
-            "location": "/PythonBasics/#cheat-sheets",
+            "location": "/pythonBasics/#cheat-sheets",
             "text": "Help can be found at:   Python Cheat Sheet  Turtle Cheat Sheet  GUI Cheat Sheet",
             "title": "Cheat Sheets"
         },
         {
-            "location": "/PythonBasics/#data",
+            "location": "/pythonBasics/#data",
             "text": "",
             "title": "Data"
         },
         {
-            "location": "/PythonBasics/#variables",
+            "location": "/pythonBasics/#variables",
             "text": "Variables are the most important thing in programming. \nThey let your program remember information. \nVariables can store someone's name, their age, or even their favourite food.  A variable needs three things:   A  name  - the label given to the information  A  value  - the information the\u00a0program needs to remember  A  data type  - this tells the program what type of data it is (words, numbers, lists, etc.)   # this declares three variables: name, age, male\n# and initialises each one with a starting value\nname = \"Alan Shearer\"\nage = 45\nmale = True  Variables generally go through a three stage process:   Create  - The variable name is declared, and the variable is initialised with a starting value  Change  - The variable's value is modified  Check  - The variable's value is checked, in decisions & loops   At various points along this route, the variable will be  used .",
             "title": "Variables"
         },
         {
-            "location": "/PythonBasics/#constants",
+            "location": "/pythonBasics/#constants",
             "text": "Sometimes, variables don't change - these are known as  constants . \nThey are  created  in the same way, but can't be  changed . \nIn Python, it is common to write the name of constants in  all uppercase .  # declare a constant, that we don't want to change\nWINNING_SCORE = 100",
             "title": "Constants"
         },
         {
-            "location": "/PythonBasics/#data-types",
+            "location": "/pythonBasics/#data-types",
             "text": "Data types are very important, as they allow the program to have rules: if you add two numbers together, the program should do some maths, but if you add two words together ( concatenation ) the program will just make a new sentence.  There are five main data types:   String  - words, letter, sentences. Defined using speech marks.  Int  - whole numbers  Real  - (floats) numbers with fractions (decimal points)  Boolean  - True or False (On or Off)  List  - a collection of things (any of the above, or even a collection of lists)   Python tries to work out the data type automatically, but it occasionally needs some help, if you want to tell Python what the data type is, try one of the following:  # create 3 new variables by changing the type of var1/var2/var3\nname = str(var1)\nage = int(var2)\nprice = float(var3)",
             "title": "Data Types"
         },
         {
-            "location": "/PythonBasics/#arithmetic-operators",
+            "location": "/pythonBasics/#arithmetic-operators",
             "text": "Python allows you to easliy perform maths on your data            +  Addition  a = b + c    -  Subtraction  a = b - c    *  Multiplication  a = b * c    /  Division  a = b / c    //  Modulus division  a = b // c    %  Remainder division  a = b % c    **  Exponent  a**b    round()  Round  Rounds the number to the nearest place    sum()  Sum  Adds together all the items in the list",
             "title": "Arithmetic Operators"
         },
         {
-            "location": "/PythonBasics/#selection-operators",
+            "location": "/pythonBasics/#selection-operators",
             "text": "Selection is the ability to make a decision. It allows us to do different things, depending on what information is in a variable. \nThis is done using\u00a0 IF  statements:  # if they are 18 or over, print \"You can vote\"\nif age >= 18:\n    print(\"You can vote\")\nelse:\n    print(\"You can't vote\")  Making decisions is all about comparing things; is one variable bigger than another, are two other variables the same...  To compare things we use standard operators, just like in maths.",
             "title": "Selection &amp; Operators"
         },
         {
-            "location": "/PythonBasics/#equality-operators",
+            "location": "/pythonBasics/#equality-operators",
             "text": "These let us test if things are equal or not:            ==  Equal to  Check if two items are the same    !=  Not equal to  Check if two items are not the same",
             "title": "Equality Operators"
         },
         {
-            "location": "/PythonBasics/#comparison-operators",
+            "location": "/pythonBasics/#comparison-operators",
             "text": "These let us compare things:            >  Greater than  Check if the first item is bigger than the second item    <  Less than  Check if the first item is smaller than the second item    >=  Greater than or equal to  Check if the first item is bigger than or the same as the second item    <=  Less than or equal to  Check if the first item is smaller than or the same as the second item",
             "title": "Comparison Operators"
         },
         {
-            "location": "/PythonBasics/#logical-operators",
+            "location": "/pythonBasics/#logical-operators",
             "text": "These let us use logic to combine lots of operators:           and  Both comparisons have to be True    or  Either or both comparisons have to be True    not  This will change the result from True to False, or vice-versa",
             "title": "Logical Operators"
         },
         {
-            "location": "/PythonBasics/#iteration",
+            "location": "/pythonBasics/#iteration",
             "text": "Being able to do selection (make decisions) on its own is nearly enough. \nHowever, if we want our programs to be really useful, we want them to be able to repeat stuff.  We call this  iteration .",
             "title": "Iteration"
         },
         {
-            "location": "/PythonBasics/#while-loops",
+            "location": "/pythonBasics/#while-loops",
             "text": "Let us repeat something until we can make a decision (this may never occur)",
             "title": "While Loops"
         },
         {
-            "location": "/PythonBasics/#infinite-while-loops",
+            "location": "/pythonBasics/#infinite-while-loops",
             "text": "while True:\n    print ( \"Looping!\" )",
             "title": "Infinite While Loops"
         },
         {
-            "location": "/PythonBasics/#conditional-while-loops",
+            "location": "/pythonBasics/#conditional-while-loops",
             "text": "num = -1 # keep looping WHILE they don't guess 21\nwhile num != 21:\n    num = int ( input ( \"Guess a number: \" ) )\n    print ( \"You guessed:\", num )\nprint ( \"You finally got it!!!\" )",
             "title": "Conditional While Loops"
         },
         {
-            "location": "/PythonBasics/#for-loops",
+            "location": "/pythonBasics/#for-loops",
             "text": "Let us repeat something a set number of times",
             "title": "For Loops"
         },
         {
-            "location": "/PythonBasics/#for-loop-through-an-array",
+            "location": "/pythonBasics/#for-loop-through-an-array",
             "text": "# make a list of fruits\nfruits = ['banana', 'apple',  'mango']\nfor item in fruits:\n    print ( 'Current fruit :', item)",
             "title": "For Loop Through an Array"
         },
         {
-            "location": "/PythonBasics/#for-loop-x-times",
+            "location": "/pythonBasics/#for-loop-x-times",
             "text": "for index in range ( 10 ):\n    print ( \"Position:\", index )",
             "title": "For Loop x Times"
         },
         {
-            "location": "/PythonBasics/#for-loop-from-x-to-y",
+            "location": "/pythonBasics/#for-loop-from-x-to-y",
             "text": "for index in range ( 0, 6 ):\n    print ( \"Position:\", index )",
             "title": "For Loop from x to y"
         },
         {
-            "location": "/PythonBasics/#for-loop-in-steps",
+            "location": "/pythonBasics/#for-loop-in-steps",
             "text": "for index in range ( 10, 21, 2 ):\n    print ( \"Position:\", index )",
             "title": "For Loop in Steps"
         },
         {
-            "location": "/PythonBasics/#loop-control",
+            "location": "/pythonBasics/#loop-control",
             "text": "Pyhton provides two really useful commands to help in loop control:   break  - Ends the loop immediatley  continue  - Goes back to the start of the loop, skipping anything not yet done   while True:\n    guess = int(input(\"Guess a number: \"))\n    if guess = answer:\n        print(\"You got it!\")\n        break\n    else:\n        print(\"Wrong!\")",
             "title": "Loop Control"
         },
         {
-            "location": "/PythonBasics/#lists",
+            "location": "/pythonBasics/#lists",
             "text": "This does exactly what it says on the tin - we can store lots of information all with the same name.\nIf you have 100 books, you don't want to make 100 variables to remember all the names. \nInstead, you make one variable called  books  and then give each book a number...  # make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\n# print the first pupil in the list - item 0\nprint(pupils[0])\n\n# add a pupil to the list\npupils.append(\"Jordan\")\n\n# get the number of pupils in the list\nnum_of_pupils = len(pupils)\n\n# remove a pupil from the list\nlist.remove(\"Edd\")  We can also iterate through a list, make decisions based on a list, and change items in a list:  # make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\n# print each pupil in the list\nfor item in pupils:\n   print ( item )\n\n# change an item in the list\npupils [ 2 ] = \"Kimberly\"\n\n# check if an item is in a list\nif \"Kat\" in pupils:\n   print ( \"Found her\" )  We can also slice up or join lists:  # make a list\npupils = [\"Edd\", \"Clive\", \"Kim\", \"Kat\", \"Tim\", \"Tam\"]\n\npupils[2:4]     # items from 2 until before 4 = Kim & Kat\npupils[2:]      # items from 2 until the end = Kim, Kat, Tim & Tam\npupils[:3]      # items from the beginning until before 3 = Edd, Clive & Kim\npupils[:]       # everything\n\n# you can also count backwards\npupils[-1]      #last item in the array = Tam\npupils[-2:]     # last two items in the array = Tim & Tam\npupils[:-2]     # items from the beginning until 2 before the end = Edd, CLive, Kim & Kat\npupils[1:-1]    # remove first & last = Clive, Kim, Kat & Ti\n\n# join an array into a String of items\nsentence = \", \".join(pupils)    # makes the String \"Edd, Clive, Kim, Kat, Tim, Tam\"",
             "title": "Lists"
         },
         {
-            "location": "/PythonBasics/#modular-development",
+            "location": "/pythonBasics/#modular-development",
             "text": "A modular program is made up of lots of seperate parts (modules). Each of these should work independently of the others. In Python, we acheive this by writing  functions .    Python has lots of  built-in functions  that you might have met already:  print() ,  input() ,  int() ,  str() ,  len() ,  round() , etc... These work by themselves, without needing to be changed. You simply give them some information to work with, and they (sometimes) give you some information back.",
             "title": "Modular Development"
         },
         {
-            "location": "/PythonBasics/#writing-a-function",
+            "location": "/pythonBasics/#writing-a-function",
             "text": "So, how do we write a function? Well, it's pretty simple - you give it a name, and then everything that is indented after the name, is in that function:  def myFunction():\n    print(\"This is in the function\")\n    print(\"This is also in the function\")\n\nprint(\"This is not in the function.\")  This funciton is called  myFunction , but it could be called anything (except for the built-in function names or  keywords ). Whenever you tell your program to do  myFunction  it should print the two messages inside.",
             "title": "Writing a Function"
         },
         {
-            "location": "/PythonBasics/#functions",
+            "location": "/pythonBasics/#functions",
             "text": "When you are writing a program, you might want to keep doing the same things again and again. It is not a good idea (or any fun) to keep typing the same stuff again and again. Sometimes a loop can solve thi , but other times it might not be enough.  # define a function to draw a square\n# the size parameter sets the length of the sides\ndef square ( size ):\n   for loop in range ( 4 ) :\n        t.forward ( size )\n        t.right ( 90 )\n\n# call the function - very important\n# setting size to 77\nsquare ( 77 )",
             "title": "Functions"
         },
         {
-            "location": "/PythonBasics/#libraries",
+            "location": "/pythonBasics/#libraries",
             "text": "Libraries are just other people's code that we want to use. To access them, we simply import them. We have learnt about three libraries so far:   random  - this lets us generate random numbers  turtle  - this lets us draw turtle shapes  appJar  - this lets us create simple GUIs   Here is an example of importing and using a library:  import random\n\ncolours = [ \"red\", \"yellow\", \"green\", \"blue\" ]\n\n# generate a random number between 1 & 100\nnum = random.randint ( 1, 100 )\n\n# generate a random colour (using the list above)\ncolour = random.choice ( colours )",
             "title": "Libraries"
         },
         {
-            "location": "/PythonBasics/#file-access",
+            "location": "/pythonBasics/#file-access",
             "text": "Accessing files in Python is easy. You simply open the file, read from or write to it, then close it:  outFile = open ( \"myfile.txt\", \"a\" )\noutFile.write ( \"hi there\\n\" )\noutFile.close ( )  This can be simplified even further, using the  with  command. The with command will ensure the file is closed once you've finished with it:  with open ( \"myfile.txt\", \"a\" ) as outFile :\n    outFile.write ( \"hi there\\n\" )  When you open a file, you pass the name of the file you want, and an access mode. The following access modes are most commonly used:   r  - opens a file for reading.  w  - creates a new file for writing (overwrites existng file).  a  - opens a file to append to (will create a file if needed).   When reading from a file, it is most common to read it line-by-line. Again, it is more convenient to use  with :  with open ( \"myFile.txt\", \"r\") as inFile :\n    # read the file into data\n    data = inFile.read ( ) \n    # make a list of lines\n    myList = data.splitlines ( )   This will create a list called  myList , with one entry for each line.",
             "title": "File Access"
         },
         {
-            "location": "/PythonBasics/#databases-in-python",
+            "location": "/pythonBasics/#databases-in-python",
             "text": "",
             "title": "Databases in Python"
         },
         {
-            "location": "/PythonBasics/#database-recap",
+            "location": "/pythonBasics/#database-recap",
             "text": "In order to be able to follow this guide, you will need to understand the basics of a database:   Entity  - an item in the real world, we want to model (pupils in a school)  Table  - a container to hold information about an entity, often named after the entity (pupils)  Record  - a single item/row in the table (an actual pupil)  Field  - the columns in the table, each storing an attribute about the entity (name, age, etc)  Primary Key  - something unique to each record in a table (pupil ID)  Foreign Key  - when another table links to records in a table, you use their primary key  Relationships  - how tables link to each other",
             "title": "Database Recap"
         },
         {
-            "location": "/PythonBasics/#example",
+            "location": "/pythonBasics/#example",
             "text": "So, to model pupils in the real world - we would create a table, let's call it  pupils \nEach  field  in  pupils  will store a piece of information about a pupil \nEach  record  in  pupils  will hold all the information about a single pupil \nWe can summarise this in a data-dictionary:             Field Name  Data Type  Information  Rules    PupilID  Integer  Primary Key     First Name  String   between  1 and 30 characters    Last Name  String   between  1 and 30 characters    DOB  Date   matches format  DD/MM/YYYY    Gender  String   one of  Male/Female/Unspecified     To talk to a database you use  SQL  ( Structured Query Language ). There are two parts to SQL:   DDL (Data Definition Language) - used to build and modify tables  CREATE TABLE ...  ALTER TABLE ...  DROP TABLE ...  TRUNCATE TABLE ...    DML (Data Manipulation Language) - used to get or modify data in tables  SELECT ... FROM ... WHERE ...  INSERT INTO ... VALUES ...  UPDATE ... SET ... WHERE ...  DELETE FROM ... WHERE ...     Python comes with a built-in database:  SQLite . To gain access to it, you simply import the library:  import sqlite3  Having done that, we simply connect to the database, perform some SQL, and dosconnect:  db = sqlite3.connect('pupils.db')\n# perform SQL statements\ndb.close()  As with file access, this can wrapped up using with, to ensure we always disconnect:  with sqlite3.connect(\"pupils.db\") as db:\n    # perform SQL statements  Both of these will either open an existing database called pupils.db or create a new one with that name. This means that the information will always be saved to a file, so every time you run your program, all the old data will still be there. If you don't want to create a file, and would instead like to temporarily create a database in RAM, replace the database name with the String  :memory:",
             "title": "Example"
         },
         {
-            "location": "/PythonBasics/#defensive-programming",
+            "location": "/pythonBasics/#defensive-programming",
             "text": "Defensive programming is a way of designing your program, so that it will continue to work, even when unexpected things happen.    Defensive programming should improve:     Quality  by reducing the number of bugs  Readability  making your code more readable, and easier to understand  Reliability  preventing the program from crashing when it receives unexpected inputs   Defensive programming can sometimes go too far - you shouldn't try to prevent errors that can't happen, as this could slow your program down, and make it harder to maintain.    It's also important not to be too vague, otherwise you might miss important errors, that need to be found.",
             "title": "Defensive Programming"
         },
         {
-            "location": "/PythonBasics/#styles-of-defensive-programming",
+            "location": "/pythonBasics/#styles-of-defensive-programming",
             "text": "There are two primary styles of dealing with potential errors:     EAFP  -  E asier to  A sk for  F orgiveness than  P ermission  LBYL  -  L ook  B efore  Y ou  L eap     Generally,  EAFP  is preferred in Python.",
             "title": "Styles of Defensive Programming"
         },
         {
-            "location": "/PythonBasics/#examples-of-defensive-programming",
+            "location": "/pythonBasics/#examples-of-defensive-programming",
             "text": "A common place programs can crash is when you expect NUMERIC input, but the user types a STRING:  choice = int(input( \"Enter your choice: \" ))",
             "title": "Examples of Defensive Programming"
         },
         {
-            "location": "/PythonBasics/#eafp",
+            "location": "/pythonBasics/#eafp",
             "text": "Try to do what you wanted to do, then if it breaks, deal with it:  try:\n    choice = int(input( \"Enter your choice: \" ))\nexcept ValueError:\n    print( \"Invalid number\" )  In this example we simply (try to) convert the input into a number - if it fails, we deal with it.  We can then wrap this in a  loop , to make it keep repeating until the data is valid:  while True:\n    try:\n        choice = int(input( \"Enter your choice: \" ))\n        break\n    except ValueError:\n        print( \"Invalid number\" )\n        continue",
             "title": "EAFP"
         },
         {
-            "location": "/PythonBasics/#lbyl",
+            "location": "/pythonBasics/#lbyl",
             "text": "Check you can do something first, then only do it if it's OK.  choice = input( \"Enter your choice: \" )\nif choice.isdigit():\n    choice = int(choice)\nelse:\n    print( \"Invalid number\" )  In this example, we get the input, check it's a number, and then convert it.    We can then wrap this in a  loop , to make it keep repeating until the data is valid:  while True:\n    choice = input( \"Enter your choice: \" )\n    if choice.isdigit():\n        choice = int(choice)\n        break\n    else:\n        print( \"Invalid number\" )\n        continue  As can be seen,  EAFP  only catches  ValueErrors , it will still crash if some other error occurs. \nBut that complies with what we said earlier, we don't want to miss strange/important errors. \nAnd, in  LBYL , it doesn't actually deal with any errors, but simply tries to prevent them - less reliable?",
             "title": "LBYL"
         },
         {
-            "location": "/PythonBasics/#turtle-basics",
+            "location": "/pythonBasics/#turtle-basics",
             "text": "To create a turtle, and get it to move, try the following:  # get the library\nimport turtle\nt = turtle.Pen()\n\n# draw a square\nfor loop in range(4):\n    t.forward(100)\n    t.right(90)",
             "title": "Turtle Basics"
         },
         {
-            "location": "/PythonBasics/#gui-basics",
+            "location": "/pythonBasics/#gui-basics",
             "text": "To create a GUI, and show a label, try the following:  # import the library\nfrom appJar import gui\n\n# create the GUI\napp = gui(\"Hello\")\napp.addLabel(\"l1\", \"Hello World!\")\napp.go()",
             "title": "GUI Basics"
         },
         {
-            "location": "/PythonBasics/#colour-map",
+            "location": "/pythonBasics/#colour-map",
             "text": "Below is a useful colour map to use when doing Turtle or GUI programming.",
             "title": "Colour Map"
         },

@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/Dialogs/">
+        <link rel="canonical" href="http://appjar.info/pythonBars/">
         <link rel="shortcut icon" href="../img/favicon3.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Pop-ups - appJar</title>
+        <title>Bars - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -77,37 +77,37 @@
                     
                         
 <li >
-    <a href="../Widgets/">Widgets</a>
+    <a href="../pythonWidgets/">Widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Images/">Images</a>
+    <a href="../pythonImages/">Images</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Sound/">Sounds</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Bars/">Bars</a>
+    <a href="../pythonSound/">Sounds</a>
 </li>
 
                     
                         
 <li class="active">
-    <a href="./">Pop-ups</a>
+    <a href="./">Bars</a>
 </li>
 
                     
                         
 <li >
-    <a href="../DevWidgets/">In the works...</a>
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
                     
@@ -122,25 +122,25 @@
                     
                         
 <li >
-    <a href="../Layout/">Arranging widgets</a>
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping widgets</a>
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../WidgetOptions/">Changing widgets</a>
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">Extras</a>
+    <a href="../pythonGuiOptions/">Extras</a>
 </li>
 
                     
@@ -167,7 +167,7 @@
                     
                         
 <li >
-    <a href="../PythonBasics/">Python</a>
+    <a href="../pythonBasics/">Python</a>
 </li>
 
                     
@@ -191,12 +191,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Bars/">
+                    <a rel="next" href="../pythonSound/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../DevWidgets/">
+                    <a rel="prev" href="../pythonDialogs/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -224,84 +224,130 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#pop-ups">Pop-ups</a></li>
+        <li class="main active"><a href="#toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</a></li>
         
-            <li><a href="#message-boxes">Message Boxes</a></li>
+            <li><a href="#toolbar">Toolbar</a></li>
         
-            <li><a href="#question-boxes">Question Boxes</a></li>
+            <li><a href="#menubar">Menubar</a></li>
         
-            <li><a href="#file-boxes">File Boxes</a></li>
-        
-            <li><a href="#other-boxes">Other Boxes</a></li>
+            <li><a href="#statusbar">Statusbar</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="pop-ups">Pop-ups</h1>
+<h1 id="toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</h1>
 <hr />
-<p>A number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.</p>
-<h3 id="message-boxes">Message Boxes</h3>
+<p>Toolbars and Menubars are features common to most GUIs, you'll be used to seeing them along the top of apps, such as MS Word.<br />
+Statusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.  </p>
+<h2 id="toolbar">Toolbar</h2>
+<hr />
+<p>Toolbars (sometimes known as ribbons) appear across the top og a GUI.<br />
+They offer a series of buttons to click, which change settings/functionality in a GUI.</p>
+<h4 id="create-toolbars">Create Toolbars</h4>
+<ul>
+<li><code>.addToolbar(names, funcs)</code><br />
+    Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.<br />
+    If only one function is supplied, they will all call the same function.<br />
+    A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.  </li>
+</ul>
+<h4 id="set-toolbars">Set Toolbars</h4>
+<ul>
+<li><code>.setToolbarImage(name, image)</code><br />
+Will set an image for the corresponding button in the toolbar.</li>
+</ul>
+<h2 id="menubar">Menubar</h2>
+<hr />
+<p>Adds a standard Menubar along the top of the GUI
+The menubar will show, once the first menu has been added.
+You can add a single menu option, or a list of menu options.</p>
+<h4 id="create-menus">Create Menus</h4>
 <ul>
 <li>
-<p><code>.infoBox(title, message)</code><br />
-    Shows a simple information message, with an OK button.<br />
-<img alt="InfoBox" src="../img/dialogs/info.gif" /></p>
+<p><code>.addMenu(title, function)</code><br />
+    Adds a single menu option, that will call the specified function.</p>
 </li>
 <li>
-<p><code>.errorBox(title, message)</code><br />
-    Shows a simple error message, with an OK button.<br />
-<img alt="ErrorBox" src="../img/dialogs/error.gif" /></p>
+<p><code>.addMenuList(title, names, functions, tearable=False)</code><br />
+    Will create a top-level menu, with the specified title.<br />
+    Within the menu will be the list of names, each calling the corresponding function in the function list.<br />
+    If only one function is provided, all menus will call the same function.<br />
+    If the menu name is a '-', then a separator will be added to the menu.<br />
+    If tearable is set to True, then the menu can be undocked.  </p>
 </li>
 <li>
-<p><code>.warningBox(title, message)</code><br />
-    Shows a simple warning message, with an OK message.<br />
-<img alt="WarningBox" src="../img/dialogs/warning.gif" /></p>
+<p><code>.createMenu(title, tearable=False)</code><br />
+    Will create a top-level menu, to add memnu items to.</p>
+</li>
+<li>
+<p><code>.addMenuItem(title, item, func=None)</code><br />
+    Add a sub-menu to the named top-level menu, with the specified function
+    If the menu name is a '-', then a separator will be added to the menu.</p>
+</li>
+<li>
+<p><code>.addMenuSeparator(title)</code><br />
+    Add a separator to the named menu.</p>
+</li>
+<li>
+<p><code>.addMenuCheckBox(title, name)</code><br />
+    Add a check box, to the named menu, with the specified name.</p>
+</li>
+<li>
+<p><code>.addMenuRadioButton(title, menu, name, value)</code><br />
+    Add a radio button, to the named menu, grouped by name, with the specified value.</p>
 </li>
 </ul>
-<h3 id="question-boxes">Question Boxes</h3>
+<h4 id="set-menus">Set Menus</h4>
 <ul>
 <li>
-<p><code>.yesNoBox(title, message)</code><br />
-    Shows a question, with Yes/No buttons. Returns True/False.<br />
-<img alt="yesNoBox" src="../img/dialogs/yesno.gif" /></p>
+<p><code>.setMenuCheckBox(title, menu)</code><br />
+    Inverts the specified check box, in the named menu.</p>
 </li>
 <li>
-<p><code>.questionBox(title, message)</code><br />
-    Shows a question, with Yes/No buttons. Returns True/False.<br />
-<img alt="QuestionBox" src="../img/dialogs/question.gif" /></p>
-</li>
-<li>
-<p><code>.okBox(title, message)</code><br />
-    Shows a question, with OK/Cancel buttons. Returns True/False.<br />
-<img alt="OkBox" src="../img/dialogs/ok.gif" /></p>
-</li>
-<li>
-<p><code>.retryBox(title, message)</code><br />
-    Shows a question, with Cancel/Retry buttons. Returns True/False.<br />
-<img alt="RetryBox" src="../img/dialogs/retry.gif" /></p>
-</li>
-<li>
-<p><code>.textBox(title, message)</code><br />
-    Shows a question requesting a text response. Returns a String, or None if Cancel pressed.<br />
-<img alt="TextBox" src="../img/dialogs/text.gif" /></p>
-</li>
-<li>
-<p><code>.numberBox(title, message)</code><br />
-    Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.<br />
-<img alt="NumberBox" src="../img/dialogs/num.gif" /></p>
+<p><code>.setMenuRadioButton(title, menu, value)</code><br />
+    Selects the specified value, of the specified radio button, in the named menu.</p>
 </li>
 </ul>
-<h3 id="file-boxes">File Boxes</h3>
+<h4 id="get-menus">Get Menus</h4>
 <ul>
-<li><code>.openBox()</code></li>
-<li><code>.saveBox()</code></li>
-<li><code>.directoryBox()</code></li>
+<li>
+<p><code>.getMenuCheckBox(title, menu)</code><br />
+    Get the value of the specified check box, from the named menu.<br />
+    Returns True or False.</p>
+</li>
+<li>
+<p><code>.getMenuRadioButton(title, menu)</code><br />
+    Get the value of the specified radio button, from the named menu.<br />
+    Returns the value of the checked radio button.</p>
+</li>
 </ul>
-<h3 id="other-boxes">Other Boxes</h3>
+<h2 id="statusbar">Statusbar</h2>
+<hr />
+<p>Adds a statusbar along the bottom of the GUI.
+This can be used for easy debugging, or as info for the user.</p>
+<h4 id="create-statuses">Create Statuses</h4>
 <ul>
-<li><code>.colourBox()</code></li>
+<li><code>.addStatus(header="", fields=1, side=None)</code><br />
+    This turns the statusbar on, and if a header is supplied, will prepend the header before every message.<br />
+    If fields is populated, it''s possible to have multiple status bixes, each addressable by a number.<br />
+    Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.</li>
+</ul>
+<h4 id="set-statuses">Set Statuses</h4>
+<ul>
+<li>
+<p><code>.setStatus(text, field=0)</code><br />
+    This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message.<br />
+    If multiple fields were created, a position can be supplied to populate.</p>
+</li>
+<li>
+<p><code>.clearStatus(field=0)</code><br />
+    Clear anything displayed in the statusbar, along with any header that might be set.</p>
+</li>
+<li>
+<p><code>.setStatusWidth(width, field=0)</code><br />
+    Set the width of the specified status field.</p>
+</li>
 </ul></div>
         </div>
 

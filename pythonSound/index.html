@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/WidgetOptions/">
+        <link rel="canonical" href="http://appjar.info/pythonSound/">
         <link rel="shortcut icon" href="../img/favicon3.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Changing widgets - appJar</title>
+        <title>Sounds - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -71,43 +71,43 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Widgets/">Widgets</a>
+    <a href="../pythonWidgets/">Widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Images/">Images</a>
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Sounds</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Sound/">Sounds</a>
+    <a href="../pythonBars/">Bars</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Bars/">Bars</a>
+    <a href="../pythonDialogs/">Pop-ups</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Dialogs/">Pop-ups</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../DevWidgets/">In the works...</a>
+    <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
                     
@@ -116,31 +116,31 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Layout/">Arranging widgets</a>
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Grouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Changing widgets</a>
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
 </li>
 
                     
                         
 <li >
-    <a href="../GuiOptions/">Extras</a>
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">Extras</a>
 </li>
 
                     
@@ -167,7 +167,7 @@
                     
                         
 <li >
-    <a href="../PythonBasics/">Python</a>
+    <a href="../pythonBasics/">Python</a>
 </li>
 
                     
@@ -191,12 +191,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Grouping/">
+                    <a rel="next" href="../pythonImages/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../GuiOptions/">
+                    <a rel="prev" href="../pythonBars/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -224,185 +224,85 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#widget-options">Widget Options</a></li>
+        <li class="main active"><a href="#sound">Sound</a></li>
         
-            <li><a href="#basic-appearance">Basic Appearance</a></li>
+            <li><a href="#playing-sound-files">Playing Sound Files</a></li>
         
-            <li><a href="#extended-appearance">Extended Appearance</a></li>
+            <li><a href="#playing-built-in-sounds">Playing Built-In Sounds</a></li>
         
-            <li><a href="#advanced-appearance">Advanced Appearance</a></li>
-        
-            <li><a href="#widget-interaction">Widget Interaction</a></li>
-        
-            <li><a href="#widget-manipulaiton">Widget Manipulaiton</a></li>
-        
-            <li><a href="#grouped-options">Grouped Options</a></li>
+            <li><a href="#playing-musical-notes">Playing Musical Notes</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="widget-options">Widget Options</h1>
+<h1 id="sound">Sound</h1>
 <hr />
-<p>There are a lot of things that can be configured on a widget.<br />
-There is a pattern to how this works, you simply specify the widget type and the parameter, eg:</p>
-<ul>
-<li><code>.setLabelBg(name, value)</code></li>
-<li><code>.setButtonFg(name, value)</code></li>
-<li><code>.setListBoxState(name, value)</code></li>
-</ul>
-<p>The list of widgets is defined in <code>gui.WIDGETS</code>, it contains:
-Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook</p>
-<h3 id="basic-appearance">Basic Appearance</h3>
-<hr />
-<p>The following options are available for all widgets:</p>
-<ul>
-<li>
-<p><code>set XXX Bg(name, value)</code><br />
-    Sets the background colour of the named widget.</p>
-</li>
-<li>
-<p><code>set XXX Fg(name, value)</code><br />
-    Sets the foregound colour (usually the text) of the named widget.</p>
-</li>
-<li>
-<p><code>set XXX DisabledFg(name, value)</code><br />
-    Sets the disabled foreground colour (usually the text) of the named widget.</p>
-</li>
-<li>
-<p><code>set XXX Width(name, value)</code><br />
-    Sets the width of the named widget.</p>
-</li>
-<li>
-<p><code>set XXX Height(name, value)</code><br />
-    Set the height of the named widget.</p>
-</li>
-</ul>
-<h3 id="extended-appearance">Extended Appearance</h3>
+<p>Sound is only supported in Windows, using the Winsound API.<br />
+Therefore, only <code>.WAV</code> files will work.</p>
+<h3 id="playing-sound-files">Playing Sound Files</h3>
 <hr />
 <ul>
 <li>
-<p><code>set XXX Tooltip(name, value)</code><br />
-    Sets a tooltip for the widget.
-    The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
+<p><code>.playSound(sound, wait=False)</code><br />
+    Play the named sound file.<br />
+    By default, the sound is played asynchronously, meaning the function will return immediately, even though the sound hasn't finished playing.<br />
+    It is possible to override this, by setting wait to True. This is not recommended though, as the GUI will become unresponsive.</p>
 </li>
 <li>
-<p><code>set XXX Cursor(name, value)</code><br />
-    Sets the cursor shown, when the mouse goes over this widget.<br />
-    There are lots of cursors avalable, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
+<p><code>.stopSound()</code><br />
+    This will stop whatever sound is currently being played.</p>
 </li>
 <li>
-<p><code>set XXX Relief(name, value)</code><br />
-    Sets the border for the widget. One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
+<p><code>.loopSound(sound)</code><br />
+    This will play the named sound in a loop.</p>
 </li>
 <li>
-<p><code>set XXX State(name, value)</code><br />
-    Sets the state of the named widget. One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
+<p><code>.setSoundLocation(location)</code><br />
+    Set a folder for the sound files.<br />
+    This will be put before the names of any sound files used.  </p>
 </li>
 </ul>
-<h3 id="advanced-appearance">Advanced Appearance</h3>
+<h3 id="playing-built-in-sounds">Playing Built-In Sounds</h3>
 <hr />
-<p>The following are supported by most widgets:</p>
 <ul>
 <li>
-<p><code>set XXX Align(name, value)</code><br />
-    Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
+<p><code>.soundError()</code></p>
+<p>This will sound a simple error beep.</p>
 </li>
 <li>
-<p><code>set XXX Anchor(name, value)</code><br />
-    Sets where the text is positioned within the widget. One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
-</li>
-<li>
-<p><code>set XXX Sticky(name, value)</code><br />
-    Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
+<p><code>.soundWarning()</code></p>
+<p>This will sound a simple warning beep.</p>
 </li>
 </ul>
-<h3 id="widget-interaction">Widget Interaction</h3>
+<h3 id="playing-musical-notes">Playing Musical Notes</h3>
 <hr />
-<p>The following allow widgets to be interacted with:</p>
 <ul>
 <li>
-<p><code>set XXX Focus(name)</code><br />
-    Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
-</li>
-<li>
-<p><code>set XXX Function(name, value, key=None)</code><br />
-    This binds a function to the widget.<br />
-    The function will be called every time an interactive-widget changes. 
-    The funcion will be called when some widgets are clicked.  </p>
-</li>
-<li>
-<p><code>set XXX OverFunction(name, values)</code><br />
-    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
-    The first function is called when the mouse first enters the widget.<br />
-    The second function is called when the mouse leaves the widget.<br />
-    If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </p>
-</li>
+<p><code>.playNote(note, duration=200)</code></p>
+<p>Support is built in for playing musical notes, using winsound.
+The note can be a numeric frequency, or a String note.
+The duration can be a number in milliseconds, or a String duration.</p>
+<p>Over 50 String notes are available, such as:</p>
+<ul>
+<li>f#1 = 46</li>
+<li>b7 = 3951</li>
+<li>g9 = 12543  </li>
 </ul>
-<pre><code class="python">    from appJar import gui
-
-    def enter(wdgt): 
-        print(&quot;IN&quot;, wdgt)
-    def leave(wdgt):
-        print(&quot;OUT&quot;, wdgt)
-
-    app=gui()
-    app.addLabel(&quot;l1&quot;, &quot;Testing...&quot;)
-    app.setLabelOverFunction(&quot;l1&quot;, [enter, leave])
-    app.go()
-</code></pre>
-
+<p>The following String durations are supported:</p>
 <ul>
-<li><code>set XXX DragFunction(name, values)</code><br />
-    Set functions to call whenever the mouse button is clicked and dragged.<br />
-    The first function will be called when the mouse is initially clicked.<br />
-    The second function will be called when the mouse is released.<br />
-    The same rules for passing functions apply as above.  </li>
+<li>BREVE = 2000</li>
+<li>SEMIBREVE = 1000</li>
+<li>MINIM = 500</li>
+<li>CROTCHET = 250</li>
+<li>QUAVER = 125</li>
+<li>SEMIQUAVER = 63</li>
+<li>DEMISEMIQUAVER = 32</li>
+<li>HEMIDEMISEMIQUAVER = 16</li>
 </ul>
-<h3 id="widget-manipulaiton">Widget Manipulaiton</h3>
-<hr />
-<p>The following allow widgets to be manipulated on screen:</p>
-<ul>
-<li>
-<p><code>.hide XXX (name)</code><br />
-    Temporarily hides the widget form view.</p>
+<p>These can be accessed through the variables <code>gui.NOTES</code> and <code>gui.DURATIONS</code></p>
 </li>
-<li>
-<p><code>.show XXX (name)</code><br />
-    Show the widget, if it was already hidden.</p>
-</li>
-<li>
-<p><code>.remove XXX (name)</code><br />
-    Permanently remove the widget (deletes it).</p>
-</li>
-<li>
-<p><code>.removeAllWidgets()</code><br />
-    Permanenently remove all widgets.</p>
-</li>
-<li>
-<p><code>.disable XXX (name)</code><br />
-    Disable the widget - stops the user from interacting with it, but keeps it visible.</p>
-</li>
-<li>
-<p><code>.enable XXX (name)</code><br />
-    Enable a disabled widget.</p>
-</li>
-</ul>
-<h3 id="grouped-options">Grouped Options</h3>
-<hr />
-<p>The following are convenience functions, for modifying a group of widgets:</p>
-<ul>
-<li><code>set XXX Widths(names, val)</code>  </li>
-<li>
-<p><code>set XXX Heights(names, val)</code><br />
-    Sets the widths/heights of the specified widgets.</p>
-</li>
-<li>
-<p><code>setAll XXX Widths(val)</code>  </p>
-</li>
-<li><code>setAll XXX Heights(val)</code><br />
-    Sets the widths/heights of all widgets of the specified type.</li>
 </ul></div>
         </div>
 
