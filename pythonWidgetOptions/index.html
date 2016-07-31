@@ -317,6 +317,10 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p><code>set XXX Sticky(name, value)</code><br />
     Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
 </li>
+<li>
+<p><code>set XXX Padding(name, x, y)</code><br />
+    Set internal text padding of the named widget.  </p>
+</li>
 </ul>
 <h3 id="widget-interaction">Widget Interaction</h3>
 <hr />
@@ -330,7 +334,7 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p><code>set XXX Function(name, value, key=None)</code><br />
     This binds a function to the widget.<br />
     The function will be called every time an interactive-widget changes. 
-    The funcion will be called when some widgets are clicked.  </p>
+    The function will be called when some widgets are clicked.  </p>
 </li>
 <li>
 <p><code>set XXX OverFunction(name, values)</code><br />

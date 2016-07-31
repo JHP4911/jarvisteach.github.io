@@ -347,6 +347,7 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <li><code>.addLabelEntry(title)</code></li>
 <li><code>.addLabelNumericlEntry(title)</code></li>
 <li><code>.addLabelSecretlEntry(title)</code></li>
+<li><code>.addLabelScale(title)</code></li>
 <li><code>.addLabelOptionBox(title, values)</code></li>
 <li><code>.addLabelSpinBox(title, values)</code></li>
 <li><code>.addLabelSpinBoxRange(title, from, to)</code>  </li>
@@ -448,7 +449,7 @@ That way, multiple widgets can use the same function, but different actions can 
 <p><code>.addButtons(titles, functions)</code><br />
     It's possible to add a list of buttons to the GUI.<br />
     Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.
-    A single funciton can be passed, to use for all buttons.
+    A single function can be passed, to use for all buttons.
     Or a list of functions can be passed, which MUST correspond to the buttons.</p>
 </li>
 <li>
@@ -516,7 +517,7 @@ app.go()
     app=gui()
     app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
     app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
-    app.setRadioButtonFunction(&quot;song&quot;, press)   # call this funciton, when the RadioButton changes
+    app.setRadioButtonFunction(&quot;song&quot;, press)   # call this function, when the RadioButton changes
     app.addButton(&quot;PLAY&quot;, press)
     app.go()
 </code></pre>
@@ -558,7 +559,9 @@ app.go()
 <h2 id="optionbox">OptionBox</h2>
 <hr />
 <p>Creates a simple drop-down box. It is only possible to select one option form this drop-down.<br />
-Pass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.  </p>
+Pass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.<br />
+If the first item is empty, a simple title will be created. Any other empty iems will be removed.<br />
+If an item starst with a dash (-), it will be treated as a separator, and can't be selected.  </p>
 <p><img alt="OptionBox" src="../img/1_optBox.png" /> <img alt="OptionBox" src="../img/2_optBox.png" />  </p>
 <pre><code class="python">from appJar import gui
 
@@ -571,23 +574,26 @@ app.go()
 <h4 id="add-optionboxes">Add OptionBoxes</h4>
 <ul>
 <li><code>.addOptionBox(title, values)</code><br />
-    This will create an OptionBox, adding the contents of the values list, in the order specified.</li>
+    This will create an OptionBox, adding the contents of the values list, in the order specified.  </li>
 </ul>
 <h4 id="set-optionboxes">Set OptionBoxes</h4>
 <ul>
 <li>
-<p><code>.changeOptionBox(title, newOptions)</code><br />
-    This will replace the contents of the OptionBox, with the new list provided.</p>
+<p><code>.changeOptionBox(title, newOptions, index)</code><br />
+    This will replace the contents of the OptionBox, with the new list provided.<br />
+    If specified, the indexed item will be selected - this can be a position or an item name.  </p>
 </li>
 <li>
 <p><code>.setOptionBox(title, position)</code><br />
-    This will select the item in the list, at the position specified.</p>
+    This will select the item in the list, at the position specified.<br />
+    Alternatively, the name of an item can be specified.  </p>
 </li>
 </ul>
 <h4 id="get-optionboxes">Get OptionBoxes</h4>
 <ul>
 <li><code>.getOptionBox(title)</code><br />
-    This will return the currently displayed value in the OptionBox.</li>
+    This will return the currently displayed value in the OptionBox.<br />
+    Will return None, if an invalid option is currently selected.  </li>
 </ul>
 <h2 id="spinbox">SpinBox</h2>
 <hr />
@@ -695,7 +701,7 @@ app.go()
 
 app=gui()
 app.setFont(20)
-app.addScale(&quot;scale&quot;)
+app.addLabelScale(&quot;scale&quot;)
 app.go()
 </code></pre>
 
@@ -703,20 +709,30 @@ app.go()
 <h4 id="add-scales">Add Scales</h4>
 <ul>
 <li><code>.addScale(title)</code><br />
-    Adds a scale, with a default range between 0 and 100.  </li>
+    Adds a horizontal scale, with a default range between 0 and 100.  </li>
 </ul>
 <h4 id="set-scales">Set Scales</h4>
 <ul>
 <li><code>.setScale(title, pos)</code><br />
     Sets the selected pos for the specified Scale.  </li>
-<li><code>.setScaleRange(title from, to, curr=0)</code><br />
-    Allows you to change the range available in the Scale. If <code>curr</code> is provided, then the Scale will be set to that value.  </li>
+<li><code>.setScaleRange(title from, to, curr=None)</code><br />
+    Allows you to change the range available in the Scale.<br />
+    If <code>curr</code> is provided, then the Scale will be set to that value.  </li>
+<li><code>.showScaleIntervals(title, intervals)</code><br />
+    Configures the Scale to show interval labels along its length.  </li>
 <li><code>.showScaleValue(title, show=True)</code><br />
     Configures the Scale to show the currently selected value.<br />
 <img alt="Scale" src="../img/2_scale.png" />  </li>
-<li><code>.orientScaleHor(title, hor=True)</code><br />
-    Changes the Scale's orientation. If <code>hor</code> is not set, it will be <em>horizontal</em>, if False is passed in, it will be <em>vertical</em>.<br />
+<li><code>.setScaleHorizontal(title)</code>  </li>
+<li><code>.setScaleVertical(title)</code><br />
+    Changes the Scale's orientation to the specified value.<br />
 <img alt="Scale" src="../img/3_scale.png" />  </li>
+<li><code>.setScaleWidth(title, width)</code>  </li>
+<li><code>.setScaleLength(title, length)</code><br />
+    Sets a width/length for the scale's slider.  </li>
+<li><code>.setScaleFunction(title, func)</code><br />
+    Sets a function to call, each time the scale is changed.<br />
+    The function must take one parameter, which will be populated with the scale's title.  </li>
 </ul>
 <h4 id="get-scales">Get Scales</h4>
 <ul>
@@ -786,9 +802,13 @@ app.go()
 </code></pre>
 
 <p><img alt="Meter" src="../img/1_meter.png" />  </p>
+<h4 id="add-meters">Add Meters</h4>
 <ul>
 <li><code>addMeter(name)</code><br />
     Adds a meter with the specified name.  </li>
+</ul>
+<h4 id="set-meters">Set Meters</h4>
+<ul>
 <li>
 <p><code>setMeter(name, value, text=None)</code><br />
     Changes the specified meter to the specified value, between 0 and 100, with the optional text.<br />
@@ -799,10 +819,11 @@ app.go()
     Changes the fill colour of the specified meter.<br />
 <img alt="Meter" src="../img/3_meter.png" />  </p>
 </li>
-<li>
-<p><code>getMeter(name)</code><br />
-    Gets the value of the specified meter.  </p>
-</li>
+</ul>
+<h4 id="get-meters">Get Meters</h4>
+<ul>
+<li><code>getMeter(name)</code><br />
+    Gets the value of the specified meter.  </li>
 </ul>
 <h2 id="separator">Separator</h2>
 <hr />
