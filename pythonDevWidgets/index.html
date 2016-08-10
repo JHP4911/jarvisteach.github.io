@@ -243,33 +243,72 @@
 
 <h1 id="widgets-under-development">Widgets Under Development</h1>
 <hr />
-<p>The following widgets are <strong>under development</strong>. They're included in the library, but offer limited functionality, and are stilll quite buggy.</p>
+<p>The following widgets are <strong>under development</strong>.<br />
+They're included in the library, but offer limited functionality, and are still buggy.  </p>
 <h3 id="piechart">PieChart</h3>
 <hr />
-<p>Shows a pie chart  </p>
-<ul>
-<li><code>.addPieChart(name, values, size=100)</code><br />
-    Takes a list of integers, which will be converted to percentages, and plotted on the chart.<br />
-    An optional size parameter can be passed, to adjust the size of the chart.  </li>
-</ul>
-<p><img alt="PieChart" src="../img/dev/pie.png" />  </p>
+<p>Widget to depict a Pie Chart.<br />
+It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
+The PieChart is purely for display purposes, and is not interactive.<br />
+<img alt="PieChart" src="../img/dev/pie.png" />  </p>
 <pre><code class="python">    from appJar import gui
 
     app=gui()
-    app.addPieChart(&quot;p1&quot;, [50, 200, 75, 300, 150], size=300)
+    app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
+                            &quot;beef&quot;:300, &quot;turkey&quot;:150}, size=300)
     app.go()
 </code></pre>
 
+<ul>
+<li>
+<p><code>.addPieChart(title, values, size=100)</code><br />
+    Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
+    The names will be used as part of tooltips that appear over each wedge of the PieChart.<br />
+    An optional size parameter can be passed, to adjust the size of the PieChart.  </p>
+</li>
+<li>
+<p><code>.setPieChart(title, name, value)</code><br />
+    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </p>
+</li>
+</ul>
 <h3 id="tree">Tree</h3>
 <hr />
 <p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
 <ul>
-<li><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the specified XML data  </li>
-<li><code>.addTreeFunction(title, func)</code><br />
-    Register a function to call when an item is double-clicked  </li>
-<li><code>.getTree(title)</code><br />
-    Return the tree as XML  </li>
+<li>
+<p><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </p>
+</li>
+<li>
+<p><code>.setTreeBg(title, colour)</code><br />
+    Set the background colour of the tree  </p>
+</li>
+<li><code>.setTreeFg(title, colour)</code><br />
+    Set the foreground colour of the tree  </li>
+<li><code>.setTreeHighlightBg(title, colour)</code><br />
+    Set the background colour of the highlighted node    </li>
+<li>
+<p><code>.setTreeHighlightFg(title, colour)</code><br />
+    Set the foreground colour of the highlighted node  </p>
+</li>
+<li>
+<p><code>.setTreeDoubleClickFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked  </p>
+</li>
+<li><code>.setTreeEditFunction(title, func)</code><br />
+    Register a function to call when an item is edited  </li>
+<li>
+<p><code>.setTreeEditable(title, value)</code><br />
+    Set whether the tree can be edited  </p>
+</li>
+<li>
+<p><code>.getTreeXML(title)</code><br />
+    Return the tree as XML  </p>
+</li>
+<li><code>.getTreeSelected(title)</code><br />
+    Return the selected node as a String</li>
+<li><code>.getTreeSelectedXML(title)</code><br />
+    Return the selected node (and any children) as XML</li>
 </ul>
 <p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
 <pre><code class="python">from appJar import gui

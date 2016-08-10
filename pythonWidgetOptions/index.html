@@ -238,6 +238,8 @@
         
             <li><a href="#grouped-options">Grouped Options</a></li>
         
+            <li><a href="#tkinter-options">tkinter Options</a></li>
+        
     
     </ul>
 </div></div>
@@ -395,7 +397,7 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 </ul>
 <h3 id="grouped-options">Grouped Options</h3>
 <hr />
-<p>The following are convenience functions, for modifying a group of widgets:</p>
+<p>The following are convenience functions, for modifying a group of widgets:  </p>
 <ul>
 <li><code>set XXX Widths(names, val)</code>  </li>
 <li>
@@ -407,6 +409,14 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 </li>
 <li><code>setAll XXX Heights(val)</code><br />
     Sets the widths/heights of all widgets of the specified type.</li>
+</ul>
+<h3 id="tkinter-options">tkinter Options</h3>
+<hr />
+<p>It's also possible to request a widget, and modify it directly:  </p>
+<ul>
+<li><code>.get XXX Widget(name)</code><br />
+    This will get the named widget of the specified type.<br />
+    Any standard tkinter options can then be changed.  </li>
 </ul></div>
         </div>
 
