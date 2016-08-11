@@ -236,10 +236,10 @@
         
             <li><a href="#paned-window">Paned Window</a></li>
         
+            <li><a href="#sub-window">Sub Window</a></li>
+        
     
         <li class="main "><a href="#under-development">Under Development</a></li>
-        
-            <li><a href="#sub-window">Sub Window</a></li>
         
             <li><a href="#scroll-pane">Scroll Pane</a></li>
         
@@ -482,26 +482,71 @@ app.go()
 <li>Add a second pane</li>
 <li>Add the remaining panes to pane 2  </li>
 </ul>
-<h1 id="under-development">Under Development</h1>
-<hr />
 <h3 id="sub-window">Sub Window</h3>
 <hr />
 <p>A way to add additional windows, which can be hidden and shown.<br />
 <img alt="SubWindow" src="../img/layouts/subWin.png" /></p>
+<pre><code>from appJar import gui
+
+def launch(win):
+    app.showSubWindow(win)
+
+app=gui()
+
+app.startSubWindow(&quot;one&quot;, modal=True)
+app.addLabel(&quot;l1&quot;, &quot;SubWindow One&quot;)
+app.stopSubWindow()
+
+app.startSubWindow(&quot;two&quot;)
+app.addLabel(&quot;l2&quot;, &quot;SubWindow Two&quot;)
+app.stopSubWindow()
+
+app.addButtons([&quot;one&quot;, &quot;two&quot;], launch)
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-sub-windows">Start/Stop Sub Windows</h4>
 <ul>
-<li><code>.startSubwindow(name)</code>  </li>
+<li><code>.startSubwindow(name, title=None, modal=False)</code>  </li>
 <li><code>.stopSubwindow()</code><br />
-    Used to start and stop defining a <em>SubWindow</em>  </li>
-<li><code>.showSubWindow(name)</code>  </li>
-<li><code>.hideSubWindow(name)</code><br />
-    Used to show and hide the specified <em>SubWindow</em>  </li>
+    Used to start and stop defining a <em>SubWindow</em><br />
+    Setting a <code>title</code> will override the <code>name</code> as a title for the SubWindow. 
+    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the SubWindow is closed.  </li>
 </ul>
+<h4 id="showhide-sub-windows">Show/Hide Sub Windows</h4>
+<ul>
+<li><code>.showSubWindow(title)</code><br />
+    Will cause the specified SubWindow to be shown.<br />
+    If it is set as <em>modal</em> the parent window will become uninteractive until the SubWindow is closed.  </li>
+<li><code>.hideSubWindow(title)</code><br />
+    Used to hide the specified <em>SubWindow</em>.<br />
+    This will not destroy the SubWindow, so it can be shown again later.  </li>
+<li><code>.destroySubWindow(title)</code><br />
+    This will hide and permanently destroy the specified SubWindow.<br />
+    It cannot be shown again.  </li>
+</ul>
+<h4 id="set-sub-windows">Set Sub Windows</h4>
+<p>Note, all functions available on the main window are also available on Sub Windows.<br />
+Simply call those functions after starting a Sub Window.  </p>
+<pre><code>app.startSubWindow(&quot;one&quot;, modal=True)
+app.setBg(&quot;orange&quot;)
+app.setGeometry(&quot;400x400&quot;)
+app.setTransparency(25)
+app.setStopFunction(checkDone)
+app.addLabel(&quot;l1&quot;, &quot;In sub window&quot;)
+app.stopSubWindow()
+</code></pre>
+
+<h1 id="under-development">Under Development</h1>
+<hr />
 <h3 id="scroll-pane">Scroll Pane</h3>
 <hr />
 <p>A scrollable frame, to contain widgets.</p>
 <ul>
 <li><code>.startScrollPane(title)</code>  </li>
-<li><code>.stopScrollPane()</code>  </li>
+<li><code>.stopScrollPane()</code><br />
+    Used to start and stop the ScrollPane.  </li>
 </ul></div>
         </div>
 
