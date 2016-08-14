@@ -430,10 +430,11 @@ app.go()
 <ul>
 <li><code>.startTabbedFrame(name)</code>  </li>
 <li><code>.stopTabbedFrame()</code><br />
-    Used to start &amp; stop the main <em>TabbedFrame</em>  </li>
+    Used to start &amp; stop the a <em>TabbedFrame</em>, with the specified name.  </li>
 <li><code>.startTab(name)</code></li>
 <li><code>.stopTab()</code><br />
-    Used to start and stop each of the tabs in the <em>TabbedFrame</em>.  </li>
+    Used to start and stop each of the tabs in the <em>TabbedFrame</em>.<br />
+    The title for the tab will be the specified <em>name</em>.  </li>
 </ul>
 <h4 id="set-tabbedframe">Set TabbedFrame</h4>
 <ul>
@@ -443,7 +444,29 @@ app.go()
 <img alt="TabbedFrame" src="../img/layouts/2_tabbedFrame.png" />  </li>
 <li><code>.setTabbedFrameSelectedTab(title, tab)</code><br />
     Select the specified tab in the TabbedFrame.  </li>
+<li><code>.setTabbedFrameDisabledTab(title, tab, disabled=True)</code><br />
+    Disable the specified tab in the TabbedFrame.<br />
+    Set disabled to False to re-enable it.<br />
+    This will also change the displayed tab, if the disaplyed tab is being disabled.  </li>
 </ul>
+<h4 id="changing-colours">Changing Colours</h4>
+<p>TabbedFrames have a set of colours that can be changed:  </p>
+<ul>
+<li>ActiveFg - Sets the colour of the text in the active tab  </li>
+<li>ActiveBg - Sets the background colour of the active tab  </li>
+<li>InactiveFg - Sets the colour of the text in all inactive tabs  </li>
+<li>InactiveBG - Sets the background colour of all inactive tabs  </li>
+<li>DisabledFg - Sets the colour of the text in all disabled tabs  </li>
+<li>DisabledBg - Sets the background colour of all disabled tabs  </li>
+<li>Bg - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
+</ul>
+<p>These are all changed via the standard property changing functions, eg:  </p>
+<ul>
+<li><code>.setTabbedFrameBg("t1", "red")</code></li>
+<li><code>.setTabbedFrameActiveBg("t1", "yellow")</code></li>
+</ul>
+<p>It is also possible to change the colour of individual panes.<br />
+Call <code>.setBg("colour")</code> while adding widgets to the specific pane.  </p>
 <h3 id="paned-window">Paned Window</h3>
 <hr />
 <p>A way to arrange re-sizable frames, with drag-bars.  </p>
