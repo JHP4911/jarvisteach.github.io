@@ -355,8 +355,8 @@ Both the label and widget will be placed in the same grid space.<br />
 Simply add the word <code>Label</code> to the command when adding the widget:  </p>
 <ul>
 <li><code>.addLabelEntry(title)</code></li>
-<li><code>.addLabelNumericlEntry(title)</code></li>
-<li><code>.addLabelSecretlEntry(title)</code></li>
+<li><code>.addLabelNumericEntry(title)</code></li>
+<li><code>.addLabelSecretEntry(title)</code></li>
 <li><code>.addLabelScale(title)</code></li>
 <li><code>.addLabelOptionBox(title, values)</code></li>
 <li><code>.addLabelTickOptionBox(title, values)</code></li>
@@ -613,7 +613,7 @@ app.go()
 <h4 id="set-optionboxes">Set OptionBoxes</h4>
 <ul>
 <li>
-<p><code>.changeOptionBox(title, newOptions, index, value=True)</code><br />
+<p><code>.changeOptionBox(title, newOptions, index)</code><br />
     This will replace the contents of the OptionBox, with the new list provided.<br />
     If specified, the indexed item will be selected - this can be a position or an item name.<br />
     If setting a TickOptionBox, pass in the optional value.  </p>
@@ -622,7 +622,7 @@ app.go()
 <p><code>.setOptionBox(title, position, value=True)</code><br />
     This will select the item in the list, at the position specified.<br />
     Alternatively, the name of an item can be specified.<br />
-    If changing a TickOptionBox, the specified item will be setto the specified value.  </p>
+    If changing a TickOptionBox, the specified item will be set to the specified value.  </p>
 </li>
 <li>
 <p><code>.deleteOptionBox(title, position)</code><br />

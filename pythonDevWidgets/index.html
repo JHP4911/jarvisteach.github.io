@@ -234,8 +234,6 @@
         
             <li><a href="#meters">Meters</a></li>
         
-            <li><a href="#properties">Properties</a></li>
-        
     
     </ul>
 </div></div>
@@ -259,57 +257,21 @@ The PieChart is purely for display purposes, and is not interactive.<br />
     app.go()
 </code></pre>
 
+<h4 id="add-piecharts">Add PieCharts</h4>
 <ul>
-<li>
-<p><code>.addPieChart(title, values, size=100)</code><br />
+<li><code>.addPieChart(title, values, size=100)</code><br />
     Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
     The names will be used as part of tooltips that appear over each wedge of the PieChart.<br />
-    An optional size parameter can be passed, to adjust the size of the PieChart.  </p>
-</li>
-<li>
-<p><code>.setPieChart(title, name, value)</code><br />
-    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </p>
-</li>
+    An optional size parameter can be passed, to adjust the size of the PieChart.  </li>
+</ul>
+<h4 id="set-piecharts">Set PieCharts</h4>
+<ul>
+<li><code>.setPieChart(title, name, value)</code><br />
+    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </li>
 </ul>
 <h3 id="tree">Tree</h3>
 <hr />
 <p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
-<ul>
-<li>
-<p><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the specified XML data  </p>
-</li>
-<li>
-<p><code>.setTreeBg(title, colour)</code><br />
-    Set the background colour of the tree  </p>
-</li>
-<li><code>.setTreeFg(title, colour)</code><br />
-    Set the foreground colour of the tree  </li>
-<li><code>.setTreeHighlightBg(title, colour)</code><br />
-    Set the background colour of the highlighted node    </li>
-<li>
-<p><code>.setTreeHighlightFg(title, colour)</code><br />
-    Set the foreground colour of the highlighted node  </p>
-</li>
-<li>
-<p><code>.setTreeDoubleClickFunction(title, func)</code><br />
-    Register a function to call when an item is double-clicked  </p>
-</li>
-<li><code>.setTreeEditFunction(title, func)</code><br />
-    Register a function to call when an item is edited  </li>
-<li>
-<p><code>.setTreeEditable(title, value)</code><br />
-    Set whether the tree can be edited  </p>
-</li>
-<li>
-<p><code>.getTreeXML(title)</code><br />
-    Return the tree as XML  </p>
-</li>
-<li><code>.getTreeSelected(title)</code><br />
-    Return the selected node as a String</li>
-<li><code>.getTreeSelectedXML(title)</code><br />
-    Return the selected node (and any children) as XML</li>
-</ul>
 <p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
 <pre><code class="python">from appJar import gui
 
@@ -324,18 +286,42 @@ app.addTree(&quot;t1&quot;,
 app.go()
 </code></pre>
 
+<h4 id="add-trees">Add Trees</h4>
+<ul>
+<li><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </li>
+</ul>
+<h4 id="set-trees">Set Trees</h4>
+<ul>
+<li><code>.setTreeDoubleClickFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked  </li>
+<li><code>.setTreeEditFunction(title, func)</code><br />
+    Register a function to call when an item is edited  </li>
+<li><code>.setTreeEditable(title, value)</code><br />
+    Set whether the tree can be edited  </li>
+<li><code>.setTreeBg(title, colour)</code><br />
+    Set the background colour of the tree  </li>
+<li><code>.setTreeFg(title, colour)</code><br />
+    Set the foreground colour of the tree  </li>
+<li><code>.setTreeHighlightBg(title, colour)</code><br />
+    Set the background colour of the highlighted node    </li>
+<li><code>.setTreeHighlightFg(title, colour)</code><br />
+    Set the foreground colour of the highlighted node  </li>
+</ul>
+<h4 id="get-trees">Get Trees</h4>
+<ul>
+<li><code>.getTreeXML(title)</code><br />
+    Return the tree as XML  </li>
+<li><code>.getTreeSelected(title)</code><br />
+    Return the selected node as a String</li>
+<li><code>.getTreeSelectedXML(title)</code><br />
+    Return the selected node (and any children) as XML</li>
+</ul>
 <h3 id="grid">Grid</h3>
 <hr />
 <p>Used to create a spreadsheet like interface.<br />
-* <code>.addGrid(title, data, action=None, addRow=False)</code><br />
-    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
-    If action is set, a button will be created, calling the specified function. If addRow is True, then an additional row will appear, at the end, with Entry boxes.  </p>
-<ul>
-<li><code>.updateGrid(title, data, addRow=False)</code>  </li>
-<li><code>.setGridGeom(title, width, height)</code>  </li>
-<li><code>.getGridEntries(title)</code>  </li>
-<li><code>.setGridBackground(title, colour)</code>  </li>
-</ul>
+The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
+It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
 <p><img alt="Grid" src="../img/dev/grid.png" />  </p>
 <pre><code class="python">    from appJar import gui
 
@@ -350,30 +336,38 @@ app.go()
     app.go()
 </code></pre>
 
+<h4 id="add-grids">Add Grids</h4>
+<ul>
+<li><code>.addGrid(title, data, action=None, addRow=False)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
+    If action is set, a button will be created, at the end of each row,  calling the specified function.<br />
+    If addRow is True, then an additional row will appear at the end, with entry boxes and an additional button.  </li>
+</ul>
+<h4 id="get-grids">Get Grids</h4>
+<ul>
+<li><code>.getGridEntries(title)</code><br />
+    Get the contents of the entry boxes, if present.<br />
+    Returned as a list, in the same order as the entry boxes.  </li>
+<li><code>.getGridSelectedCells(title)</code><br />
+    Gets a dictionary of booleans, indicating the status of each cell.<br />
+    True indicates the cell is selected, False indicates the cell is not selected.<br />
+    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </li>
+</ul>
+<h4 id="set-grids">Set Grids</h4>
+<ul>
+<li><code>.addGridRow(title, data)</code><br />
+    Add a single row of data to the existing grid.<br />
+    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
+</ul>
 <h3 id="meters">Meters</h3>
+<hr />
 <p>Working on some different styles for the Meter.<br />
 And, a better look - gradiated colour...  </p>
 <h4 id="splitmeter">SplitMeter</h4>
 <p>Shows two values, left &amp; right  </p>
 <p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
 <h4 id="dualmeter">DualMeter</h4>
-<p>Shows percentage left &amp; right  </p>
-<h3 id="properties">Properties</h3>
-<hr />
-<p>A quick-to-create set of radio/check boxes.  </p>
-<ul>
-<li><code>.addProperties(props)</code><br />
-    Creates the properties box, with the list of properties.<br />
-    The properties can be passed in as dictionary, but the order will be random.  </li>
-<li><code>.addProperty(title, value=False)</code><br />
-    Adds the named property to the end of the properties list.  </li>
-<li><code>.getProperties()</code><br />
-    Returns the properties as a dictionary.  </li>
-<li><code>.getProperty(title)</code><br />
-    Gets the named property.  </li>
-<li><code>.setProperty(title, value=True)</code><br />
-    Sets the named property.</li>
-</ul></div>
+<p>Shows percentage left &amp; right  </p></div>
         </div>
 
         <footer class="col-md-12">
