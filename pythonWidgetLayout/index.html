@@ -155,7 +155,7 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../Install/">Set-up</a>
 </li>
 
                     
@@ -226,7 +226,7 @@
     
         <li class="main active"><a href="#arranging-widgets">Arranging Widgets</a></li>
         
-            <li><a href="#sequential-programming">Sequential programming</a></li>
+            <li><a href="#sequential-layout">Sequential Layout</a></li>
         
             <li><a href="#grid-layout">Grid Layout</a></li>
         
@@ -237,9 +237,9 @@
 
 <h1 id="arranging-widgets">Arranging Widgets</h1>
 <hr />
-<h3 id="sequential-programming">Sequential programming</h3>
+<h3 id="sequential-layout">Sequential Layout</h3>
 <hr />
-<p>By default, each new widget is simply added on a new line. That way, you can very quickly, create a simple GUI:</p>
+<p>By default, each new widget is simply added on a new row. That way, you can very quickly, create a simple GUI:</p>
 <pre><code class="python">from appJar import gui  
 
 def changeLabel(btn):  
@@ -256,8 +256,8 @@ app.go()
 <p><img alt="Simple Layout" src="../img/1_layout.png" /></p>
 <h3 id="grid-layout">Grid Layout</h3>
 <hr />
-<p>If, however, you want more than that, then a basic GRID layout is supported.</p>
-<p>Each time you add a widget, you can specify a column, row, and even a column-span to position it in.</p>
+<p>If, however, you want more than that, then a basic <strong>GRID</strong> layout is supported.</p>
+<p>Each time you add a widget, you can specify a column, row, and even a column-span or row-span to position it in.</p>
 <pre><code class="python">from appJar import gui
 
 def press(btn):
@@ -272,11 +272,12 @@ def press(btn):
 app=gui()
 
 app.addLabel(&quot;l1&quot;, &quot;Name&quot;, 0, 0)
-app.addLabel(&quot;l2&quot;, &quot;Age&quot;, 1, 0)
-app.addLabel(&quot;l3&quot;, &quot;Role&quot;, 2, 0)
-
 app.addEntry(&quot;name&quot;, 0, 1)
+
+app.addLabel(&quot;l2&quot;, &quot;Age&quot;, 1, 0)
 app.addNumericEntry(&quot;age&quot;, 1, 1)
+
+app.addLabel(&quot;l3&quot;, &quot;Role&quot;, 2, 0)
 app.addOptionBox(&quot;role&quot;, [&quot;Teacher&quot;, &quot;Student&quot;, &quot;Developer&quot;, &quot;Volunteer&quot;], 2, 1)
 
 app.addButtons([&quot;Save&quot;, &quot;Quit&quot;], press, 3, 0, 2)

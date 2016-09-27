@@ -155,7 +155,7 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../Install/">Set-up</a>
 </li>
 
                     
@@ -324,6 +324,35 @@ You can add a single menu option, or a list of menu options.</p>
 <p><code>.getMenuRadioButton(title, menu)</code><br />
     Get the value of the specified radio button, from the named menu.<br />
     Returns the value of the checked radio button.</p>
+</li>
+</ul>
+<h4 id="platform-specific-menus">Platform Specific Menus</h4>
+<p>It's possible to interact with menus that are specific to particular platforms.  </p>
+<p>On <strong>Windows</strong>, you can add items to the <em>System Menu</em>, accessed by clicking the icon in the top left corner of the GUI.  </p>
+<ul>
+<li><code>.addMenuSystem()</code><br />
+    This creates a <em>System Menu</em>, ready to add items to.<br />
+    Then just add menu items as normal, using the title <code>SYSTEM</code>.  </li>
+</ul>
+<p>On <strong>Mac</strong>, there are a bunch of special menus you can access.  </p>
+<p>The application (apple) menu is alway</p>
+<ul>
+<li>
+<p><code>.addMenuPreferences(func)</code><br />
+    This will enable the <em>Preferences Menu</em>, in the <em>Applicaiton Menu</em>, and link it to the specified function.<br />
+    Note, the <em>Application Menu</em> is named after the shell running the app - usually <em>python3</em>.  </p>
+</li>
+<li>
+<p><code>.addMenuHelp(func)</code><br />
+    This will link to the application specific Help option, under the <em>Help Menu</em>.<br />
+    You can add further items to the <em>Help Menu</em> using the title <code>HELP</code>.<br />
+    Note, the app's name will be the same as the shell running it - probably python3.  </p>
+</li>
+<li>
+<p><code>.addMenuWindow()</code><br />
+    This will create the standard <em>Window Menu</em>.<br />
+    You can add further items to the <em>Window Menu</em> using the title <code>WINDOW</code>.<br />
+    Adding items to this, will add them to the end of the <em>Window Menu</em>.  </p>
 </li>
 </ul>
 <h2 id="statusbar">Statusbar</h2>

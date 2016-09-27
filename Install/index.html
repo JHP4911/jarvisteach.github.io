@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Installation - appJar</title>
+        <title>Set-up - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -155,7 +155,7 @@
                     
                         
 <li class="active">
-    <a href="./">Installation</a>
+    <a href="./">Set-up</a>
 </li>
 
                     
@@ -224,47 +224,45 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#installation-instructions">Installation Instructions</a></li>
+        <li class="main active"><a href="#set-up-instructions">Set-up Instructions</a></li>
         
-            <li><a href="#preparing-the-library">Preparing the library</a></li>
+            <li><a href="#single-user-set-up">Single-user Set-up</a></li>
         
-            <li><a href="#windows-installation">Windows Installation</a></li>
+            <li><a href="#multi-user-set-up">Multi-user Set-up</a></li>
         
-            <li><a href="#linux-installation">Linux Installation</a></li>
-        
-            <li><a href="#mac-installation">MAC Installation</a></li>
-        
-            <li><a href="#using-the-library">Using the library</a></li>
+            <li><a href="#not-so-advanced-set-up">(not so) Advanced Set-up</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="installation-instructions">Installation Instructions</h1>
+<h1 id="set-up-instructions">Set-up Instructions</h1>
 <hr />
-<p>This library is designed to be as simple as possible to <em>install</em>.<br />
-As long as the <code>appJar</code> folder is in Python's path, you are good to go.  </p>
-<h3 id="preparing-the-library">Preparing the library</h3>
-<hr />
-<p>All installations start the same:</p>
+<p>This library was designed for use in schools - it therefore doesn't require <em>installation</em>.<br />
+Instead, it just needs to be <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOADED</a> and unzipped somewhere accessible by the relevant users.  </p>
+<h2 id="single-user-set-up">Single-user Set-up</h2>
+<p>If you're just programming on your own PC, copy the <strong>appJar folder</strong> into your <strong>code folder</strong>, and you're done!<br />
+(As long as it's in the same folder as your code, it'll work...)  </p>
+<h2 id="multi-user-set-up">Multi-user Set-up</h2>
+<p>If you're in a school, this will still work, but there are alternatives...<br />
+(Or, to make it accessible from any folder at home)  </p>
 <ul>
-<li><a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">Download</a> the ZIP file.</li>
-<li>Unzip it.</li>
-<li>Make sure the folder is called <code>appJar</code>  </li>
-<li>Put the folder in a sensible place <code>~/Documents/PYLIB/</code></li>
+<li>Create a folder on a shared network drive: <code>E:\PYLIB</code>, that all pupils can see  </li>
+<li>Put the <strong>appJar folder</strong> in there, and you're done!  </li>
 </ul>
-<p>Now, it's ready to go, at the top of your code, you can include the following:</p>
+<p>Just include the following at the top of every GUI program:  </p>
 <pre><code class="python"># add the appJar folder to your PATH
 import sys
-sys.path.append(&quot;~/Documents/PYLIB&quot;) # replce this with the correct path
-# import the library
-from appJar import gui
+sys.path.append(&quot;E:\PYLIB&quot;)
 </code></pre>
 
-<p>If you want a more permanent solution, you can add the above folder to your path. See below. </p>
-<h3 id="windows-installation">Windows Installation</h3>
+<h2 id="not-so-advanced-set-up">(not so) Advanced Set-up</h2>
+<p>If you've got friendy technicians, or are at home, you can make this even more accessible...  </p>
+<h3 id="windows">Windows</h3>
 <hr />
+<p>Create an environment variable, which will mean <code>E:\PYLIB</code> is always in your <strong>path</strong>.<br />
+Then you don't even need the two lines above to make it work...  </p>
 <ul>
 <li>Open <strong>Control Panel</strong></li>
 <li>Navigate to <strong>System -&gt; Advanced System Settings</strong>
@@ -274,39 +272,46 @@ from appJar import gui
 <li>Under <strong>System vartiables</strong>, click the <strong>New..</strong> button
 <img alt="System" src="../img/w_install_3.png" /></li>
 <li>Set the <strong>Variable name:</strong> to be <strong>PYTHONPATH</strong></li>
-<li>Set the <strong>Path:</strong> as the folder you put <strong>appJar</strong> in (eg. c:\COMPUTINC\PYLIB")
+<li>Set the <strong>Variable value:</strong> as the folder you put <strong>appJar</strong> in (eg. "E:\PYLIB")
 <img alt="System" src="../img/w_install_4.png" /></li>
-<li>Press <strong>OK</strong>, and you're ready to go:</li>
+<li>Press <strong>OK</strong>, and you're done!  </li>
 </ul>
-<h3 id="linux-installation">Linux Installation</h3>
+<h3 id="linux-raspberry-pi">Linux (Raspberry Pi)</h3>
 <hr />
+<p>Linux requires command line access:  </p>
 <ul>
-<li>Launch a <strong>Terminal</strong></li>
-<li>Type the following:</li>
+<li>Launch a <strong>Terminal</strong>  </li>
+<li>Type the following:  </li>
 </ul>
-<pre><code class="bash">    echo 'export PYTHONPATH=&quot;${PYTHONPATH}:~Documents/PYLIB&quot;' &gt;&gt; ~/.bashrc
+<pre><code class="bash">    echo 'export PYTHONPATH=&quot;${PYTHONPATH}:~/Documents/PYLIB&quot;' &gt;&gt; ~/.bashrc
 </code></pre>
 
 <ul>
-<li>Close the terminal, and you're ready to go</li>
+<li>Close the terminal, and you're done!  </li>
 </ul>
-<h3 id="mac-installation">MAC Installation</h3>
+<h3 id="mac-os">MAC OS</h3>
 <hr />
+<p>If you're just running python from a Terminal, then you can follow the Linux instructions above.  </p>
+<p>However, that won't work if you're running Python in a Desktop app, like IDLE.<br />
+In this case, you'll need to add appJar to your <strong>site-packages</strong>.  </p>
 <ul>
-<li>It's a little trickier on MAC</li>
-<li>First off, run the Linux installation above. That will make it available form the command line.</li>
-<li>In OSX&lt;=10.9:<ul>
-<li>Edit the <code>/etc/launchd.conf</code> file</li>
-<li>Add the line: <code>setenv PYTHONPATH /Users/myname/Documents/PYLIB</code></li>
-<li>And you're done</li>
+<li>Launch a <strong>Terminal</strong>  </li>
+<li>Type the following:  </li>
 </ul>
-</li>
+<pre><code class="bash">mkdir -p ~/Library/Python/3.4/lib/python/site-packages
+cd ~/Library/Python/3.4/lib/python/site-packages
+echo '~/Documents/PYLIB' &gt; appJar.pth
+</code></pre>
+
+<ul>
+<li>Close the terminal, and you're done!  </li>
 </ul>
-<h3 id="using-the-library">Using the library</h3>
-<hr />
-<p>If the appJar folder is in your path, you can access it simply though an import:</p>
-<pre><code class="python"># import the library
-from appJar import gui
+<p><strong>NB.</strong> you'll need to make sure the version number (3.4) is correct.  </p>
+<ul>
+<li>To check your version, run this in Python:  </li>
+</ul>
+<pre><code class="python">import sys
+print(sys.version) 
 </code></pre></div>
         </div>
 
