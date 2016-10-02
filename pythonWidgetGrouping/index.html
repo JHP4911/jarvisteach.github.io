@@ -262,12 +262,14 @@
 
 <h1 id="container-options">Container Options</h1>
 <hr />
-<p>The standard way of using appJar, is simply to place all widgets into a simple window. Everything is grouped into that single window, and and changes affect everything in that window.</p>
-<p>It's sometimes desirable to group widgets together within a window. A number of options are provided to make this easier.</p>
+<p>The standard way of using appJar, is simply to place all widgets into a single window.<br />
+Everything is grouped into that single window, and any changes affect everything in that window.  </p>
+<p>It's sometimes desirable to group widgets together within a window.<br />
+A number of options are provided to make this easier.  </p>
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
-Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em>
+Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em><br />
 <img alt="LabelFrame" src="../img/layouts/labelFrame.png" /></p>
 <pre><code>from appJar import gui
 
@@ -289,8 +291,7 @@ app.go()
 
 <h4 id="startstop-label-frames">Start/Stop Label Frames</h4>
 <ul>
-<li><code>.startLabelFrame(name)</code>  </li>
-<li><code>.stopLabelFrame()</code><br />
+<li><code>.startLabelFrame(name)</code> &amp; <code>.stopLabelFrame()</code><br />
     Used to start and stop a LabelFrame<br />
     The specified title will be used as the label for the frame.  </li>
 </ul>

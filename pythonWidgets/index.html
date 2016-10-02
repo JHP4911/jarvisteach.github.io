@@ -540,7 +540,10 @@ app.go()
     app=gui()
     app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
     app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
-    app.setRadioButtonFunction(&quot;song&quot;, press)   # call this function, when the RadioButton changes
+
+    # call this function, when the RadioButton changes
+    app.setRadioButtonFunction(&quot;song&quot;, press)
+
     app.addButton(&quot;PLAY&quot;, press)
     app.go()
 </code></pre>
@@ -874,7 +877,7 @@ app.go()
 <hr />
 <p>Similar to an Entry box, but allows you to type text over multiple lines.  </p>
 <p><img alt="TextArea" src="../img/1_textArea.png" />  </p>
-<pre><code>from appJar import gui
+<pre><code class="python">from appJar import gui
 
 app=gui()
 app.addTextArea(&quot;t1&quot;)
@@ -913,7 +916,7 @@ app.go()
 <hr />
 <p>Shows a simple progress meter  </p>
 <p><img alt="Meter" src="../img/1_meter.png" />  </p>
-<pre><code>from appJar import gui
+<pre><code class="python">from appJar import gui
 
 app=gui()
 app.setGeometry(&quot;200x50&quot;)
@@ -950,7 +953,7 @@ app.go()
 Note, dictionaries have no order, so when added as a dictionary, the items will be automatically sorted.  </p>
 <p><img alt="Properties" src="../img/1_props.png" />
 <img alt="Properties" src="../img/2_props.png" /></p>
-<pre><code>from appJar import gui
+<pre><code class="python">from appJar import gui
 
 toppings={&quot;Cheese&quot;:False, &quot;Tomato&quot;:False, &quot;Bacon&quot;:False,
             &quot;Corn&quot;:False, &quot;Mushroom&quot;:False}
@@ -1002,7 +1005,7 @@ app.go()
 <p><img alt="Properties" src="../img/3_props.png" />
 <img alt="Properties" src="../img/4_props.png" />
 <img alt="Properties" src="../img/5_props.png" /></p>
-<pre><code>from appJar import gui
+<pre><code class="python">from appJar import gui
 
 def changed(props):
     print(&quot;Changed&quot;, props)
