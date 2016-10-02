@@ -471,9 +471,9 @@ That way, multiple widgets can use the same function, but different actions can 
 <li>
 <p><code>.addButtons(titles, functions)</code><br />
     It's possible to add a list of buttons to the GUI.<br />
-    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.
-    A single function can be passed, to use for all buttons.
-    Or a list of functions can be passed, which MUST correspond to the buttons.</p>
+    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.<br />
+    A single function can be passed, to use for all buttons.<br />
+    Or a list of functions can be passed, which MUST correspond to the buttons.  </p>
 </li>
 <li>
 <p><code>.addNamedButton(name, title, function)</code><br />
@@ -487,17 +487,17 @@ That way, multiple widgets can use the same function, but different actions can 
 <ul>
 <li>
 <p><code>.setButton(name, text)</code><br />
-    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a paramter to the function.</p>
+    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a paramter to the function.  </p>
 </li>
 <li>
 <p><code>.setButtonImage(title, image)</code><br />
-    This allows an image to be placed on a button, instead of the usual text.</p>
+    This allows an image to be placed on a button, instead of the usual text.  </p>
 </li>
 </ul>
 <h2 id="radiobutton">RadioButton</h2>
 <hr />
 <p>A group of round boxes, only one of which can be selected.<br />
-These are great for getting a single value, for a multiple choice question.</p>
+These are great for getting a single value, for a multiple choice question.  </p>
 <p><img alt="Radios" src="../img/t_radios.png" />  </p>
 <pre><code class="python">from appJar import gui
 
@@ -513,18 +513,18 @@ app.go()
 <li><code>.addRadioButton(title, name)</code><br />
     This will create a RadioButton grouped by the specified title.<br />
     This button will have the value of name.<br />
-    Radio buttons are usually used in groups:</li>
+    Radio buttons are usually used in groups.  </li>
 </ul>
 <h4 id="set-radiobuttons">Set RadioButtons</h4>
 <ul>
 <li>
 <p><code>.setRadioButton(title, value)</code><br />
-    This will tick the specified RadioButton.</p>
+    This will tick the specified RadioButton.  </p>
 </li>
 <li>
 <p><code>.setRadioTick(title, tick=True)</code><br />
     It is possible to use tick-boxes instead of the classic circular radio-button.<br />
-    Setting tick to True will convert all the radio-buttons for this title to tick boxes.</p>
+    Setting tick to True will convert all the radio-buttons for this title to tick boxes.  </p>
 </li>
 </ul>
 <h4 id="get-radiobuttons">Get RadioButtons</h4>
@@ -547,7 +547,7 @@ app.go()
 
 <h2 id="checkbox">CheckBox</h2>
 <hr />
-<p>A simple tick-box, with a label, that can be either ON or OFF.</p>
+<p>A simple tick-box, with a label, that can be either ON or OFF.  </p>
 <p><img alt="CheckBoxes" src="../img/1_checks.png" />  </p>
 <pre><code class="python">from appJar import gui
 
@@ -567,31 +567,35 @@ app.go()
 <h4 id="add-checkboxes">Add CheckBoxes</h4>
 <ul>
 <li><code>.addCheckBox(title)</code><br />
-    This creates a CheckBox, with the specified title.</li>
+    This creates a CheckBox, with the specified title.  </li>
 </ul>
 <h4 id="set-checkboxes">Set CheckBoxes</h4>
 <ul>
 <li><code>.setCheckBox(title, ticked=True)</code><br />
-    This will tick the CheckBox, or untick it if ticked is set to False.</li>
+    This will tick the CheckBox, or untick it if ticked is set to False.  </li>
 </ul>
 <h4 id="get-checkboxes">Get CheckBoxes</h4>
 <ul>
 <li><code>.getCheckBox(title)</code><br />
-    This will return True or False, depending on the state of the CheckBox.</li>
+    This will return True or False, depending on the state of the CheckBox.  </li>
 </ul>
 <h2 id="optionbox">OptionBox</h2>
 <hr />
-<p>Creates a simple drop-down box. It is only possible to select one option form this drop-down.<br />
-Pass in a list of values to show in the drop-down box. They will be added in the same order, with the first item shown.<br />
-If the first item is empty, a simple title <code>- options -</code> will be created. Any other empty items will be removed.<br />
+<p>Creates a simple drop-down box.<br />
+It is only possible to select one option form this drop-down.<br />
+Pass in a list of values to show in the drop-down box.<br />
+They will be added in the same order, with the first item shown.<br />
+If the first item is empty, a simple title <code>- options -</code> will be created.<br />
+Any other empty items will be removed.<br />
 If an item starts with a dash (-), it will be treated as a separator, and can't be selected.  </p>
 <p><img alt="OptionBox" src="../img/1_optBox.png" /> <img alt="OptionBox" src="../img/2_optBox.png" />  </p>
 <pre><code class="python">from appJar import gui
 
 app=gui()
 app.setFont(20)
-app.addLabelOptionBox(&quot;Options&quot;, [&quot;- Fruits -&quot;, &quot;Apple&quot;, &quot;Orange&quot;, &quot;Pear&quot;, &quot;kiwi&quot;,
-                                    &quot;- Pets -&quot;, &quot;Dogs&quot;, &quot;Cats&quot;, &quot;Fish&quot;, &quot;Hamsters&quot;])
+app.addLabelOptionBox(&quot;Options&quot;, [&quot;- Fruits -&quot;, &quot;Apple&quot;, &quot;Orange&quot;,
+                        &quot;Pear&quot;, &quot;kiwi&quot;, &quot;- Pets -&quot;, &quot;Dogs&quot;, &quot;Cats&quot;,
+                        &quot;Fish&quot;, &quot;Hamsters&quot;])
 app.go()
 </code></pre>
 
@@ -665,8 +669,10 @@ app.go()
 
 <h4 id="add-spinboxes">Add SpinBoxes</h4>
 <ul>
-<li><code>.addSpinBox(title, values)</code><br />
-    This will create a SpinBox, adding the contents of the values list, in the order specified.</li>
+<li>
+<p><code>.addSpinBox(title, values)</code><br />
+    This will create a SpinBox, adding the contents of the values list, in the order specified.</p>
+</li>
 <li>
 <p><code>.addSpinBoxRange(title, from, to)</code><br />
     This will create a SpinBox, with a numeric range of items.  </p>
@@ -683,10 +689,14 @@ app.go()
 
 <h4 id="set-spinboxes">Set SpinBoxes</h4>
 <ul>
-<li><code>.setSpinBox(title, value)</code><br />
-    This will change the SpinBox to show the specified value.  </li>
-<li><code>.setSpinBoxPos(title, pos)</code><br />
-    This will change the SpinBox to show the value at the specified position.  </li>
+<li>
+<p><code>.setSpinBox(title, value)</code><br />
+    This will select the specified value in the SpinBox.  </p>
+</li>
+<li>
+<p><code>.setSpinBoxPos(title, pos)</code><br />
+    This will select the value at the specified position in the SpinBox.  </p>
+</li>
 </ul>
 <h4 id="get-spinboxes">Get SpinBoxes</h4>
 <ul>
@@ -707,19 +717,29 @@ app.go()
 
 <h4 id="add-listboxes">Add ListBoxes</h4>
 <ul>
-<li><code>.addListBox(title, values)</code><br />
-    Creates a ListBox with the specified values.  </li>
-<li><code>.addListItem(title, item)</code><br />
-    Adds a single item to the the end of the ListBox, and selects it.  </li>
-<li><code>.addListItems(title, items)</code><br />
-    Adds a list of items to the end of the List Box, selecting the last one.  </li>
+<li>
+<p><code>.addListBox(title, values)</code><br />
+    Creates a ListBox with the specified values.  </p>
+</li>
+<li>
+<p><code>.addListItem(title, item)</code><br />
+    Adds a single item to the the end of the ListBox, and selects it.  </p>
+</li>
+<li>
+<p><code>.addListItems(title, items)</code><br />
+    Adds a list of items to the end of the List Box, selecting the last one.  </p>
+</li>
 </ul>
 <h4 id="set-listboxes">Set ListBoxes</h4>
 <ul>
-<li><code>.updateListItems(title, items)</code><br />
-    Replace the contents of the specified ListBox with the new values.  </li>
-<li><code>.removeListItem(title, item)</code><br />
-    Remove the specified item from teh specified ListBox.  </li>
+<li>
+<p><code>.updateListItems(title, items)</code><br />
+    Replace the contents of the specified ListBox with the new values.  </p>
+</li>
+<li>
+<p><code>.removeListItem(title, item)</code><br />
+    Remove the specified item from teh specified ListBox.  </p>
+</li>
 </ul>
 <pre><code class="python">from appJar import gui
 def press(btn):
@@ -735,14 +755,22 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>.clearListBox(title)</code><br />
-    Removes all items from the specified ListBox.  </li>
-<li><code>.setListBoxRows(title)</code><br />
-    Sets how many rows to display in the specified ListBox.  </li>
-<li><code>.setListBoxMulti(list, multi=True)</code><br />
-    Configures whether the specified ListBox is single or multi select.  </li>
-<li><code>.selectListItem(title, item)</code><br />
-    Selects the specified item in the specified ListBox.  </li>
+<li>
+<p><code>.clearListBox(title)</code><br />
+    Removes all items from the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.setListBoxRows(title)</code><br />
+    Sets how many rows to display in the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.setListBoxMulti(list, multi=True)</code><br />
+    Configures whether the specified ListBox is single or multi select.  </p>
+</li>
+<li>
+<p><code>.selectListItem(title, item)</code><br />
+    Selects the specified item in the specified ListBox.  </p>
+</li>
 </ul>
 <h4 id="get-listboxes">Get ListBoxes</h4>
 <ul>
@@ -768,26 +796,38 @@ app.go()
 </ul>
 <h4 id="set-scales">Set Scales</h4>
 <ul>
-<li><code>.setScale(title, pos)</code><br />
-    Sets the selected pos for the specified Scale.  </li>
-<li><code>.setScaleRange(title from, to, curr=None)</code><br />
+<li>
+<p><code>.setScale(title, pos)</code><br />
+    Sets the selected pos for the specified Scale.  </p>
+</li>
+<li>
+<p><code>.setScaleRange(title from, to, curr=None)</code><br />
     Allows you to change the range available in the Scale.<br />
-    If <code>curr</code> is provided, then the Scale will be set to that value.  </li>
-<li><code>.showScaleIntervals(title, intervals)</code><br />
-    Configures the Scale to show interval labels along its length.  </li>
-<li><code>.showScaleValue(title, show=True)</code><br />
+    If <code>curr</code> is provided, then the Scale will be set to that value.  </p>
+</li>
+<li>
+<p><code>.showScaleIntervals(title, intervals)</code><br />
+    Configures the Scale to show interval labels along its length.  </p>
+</li>
+<li>
+<p><code>.showScaleValue(title, show=True)</code><br />
     Configures the Scale to show the currently selected value.<br />
-<img alt="Scale" src="../img/2_scale.png" />  </li>
-<li><code>.setScaleHorizontal(title)</code>  </li>
-<li><code>.setScaleVertical(title)</code><br />
-    Changes the Scale's orientation to the specified value.<br />
-<img alt="Scale" src="../img/3_scale.png" />  </li>
-<li><code>.setScaleWidth(title, width)</code>  </li>
-<li><code>.setScaleLength(title, length)</code><br />
-    Sets a width/length for the scale's slider.  </li>
-<li><code>.setScaleFunction(title, func)</code><br />
+<img alt="Scale" src="../img/2_scale.png" />  </p>
+</li>
+<li>
+<p><code>.setScaleHorizontal(title)</code> &amp; <code>.setScaleVertical(title)</code><br />
+    Changes the Scale's orientation to the specified value.  </p>
+<p><img alt="Scale" src="../img/3_scale.png" />  </p>
+</li>
+<li>
+<p><code>.setScaleWidth(title, width)</code> &amp; <code>.setScaleLength(title, length)</code><br />
+    Sets a width/length for the scale's slider.  </p>
+</li>
+<li>
+<p><code>.setScaleFunction(title, func)</code><br />
     Sets a function to call, each time the scale is changed.<br />
-    The function must take one parameter, which will be populated with the scale's title.  </li>
+    The function must take one parameter, which will be populated with the scale's title.  </p>
+</li>
 </ul>
 <h4 id="get-scales">Get Scales</h4>
 <ul>
@@ -810,17 +850,25 @@ app.go()
 
 <h4 id="add-messages">Add Messages</h4>
 <ul>
-<li><code>.addMessage(title, text)</code><br />
-    Adds a Message widget, with the specified text.  </li>
-<li><code>.addEmptyMessage(title)</code><br />
-    Adds an empty Message widget.  </li>
+<li>
+<p><code>.addMessage(title, text)</code><br />
+    Adds a Message widget, with the specified text.  </p>
+</li>
+<li>
+<p><code>.addEmptyMessage(title)</code><br />
+    Adds an empty Message widget.  </p>
+</li>
 </ul>
 <h4 id="set-messages">Set Messages</h4>
 <ul>
-<li><code>.clearMessage(title)</code><br />
-    Clears the specifed Message widget.  </li>
-<li><code>.setMessage(title, text)</code><br />
-    Sets the contents of the specifed Message widget, to the specified text.  </li>
+<li>
+<p><code>.clearMessage(title)</code><br />
+    Clears the specifed Message widget.  </p>
+</li>
+<li>
+<p><code>.setMessage(title, text)</code><br />
+    Sets the contents of the specifed Message widget, to the specified text.  </p>
+</li>
 </ul>
 <h2 id="textarea">TextArea</h2>
 <hr />
@@ -835,18 +883,26 @@ app.go()
 
 <h4 id="add-textareas">Add TextAreas</h4>
 <ul>
-<li><code>.addTextArea(title)</code><br />
-    Adds an empty TextArea, with the specified title.  </li>
-<li><code>.addScrolledTextArea(title)</code><br />
-    Adds a scrollable TextArea with the specified title.  </li>
+<li>
+<p><code>.addTextArea(title)</code><br />
+    Adds an empty TextArea, with the specified title.  </p>
+</li>
+<li>
+<p><code>.addScrolledTextArea(title)</code><br />
+    Adds a scrollable TextArea with the specified title.  </p>
+</li>
 </ul>
 <p><img alt="ScrolledTextArea" src="../img/2_textArea.png" />  </p>
 <h4 id="set-textareas">Set TextAreas</h4>
 <ul>
-<li><code>.setTextArea(title, text)</code><br />
-    Changes the contents of the specified TextArea, to the specified text.  </li>
-<li><code>.clearTextArea(title)</code><br />
-    Clears the contents of the specified TextArea.  </li>
+<li>
+<p><code>.setTextArea(title, text)</code><br />
+    Changes the contents of the specified TextArea, to the specified text.  </p>
+</li>
+<li>
+<p><code>.clearTextArea(title)</code><br />
+    Clears the contents of the specified TextArea.  </p>
+</li>
 </ul>
 <h4 id="get-textareas">Get TextAreas</h4>
 <ul>
@@ -915,14 +971,20 @@ app.go()
 </ul>
 <h4 id="set-properties">Set Properties</h4>
 <ul>
-<li><code>setProperties(title, props)</code><br />
+<li>
+<p><code>setProperties(title, props)</code><br />
     Adds the dictionary of properties to the widget.<br />
-    If any of them already exist, they will be updated.  </li>
-<li><code>setProperty(title, prop, value=False)</code><br />
+    If any of them already exist, they will be updated.  </p>
+</li>
+<li>
+<p><code>setProperty(title, prop, value=False)</code><br />
     Sets the named property to the specified value.<br />
-    If it doesn't exist, it will be added first, at the end of the widget.  </li>
-<li><code>deleteProperty(title, prop)</code><br />
-    Deletes the named propert from the widget.  </li>
+    If it doesn't exist, it will be added first, at the end of the widget.  </p>
+</li>
+<li>
+<p><code>deleteProperty(title, prop)</code><br />
+    Deletes the named propert from the widget.  </p>
+</li>
 </ul>
 <h4 id="get-properties">Get Properties</h4>
 <ul>
@@ -978,12 +1040,11 @@ app.addHorizontalSeparator(2,0,4, colour=&quot;red&quot;)
 app.go()
 </code></pre>
 
-<h4 id="add-links">Add Links</h4>
+<h4 id="add-seperators">Add Seperators</h4>
 <ul>
-<li><code>.addHorizontalSeparator(colour=None)</code>  </li>
-<li><code>.addVerticalSeparator(colour=None)</code><br />
-    Adds a separator - a horizontal/vertical line, spanning the cell.<br />
-    An optional, named parameter can be passed in at the end, to set a colour for the line.  </li>
+<li><code>.addHorizontalSeparator(colour=None)</code> &amp; <code>.addVerticalSeparator(colour=None)</code><br />
+    Adds a separator (a horizontal or vertical line) spanning the cell.<br />
+    An optional colour can be passed in, to set a colour for the separator.  </li>
 </ul>
 <h2 id="linkweblink">Link/WebLink</h2>
 <hr />
@@ -1000,13 +1061,17 @@ app.addWebLink(&quot;appJar.info&quot;, &quot;http://appJar.info&quot;)
 app.go()
 </code></pre>
 
-<h4 id="add-links_1">Add Links</h4>
+<h4 id="add-links">Add Links</h4>
 <ul>
-<li><code>.addLink(title, func)</code><br />
-    Adds a <strong>hyperlink</strong>, that when clicked, will call the specified function.  </li>
-<li><code>.addWebLink(title, page)</code><br />
-    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the page parameter.<br />
-    It must be a fully formed link, including <code>http://</code>  </li>
+<li>
+<p><code>.addLink(title, func)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will call the specified function.  </p>
+</li>
+<li>
+<p><code>.addWebLink(title, page)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the specified page.<br />
+    It must be a fully formed link, including <code>http://</code>  </p>
+</li>
 </ul>
 <h2 id="grip">Grip</h2>
 <hr />

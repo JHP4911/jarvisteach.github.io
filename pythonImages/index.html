@@ -255,19 +255,18 @@
 <hr />
 <p>Default image support in appJar assumes no extra libraries. That means it should only support <code>.GIF</code> and <code>.PPM</code> images.<br />
 However, code is included to allow the use of <code>.PNG</code> and <code>.JPG</code> files. appJar will convert these to <code>.GIF</code> files, before loading.<br />
-Converting image files is <strong>SLOW</strong>, so it's best to stick to <code>.GIF</code> files!<br />
-<code>.PNG</code> files don't work in Python 2  </p>
+Converting image files is <strong>SLOW</strong>, so it's best to stick to <code>.GIF</code> files!  </p>
 <p>Getting the path for images right can be <strong>TRICKY</strong><br />
-It's therefore best to put images in the same folder as your Python code.
+It's therefore best to put images in the same folder as your Python code.<br />
 Or, create an image folder and set it using the <code>.setImageLocation(location)</code> function.  </p>
 <h3 id="add-images">Add Images</h3>
 <ul>
 <li>
 <p><code>.addImage(title, file)</code><br />
     Adding an image is exactly the same as adding any other widget.<br />
-    Simply give the image a title, and pass the filename.</p>
-<p>appJar will confirm the file is valid, and will also check the file contains the type specified.</p>
-<p>If an animated <code>.GIF</code> is found, then it will be animated within the GUI.</p>
+    Simply give the image a title, and pass the filename.<br />
+    appJar will confirm the file is valid, and will also check the file contains the type specified.<br />
+    If an animated <code>.GIF</code> is found, then it will be animated within the GUI.  </p>
 </li>
 <li>
 <p><code>.setImageLocation(location)</code><br />
@@ -279,7 +278,7 @@ Or, create an image folder and set it using the <code>.setImageLocation(location
 <ul>
 <li>
 <p><code>.setImage(title, image)</code><br />
-    This will replace the existing image with the new one.</p>
+    This will replace the existing image with the new one.  </p>
 </li>
 <li>
 <p><code>.setImageMouseOver(title, image)</code><br />
@@ -287,7 +286,7 @@ Or, create an image folder and set it using the <code>.setImageLocation(location
 </li>
 <li>
 <p><code>.setImageSize(title, width, height)</code><br />
-    This will set the size of the container for the image, cropping anything that doesn't fit.</p>
+    This will set the size of the container for the image, cropping anything that doesn't fit.  </p>
 </li>
 <li>
 <p><code>.zoomImage(title, mod)</code><br />
