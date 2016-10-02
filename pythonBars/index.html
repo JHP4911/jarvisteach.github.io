@@ -243,23 +243,39 @@
 Statusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.  </p>
 <h2 id="toolbar">Toolbar</h2>
 <hr />
-<p>Toolbars (sometimes known as ribbons) appear across the top og a GUI.<br />
-They offer a series of buttons to click, which change settings/functionality in a GUI.</p>
+<p>Toolbars (sometimes known as ribbons) appear across the top of a GUI.<br />
+They offer a series of buttons to click, which can be used to change settings/functionality in a GUI.
+<img alt="Toolbar" src="../img/bars/toolbar_1.png" />  </p>
+<pre><code class="python">tools = [&quot;ABOUT&quot;, &quot;REFRESH&quot;, &quot;OPEN&quot;, &quot;CLOSE&quot;, &quot;SAVE&quot;,
+        &quot;NEW&quot;, &quot;SETTINGS&quot;, &quot;PRINT&quot;, &quot;SEARCH&quot;, &quot;UNDO&quot;,
+        &quot;REDO&quot;, &quot;PREFERENCES&quot;, &quot;HOME&quot;, &quot;HELP&quot;, &quot;CALENDAR&quot;,
+        &quot;WEB&quot;, &quot;OFF&quot;]
+
+app.addToolbar(tools, tbFunc, True)
+</code></pre>
+
 <h4 id="create-toolbars">Create Toolbars</h4>
 <ul>
-<li><code>.addToolbar(names, funcs)</code><br />
+<li><code>.addToolbar(names, funcs, findIcon=False)</code><br />
     Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.<br />
-    If only one function is supplied, they will all call the same function.<br />
-    A bundle of free images is available, if the name used for the toolbar matches the nam of an image, an image will be used.  </li>
+    If only one function is supplied, they will all call the same function, providing the buttons name as a parameter.<br />
+    A set of icons is available, if findIcon is set to True, then appJart will attempt to fins an icon for each button.  </li>
 </ul>
 <h4 id="set-toolbars">Set Toolbars</h4>
 <ul>
-<li><code>.setToolbarImage(name, image)</code><br />
-Will set an image for the corresponding button in the toolbar.</li>
-<li><code>.hideToolbar()</code><br />
-Will hide the toolbar  </li>
-<li><code>.showToolbar()</code><br />
-Will show the toolbar  </li>
+<li>
+<p><code>.setToolbarIcon(name, icon)</code><br />
+    Will set an icon for the corresponding button in the toolbar.<br />
+    Use the name of any of the icons in the resource folder (without the folder or file extension).  </p>
+</li>
+<li>
+<p><code>.setToolbarImage(name, image)</code><br />
+    Will set an image for the corresponding button in the toolbar.  </p>
+</li>
+<li>
+<p><code>.showToolbar()</code> &amp; <code>.hideToolbar()</code><br />
+    Will show/hide the toolbar.  </p>
+</li>
 </ul>
 <h2 id="menubar">Menubar</h2>
 <hr />
@@ -358,28 +374,46 @@ You can add a single menu option, or a list of menu options.</p>
 <h2 id="statusbar">Statusbar</h2>
 <hr />
 <p>Adds a statusbar along the bottom of the GUI.
-This can be used for easy debugging, or as info for the user.</p>
-<h4 id="create-statuses">Create Statuses</h4>
+This can be used for easy debugging, as info for the user, or to show current settings.  </p>
+<p><img alt="Statusbar" src="../img/bars/statusbar_1.png" />  </p>
+<pre><code class="python">app.addStatusbar(fields=3)
+app.setStatusbar(&quot;Line: 20&quot;, 0)
+app.setStatusbar(&quot;Column: 4&quot;, 1)
+app.setStatusbar(&quot;Mode: Edit&quot;, 2)
+</code></pre>
+
+<p><img alt="Statusbar" src="../img/bars/statusbar_2.png" />  </p>
+<pre><code class="python">app.addToolbar(tools, tbFunc, True)
+app.addStatusbar(fields=3, side=&quot;RIGHT&quot;)
+# NOTE: 0 is now on the right
+app.setStatusbarWidth(50, 2)
+app.setStatusbarBg(&quot;red&quot;, 2)
+app.setStatusbarFg(&quot;white&quot;, 2)
+</code></pre>
+
+<h4 id="create-statusbars">Create Statusbars</h4>
 <ul>
-<li><code>.addStatus(header="", fields=1, side=None)</code><br />
-    This turns the statusbar on, and if a header is supplied, will prepend the header before every message.<br />
-    If fields is populated, it''s possible to have multiple status bixes, each addressable by a number.<br />
-    Side can be set as LEFT/RIGHT to make the fields appear rom the left or rigt side, otherwise they will stretch equally.</li>
+<li><code>.addStatusBar(header="", fields=1, side=None)</code><br />
+    This turns the statusbar on, and if a header is supplied, will prepend the header before every status.<br />
+    If <code>fields</code> is populated, it's possible to have multiple status boxes, each addressable by a number.<br />
+<code>side</code> can be set as LEFT/RIGHT to make the fields appear from the left or right side, otherwise they will stretch equally.  </li>
 </ul>
-<h4 id="set-statuses">Set Statuses</h4>
+<h4 id="set-statusbars">Set Statusbars</h4>
 <ul>
 <li>
-<p><code>.setStatus(text, field=0)</code><br />
-    This updates the contents of the statusbar. Again, if a header was set when adding the statusbar, that will be prepended to the message.<br />
-    If multiple fields were created, a position can be supplied to populate.</p>
+<p><code>.setStatusbar(text, field=0)</code><br />
+    This updates the contents of the statusbar.<br />
+    Again, if a header was set when adding the statusbar, it will be prepended to the message.<br />
+    If multiple fields were created, a position should be supplied to populate (starting from 0).  </p>
 </li>
 <li>
-<p><code>.clearStatus(field=0)</code><br />
-    Clear anything displayed in the statusbar, along with any header that might be set.</p>
+<p><code>.clearStatusbar(field=0)</code><br />
+    Clear anything displayed in the statusbar, along with any header that might be set.<br />
+    If multiple fields were created, specify which one, otherwise all fields will be cleared.  </p>
 </li>
 <li>
-<p><code>.setStatusWidth(width, field=0)</code><br />
-    Set the width of the specified status field.</p>
+<p><code>.setStatusbarWidth(width, field=0)</code><br />
+    Set the width of the specified statusbar field (in characters).  </p>
 </li>
 </ul></div>
         </div>
