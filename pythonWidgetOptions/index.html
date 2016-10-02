@@ -8,7 +8,7 @@
         
         <meta name="author" content="Richard Jarvis">
         <link rel="canonical" href="http://appjar.info/pythonWidgetOptions/">
-        <link rel="shortcut icon" href="../img/favicon3.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
@@ -140,7 +140,13 @@
                     
                         
 <li >
-    <a href="../pythonGuiOptions/">Extras</a>
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
 </li>
 
                     
@@ -161,6 +167,18 @@
                     
                         
 <li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -168,12 +186,6 @@
                         
 <li >
     <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
 </li>
 
                     
@@ -231,8 +243,6 @@
             <li><a href="#extended-appearance">Extended Appearance</a></li>
         
             <li><a href="#advanced-appearance">Advanced Appearance</a></li>
-        
-            <li><a href="#widget-interaction">Widget Interaction</a></li>
         
             <li><a href="#widget-manipulaiton">Widget Manipulaiton</a></li>
         
@@ -302,6 +312,10 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p><code>set XXX State(name, value)</code><br />
     Sets the state of the named widget. One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
 </li>
+<li>
+<p><code>set XXX Focus(name)</code><br />
+    Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
+</li>
 </ul>
 <h3 id="advanced-appearance">Advanced Appearance</h3>
 <hr />
@@ -323,48 +337,6 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p><code>set XXX Padding(name, x, y)</code><br />
     Set internal text padding of the named widget.  </p>
 </li>
-</ul>
-<h3 id="widget-interaction">Widget Interaction</h3>
-<hr />
-<p>The following allow widgets to be interacted with:</p>
-<ul>
-<li>
-<p><code>set XXX Focus(name)</code><br />
-    Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
-</li>
-<li>
-<p><code>set XXX Function(name, value, key=None)</code><br />
-    This binds a function to the widget.<br />
-    The function will be called every time an interactive-widget changes. 
-    The function will be called when some widgets are clicked.  </p>
-</li>
-<li>
-<p><code>set XXX OverFunction(name, values)</code><br />
-    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
-    The first function is called when the mouse first enters the widget.<br />
-    The second function is called when the mouse leaves the widget.<br />
-    If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </p>
-</li>
-</ul>
-<pre><code class="python">    from appJar import gui
-
-    def enter(wdgt): 
-        print(&quot;IN&quot;, wdgt)
-    def leave(wdgt):
-        print(&quot;OUT&quot;, wdgt)
-
-    app=gui()
-    app.addLabel(&quot;l1&quot;, &quot;Testing...&quot;)
-    app.setLabelOverFunction(&quot;l1&quot;, [enter, leave])
-    app.go()
-</code></pre>
-
-<ul>
-<li><code>set XXX DragFunction(name, values)</code><br />
-    Set functions to call whenever the mouse button is clicked and dragged.<br />
-    The first function will be called when the mouse is initially clicked.<br />
-    The second function will be called when the mouse is released.<br />
-    The same rules for passing functions apply as above.  </li>
 </ul>
 <h3 id="widget-manipulaiton">Widget Manipulaiton</h3>
 <hr />

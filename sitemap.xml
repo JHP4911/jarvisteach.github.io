@@ -75,12 +75,30 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>http://appjar.info/pythonEvents/</loc>
+     <lastmod>2016-10-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
         
     <url>
      <loc>http://appjar.info/Install/</loc>
+     <lastmod>2016-10-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/Support/</loc>
+     <lastmod>2016-10-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/License/</loc>
      <lastmod>2016-10-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -93,12 +111,6 @@
         
     <url>
      <loc>http://appjar.info/pythonBasics/</loc>
-     <lastmod>2016-10-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>http://appjar.info/License/</loc>
      <lastmod>2016-10-02</lastmod>
      <changefreq>daily</changefreq>
     </url>

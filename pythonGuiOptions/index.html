@@ -8,12 +8,12 @@
         
         <meta name="author" content="Richard Jarvis">
         <link rel="canonical" href="http://appjar.info/pythonGuiOptions/">
-        <link rel="shortcut icon" href="../img/favicon3.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Extras - appJar</title>
+        <title>GUI Options - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -140,7 +140,13 @@
                     
                         
 <li class="active">
-    <a href="./">Extras</a>
+    <a href="./">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
 </li>
 
                     
@@ -161,6 +167,18 @@
                     
                         
 <li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -168,12 +186,6 @@
                         
 <li >
     <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
 </li>
 
                     
@@ -196,7 +208,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Install/">
+                    <a rel="prev" href="../pythonEvents/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -231,8 +243,6 @@
             <li><a href="#design">Design</a></li>
         
             <li><a href="#widget-positioning">Widget Positioning</a></li>
-        
-            <li><a href="#gui-actions">GUI Actions</a></li>
         
     
     </ul>
@@ -378,44 +388,6 @@ Some of these are also available at a widghet level, where you can specify indiv
 <li>
 <p><code>getNextRow()</code><br />
     Returns the current row number, before adding one to it.</p>
-</li>
-</ul>
-<h3 id="gui-actions">GUI Actions</h3>
-<hr />
-<h4 id="repeated-events">Repeated Events</h4>
-<p>When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.<br />
-That means, you should never have your own loops running, as that will stop the GUI from working properly.<br />
-Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
-<ul>
-<li>
-<p><code>registerEvent(func)</code><br />
-    Pass this a function, and the GUI will call that function every second.</p>
-</li>
-<li>
-<p><code>setPollTime(time)</code><br />
-    If you want your events to be called more or less frequently, set the frequency here.</p>
-</li>
-</ul>
-<h4 id="enter-key">Enter Key</h4>
-<ul>
-<li>
-<p><code>enableEnter(func)</code><br />
-    Link a function to the <code>&lt;Enter&gt;</code> key</p>
-</li>
-<li>
-<p><code>disableEnter()</code><br />
-    Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
-</li>
-</ul>
-<h4 id="other-keys">Other Keys</h4>
-<ul>
-<li>
-<p><code>bindKey(key, func)</code><br />
-    Link the specified key to the specified function.</p>
-</li>
-<li>
-<p><code>unbindKey(key)</code><br />
-    Unlink the specified key from any functions bound to it.</p>
 </li>
 </ul></div>
         </div>

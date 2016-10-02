@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/pythonDevWidgets/">
+        <link rel="canonical" href="http://appjar.info/pythonEvents/">
         <link rel="shortcut icon" href="../img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>In the works... - appJar</title>
+        <title>GUI Events - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -71,7 +71,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -106,8 +106,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">In the works...</a>
+<li >
+    <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
                     
@@ -116,7 +116,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -145,8 +145,8 @@
 
                     
                         
-<li >
-    <a href="../pythonEvents/">GUI Events</a>
+<li class="active">
+    <a href="./">GUI Events</a>
 </li>
 
                     
@@ -203,12 +203,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../pythonDialogs/">
+                    <a rel="next" href="../pythonGuiOptions/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonWidgetLayout/">
+                    <a rel="prev" href="../Install/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -236,170 +236,106 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#widgets-under-development">Widgets Under Development</a></li>
+        <li class="main active"><a href="#events">Events</a></li>
         
-            <li><a href="#piechart">PieChart</a></li>
+            <li><a href="#widget-interaction">Widget Interaction</a></li>
         
-            <li><a href="#tree">Tree</a></li>
-        
-            <li><a href="#grid">Grid</a></li>
-        
-            <li><a href="#meters">Meters</a></li>
-        
-            <li><a href="#datepicker">DatePicker</a></li>
+            <li><a href="#gui-interaction">GUI Interaction</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="widgets-under-development">Widgets Under Development</h1>
+<h1 id="events">Events</h1>
 <hr />
-<p>The following widgets are <strong>under development</strong>.<br />
-They're included in the library, but offer limited functionality, and are still buggy.  </p>
-<h3 id="piechart">PieChart</h3>
+<p>It's possible to call functions when the user performs certain actions.<br />
+It's also possible to configure functions to be called automatically, in a loop.  </p>
+<h3 id="widget-interaction">Widget Interaction</h3>
 <hr />
-<p>Widget to depict a Pie Chart.<br />
-It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
-The PieChart is purely for display purposes, and is not interactive.<br />
-<img alt="PieChart" src="../img/dev/pie.png" />  </p>
-<pre><code class="python">    from appJar import gui
-
-    app=gui()
-    app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
-                            &quot;beef&quot;:300, &quot;turkey&quot;:150}, size=300)
-    app.go()
-</code></pre>
-
-<h4 id="add-piecharts">Add PieCharts</h4>
+<p>The following allow widgets to be interacted with:</p>
 <ul>
-<li><code>.addPieChart(title, values, size=100)</code><br />
-    Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
-    The names will be used as part of tooltips that appear over each wedge of the PieChart.<br />
-    An optional size parameter can be passed, to adjust the size of the PieChart.  </li>
+<li><code>set XXX Function(name, value, key=None)</code><br />
+    This binds a function to the widget.<br />
+    The function will be called every time an interactive-widget changes.<br />
+    The function will be called when some widgets are clicked.  </li>
 </ul>
-<h4 id="set-piecharts">Set PieCharts</h4>
-<ul>
-<li><code>.setPieChart(title, name, value)</code><br />
-    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </li>
-</ul>
-<h3 id="tree">Tree</h3>
-<hr />
-<p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
-<p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
 <pre><code class="python">from appJar import gui
 
+def songChanged(rb):
+    print(app.getRadioButton(rb))
+
 app=gui()
-app.addTree(&quot;t1&quot;,
-            &quot;&quot;&quot;&lt;people&gt;
-            &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;Tina&lt;/name&gt;&lt;age&gt;37&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;CLive&lt;/name&gt;&lt;age&gt;28&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;Betty&lt;/name&gt;&lt;age&gt;51&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
-            &lt;/people&gt;&quot;&quot;&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
+app.setRadioButtonFunction(&quot;song&quot;, songChanged)
 app.go()
 </code></pre>
 
-<h4 id="add-trees">Add Trees</h4>
 <ul>
-<li><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the specified XML data  </li>
+<li><code>set XXX OverFunction(name, values)</code><br />
+    Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
+    The first function is called when the mouse first enters the widget.<br />
+    The second function is called when the mouse leaves the widget.<br />
+    If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </li>
 </ul>
-<h4 id="set-trees">Set Trees</h4>
-<ul>
-<li><code>.setTreeDoubleClickFunction(title, func)</code><br />
-    Register a function to call when an item is double-clicked  </li>
-<li><code>.setTreeEditFunction(title, func)</code><br />
-    Register a function to call when an item is edited  </li>
-<li><code>.setTreeEditable(title, value)</code><br />
-    Set whether the tree can be edited  </li>
-<li><code>.setTreeBg(title, colour)</code><br />
-    Set the background colour of the tree  </li>
-<li><code>.setTreeFg(title, colour)</code><br />
-    Set the foreground colour of the tree  </li>
-<li><code>.setTreeHighlightBg(title, colour)</code><br />
-    Set the background colour of the highlighted node    </li>
-<li><code>.setTreeHighlightFg(title, colour)</code><br />
-    Set the foreground colour of the highlighted node  </li>
-</ul>
-<h4 id="get-trees">Get Trees</h4>
-<ul>
-<li><code>.getTreeXML(title)</code><br />
-    Return the tree as XML  </li>
-<li><code>.getTreeSelected(title)</code><br />
-    Return the selected node as a String</li>
-<li><code>.getTreeSelectedXML(title)</code><br />
-    Return the selected node (and any children) as XML</li>
-</ul>
-<h3 id="grid">Grid</h3>
-<hr />
-<p>Used to create a spreadsheet like interface.<br />
-The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
-It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
-<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
 <pre><code class="python">    from appJar import gui
 
+    def enter(wdgt): 
+        print(&quot;IN&quot;, wdgt)
+    def leave(wdgt):
+        print(&quot;OUT&quot;, wdgt)
+
     app=gui()
-    app.setFont(20)
-    app.addGrid(&quot;g1&quot;,
-        [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
-        [&quot;Fred&quot;, 45, &quot;Male&quot;],
-        [&quot;Tina&quot;, 37, &quot;Female&quot;],
-        [&quot;Clive&quot;, 28, &quot;Male&quot;],
-        [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+    app.addLabel(&quot;l1&quot;, &quot;Testing...&quot;)
+    app.setLabelOverFunction(&quot;l1&quot;, [enter, leave])
     app.go()
 </code></pre>
 
-<h4 id="add-grids">Add Grids</h4>
 <ul>
-<li><code>.addGrid(title, data, action=None, addRow=False)</code><br />
-    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
-    If action is set, a button will be created, at the end of each row,  calling the specified function.<br />
-    If addRow is True, then an additional row will appear at the end, with entry boxes and an additional button.  </li>
+<li><code>set XXX DragFunction(name, values)</code><br />
+    Set functions to call whenever the mouse button is clicked and dragged.<br />
+    The first function will be called when the mouse is initially clicked.<br />
+    The second function will be called when the mouse is released.<br />
+    The same rules for passing functions apply as above.  </li>
 </ul>
-<h4 id="get-grids">Get Grids</h4>
-<ul>
-<li><code>.getGridEntries(title)</code><br />
-    Get the contents of the entry boxes, if present.<br />
-    Returned as a list, in the same order as the entry boxes.  </li>
-<li><code>.getGridSelectedCells(title)</code><br />
-    Gets a dictionary of booleans, indicating the status of each cell.<br />
-    True indicates the cell is selected, False indicates the cell is not selected.<br />
-    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </li>
-</ul>
-<h4 id="set-grids">Set Grids</h4>
-<ul>
-<li><code>.addGridRow(title, data)</code><br />
-    Add a single row of data to the existing grid.<br />
-    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
-</ul>
-<h3 id="meters">Meters</h3>
+<h3 id="gui-interaction">GUI Interaction</h3>
 <hr />
-<p>Working on some different styles for the Meter.<br />
-And, a better look - gradiated colour...  </p>
-<h4 id="splitmeter">SplitMeter</h4>
-<p>Shows two values, left &amp; right  </p>
-<p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
-<h4 id="dualmeter">DualMeter</h4>
-<p>Shows percentage left &amp; right  </p>
-<h3 id="datepicker">DatePicker</h3>
-<hr />
-<p>A widget to capture a date - will handle presenting accurate drop-downs, and return a date.<br />
-<img alt="DatePicker" src="../img/dev/1_cal.png" />  </p>
-<h4 id="add-datepickers">Add DatePickers</h4>
+<h4 id="repeated-events">Repeated Events</h4>
+<p>When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.<br />
+That means, you should never have your own loops running, as that will stop the GUI from working properly.<br />
+Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
 <ul>
-<li><code>.addDatePicker(title, date=None)</code><br />
-    Create a DatePicker, it will display the specified date, or the current date if no date is supplied.  </li>
+<li>
+<p><code>registerEvent(func)</code><br />
+Pass this a function, and the GUI will call that function every second.</p>
+</li>
+<li>
+<p><code>setPollTime(time)</code><br />
+If you want your events to be called more or less frequently, set the frequency here.</p>
+</li>
 </ul>
-<h4 id="set-datepickers">Set DatePickers</h4>
+<h4 id="enter-key">Enter Key</h4>
 <ul>
-<li><code>.setDatePicker(title, date=None)</code><br />
-    Will set the specified DatePicker to the specified date, or current date if no date is supplied.  </li>
+<li>
+<p><code>enableEnter(func)</code><br />
+Link a function to the <code>&lt;Enter&gt;</code> key</p>
+</li>
+<li>
+<p><code>disableEnter()</code><br />
+Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
+</li>
 </ul>
-<h4 id="get-datepickers">Get DatePickers</h4>
+<h4 id="other-keys">Other Keys</h4>
 <ul>
-<li><code>.getDatePicker(title)</code><br />
-    Will return the currently selected date.  </li>
+<li>
+<p><code>bindKey(key, func)</code><br />
+Link the specified key to the specified function.</p>
+</li>
+<li>
+<p><code>unbindKey(key)</code><br />
+Unlink the specified key from any functions bound to it.</p>
+</li>
 </ul></div>
         </div>
 
