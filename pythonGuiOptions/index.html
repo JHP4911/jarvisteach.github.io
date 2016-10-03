@@ -238,11 +238,11 @@
     
         <li class="main active"><a href="#gui-options">GUI Options</a></li>
         
-            <li><a href="#configuration">Configuration</a></li>
+            <li><a href="#gui-configuration">GUI Configuration</a></li>
         
-            <li><a href="#design">Design</a></li>
+            <li><a href="#gui-design">GUI Design</a></li>
         
-            <li><a href="#widget-positioning">Widget Positioning</a></li>
+            <li><a href="#widget-padding-positioning">Widget Padding &amp; Positioning</a></li>
         
     
     </ul>
@@ -252,30 +252,35 @@
 <h1 id="gui-options">GUI Options</h1>
 <hr />
 <p>There are a number of generic configurations available, which will affect the whole GUI.<br />
-Some of these are also available at a widghet level, where you can specify individual configurations tor specified widgets.  </p>
-<h3 id="configuration">Configuration</h3>
+Some of these are also available at a widhet level, where you can specify individual configurations tor specified widgets.  </p>
+<h2 id="gui-configuration">GUI Configuration</h2>
 <hr />
 <p>Some basic configuration for the size, position, transparency, etc. of the GUI.</p>
-<h4 id="look-feel">Look &amp; Feel</h4>
+<h3 id="row-helpers">Row Helpers</h3>
+<ul>
+<li><code>.getRow()</code> or <code>.gr()</code> 
+    Returns the row number currently being used.
+    Useful if you're mainly adding things sequentially, but want to modify one line out of sequence.  </li>
+</ul>
+<h3 id="look-feel">Look &amp; Feel</h3>
 <ul>
 <li>
-<p><code>setTitle(title)</code><br />
+<p><code>.setTitle(title)</code><br />
     Sets the title of the GUI. By default it is the name of the script.</p>
 </li>
 <li>
-<p><code>setIcon(fileName)</code><br />
+<p><code>.setIcon(fileName)</code><br />
     Sets an icon for the GUI.</p>
 </li>
 <li>
-<p><code>setTransparency(percentage)</code><br />
+<p><code>.setTransparency(percentage)</code><br />
     Sets how transparent the GUI is. Between 0 and 100%.</p>
 </li>
 </ul>
-<h4 id="size-locaiton">Size &amp; Locaiton</h4>
+<h3 id="size-locaiton">Size &amp; Locaiton</h3>
 <ul>
-<li><code>setGeometry(geom)</code>  </li>
 <li>
-<p><code>setGeometry(width, height)</code><br />
+<p><code>.setGeometry(geom)</code> &amp; <code>.setGeometry(width, height)</code><br />
     Sets the height &amp; width of the GUI:  </p>
 <ul>
 <li>Either as a single String <code>.setGeometry("200x100")</code> (widthxheight)  </li>
@@ -284,112 +289,167 @@ Some of these are also available at a widghet level, where you can specify indiv
 </ul>
 </li>
 <li>
-<p><code>exitFullscreen()</code><br />
+<p><code>.exitFullscreen()</code><br />
     Leave fullscreen, if set in the geometry.  <br />
 <code>&lt;Escape&gt;</code> will call this automatically, while in fullscreen.  </p>
 </li>
 <li>
-<p><code>setResizable(canResize=True)</code><br />
+<p><code>.setResizable(canResize=True)</code><br />
     Sets whether the GUI can be resized or not.  </p>
 </li>
 <li>
-<p><code>setLocation(x, y)</code><br />
+<p><code>.setLocation(x, y)</code><br />
     Sets the position of the GUI.  </p>
 </li>
 <li>
-<p><code>setPadding(x, y)</code><br />
+<p><code>.setPadding(x, y)</code><br />
     Sets the size of the border inside the GUI - defaults to 2.  </p>
 </li>
 <li>
-<p><code>hideTitleBar()</code>  </p>
-</li>
-<li><code>showTitleBar()</code><br />
+<p><code>.hideTitleBar()</code> &amp; <code>.showTitleBar()</code><br />
     Hides/shows the GUI's title bar.<br />
-    Note, if the title bar is removed, it's not possible to move or resize the GUI.  </li>
+    Note, if the title bar is removed, it's not possible to move or resize the GUI.  </p>
+</li>
 </ul>
-<h3 id="design">Design</h3>
+<h2 id="gui-design">GUI Design</h2>
 <hr />
 <p>It's possible to change the default colours and fonts for widgets in the GUI.</p>
-<h4 id="colour">Colour</h4>
+<h3 id="colour">Colour</h3>
 <ul>
-<li><code>setBg(colour)</code><br />
+<li><code>.setBg(colour)</code><br />
     Set the background colour for the entire GUI. This should affect all widgets, and will override any backgrounds set before.</li>
 </ul>
-<h4 id="font">Font</h4>
+<h3 id="font">Font</h3>
 <ul>
 <li>
-<p><code>setFont(size, font=None)</code><br />
+<p><code>.setFont(size, font=None)</code><br />
     This can be used to set the font size and style for all widgets.</p>
 </li>
 <li>
-<p><code>decreaseFont()</code> &amp; <code>increaseFont()</code><br />
+<p><code>.decreaseFont()</code> &amp; <code>.increaseFont()</code><br />
     These can be used to increase or decrease the font of all widgets.</p>
 </li>
 <li>
-<p><code>setLabelFont(size, family=None)</code><br />
+<p><code>.setLabelFont(size, family=None)</code><br />
     This can be used to set the font size and style for all label-type widgets.</p>
 </li>
 <li>
-<p><code>increaseLabelFont()</code> &amp; <code>decreaseLabelFont()</code><br />
+<p><code>.increaseLabelFont()</code> &amp; <code>.decreaseLabelFont()</code><br />
     These can be used to increase or decrease the font of all label-type widgets.</p>
 </li>
 <li>
-<p><code>setButtonFont()</code><br />
+<p><code>.setButtonFont()</code><br />
     This can be used to set the font size and style for all button-type widgets.</p>
 </li>
 <li>
-<p><code>increaseButtonFont()</code> &amp; <code>decreaseButtonFont()</code><br />
+<p><code>.increaseButtonFont()</code> &amp; <code>.decreaseButtonFont()</code><br />
     These can be used to increase or decrease the font of all butotn-type widgets.</p>
 </li>
 </ul>
-<h3 id="widget-positioning">Widget Positioning</h3>
+<h2 id="widget-padding-positioning">Widget Padding &amp; Positioning</h2>
 <hr />
-<p>The below commands allow the user to change how appJar lays out widgets on the screen.</p>
-<h4 id="location">Location</h4>
+<p>The below commands allow the user to change how appJar lays out widgets on the screen.<br />
+These settings will be applied to all widgets withing the current container.  </p>
+<h3 id="widget-padding">Widget Padding</h3>
+<p>Padding is empty space around the edges of a widget.  </p>
+<p><img alt="Padding" src="../img/conf/pos1.png" /></p>
+<pre><code class="python">app.setPadX(20) # padding outside the widget
+app.setPadY(20)
+app.setIPadX(20) # padding inside the widget
+app.setIPadY(20)
+</code></pre>
+
+<h4 id="set-padding">Set Padding</h4>
 <ul>
 <li>
-<p><code>setPadX()</code> &amp; <code>setPadY()</code><br />
-    These set how much empty padding is included, outside a widget, between the widget &amp; the cell edge.  </p>
+<p><code>.setPadX()</code> &amp; <code>.setPadY()</code><br />
+    These set how much empty space is included, outside a widget, between the widget &amp; the cell's edge.  </p>
 </li>
 <li>
-<p><code>setIPadX()</code> &amp; <code>setIPadY()</code><br />
-    These set how much empty padding is included, inside a widget, between the text and the border.  </p>
+<p><code>.setIPadX()</code> &amp; <code>.setIPadY()</code><br />
+    These set how much empty space is included, inside a widget, between the text and the widget's border.  </p>
 </li>
-<li>
-<p><code>setSticky()</code><br />
-    This determines which side of the grid-cell the widget will stick to:</p>
+</ul>
+<p><img alt="Padding" src="../img/conf/pos2.png" /></p>
+<pre><code class="python">app.setPadX(20) # padding outside the widget
+app.setPadY(20)
+app.setIPadX(40) # padding inside the widget
+app.setIPadY(5)
+</code></pre>
+
+<h3 id="widget-positioning">Widget Positioning</h3>
+<p>There are two aspects to how widgets are positioned:  </p>
 <ul>
-<li><code>left</code> - stick to the left side</li>
-<li><code>right</code> - stick to the right side</li>
-<li><code>both</code> - stick to both sides, stretch the widget</li>
+<li>How columns and rows expand to fill the GUI space.  </li>
+<li>How widgets expand to fill their cells.  </li>
+</ul>
+<p>By default, columns will expand (equally) to fill the width of the GUI, but rows will not.<br />
+Within their cells, widgets will <em>stick</em> to the <code>east</code> &amp; <code>west</code> sides (left &amp; right) but not the <code>north</code> &amp; <code>south</code> (top  &amp; bottom).<br />
+<img alt="Expand" src="../img/conf/exp1.png" />  </p>
+<p>It's possible to tell a widget to not stick to the sides of its cell:  </p>
+<p><img alt="Expand" src="../img/conf/exp3.png" />  </p>
+<pre><code class="python">app.setSticky(&quot;&quot;)
+</code></pre>
+
+<p>Or, to tell it to stick to all sides:<br />
+<img alt="Expand" src="../img/conf/exp1.png" />  </p>
+<pre><code class="python">app.setSticky(&quot;nesw&quot;)
+</code></pre>
+
+<p>However, even though the widget is sticking to all sides of the cell.<br />
+You still have to tell the rows to expand to fill the GUI space:  </p>
+<p><img alt="Expand" src="../img/conf/exp2.png" />  </p>
+<pre><code class="python">app.setExpand(&quot;both&quot;)
+app.setSticky(&quot;nesw&quot;)
+</code></pre>
+
+<h4 id="set-sticky-expand">Set Sticky &amp; Expand</h4>
+<ul>
+<li>
+<p><code>.setSticky(sides)</code><br />
+    This determines which sides of the grid-cell the widget will stick to.<br />
+    It should be a string, made up of any combination of <code>n</code>, <code>e</code>, <code>s</code> or <code>w</code><br />
+    By default, most widgets use <code>"ew"</code>  </p>
+</li>
+<li>
+<p><code>.setExpand()</code><br />
+    This tells rows &amp; columns what to do when the GUI is resized.<br />
+    It allows them to adjust to fill the available space:</p>
+<ul>
+<li><code>none</code> - don't expand  </li>
+<li><code>row</code> - expand with rows only  </li>
+<li><code>column</code> - expand with columns only  </li>
+<li><code>all</code> - expand in all directions  </li>
 </ul>
 </li>
 </ul>
-<h4 id="resize">Resize</h4>
-<ul>
-<li>
-<p><code>setExpand()</code><br />
-    This tells widgets what to do when the GUI is resized.<br />
-    It allows widgets to be configured to stretch or not:</p>
-<ul>
-<li><code>none</code> - don't expand</li>
-<li><code>row</code> - expand with rows only</li>
-<li><code>column</code> - expand with columns only</li>
-<li><code>all</code> - expand in all directions</li>
-</ul>
-</li>
-</ul>
-<h4 id="row-helpers">Row Helpers</h4>
-<ul>
-<li>
-<p><code>getRow()</code><br />
-    Returns the row number currently being used.</p>
-</li>
-<li>
-<p><code>getNextRow()</code><br />
-    Returns the current row number, before adding one to it.</p>
-</li>
-</ul></div>
+<p>It's even possible to give each widget its own <em>stickyness</em>:<br />
+<img alt="Expand" src="../img/conf/exp4.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.setBg(&quot;blue&quot;)
+app.setExpand(&quot;both&quot;)
+
+app.setSticky(&quot;nw&quot;)
+app.addLabel(&quot;l1&quot;, &quot;One&quot;, 0, 0)
+app.setLabelBg(&quot;l1&quot;, &quot;yellow&quot;)
+
+app.setSticky(&quot;ne&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Two&quot;, 0, 1)
+app.setLabelBg(&quot;l2&quot;, &quot;green&quot;)
+
+app.setSticky(&quot;sw&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Three&quot;, 1, 0)
+app.setLabelBg(&quot;l3&quot;, &quot;pink&quot;)
+
+app.setSticky(&quot;se&quot;)
+app.addLabel(&quot;l4&quot;, &quot;Four&quot;, 1, 1)
+app.setLabelBg(&quot;l4&quot;, &quot;Orange&quot;)
+
+app.go()
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

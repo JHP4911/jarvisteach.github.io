@@ -255,7 +255,7 @@ It's also possible to configure functions to be called automatically, in a loop.
 <hr />
 <p>The following allow widgets to be interacted with:</p>
 <ul>
-<li><code>set XXX Function(name, value, key=None)</code><br />
+<li><code>.set XXX Function(name, value, key=None)</code><br />
     This binds a function to the widget.<br />
     The function will be called every time an interactive-widget changes.<br />
     The function will be called when some widgets are clicked.  </li>
@@ -273,7 +273,7 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>set XXX OverFunction(name, values)</code><br />
+<li><code>.set XXX OverFunction(name, values)</code><br />
     Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
     The first function is called when the mouse first enters the widget.<br />
     The second function is called when the mouse leaves the widget.<br />
@@ -293,7 +293,7 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>set XXX DragFunction(name, values)</code><br />
+<li><code>.set XXX DragFunction(name, values)</code><br />
     Set functions to call whenever the mouse button is clicked and dragged.<br />
     The first function will be called when the mouse is initially clicked.<br />
     The second function will be called when the mouse is released.<br />
@@ -307,33 +307,33 @@ That means, you should never have your own loops running, as that will stop the 
 Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
 <ul>
 <li>
-<p><code>registerEvent(func)</code><br />
+<p><code>.registerEvent(func)</code><br />
 Pass this a function, and the GUI will call that function every second.</p>
 </li>
 <li>
-<p><code>setPollTime(time)</code><br />
+<p><code>.setPollTime(time)</code><br />
 If you want your events to be called more or less frequently, set the frequency here.</p>
 </li>
 </ul>
 <h4 id="enter-key">Enter Key</h4>
 <ul>
 <li>
-<p><code>enableEnter(func)</code><br />
+<p><code>.enableEnter(func)</code><br />
 Link a function to the <code>&lt;Enter&gt;</code> key</p>
 </li>
 <li>
-<p><code>disableEnter()</code><br />
+<p><code>.disableEnter()</code><br />
 Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
 </li>
 </ul>
 <h4 id="other-keys">Other Keys</h4>
 <ul>
 <li>
-<p><code>bindKey(key, func)</code><br />
+<p><code>.bindKey(key, func)</code><br />
 Link the specified key to the specified function.</p>
 </li>
 <li>
-<p><code>unbindKey(key)</code><br />
+<p><code>.unbindKey(key)</code><br />
 Unlink the specified key from any functions bound to it.</p>
 </li>
 </ul></div>

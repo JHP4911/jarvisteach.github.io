@@ -271,23 +271,23 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p>The following options are available for all widgets:</p>
 <ul>
 <li>
-<p><code>set XXX Bg(name, value)</code><br />
+<p><code>.set XXX Bg(name, value)</code><br />
     Sets the background colour of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Fg(name, value)</code><br />
+<p><code>.set XXX Fg(name, value)</code><br />
     Sets the foregound colour (usually the text) of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX DisabledFg(name, value)</code><br />
+<p><code>.set XXX DisabledFg(name, value)</code><br />
     Sets the disabled foreground colour (usually the text) of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Width(name, value)</code><br />
+<p><code>.set XXX Width(name, value)</code><br />
     Sets the width of the named widget.</p>
 </li>
 <li>
-<p><code>set XXX Height(name, value)</code><br />
+<p><code>.set XXX Height(name, value)</code><br />
     Set the height of the named widget.</p>
 </li>
 </ul>
@@ -295,25 +295,25 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <hr />
 <ul>
 <li>
-<p><code>set XXX Tooltip(name, value)</code><br />
+<p><code>.set XXX Tooltip(name, value)</code><br />
     Sets a tooltip for the widget.
     The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
 </li>
 <li>
-<p><code>set XXX Cursor(name, value)</code><br />
+<p><code>.set XXX Cursor(name, value)</code><br />
     Sets the cursor shown, when the mouse goes over this widget.<br />
     There are lots of cursors avalable, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
 </li>
 <li>
-<p><code>set XXX Relief(name, value)</code><br />
+<p><code>.set XXX Relief(name, value)</code><br />
     Sets the border for the widget. One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
 </li>
 <li>
-<p><code>set XXX State(name, value)</code><br />
+<p><code>.set XXX State(name, value)</code><br />
     Sets the state of the named widget. One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
 </li>
 <li>
-<p><code>set XXX Focus(name)</code><br />
+<p><code>.set XXX Focus(name)</code><br />
     Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
 </li>
 </ul>
@@ -322,20 +322,24 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p>The following are supported by most widgets:</p>
 <ul>
 <li>
-<p><code>set XXX Align(name, value)</code><br />
+<p><code>.set XXX Align(name, value)</code><br />
     Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
 </li>
 <li>
-<p><code>set XXX Anchor(name, value)</code><br />
+<p><code>.set XXX Anchor(name, value)</code><br />
     Sets where the text is positioned within the widget. One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
 </li>
 <li>
-<p><code>set XXX Sticky(name, value)</code><br />
+<p><code>.set XXX Sticky(name, value)</code><br />
     Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
 </li>
 <li>
-<p><code>set XXX Padding(name, x, y)</code><br />
-    Set internal text padding of the named widget.  </p>
+<p><code>.set XXX Padding(name, [x, y])</code><br />
+    Set external padding of the named widget.  </p>
+</li>
+<li>
+<p><code>.set XXX IPadding(name, [x, y])</code><br />
+    Set internal padding of the named widget.  </p>
 </li>
 </ul>
 <h3 id="widget-manipulaiton">Widget Manipulaiton</h3>
@@ -371,16 +375,14 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <hr />
 <p>The following are convenience functions, for modifying a group of widgets:  </p>
 <ul>
-<li><code>set XXX Widths(names, val)</code>  </li>
 <li>
-<p><code>set XXX Heights(names, val)</code><br />
+<p><code>.set XXX Widths(names, val)</code> &amp; <code>.set XXX Heights(names, val)</code><br />
     Sets the widths/heights of the specified widgets.</p>
 </li>
 <li>
-<p><code>setAll XXX Widths(val)</code>  </p>
+<p><code>.setAll XXX Widths(val)</code> &amp; <code>.setAll XXX Heights(val)</code><br />
+    Sets the widths/heights of all widgets of the specified type.</p>
 </li>
-<li><code>setAll XXX Heights(val)</code><br />
-    Sets the widths/heights of all widgets of the specified type.</li>
 </ul>
 <h3 id="tkinter-options">tkinter Options</h3>
 <hr />
