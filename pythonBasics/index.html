@@ -332,7 +332,7 @@ price = float(var3)
 </code></pre>
 
 <h3 id="arithmetic-operators">Arithmetic Operators</h3>
-<p>Python allows you to easliy perform maths on your data</p>
+<p>Python allows you to easily perform maths on your data</p>
 <table>
 <thead>
 <tr>
@@ -529,7 +529,7 @@ for item in fruits:
 <h3 id="loop-control">Loop Control</h3>
 <p>Pyhton provides two really useful commands to help in loop control:</p>
 <ul>
-<li><code>break</code> - Ends the loop immediatley</li>
+<li><code>break</code> - Ends the loop immediately</li>
 <li><code>continue</code> - Goes back to the start of the loop, skipping anything not yet done</li>
 </ul>
 <pre><code class="python">while True:
@@ -599,7 +599,7 @@ sentence = &quot;, &quot;.join(pupils)    # makes the String &quot;Edd, Clive, K
 
 <hr />
 <h2 id="modular-development">Modular Development</h2>
-<p>A modular program is made up of lots of seperate parts (modules). Each of these should work independently of the others. In Python, we acheive this by writing <em>functions</em>.  </p>
+<p>A modular program is made up of lots of separate parts (modules). Each of these should work independently of the others. In Python, we achieve this by writing <em>functions</em>.  </p>
 <p>Python has lots of <a href="https://docs.python.org/3.4/library/functions.html">built-in functions</a> that you might have met already: <code>print()</code>, <code>input()</code>, <code>int()</code>, <code>str()</code>, <code>len()</code>, <code>round()</code>, etc... These work by themselves, without needing to be changed. You simply give them some information to work with, and they (sometimes) give you some information back.  </p>
 <h2 id="writing-a-function">Writing a Function</h2>
 <p>So, how do we write a function? Well, it's pretty simple - you give it a name, and then everything that is indented after the name, is in that function:</p>
@@ -661,7 +661,7 @@ outFile.close ( )
 <p>When you open a file, you pass the name of the file you want, and an access mode. The following access modes are most commonly used:</p>
 <ul>
 <li><strong>r</strong> - opens a file for reading.</li>
-<li><strong>w</strong> - creates a new file for writing (overwrites existng file).</li>
+<li><strong>w</strong> - creates a new file for writing (overwrites existing file).</li>
 <li><strong>a</strong> - opens a file to append to (will create a file if needed).</li>
 </ul>
 <p>When reading from a file, it is most common to read it line-by-line. Again, it is more convenient to use <strong>with</strong>:</p>
@@ -760,13 +760,13 @@ We can summarise this in a data-dictionary:</p>
 <pre><code class="python">import sqlite3
 </code></pre>
 
-<p>Having done that, we simply connect to the database, perform some SQL, and dosconnect:</p>
+<p>Having done that, we simply connect to the database, perform some SQL, and disconnect:</p>
 <pre><code class="python">db = sqlite3.connect('pupils.db')
 # perform SQL statements
 db.close()
 </code></pre>
 
-<p>As with file access, this can wrapped up using with, to ensure we always disconnect:</p>
+<p>As with file access, this can be wrapped up using with, to ensure we always disconnect:</p>
 <pre><code class="python">with sqlite3.connect(&quot;pupils.db&quot;) as db:
     # perform SQL statements
 </code></pre>

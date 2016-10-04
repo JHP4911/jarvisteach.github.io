@@ -283,11 +283,11 @@
 There are lots of different widgets to chose from, each suited to a specific task.  </p>
 <p>Nearly every widget needs a <strong>TITLE</strong>.<br />
 This is a unique name for the widget, so that later you can get information from that widget, or change it.  </p>
-<p>Nearly all widgets provide the same three functions:</p>
+<p>Nearly all widgets in appJar provide the same three functions:</p>
 <ul>
-<li>Always - <strong>ADD</strong> a widget (with a unique title) - this creates the widget</li>
-<li>Sometimes - <strong>GET</strong> the widget (using its unique title) - this gets the contents of the widget (usually done in a function)</li>
-<li>Rarely - <strong>SET</strong> the widget (using its unique title) - this changes what's in the widget</li>
+<li>(Always) - <strong>ADD</strong> a widget (with a unique title) - this creates the widget</li>
+<li>(Often) - <strong>GET</strong> the widget (using its unique title) - this gets the contents of the widget (usually done in a function)</li>
+<li>(Sometimes) - <strong>SET</strong> the widget (using its unique title) - this changes what's in the widget</li>
 </ul>
 <p>On top of these, there is a common set of functions for <a href="../pythonWidgetOptions/">changing widgets</a>.<br />
 As well as some specialist functions, unique to each widget (see below).  </p>
@@ -381,7 +381,7 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
 <p>There are two special-case entries:</p>
 <ul>
-<li>NumericEntry - this only allows numbrs to be typed in.</li>
+<li>NumericEntry - this only allows numbers to be typed in.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 </ul>
 <p><img alt="Entries" src="../img/1_entries.gif" /></p>
@@ -436,7 +436,7 @@ app.go()
 <h4 id="get-entries">Get Entries</h4>
 <ul>
 <li><code>.getEntry(title)</code><br />
-    This will return the contents of the spcified entry box.</li>
+    This will return the contents of the specified entry box.</li>
 </ul>
 <h2 id="button">Button</h2>
 <hr />
@@ -487,7 +487,7 @@ That way, multiple widgets can use the same function, but different actions can 
 <ul>
 <li>
 <p><code>.setButton(name, text)</code><br />
-    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a paramter to the function.  </p>
+    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a parameter to the function.  </p>
 </li>
 <li>
 <p><code>.setButtonImage(title, image)</code><br />
@@ -530,7 +530,7 @@ app.go()
 <h4 id="get-radiobuttons">Get RadioButtons</h4>
 <ul>
 <li><code>.getRadioButton(title)</code><br />
-    Gets the value of the selcted RadioButton, for the specified title.</li>
+    Gets the value of the selected RadioButton, for the specified title.</li>
 </ul>
 <pre><code class="python">    from appJar import gui
 
@@ -866,11 +866,11 @@ app.go()
 <ul>
 <li>
 <p><code>.clearMessage(title)</code><br />
-    Clears the specifed Message widget.  </p>
+    Clears the specified Message widget.  </p>
 </li>
 <li>
 <p><code>.setMessage(title, text)</code><br />
-    Sets the contents of the specifed Message widget, to the specified text.  </p>
+    Sets the contents of the specified Message widget, to the specified text.  </p>
 </li>
 </ul>
 <h2 id="textarea">TextArea</h2>
@@ -986,7 +986,7 @@ app.go()
 </li>
 <li>
 <p><code>deleteProperty(title, prop)</code><br />
-    Deletes the named propert from the widget.  </p>
+    Deletes the named property from the widget.  </p>
 </li>
 </ul>
 <h4 id="get-properties">Get Properties</h4>

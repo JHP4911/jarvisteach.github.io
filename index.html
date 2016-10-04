@@ -258,10 +258,10 @@
 <p>This is a Python library for creating <strong>quick</strong> and <strong>easy</strong> GUIs, designed primarily for use in the <strong>classroom</strong>.  </p>
 <p>It hasn't been officially released yet - we're always looking for more beta testers...  </p>
 <p>It has no dependencies, other than <a href="https://www.python.org/downloads/">Python 3.x</a> (although it mostly works on 2.7) and relies on Python's built-in <a href="https://docs.python.org/3.5/library/tkinter.html">tkinter</a> library.  </p>
-<p>See the <a href="Install/">installtion guidelines</a> for more information.</p>
+<p>See the <a href="Install/">installation guidelines</a> for more information.</p>
 <h3 id="lets-make-a-sandwich">Let's make a sandwich</h3>
 <hr />
-<p>Making a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> is just like making a <a href="https://en.wikipedia.org/wiki/Sandwich">sandwich</a>!  </p>
+<p>Making a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> (using appJar) is just like making a <a href="https://en.wikipedia.org/wiki/Sandwich">sandwich</a>!  </p>
 <p>You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle ...</p>
 <pre><code class="python"># import the library
 from appJar import gui
@@ -281,7 +281,7 @@ Oh, and if you try to put fillings under the bottom-slice, then they won't be in
 <hr />
 <p>When making a sandwich, you could just stuff it with fillings:  </p>
 <ul>
-<li><code>addFilling('cheese', 'chedar')</code>  </li>
+<li><code>addFilling('cheese', 'cheddar')</code>  </li>
 <li><code>addFilling('ham', 'smoked')</code>  </li>
 </ul>
 <p>But it's often nice to prepare the fillings too:  </p>
@@ -315,7 +315,7 @@ We want to make a meal out of it!  </p>
 <li>3 slices of cheese along the bottom  </li>
 <li>Alternating slices of tomato &amp; cucumber on top  </li>
 <li>Then a mixture of onions and peppers  </li>
-<li>Finally the sauce!  </li>
+<li>Finally, the sauce!  </li>
 </ul>
 <p>By default, in an appJar GUI, the fillings are simply stacked on top of each other.  </p>
 <p>However, filling a sub is very similar to filling a spreadsheet.<br />
@@ -333,12 +333,12 @@ def press(btn):
 
 app = gui()
 
-app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;, 0, 0, 2)     # Row 0, Column 0, Span 2
-app.addLabel(&quot;user&quot;, &quot;Username:&quot;, 1, 0)                 # Row 1, Column 0, no span
-app.addEntry(&quot;user&quot;, 1, 1)                              # Row 1, Column 1, no span
-app.addLabel(&quot;pass&quot;, &quot;Password:&quot;, 2, 0)                 # Row 2, Column 0, no span
-app.addSecretEntry(&quot;pass&quot;, 2, 1)                        # Row 2, Column 1, no span
-app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press, 3, 0, 2)    # Row 3, Column 0, Span 2
+app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;, 0, 0, 2)  # Row 0,Column 0,Span 2
+app.addLabel(&quot;user&quot;, &quot;Username:&quot;, 1, 0)              # Row 1,Column 0
+app.addEntry(&quot;user&quot;, 1, 1)                           # Row 1,Column 1
+app.addLabel(&quot;pass&quot;, &quot;Password:&quot;, 2, 0)              # Row 2,Column 0
+app.addSecretEntry(&quot;pass&quot;, 2, 1)                     # Row 2,Column 1
+app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press, 3, 0, 2) # Row 3,Column 0,Span 2
 
 app.setEntryFocus(&quot;user&quot;)
 
