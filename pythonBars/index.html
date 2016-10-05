@@ -356,33 +356,27 @@ You can add a single menu option, or a list of menu options.</p>
 </ul>
 <h4 id="platform-specific-menus">Platform Specific Menus</h4>
 <p>It's possible to interact with menus that are specific to particular platforms.  </p>
-<p>On <strong>Windows</strong>, you can add items to the <em>System Menu</em>, accessed by clicking the icon in the top left corner of the GUI.  </p>
-<ul>
-<li><code>.addMenuSystem()</code><br />
-    This creates a <em>System Menu</em>, ready to add items to.<br />
-    Then just add menu items as normal, using the title <code>SYSTEM</code>.  </li>
-</ul>
+<p>On <strong>Windows</strong>, you can add items to the <em>System Menu</em>, accessed by clicking the icon in the top left corner of the GUI.<br />
+Simply add menu items using the title <code>SYSTEM</code>.  </p>
 <p>On <strong>Mac</strong>, there are a bunch of special menus you can access.  </p>
 <p>The <em>Application Menu</em> is always present, and is always named after python - usually <em>python3</em>.<br />
-To add items to this menu, simply call <code>.addMenuItem()</code> with the menu name <code>APPMENU</code>.<br />
+To add items to this menu, simply call <code>.addMenuItem()</code> with the title <code>APPMENU</code>.<br />
 .</p>
 <ul>
 <li>
 <p><code>.addMenuPreferences(func)</code><br />
-    This will enable the <em>Preferences Menu</em>, in the <em>Applicaiton Menu</em>, and link it to the specified function.  </p>
+    This will enable the <em>Preferences Menu</em>, in the <em>Application Menu</em>, and link it to the specified function.  </p>
 </li>
 <li>
 <p><code>.addMenuHelp(func)</code><br />
     This will create the <em>Help Menu</em> with a <em>Search Menu</em>,<br />
-    Followed by <em>pyhton3 Help</em>, which links to the funciton specified.  .<br />
-    Followed by an application specific Help option, under the <em>Help Menu</em>.<br />
+    Followed by <em>pyhton3 Help</em>, which links to the function specified.<br />
     You can add further items to the <em>Help Menu</em> using the title <code>HELP</code>.  </p>
 </li>
 <li>
 <p><code>.addMenuWindow()</code><br />
     This will create the standard <em>Window Menu</em>.<br />
-    You can add further items to the <em>Window Menu</em> using the title <code>WINDOW</code>.<br />
-    Adding items to this, will add them to the end of the <em>Window Menu</em>.  </p>
+    You can add further items to the <em>Window Menu</em> using the title <code>WINDOW</code>.  </p>
 </li>
 </ul>
 <h2 id="statusbar">Statusbar</h2>
