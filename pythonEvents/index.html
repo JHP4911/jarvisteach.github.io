@@ -301,9 +301,24 @@ app.go()
 </ul>
 <h3 id="gui-interaction">GUI Interaction</h3>
 <hr />
+<h4 id="stopping-the-gui">Stopping the GUI</h4>
+<p>To stop the GUI, simply call <code>app.stop()</code><br />
+The user might also close the GUI by clicking the close icon or from an applicaiton menu.<br />
+If you want to check with the user, before stopping the GUI, then you can set a function to call.  </p>
+<ul>
+<li><code>.setStopFunction(function)</code><br />
+    Set a function to call, before allowing the GUI to be stopped.<br />
+    This function should return True/False to confirm if the GUI should stop.  </li>
+</ul>
+<pre><code class="python">def checkStop():
+    return app.yesNoBox(&quot;Confirm Exit&quot;, &quot;Are you sure you want to exit the application?&quot;)
+
+app.setStopFunction(checkStop)
+</code></pre>
+
 <h4 id="repeated-events">Repeated Events</h4>
 <p>When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.<br />
-That means, you should never have your own loops running, as that will stop the GUI from working properly.<br />
+That means, you should never have your own loops running, as they will stop the GUI from working properly.<br />
 Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
 <ul>
 <li>
@@ -316,6 +331,8 @@ If you want your events to be called more or less frequently, set the frequency 
 </li>
 </ul>
 <h4 id="enter-key">Enter Key</h4>
+<p>Every time the <Enter> key is pressed, you can have the GUI call a function.<br />
+Useful if you want to be able to submit a form from anywhere.  </p>
 <ul>
 <li>
 <p><code>.enableEnter(func)</code><br />
@@ -327,6 +344,7 @@ Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
 </li>
 </ul>
 <h4 id="other-keys">Other Keys</h4>
+<p>You may also want to bind other keys to events.  </p>
 <ul>
 <li>
 <p><code>.bindKey(key, func)</code><br />
