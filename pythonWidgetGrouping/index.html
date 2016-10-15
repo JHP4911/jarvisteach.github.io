@@ -238,15 +238,17 @@
     
         <li class="main active"><a href="#container-options">Container Options</a></li>
         
+            <li><a href="#format">Format</a></li>
+        
             <li><a href="#label-frame">Label Frame</a></li>
         
             <li><a href="#toggle-frame">Toggle Frame</a></li>
         
-            <li><a href="#paged-window">Paged Window</a></li>
-        
             <li><a href="#tabbed-frame">Tabbed Frame</a></li>
         
-            <li><a href="#paned-window">Paned Window</a></li>
+            <li><a href="#paned-frame">Paned Frame</a></li>
+        
+            <li><a href="#paged-window">Paged Window</a></li>
         
             <li><a href="#sub-window">Sub Window</a></li>
         
@@ -265,7 +267,13 @@
 <p>The standard way of using appJar, is simply to place all widgets into a single window.<br />
 Everything is grouped into that single window, and any changes affect everything in that window.  </p>
 <p>It's sometimes desirable to group widgets together within a window.<br />
+Or to have multiple <em>pages</em> of widgets.<br />
 A number of options are provided to make this easier.  </p>
+<h3 id="format">Format</h3>
+<p>All of these methods work in the same way.<br />
+You call the <code>start</code> function when you want to start a container, then the <code>stop</code> function when you're done.<br />
+When you call <code>start</code> you can pass in positional arguments like any other widget (row, column, rowspan, colspan).<br />
+Any <a href="../pythonGuiOptions">GUI Options</a> you set, within the container, will only affect that container.  </p>
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
@@ -276,6 +284,7 @@ Position the <em>LabelFrame</em> within the grid, then position widgets inside t
 app=gui()
 
 app.startLabelFrame(&quot;Login Details&quot;)
+# these only affect the labelFrame
 app.setSticky(&quot;ew&quot;)
 app.setFont(20)
 
@@ -344,6 +353,221 @@ app.go()
 <li><code>.getToggleFrameState(title)</code><br />
     Will return True if the ToggleFrame is open, else will return False.  </li>
 </ul>
+<h3 id="tabbed-frame">Tabbed Frame</h3>
+<hr />
+<p>A way to create a (basic) tabbed-style interface.<br />
+Position the <em>TabbedFrame</em> within the grid, start a <em>Tab</em>, then position widgets inside the <em>Tab</em><br />
+<img alt="TabbedFrame" src="../img/layouts/tabbedFrame.png" />  </p>
+<pre><code>from appJar import gui
+
+app=gui()
+
+app.startTabbedFrame(&quot;TabbedFrame&quot;)
+app.startTab(&quot;Tab1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Tab 1 Label&quot;)
+app.stopTab()
+
+app.startTab(&quot;Tab2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Tab 2 Label&quot;)
+app.stopTab()
+
+app.startTab(&quot;Tab3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Tab 3 Label&quot;)
+app.stopTab()
+app.stopTabbedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-tabbed-frames">Start/Stop Tabbed Frames</h4>
+<ul>
+<li>
+<p><code>.startTabbedFrame(name)</code> &amp; <code>.stopTabbedFrame()</code><br />
+    Used to start &amp; stop the a <em>TabbedFrame</em>, with the specified name.  </p>
+</li>
+<li>
+<p><code>.startTab(name)</code> &amp; <code>.stopTab()</code><br />
+    Used to start and stop each of the tabs in the <em>TabbedFrame</em>.<br />
+    The title for the tab will be the specified <em>name</em>.  </p>
+</li>
+</ul>
+<h4 id="set-tabbedframe">Set TabbedFrame</h4>
+<ul>
+<li>
+<p><code>.setTabbedFrameTabExpand(title, expand=True)</code><br />
+    By default, the tabs take up the minimum amount of space necessary.<br />
+    Set this to True, to have the tabs fill the entire row.<br />
+<img alt="TabbedFrame" src="../img/layouts/2_tabbedFrame.png" />  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameSelectedTab(title, tab)</code><br />
+    Select the specified tab in the TabbedFrame.  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameDisabledTab(title, tab, disabled=True)</code><br />
+    Disable the specified tab in the TabbedFrame.<br />
+    Set disabled to False to re-enable it.<br />
+    This will also change the displayed tab, if the disaplyed tab is being disabled.  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameDisabledAllTabs(title, disabled=True)</code><br />
+    Will disable all tabs for the named TabFrame.<br />
+    Or, enable them if disabled is set to False.  </p>
+</li>
+</ul>
+<h4 id="changing-colours">Changing Colours</h4>
+<p>TabbedFrames have a set of colours that can be changed:  </p>
+<ul>
+<li>ActiveFg - Sets the colour of the text in the active tab  </li>
+<li>ActiveBg - Sets the background colour of the active tab  </li>
+<li>InactiveFg - Sets the colour of the text in all inactive tabs  </li>
+<li>InactiveBG - Sets the background colour of all inactive tabs  </li>
+<li>DisabledFg - Sets the colour of the text in all disabled tabs  </li>
+<li>DisabledBg - Sets the background colour of all disabled tabs  </li>
+<li>Bg - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
+</ul>
+<p>These are all changed via the standard property changing functions, eg:  </p>
+<ul>
+<li><code>.setTabbedFrameBg("t1", "red")</code></li>
+<li><code>.setTabbedFrameActiveBg("t1", "yellow")</code></li>
+</ul>
+<p>It is also possible to change the colour of individual panes.<br />
+Call <code>.setBg("colour")</code> while adding widgets to the specific pane.<br />
+Or <code>.setTabBg(title, tab, 'colour')</code> at other times.  </p>
+<h4 id="get-tabbedframe">Get TabbedFrame</h4>
+<ul>
+<li><code>.getTabbedFrameSelectedTab(title)</code><br />
+    Gets the name of the currently selected tab, for the named TabFrame.  </li>
+</ul>
+<h3 id="paned-frame">Paned Frame</h3>
+<hr />
+<p>A way to present re-sizable panes, separated by drag-bars.<br />
+Once the first pane is placed, all additional panes should be placed inside it.<br />
+By default, panes will be placed side-by-side (horizontally).<br />
+This can be changed by setting the pane to vertical, then they'll be placed underneath each other.  </p>
+<h4 id="startstop-paned-frames">Start/Stop Paned Frames</h4>
+<ul>
+<li><code>.startPanedFrame(name)</code>, <code>.startPanedFrameVertical(name)</code> &amp; <code>.stopPanedFrame()</code><br />
+    Used to start &amp; stop <em>PanedFrames</em>, with the specified name.<br />
+    By default, any panes added to this pane will be added side-by-side (horizontally).<br />
+    Starting a vertical pane will cause additional panes to be stacked on top of each other.  </li>
+</ul>
+<h4 id="horizontal-pane-layout">Horizontal Pane Layout</h4>
+<p><img alt="Horizontal Panes" src="../img/layouts/pane1.png" />  </p>
+<ul>
+<li>Start an initial pane  </li>
+<li>Start all additional panes inside the initial pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial pane
+app.startPanedFrame(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start additional panes inside initial pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+app.stopPanedFrame()
+
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop initial pane
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="vertical-pane-layout">Vertical Pane Layout</h4>
+<p><img alt="Vertical Panes" src="../img/layouts/pane2.png" />  </p>
+<ul>
+<li>Start an initial, vertical pane  </li>
+<li>Start all additional panes inside the intial pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial, vertical pane
+app.startPanedFrameVertical(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start additional panes inside initial pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+app.stopPanedFrame()
+
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop initial pane
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="e-pane-layout">E-Pane Layout</h4>
+<p><img alt="E-Panes" src="../img/layouts/pane3.png" />  </p>
+<ul>
+<li>Start an initial pane  </li>
+<li>Start a second, vertical pane inside the intial pane  </li>
+<li>Start all additional panes inside the second pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial pane
+app.startPanedFrame(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start second, vertical pane inside inital pane
+app.startPanedFrameVertical(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+
+# start additional panes inside second pane
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop second &amp; initial panes
+app.stopPanedFrame()
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="t-pane-layout">T-Pane Layout</h4>
+<p><img alt="T-Panes" src="../img/layouts/pane4.png" />  </p>
+<ul>
+<li>Start an initial, vertical pane  </li>
+<li>Start a second pane, indside the initial pane  </li>
+<li>Start additional panes inside the second pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start intial, vertical pane
+app.startPanedFrameVertical(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start second pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+
+# start additional panes inside second pane 
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop second &amp; initial panes
+app.stopPanedFrame()
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
 <h3 id="paged-window">Paged Window</h3>
 <hr />
 <p>A container that mimics a classic phone based interface.<br />
@@ -412,111 +636,6 @@ app.go()
 <ul>
 <li><code>.getPagedWindowPageNumber(title)</code><br />
     Used to get the page number currently being shown.  </li>
-</ul>
-<h3 id="tabbed-frame">Tabbed Frame</h3>
-<hr />
-<p>A way to create a (basic) tabbed-style interface.<br />
-Position the <em>TabbedFrame</em> within the grid, start a <em>Tab</em>, then position widgets inside the <em>Tab</em><br />
-<img alt="TabbedFrame" src="../img/layouts/tabbedFrame.png" />  </p>
-<pre><code>from appJar import gui
-
-app=gui()
-
-app.startTabbedFrame(&quot;TabbedFrame&quot;)
-app.startTab(&quot;Tab1&quot;)
-app.addLabel(&quot;l1&quot;, &quot;Tab 1 Label&quot;)
-app.stopTab()
-
-app.startTab(&quot;Tab2&quot;)
-app.addLabel(&quot;l2&quot;, &quot;Tab 2 Label&quot;)
-app.stopTab()
-
-app.startTab(&quot;Tab3&quot;)
-app.addLabel(&quot;l3&quot;, &quot;Tab 3 Label&quot;)
-app.stopTab()
-app.stopTabbedFrame()
-
-app.go()
-</code></pre>
-
-<h4 id="startstop-tabbed-frames">Start/Stop Tabbed Frames</h4>
-<ul>
-<li><code>.startTabbedFrame(name)</code>  </li>
-<li><code>.stopTabbedFrame()</code><br />
-    Used to start &amp; stop the a <em>TabbedFrame</em>, with the specified name.  </li>
-<li><code>.startTab(name)</code></li>
-<li><code>.stopTab()</code><br />
-    Used to start and stop each of the tabs in the <em>TabbedFrame</em>.<br />
-    The title for the tab will be the specified <em>name</em>.  </li>
-</ul>
-<h4 id="set-tabbedframe">Set TabbedFrame</h4>
-<ul>
-<li><code>.setTabbedFrameTabExpand(title, expand=True)</code><br />
-    By default, the tabs take up the minimum amount of space necessary.<br />
-    Set this to True, to have the tabs fill the entire row.<br />
-<img alt="TabbedFrame" src="../img/layouts/2_tabbedFrame.png" />  </li>
-<li><code>.setTabbedFrameSelectedTab(title, tab)</code><br />
-    Select the specified tab in the TabbedFrame.  </li>
-<li><code>.setTabbedFrameDisabledTab(title, tab, disabled=True)</code><br />
-    Disable the specified tab in the TabbedFrame.<br />
-    Set disabled to False to re-enable it.<br />
-    This will also change the displayed tab, if the disaplyed tab is being disabled.  </li>
-</ul>
-<h4 id="changing-colours">Changing Colours</h4>
-<p>TabbedFrames have a set of colours that can be changed:  </p>
-<ul>
-<li>ActiveFg - Sets the colour of the text in the active tab  </li>
-<li>ActiveBg - Sets the background colour of the active tab  </li>
-<li>InactiveFg - Sets the colour of the text in all inactive tabs  </li>
-<li>InactiveBG - Sets the background colour of all inactive tabs  </li>
-<li>DisabledFg - Sets the colour of the text in all disabled tabs  </li>
-<li>DisabledBg - Sets the background colour of all disabled tabs  </li>
-<li>Bg - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
-</ul>
-<p>These are all changed via the standard property changing functions, eg:  </p>
-<ul>
-<li><code>.setTabbedFrameBg("t1", "red")</code></li>
-<li><code>.setTabbedFrameActiveBg("t1", "yellow")</code></li>
-</ul>
-<p>It is also possible to change the colour of individual panes.<br />
-Call <code>.setBg("colour")</code> while adding widgets to the specific pane.  </p>
-<h3 id="paned-window">Paned Window</h3>
-<hr />
-<p>A way to arrange re-sizable frames, with drag-bars.  </p>
-<ul>
-<li>Call <code>.startPanedWindow(name)</code> to create the initial pane  </li>
-<li>Then keep calling it to add additional panes  </li>
-<li>Calling <code>.setPanedWindowVertical(name)</code> will change the layout to vertical, allowing more configurations.  </li>
-</ul>
-<h4 id="horizontal-panes">Horizontal Panes</h4>
-<p><img alt="Horizontal Panes" src="../img/layouts/pane1.png" />  </p>
-<ul>
-<li>Create an initial pane  </li>
-<li>Keep adding panes to the initial pane  </li>
-</ul>
-<h4 id="vertical-panes">Vertical Panes</h4>
-<p><img alt="Vertical Panes" src="../img/layouts/pane2.png" />  </p>
-<ul>
-<li>Create an initial pane  </li>
-<li>Make it vertical  </li>
-<li>Add a second pane  </li>
-<li>Keep adding panes to the initial pane  </li>
-</ul>
-<h4 id="e-pane">E-Pane</h4>
-<p><img alt="E-Panes" src="../img/layouts/pane3.png" />  </p>
-<ul>
-<li>Create an initial pane  </li>
-<li>Add a second pane</li>
-<li>Make the second pane vertical  </li>
-<li>The remaining panes are added to frame 2  </li>
-</ul>
-<h4 id="t-pane">T-Pane</h4>
-<p><img alt="T-Panes" src="../img/layouts/pane4.png" />  </p>
-<ul>
-<li>Create an initial pane</li>
-<li>Make it vertical</li>
-<li>Add a second pane</li>
-<li>Add the remaining panes to pane 2  </li>
 </ul>
 <h3 id="sub-window">Sub Window</h3>
 <hr />

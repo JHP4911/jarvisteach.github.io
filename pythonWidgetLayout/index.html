@@ -242,7 +242,7 @@
         
             <li><a href="#grid-layout">Grid Layout</a></li>
         
-            <li><a href="#named-arguments">Named Arguments</a></li>
+            <li><a href="#layout-tricks">Layout Tricks</a></li>
         
     
     </ul>
@@ -333,13 +333,17 @@ app.go()
 
 <p>Note, the parameters are read from left to right, so:  </p>
 <ul>
-<li>If you're spcifying a column, you must first specify a row  </li>
+<li>If you're specifying a column, you must first specify a row  </li>
 <li>If you're specifying a row-span, you must first specify both the row &amp; column  </li>
 <li>And, if you're specifying a column-span, you must first specify a row, column &amp; column-span  </li>
 </ul>
-<h3 id="named-arguments">Named Arguments</h3>
-<p>If this all seems a bit complicated, and you just want to add widgets sequentially, with only 1 row containing 2 widgets, you can take advantage of Python's support for <em>Named Arguments</em>.  </p>
+<h3 id="layout-tricks">Layout Tricks</h3>
+<p>There are a few tricks you can employ, to make life a bit easier...</p>
+<h4 id="named-arguments">Named Arguments</h4>
+<p>It can be annoying having to specify all of the positional parameters each time, so why not take advantage of Python's support for <em>Named Arguments</em>. These allow you to set specific parameters, using their name.<br />
+For example: <code>app.addLabel("l1", "text here", colspan=2)</code>, will set the <code>colspan</code> parameter, without having to set the preceeding ones.   </p>
 <h4 id="row-helpers">Row Helpers</h4>
+<p>If you combine that with having appJar telling you the row you're on, things get even easier.  </p>
 <ul>
 <li><code>.getRow()</code> or <code>.gr()</code><br />
     Returns the row number currently being used.<br />
