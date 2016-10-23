@@ -263,7 +263,7 @@ They offer a series of buttons to click, which can be used to change settings/fu
         &quot;REDO&quot;, &quot;PREFERENCES&quot;, &quot;HOME&quot;, &quot;HELP&quot;, &quot;CALENDAR&quot;,
         &quot;WEB&quot;, &quot;OFF&quot;]
 
-app.addToolbar(tools, tbFunc, True)
+app.addToolbar(tools, tbFunc, findIcon=True)
 </code></pre>
 
 <h4 id="create-toolbars">Create Toolbars</h4>
@@ -299,91 +299,139 @@ app.addToolbar(tools, tbFunc, True)
 </ul>
 <h2 id="menubar">Menubar</h2>
 <hr />
-<p>Adds a standard Menubar along the top of the GUI
-The menubar will show, once the first menu has been added.
-You can add a single menu option, or a list of menu options.</p>
+<p>Adds a standard Menubar along the top of the GUI.<br />
+On Windows/Linux a menubar will only be shown, once the first menu has been added.<br />
+On Mac, a menubar is always present.<br />
+Menubars are made up of a series of menus, each conaining a list of items.<br />
+These items can contain menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
+<h4 id="optional-features">Optional Features:</h4>
+<ul>
+<li>
+<p><code>shortcut</code> These are keyboard shortcuts to call a menu item.<br />
+    These should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
+    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code><br />
+    The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
+</li>
+<li>
+<p><code>underline</code> If set to an Integer, the corresponding character will be underlined.  </p>
+</li>
+<li>
+<p><code>tearable</code> If this is set to True, it's possible to undock the menu.  </p>
+</li>
+</ul>
 <h4 id="create-menus">Create Menus</h4>
 <ul>
 <li>
-<p><code>.addMenu(title, function)</code><br />
-    Adds a single menu option, that will call the specified function.</p>
-</li>
-<li>
-<p><code>.addMenuList(title, names, functions, tearable=False)</code><br />
-    Will create a top-level menu, with the specified title.<br />
-    Within the menu will be the list of names, each calling the corresponding function in the function list.<br />
-    If only one function is provided, all menus will call the same function.<br />
-    If the menu name is a '-', then a separator will be added to the menu.<br />
-    If tearable is set to True, then the menu can be undocked.  </p>
-</li>
-<li>
-<p><code>.createMenu(title, tearable=False)</code><br />
+<p><code>.createMenu(menu, tearable=False)</code><br />
     Will create a top-level menu, to add menu items to.</p>
 </li>
 <li>
-<p><code>.addMenuItem(title, item, func=None)</code><br />
-    Add a sub-menu to the named top-level menu, with the specified function
-    If the menu name is a '-', then a separator will be added to the menu.</p>
+<p><code>.addMenuItem(menu, item, func=None, shortcut=None, underline=-1)</code><br />
+    Add a menu item to the named menu, with the specified function.<br />
+    If the named menu does not exist, it will be automatically created.<br />
+    If the item name is a <code>-</code>, then a separator will be added to the menu.  </p>
 </li>
 <li>
-<p><code>.addMenuSeparator(title)</code><br />
-    Add a separator to the named menu.</p>
+<p><code>.addMenuList(menu, items, functions)</code><br />
+    Will create a top-level menu, with the specified menu.<br />
+    Within the menu will be the list of items, each calling the corresponding function in the function list.<br />
+    If only one function is provided, all items will call the same function.<br />
+    If an item name is a <code>-</code>, then a separator will be added to the menu.  </p>
 </li>
 <li>
-<p><code>.addMenuCheckBox(title, name)</code><br />
-    Add a check box, to the named menu, with the specified name.</p>
+<p><code>.addSubMenu(menu, subMenu)</code><br />
+    Adds a sub-menu to the specified menu.  </p>
 </li>
 <li>
-<p><code>.addMenuRadioButton(title, menu, name, value)</code><br />
-    Add a radio button, to the named menu, grouped by name, with the specified value.</p>
+<p><code>.addMenuSeparator(menu)</code><br />
+    Add a separator to the named menu.  </p>
+</li>
+<li>
+<p><code>.addMenuCheckBox(menu, item, function=None, shortcut=None, underline=-1)</code><br />
+    Add a check box, to the named menu, with the specified item name.  </p>
+</li>
+<li>
+<p><code>.addMenuRadioButton(menu, item, value, function=None, shortcut=None, underline=-1)</code><br />
+    Add a radio button, to the named menu, grouped by item name, with the specified value.  </p>
+</li>
+<li>
+<p><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
+    Adds a single menu option, that will call the specified function.  </p>
 </li>
 </ul>
 <h4 id="set-menus">Set Menus</h4>
 <ul>
 <li>
-<p><code>.setMenuCheckBox(title, menu)</code><br />
+<p><code>.setMenuCheckBox(menu, item)</code><br />
     Inverts the specified check box, in the named menu.</p>
 </li>
 <li>
-<p><code>.setMenuRadioButton(title, menu, value)</code><br />
+<p><code>.setMenuRadioButton(menu, item, value)</code><br />
     Selects the specified value, of the specified radio button, in the named menu.</p>
+</li>
+<li>
+<p><code>.setMenuImage(menu, item, image, align='text')</code><br />
+    Will set the specified image for the specified menu item.  </p>
+</li>
+<li>
+<p><code>.setMenuIcon(menu, item, icon, align='text')</code><br />
+    Will set the specified icon for the specified menu item.  </p>
+</li>
+<li>
+<p><code>.disableMenuItem(menu, item)</code> &amp; <code>.enableMenuItem(menu, item)</code><br />
+    Will enable/disable the specified menu item.  </p>
+</li>
+<li>
+<p><code>.disableMenu(menu)</code> &amp; <code>.enableMenu(menu)</code><br />
+    Will disable/enable the specified menu.  </p>
+</li>
+<li>
+<p><code>.disableMenubar()</code> &amp; <code>.enableMenubar()</code><br />
+    Will disable/enable all menus.<br />
+    NB. currently doesn't disable entries in default Mac menus.  </p>
 </li>
 </ul>
 <h4 id="get-menus">Get Menus</h4>
 <ul>
 <li>
-<p><code>.getMenuCheckBox(title, menu)</code><br />
+<p><code>.getMenuCheckBox(menu, item)</code><br />
     Get the value of the specified check box, from the named menu.<br />
-    Returns True or False.</p>
+    Returns True or False.  </p>
 </li>
 <li>
-<p><code>.getMenuRadioButton(title, menu)</code><br />
+<p><code>.getMenuRadioButton(menu, item)</code><br />
     Get the value of the specified radio button, from the named menu.<br />
-    Returns the value of the checked radio button.</p>
+    Returns the name of the checked radio button, for this group.  </p>
 </li>
 </ul>
 <h4 id="platform-specific-menus">Platform Specific Menus</h4>
-<p>It's possible to interact with menus that are specific to particular platforms.  </p>
-<p>On <strong>Windows</strong>, you can add items to the <em>System Menu</em>, accessed by clicking the icon in the top left corner of the GUI.<br />
-Simply add menu items using the title <code>SYSTEM</code>.  </p>
-<p>On <strong>Mac</strong>, there are a bunch of special menus you can access.  </p>
-<p>The <em>Application Menu</em> is always present, and is always named after python - usually <em>python3</em>.<br />
-To add items to this menu, simply call <code>.addMenuItem()</code> with the title <code>APPMENU</code>.  </p>
+<p>It's possible to interact with menus that are specific to particular platforms.<br />
+Simply use the menu names given below when adding items to a menu.  </p>
 <ul>
 <li>
-<p><code>.addMenuPreferences(func)</code><br />
-    This will enable the <em>Preferences Menu</em>, in the <em>Application Menu</em>, and link it to the specified function.  </p>
+<p><strong>Windows</strong>  </p>
+<ul>
+<li><strong>System Menu</strong> - <code>WIN_SYS</code> accessed by clicking the icon in the top left corner of the GUI.  </li>
+</ul>
 </li>
 <li>
-<p><code>.addMenuHelp(func)</code><br />
-    This will create the <em>Help Menu</em> with a <em>Search Menu</em>,<br />
-    Followed by <em>pyhton3 Help</em>, which links to the function specified.<br />
-    You can add further items to the <em>Help Menu</em> using the title <code>HELP</code>.  </p>
+<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus item. <br />
+    There are also a couple of menu items the user can/should provide.  </p>
+<ul>
+<li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usuaully called <em>Python</em>.<br />
+    This menu is always present, and connot be renamed - no matter how much I wish it could!<br />
+    Call <code>.addMenuPreferences(func)</code> to enable the <em>Preferences</em> menu item, within the <em>Application Menu</em>.  </li>
+<li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu items relaed to windows. <br />
+    To access this menu, you must first call <code>.addMenuWindow()</code>  </li>
+<li><strong>Help Menu</strong> - <code>MAC_HELP</code> provides a <em>Search</em> item <br />
+    To access this menu, you must first call <code>.addMenuHelp(func)</code>, passing the function to call for the default <em>Python Help</em> item.  </li>
+</ul>
 </li>
 <li>
-<p><code>.addMenuWindow()</code><br />
-    This will create the standard <em>Window Menu</em>.<br />
-    You can add further items to the <em>Window Menu</em> using the title <code>WINDOW</code>.  </p>
+<p><strong>Linux</strong>  </p>
+<ul>
+<li>n/a  </li>
+</ul>
 </li>
 </ul>
 <h2 id="statusbar">Statusbar</h2>
