@@ -326,6 +326,13 @@ These items can contain menu-items, radio buttons, check boxes, separators, or s
     Will create a top-level menu, to add menu items to.</p>
 </li>
 <li>
+<p><code>.createRightClickMenu(menu, showInBar=False)</code><br />
+    Will create a hidden menu, that can be shown when the user right-clicks a widget.<br />
+    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.  </p>
+<p>To access the rightClickMenu, it must be bound to a widget:<br />
+<code>.setXXXRightClick(widgetName, MenuName)</code> will bind the named menu to the named widget.  </p>
+</li>
+<li>
 <p><code>.addMenuItem(menu, item, func=None, shortcut=None, underline=-1)</code><br />
     Add a menu item to the named menu, with the specified function.<br />
     If the named menu does not exist, it will be automatically created.<br />
@@ -404,10 +411,19 @@ These items can contain menu-items, radio buttons, check boxes, separators, or s
     Returns the name of the checked radio button, for this group.  </p>
 </li>
 </ul>
-<h4 id="platform-specific-menus">Platform Specific Menus</h4>
-<p>It's possible to interact with menus that are specific to particular platforms.<br />
+<h4 id="platform-specificcustom-menus">Platform Specific/Custom Menus</h4>
+<p>It's possible to interact with menus that are specific to particular platforms, or prebuilt for specific purposes.<br />
 Simply use the menu names given below when adding items to a menu.  </p>
 <ul>
+<li>
+<p><strong>Generic</strong>  </p>
+<ul>
+<li><strong>Edit Menu</strong> - <code>EDIT</code> provides a right-click, <em>cut &amp; paste</em> menu for text, entry &amp; option boxes.<br />
+    Call <code>.addMenuEdit(inMenuBar=False)</code> to enable the <em>Edit</em> menu.<br />
+    Set the parameter to True, to also show it in the menu bar.<br />
+    This menu does its best to show the appropriate options, for all situations - but doesn't know when you can't <em>redo</em> an action.  </li>
+</ul>
+</li>
 <li>
 <p><strong>Windows</strong>  </p>
 <ul>

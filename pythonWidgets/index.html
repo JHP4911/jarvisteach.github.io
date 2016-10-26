@@ -272,6 +272,8 @@
         
             <li><a href="#grip">Grip</a></li>
         
+            <li><a href="#datepicker">DatePicker</a></li>
+        
     
     </ul>
 </div></div>
@@ -1104,6 +1106,45 @@ app.go()
     Adds a simple grip icon.<br />
     The mouse pointer changes over the grip, and a ToolTip will be shown.<br />
     The size and image can't be changed.  </li>
+</ul>
+<h2 id="datepicker">DatePicker</h2>
+<hr />
+<p>A widget to capture a date - will handle presenting accurate drop-downs, and return a date.<br />
+<img alt="DatePicker" src="../img/dev/1_cal.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+def showDate(btn):
+    print(app.getDatePicker(&quot;dp&quot;))
+
+    app=gui()
+    app.addDatePicker(&quot;dp&quot;)
+    app.addButton(&quot;GET&quot;, showDate)
+    app.setDatePickerRange(&quot;dp&quot;, 1900, 2100)
+    app.setDatePicker(&quot;dp&quot;)
+    app.go()
+</code></pre>
+
+<h4 id="add-datepickers">Add DatePickers</h4>
+<ul>
+<li><code>.addDatePicker(title)</code><br />
+    Create a DatePicker, with a range from 1/1/1970 to 31/12/2020  </li>
+</ul>
+<h4 id="set-datepickers">Set DatePickers</h4>
+<ul>
+<li>
+<p><code>.setDatePicker(title, date=None)</code><br />
+    Will set the specified DatePicker to the specified date, or current date if no date is supplied.  </p>
+</li>
+<li>
+<p><code>.setDatePickerRange(title, startYear, endYear=None)</code><br />
+    Set the range for the named DatePicker.<br />
+    If endYear is None, the current Year will be used.  </p>
+</li>
+</ul>
+<h4 id="get-datepickers">Get DatePickers</h4>
+<ul>
+<li><code>.getDatePicker(title)</code><br />
+    Will return the currently selected date.  </li>
 </ul></div>
         </div>
 

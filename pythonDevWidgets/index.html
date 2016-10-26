@@ -246,8 +246,6 @@
         
             <li><a href="#meters">Meters</a></li>
         
-            <li><a href="#datepicker">DatePicker</a></li>
-        
     
     </ul>
 </div></div>
@@ -380,46 +378,29 @@ And, a better look - gradated colour...  </p>
 <h4 id="splitmeter">SplitMeter</h4>
 <p>Shows two values, left &amp; right  </p>
 <p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
+<ul>
+<li><code>.addSplitMeter(title)</code>  </li>
+</ul>
 <h4 id="dualmeter">DualMeter</h4>
 <p>Shows percentage left &amp; right  </p>
-<h3 id="datepicker">DatePicker</h3>
-<hr />
-<p>A widget to capture a date - will handle presenting accurate drop-downs, and return a date.<br />
-<img alt="DatePicker" src="../img/dev/1_cal.png" />  </p>
-<pre><code class="python">from appJar import gui
-
-def showDate(btn):
-    print(app.getDatePicker(&quot;dp&quot;))
-
-app=gui()
-app.addDatePicker(&quot;dp&quot;)
-app.addButton(&quot;GET&quot;, showDate)
-app.setDatePickerRange(&quot;dp&quot;, 1900, 2100)
-app.setDatePicker(&quot;dp&quot;)
-app.go()
-</code></pre>
-
-<h4 id="add-datepickers">Add DatePickers</h4>
 <ul>
-<li><code>.addDatePicker(title)</code><br />
-    Create a DatePicker, with a range from 1/1/1970 to 31/12/2020  </li>
+<li><code>.addDualMeter(title)</code>  </li>
 </ul>
-<h4 id="set-datepickers">Set DatePickers</h4>
+<h4 id="set-meters">Set Meters</h4>
 <ul>
 <li>
-<p><code>.setDatePicker(title, date=None)</code><br />
-    Will set the specified DatePicker to the specified date, or current date if no date is supplied.  </p>
+<p><code>.setMeter(title, value, text=None)</code><br />
+    Value should be between -100 &amp; 100 for a SplitMeter</p>
 </li>
 <li>
-<p><code>.setDatePickerRange(title, startYear, endYear=None)</code><br />
-    Set the range for the named DatePicker.<br />
-    If endYear is None, the current Year will be used.  </p>
+<p><code>.setMeterFill(title, colour(s))</code><br />
+    Pass a single colour for a Meter.<br />
+    Pass a list of two colours for Dual &amp; Split meters.  </p>
 </li>
 </ul>
-<h4 id="get-datepickers">Get DatePickers</h4>
+<h4 id="get-meters">Get Meters</h4>
 <ul>
-<li><code>.getDatePicker(title)</code><br />
-    Will return the currently selected date.  </li>
+<li><code>.getMeter(title)</code>  </li>
 </ul></div>
         </div>
 
