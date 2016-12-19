@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/pythonDevWidgets/">
+        <link rel="canonical" href="http://appjar.info/algorithms/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>In the works... - appJar</title>
+        <title>Algorithms - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -71,7 +71,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -106,8 +106,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">In the works...</a>
+<li >
+    <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
                     
@@ -170,7 +170,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -205,8 +205,8 @@
 
                     
                         
-<li >
-    <a href="../algorithms/">Algorithms</a>
+<li class="active">
+    <a href="./">Algorithms</a>
 </li>
 
                     
@@ -230,12 +230,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../pythonDialogs/">
+                    <a rel="next" href="../pythonBasics/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonWidgetLayout/">
+                    <a rel="prev" href="../gitGuide/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -263,172 +263,215 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#widgets-under-development">Widgets Under Development</a></li>
+        <li class="main active"><a href="#algorithms">Algorithms</a></li>
         
-            <li><a href="#piechart">PieChart</a></li>
+            <li><a href="#comparison">Comparison</a></li>
         
-            <li><a href="#tree">Tree</a></li>
+            <li><a href="#links">Links</a></li>
         
-            <li><a href="#grid">Grid</a></li>
-        
-            <li><a href="#meters">Meters</a></li>
+            <li><a href="#lmc-instructions">LMC Instructions</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="widgets-under-development">Widgets Under Development</h1>
+<h1 id="algorithms">Algorithms</h1>
 <hr />
-<p>The following widgets are <strong>under development</strong>.<br />
-They're included in the library, but offer limited functionality, and are still buggy.  </p>
-<h3 id="piechart">PieChart</h3>
-<hr />
-<p>Widget to depict a Pie Chart.<br />
-It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
-The PieChart is purely for display purposes, and is not interactive.<br />
-<img alt="PieChart" src="../img/dev/pie.png" />  </p>
-<pre><code class="python">    from appJar import gui
-
-    app=gui()
-    app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
-                            &quot;beef&quot;:300, &quot;turkey&quot;:150}, size=300)
-    app.go()
-</code></pre>
-
-<h4 id="add-piecharts">Add PieCharts</h4>
-<ul>
-<li><code>.addPieChart(title, values, size=100)</code><br />
-    Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
-    The names will be used as part of tooltips that appear over each wedge of the PieChart.<br />
-    An optional size parameter can be passed, to adjust the size of the PieChart.  </li>
-</ul>
-<h4 id="set-piecharts">Set PieCharts</h4>
-<ul>
-<li><code>.setPieChart(title, name, value)</code><br />
-    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </li>
-</ul>
-<h3 id="tree">Tree</h3>
-<hr />
-<p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
-<p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
-<pre><code class="python">from appJar import gui
-
-app=gui()
-app.addTree(&quot;t1&quot;,
-            &quot;&quot;&quot;&lt;people&gt;
-            &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;Tina&lt;/name&gt;&lt;age&gt;37&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;CLive&lt;/name&gt;&lt;age&gt;28&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
-            &lt;person&gt;&lt;name&gt;Betty&lt;/name&gt;&lt;age&gt;51&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
-            &lt;/people&gt;&quot;&quot;&quot;)
-app.go()
-</code></pre>
-
-<h4 id="add-trees">Add Trees</h4>
-<ul>
-<li><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the specified XML data  </li>
-</ul>
-<h4 id="set-trees">Set Trees</h4>
-<ul>
-<li><code>.setTreeDoubleClickFunction(title, func)</code><br />
-    Register a function to call when an item is double-clicked  </li>
-<li><code>.setTreeEditFunction(title, func)</code><br />
-    Register a function to call when an item is edited  </li>
-<li><code>.setTreeEditable(title, value)</code><br />
-    Set whether the tree can be edited  </li>
-<li><code>.setTreeBg(title, colour)</code><br />
-    Set the background colour of the tree  </li>
-<li><code>.setTreeFg(title, colour)</code><br />
-    Set the foreground colour of the tree  </li>
-<li><code>.setTreeHighlightBg(title, colour)</code><br />
-    Set the background colour of the highlighted node    </li>
-<li><code>.setTreeHighlightFg(title, colour)</code><br />
-    Set the foreground colour of the highlighted node  </li>
-</ul>
-<h4 id="get-trees">Get Trees</h4>
-<ul>
-<li><code>.getTreeXML(title)</code><br />
-    Return the tree as XML  </li>
-<li><code>.getTreeSelected(title)</code><br />
-    Return the selected node as a String</li>
-<li><code>.getTreeSelectedXML(title)</code><br />
-    Return the selected node (and any children) as XML</li>
-</ul>
-<h3 id="grid">Grid</h3>
-<hr />
-<p>Used to create a spreadsheet like interface.<br />
-The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
-It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
-<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
-<pre><code class="python">    from appJar import gui
-
-    app=gui()
-    app.setFont(20)
-    app.addGrid(&quot;g1&quot;,
-        [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
-        [&quot;Fred&quot;, 45, &quot;Male&quot;],
-        [&quot;Tina&quot;, 37, &quot;Female&quot;],
-        [&quot;Clive&quot;, 28, &quot;Male&quot;],
-        [&quot;Betty&quot;, 51, &quot;Female&quot;]])
-    app.go()
-</code></pre>
-
-<h4 id="add-grids">Add Grids</h4>
-<ul>
-<li><code>.addGrid(title, data, action=None, addRow=False)</code><br />
-    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
-    If action is set, a button will be created, at the end of each row,  calling the specified function.<br />
-    If addRow is True, then an additional row will appear at the end, with entry boxes and an additional button.  </li>
-</ul>
-<h4 id="get-grids">Get Grids</h4>
-<ul>
-<li><code>.getGridEntries(title)</code><br />
-    Get the contents of the entry boxes, if present.<br />
-    Returned as a list, in the same order as the entry boxes.  </li>
-<li><code>.getGridSelectedCells(title)</code><br />
-    Gets a dictionary of booleans, indicating the status of each cell.<br />
-    True indicates the cell is selected, False indicates the cell is not selected.<br />
-    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </li>
-</ul>
-<h4 id="set-grids">Set Grids</h4>
-<ul>
-<li><code>.addGridRow(title, data)</code><br />
-    Add a single row of data to the existing grid.<br />
-    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
-</ul>
-<h3 id="meters">Meters</h3>
-<hr />
-<p>Working on some different styles for the Meter.<br />
-And, a better look - gradated colour...  </p>
-<h4 id="splitmeter">SplitMeter</h4>
-<p>Shows two values, left &amp; right  </p>
-<p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
-<ul>
-<li><code>.addSplitMeter(title)</code>  </li>
-</ul>
-<h4 id="dualmeter">DualMeter</h4>
-<p>Shows percentage left &amp; right  </p>
-<ul>
-<li><code>.addDualMeter(title)</code>  </li>
-</ul>
-<h4 id="set-meters">Set Meters</h4>
-<ul>
-<li>
-<p><code>.setMeter(title, value, text=None)</code><br />
-    Value should be between -100 &amp; 100 for a SplitMeter</p>
-</li>
-<li>
-<p><code>.setMeterFill(title, colour(s))</code><br />
-    Pass a single colour for a Meter.<br />
-    Pass a list of two colours for Dual &amp; Split meters.  </p>
-</li>
-</ul>
-<h4 id="get-meters">Get Meters</h4>
-<ul>
-<li><code>.getMeter(title)</code>  </li>
-</ul></div>
+<p>Below are some helpful comparisons between different ways of acheiving the same result, starting from design, move on to high-level language, into low-level language and finally machine code.  </p>
+<p>This guide was originally intended to help with LMC implementation, but is also useful for general python deisgn/coding.  </p>
+<h2 id="comparison">Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>FlowChart</th>
+<th>PseudoCode</th>
+<th>Python</th>
+<th>Assembler</th>
+<th>Machine Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assigning a variable</td>
+<td><img alt="Assignment" src="../img/algorithms/1_a_eq_5.png" /></td>
+<td>a &#8592; 5</td>
+<td>a=5</td>
+<td>a DAT 5</td>
+<td></td>
+</tr>
+<tr>
+<td>Input</td>
+<td><img alt="Input" src="../img/algorithms/2_a_eq_inp.png" /></td>
+<td>a &#8592; USERINPUT</td>
+<td>a=input()</td>
+<td>INP<br>STA a</td>
+<td>901<br>3xx</td>
+</tr>
+<tr>
+<td>Output</td>
+<td><img alt="Output" src="../img/algorithms/3_prt_a.png" /></td>
+<td>a &#8592; 5</td>
+<td>a=5</td>
+<td>LDA a<br>OUT</td>
+<td>5xx<br>902</td>
+</tr>
+<tr>
+<td>Subtraction</td>
+<td><img alt="Subtraction" src="../img/algorithms/5_a_eq_b_mi_c.png" /></td>
+<td>a &#8592; b - c</td>
+<td>a=b-c</td>
+<td>LDA b<br>SUB c<br>STA a</td>
+<td>5xx<br>2xx<br>3xx</td>
+</tr>
+<tr>
+<td>Selection:<br>Greater than</td>
+<td><img alt="Selection-GT" src="../img/algorithms/6_a_gt_b.png" /></td>
+<td>IF a &gt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
+<td>a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>LDA b<br>SUB a<br>BRP funcA<br>BRA funB</td>
+<td>5xx<br>2xx<br>8xx<br>6xx</td>
+</tr>
+<tr>
+<td>Selection:<br>Less than</td>
+<td><img alt="Selection-LT" src="../img/algorithms/7_a_lt_b.png" /></td>
+<td>IF a &lt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
+<td>a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>LDA a<br>SUB b<br>BRP funcB<br>BRA funcA</td>
+<td>5xx<br>2xx<br>8xx<br>6xx</td>
+</tr>
+<tr>
+<td>Selection:<br>Equal to</td>
+<td><img alt="Selection-EQ" src="../img/algorithms/8_a_eq_b.png" /></td>
+<td>IF a = b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
+<td>if a == b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>LDA a<br>SUB b<br>BRZ funcA<br>BRA funcB</td>
+<td>5xx<br>2xx<br>7xx<br>6xx</td>
+</tr>
+<tr>
+<td>Selection:<br>Not equal to</td>
+<td><img alt="Selection-NEQ" src="../img/algorithms/9_a_ne_b.png" /></td>
+<td>IF a &#8800; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
+<td>if a &#8800; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>LDA a<br>SUB b<br>BRZ funcB<br>BRA funcA</td>
+<td>5xx<br>2xx<br>7xx<br>6xx</td>
+</tr>
+<tr>
+<td>Iteration:<br>While loop</td>
+<td><img alt="Iteration-WHILE" src="../img/algorithms/10_while_a_ne_b.png" /></td>
+<td>WHILE a &#8800; b<br>&emsp;OUTPUT b<br>&emsp;a &#8592; USERINPUT<br>ENDWHILE</td>
+<td>while a != b:<br>&emsp;print(b)<br>&emsp;a = input()</td>
+<td>while LDA a<br>&emsp;&emsp;SUB b<br>&emsp;&emsp;BRZ endwhile<br>&emsp;&emsp;LDA b<br>&emsp;&emsp;OUT<br>&emsp;&emsp;INPU<br>&emsp;&emsp;STA a<br>&emsp;&emsp;BRA while<br>endwhile HLT<br>a DAT 0<br>b DAT 5</td>
+<td>5xx<br>2xx<br>7xx<br>5xx<br>902<br>901<br>3xx<br>6xx<br>000</td>
+</tr>
+<tr>
+<td>Iteration:<br>For loop (count-up)</td>
+<td><img alt="Iteration-FOR_UP" src="../img/algorithms/11_for_up.png" /></td>
+<td>FOR i &#8592; 0 TO 9<br>&emsp;OUTPUT i<br>ENDFOR</td>
+<td>for i in range(10):<br>&emsp;print(i)</td>
+<td>for LDA i<br>&emsp;&emsp;OUT<br>&emsp;&emsp;ADD one<br>&emsp;&emsp;STA i<br>&emsp;&emsp;SUB ten<br>&emsp;&emsp;BRZ endfor<br>&emsp;&emsp;BRA for<br>endfor HLT<br>i DAT 0<br>one DAT 1<br>ten DAT 10</td>
+<td>5xx<br>902<br>1xx<br>3xx<br>2xx<br>7xx<br>6xx<br>000</td>
+</tr>
+<tr>
+<td>Iteration:<br>For loop (count-down)</td>
+<td><img alt="Iteration-FOR_DOWN" src="../img/algorithms/12_for_dn.png" /></td>
+<td>FOR 1 &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
+<td>for i in range(10, 0, -1):<br>&emsp;print(i)</td>
+<td>for LDA i<br>&emsp;&emsp;OUT<br>&emsp;&emsp;SUB one<br>&emsp;&emsp;STA i<br>&emsp;&emsp;BRZ endfor<br>&emsp;&emsp;BRA for<br>endfor HLT<br>1 DAT 10<br>one DAT 1</td>
+<td>5xx<br>902<br>2xx<br>3xx<br>7xx<br>6xx<br>000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="links">Links</h2>
+<p>Some useful links for both LMC &amp; Pseudocode.  </p>
+<ol>
+<li><a href="http://www.gcsecomputing.org.uk/lmc/index.html">Online LMC</a></li>
+<li><a href="http://www.yorku.ca/sychen/research/LMC/">LMC Explanation</a></li>
+<li><a href="../cheatSheets/PseudoCode%20CheatSheet.pdf">PseudoCode CheatSheet</a></li>
+<li><a href="http://pseudowar.appjar.info">PseudoWars</a></li>
+<li><a href="http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF">AQA PseudoCode Guidelines</a></li>
+</ol>
+<h2 id="lmc-instructions">LMC Instructions</h2>
+<p>Simple explanations for the various LMC commands.  </p>
+<table>
+<thead>
+<tr>
+<th>Instructions</th>
+<th>Mneumonic</th>
+<th>Machine Code</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add</td>
+<td><strong>ADD</strong></td>
+<td>1xx</td>
+<td>Adds the contents of memory xx to the <strong>ACCUMULATOR</strong>.</td>
+</tr>
+<tr>
+<td>Subtract</td>
+<td><strong>SUB</strong></td>
+<td>2xx</td>
+<td>Subtracts the contents of memory xx from the <strong>ACCUMULATOR</strong>.</td>
+</tr>
+<tr>
+<td>Store</td>
+<td><strong>STA</strong></td>
+<td>3xx</td>
+<td>Copies the contents of the <strong>ACCUMULATOR</strong> to memory xx.</td>
+</tr>
+<tr>
+<td>Load</td>
+<td><strong>LDA</strong></td>
+<td>5xx</td>
+<td>Copies the contents of memory xx to the <strong>ACCUMULATOR</strong>.</td>
+</tr>
+<tr>
+<td>Branch ALWAYS</td>
+<td><strong>BRA</strong></td>
+<td>6xx</td>
+<td>Always set the program counter to xx. The program continues from the instruction at memory xx.</td>
+</tr>
+<tr>
+<td>Branch if ZERO</td>
+<td><strong>BRZ</strong></td>
+<td>7xx</td>
+<td>Set the program counter to xx only of the <strong>ACCUMULATOR</strong> is zero.</td>
+</tr>
+<tr>
+<td>Branch if POSITIVE</td>
+<td><strong>BRP</strong></td>
+<td>8xx</td>
+<td>Set the program counter to xx only if the <strong>ACCUMULATOR</strong> is zero or positive (greater than zero).</td>
+</tr>
+<tr>
+<td>Input</td>
+<td><strong>INP</strong></td>
+<td>901</td>
+<td>Copy the contents of the <strong>INBOX</strong> to the <strong>ACCUMULATOR</strong>.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td><strong>OUT</strong></td>
+<td>902</td>
+<td>Copy the contents of the <strong>ACCUMULATOR</strong> to the <strong>OUTBOX</strong>.</td>
+</tr>
+<tr>
+<td>Define Variable</td>
+<td><strong>DAT</strong></td>
+<td></td>
+<td>Reserves this memory slot as a variable, settinmg its contents to the value specified.</td>
+</tr>
+<tr>
+<td>Halt</td>
+<td><strong>HLT</strong></td>
+<td>000</td>
+<td>Halts execution of the program.</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">
