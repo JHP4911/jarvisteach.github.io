@@ -1292,7 +1292,7 @@
         }, 
         {
             "location": "/gitGuide/", 
-            "text": "Git Guide\n\n\n\n\nBelow are some useful commands for using git \n GitHub from the command line.  \n\n\nSetting Up\n\n\n\n\ngit init\n\nCreates a new local git repository, in the current directory  \n\n\ngit remote add origin [URI]\n\nThis will link your newly created, local repository, with the one specified on GitHub  \n\n\ngit clone [URI]\n\nThis will copy a git repository, from GitHub, to the current directory  \n\n\n\n\nUpdating\n\n\n\n\ngit remote update\n\nThis will update your log of remote changes  \n\n\ngit pull\n\nThis will get any changes from GitHub, and update your local copy  \n\n\n\n\nChecking\n\n\n\n\ngit status\n\nThis will compare your local copy, with the copy on GitHub, and tell you any differences.  \n\n\n\n\nAdding\n\n\n\n\ngit add [file]\n\nAdd a new file to your local repository  \n\n\ngit add .\n\nAdd any changes youve made to your local repository  \n\n\ngit commit -m \"message here\"\n\nCommit anything you've added to your local repository  \n\n\ngit commit -a -m \"message here\"\n\nCombines \nadd\n and \ncommit\n Syncing all changes to your local repository  \n\n\n\n\nPushing\n\n\n\n\ngit push\n\nPushes all changes you've added \n commited locally, to GitHub", 
+            "text": "Git Guide\n\n\n\n\nBelow are some useful commands for using git \n GitHub from the command line.  \n\n\nSetting Up\n\n\n\n\ngit init\n\nCreates a new local git repository, in the current directory  \n\n\ngit remote add origin [URI]\n\nThis will link your newly created, local repository, with the one specified on GitHub  \n\n\ngit clone [URI]\n\nThis will copy a git repository, from GitHub, to the current directory  \n\n\n\n\nUpdating\n\n\n\n\ngit remote update\n\nThis will update your log of remote changes  \n\n\ngit pull\n\nThis will get any changes from GitHub, and update your local copy  \n\n\n\n\nChecking\n\n\n\n\ngit status\n\nThis will compare your local copy, with the copy on GitHub, and tell you any differences.  \n\n\n\n\nAdding\n\n\n\n\ngit add [file]\n\nAdd a new file to your local repository  \n\n\ngit add .\n\nAdd any changes youve made to your local repository  \n\n\ngit commit -m \"message here\"\n\nCommit anything you've added to your local repository  \n\n\ngit commit -a -m \"message here\"\n\nCombines \nadd\n and \ncommit\n Syncing all changes to your local repository  \n\n\n\n\nPushing\n\n\n\n\ngit push\n\nPushes all changes you've added \n commited locally, to GitHub  \n\n\n\n\nTagging\n\n\n\n\ngit tag -a vXXX -m \"Tag description\n  \n\n\ngit push origin vXXX\n\nThis tags the current build in Git\n\nThen pushes it to GitHub\n\n\n\n\nPyPI\n\n\n\n\npyhton setup.py register -r pypitest\n\nThis will register the package with PyPI Test  \n\n\npython setup.py sdist upload -r pypitest\n\nThis will upload the stuff to PyPI Test  \n\n\n`pip install --verbose --index-url https://testpypi.python.org/pypi XXX\n\nThis will attempt to install from the PyPI test server", 
             "title": "Git Guide"
         }, 
         {
@@ -1324,6 +1324,16 @@
             "location": "/gitGuide/#pushing", 
             "text": "git push \nPushes all changes you've added   commited locally, to GitHub", 
             "title": "Pushing"
+        }, 
+        {
+            "location": "/gitGuide/#tagging", 
+            "text": "git tag -a vXXX -m \"Tag description     git push origin vXXX \nThis tags the current build in Git \nThen pushes it to GitHub", 
+            "title": "Tagging"
+        }, 
+        {
+            "location": "/gitGuide/#pypi", 
+            "text": "pyhton setup.py register -r pypitest \nThis will register the package with PyPI Test    python setup.py sdist upload -r pypitest \nThis will upload the stuff to PyPI Test    `pip install --verbose --index-url https://testpypi.python.org/pypi XXX \nThis will attempt to install from the PyPI test server", 
+            "title": "PyPI"
         }
     ]
 }

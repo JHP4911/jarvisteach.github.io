@@ -277,6 +277,12 @@
         <li class="main "><a href="#pushing">Pushing</a></li>
         
     
+        <li class="main "><a href="#tagging">Tagging</a></li>
+        
+    
+        <li class="main "><a href="#pypi">PyPI</a></li>
+        
+    
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
@@ -320,6 +326,22 @@ Combines <code>add</code> and <code>commit</code> Syncing all changes to your lo
 <ul>
 <li><code>git push</code><br />
 Pushes all changes you've added &amp; commited locally, to GitHub  </li>
+</ul>
+<h1 id="tagging">Tagging</h1>
+<ul>
+<li><code>git tag -a vXXX -m "Tag description</code>  </li>
+<li><code>git push origin vXXX</code><br />
+This tags the current build in Git<br />
+Then pushes it to GitHub</li>
+</ul>
+<h1 id="pypi">PyPI</h1>
+<ul>
+<li><code>pyhton setup.py register -r pypitest</code><br />
+This will register the package with PyPI Test  </li>
+<li><code>python setup.py sdist upload -r pypitest</code><br />
+This will upload the stuff to PyPI Test  </li>
+<li>`pip install --verbose --index-url https://testpypi.python.org/pypi XXX<br />
+This will attempt to install from the PyPI test server  </li>
 </ul></div>
         </div>
 
