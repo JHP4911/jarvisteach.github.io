@@ -265,6 +265,8 @@
     
         <li class="main active"><a href="#set-up-instructions">Set-up Instructions</a></li>
         
+            <li><a href="#pip-installation">Pip Installation</a></li>
+        
             <li><a href="#single-user-set-up">Single-user Set-up</a></li>
         
             <li><a href="#multi-user-set-up">Multi-user Set-up</a></li>
@@ -280,6 +282,13 @@
 <hr />
 <p>This library was designed for use in schools - it therefore doesn't require <em>installation</em>.<br />
 Instead, it just needs to be <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOADED</a> and unzipped somewhere accessible by the relevant users.  </p>
+<h2 id="pip-installation">Pip Installation</h2>
+<p>We are also now available through pip: <code>sudo pip3 install appjar</code><br />
+This will automatically download appJar, and set it up in the <strong>dist-packages</strong> folder of your python installation.  </p>
+<pre><code class="python"># then just import the appJar library
+from appJar import gui
+</code></pre>
+
 <h2 id="single-user-set-up">Single-user Set-up</h2>
 <p>If you're just programming on your own PC, copy the <strong>appJar folder</strong> into your <strong>code folder</strong>, and you're done!<br />
 (As long as it's in the same folder as your code, it'll work...)  </p>
