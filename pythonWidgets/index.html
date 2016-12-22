@@ -408,10 +408,11 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <h2 id="entry">Entry</h2>
 <hr />
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
-<p>There are two special-case entries:</p>
+<p>There are three special-case entries:</p>
 <ul>
 <li>NumericEntry - this only allows numbers to be typed in.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
+<li>AutoEntry - this takes a list of words to provide auto-completion.  </li>
 </ul>
 <p><img alt="Entries" src="../img/1_entries.gif" /></p>
 <pre><code class="python">from appJar import gui
@@ -432,8 +433,9 @@ app.go()
 <ul>
 <li><code>.addEntry(title)</code></li>
 <li><code>.addNumericEntry(title)</code></li>
+<li><code>.addSecretEntry(title)</code></li>
 <li>
-<p><code>.addSecretEntry(title)</code></p>
+<p><code>.addAutoEntry(title, words)</code>  </p>
 <p>Each of these will add the specified type of Entry, using the title provided.</p>
 </li>
 </ul>
