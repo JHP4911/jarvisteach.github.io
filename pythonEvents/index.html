@@ -117,7 +117,7 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -158,6 +158,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
                     
                         
 <li >
@@ -235,7 +241,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../examples/simple/">
+                    <a rel="prev" href="../examples/minecraft/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -265,9 +271,13 @@
     
         <li class="main active"><a href="#events">Events</a></li>
         
-            <li><a href="#widget-interaction">Widget Interaction</a></li>
+            <li><a href="#make-stuff-happen">Make stuff happen...</a></li>
         
-            <li><a href="#gui-interaction">GUI Interaction</a></li>
+            <li><a href="#binding-keys">Binding Keys</a></li>
+        
+            <li><a href="#repeating-events">Repeating Events</a></li>
+        
+            <li><a href="#stopping-the-gui">Stopping the GUI</a></li>
         
     
     </ul>
@@ -276,14 +286,15 @@
 
 <h1 id="events">Events</h1>
 <hr />
-<p>It's possible to call functions when the user performs certain actions.<br />
-It's also possible to configure functions to be called automatically, in a loop.  </p>
-<h3 id="widget-interaction">Widget Interaction</h3>
+<p>The whole point of GUIs is <a href="https://en.wikipedia.org/wiki/Event-driven_programming">events</a>!   </p>
+<p>We want events to be generated whenever the user does something, such as clicking a button, moving a scale, or pressing a key...</p>
+<p>We also, sometimes, want events to happen repeatedly...</p>
+<h2 id="make-stuff-happen">Make stuff happen...</h2>
 <hr />
-<p>The following allow widgets to be interacted with:</p>
+<p>To make something happen you have to set a function for a widget:  </p>
 <ul>
-<li><code>.set XXX Function(name, value, key=None)</code><br />
-    This binds a function to the widget.<br />
+<li><code>.set XXX Function(title, function, key=None)</code><br />
+    This binds a function to the named widget.<br />
     The function will be called every time an interactive-widget changes.<br />
     The function will be called when some widgets are clicked.  </li>
 </ul>
@@ -300,7 +311,7 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>.set XXX OverFunction(name, values)</code><br />
+<li><code>.set XXX OverFunction(name, [inFunction, outFunction])</code><br />
     Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
     The first function is called when the mouse first enters the widget.<br />
     The second function is called when the mouse leaves the widget.<br />
@@ -320,18 +331,68 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>.set XXX DragFunction(name, values)</code><br />
+<li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction])</code><br />
     Set functions to call whenever the mouse button is clicked and dragged.<br />
     The first function will be called when the mouse is initially clicked.<br />
     The second function will be called when the mouse is released.<br />
     The same rules for passing functions apply as above.  </li>
 </ul>
-<h3 id="gui-interaction">GUI Interaction</h3>
-<hr />
-<h4 id="stopping-the-gui">Stopping the GUI</h4>
-<p>To stop the GUI, simply call <code>app.stop()</code><br />
-The user might also close the GUI by clicking the close icon or from an applicaiton menu.<br />
-If you want to check with the user, before stopping the GUI, then you can set a function to call.  </p>
+<h2 id="binding-keys">Binding Keys</h2>
+<p>As well as chaning widgets, we sometimes want keys to trigger events.  </p>
+<p>The classic example is the <Enter> key, we often want to be able to hit the <Enter> key to submit a form...</p>
+<ul>
+<li>
+<p><code>.enableEnter(function)</code><br />
+Link a function to the <code>&lt;Enter&gt;</code> key</p>
+</li>
+<li>
+<p><code>.disableEnter()</code><br />
+Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
+</li>
+</ul>
+<p>You may also want to bind other keys to events.  </p>
+<ul>
+<li>
+<p><code>.bindKey(key, function)</code><br />
+Link the specified key to the specified function.</p>
+</li>
+<li>
+<p><code>.unbindKey(key)</code><br />
+Unlink the specified key from any functions bound to it.</p>
+</li>
+</ul>
+<h2 id="repeating-events">Repeating Events</h2>
+<p>Sometimes, you want events to keep happening in the background.<br />
+GUIs aren't so great at this - if you have a loop in your prgram, the GUI will <em>hang</em> (stop working until the loop finishes).<br />
+Luckily, we have a solution,,,</p>
+<ul>
+<li>
+<p><code>.registerEvent(function)</code><br />
+This will cause the GUI to keep repeating the named function in the background.<br />
+The function should repeat every second.  </p>
+</li>
+<li>
+<p><code>.setPollTime(time)</code><br />
+If you want your events to be called more or less frequently, set the frequency here.</p>
+</li>
+</ul>
+<p>This is great for updating statuses, checking for messages, etc...</p>
+<pre><code class="python">#function to set the status bar
+def getLocation():
+    x,y,z = mc.player.getPos()
+    app.setStatusbar(&quot;X: &quot;+ str(round(x,3)), 0)
+    app.setStatusbar(&quot;Y: &quot;+ str(round(y,3)), 1)
+    app.setStatusbar(&quot;Z: &quot;+ str(round(z,3)), 2)
+
+# call the getLocation function every second
+app.registerEvent(getLocation)
+</code></pre>
+
+<h2 id="stopping-the-gui">Stopping the GUI</h2>
+<p>Usually the user just presses the <strong>close icon</strong> to stop the GUI.<br />
+However, you might want to let them do it in other ways - maybe by pressing a button...
+To stop the GUI, simply call <code>app.stop()</code>  </p>
+<p>If you want to add a feature to confirm the user really wants to exit, or to save some data, then you'll need a <strong>stop function</strong>.  </p>
 <ul>
 <li><code>.setStopFunction(function)</code><br />
     Set a function to call, before allowing the GUI to be stopped.<br />
@@ -341,47 +402,7 @@ If you want to check with the user, before stopping the GUI, then you can set a 
     return app.yesNoBox(&quot;Confirm Exit&quot;, &quot;Are you sure you want to exit the application?&quot;)
 
 app.setStopFunction(checkStop)
-</code></pre>
-
-<h4 id="repeated-events">Repeated Events</h4>
-<p>When you start the GUI, it kicks off an infinte loop that is waiting for the user to do something.<br />
-That means, you should never have your own loops running, as they will stop the GUI from working properly.<br />
-Instead, if you want your own loop to run, you need to ask the GUi to run it for you:  </p>
-<ul>
-<li>
-<p><code>.registerEvent(func)</code><br />
-Pass this a function, and the GUI will call that function every second.</p>
-</li>
-<li>
-<p><code>.setPollTime(time)</code><br />
-If you want your events to be called more or less frequently, set the frequency here.</p>
-</li>
-</ul>
-<h4 id="enter-key">Enter Key</h4>
-<p>Every time the <Enter> key is pressed, you can have the GUI call a function.<br />
-Useful if you want to be able to submit a form from anywhere.  </p>
-<ul>
-<li>
-<p><code>.enableEnter(func)</code><br />
-Link a function to the <code>&lt;Enter&gt;</code> key</p>
-</li>
-<li>
-<p><code>.disableEnter()</code><br />
-Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
-</li>
-</ul>
-<h4 id="other-keys">Other Keys</h4>
-<p>You may also want to bind other keys to events.  </p>
-<ul>
-<li>
-<p><code>.bindKey(key, func)</code><br />
-Link the specified key to the specified function.</p>
-</li>
-<li>
-<p><code>.unbindKey(key)</code><br />
-Unlink the specified key from any functions bound to it.</p>
-</li>
-</ul></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

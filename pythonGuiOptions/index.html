@@ -117,7 +117,7 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -158,6 +158,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
                     
                         
 <li >
@@ -269,8 +275,6 @@
         
             <li><a href="#gui-design">GUI Design</a></li>
         
-            <li><a href="#widget-padding-positioning">Widget Padding &amp; Positioning</a></li>
-        
     
     </ul>
 </div></div>
@@ -377,111 +381,7 @@ else:
 <p><code>.increaseButtonFont()</code> &amp; <code>.decreaseButtonFont()</code><br />
     These can be used to increase or decrease the font of all butotn-type widgets.</p>
 </li>
-</ul>
-<h2 id="widget-padding-positioning">Widget Padding &amp; Positioning</h2>
-<hr />
-<p>The below commands allow the user to change how appJar lays out widgets on the screen.<br />
-These settings will be applied to all widgets within the current container.  </p>
-<h3 id="widget-padding">Widget Padding</h3>
-<p>Padding is empty space around the edges of a widget.  </p>
-<p><img alt="Padding" src="../img/conf/pos1.png" /></p>
-<pre><code class="python">app.setPadX(20) # padding outside the widget
-app.setPadY(20)
-app.setIPadX(20) # padding inside the widget
-app.setIPadY(20)
-</code></pre>
-
-<h4 id="set-padding">Set Padding</h4>
-<ul>
-<li>
-<p><code>.setPadX()</code> &amp; <code>.setPadY()</code><br />
-    These set how much empty space is included, outside a widget, between the widget &amp; the cell's edge.  </p>
-</li>
-<li>
-<p><code>.setIPadX()</code> &amp; <code>.setIPadY()</code><br />
-    These set how much empty space is included, inside a widget, between the text and the widget's border.  </p>
-</li>
-</ul>
-<p><img alt="Padding" src="../img/conf/pos2.png" /></p>
-<pre><code class="python">app.setPadX(20) # padding outside the widget
-app.setPadY(20)
-app.setIPadX(40) # padding inside the widget
-app.setIPadY(5)
-</code></pre>
-
-<h3 id="widget-positioning">Widget Positioning</h3>
-<p>There are two aspects to how widgets are positioned:  </p>
-<ul>
-<li>How columns and rows expand to fill the GUI space.  </li>
-<li>How widgets expand to fill their cells.  </li>
-</ul>
-<p>By default, columns will expand (equally) to fill the width of the GUI, but rows will not.<br />
-Within their cells, widgets will <em>stick</em> to the <code>east</code> &amp; <code>west</code> sides (left &amp; right) but not the <code>north</code> &amp; <code>south</code> (top  &amp; bottom).<br />
-<img alt="Expand" src="../img/conf/exp1.png" />  </p>
-<p>It's possible to tell a widget to not stick to the sides of its cell:  </p>
-<p><img alt="Expand" src="../img/conf/exp3.png" />  </p>
-<pre><code class="python">app.setSticky(&quot;&quot;)
-</code></pre>
-
-<p>Or, to tell it to stick to all sides:<br />
-<img alt="Expand" src="../img/conf/exp1.png" />  </p>
-<pre><code class="python">app.setSticky(&quot;nesw&quot;)
-</code></pre>
-
-<p>However, even though the widget is sticking to all sides of the cell.<br />
-You still have to tell the rows to expand to fill the GUI space:  </p>
-<p><img alt="Expand" src="../img/conf/exp2.png" />  </p>
-<pre><code class="python">app.setExpand(&quot;both&quot;)
-app.setSticky(&quot;nesw&quot;)
-</code></pre>
-
-<h4 id="set-sticky-expand">Set Sticky &amp; Expand</h4>
-<ul>
-<li>
-<p><code>.setSticky(sides)</code><br />
-    This determines which sides of the grid-cell the widget will stick to.<br />
-    It should be a string, made up of any combination of <code>n</code>, <code>e</code>, <code>s</code> or <code>w</code><br />
-    By default, most widgets use <code>"ew"</code>  </p>
-</li>
-<li>
-<p><code>.setExpand()</code><br />
-    This tells rows &amp; columns what to do when the GUI is resized.<br />
-    It allows them to adjust to fill the available space:</p>
-<ul>
-<li><code>none</code> - don't expand  </li>
-<li><code>row</code> - expand with rows only  </li>
-<li><code>column</code> - expand with columns only  </li>
-<li><code>all</code> - expand in all directions  </li>
-</ul>
-</li>
-</ul>
-<p>It's even possible to give each widget its own <em>stickiness</em>:<br />
-<img alt="Expand" src="../img/conf/exp4.png" />  </p>
-<pre><code class="python">from appJar import gui
-
-app=gui()
-
-app.setBg(&quot;blue&quot;)
-app.setExpand(&quot;both&quot;)
-
-app.setSticky(&quot;nw&quot;)
-app.addLabel(&quot;l1&quot;, &quot;One&quot;, 0, 0)
-app.setLabelBg(&quot;l1&quot;, &quot;yellow&quot;)
-
-app.setSticky(&quot;ne&quot;)
-app.addLabel(&quot;l2&quot;, &quot;Two&quot;, 0, 1)
-app.setLabelBg(&quot;l2&quot;, &quot;green&quot;)
-
-app.setSticky(&quot;sw&quot;)
-app.addLabel(&quot;l3&quot;, &quot;Three&quot;, 1, 0)
-app.setLabelBg(&quot;l3&quot;, &quot;pink&quot;)
-
-app.setSticky(&quot;se&quot;)
-app.addLabel(&quot;l4&quot;, &quot;Four&quot;, 1, 1)
-app.setLabelBg(&quot;l4&quot;, &quot;Orange&quot;)
-
-app.go()
-</code></pre></div>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

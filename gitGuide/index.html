@@ -117,7 +117,7 @@
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Presentation <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
@@ -158,6 +158,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
                     
                         
 <li >
@@ -289,7 +295,7 @@
 
 <h1 id="git-guide">Git Guide</h1>
 <hr />
-<p>Below are some useful commands for using git &amp; GitHub from the command line.  </p>
+<p>Below are some useful commands for using git, GitHub &amp; PyPI from the command line.  </p>
 <h2 id="setting-up">Setting Up</h2>
 <ul>
 <li><code>git init</code><br />
@@ -336,11 +342,11 @@ Then pushes it to GitHub</li>
 </ul>
 <h1 id="pypi">PyPI</h1>
 <ul>
-<li><code>pyhton setup.py register -r pypitest</code><br />
+<li><code>python setup.py register -r pypitest</code><br />
 This will register the package with PyPI Test  </li>
 <li><code>python setup.py sdist upload -r pypitest</code><br />
 This will upload the stuff to PyPI Test  </li>
-<li>`pip install --verbose --index-url https://testpypi.python.org/pypi XXX<br />
+<li><code>pip install --verbose --index-url https://testpypi.python.org/pypi appJar</code><br />
 This will attempt to install from the PyPI test server  </li>
 </ul></div>
         </div>
