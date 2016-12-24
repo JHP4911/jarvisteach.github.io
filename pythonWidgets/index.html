@@ -416,7 +416,7 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
 <p>There are three special-case entries:</p>
 <ul>
-<li>NumericEntry - this only allows numbers to be typed in.</li>
+<li>NumericEntry - this only allows numbers to be typed in - always returns a float.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 <li>AutoEntry - this takes a list of words to provide auto-completion.  </li>
 </ul>
@@ -473,7 +473,8 @@ app.go()
 <h4 id="get-entries">Get Entries</h4>
 <ul>
 <li><code>.getEntry(title)</code><br />
-    This will return the contents of the specified entry box.</li>
+    This will return the contents of the specified entry box.
+    NB. <em>numericEntries</em> always return a float.  </li>
 </ul>
 <h2 id="button">Button</h2>
 <hr />
@@ -989,7 +990,8 @@ app.go()
 <h4 id="get-meters">Get Meters</h4>
 <ul>
 <li><code>getMeter(name)</code><br />
-    Gets the value of the specified meter.  </li>
+    Gets the value of the specified meter.<br />
+    As meters convert their data to a value between 0 and 1, this will return a list of two values: <code>(0.45, '45 %')</code>  </li>
 </ul>
 <h2 id="properties">Properties</h2>
 <p>A compound widget that shows multiple CheckButtons linked to a dictionary.<br />
