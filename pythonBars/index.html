@@ -335,91 +335,70 @@ app.addToolbar(tools, tbFunc, findIcon=True)
 <p>Adds a standard Menubar along the top of the GUI.<br />
 On Windows/Linux a menubar will only be shown, once the first menu has been added.<br />
 On Mac, a menubar is always present.<br />
-Menubars are made up of a series of menus, each conaining a list of items.<br />
-These items can contain menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
-<h4 id="optional-features">Optional Features:</h4>
-<ul>
-<li>
-<p><code>shortcut</code> These are keyboard shortcuts to call a menu item.<br />
-    These should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
-    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code><br />
-    The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
-</li>
-<li>
-<p><code>underline</code> If set to an Integer, the corresponding character will be underlined.  </p>
-</li>
-<li>
-<p><code>tearable</code> If this is set to True, it's possible to undock the menu.  </p>
-</li>
-</ul>
+Menubars are made up of a series of menus, each conaining a list of names.<br />
+These names can be menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
 <h4 id="create-menus">Create Menus</h4>
 <ul>
 <li>
+<p><code>.addMenuList(menu, names, functions)</code><br />
+    Will create a new menu, with the specified title, containing the list of names.<br />
+    Pass a single function - all names will call that function, passing their name.<br />
+    Or a list of functions (the same length as the names), each menu will call the corresponding function.<br />
+    If a name is <code>-</code>, then a separator will be added to the menu.  </p>
+</li>
+<li>
 <p><code>.createMenu(menu, tearable=False)</code><br />
-    Will create a top-level menu, to add menu items to.</p>
+    Will create a new, empty menu, to add menu-items to.</p>
 </li>
 <li>
-<p><code>.createRightClickMenu(menu, showInBar=False)</code><br />
-    Will create a hidden menu, that can be shown when the user right-clicks a widget.<br />
-    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.  </p>
-<p>To access the rightClickMenu, it must be bound to a widget:<br />
-<code>.setXXXRightClick(widgetName, MenuName)</code> will bind the named menu to the named widget.  </p>
-</li>
-<li>
-<p><code>.addMenuItem(menu, item, func=None, shortcut=None, underline=-1)</code><br />
-    Add a menu item to the named menu, with the specified function.<br />
+<p><code>.addMenuItem(menu, name, function=None, shortcut=None, underline=-1)</code><br />
+    Add a menu-item to the named menu, with the specified function.<br />
     If the named menu does not exist, it will be automatically created.<br />
-    If the item name is a <code>-</code>, then a separator will be added to the menu.  </p>
-</li>
-<li>
-<p><code>.addMenuList(menu, items, functions)</code><br />
-    Will create a top-level menu, with the specified menu.<br />
-    Within the menu will be the list of items, each calling the corresponding function in the function list.<br />
-    If only one function is provided, all items will call the same function.<br />
-    If an item name is a <code>-</code>, then a separator will be added to the menu.  </p>
-</li>
-<li>
-<p><code>.addSubMenu(menu, subMenu)</code><br />
-    Adds a sub-menu to the specified menu.  </p>
+    If the name is <code>-</code>, then a separator will be added to the menu.  </p>
 </li>
 <li>
 <p><code>.addMenuSeparator(menu)</code><br />
     Add a separator to the named menu.  </p>
 </li>
 <li>
-<p><code>.addMenuCheckBox(menu, item, function=None, shortcut=None, underline=-1)</code><br />
-    Add a check box, to the named menu, with the specified item name.  </p>
+<p><code>.addMenuCheckBox(menu, name, function=None, shortcut=None, underline=-1)</code><br />
+    Add a check box, to the named menu, with the specified name.  </p>
 </li>
 <li>
-<p><code>.addMenuRadioButton(menu, item, value, function=None, shortcut=None, underline=-1)</code><br />
-    Add a radio button, to the named menu, grouped by item name, with the specified value.  </p>
+<p><code>.addMenuRadioButton(menu, name, value, function=None, shortcut=None, underline=-1)</code><br />
+    Add a radio button, to the named menu, grouped by name, with the specified value.  </p>
+</li>
+<li>
+<p><code>.addSubMenu(menu, subMenu)</code><br />
+    Adds a sub-menu to the specified menu.<br />
+    Then add menu-items to this menu (using its name).  </p>
 </li>
 <li>
 <p><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
-    Adds a single menu option, that will call the specified function.  </p>
+    Adds a single menu, with no list of menu-items,  that will call the specified function.  </p>
 </li>
 </ul>
 <h4 id="set-menus">Set Menus</h4>
 <ul>
 <li>
-<p><code>.setMenuCheckBox(menu, item)</code><br />
+<p><code>.setMenuCheckBox(menu, name)</code><br />
     Inverts the specified check box, in the named menu.</p>
 </li>
 <li>
-<p><code>.setMenuRadioButton(menu, item, value)</code><br />
+<p><code>.setMenuRadioButton(menu, name, value)</code><br />
     Selects the specified value, of the specified radio button, in the named menu.</p>
 </li>
 <li>
-<p><code>.setMenuImage(menu, item, image, align='text')</code><br />
-    Will set the specified image for the specified menu item.  </p>
+<p><code>.setMenuImage(menu, name, image, align='text')</code><br />
+    Will set the specified image for the specified menu-item.  </p>
 </li>
 <li>
-<p><code>.setMenuIcon(menu, item, icon, align='text')</code><br />
-    Will set the specified icon for the specified menu item.  </p>
+<p><code>.setMenuIcon(menu, name, icon, align='text')</code><br />
+    Will set the specified icon for the specified menu-item.  </p>
 </li>
 <li>
-<p><code>.disableMenuItem(menu, item)</code> &amp; <code>.enableMenuItem(menu, item)</code><br />
-    Will enable/disable the specified menu item.  </p>
+<p><code>.disableMenuItem(menu, name)</code> &amp; <code>.enableMenuItem(menu, name)</code><br />
+    Will enable/disable the specified menu name.  </p>
 </li>
 <li>
 <p><code>.disableMenu(menu)</code> &amp; <code>.enableMenu(menu)</code><br />
@@ -434,27 +413,53 @@ These items can contain menu-items, radio buttons, check boxes, separators, or s
 <h4 id="get-menus">Get Menus</h4>
 <ul>
 <li>
-<p><code>.getMenuCheckBox(menu, item)</code><br />
+<p><code>.getMenuCheckBox(menu, name)</code><br />
     Get the value of the specified check box, from the named menu.<br />
     Returns True or False.  </p>
 </li>
 <li>
-<p><code>.getMenuRadioButton(menu, item)</code><br />
+<p><code>.getMenuRadioButton(menu, name)</code><br />
     Get the value of the specified radio button, from the named menu.<br />
     Returns the name of the checked radio button, for this group.  </p>
 </li>
 </ul>
+<hr />
+<h4 id="extra-features">Extra Features:</h4>
+<ul>
+<li>
+<p><code>shortcut</code> These are keyboard shortcuts to call a menu-item.<br />
+    These should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
+    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code><br />
+    The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
+</li>
+<li>
+<p><code>underline</code> If set to an Integer, the corresponding character will be underlined.  </p>
+</li>
+<li>
+<p><code>tearable</code> If this is set to True, it's possible to undock the menu.  </p>
+</li>
+</ul>
+<hr />
 <h4 id="platform-specificcustom-menus">Platform Specific/Custom Menus</h4>
 <p>It's possible to interact with menus that are specific to particular platforms, or prebuilt for specific purposes.<br />
-Simply use the menu names given below when adding items to a menu.  </p>
+Simply use the menu names given below when adding menu-items to a menu.  </p>
 <ul>
 <li>
 <p><strong>Generic</strong>  </p>
 <ul>
-<li><strong>Edit Menu</strong> - <code>EDIT</code> provides a right-click, <em>cut &amp; paste</em> menu for text, entry &amp; option boxes.<br />
+<li>
+<p><strong>Right-click Menu</strong><br />
+    Call <code>.createRightClickMenu(menu, showInBar=False)</code> to create an empty <strong>right-click menu</strong> <br />
+    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.<br />
+    The right-click menu can be populated the same way as a regular menu.  </p>
+<p>To link the <strong>right-click menu</strong> to a widget, call <code>.setXXXRightClick(widgetName, menu)</code>  </p>
+</li>
+<li>
+<p><strong>Edit Menu</strong> - <code>EDIT</code> provides a right-click, <em>cut &amp; paste</em> menu automatically linked to all <strong>text</strong>, <strong>entry</strong> &amp; <strong>option boxes</strong>.<br />
     Call <code>.addMenuEdit(inMenuBar=False)</code> to enable the <em>Edit</em> menu.<br />
     Set the parameter to True, to also show it in the menu bar.<br />
-    This menu does its best to show the appropriate options, for all situations - but doesn't know when you can't <em>redo</em> an action.  </li>
+    This menu does its best to show the appropriate options, for all situations - but doesn't know when you can't <em>redo</em> an action.  </p>
+</li>
 </ul>
 </li>
 <li>
@@ -464,16 +469,16 @@ Simply use the menu names given below when adding items to a menu.  </p>
 </ul>
 </li>
 <li>
-<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus item. <br />
-    There are also a couple of menu items the user can/should provide.  </p>
+<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus-item. <br />
+    There are also a couple of menu-items the user can/should provide.  </p>
 <ul>
 <li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usuaully called <em>Python</em>.<br />
     This menu is always present, and connot be renamed - no matter how much I wish it could!<br />
-    Call <code>.addMenuPreferences(func)</code> to enable the <em>Preferences</em> menu item, within the <em>Application Menu</em>.  </li>
-<li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu items relaed to windows. <br />
+    Call <code>.addMenuPreferences(function)</code> to enable the <em>Preferences</em> menu-item, within the <em>Application Menu</em>.  </li>
+<li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu-items related to windows. <br />
     To access this menu, you must first call <code>.addMenuWindow()</code>  </li>
-<li><strong>Help Menu</strong> - <code>MAC_HELP</code> provides a <em>Search</em> item <br />
-    To access this menu, you must first call <code>.addMenuHelp(func)</code>, passing the function to call for the default <em>Python Help</em> item.  </li>
+<li><strong>Help Menu</strong> - <code>MAC_HELP</code> provides a <em>Search</em> menu-item <br />
+    To access this menu, you must first call <code>.addMenuHelp(function)</code>, passing the function to call for the default <em>Python Help</em> menu-item.  </li>
 </ul>
 </li>
 <li>
@@ -505,7 +510,7 @@ app.setStatusbarFg(&quot;white&quot;, 2)
 
 <h4 id="create-statusbars">Create Statusbars</h4>
 <ul>
-<li><code>.addStatusBar(header="", fields=1, side=None)</code><br />
+<li><code>.addStatusbar(header="", fields=1, side=None)</code><br />
     This turns the statusbar on, and if a header is supplied, will prepend the header before every status.<br />
     If <code>fields</code> is populated, it's possible to have multiple status boxes, each addressable by a number.<br />
 <code>side</code> can be set as LEFT/RIGHT to make the fields appear from the left or right side, otherwise they will stretch equally.  </li>
