@@ -107,6 +107,12 @@
                     
                         
 <li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
@@ -150,6 +156,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -177,30 +189,18 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Install/">Set-up</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Support/">Support</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">What's new?</a>
 </li>
 
                     
@@ -218,7 +218,25 @@
                     
                         
 <li >
-    <a href="../gitGuide/">Git Guide</a>
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -235,8 +253,9 @@
                     <i class="fa fa-mortar-board"></i> Learn
                     </a>
                 </li>
+<!--
                 <li >
-                    <a rel="next" href="../Thanks/">
+                    <a rel="next" href="../whatsNew/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -245,6 +264,7 @@
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
@@ -418,9 +438,116 @@ price = float(var3)
 <td>Rounds the number to the nearest place</td>
 </tr>
 <tr>
+<td>floor()</td>
+<td>Round-down</td>
+<td>Rounds the number down</td>
+</tr>
+<tr>
+<td>ceil()</td>
+<td>Round-Up</td>
+<td>Rounds the number up</td>
+</tr>
+<tr>
 <td>sum()</td>
 <td>Sum</td>
 <td>Adds together all the items in the list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-operations">String Operations</h3>
+<p>Python also lets us perform various actions on Strings.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>varName.upper()</code></td>
+<td>Uppercase</td>
+<td>Makes the entire string uppercase</td>
+</tr>
+<tr>
+<td><code>varName.lower()</code></td>
+<td>Lowercase</td>
+<td>Makes the entire string lowercase</td>
+</tr>
+<tr>
+<td><code>varName.split(" ")</code></td>
+<td>Split into a list</td>
+<td>Converts the String into a list, using spaces</td>
+</tr>
+<tr>
+<td><code>varName.split(",")</code></td>
+<td>Split into a list</td>
+<td>Converts the String into a list, using commas</td>
+</tr>
+<tr>
+<td><code>varName.count("a")</code></td>
+<td>Counts occurences of the text</td>
+<td>Counts how many times <strong>a</strong> appears in the String</td>
+</tr>
+<tr>
+<td><code>varName.index("a")</code></td>
+<td>Finds the first position of the text</td>
+<td>Finds the first position of <strong>a</strong></td>
+</tr>
+<tr>
+<td><code>varName.startswith("Mr.")</code></td>
+<td>Checks what the String starts with</td>
+<td>Returns True if the String starts with <strong>Mr.</strong></td>
+</tr>
+<tr>
+<td><code>varName.endswith("Jarvis")</code></td>
+<td>Checks what the String ends with</td>
+<td>Returns True if the String ends with<strong>Jarvis</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-splicing">String Splicing</h3>
+<p>Remember, Strings are just lists of characters.<br />
+It's also possible to access parts of a String using array square brackets.  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>varName[2]</code></td>
+<td>Gets a character</td>
+<td>Returns the thrid character</td>
+</tr>
+<tr>
+<td><code>varName[2:5]</code></td>
+<td>Gets a substring</td>
+<td>Returns characters from 2 to 4</td>
+</tr>
+<tr>
+<td><code>varName[2:]</code></td>
+<td>Gets a substring</td>
+<td>Returns characters from 2 to the end</td>
+</tr>
+<tr>
+<td><code>varName[:5]</code></td>
+<td>Gets a substring</td>
+<td>Returns characters from the beginning to 4</td>
+</tr>
+<tr>
+<td><code>varName[2:10:2]</code></td>
+<td>Gets a substring</td>
+<td>Returns characters from 2 to 9, skipping every other character</td>
+</tr>
+<tr>
+<td><code>varName[::-1]</code></td>
+<td>Reverse a String</td>
+<td>Returns the String in reverse order</td>
 </tr>
 </tbody>
 </table>
@@ -436,6 +563,21 @@ else:
 </code></pre>
 
 <p>Making decisions is all about comparing things; is one variable bigger than another, are two other variables the same...</p>
+<pre><code class="python"># if they are 18 or over, print &quot;You can vote&quot;
+if favArtist == &quot;Picasso&quot;:
+    print(&quot;You like cubist paintings.&quot;)
+elif favArtist == &quot;Rembrandt&quot;:
+    print(&quot;You like realistic paintings.&quot;)
+elif favArtist == &quot;Monet&quot;:
+    print(&quot;You like impressionist paintings.&quot;)
+elif favArtist == &quot;Rembrandt&quot;:
+    print(&quot;You like realistic paintings.&quot;)
+elif favArtist == &quot;Cezanne&quot;:
+    print(&quot;You like post-impresionistic paintings.&quot;)
+else:
+    print(&quot;Unrecognised artist&quot;)
+</code></pre>
+
 <p>To compare things we use standard operators, just like in maths.</p>
 <h3 id="equality-operators">Equality Operators</h3>
 <p>These let us test if things are equal or not:</p>

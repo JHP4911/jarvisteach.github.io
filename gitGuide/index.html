@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Git Guide - appJar</title>
+        <title>Git - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -107,6 +107,12 @@
                     
                         
 <li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
@@ -150,6 +156,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -177,30 +189,18 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Install/">Set-up</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Support/">Support</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">What's new?</a>
 </li>
 
                     
@@ -218,7 +218,25 @@
                     
                         
 <li class="active">
-    <a href="./">Git Guide</a>
+    <a href="./">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -235,16 +253,18 @@
                     <i class="fa fa-mortar-board"></i> Learn
                     </a>
                 </li>
+<!--
                 <li >
                     <a rel="next" href="../algorithms/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
+                <li >
+                    <a rel="prev" href="../License/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
@@ -271,22 +291,11 @@
     
         <li class="main active"><a href="#git-guide">Git Guide</a></li>
         
-            <li><a href="#setting-up">Setting Up</a></li>
+            <li><a href="#simple-set-up">Simple Set-up</a></li>
         
-            <li><a href="#updating">Updating</a></li>
+            <li><a href="#reference">Reference</a></li>
         
-            <li><a href="#checking">Checking</a></li>
-        
-            <li><a href="#adding">Adding</a></li>
-        
-    
-        <li class="main "><a href="#pushing">Pushing</a></li>
-        
-    
-        <li class="main "><a href="#tagging">Tagging</a></li>
-        
-    
-        <li class="main "><a href="#pypi">PyPI</a></li>
+            <li><a href="#pypi">PyPI</a></li>
         
     
     </ul>
@@ -296,7 +305,31 @@
 <h1 id="git-guide">Git Guide</h1>
 <hr />
 <p>Below are some useful commands for using git, GitHub &amp; PyPI from the command line.  </p>
-<h2 id="setting-up">Setting Up</h2>
+<h2 id="simple-set-up">Simple Set-up</h2>
+<p><a href="https://git-scm.com/">Git</a> provides local version control - allowing you to keep backups of previous versions of your code.  </p>
+<p>It's really easy to get started:  </p>
+<ul>
+<li><code>git init</code> - will initialise Git for your current project,  </li>
+<li><code>git add [filename]</code> - will queue a new file or changes to an existing file to be saved  </li>
+<li><code>git commit</code> - will save the new versions of the files you've added - with a message describing the changes.  </li>
+</ul>
+<p>That's it, you now have full <strong>version control</strong> over your code.<br />
+It works in Windows, OSX or Linux and is supported by most popular IDEs (including Visual Studio).  </p>
+<p>You can even take it a step further, by sharing your code on the Web.<br />
+<a href="http://github.com">GitHub</a> provides a free place to sink &amp; share your code.<br />
+It will also allow other people to view &amp; contribute to your code.  </p>
+<p>You first need to <strong>create</strong> an account on GitHub, and then a new <strong>repo</strong>:  </p>
+<p><img alt="new repository" src="../img/git/repoCreate.png" />  </p>
+<p>Then copy your repo's address, and <strong>add</strong> it to your local git account:  </p>
+<ul>
+<li><code>git remote add origin [web_address]</code> - link your local Git repo to a GitHub repo.  </li>
+</ul>
+<p>Then, once you've <strong>commited</strong> local changes, you can <strong>push</strong> them to GitHub:  </p>
+<ul>
+<li><code>git push</code> - send your local changes to your online GitHub repository.  </li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="setting-up">Setting Up</h3>
 <ul>
 <li><code>git init</code><br />
 Creates a new local git repository, in the current directory  </li>
@@ -305,42 +338,47 @@ This will link your newly created, local repository, with the one specified on G
 <li><code>git clone [URI]</code><br />
 This will copy a git repository, from GitHub, to the current directory  </li>
 </ul>
-<h2 id="updating">Updating</h2>
+<h3 id="updating">Updating</h3>
 <ul>
 <li><code>git remote update</code><br />
 This will update your log of remote changes  </li>
 <li><code>git pull</code><br />
 This will get any changes from GitHub, and update your local copy  </li>
 </ul>
-<h2 id="checking">Checking</h2>
+<h3 id="checking">Checking</h3>
 <ul>
 <li><code>git status</code><br />
 This will compare your local copy, with the copy on GitHub, and tell you any differences.  </li>
 </ul>
-<h2 id="adding">Adding</h2>
+<h3 id="adding">Adding</h3>
 <ul>
 <li><code>git add [file]</code><br />
 Add a new file to your local repository  </li>
 <li><code>git add .</code><br />
-Add any changes youve made to your local repository  </li>
+Add any changes you've made to your local repository  </li>
 <li><code>git commit -m "message here"</code><br />
 Commit anything you've added to your local repository  </li>
 <li><code>git commit -a -m "message here"</code><br />
 Combines <code>add</code> and <code>commit</code> Syncing all changes to your local repository  </li>
 </ul>
-<h1 id="pushing">Pushing</h1>
+<h3 id="undoing">Undoing</h3>
+<ul>
+<li><code>git checkout XXX</code><br />
+This will restore a file to the latest version in Git.  </li>
+</ul>
+<h3 id="pushing">Pushing</h3>
 <ul>
 <li><code>git push</code><br />
-Pushes all changes you've added &amp; commited locally, to GitHub  </li>
+Pushes all changes you've added &amp; committed locally, to GitHub  </li>
 </ul>
-<h1 id="tagging">Tagging</h1>
+<h3 id="tagging">Tagging</h3>
 <ul>
 <li><code>git tag -a vXXX -m "Tag description</code>  </li>
 <li><code>git push origin vXXX</code><br />
-This tags the current build in Git<br />
+This tags the current build in git<br />
 Then pushes it to GitHub</li>
 </ul>
-<h1 id="pypi">PyPI</h1>
+<h2 id="pypi">PyPI</h2>
 <ul>
 <li><code>python setup.py register -r pypitest</code><br />
 This will register the package with PyPI Test  </li>

@@ -107,6 +107,12 @@
                     
                         
 <li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
@@ -150,6 +156,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -177,30 +189,18 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Install/">Set-up</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Support/">Support</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">What's new?</a>
 </li>
 
                     
@@ -218,7 +218,25 @@
                     
                         
 <li >
-    <a href="../gitGuide/">Git Guide</a>
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -235,6 +253,7 @@
                     <i class="fa fa-mortar-board"></i> Learn
                     </a>
                 </li>
+<!--
                 <li >
                     <a rel="next" href="../pythonBasics/">
                         <i class="fa fa-arrow-left"></i> Previous
@@ -245,6 +264,7 @@
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
@@ -275,8 +295,6 @@
         
             <li><a href="#links">Links</a></li>
         
-            <li><a href="#lmc-instructions">LMC Instructions</a></li>
-        
     
     </ul>
 </div></div>
@@ -294,8 +312,6 @@
 <th>FlowChart</th>
 <th>PseudoCode</th>
 <th>Python</th>
-<th>Assembler</th>
-<th>Machine Code</th>
 </tr>
 </thead>
 <tbody>
@@ -304,180 +320,76 @@
 <td><img alt="Assignment" src="../img/algorithms/1_a_eq_5.png" /></td>
 <td>a &#8592; 5</td>
 <td>a=5</td>
-<td>a DAT 5</td>
-<td></td>
 </tr>
 <tr>
 <td>Input</td>
 <td><img alt="Input" src="../img/algorithms/2_a_eq_inp.png" /></td>
 <td>a &#8592; USERINPUT</td>
 <td>a=input()</td>
-<td>INP<br>STA a</td>
-<td>901<br>3xx</td>
 </tr>
 <tr>
 <td>Output</td>
 <td><img alt="Output" src="../img/algorithms/3_prt_a.png" /></td>
 <td>a &#8592; 5</td>
 <td>a=5</td>
-<td>LDA a<br>OUT</td>
-<td>5xx<br>902</td>
 </tr>
 <tr>
 <td>Subtraction</td>
 <td><img alt="Subtraction" src="../img/algorithms/5_a_eq_b_mi_c.png" /></td>
 <td>a &#8592; b - c</td>
 <td>a=b-c</td>
-<td>LDA b<br>SUB c<br>STA a</td>
-<td>5xx<br>2xx<br>3xx</td>
 </tr>
 <tr>
 <td>Selection:<br>Greater than</td>
 <td><img alt="Selection-GT" src="../img/algorithms/6_a_gt_b.png" /></td>
 <td>IF a &gt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
 <td>a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-<td>LDA b<br>SUB a<br>BRP funcA<br>BRA funB</td>
-<td>5xx<br>2xx<br>8xx<br>6xx</td>
 </tr>
 <tr>
 <td>Selection:<br>Less than</td>
 <td><img alt="Selection-LT" src="../img/algorithms/7_a_lt_b.png" /></td>
 <td>IF a &lt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
 <td>a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-<td>LDA a<br>SUB b<br>BRP funcB<br>BRA funcA</td>
-<td>5xx<br>2xx<br>8xx<br>6xx</td>
 </tr>
 <tr>
 <td>Selection:<br>Equal to</td>
 <td><img alt="Selection-EQ" src="../img/algorithms/8_a_eq_b.png" /></td>
 <td>IF a = b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
 <td>if a == b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-<td>LDA a<br>SUB b<br>BRZ funcA<br>BRA funcB</td>
-<td>5xx<br>2xx<br>7xx<br>6xx</td>
 </tr>
 <tr>
 <td>Selection:<br>Not equal to</td>
 <td><img alt="Selection-NEQ" src="../img/algorithms/9_a_ne_b.png" /></td>
 <td>IF a &#8800; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
 <td>if a &#8800; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-<td>LDA a<br>SUB b<br>BRZ funcB<br>BRA funcA</td>
-<td>5xx<br>2xx<br>7xx<br>6xx</td>
 </tr>
 <tr>
 <td>Iteration:<br>While loop</td>
 <td><img alt="Iteration-WHILE" src="../img/algorithms/10_while_a_ne_b.png" /></td>
 <td>WHILE a &#8800; b<br>&emsp;OUTPUT b<br>&emsp;a &#8592; USERINPUT<br>ENDWHILE</td>
 <td>while a != b:<br>&emsp;print(b)<br>&emsp;a = input()</td>
-<td>while LDA a<br>&emsp;&emsp;SUB b<br>&emsp;&emsp;BRZ endwhile<br>&emsp;&emsp;LDA b<br>&emsp;&emsp;OUT<br>&emsp;&emsp;INPU<br>&emsp;&emsp;STA a<br>&emsp;&emsp;BRA while<br>endwhile HLT<br>a DAT 0<br>b DAT 5</td>
-<td>5xx<br>2xx<br>7xx<br>5xx<br>902<br>901<br>3xx<br>6xx<br>000</td>
 </tr>
 <tr>
 <td>Iteration:<br>For loop (count-up)</td>
 <td><img alt="Iteration-FOR_UP" src="../img/algorithms/11_for_up.png" /></td>
 <td>FOR i &#8592; 0 TO 9<br>&emsp;OUTPUT i<br>ENDFOR</td>
 <td>for i in range(10):<br>&emsp;print(i)</td>
-<td>for LDA i<br>&emsp;&emsp;OUT<br>&emsp;&emsp;ADD one<br>&emsp;&emsp;STA i<br>&emsp;&emsp;SUB ten<br>&emsp;&emsp;BRZ endfor<br>&emsp;&emsp;BRA for<br>endfor HLT<br>i DAT 0<br>one DAT 1<br>ten DAT 10</td>
-<td>5xx<br>902<br>1xx<br>3xx<br>2xx<br>7xx<br>6xx<br>000</td>
 </tr>
 <tr>
 <td>Iteration:<br>For loop (count-down)</td>
 <td><img alt="Iteration-FOR_DOWN" src="../img/algorithms/12_for_dn.png" /></td>
 <td>FOR 1 &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
 <td>for i in range(10, 0, -1):<br>&emsp;print(i)</td>
-<td>for LDA i<br>&emsp;&emsp;OUT<br>&emsp;&emsp;SUB one<br>&emsp;&emsp;STA i<br>&emsp;&emsp;BRZ endfor<br>&emsp;&emsp;BRA for<br>endfor HLT<br>1 DAT 10<br>one DAT 1</td>
-<td>5xx<br>902<br>2xx<br>3xx<br>7xx<br>6xx<br>000</td>
 </tr>
 </tbody>
 </table>
 <h2 id="links">Links</h2>
-<p>Some useful links for both LMC &amp; Pseudocode.  </p>
+<p>Some useful Pseudocode links.  </p>
 <ol>
-<li><a href="http://www.gcsecomputing.org.uk/lmc/index.html">Online LMC</a></li>
-<li><a href="http://www.yorku.ca/sychen/research/LMC/">LMC Explanation</a></li>
 <li><a href="../cheatSheets/PseudoCode%20CheatSheet.pdf">PseudoCode CheatSheet</a></li>
 <li><a href="http://pseudowar.appjar.info">PseudoWars</a></li>
 <li><a href="http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF">AQA PseudoCode Guidelines</a></li>
-</ol>
-<h2 id="lmc-instructions">LMC Instructions</h2>
-<p>Simple explanations for the various LMC commands.  </p>
-<table>
-<thead>
-<tr>
-<th>Instructions</th>
-<th>Mneumonic</th>
-<th>Machine Code</th>
-<th>Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Add</td>
-<td><strong>ADD</strong></td>
-<td>1xx</td>
-<td>Adds the contents of memory xx to the <strong>ACCUMULATOR</strong>.</td>
-</tr>
-<tr>
-<td>Subtract</td>
-<td><strong>SUB</strong></td>
-<td>2xx</td>
-<td>Subtracts the contents of memory xx from the <strong>ACCUMULATOR</strong>.</td>
-</tr>
-<tr>
-<td>Store</td>
-<td><strong>STA</strong></td>
-<td>3xx</td>
-<td>Copies the contents of the <strong>ACCUMULATOR</strong> to memory xx.</td>
-</tr>
-<tr>
-<td>Load</td>
-<td><strong>LDA</strong></td>
-<td>5xx</td>
-<td>Copies the contents of memory xx to the <strong>ACCUMULATOR</strong>.</td>
-</tr>
-<tr>
-<td>Branch ALWAYS</td>
-<td><strong>BRA</strong></td>
-<td>6xx</td>
-<td>Always set the program counter to xx. The program continues from the instruction at memory xx.</td>
-</tr>
-<tr>
-<td>Branch if ZERO</td>
-<td><strong>BRZ</strong></td>
-<td>7xx</td>
-<td>Set the program counter to xx only of the <strong>ACCUMULATOR</strong> is zero.</td>
-</tr>
-<tr>
-<td>Branch if POSITIVE</td>
-<td><strong>BRP</strong></td>
-<td>8xx</td>
-<td>Set the program counter to xx only if the <strong>ACCUMULATOR</strong> is zero or positive (greater than zero).</td>
-</tr>
-<tr>
-<td>Input</td>
-<td><strong>INP</strong></td>
-<td>901</td>
-<td>Copy the contents of the <strong>INBOX</strong> to the <strong>ACCUMULATOR</strong>.</td>
-</tr>
-<tr>
-<td>Output</td>
-<td><strong>OUT</strong></td>
-<td>902</td>
-<td>Copy the contents of the <strong>ACCUMULATOR</strong> to the <strong>OUTBOX</strong>.</td>
-</tr>
-<tr>
-<td>Define Variable</td>
-<td><strong>DAT</strong></td>
-<td></td>
-<td>Reserves this memory slot as a variable, settinmg its contents to the value specified.</td>
-</tr>
-<tr>
-<td>Halt</td>
-<td><strong>HLT</strong></td>
-<td>000</td>
-<td>Halts execution of the program.</td>
-</tr>
-</tbody>
-</table></div>
+</ol></div>
         </div>
 
         <footer class="col-md-12">

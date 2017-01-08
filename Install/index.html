@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Set-up - appJar</title>
+        <title>Installation - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -107,6 +107,12 @@
                     
                         
 <li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
@@ -150,6 +156,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -177,30 +189,18 @@
             
             
                 <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li class="active">
-    <a href="./">Set-up</a>
+    <a href="./">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Support/">Support</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">What's new?</a>
 </li>
 
                     
@@ -218,7 +218,25 @@
                     
                         
 <li >
-    <a href="../gitGuide/">Git Guide</a>
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -235,16 +253,18 @@
                     <i class="fa fa-mortar-board"></i> Learn
                     </a>
                 </li>
+<!--
                 <li >
                     <a rel="next" href="../examples/simple/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Support/">
+                    <a rel="prev" href="../whatsNew/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
@@ -277,7 +297,7 @@
         
             <li><a href="#multi-user-set-up">Multi-user Set-up</a></li>
         
-            <li><a href="#not-so-advanced-set-up">(not so) Advanced Set-up</a></li>
+            <li><a href="#advanced-set-up">Advanced Set-up</a></li>
         
     
     </ul>
@@ -286,86 +306,90 @@
 
 <h1 id="set-up-instructions">Set-up Instructions</h1>
 <hr />
-<p>This library was designed for use in schools - it therefore doesn't require <em>installation</em>.<br />
-Instead, it just needs to be <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOADED</a> and unzipped somewhere accessible by the relevant users.  </p>
+<p>This library was designed for use in schools - it therefore doesn't require any kind of special  <em>installation</em>.<br />
+Instead, it can just be <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOADED</a>, unzipped, and used.  </p>
 <h2 id="pip-installation">Pip Installation</h2>
-<p>We are also now available through pip: <code>sudo pip3 install appjar</code><br />
-This will automatically download appJar, and set it up in the <strong>dist-packages</strong> folder of your python installation.  </p>
-<pre><code class="python"># then just import the appJar library
+<p>However, if you can install python packages - we support that too!<br />
+<code>sudo pip3 install appjar</code> - this will download &amp; install <strong>appJar</strong> ready for python 3.  </p>
+<pre><code class="python"># import the appJar library
 from appJar import gui
 </code></pre>
 
 <h2 id="single-user-set-up">Single-user Set-up</h2>
-<p>If you're just programming on your own PC, copy the <strong>appJar folder</strong> into your <strong>code folder</strong>, and you're done!<br />
-(As long as it's in the same folder as your code, it'll work...)  </p>
-<h2 id="multi-user-set-up">Multi-user Set-up</h2>
-<p>If you're in a school, this will still work, but there are alternatives...<br />
-(Or, to make it accessible from any folder at home)  </p>
+<p>If you can't/don't want to install using pip, simply:  </p>
 <ul>
-<li>Create a folder on a shared network drive: <code>E:\PYLIB</code>, that all pupils can see  </li>
-<li>Put the <strong>appJar folder</strong> in there, and you're done!  </li>
+<li>Put the <strong>appJar folder</strong> in your <strong>code folder</strong>, and you're done!  </li>
 </ul>
-<p>Just include the following at the top of every GUI program:  </p>
+<pre><code class="python"># import the appJar library
+from appJar import gui
+</code></pre>
+
+<p>(As long as it's in the same folder as your code, it'll work...)  </p>
+<h2 id="multi-user-set-up">Multi-user Set-up</h2>
+<p>If you're trying to install appJar in a school, everyone can have their own copy (see above), or:  </p>
+<ul>
+<li>Put the <strong>appJar folder</strong> in a <strong>shared location</strong> (eg. a network drive): <code>E:\PYLIB</code>  </li>
+<li>Then have pupils include the following 2-lines at the start of their code:</li>
+</ul>
 <pre><code class="python"># add the appJar folder to your PATH
 import sys
 sys.path.append(&quot;E:\PYLIB&quot;)
+# import the appJar library
+from appJar import gui
 </code></pre>
 
-<h2 id="not-so-advanced-set-up">(not so) Advanced Set-up</h2>
-<p>If you've got friendly technicians, or are at home, you can make this even more accessible...  </p>
+<h2 id="advanced-set-up">Advanced Set-up</h2>
+<p>If you've got friendly technicians, you can even avoid having to always add <strong>appJar</strong> to your path...  </p>
 <h3 id="windows">Windows</h3>
 <hr />
-<p>Create an environment variable, which will mean <code>E:\PYLIB</code> is always in your <strong>path</strong>.<br />
-Then you don't even need the two lines above to make it work...  </p>
+<p>Create an environment variable, which will mean <code>E:\PYLIB</code> is always in your <strong>path</strong>.  </p>
 <ul>
-<li>Open <strong>Control Panel</strong></li>
-<li>Navigate to <strong>System -&gt; Advanced System Settings</strong>
+<li>Open <strong>Control Panel</strong>  </li>
+<li>Navigate to <strong>System -&gt; Advanced System Settings</strong><br />
 <img alt="System" src="../img/w_install_1.png" /></li>
-<li>Click the <strong>Advanced</strong> tab
+<li>Click the <strong>Advanced</strong> tab<br />
 <img alt="System" src="../img/w_install_2.png" /></li>
-<li>Under <strong>System variables</strong>, click the <strong>New..</strong> button
+<li>Under <strong>System variables</strong>, click the <strong>New..</strong> button<br />
 <img alt="System" src="../img/w_install_3.png" /></li>
-<li>Set the <strong>Variable name:</strong> to be <strong>PYTHONPATH</strong></li>
-<li>Set the <strong>Variable value:</strong> as the folder you put <strong>appJar</strong> in (eg. "E:\PYLIB")
+<li>Set the <strong>Variable name:</strong> to be <strong>PYTHONPATH</strong>  </li>
+<li>Set the <strong>Variable value:</strong> as the folder you put <strong>appJar</strong> in (eg. "E:\PYLIB")<br />
 <img alt="System" src="../img/w_install_4.png" /></li>
-<li>Press <strong>OK</strong>, and you're done!  </li>
+<li>Press <strong>OK</strong>, and you're done!    </li>
 </ul>
-<h3 id="linux-raspberry-pi">Linux (Raspberry Pi)</h3>
+<h3 id="linux-raspberry-pi-macos">Linux (Raspberry Pi) /MacOS</h3>
 <hr />
-<p>Linux requires command line access:  </p>
+<p>If you're running python from a terminal:  </p>
 <ul>
-<li>Launch a <strong>Terminal</strong>  </li>
 <li>Type the following:  </li>
 </ul>
 <pre><code class="bash">    echo 'export PYTHONPATH=&quot;${PYTHONPATH}:~/Documents/PYLIB&quot;' &gt;&gt; ~/.bashrc
 </code></pre>
 
 <ul>
-<li>Close the terminal, and you're done!  </li>
+<li>Reopen the terminal (or type <code>source ~/.bashrc</code>), and you're done!  </li>
+<li><strong>NB.</strong> Change <code>~/Documents/PYLIB</code> to the folder where the <strong>appJar folder</strong> is located.  </li>
 </ul>
-<h3 id="mac-os">MAC OS</h3>
+<h3 id="idle-on-linux-raspberry-pimacos">IDLE on Linux (raspberry Pi)/MacOS</h3>
 <hr />
-<p>If you're just running python from a Terminal, then you can follow the Linux instructions above.  </p>
-<p>However, that won't work if you're running Python in a Desktop app, like IDLE.<br />
-In this case, you'll need to add appJar to your <strong>site-packages</strong>.  </p>
+<p>If you're running python in  IDLE, you'll need to add appJar to your <strong>site-packages</strong>  </p>
 <ul>
 <li>Launch a <strong>Terminal</strong>  </li>
 <li>Type the following:  </li>
 </ul>
-<pre><code class="bash">mkdir -p ~/Library/Python/3.4/lib/python/site-packages
-cd ~/Library/Python/3.4/lib/python/site-packages
-echo '~/Documents/PYLIB' &gt; appJar.pth
+<pre><code class="bash">    mkdir -p ~/Library/Python/3.4/lib/python/site-packages
+    cd ~/Library/Python/3.4/lib/python/site-packages
+    echo '~/Documents/PYLIB' &gt; appJar.pth
 </code></pre>
 
 <ul>
 <li>Close the terminal, and you're done!  </li>
-</ul>
-<p><strong>NB.</strong> you'll need to make sure the version number (3.4) is correct.  </p>
-<ul>
+<li><strong>NB.</strong> you'll need to make sure the version number (3.4) is correct.  <ul>
 <li>To check your version, run this in Python:  </li>
 </ul>
-<pre><code class="python">import sys
-print(sys.version) 
+</li>
+</ul>
+<pre><code class="python">    import sys
+    print(sys.version) 
 </code></pre></div>
         </div>
 

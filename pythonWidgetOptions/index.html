@@ -107,6 +107,12 @@
                     
                         
 <li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonDevWidgets/">In the works...</a>
 </li>
 
@@ -150,6 +156,12 @@
 </li>
 
                     
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
                     </ul>
                 </li>
             
@@ -177,30 +189,18 @@
             
             
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
 <li >
-    <a href="../Install/">Set-up</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Support/">Support</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../License/">License</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">What's new?</a>
 </li>
 
                     
@@ -218,7 +218,25 @@
                     
                         
 <li >
-    <a href="../gitGuide/">Git Guide</a>
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
 </li>
 
                     
@@ -235,6 +253,7 @@
                     <i class="fa fa-mortar-board"></i> Learn
                     </a>
                 </li>
+<!--
                 <li >
                     <a rel="next" href="../pythonWidgetGrouping/">
                         <i class="fa fa-arrow-left"></i> Previous
@@ -245,6 +264,7 @@
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+-->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
                         <i class="fa fa-search"></i> Search
@@ -304,16 +324,28 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <p>The following options are available for all widgets:</p>
 <ul>
 <li>
-<p><code>.set XXX Bg(name, value)</code><br />
-    Sets the background colour of the named widget.</p>
-</li>
-<li>
 <p><code>.set XXX Fg(name, value)</code><br />
     Sets the foreground colour (usually the text) of the named widget.</p>
 </li>
 <li>
+<p><code>.set XXX Bg(name, value)</code><br />
+    Sets the background colour of the named widget.</p>
+</li>
+<li>
 <p><code>.set XXX DisabledFg(name, value)</code><br />
     Sets the disabled foreground colour (usually the text) of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX DisabledBg(name, value)</code><br />
+    Sets the disabled background colour of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX ActiveFg(name, value)</code><br />
+    Sets the active foreground colour (usually the text) of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX ActiveBg(name, value)</code><br />
+    Sets the active background colour of the named widget.</p>
 </li>
 <li>
 <p><code>.set XXX Width(name, value)</code><br />
@@ -325,11 +357,11 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 </li>
 <li>
 <p><code>.set XXX Relief(name, value)</code><br />
-    Sets the border of the named widget. One of: <code>SUNKEN</code>, <code>RAISED</code>, <code>GROOVE</code>, <code>RIDGE</code>, <code>FLAT</code>  </p>
+    Sets the border of the named widget. One of: <code>"sunken"</code>, <code>"raised"</code>, <code>"groove"</code>, <code>"ridge"</code>, <code>"flat"</code>  </p>
 </li>
 <li>
 <p><code>.set XXX State(name, value)</code><br />
-    Sets the state of the named widget. One of: <code>NORMAL</code>, <code>ACTIVE</code>, <code>DISABLED</code>  </p>
+    Sets the state of the named widget. One of: <code>"normal"</code>, <code>"active"</code>, <code>"disabled"</code>  </p>
 </li>
 </ul>
 <h3 id="advanced-looks">Advanced Looks</h3>
@@ -338,15 +370,16 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
 <ul>
 <li>
 <p><code>.set XXX Align(name, value)</code><br />
-    Specifies how to align text within the widget: <code>LEFT</code>, <code>RIGHT</code>, <code>CENTER</code></p>
+    Specifies how to align text within the widget: <code>"left"</code>, <code>"right"</code>, <code>"center"</code><br />
+    Calls <code>justify</code> on the Entry widget, and anchor on all others (converting left/right into e/w)  .  </p>
 </li>
 <li>
 <p><code>.set XXX Anchor(name, value)</code><br />
-    Sets where the text is positioned within the widget. One of: <code>CENTER</code>, <code>N</code>, <code>S</code>, <code>E</code>, <code>W</code>, <code>NE</code>, <code>NW</code>, <code>SE</code>, <code>SW</code>  </p>
+    Sets where the text is positioned within the widget. One of: <code>"center"</code>, <code>"n"</code>, <code>"s"</code>, <code>"e"</code>, <code>"w"</code>, <code>"ne"</code>, <code>"nw"</code>, <code>"se"</code>, <code>"sw"</code>  </p>
 </li>
 <li>
 <p><code>.set XXX Sticky(name, value)</code><br />
-    Specifies which side of the cell to stick the widget to, as the GUI expands: <code>LEFT</code>, <code>RIGHT</code>, <code>BOTH</code></p>
+    Specifies which side of the cell to stick the widget to, as the GUI expands: <code>"left"</code>, <code>"right"</code>, <code>"both"</code></p>
 </li>
 <li>
 <p><code>.set XXX Padding(name, [x, y])</code><br />
