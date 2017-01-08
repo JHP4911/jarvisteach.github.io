@@ -302,8 +302,9 @@
 
 <h1 id="algorithms">Algorithms</h1>
 <hr />
-<p>Below are some helpful comparisons between different ways of acheiving the same result, starting from design, move on to high-level language, into low-level language and finally machine code.  </p>
-<p>This guide was originally intended to help with LMC implementation, but is also useful for general python deisgn/coding.  </p>
+<p>Below are ssme comparisons of how to acheive the same thing in a flowchart, pseudocode &amp; Python.  </p>
+<p>This site was originally written using AQA suggested pseudocode, but will be updated to include OCR recomendations.<br />
+It will aso be extended, to include a lot more examples.  </p>
 <h2 id="comparison">Comparison</h2>
 <table>
 <thead>
@@ -319,37 +320,37 @@
 <td>Assigning a variable</td>
 <td><img alt="Assignment" src="../img/algorithms/1_a_eq_5.png" /></td>
 <td>a &#8592; 5</td>
-<td>a=5</td>
+<td>a = 5</td>
 </tr>
 <tr>
 <td>Input</td>
 <td><img alt="Input" src="../img/algorithms/2_a_eq_inp.png" /></td>
 <td>a &#8592; USERINPUT</td>
-<td>a=input()</td>
+<td>a = input()</td>
 </tr>
 <tr>
 <td>Output</td>
 <td><img alt="Output" src="../img/algorithms/3_prt_a.png" /></td>
-<td>a &#8592; 5</td>
-<td>a=5</td>
+<td>OUTPUT a</td>
+<td>print(a)</td>
 </tr>
 <tr>
 <td>Subtraction</td>
 <td><img alt="Subtraction" src="../img/algorithms/5_a_eq_b_mi_c.png" /></td>
 <td>a &#8592; b - c</td>
-<td>a=b-c</td>
+<td>a = b - c</td>
 </tr>
 <tr>
 <td>Selection:<br>Greater than</td>
 <td><img alt="Selection-GT" src="../img/algorithms/6_a_gt_b.png" /></td>
 <td>IF a &gt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>if a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
 </tr>
 <tr>
 <td>Selection:<br>Less than</td>
 <td><img alt="Selection-LT" src="../img/algorithms/7_a_lt_b.png" /></td>
 <td>IF a &lt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>if a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
 </tr>
 <tr>
 <td>Selection:<br>Equal to</td>
@@ -361,7 +362,7 @@
 <td>Selection:<br>Not equal to</td>
 <td><img alt="Selection-NEQ" src="../img/algorithms/9_a_ne_b.png" /></td>
 <td>IF a &#8800; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a &#8800; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
+<td>if a != b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
 </tr>
 <tr>
 <td>Iteration:<br>While loop</td>
@@ -378,7 +379,7 @@
 <tr>
 <td>Iteration:<br>For loop (count-down)</td>
 <td><img alt="Iteration-FOR_DOWN" src="../img/algorithms/12_for_dn.png" /></td>
-<td>FOR 1 &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
+<td>FOR i &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
 <td>for i in range(10, 0, -1):<br>&emsp;print(i)</td>
 </tr>
 </tbody>
