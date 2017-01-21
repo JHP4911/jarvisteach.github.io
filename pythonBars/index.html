@@ -359,13 +359,18 @@ Menubars are made up of a series of menus, each conaining a list of names.<br />
 These names can be menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
 <h4 id="create-menus">Create Menus</h4>
 <ul>
-<li>
-<p><code>.addMenuList(menu, names, functions)</code><br />
+<li><code>.addMenuList(menu, names, functions)</code><br />
     Will create a new menu, with the specified title, containing the list of names.<br />
     Pass a single function - all names will call that function, passing their name.<br />
     Or a list of functions (the same length as the names), each menu will call the corresponding function.<br />
-    If a name is <code>-</code>, then a separator will be added to the menu.  </p>
-</li>
+    If a name is <code>-</code>, then a separator will be added to the menu.  </li>
+</ul>
+<p><img alt="MenuList" src="../img/menu_1.png" />    </p>
+<pre><code class="python">fileMenus = [&quot;Open&quot;, &quot;Save&quot;, &quot;Save as...&quot;, &quot;-&quot;, &quot;Export&quot;, &quot;Print&quot;, &quot;-&quot;, &quot;Close&quot;]
+app.addMenuList(&quot;File&quot;, fileMenus, menuPress)
+</code></pre>
+
+<ul>
 <li>
 <p><code>.createMenu(menu, tearable=False)</code><br />
     Will create a new, empty menu, to add menu-items to.</p>
@@ -388,15 +393,35 @@ These names can be menu-items, radio buttons, check boxes, separators, or sub-me
 <p><code>.addMenuRadioButton(menu, name, value, function=None, shortcut=None, underline=-1)</code><br />
     Add a radio button, to the named menu, grouped by name, with the specified value.  </p>
 </li>
-<li>
-<p><code>.addSubMenu(menu, subMenu)</code><br />
+</ul>
+<p><img alt="MenuRB_CB" src="../img/menu_2.png" /></p>
+<pre><code class="python">app.createMenu(&quot;Config&quot;)
+
+for i in range(5):
+    app.addMenuRadioButton(&quot;Config&quot;, &quot;font&quot;, &quot;1&quot; + str(i), menuPress)
+
+app.addMenuSeparator(&quot;Config&quot;)
+
+for i in range(5):
+    app.addMenuCheckBox(&quot;Config&quot;, &quot;Size 1&quot; + str(i), menuPress)
+</code></pre>
+
+<ul>
+<li><code>.addSubMenu(menu, subMenu)</code><br />
     Adds a sub-menu to the specified menu.<br />
-    Then add menu-items to this menu (using its name).  </p>
-</li>
-<li>
-<p><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
-    Adds a single menu, with no list of menu-items,  that will call the specified function.  </p>
-</li>
+    Then add menu-items to this menu (using its name).  </li>
+</ul>
+<p><img alt="SubMenu" src="../img/menu_3.png" /></p>
+<pre><code class="python">app.createMenu(&quot;Config&quot;)
+app.addSubMenu(&quot;Config&quot;, &quot;Font Size&quot;)
+for i in range(5):
+    app.addMenuRadioButton(&quot;Font Size&quot;, &quot;font&quot;, &quot;1&quot; + str(i), menuPress)
+
+</code></pre>
+
+<ul>
+<li><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
+    Adds a single menu, with no list of menu-items,  that will call the specified function.  </li>
 </ul>
 <h4 id="set-menus">Set Menus</h4>
 <ul>
