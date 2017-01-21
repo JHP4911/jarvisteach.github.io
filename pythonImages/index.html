@@ -331,7 +331,13 @@ Or, create an image folder and set it using the <code>.setImageLocation(location
 <ul>
 <li>
 <p><code>.setImage(title, image)</code><br />
-    This will replace the existing image with the new one.  </p>
+    This will replace the existing image with the new one.<br />
+    If the image has the same path, it will not be changed.  </p>
+</li>
+<li>
+<p><code>.reloadImage(title, image)</code><br />
+    This will replace the existing image with the new one.<br />
+    This will force an image reload, even if the file name hasn't changed.  </p>
 </li>
 <li>
 <p><code>.setImageMouseOver(title, image)</code><br />
