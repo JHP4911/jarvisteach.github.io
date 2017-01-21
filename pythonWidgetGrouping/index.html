@@ -329,6 +329,18 @@ A number of options are provided to make this easier.  </p>
 You call the <code>start</code> function when you want to start a container, then the <code>stop</code> function when you're done.<br />
 When you call <code>start</code> you can pass in positional arguments like any other widget (row, column, rowspan, colspan).<br />
 Any <a href="../pythonGuiOptions">GUI Options</a> you set, within the container, will only affect that container.  </p>
+<h4 id="reopening-containers">Reopening Containers</h4>
+<p>If you want to dynamically add widgets to a container, once the gui has been started, you can open a specific container, perform the desired actions, then stop it again.</p>
+<pre><code class="python">def addRows(btn):
+    count = app.getEntry(&quot;numRows&quot;)
+    app.openTab(&quot;tabbedPane&quot;, &quot;Details Tab&quot;) # open the required tab
+    for rowLoop in range(count):
+        # add a new label, with a unique ID
+        # make sure to put it in the right place
+        app.addLabel(&quot;dyn&quot;+str(rowLoop), &quot;Dynamic Label&quot;, rowLoop+5)
+    app.stopTab()
+</code></pre>
+
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
@@ -355,9 +367,15 @@ app.go()
 
 <h4 id="startstop-label-frames">Start/Stop Label Frames</h4>
 <ul>
-<li><code>.startLabelFrame(name)</code> &amp; <code>.stopLabelFrame()</code><br />
+<li>
+<p><code>.startLabelFrame(name)</code> &amp; <code>.stopLabelFrame()</code><br />
     Used to start and stop a <em>LabelFrame</em><br />
-    The specified title will be used as the label for the frame.  </li>
+    The specified title will be used as the label for the frame.  </p>
+</li>
+<li>
+<p><code>.openLabelFrame(title)</code><br />
+    Used to reopen the named <em>LabelFrame</em>.  </p>
+</li>
 </ul>
 <h4 id="set-label-frames">Set Label Frames</h4>
 <ul>
@@ -390,18 +408,27 @@ app.go()
 
 <h4 id="startstop-toggle-frames">Start/Stop Toggle Frames</h4>
 <ul>
-<li><code>.startToggleFrame(title)</code>  </li>
-<li><code>.stopToggleFrame(title)</code><br />
+<li>
+<p><code>.startToggleFrame(title)</code> &amp; <code>.stopToggleFrame(title)</code><br />
     Used to start and stop a <em>ToggleFrame</em>.<br />
-    The <code>title</code> will be used as the title for the <em>ToggleFrame</em>.  </li>
+    The <code>title</code> will be used as the title for the <em>ToggleFrame</em>.  </p>
+</li>
+<li>
+<p><code>.openToggleFrame(title)</code><br />
+    Used to reopen the named <em>ToggleFrame</em>.  </p>
+</li>
 </ul>
 <h4 id="set-toggle-frames">Set Toggle Frames</h4>
 <ul>
-<li><code>.toggleToggleFrame(title)</code><br />
-    Will toggle the state of the specified <em>ToggleFrame</em>.  </li>
-<li><code>.disableToggleFrame(title, disabled=True)</code><br />
+<li>
+<p><code>.toggleToggleFrame(title)</code><br />
+    Will toggle the state of the specified <em>ToggleFrame</em>.  </p>
+</li>
+<li>
+<p><code>.disableToggleFrame(title, disabled=True)</code><br />
     Will disable the specified <em>ToggleFrame</em>.<br />
-    If <code>disabled</code> is set to False, the <em>ToggleFrame</em> will be re-enabled.  </li>
+    If <code>disabled</code> is set to False, the <em>ToggleFrame</em> will be re-enabled.  </p>
+</li>
 </ul>
 <h4 id="get-toggle-frames">Get Toggle Frames</h4>
 <ul>
@@ -444,6 +471,10 @@ app.go()
 <p><code>.startTab(name)</code> &amp; <code>.stopTab()</code><br />
     Used to start and stop each of the tabs in the <em>TabbedFrame</em>.<br />
     The title for the tab will be the specified <em>name</em>.  </p>
+</li>
+<li>
+<p><code>.openTabbedFrame(title)</code> &amp; <code>.openTab(frameTitle, tabTitle)</code><br />
+    Used to reopen the named <em>TabbedFrame</em> or named <em>Tab</em>.  </p>
 </li>
 </ul>
 <h4 id="set-tabbedframe">Set TabbedFrame</h4>
@@ -502,10 +533,16 @@ By default, panes will be placed side-by-side (horizontally).<br />
 This can be changed by setting the pane to vertical, then they'll be placed underneath each other.  </p>
 <h4 id="startstop-paned-frames">Start/Stop Paned Frames</h4>
 <ul>
-<li><code>.startPanedFrame(name)</code>, <code>.startPanedFrameVertical(name)</code> &amp; <code>.stopPanedFrame()</code><br />
+<li>
+<p><code>.startPanedFrame(name)</code>, <code>.startPanedFrameVertical(name)</code> &amp; <code>.stopPanedFrame()</code><br />
     Used to start &amp; stop <em>PanedFrames</em>, with the specified name.<br />
     By default, any panes added to this pane will be added side-by-side (horizontally).<br />
-    Starting a vertical pane will cause additional panes to be stacked on top of each other.  </li>
+    Starting a vertical pane will cause additional panes to be stacked on top of each other.  </p>
+</li>
+<li>
+<p><code>.openPanedFrame(title)</code><br />
+    Used to reopen the named <em>PanedFrame</em>.  </p>
+</li>
 </ul>
 <h4 id="horizontal-pane-layout">Horizontal Pane Layout</h4>
 <p><img alt="Horizontal Panes" src="../img/layouts/pane1.png" />  </p>
@@ -661,31 +698,45 @@ app.go()
 
 <h4 id="startstop-paged-windows">Start/Stop Paged Windows</h4>
 <ul>
-<li><code>.startPagedWindow(title)</code>  </li>
-<li><code>.stopPagedWindow()</code><br />
+<li>
+<p><code>.startPagedWindow(title)</code> &amp; <code>.stopPagedWindow()</code><br />
     Used to start and stop a <em>PagedWindow</em>.<br />
-    The <code>title</code> will be used in the title section of the widget.  </li>
-<li><code>.startPage()</code>  </li>
-<li><code>.stopPage()</code><br />
+    The <code>title</code> will be used in the title section of the widget.  </p>
+</li>
+<li>
+<p><code>.startPage()</code> &amp; <code>.stopPage()</code><br />
     Used to start and stop each new page.<br />
-    Navigation, page count, etc are all dealt with automatically.  </li>
+    Navigation, page count, etc are all dealt with automatically.  </p>
+</li>
+<li>
+<p><code>.openPagedWindow(title)</code> &amp; <code>.openPage(windowTitle, pageNumber)</code> <br />
+    Used to reopen the named <em>PagedWindow</em> or <em>Page</em>.  </p>
+</li>
 </ul>
 <h4 id="set-paged-windows">Set Paged Windows</h4>
 <ul>
-<li><code>.setPagedWindowTitle(title, title)</code>  </li>
-<li><code>.setPagedWindowButtons(title, [buttons])</code><br />
+<li>
+<p><code>.setPagedWindowTitle(title, title)</code> &amp; <code>.setPagedWindowButtons(title, [buttons])</code><br />
     Used to change the text in the title and buttons.<br />
-    When changing the buttons, two values must be passed in: previous/next.  </li>
-<li><code>.setPagedWindowButtonsTop(title, top=True)</code><br />
+    When changing the buttons, two values must be passed in: previous/next.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowButtonsTop(title, top=True)</code><br />
     Used to position the navigation buttons.  By default, they are at the bottom.<br />
-    Call this funtion to move them to the top.  </li>
-<li><code>.setPagedWindowPage(title, pageNum)</code><br />
-    Used to display the selected page.  </li>
-<li><code>.setPagedWindowFunction(title, function)</code><br />
-    Declare a function to call, each time the page is changed.  </li>
-<li><code>.showPagedWindowPageNumber(title, show=True)</code>  </li>
-<li><code>.showPagedWindowTitle(title, show=True)</code><br />
-    Use these to declare if you want the page title, page numbers to be shown.  </li>
+    Call this funtion to move them to the top.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowPage(title, pageNum)</code><br />
+    Used to display the selected page.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowFunction(title, function)</code><br />
+    Declare a function to call, each time the page is changed.  </p>
+</li>
+<li>
+<p><code>.showPagedWindowPageNumber(title, show=True)</code> &amp; <code>.showPagedWindowTitle(title, show=True)</code><br />
+    Use these to declare if you want the page title, page numbers to be shown.  </p>
+</li>
 </ul>
 <h4 id="get-paged-windows">Get Paged Windows</h4>
 <ul>
@@ -718,10 +769,16 @@ app.go()
 
 <h4 id="startstop-sub-windows">Start/Stop Sub Windows</h4>
 <ul>
-<li><code>.startSubwindow(name, title=None, modal=False)</code> &amp; <code>.stopSubwindow()</code><br />
+<li>
+<p><code>.startSubwindow(name, title=None, modal=False)</code> &amp; <code>.stopSubwindow()</code><br />
     Used to start and stop defining a <em>SubWindow</em><br />
     Setting a <code>title</code> will override the <code>name</code> as a title for the <em>SubWindow</em>. <br />
-    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.  </li>
+    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.  </p>
+</li>
+<li>
+<p><code>.openSubWindow(title)</code><br />
+    Used to reopen the named <em>SubWindow</em>.  </p>
+</li>
 </ul>
 <h4 id="showhide-sub-windows">Show/Hide Sub Windows</h4>
 <ul>
@@ -769,16 +826,27 @@ app.stopSubWindow()
 Position the <em>Frame</em> within the grid, then position widgets inside the <em>Frame</em>  </p>
 <h4 id="startstop-frames">Start/Stop Frames</h4>
 <ul>
-<li><code>.startFrame(name)</code> &amp; <code>.stopFrame()</code><br />
-    Used to start and stop a Frame  </li>
+<li>
+<p><code>.startFrame(name)</code> &amp; <code>.stopFrame()</code><br />
+    Used to start and stop a <em>Frame</em>.  </p>
+</li>
+<li>
+<p><code>.openFrame(title)</code><br />
+    Used to reopen the named <em>Frame</em>.  </p>
+</li>
 </ul>
 <h3 id="scroll-pane">Scroll Pane</h3>
 <hr />
-<p>A scrollable frame, to contain widgets.  </p>
+<p>A scrollable pane, to contain widgets.  </p>
 <ul>
-<li><code>.startScrollPane(title)</code>  </li>
-<li><code>.stopScrollPane()</code><br />
-    Used to start and stop the <em>ScrollPane</em>.  </li>
+<li>
+<p><code>.startScrollPane(title)</code> &amp; <code>.stopScrollPane()</code><br />
+    Used to start and stop the <em>ScrollPane</em>.  </p>
+</li>
+<li>
+<p><code>.openScrollPane(title)</code><br />
+    Used to reopen the named <em>ScrollPane</em>.  </p>
+</li>
 </ul></div>
         </div>
 

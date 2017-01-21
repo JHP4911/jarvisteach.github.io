@@ -360,9 +360,26 @@
 </ul>
 <h3 id="file-boxes">File Boxes</h3>
 <ul>
-<li><code>.openBox()</code></li>
-<li><code>.saveBox()</code></li>
-<li><code>.directoryBox()</code></li>
+<li>
+<p><code>.openBox(title=None, dirName=None, fileTypes=None, asFile=False)</code><br />
+    Shows an open file dialog.  </p>
+<p><img alt="OpenBox" src="../img/dialogs/openBox_1.png" /><br />
+Various parameters can be provided (although they don't work on all platforms):  </p>
+<ul>
+<li><code>title</code> this will set a title for the dialog  </li>
+<li><code>dirName</code> this will set a starting directory, defaults to the current working directory  </li>
+<li><code>fileTypes=[('images', '*.png'), ('images', '*.jpg')]</code><br />
+This will set the allowed file extensions, it should be a list of tuples. They will be grouped by the name.  </li>
+<li><code>asFile</code> this will determine whether a path or actual Python file object is returned, defaults to filename   </li>
+</ul>
+</li>
+<li>
+<p><code>.saveBox()</code><br />
+    Shows a save file dialog.  </p>
+</li>
+<li>
+<p><code>.directoryBox()</code></p>
+</li>
 </ul>
 <h3 id="other-boxes">Other Boxes</h3>
 <ul>
