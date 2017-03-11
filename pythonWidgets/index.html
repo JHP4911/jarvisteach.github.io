@@ -583,8 +583,9 @@ app.go()
 <h4 id="set-radiobuttons">Set RadioButtons</h4>
 <ul>
 <li>
-<p><code>.setRadioButton(title, value)</code><br />
-    This will tick the specified RadioButton.  </p>
+<p><code>.setRadioButton(title, value, callFunction=True)</code><br />
+    This will tick the specified RadioButton.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setRadioTick(title, tick=True)</code><br />
@@ -639,8 +640,9 @@ app.go()
 </ul>
 <h4 id="set-checkboxes">Set CheckBoxes</h4>
 <ul>
-<li><code>.setCheckBox(title, ticked=True)</code><br />
-    This will tick the CheckBox, or untick it if ticked is set to False.  </li>
+<li><code>.setCheckBox(title, ticked=True, callFunction=True)</code><br />
+    This will tick the CheckBox, or untick it if ticked is set to False.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </li>
 </ul>
 <h4 id="get-checkboxes">Get CheckBoxes</h4>
 <ul>
@@ -703,10 +705,11 @@ app.go()
     If setting a TickOptionBox, pass in the optional value.  </p>
 </li>
 <li>
-<p><code>.setOptionBox(title, position, value=True)</code><br />
+<p><code>.setOptionBox(title, position, value=True, callFunction=True)</code><br />
     This will select the item in the list, at the position specified.<br />
     Alternatively, the name of an item can be specified.<br />
-    If changing a TickOptionBox, the specified item will be set to the specified value.  </p>
+    If changing a TickOptionBox, the specified item will be set to the specified value.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.deleteOptionBox(title, position)</code><br />
@@ -758,12 +761,14 @@ app.go()
 <h4 id="set-spinboxes">Set SpinBoxes</h4>
 <ul>
 <li>
-<p><code>.setSpinBox(title, value)</code><br />
-    This will select the specified value in the SpinBox.  </p>
+<p><code>.setSpinBox(title, value, callFunction=True)</code><br />
+    This will select the specified value in the SpinBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>.setSpinBoxPos(title, pos)</code><br />
-    This will select the value at the specified position in the SpinBox.  </p>
+<p><code>.setSpinBoxPos(title, pos, callFunction=True)</code><br />
+    This will select the value at the specified position in the SpinBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 </ul>
 <h4 id="get-spinboxes">Get SpinBoxes</h4>
@@ -836,8 +841,9 @@ app.go()
     Configures whether the specified ListBox is single or multi select.  </p>
 </li>
 <li>
-<p><code>.selectListItem(title, item)</code><br />
-    Selects the specified item in the specified ListBox.  </p>
+<p><code>.selectListItem(title, item, callFunction=True)</code><br />
+    Selects the specified item in the specified ListBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setListItemBg(title, item, colour)</code> &amp; <code>.setListItemFg(title, item, colour)</code><br />
@@ -878,8 +884,9 @@ app.go()
 <h4 id="set-scales">Set Scales</h4>
 <ul>
 <li>
-<p><code>.setScale(title, pos)</code><br />
-    Sets the selected pos for the specified Scale.  </p>
+<p><code>.setScale(title, pos, callFunction=True)</code><br />
+    Sets the selected pos for the specified Scale.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setScaleRange(title from, to, curr=None)</code><br />

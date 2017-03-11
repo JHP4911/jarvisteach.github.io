@@ -331,6 +331,7 @@
 </ul>
 </li>
 </ul>
+<p><strong>Be careful</strong> it's possible to generate a RuntimeError. If you've linked together two widgets, say a Scale and a SpinBox, and you want a change in one to cause an update in the other, you might inadvertantly end up stuck in a recursive loop, until the stack fills up. In this case, make sure you call the <code>setXXX()</code> function, setting <code>callFunction</code> as False.</p>
 <pre><code class="python">from appJar import gui
 
 def songChanged(rb):
