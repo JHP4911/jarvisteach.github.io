@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -313,10 +319,17 @@
 <hr />
 <p>To make something happen you have to set a function for a widget:  </p>
 <ul>
-<li><code>.set XXX Function(title, function, key=None)</code><br />
-    This binds a function to the named widget.<br />
-    The function will be called every time an interactive-widget changes.<br />
-    The function will be called when some widgets are clicked.  </li>
+<li>
+<p><code>.set XXX Function(title, function, key=None)</code>  </p>
+<p>This binds a function to the named widget:  </p>
+<ul>
+<li>For Scales, OptionBoxes, SpinBoxes, ListBoxes, RadioButtons &amp; CheckButtons the function will be called each time the widget is changed.  </li>
+<li>For Entries it binds a function to the <code>&lt;Return&gt;</code> key, allowing the Entry to be <em>submitted</em>.  </li>
+<li>For Buttons it binds a function to the <code>&lt;Return&gt;</code> key.  </li>
+<li>For Labels &amp; Images it binds a function to the <code>&lt;Left-Mouse-Button&gt;</code>, making the widget clickable.  </li>
+<li>For other widgets, it will set the <em>command</em> property for the underlying tkinter widget.  </li>
+</ul>
+</li>
 </ul>
 <pre><code class="python">from appJar import gui
 
@@ -357,17 +370,22 @@ app.go()
     The second function will be called when the mouse is released.<br />
     The same rules for passing functions apply as above.  </li>
 </ul>
+<h3 id="registering-other-event-types">Registering Other Event Types</h3>
+<p>It's possible to register any ot the standard event types with appJar widgets  </p>
+<pre><code class="python">app.getEntryWidget(&quot;widget_name&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+</code></pre>
+
 <h2 id="binding-keys">Binding Keys</h2>
-<p>As well as chaning widgets, we sometimes want keys to trigger events.  </p>
-<p>The classic example is the <Enter> key, we often want to be able to hit the <Enter> key to submit a form...</p>
+<p>As well as changing widgets, we sometimes want keys to trigger events.<br />
+The classic example is the <code>&lt;Return&gt;</code> key, we often want to be able to hit the <code>&lt;Return&gt;</code> key to submit a form...</p>
 <ul>
 <li>
 <p><code>.enableEnter(function)</code><br />
-Link a function to the <code>&lt;Enter&gt;</code> key</p>
+Link a function to the <code>&lt;Return&gt;</code> key</p>
 </li>
 <li>
 <p><code>.disableEnter()</code><br />
-Unlink a function form the <code>&lt;Enter&gt;</code>  key</p>
+Unlink a function form the <code>&lt;Return&gt;</code>  key</p>
 </li>
 </ul>
 <p>You may also want to bind other keys to events.  </p>

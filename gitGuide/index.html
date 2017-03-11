@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -293,7 +299,21 @@
         
             <li><a href="#simple-set-up">Simple Set-up</a></li>
         
-            <li><a href="#reference">Reference</a></li>
+            <li><a href="#setting-up">Setting Up</a></li>
+        
+            <li><a href="#updating">Updating</a></li>
+        
+            <li><a href="#checking">Checking</a></li>
+        
+            <li><a href="#adding">Adding</a></li>
+        
+            <li><a href="#undoing">Undoing</a></li>
+        
+            <li><a href="#pushing">Pushing</a></li>
+        
+            <li><a href="#branching-merging">Branching &amp; Merging</a></li>
+        
+            <li><a href="#tagging">Tagging</a></li>
         
             <li><a href="#pypi">PyPI</a></li>
         
@@ -305,7 +325,7 @@
 <h1 id="git-guide">Git Guide</h1>
 <hr />
 <p>Below are some useful commands for using git, GitHub &amp; PyPI from the command line.  </p>
-<h2 id="simple-set-up">Simple Set-up</h2>
+<h3 id="simple-set-up">Simple Set-up</h3>
 <p><a href="https://git-scm.com/">Git</a> provides local version control - allowing you to keep backups of previous versions of your code.  </p>
 <p>It's really easy to get started:  </p>
 <ul>
@@ -328,7 +348,6 @@ It will also allow other people to view &amp; contribute to your code.  </p>
 <ul>
 <li><code>git push</code> - send your local changes to your online GitHub repository.  </li>
 </ul>
-<h2 id="reference">Reference</h2>
 <h3 id="setting-up">Setting Up</h3>
 <ul>
 <li><code>git init</code><br />
@@ -371,10 +390,48 @@ This will restore a file to the latest version in Git.  </li>
 <li><code>git push</code><br />
 Pushes all changes you've added &amp; committed locally, to GitHub  </li>
 </ul>
+<h3 id="branching-merging">Branching &amp; Merging</h3>
+<p>Branching is useful to allow you to develop a new feature, without affecting the main branch.<br />
+That way, your main branch remains untouched, until you are ready to add in your new feature.<br />
+This is useful, as it means the main branch always matches what is currently released, and it also lets you release emergency fixes on the main branch, without having to include whatever new feature is currently being worked on.  </p>
+<ul>
+<li>
+<p><code>git branch</code><br />
+List all the branches in your repo  </p>
+</li>
+<li>
+<p><code>git checkout &lt;branch&gt;</code><br />
+Switch to the named <em>&lt;branch&gt;</em>  </p>
+</li>
+<li>
+<p><code>git branch &lt;branch&gt;</code><br />
+Create a new branch called <em>&lt;branch&gt;</em>  </p>
+</li>
+<li>
+<p><code>git checkout -b &lt;new-branch&gt;</code><br />
+Create and switch to a <em>&lt;new-branch&gt;</em>  </p>
+</li>
+<li>
+<p><code>git branch -d &lt;branch&gt;</code><br />
+Delete the branch called <em>&lt;branch&gt;</em>  </p>
+</li>
+</ul>
+<p>Once your branch is complete, ie. you finished your new feature and are ready to add it to your main branch for a new release.<br />
+You simply merge your feature branch back into the main branch.  </p>
+<ol>
+<li>First you have to checkout the master branch: <code>git checkout master</code> followed by a <code>git pull</code> to get any missing fixes.  </li>
+<li>Then, there are two options:  <ul>
+<li>Merge in your feature branch: <code>git merge &lt;branch&gt;</code>  </li>
+<li>Or pull down your feature branch: <code>git pull origin &lt;branch&gt;</code>  </li>
+</ul>
+</li>
+<li>Once you have added your feature branch into the main branch, you then push it all back again: <code>git push</code>  </li>
+<li>You now have a new version - so you should tag it with a version number  </li>
+</ol>
 <h3 id="tagging">Tagging</h3>
 <ul>
-<li><code>git tag -a vXXX -m "Tag description</code>  </li>
-<li><code>git push origin vXXX</code><br />
+<li><code>git tag -a vXXX -m "Tag description</code><br />
+<code>git push origin vXXX</code><br />
 This tags the current build in git<br />
 Then pushes it to GitHub</li>
 </ul>

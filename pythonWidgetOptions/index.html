@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -364,6 +370,25 @@ Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter,
     Sets the state of the named widget. One of: <code>"normal"</code>, <code>"active"</code>, <code>"disabled"</code>  </p>
 </li>
 </ul>
+<p>It's possible to change <a href="../pythonGuiOptions/#gui-design">global GUI settings</a>, such as the background and font.<br />
+If you need to modify individual settings of a widget, you can access it directly, and use the traditional tKinter methods.  </p>
+<p>To change the font for a specific widget, try the following:<br />
+<img alt="Font Styles" src="../img/fonts.png" /></p>
+<pre><code class="python">app.addLabel(&quot;l1&quot;, &quot;Times&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Comic Sans&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Helvetica&quot;)
+app.addLabel(&quot;l4&quot;, &quot;Sans Serif&quot;)
+app.addLabel(&quot;l5&quot;, &quot;Verdana&quot;)
+app.addLabel(&quot;l6&quot;, &quot;Courier&quot;)
+
+app.getLabelWidget(&quot;l1&quot;).config(font=&quot;Times 20 italic underline&quot;)
+app.getLabelWidget(&quot;l2&quot;).config(font=(&quot;Comic Sans&quot;, &quot;20&quot;, &quot;normal&quot;))
+app.getLabelWidget(&quot;l3&quot;).config(font=&quot;Helvetica 20 underline&quot;)
+app.getLabelWidget(&quot;l4&quot;).config(font=(&quot;Sans Serif&quot;, &quot;20&quot;, &quot;bold&quot;))
+app.getLabelWidget(&quot;l5&quot;).config(font=&quot;Verdana 20 overstrike&quot;)
+app.getLabelWidget(&quot;l6&quot;).config(font=&quot;Courier 20&quot;)
+</code></pre>
+
 <h3 id="advanced-looks">Advanced Looks</h3>
 <hr />
 <p>The following are supported by most widgets:</p>

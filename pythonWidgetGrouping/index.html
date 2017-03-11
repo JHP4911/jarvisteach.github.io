@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -839,6 +845,21 @@ Position the <em>Frame</em> within the grid, then position widgets inside the <e
 <hr />
 <p>A scrollable pane, to contain widgets.  </p>
 <ul>
+<li>Will respond to horizontal &amp; vertical scroll events on Mac &amp; Windows.  </li>
+<li>Will respond to horizontal scroll events, and interpret SHIFT-horizontal scroll events as vertical scroll events on Linux.  </li>
+<li>
+<p>Will also respond to key presses:  </p>
+<ul>
+<li>Up &amp; Down: Move up or down the equivalent of a line  </li>
+<li>Left &amp; Right: Move left or right the equivalent of a line  </li>
+<li>PageUp &amp; PageDown: Move up or down the equivalent of a page  </li>
+<li>Ctrl-PageUp &amp; Ctrl-PageDown: Move left or right the equivalent of a page  </li>
+<li>Ctrl-Up &amp; Ctrl-Down: Move up or down the equivalent of a page  </li>
+<li>Ctrl-Left &amp; Ctrl-Right: Move left or right the equivalent of a page   </li>
+<li>Home &amp; End: Move to the top or bottom  </li>
+<li>Ctrl-Home &amp; Ctrl-End: Move to the far-left or the far-right  </li>
+</ul>
+</li>
 <li>
 <p><code>.startScrollPane(title)</code> &amp; <code>.stopScrollPane()</code><br />
     Used to start and stop the <em>ScrollPane</em>.  </p>

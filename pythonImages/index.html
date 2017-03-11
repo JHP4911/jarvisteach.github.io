@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -329,19 +335,27 @@ app.stopLabelFrame()
 </code></pre>
 
 <ul>
-<li><code>.setImageLocation(location)</code><br />
+<li>
+<p><code>.addImageData(title, imgData)</code><br />
+    As above, but receives raw image data.<br />
+    Currently only supports base64 encoded GIF images.  </p>
+</li>
+<li>
+<p><code>.setImageLocation(location)</code><br />
     Set a folder for image files.<br />
-    This will be put before the names of any image files used.  </li>
+    This will be put before the names of any image files used.  </p>
+</li>
 </ul>
 <h3 id="change-images">Change Images</h3>
 <ul>
 <li>
-<p><code>.setImage(title, image)</code><br />
+<p><code>.setImage(title, image)</code> &amp; <code>.setImageData(title, imgData)</code><br />
     This will replace the existing image with the new one.<br />
-    If the image has the same path, it will not be changed.  </p>
+    If the image has the same path, it will not be changed.<br />
+    If imgData, will always be reloaded.  </p>
 </li>
 <li>
-<p><code>.reloadImage(title, image)</code><br />
+<p><code>.reloadImage(title, image)</code> &amp; <code>.reloadImageData(title, imgData)</code><br />
     This will replace the existing image with the new one.<br />
     It will force an image reload, even if the file name hasn't changed.<br />
     Useful if an outside agency modifies the image file.  </p>

@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -297,7 +303,7 @@
         
             <li><a href="#grid">Grid</a></li>
         
-            <li><a href="#meters">Meters</a></li>
+            <li><a href="#matplotlib">MatPlotLib</a></li>
         
     
     </ul>
@@ -423,36 +429,36 @@ It is possible to include buttons at the end of each row, and an additional row 
     Add a single row of data to the existing grid.<br />
     It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
 </ul>
-<h3 id="meters">Meters</h3>
+<h3 id="matplotlib">MatPlotLib</h3>
 <hr />
-<p>Working on some different styles for the Meter.<br />
-And, a better look - gradated colour...  </p>
-<h4 id="splitmeter">SplitMeter</h4>
-<p>Shows two values, left &amp; right  </p>
-<p><img alt="SplitMeter" src="../img/1_splitMeter.png" /></p>
-<ul>
-<li><code>.addSplitMeter(title)</code>  </li>
-</ul>
-<h4 id="dualmeter">DualMeter</h4>
-<p>Shows percentage left &amp; right  </p>
-<ul>
-<li><code>.addDualMeter(title)</code>  </li>
-</ul>
-<h4 id="set-meters">Set Meters</h4>
+<p>Support for embedding very basic <a href="http://matplotlib.org">MatPlotLib</a> plots.  </p>
+<p><img alt="Plot" src="../img/1_plot.png" />  </p>
+<pre><code class="python">from numpy import sin, pi, arange
+from appJar import gui
+
+x = arange(0.0, 3.0, 0.01)
+y = sin(2*pi*x)
+
+app = gui()
+axes = app.addPlot(&quot;p1&quot;, x, y)
+axes.legend(['key data'])
+app.go()
+</code></pre>
+
 <ul>
 <li>
-<p><code>.setMeter(title, value, text=None)</code><br />
-    Value should be between -100 &amp; 100 for a SplitMeter</p>
+<p><code>.addPlot(title, x, y)</code><br />
+    Create a plot with the specified x and y values.<br />
+    Returns the plot object, to allow further customisation.  </p>
 </li>
 <li>
-<p><code>.setMeterFill(title, colour(s))</code><br />
-    Pass a single colour for a Meter.<br />
-    Pass a list of two colours for Dual &amp; Split meters.  </p>
+<p><code>.updatePlot(title, x, y)</code><br />
+    Update the specified plot with the specified x and y values.</p>
 </li>
-</ul>
-<h4 id="get-meters">Get Meters</h4>
-<ul>
-<li><code>.getMeter(title)</code>  </li>
+<li>
+<p><code>.refreshPlot(title)</code><br />
+    Redraw the plot, call after changing the axes object...  </p>
+</li>
 </ul></div>
         </div>
 

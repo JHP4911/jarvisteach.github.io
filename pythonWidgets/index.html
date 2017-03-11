@@ -200,7 +200,7 @@
                     
                         
 <li >
-    <a href="../whatsNew/">What's new?</a>
+    <a href="../whatsNew/">New & Upcoming</a>
 </li>
 
                     
@@ -231,6 +231,12 @@
                         
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
 </li>
 
                     
@@ -643,7 +649,7 @@ app.go()
 <h2 id="optionbox">OptionBox</h2>
 <hr />
 <p>Creates a simple drop-down box.<br />
-It is only possible to select one option form this drop-down.<br />
+It is only possible to select one option from this drop-down.<br />
 Pass in a list of values to show in the drop-down box.<br />
 They will be added in the same order, with the first item shown.<br />
 If the first item is empty, a simple title <code>- options -</code> will be created.<br />
@@ -799,7 +805,7 @@ app.go()
 </li>
 <li>
 <p><code>.removeListItem(title, item)</code><br />
-    Remove the specified item from teh specified ListBox.  </p>
+    Remove the specified item from the  specified ListBox.  </p>
 </li>
 </ul>
 <pre><code class="python">from appJar import gui
@@ -832,7 +838,14 @@ app.go()
 <p><code>.selectListItem(title, item)</code><br />
     Selects the specified item in the specified ListBox.  </p>
 </li>
+<li>
+<p><code>.setListItemBg(title, item, colour)</code> &amp; <code>.setListItemFg(title, item, colour)</code><br />
+<code>.setListItemAtPosBg(title, item, colour)</code> &amp; <code>.setListItemAtPosFg(title, item, colour)</code><br />
+    Sets the background or foreground colours the specified ListBox item.<br />
+    Can either specify a named item (will update all with that name) or the position of an item.  </p>
+</li>
 </ul>
+<p><img alt="LB Colours" src="../img/lbCols.png" />  </p>
 <h4 id="get-listboxes">Get ListBoxes</h4>
 <ul>
 <li>
@@ -979,33 +992,49 @@ app.go()
 </ul>
 <h2 id="meter">Meter</h2>
 <hr />
-<p>Shows a simple progress meter  </p>
-<p><img alt="Meter" src="../img/1_meter.png" />  </p>
+<p>Various styles of progress meter:  </p>
+<ul>
+<li>
+<h4 id="meter_1">Meter</h4>
+<p><img alt="Meter" src="../img/1_meter.png" /><br />
+A simple meter for showing progress from 0% to 100%.  </p>
+</li>
+<li>
+<h4 id="splitmeter">SplitMeter</h4>
+<p><img alt="Meter" src="../img/2_meter.png" /><br />
+A possesion style meter, showing percentages on either side.  </p>
+</li>
+<li>
+<h4 id="dualmeter">DualMeter</h4>
+<p><img alt="Meter" src="../img/3_meter.png" /><br />
+Two separate meters, expanding out from the middle.  </p>
+</li>
+</ul>
 <pre><code class="python">from appJar import gui
 
 app=gui()
-app.setGeometry(&quot;200x50&quot;)
-app.setFont(20)
 app.addMeter(&quot;progress&quot;)
+app.setMeterFill(&quot;progress&quot;, &quot;blue&quot;)
 app.go()
 </code></pre>
 
 <h4 id="add-meters">Add Meters</h4>
 <ul>
-<li><code>addMeter(name)</code><br />
-    Adds a meter with the specified name.  </li>
+<li><code>addMeter(name)</code> &amp; <code>.addSplitMeter(name)</code> &amp;  <code>.addDualMeter(name)</code><br />
+    Adds a meter with the specified name, of the specified type..  </li>
 </ul>
 <h4 id="set-meters">Set Meters</h4>
 <ul>
 <li>
 <p><code>setMeter(name, value, text=None)</code><br />
-    Changes the specified meter to the specified value, between 0 and 100, with the optional text.<br />
-<img alt="Meter" src="../img/2_meter.png" />  </p>
+    Changes the specified meter to the specified value.<br />
+    For <code>Meter</code> &amp; <code>SplitMeter</code>should be a value between 0 and 100.<br />
+    For <code>DualMeter</code> should be a list of two values, each between 0 and 100.  </p>
 </li>
 <li>
 <p><code>setMeterFill(name, colour)</code><br />
     Changes the fill colour of the specified meter.<br />
-<img alt="Meter" src="../img/3_meter.png" />  </p>
+    For <code>SplitMeter</code> &amp; <code>DualMeter</code>should be a list of two colours.  </p>
 </li>
 </ul>
 <h4 id="get-meters">Get Meters</h4>
@@ -1014,7 +1043,19 @@ app.go()
     Gets the value of the specified meter.<br />
     As meters convert their data to a value between 0 and 1, this will return a list of two values: <code>(0.45, '45 %')</code>  </li>
 </ul>
+<h4 id="background-processing">Background Processing</h4>
+<p>Meters are designed to show progress over time.<br />
+One common solution is to register a function that is constantly updating a meter.<br />
+This should then be monitoring/updating a global variable:  </p>
+<pre><code class="python">def updateMeter():
+    app.setMeter(&quot;progress&quot;, percentComplete)
+
+# schedue function to be called regularly
+app.registerEvent(updateMeter)
+</code></pre>
+
 <h2 id="properties">Properties</h2>
+<hr />
 <p>A compound widget that shows multiple CheckButtons linked to a dictionary.<br />
 Note, dictionaries have no order, so when added as a dictionary, the items will be automatically sorted.  </p>
 <p><img alt="Properties" src="../img/1_props.png" />

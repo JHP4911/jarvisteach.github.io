@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/pythonInternationalisation/">
+        <link rel="canonical" href="http://appjar.info/contributing/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Internationalisation - appJar</title>
+        <title>Contributing - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -122,7 +122,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -157,8 +157,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">Internationalisation</a>
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
                     
@@ -188,7 +188,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -235,8 +235,8 @@
 
                     
                         
-<li >
-    <a href="../contributing/">Contributing</a>
+<li class="active">
+    <a href="./">Contributing</a>
 </li>
 
                     
@@ -261,12 +261,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonEvents/">
+                    <a rel="next" href="../Support/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../examples/minecraft/">
+                    <a rel="prev" href="../Thanks/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -295,123 +295,47 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#internationalisation">Internationalisation</a></li>
+        <li class="main active"><a href="#contributing">Contributing</a></li>
         
-            <li><a href="#file-format">File Format</a></li>
+            <li><a href="#testing">Testing</a></li>
         
-            <li><a href="#implementation">Implementation</a></li>
-        
-            <li><a href="#widget-support">Widget Support</a></li>
-        
-            <li><a href="#platform-support">Platform Support</a></li>
+            <li><a href="#documentation">Documentation</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="internationalisation">Internationalisation</h1>
+<h1 id="contributing">Contributing</h1>
 <hr />
-<p>appJar offers a simple method for supporting multiple languages.  </p>
-<h3 id="file-format">File Format</h3>
-<p>A config file needs to be created, for each language, with translations for each widget:</p>
-<pre><code>&gt;&gt;&gt; ENGLISH.ini
----
-[LABEL]
-l1: some text
-l2: some more text
-
-[BUTTON]
-b1: button a
-b2: button b
-
-[LINK]
-l1: New link title
+<p>We are always happy to receive additions/updates/fixes to the library - simple submit a Pull Request.  </p>
+<p>The key focusses of the project are that we have good, up-to-date documentation and reliable code.  </p>
+<p>Therefore, in order to add new features, you should be looking to include them in both the documentation and the test suite.  </p>
+<h2 id="testing">Testing</h2>
+<hr />
+<p>We use <a href="https://travis-ci.org/jarvisteach/appJar">Travis</a> and <a href="https://coveralls.io/github/jarvisteach/appJar">Coveralls</a> to ensure the code works.<br />
+In order to ensure coverage, every new function that is added should be included in <strong>/tests/widget_test.py</strong><br />
+There are lots of functions in there that simply add widgets to the test GUI, at a minimum this ensures they are free of basic syntax errors.<br />
+If the widget is interactive or has setters &amp; getters, then it's useful to include a set followed by a get with an assert:</p>
+<pre><code class="python">app.addLabel(&quot;l1&quot;, &quot;Message&quot;)
+assert app.getLabel(&quot;l1&quot;) == &quot;Message&quot;
+app.setLabel(&quot;l1&quot;, &quot;New Message&quot;)
+assert app.getLabel(&quot;l1&quot;) == &quot;New Message&quot;
+app.clearLabel(&quot;l1&quot;)
+assert app.getLabel(&quot;l1&quot;) == &quot;&quot;
 </code></pre>
 
-<p>When widgets are added, their ID will be used to look up a translation.<br />
-If no translation is found, the widget's initial value will be used as a default.  </p>
-<p>The filename should be in all uppercase, of type <code>.ini</code>  </p>
-<h3 id="implementation">Implementation</h3>
-<pre><code class="python">from appJar import gui
-
-app=gui(&quot;Languages&quot;)
-
-app.addLabel(&quot;l1&quot;, &quot;default text&quot;)
-app.addLabel(&quot;l2&quot;, &quot;default text&quot;)
-app.addLabel(&quot;l3&quot;, &quot;default text&quot;)
-
-# as long as the language file has the same name as the button
-# the button can call .changeLanguage directly
-app.addButtons([&quot;English&quot;, &quot;Francais&quot;, &quot;한글&quot;], app.changeLanguage)
-
-app.go(&quot;english&quot;)
-</code></pre>
-
-<p>The starting language must be set in the call to <code>.go(language)</code><br />
-To change the language, call <code>.changeLanguage(language)</code>  </p>
-<p>These will look for a file called <code>LANGUAGE.ini</code></p>
-<h3 id="widget-support">Widget Support</h3>
-<p>Not all widget's are supported, and some require a bit more effort to get them to work properly.<br />
-Note, changing the text of a widget through <code>setXXX()</code> method's will work, but will not be rememberd if the language is changed.  </p>
+<p>If a function call (add/set/clear) were to fail, the test would fail. And if the <code>assert</code> doesn't match, the test will fail.</p>
+<h2 id="documentation">Documentation</h2>
+<hr />
+<p>We've used <a href="http://www.mkdocs.org">MkDocs</a> hosted on <a href="https://pages.github.com">GitHub Pages</a> to build this site.<br />
+The pages are written in Markdown - there are lots of sites out there giving advice...  </p>
+<p>The process is fairly straightforward:  </p>
 <ul>
-<li>
-<p><strong>Auto-labelled Widgets</strong><br />
-    Any widgets created with an <strong>auto-label</strong> can be changed under the <code>[LABEL]</code> option below.  </p>
-</li>
-<li>
-<p><code>[LABEL]</code>,  <code>[BUTTON]</code>, <code>[CHECKBOX]</code>, <code>[MESSAGE]</code>, <code>[LINK]</code><br />
-    The label id, followed by the text to put in it.<br />
-    Any widgets added with labels <code>.addLabelEntry()</code> are also changed here.  </p>
-</li>
-<li>
-<p><code>[RADIOBUTTON]</code><br />
-    Radio-buttons are a little tricky. The key has two parts: the <em>group</em> &amp; <em>item</em><br />
-    If you used: <code>.addRadioButton("Food", "f1")</code> the entry in the <code>.ini</code> file would be:
-    <code>Food-f1: french_food_name</code>  </p>
-</li>
-<li>
-<p><code>[ENTRY]</code><br />
-    The text provided here wil be used for the default value, if one is being used.  </p>
-</li>
-<li>
-<p><code>[SCALE]</code>, <code>[TEXTAREA]</code>, <code>[METER]</code><br />
-    These widgets have no text to change.  </p>
-</li>
-<li>
-<p><code>[LISTBOX]</code>, <code>[SPIN]</code>, <code>[OPTION]</code><br />
-    Each value should be on a new line<br />
-    Doesn't work for SpinBoxes, when generated from a range.  </p>
-</li>
-</ul>
-<pre><code>[LISTBOX]
-fruits:
-    apples
-    pears
-    grapes
-    bananas
-</code></pre>
-
-<ul>
-<li>
-<p>The following are currently in development:<br />
-<code>[LABELFRAME]</code>, <code>[TABBEDFRAME]</code>, <code>[PAGEDWINDOW]</code>, <code>[TOGGLEFRAME]</code><br />
-<code>[PROPERTIES]</code>, <code>[POPUP]</code>, <code>[PIECHART]</code>, <code>[TREE]</code>, <code>[GRID]</code><br />
-<code>[MENUBAR]</code>, <code>[STATUSBAR]</code>, <code>[TOOLBAR]</code>, <code>[TOOLTIP]</code>, <code>[TITLE]</code><br />
-<code>[SOUND]</code> &amp; <code>[IMAGE]</code>  </p>
-</li>
-<li>
-<p><code>[EXTERNAL]</code><br />
-    It will be possible to request translations for non appJar data.  </p>
-</li>
-</ul>
-<h3 id="platform-support">Platform Support</h3>
-<p>Note, your platform might not support the characters you want to display.<br />
-In which case, you'll need to install the relevant font.<br />
-For example, to get Korean characters to show on raspberry Pi, try:<br />
-<code>sudo apt-get install fonts-nanum</code>  </p>
-<p>If you're after other languages, you can try:<br />
-<code>apt-cache search chinese</code> and then install a likely looking font...  </p></div>
+<li>Identify the page you need to modify - look at the URL, the folder will be the file name  </li>
+<li>Find the <strong>.md</strong> file in <strong>/docs/mkdocs/docs</strong>  </li>
+<li>Add the relevant information  </li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">
