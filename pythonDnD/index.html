@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/License/">
+        <link rel="canonical" href="http://appjar.info/pythonDnD/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>License - appJar</title>
+        <title>Drag'n Drop - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -128,7 +128,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -163,8 +163,8 @@
 
                     
                         
-<li >
-    <a href="../pythonDnD/">Drag'n Drop</a>
+<li class="active">
+    <a href="./">Drag'n Drop</a>
 </li>
 
                     
@@ -200,7 +200,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -247,8 +247,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">License</a>
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -285,12 +285,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../whatsNew/">
+                    <a rel="next" href="../pythonEvents/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Support/">
+                    <a rel="prev" href="../pythonInternationalisation/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -319,20 +319,51 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#license">License</a></li>
+        <li class="main active"><a href="#dragn-drop">Drag'n Drop</a></li>
+        
+            <li><a href="#dragn-drop-between-widgets">Drag'n Drop Between Widgets</a></li>
+        
+            <li><a href="#dragn-drop-between-applications">Drag'n Drop Between Applications</a></li>
+        
+            <li><a href="#beta">Beta</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="license">License</h2>
+<h1 id="dragn-drop">Drag'n Drop</h1>
 <hr />
-<p>This project has been a labour of love over the last couple of years.  </p>
-<p>When confronted with the difficulty both pupils and teachers were having creating simple GUIs with Python, I started out trying to put together a few helper functions to make life simpler.  </p>
-<p>It's obviously grown a bit since then, and has become fairly functional!  </p>
-<p>appJar is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> </p>
-<p>So, you're free to use it, modify it &amp; redistribute it, as long as you acknowledge my copyright, and aren't trying to make money out of it...  </p></div>
+<p>Drag and Drop functionality is something we're accustomed to in most software.<br />
+By default, python and tkinter don't provide it.</p>
+<p>We've incorporated a couple of ways to include drag and drop functionality in <strong>appJar</strong>.  </p>
+<h2 id="dragn-drop-between-widgets">Drag'n Drop Between Widgets</h2>
+<hr />
+<p>There is a beta version of drag and drop between labels.  </p>
+<ul>
+<li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction]</code>)<br />
+    Set functions to call whenever the mouse button is clicked and dragged.<br />
+    The first function will be called when the mouse is initially clicked.<br />
+    The second function will be called when the mouse is released.  </li>
+</ul>
+<h2 id="dragn-drop-between-applications">Drag'n Drop Between Applications</h2>
+<hr />
+<p>There is also a beta version of drag and drop between applications - at the moment, this is has been seen to work on Mac OSX and Windows 7 - let us know of success on other versions of Windows!  </p>
+<p>Certain widgets can be registered to receive <em>Drop</em> events:  </p>
+<ul>
+<li><code>.setEntryDropTarget(title, function=None, replace=True)</code>  </li>
+<li><code>.setTextAreaDropTarget(title, function=None, replace=True)</code>  </li>
+<li><code>.setImageDropTarget(title, function=None, replace=True)</code>  </li>
+<li><code>.setLabelDropTarget(title, function=None, replace=True)</code>  </li>
+</ul>
+<p>Then, if you drag a file or a URI onto one of these widgets, the filename/URI will be copied.  </p>
+<p>If no function has been set, the contents of the widget will be replaced with the filename/URI.<br />
+If you'd rather append the URI/filename - set <code>replace</code> to be False.<br />
+If a function has been set, it will be called, passing in the filename/URI as the only paramter.  </p>
+<p>There is currently no support for registering <em>Drag</em> events.  </p>
+<h2 id="beta">Beta</h2>
+<hr />
+<p>Note, this is all in beta - long term, the plan is to combine all of this into one set of functions, and provide a unified drag and drop model, that will work across all widgets both within the application and between applications.  </p></div>
         </div>
 
         <footer class="col-md-12">

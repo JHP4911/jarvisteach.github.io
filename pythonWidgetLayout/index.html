@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -368,7 +392,7 @@ app.setLabelBg(&quot;l9&quot;, &quot;DarkKhaki&quot;)
 app.go()
 </code></pre>
 
-<p>If youre still not satisfied, you can configure widgets to span across multiple columns or rows.<br />
+<p>If you're still not satisfied, you can configure widgets to span across multiple columns or rows.<br />
 Simply provide a third &amp; fourth parameter to specify how many rows and columns to span:  </p>
 <p><img alt="Grid Layout" src="../img/layouts/grid2.png" /></p>
 <pre><code class="python">from appJar import gui
@@ -404,7 +428,7 @@ app.go()
 <p>There are a few tricks you can employ, to make life a bit easier...</p>
 <h4 id="named-arguments">Named Arguments</h4>
 <p>It can be annoying having to specify all of the positional parameters each time, so why not take advantage of Python's support for <em>Named Arguments</em>. These allow you to set specific parameters, using their name.<br />
-For example: <code>app.addLabel("l1", "text here", colspan=2)</code>, will set the <code>colspan</code> parameter, without having to set the preceeding ones.   </p>
+For example: <code>app.addLabel("l1", "text here", colspan=2)</code>, will set the <code>colspan</code> parameter, without having to set the preceding ones.   </p>
 <h4 id="row-helpers">Row Helpers</h4>
 <p>If you combine that with having appJar telling you the row you're on, things get even easier.  </p>
 <ul>
@@ -446,7 +470,7 @@ app.go()
 <li>How columns and rows stretch to fill the GUI - <strong>stretchiness</strong>  </li>
 <li>How widgets stretch to fill their cells - <strong>stickiness</strong>  </li>
 </ul>
-<p>Note, you can also cange these settings for <a href="../pythonWidgetOptions/#advanced-looks">individual widgets</a></p>
+<p>Note, you can also change these settings for <a href="../pythonWidgetOptions/#advanced-looks">individual widgets</a></p>
 <h4 id="set-stretch-sticky">Set Stretch &amp; Sticky</h4>
 <ul>
 <li><code>.setStretch(sides)</code><br />
@@ -474,7 +498,7 @@ app.go()
 <p>But, as you can see - this doesn't make much difference...</p>
 <h3 id="widget-stickiness">Widget Stickiness</h3>
 <p>Even if the cells in the columns &amp; rows are stretching, the widgets inside them might not.  </p>
-<p>Widges have a <strong>stickiness</strong> which tells them which sides of their cells to stick to.  </p>
+<p>Widgets have a <strong>stickiness</strong> which tells them which sides of their cells to stick to.  </p>
 <p>Again, widgets are configured to stick to the left &amp; right, but not the top &amp; bottom.  </p>
 <p>To change this, you need to set a new stickiness:  </p>
 <p><img alt="Expand" src="../img/conf/exp2.png" />  </p>
@@ -540,7 +564,7 @@ app.setInPadding([40,20]) # padding inside the widget
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

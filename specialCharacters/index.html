@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/License/">
+        <link rel="canonical" href="http://appjar.info/specialCharacters/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>License - appJar</title>
+        <title>Special Characters - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -71,7 +71,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -112,8 +112,8 @@
 
                     
                         
-<li >
-    <a href="../specialCharacters/">Special Characters</a>
+<li class="active">
+    <a href="./">Special Characters</a>
 </li>
 
                     
@@ -200,7 +200,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -247,8 +247,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">License</a>
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -285,12 +285,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../whatsNew/">
+                    <a rel="next" href="../splash/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Support/">
+                    <a rel="prev" href="../pythonDevWidgets/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -319,20 +319,84 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#license">License</a></li>
+        <li class="main active"><a href="#special-characters">Special Characters</a></li>
+        
+            <li><a href="#explanation">Explanation</a></li>
+        
+            <li><a href="#example">Example</a></li>
+        
+            <li><a href="#unicode-search">Unicode Search</a></li>
+        
+            <li><a href="#important">Important</a></li>
+        
+            <li><a href="#easter-egg">Easter Egg</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="license">License</h2>
+<h1 id="special-characters">Special Characters</h1>
 <hr />
-<p>This project has been a labour of love over the last couple of years.  </p>
-<p>When confronted with the difficulty both pupils and teachers were having creating simple GUIs with Python, I started out trying to put together a few helper functions to make life simpler.  </p>
-<p>It's obviously grown a bit since then, and has become fairly functional!  </p>
-<p>appJar is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> </p>
-<p>So, you're free to use it, modify it &amp; redistribute it, as long as you acknowledge my copyright, and aren't trying to make money out of it...  </p></div>
+<p>If you've ever tried a <a href="../pythonWidgets/#entry">ValidationEntry</a>, you'll notice we use some special characters:</p>
+<p><img alt="ValidationEntry" src="../img/entValidation.png" /></p>
+<h3 id="explanation">Explanation</h3>
+<hr />
+<p>You can't find these on the keyboard, so can't type them in your code.<br />
+Instead, you need to use a special code (<a href="https://en.wikipedia.org/wiki/Unicode">unicode</a>), for the character you want.</p>
+<p>For example, Unicode for the tick is <code>2714</code>, and the cross is <code>2716</code></p>
+<p>To represent these in Python, you need to use a special syntax:</p>
+<pre><code class="python">TICK=u&quot;\u2714&quot;
+CROSS=u&quot;\u2716&quot;
+
+app.addLabel(&quot;tick&quot;, TICK)
+app.addLabel(&quot;cross&quot;, CROSS)
+</code></pre>
+
+<p>By putting a <code>u</code> in front of the string, you tell Python it is a Unicode character.<br />
+(In fact, it calls the Unicode function, converting the string data into Unicode.)  </p>
+<h3 id="example">Example</h3>
+<hr />
+<p>As demonstrated above, it's best to define any Unicode characters you want to use as constants, then you can use them in your code just like any other string.  </p>
+<p><img alt="MusicPlayer" src="../img/1_unicode.png" /></p>
+<pre><code class="python">PLAY  = u&quot;\u25B6&quot;  # 23F5 should work...
+PAUSE = u&quot;\u23F8&quot;
+RWD   = u&quot;\u23EA&quot;
+FWD   = u&quot;\u23E9&quot;
+STOP  = u&quot;\u23F9&quot;
+
+def music(btn):
+    if btn == PLAY:
+        # play music
+    elif btn == PAUSE:
+        # pause music
+
+app.setButtonFont(20)
+app.addButtons([PLAY, PAUSE, STOP, RWD, FWD], music)
+</code></pre>
+
+<h3 id="unicode-search">Unicode Search</h3>
+<hr />
+<p>So, now you just need to find the right Unicode...  </p>
+<p>Our favourite site is <a href="http://www.fileformat.info/info/unicode/char/search.htm">FileFormat.info</a>:<br />
+<img alt="UnicodeSearch" src="../img/2_unicode.png" /></p>
+<p>Simply type what you are looking for into the search box, and it will give you the best matches:<br />
+<img alt="UnicodeResults" src="../img/3_unicode.png" /></p>
+<p>Identify the one you want, and take a note of the Unicode: 263C<br />
+(Note, these are hexadecimal codes, so the values will be between 0 and F)  </p>
+<p>You can then use this code in your gui: <img alt="UnicodeSun" src="../img/4_unicode.png" />  </p>
+<pre><code class="python">FLOWER = u&quot;\u263C&quot;
+app.addButton(FLOWER, flowerPower)
+</code></pre>
+
+<h3 id="important">Important</h3>
+<hr />
+<p>Different platforms will (potentially) display these characters in different ways...<br />
+As you can see in the music example, for some reason, the PLAY character doesn't display like the other characters...<br />
+So, make sure you test them!  </p>
+<h3 id="easter-egg">Easter Egg</h3>
+<hr />
+<p>Try holding the &lt;ALT&gt; key and typing different codes on a Windows computer...  </p></div>
         </div>
 
         <footer class="col-md-12">

@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -381,23 +405,43 @@ This will set the allowed file extensions, it should be a list of tuples. They w
 </ul>
 </li>
 <li>
-<p><code>.saveBox()</code><br />
+<p><code>.saveBox(title=None, fileName=none, dirName=None, fileExt=".txt", fileTypes=None, asFile=None)</code><br />
     Shows a save file dialog.  </p>
+<p><img alt="SaveBox" src="../img/dialogs/save.png" />  </p>
+<p>Various parameters can be provided (although they don't work on all platforms):<br />
+<em> <code>title</code> this will set a title for the dialog<br />
+</em> <code>fileName</code> this will set a starting file name to save as<br />
+<em> <code>dirName</code> this will set a starting directory, defaults to the current working directory<br />
+<code>fileExt</code> this will set a file extension to start with
+</em> <code>fileTypes=[('images', '*.png'), ('images', '*.jpg')]</code><br />
+This will set the allowed file extensions, it should be a list of tuples. They will be grouped by the name.<br />
+* <code>asFile</code> this will determine whether a path or actual Python file object is returned, defaults to filename   </p>
 </li>
 <li>
-<p><code>.directoryBox()</code></p>
+<p><code>.directoryBox(title=None, dirName=None)</code>
+    Shows a choose directory dialog.  </p>
+<p><img alt="DirectoryBox" src="../img/dialogs/directory.png" />  </p>
+<ul>
+<li><code>title</code> this will set a title for the dialog  </li>
+<li><code>dirName</code> this will set a starting directory, defaults to the current working directory  </li>
+</ul>
 </li>
 </ul>
 <h3 id="other-boxes">Other Boxes</h3>
 <ul>
-<li><code>.colourBox()</code></li>
+<li>
+<p><code>.colourBox(colour="#FF0000")</code>
+    Shows a dialog for choosing colours.  </p>
+<p><img alt="ColourBox" src="../img/dialogs/colour.png" />  </p>
+<p>Can be passed a colour to start with, defaults to red.  </p>
+</li>
 </ul></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

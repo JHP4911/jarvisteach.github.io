@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>New & Upcoming - appJar</title>
+        <title>Change-Log - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
-<li class="active">
-    <a href="./">New & Upcoming</a>
+<li >
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Change-Log</a>
 </li>
 
                     
@@ -256,17 +280,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../Install/">
+                    <a rel="next" href="../packaging/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonBasics/">
+                    <a rel="prev" href="../License/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -295,7 +319,9 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#new-upcoming">New &amp; Upcoming</a></li>
+        <li class="main active"><a href="#change-log">Change-Log</a></li>
+        
+            <li><a href="#version-006">Version (0.06)</a></li>
         
             <li><a href="#version-0052">Version (0.052)</a></li>
         
@@ -314,8 +340,40 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="new-upcoming">New &amp; Upcoming</h1>
+<h1 id="change-log">Change-Log</h1>
 <hr />
+<h2 id="version-006">Version (0.06)</h2>
+<ul>
+<li>New widgets: <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a>, <a href="../pythonWidgets/#entry">Validation Entries</a>  </li>
+<li>Widget enhancements: Can now set some rules for <a href="../pythonWidgets/#set-entries">entries</a>  </li>
+<li>New documentation: <a href="../packaging">packaging</a>, <a href="../specialCharacters">special characters</a>, <a href="../pythonEvents">events</a>, <a href="../pythonDnD">drag'n drop</a>  </li>
+<li>Work on events: <a href="../pythonEvents/#breakdown">stopping event propagation</a>, <a href="../pythonEvents/#make-stuff-happen">drag/over events</a>, <a href="../pythonDnD">drag'n drop</a>  </li>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/143">#143</a> - Fixed bug with setting defaults on AutoEntries  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/142">#142</a> - Finished documentation for <a href="../pythonDialogs/#file=boxes">popups</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/130">#130</a> - Documented how to use <a href="../specialCharacters">special characters</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/123">#123</a> - New features for <a href="../pythonWidgets/#set-entries">setting entries</a> - max length, auto uppercase/lowercase, validation  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/119">#119</a> - <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a> widget added</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/118">#118</a> - dynamic library imports</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/117">#117</a> - introduced documentation on <a href="../packaging/">packaging</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/116">#116</a> - configurable trough <a href="../pythonWidgets/#set-scales">increments</a> for a scale</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/115">#115</a> - fixed transparency in python 2.7</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/114">#114</a> - ability to stop events being propagated</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/112">#112</a> - now possible to start with a subWindow (specified in go()) as well as hide() &amp; show() main window</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/110">#110</a> - can now configure the number of rows to <a href="../pythonWidgets/#set-entries">show</a> in an AutoEntry  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/108">#108</a> - Fixed issue with modal <a href="../pythonWidgetGrouping/#startstop-sub-windows">SubWindows</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/106">#106</a> - Function to add an <a href="../pythonWidgets/#add-buttons">image button</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/102">#102</a> - Updates to drag/over <a href="../pythonEvents/#make-stuff-happen">events</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/103">#103</a> - Can now manage event calling when <a href="../pythonEvents/#make-stuff-happen">widgets change</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - <a href="../pythonDnD/">Drag n'Drop</a> beta support for dnd between applications</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/92">#92</a> - Function to <a href="../pythonWidgets/#get-entries">get all entries</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/75">#75</a> - Fix to <a href="../pythonWidgetGrouping/#showhide-sub-windows">destroySubWindow</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/46">#46</a> - Added version details to about box  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/42">#42</a> - Added functionality to <a href="../pythonWidgets/#set-optionboxes">change TickOptionBoxes</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/33">#33</a> - Added convenience function to <a href="../pythonDevWidgets/#tree">setTreeColours</a>  </li>
+</ul>
+</li>
+</ul>
 <h2 id="version-0052">Version (0.052)</h2>
 <ul>
 <li>Issues Resolved:  <ul>
@@ -366,7 +424,7 @@
 <h2 id="version-0041">Version 0.041</h2>
 <ul>
 <li>Continuous Integration - added <a href="https://landscape.io/github/jarvisteach/appJar/">landscape.io</a> to monitor code quality  </li>
-<li><a href="../pythonImages/#change-images">Reload Image</a> - funciton to force a reload of an image, bypassing the cache (issue <a href="https://github.com/jarvisteach/appJar/issues/87">#87</a>)  </li>
+<li><a href="../pythonImages/#change-images">Reload Image</a> - function to force a reload of an image, bypassing the cache (issue <a href="https://github.com/jarvisteach/appJar/issues/87">#87</a>)  </li>
 <li>Minor fixes based off landscape report  </li>
 <li>Issues Resolved:  <ul>
 <li><a href="https://github.com/jarvisteach/appJar/issues/87">#87</a> - reloadImage()  </li>
@@ -399,7 +457,7 @@
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -266,7 +290,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonInternationalisation/">
+                    <a rel="prev" href="../pythonDnD/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -317,36 +341,59 @@
 <p>We also, sometimes, want events to happen repeatedly...</p>
 <h2 id="make-stuff-happen">Make stuff happen...</h2>
 <hr />
-<p>To make something happen you have to set a function for a widget:  </p>
+<p>To make something happen you have to set a function for a widget.<br />
+appJar currenly supports four basic use cases:  </p>
+<ul>
+<li><code>.set XXX ChangeFunction(title, function)</code> call a function when the widget changes  </li>
+<li><code>.set XXX SubmitFunction(title, function)</code> call a function when the widget is submitted    </li>
+<li><code>.set XXX OverFunction(title, functions)</code> call function(s) when the mouse enters/leaves the widget  </li>
+<li><code>.set XXX DragFunction(title, functions)</code> call function(s) when the mouse is dragged in/out of the widget  </li>
+</ul>
+<h3 id="breakdown">Breakdown</h3>
+<hr />
 <ul>
 <li>
-<p><code>.set XXX Function(title, function, key=None)</code>  </p>
-<p>This binds a function to the named widget:  </p>
+<p><code>.set XXX ChangeFunction(title, function)</code> &amp; <code>.set XXX SubmitFunction(title, function)</code>  </p>
+<p>These do similar things, so probably shouldn't both exist, but have evolved from a single <code>.set XXX Function()</code> which is now deprecated.  </p>
+<p>They bind a function to the named widget.  </p>
+<p>For <code>ChangeFunction</code>:  </p>
 <ul>
-<li>For Scales, OptionBoxes, SpinBoxes, ListBoxes, RadioButtons &amp; CheckButtons the function will be called each time the widget is changed.  </li>
-<li>For Entries it binds a function to the <code>&lt;Return&gt;</code> key, allowing the Entry to be <em>submitted</em>.  </li>
-<li>For Buttons it binds a function to the <code>&lt;Return&gt;</code> key.  </li>
-<li>For Labels &amp; Images it binds a function to the <code>&lt;Left-Mouse-Button&gt;</code>, making the widget clickable.  </li>
-<li>For other widgets, it will set the <em>command</em> property for the underlying tkinter widget.  </li>
+<li>Scales, OptionBoxes, SpinBoxes, ListBoxes, RadioButtons &amp; CheckBoxes, Entries &amp; TextAreas, and Properties - the function will be called each time the widget is changed.  </li>
+<li>Buttons, Labels &amp; Images - it is not available.  </li>
+<li>Other widgets - it will set the <em>command</em> property for the underlying tkinter widget; this may or may not do anything...  </li>
+</ul>
+<p>For <code>SubmitFunction</code>:  </p>
+<ul>
+<li>Labels &amp; Images - it binds a function to the <code>&lt;Left-Mouse-Button&gt;</code>, making the widget clickable.  </li>
+<li>Entries &amp; Buttons - it binds a function to the <code>&lt;Return&gt;</code> key  </li>
+<li>TextAreas - it's not available</li>
+<li>Other widgets - it does the same as <code>ChangeFunction</code>  </li>
 </ul>
 </li>
 </ul>
-<p><strong>Be careful</strong> it's possible to generate a RuntimeError. If you've linked together two widgets, say a Scale and a SpinBox, and you want a change in one to cause an update in the other, you might inadvertantly end up stuck in a recursive loop, until the stack fills up. In this case, make sure you call the <code>setXXX()</code> function, setting <code>callFunction</code> as False.</p>
+<p><strong>Be careful</strong> it's possible to generate a RuntimeError. If you've got two widgets changing the same variable, say a Scale and a SpinBox, and you want a change in one widget to cause an update in the other, you might inadvertently end up stuck in a recursive loop, until the <a href="https://en.wikipedia.org/wiki/Stack_overflow">stack overflows</a>.  </p>
+<p>In this case, make sure you set the optional parameter <code>callFunction = False</code> when you  call the <code>set XXX Function()</code> of a widget.  </p>
 <pre><code class="python">from appJar import gui
 
 def songChanged(rb):
     print(app.getRadioButton(rb))
 
+def reset(btn):
+    # set back to the default, but don't call the change function
+    app.setRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;, callFunction=False)
+
 app=gui()
 app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
 app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
-app.setRadioButtonFunction(&quot;song&quot;, songChanged)
+app.setRadioButtonChangeFunction(&quot;song&quot;, songChanged)
+app.addButton(&quot;Reset&quot;, reset)
 app.go()
 </code></pre>
 
 <ul>
 <li><code>.set XXX OverFunction(name, [inFunction, outFunction])</code><br />
     Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.<br />
+<strong>Only available on Labels</strong><br />
     The first function is called when the mouse first enters the widget.<br />
     The second function is called when the mouse leaves the widget.<br />
     If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </li>
@@ -365,14 +412,21 @@ app.go()
 </code></pre>
 
 <ul>
-<li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction])</code><br />
+<li>
+<p><code>.setImageMouseOver(title, image)</code><br />
+    Additional function, specific to <a href="../pythonImages/#change-images">images</a>, to change the specified image, while the mouse is over it.</p>
+</li>
+<li>
+<p><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction])</code><br />
     Set functions to call whenever the mouse button is clicked and dragged.<br />
+<strong>Only available on Labels</strong><br />
     The first function will be called when the mouse is initially clicked.<br />
     The second function will be called when the mouse is released.<br />
-    The same rules for passing functions apply as above.  </li>
+    The same rules for passing functions apply as above.  </p>
+</li>
 </ul>
 <h3 id="registering-other-event-types">Registering Other Event Types</h3>
-<p>It's possible to register any ot the standard event types with appJar widgets  </p>
+<p>It's possible to register any of the standard event types with appJar widgets  </p>
 <pre><code class="python">app.getEntryWidget(&quot;widget_name&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
 </code></pre>
 
@@ -386,7 +440,7 @@ Link a function to the <code>&lt;Return&gt;</code> key</p>
 </li>
 <li>
 <p><code>.disableEnter()</code><br />
-Unlink a function form the <code>&lt;Return&gt;</code>  key</p>
+Unlink a function from the <code>&lt;Return&gt;</code>  key</p>
 </li>
 </ul>
 <p>You may also want to bind other keys to events.  </p>
@@ -402,7 +456,7 @@ Unlink the specified key from any functions bound to it.</p>
 </ul>
 <h2 id="repeating-events">Repeating Events</h2>
 <p>Sometimes, you want events to keep happening in the background.<br />
-GUIs aren't so great at this - if you have a loop in your prgram, the GUI will <em>hang</em> (stop working until the loop finishes).<br />
+GUIs aren't so great at this - if you have a loop in your program, the GUI will <em>hang</em> (stop working until the loop finishes).<br />
 Luckily, we have a solution,,,</p>
 <ul>
 <li>
@@ -447,7 +501,7 @@ app.setStopFunction(checkStop)
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

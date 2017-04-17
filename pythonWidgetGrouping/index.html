@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -312,7 +336,7 @@
             <li><a href="#sub-window">Sub Window</a></li>
         
     
-        <li class="main "><a href="#under-development">Under Development</a></li>
+        <li class="main "><a href="#in-beta">In Beta</a></li>
         
             <li><a href="#frame">Frame</a></li>
         
@@ -499,7 +523,7 @@ app.go()
 <p><code>.setTabbedFrameDisabledTab(title, tab, disabled=True)</code><br />
     Disable the specified tab in the TabbedFrame.<br />
     Set disabled to False to re-enable it.<br />
-    This will also change the displayed tab, if the disaplyed tab is being disabled.  </p>
+    This will also change the displayed tab, if the displayed tab is being disabled.  </p>
 </li>
 <li>
 <p><code>.setTabbedFrameDisableAllTabs(title, disabled=True)</code><br />
@@ -582,7 +606,7 @@ app.go()
 <p><img alt="Vertical Panes" src="../img/layouts/pane2.png" />  </p>
 <ul>
 <li>Start an initial, vertical pane  </li>
-<li>Start all additional panes inside the intial pane  </li>
+<li>Start all additional panes inside the initial pane  </li>
 </ul>
 <pre><code class="python">from appJar import gui
 app = gui()
@@ -620,7 +644,7 @@ app = gui()
 app.startPanedFrame(&quot;p1&quot;)
 app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
 
-# start second, vertical pane inside inital pane
+# start second, vertical pane inside initial pane
 app.startPanedFrameVertical(&quot;p2&quot;)
 app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
 
@@ -640,7 +664,7 @@ app.go()
 <p><img alt="T-Panes" src="../img/layouts/pane4.png" />  </p>
 <ul>
 <li>Start an initial, vertical pane  </li>
-<li>Start a second pane, indside the initial pane  </li>
+<li>Start a second pane, inside the initial pane  </li>
 <li>Start additional panes inside the second pane  </li>
 </ul>
 <pre><code class="python">from appJar import gui
@@ -672,7 +696,7 @@ app.go()
 It provides <strong>PREVIOUS</strong>/<strong>NEXT</strong> buttons to navigate through a series of pages.<br />
 It has an optional widget title, and shows the current page, in a page counter.<br />
 Keyboard bindings are provided to navigate with arrow key presses. CTRL-arrow will navigate to the beginning/end.<br />
-Events can be bound to page changes, the page can be changed via a funciton call, and the current page number can be queried.<br />
+Events can be bound to page changes, the page can be changed via a function call, and the current page number can be queried.<br />
 <img alt="PagedWindow" src="../img/layouts/1_pagedWindow.png" /></p>
 <pre><code class="python">from appJar import gui
 
@@ -776,10 +800,12 @@ app.go()
 <h4 id="startstop-sub-windows">Start/Stop Sub Windows</h4>
 <ul>
 <li>
-<p><code>.startSubwindow(name, title=None, modal=False)</code> &amp; <code>.stopSubwindow()</code><br />
+<p><code>.startSubwindow(name, title=None, modal=False, transient=False, blocking=False)</code> &amp; <code>.stopSubwindow()</code><br />
     Used to start and stop defining a <em>SubWindow</em><br />
     Setting a <code>title</code> will override the <code>name</code> as a title for the <em>SubWindow</em>. <br />
-    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.  </p>
+    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.<br />
+    Setting <code>transient</code> to True, will cause the <em>SubWindow</em> to respond to parent window events such as hide &amp; show.<br />
+    Setting <code>blocking</code> to True, will stop execution of your code once the <em>SubWindow</em> is shown, until the user closes it.  </p>
 </li>
 <li>
 <p><code>.openSubWindow(title)</code><br />
@@ -788,6 +814,11 @@ app.go()
 </ul>
 <h4 id="showhide-sub-windows">Show/Hide Sub Windows</h4>
 <ul>
+<li>
+<p><code>.go(startWindow=None)</code><br />
+    If you set a <em>SubWindow</em> as the <code>startWindow</code> appJar will start-up showing the named <em>SubWindow</em>.<br />
+    The main window will be minimized.  </p>
+</li>
 <li>
 <p><code>.showSubWindow(title)</code><br />
     Will cause the specified <em>SubWindow</em> to be shown.<br />
@@ -825,7 +856,7 @@ app.addLabel(&quot;l1&quot;, &quot;In sub window&quot;)
 app.stopSubWindow()
 </code></pre>
 
-<h1 id="under-development">Under Development</h1>
+<h1 id="in-beta">In Beta</h1>
 <hr />
 <h3 id="frame">Frame</h3>
 <p>A simple way of grouping together widgets.<br />
@@ -874,7 +905,7 @@ Position the <em>Frame</em> within the grid, then position widgets inside the <e
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

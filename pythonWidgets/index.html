@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -341,7 +365,7 @@
 <h1 id="widgets">Widgets</h1>
 <hr />
 <p>In a GUI, the fillings are known as <strong>widgets</strong>.<br />
-There are lots of different widgets to chose from, each suited to a specific task.  </p>
+There are lots of different widgets to choose from, each suited to a specific task.  </p>
 <p>Nearly every widget needs a <strong>TITLE</strong>.<br />
 This is a unique name for the widget, so that later you can get information from that widget, or change it.  </p>
 <p>Nearly all widgets in appJar provide the same three functions:</p>
@@ -386,7 +410,7 @@ app.go()
 </li>
 <li>
 <p><code>.addEmptyLabel(title)</code><br />
-    Does the same as add a <em>label</em>, except there''s no parameter to set any text.</p>
+    Does the same as add a <em>label</em>, except there's no parameter to set any text.</p>
 </li>
 <li>
 <p><code>.addFlashLabel(title, text=None)</code><br />
@@ -423,7 +447,7 @@ app.go()
 </ul>
 <h2 id="auto-labelled-widgets">Auto-Labelled Widgets</h2>
 <hr />
-<p>It's possible to automatically include a <em>label</em> alongside some widgets.<br />
+<p>It's possible to automatically include a <em>label</em> alongside a lot of the  widgets.<br />
 Both the label and widget will be placed in the same grid space.<br />
 Simply add the word <code>Label</code> to the command when adding the widget:  </p>
 <ul>
@@ -441,11 +465,12 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <h2 id="entry">Entry</h2>
 <hr />
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
-<p>There are three special-case entries:</p>
+<p>There are four special-case entries:</p>
 <ul>
 <li>NumericEntry - this only allows numbers to be typed in - always returns a float.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 <li>AutoEntry - this takes a list of words to provide auto-completion.  </li>
+<li>ValidationEntry - can be set to valid/invalid/waiting - will colour the border green/red/black and show a ✔/✖/★  </li>
 </ul>
 <p><img alt="Entries" src="../img/1_entries.gif" /></p>
 <pre><code class="python">from appJar import gui
@@ -467,16 +492,18 @@ app.go()
 <li><code>.addEntry(title)</code></li>
 <li><code>.addNumericEntry(title)</code></li>
 <li><code>.addSecretEntry(title)</code></li>
+<li><code>.addAutoEntry(title, words)</code>  </li>
 <li>
-<p><code>.addAutoEntry(title, words)</code>  </p>
+<p><code>.addValidationEntry(title)</code>  </p>
 <p>Each of these will add the specified type of Entry, using the title provided.</p>
 </li>
 </ul>
 <h4 id="set-entries">Set Entries</h4>
 <ul>
 <li>
-<p><code>.setEntry(title, text)</code><br />
-    This sets the contents of the specified entry box.</p>
+<p><code>.setEntry(title, text, callFunction=True)</code><br />
+    This sets the contents of the specified entry box.
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setEntryDefault(title, text)</code><br />
@@ -485,11 +512,36 @@ app.go()
     The text is centered, shown in a light gray font, and will not be returned by <code>.getEntry(title)</code>  </p>
 </li>
 <li>
-<p><code>.clearEntry(title)</code><br />
-    This will clear the contents of the specified entry box.</p>
+<p><code>.updateEntryDefault(title, text)</code><br />
+    This will update the default value for the specified entry box.  </p>
 </li>
 <li>
-<p><code>.clearAllEntries()</code><br />
+<p><code>.setEntryUpperCase(title)</code> &amp; <code>.setEntryLowerCase(title)</code> <br />
+    This will force all text typed into the entry to be uppercase/lowercase.  </p>
+</li>
+<li>
+<p><code>.setEntryMaxLength(title, maxLength)</code><br />
+    This will set a maximum length for the specified entry.<br />
+    Any additional characters typed will be discarded.  </p>
+</li>
+<li>
+<p><code>.setEntryValid(title)</code> &amp; <code>.setEntryInvalid(title)</code> &amp; <code>.setEntryWaitingValidaiton(title)</code><br />
+    These will set the relevant status of a validation entry.<br />
+    (Have a look <a href="../specialCharacters">here</a> for help displaying special characters)<br />
+<img alt="EntryValidation" src="../img/entValidation.png" /></p>
+</li>
+<li>
+<p><code>.setAutoEntryNumRows(title, rows)</code><br />
+    This will set the number of rows to display in an AutoEntry.<br />
+    NB. this is limited to the depth of the GUI - if there is no space, then no rows will be displayed. </p>
+</li>
+<li>
+<p><code>.clearEntry(title, callFunction=True)</code><br />
+    This will clear the contents of the specified entry box.
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllEntries(callFunction=True)</code><br />
     This will clear all the entry boxes in the GUI.</p>
 </li>
 <li>
@@ -499,9 +551,16 @@ app.go()
 </ul>
 <h4 id="get-entries">Get Entries</h4>
 <ul>
-<li><code>.getEntry(title)</code><br />
+<li>
+<p><code>.getEntry(title)</code><br />
     This will return the contents of the specified entry box.<br />
-    NB. <em>numericEntries</em> always return a float.  </li>
+    NB. <em>numericEntries</em> always return a float.  </p>
+</li>
+<li>
+<p><code>.getAllEntries()</code><br />
+    This will return the contents of all entries in the app, as a dictionary.<br />
+    NB. <em>numericEntries</em> always return a float.  </p>
+</li>
 </ul>
 <h2 id="button">Button</h2>
 <hr />
@@ -539,6 +598,10 @@ That way, multiple widgets can use the same function, but different actions can 
     Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.<br />
     A single function can be passed, to use for all buttons.<br />
     Or a list of functions can be passed, which MUST correspond to the buttons.  </p>
+</li>
+<li>
+<p><code>.addImageButton(name, title, function, imgFile)</code><br />
+    This creates the named button, as above, using the specified image.</p>
 </li>
 <li>
 <p><code>.addNamedButton(name, title, function)</code><br />
@@ -608,7 +671,7 @@ app.go()
     app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
 
     # call this function, when the RadioButton changes
-    app.setRadioButtonFunction(&quot;song&quot;, press)
+    app.setRadioButtonChangeFunction(&quot;song&quot;, press)
 
     app.addButton(&quot;PLAY&quot;, press)
     app.go()
@@ -677,11 +740,11 @@ app.go()
 </li>
 <li>
 <p><code>.addTickOptionBox(title, values)</code><br />
-    This will create an OptionBox made up of check buttons.<br />
+    This will create an OptionBox made up of check boxes.<br />
     The <code>title</code> will always be displayed as the <em>selected</em> entry in the OptionBox, event though it can't be selected/ticked.<br />
     Instead of selecting a single item, you tick the ones you want.<br />
-    Calling <code>.getOptionBox(title)</code> will return a dictionary of the options along with a True/False value.<br />
 <img alt="TickOptionBox" src="../img/3_optBox.png" />  </p>
+<p>Calling <code>.getOptionBox(title)</code> will return a dictionary of the options along with a True/False value.  </p>
 </li>
 </ul>
 <pre><code class="python">from appJar import gui
@@ -702,7 +765,7 @@ app.go()
 <p><code>.changeOptionBox(title, newOptions, index)</code><br />
     This will replace the contents of the OptionBox, with the new list provided.<br />
     If specified, the indexed item will be selected - this can be a position or an item name.<br />
-    If setting a TickOptionBox, pass in the optional value.  </p>
+    If setting a TickOptionBox, the old list will be replaced with the new list. None will be ticked. <code>index</code> will be ignored.  </p>
 </li>
 <li>
 <p><code>.setOptionBox(title, position, value=True, callFunction=True)</code><br />
@@ -894,8 +957,14 @@ app.go()
     If <code>curr</code> is provided, then the Scale will be set to that value.  </p>
 </li>
 <li>
+<p><code>.setScaleIncrement(title, increment)</code><br />
+    Configures how much the scale jumps, when the trough is clicked.<br />
+    It defaults to 10%.  </p>
+</li>
+<li>
 <p><code>.showScaleIntervals(title, intervals)</code><br />
     Configures the Scale to show interval labels along its length.<br />
+<code>intervals</code> should be how often to show a value, eg. <code>25</code> would show 0, 25, 50, and so on...<br />
 <img alt="Scale" src="../img/4_scale.png" />  </p>
 </li>
 <li>
@@ -913,7 +982,7 @@ app.go()
     Sets a width/length for the scale's slider.  </p>
 </li>
 <li>
-<p><code>.setScaleFunction(title, func)</code><br />
+<p><code>.setScaleChangeFunction(title, func)</code><br />
     Sets a function to call, each time the scale is changed.<br />
     The function must take one parameter, which will be populated with the scale's title.  </p>
 </li>
@@ -985,12 +1054,14 @@ app.go()
 <h4 id="set-textareas">Set TextAreas</h4>
 <ul>
 <li>
-<p><code>.setTextArea(title, text)</code><br />
-    Changes the contents of the specified TextArea, to the specified text.  </p>
+<p><code>.setTextArea(title, text, callFunction=True)</code><br />
+    Changes the contents of the specified TextArea, to the specified text.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>.clearTextArea(title)</code><br />
-    Clears the contents of the specified TextArea.  </p>
+<p><code>.clearTextArea(title, callFunction=True)</code><br />
+    Clears the contents of the specified TextArea.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 </ul>
 <h4 id="get-textareas">Get TextAreas</h4>
@@ -1010,7 +1081,7 @@ A simple meter for showing progress from 0% to 100%.  </p>
 <li>
 <h4 id="splitmeter">SplitMeter</h4>
 <p><img alt="Meter" src="../img/2_meter.png" /><br />
-A possesion style meter, showing percentages on either side.  </p>
+A possession style meter, showing percentages on either side.  </p>
 </li>
 <li>
 <h4 id="dualmeter">DualMeter</h4>
@@ -1058,7 +1129,7 @@ This should then be monitoring/updating a global variable:  </p>
 <pre><code class="python">def updateMeter():
     app.setMeter(&quot;progress&quot;, percentComplete)
 
-# schedue function to be called regularly
+# schedule function to be called regularly
 app.registerEvent(updateMeter)
 </code></pre>
 
@@ -1090,14 +1161,16 @@ app.go()
 <h4 id="set-properties">Set Properties</h4>
 <ul>
 <li>
-<p><code>setProperties(title, props)</code><br />
+<p><code>setProperties(title, props, callFunction=True)</code><br />
     Adds the dictionary of properties to the widget.<br />
-    If any of them already exist, they will be updated.  </p>
+    If any of them already exist, they will be updated.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>setProperty(title, prop, value=False)</code><br />
+<p><code>setProperty(title, prop, value=False, callFunction=True)</code><br />
     Sets the named property to the specified value.<br />
-    If it doesn't exist, it will be added first, at the end of the widget.  </p>
+    If it doesn't exist, it will be added first, at the end of the widget.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>deleteProperty(title, prop)</code><br />
@@ -1134,7 +1207,7 @@ app.setFont(20)
 
 app.startToggleFrame(&quot;Toppings&quot;)
 app.addProperties(&quot;Toppings&quot;, toppings)
-app.setPropertiesFunction(&quot;Toppings&quot;, changed)
+app.setPropertiesChangeFunction(&quot;Toppings&quot;, changed)
 app.stopToggleFrame()
 
 app.go()
@@ -1258,7 +1331,7 @@ def showDate(btn):
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

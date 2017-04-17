@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -373,10 +397,11 @@ app.stopLabelFrame()
 </code></pre>
 
 <ul>
-<li><code>.setImageFunction(title, function)</code><br />
+<li><code>.setImageSubmitFunction(title, function)</code><br />
     This will set a function to call when the image is clicked.  </li>
 </ul>
-<pre><code class="python">def changePic(btn):
+<pre><code class="python">clicked = False
+def changePic(btn):
     if btn == &quot;clickme&quot;:
         global clicked
         if clicked: app.setImage(&quot;clickme&quot;, &quot;balloons.gif&quot;)
@@ -385,7 +410,7 @@ app.stopLabelFrame()
 
 app.startLabelFrame(&quot;Click Me&quot;, 0, 2)
 app.addImage(&quot;clickme&quot;, &quot;balloons.gif&quot;)
-app.setImageFunction(&quot;clickme&quot;, changePic)
+app.setImageSubmitFunction(&quot;clickme&quot;, changePic)
 app.stopLabelFrame()
 </code></pre>
 
@@ -476,7 +501,7 @@ This speeds up processes such as mouse-overs, or setting images back-and-forth. 
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

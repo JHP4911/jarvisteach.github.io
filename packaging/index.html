@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/License/">
+        <link rel="canonical" href="http://appjar.info/packaging/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>License - appJar</title>
+        <title>Packaging - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -235,8 +235,8 @@
 
                     
                         
-<li >
-    <a href="../packaging/">Packaging</a>
+<li class="active">
+    <a href="./">Packaging</a>
 </li>
 
                     
@@ -247,8 +247,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">License</a>
+<li >
+    <a href="../License/">License</a>
 </li>
 
                     
@@ -285,12 +285,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../whatsNew/">
+                    <a rel="next" href="../gitGuide/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Support/">
+                    <a rel="prev" href="../whatsNew/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -319,20 +319,39 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#license">License</a></li>
+        <li class="main active"><a href="#packaging-appjar-apps">Packaging appJar Apps</a></li>
+        
+            <li><a href="#setting-an-app-icon">Setting an app Icon</a></li>
+        
+            <li><a href="#including-images">Including Images</a></li>
+        
+            <li><a href="#platform-support">Platform Support</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h2 id="license">License</h2>
+<h1 id="packaging-appjar-apps">Packaging appJar Apps <img alt="PyInstaller" src="../img/pyinstaller-draft1a-100_trans.png" /></h1>
 <hr />
-<p>This project has been a labour of love over the last couple of years.  </p>
-<p>When confronted with the difficulty both pupils and teachers were having creating simple GUIs with Python, I started out trying to put together a few helper functions to make life simpler.  </p>
-<p>It's obviously grown a bit since then, and has become fairly functional!  </p>
-<p>appJar is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a> </p>
-<p>So, you're free to use it, modify it &amp; redistribute it, as long as you acknowledge my copyright, and aren't trying to make money out of it...  </p></div>
+<p>The recomended way to package appJar is to use <a href="http://www.pyinstaller.org">PyInstaller</a>  </p>
+<p>Simply <a href="http://www.pyinstaller.org/downloads.html">download</a> and <a href="https://pyinstaller.readthedocs.io/en/stable/installation.html">install</a> PyInstaller.  </p>
+<p>If everything has been installed via pip, then you should be able to package your application with the following command:</p>
+<p><code>pyinstaller -F -w demo.py</code></p>
+<p>If not, then you may need to specify the path of certain libraries:  </p>
+<p><code>pyinstaller -F -w -p &lt;path_to_appJar&gt; demo.py</code></p>
+<h3 id="setting-an-app-icon">Setting an app Icon</h3>
+<hr />
+<p>To set an icon for the app, include the following option:</p>
+<p><code>pyinstaller -i &lt;path_to_icon&gt; -F -w demo.py</code></p>
+<h3 id="including-images">Including Images</h3>
+<hr />
+<p>To include images, include the following option:</p>
+<p><code>appinstaller --add-data image.png:. -F -w demo.py</code></p>
+<h3 id="platform-support">Platform Support</h3>
+<hr />
+<p>This has been tested &amp; works under both Windows &amp; Linux, although no success (yet) on OSX.  </p>
+<p>A lot more detail will be provided here, in a future releasse, on the exact process to follow to get everything built into  your package.  </p></div>
         </div>
 
         <footer class="col-md-12">

@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -194,13 +206,13 @@
                     
                         
 <li >
-    <a href="../Install/">Installation</a>
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
 <li >
-    <a href="../whatsNew/">New & Upcoming</a>
+    <a href="../Install/">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,7 +280,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
@@ -329,8 +353,8 @@ app.addToolbar(tools, tbFunc, findIcon=True)
 <ul>
 <li><code>.addToolbar(names, funcs, findIcon=False)</code><br />
     Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.<br />
-    If only one function is supplied, they will all call the same function, providing the buttons name as a parameter.<br />
-    A set of icons is available, if <code>findIcon</code> is set to True, then appJar will attempt to fins an icon for each button.  </li>
+    If only one function is supplied, they will all call the same function, providing the button's name as a parameter.<br />
+    A set of icons is available, if <code>findIcon</code> is set to True, then appJar will attempt to find an icon for each button.  </li>
 </ul>
 <h4 id="set-toolbars">Set Toolbars</h4>
 <ul>
@@ -361,7 +385,7 @@ app.addToolbar(tools, tbFunc, findIcon=True)
 <p>Adds a standard Menubar along the top of the GUI.<br />
 On Windows/Linux a menubar will only be shown, once the first menu has been added.<br />
 On Mac, a menubar is always present.<br />
-Menubars are made up of a series of menus, each conaining a list of names.<br />
+Menubars are made up of a series of menus, each containing a list of names.<br />
 These names can be menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
 <h4 id="create-menus">Create Menus</h4>
 <ul>
@@ -523,8 +547,8 @@ Simply use the menu names given below when adding menu-items to a menu.  </p>
 <p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus-item. <br />
     There are also a couple of menu-items the user can/should provide.  </p>
 <ul>
-<li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usuaully called <em>Python</em>.<br />
-    This menu is always present, and connot be renamed - no matter how much I wish it could!<br />
+<li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usually called <em>Python</em>.<br />
+    This menu is always present, and cannot be renamed - no matter how much I wish it could!<br />
     Call <code>.addMenuPreferences(function)</code> to enable the <em>Preferences</em> menu-item, within the <em>Application Menu</em>.  </li>
 <li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu-items related to windows. <br />
     To access this menu, you must first call <code>.addMenuWindow()</code>  </li>
@@ -533,12 +557,14 @@ Simply use the menu names given below when adding menu-items to a menu.  </p>
 </ul>
 </li>
 <li>
-<p><strong>Linux</strong>  </p>
-<ul>
-<li>n/a  </li>
-</ul>
+<p><strong>Linux</strong> - by default, there is no menu, but it's easy enough to get access to the appJar menus:</p>
 </li>
 </ul>
+<p><img alt="Linux Menu" src="../img/menu_4.png" />  </p>
+<pre><code class="python">app.addMenuItem(&quot;appJar&quot;, &quot;Help&quot;, app.appJarHelp)
+app.addMenuItem(&quot;appJar&quot;, &quot;About&quot;, app.appJarAbout)
+</code></pre>
+
 <h2 id="statusbar">Statusbar</h2>
 <hr />
 <p>Adds a statusbar along the bottom of the GUI.
@@ -589,7 +615,7 @@ app.setStatusbarFg(&quot;white&quot;, 2)
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 

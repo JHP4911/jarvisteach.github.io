@@ -113,7 +113,13 @@
                     
                         
 <li >
-    <a href="../pythonDevWidgets/">In the works...</a>
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
 </li>
 
                     
@@ -158,6 +164,12 @@
                     
                         
 <li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
 
@@ -193,14 +205,14 @@
                     <ul class="dropdown-menu">
                     
                         
-<li class="active">
-    <a href="./">Installation</a>
+<li >
+    <a href="../guidance/">Guidance</a>
 </li>
 
                     
                         
-<li >
-    <a href="../whatsNew/">New & Upcoming</a>
+<li class="active">
+    <a href="./">Installation</a>
 </li>
 
                     
@@ -219,6 +231,18 @@
                         
 <li >
     <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -256,17 +280,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Learn
+                    <i class="fa fa-mortar-board"></i> Tutorials
                     </a>
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../examples/simple/">
+                    <a rel="next" href="../guidance/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../whatsNew/">
+                    <a rel="prev" href="../pythonBasics/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -312,11 +336,12 @@
 
 <h1 id="set-up-instructions">Set-up Instructions</h1>
 <hr />
-<p>This library was designed for use in schools - it therefore doesn't require any kind of special  <em>installation</em>.<br />
-Instead, it can just be <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOADED</a>, unzipped, and used.  </p>
+<p>appJar was designed for use in schools - it therefore doesn't require any kind of special  <em>installation</em>.<br />
+Instead, just <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOAD</a> the ZIP file, unzip, and go - just put the folder in the <a href="../install/#single-user-set-up">right place</a>.  </p>
 <h2 id="pip-installation">Pip Installation</h2>
-<p>However, if you can install python packages - we support that too!<br />
-<code>sudo pip3 install appjar</code> - this will download &amp; install <strong>appJar</strong> ready for python 3.  </p>
+<p>However, if you can install python packages - we support that too!  </p>
+<p><code>sudo pip3 install appjar</code> - this will download &amp; install <strong>appJar</strong> ready for python 3.<br />
+<code>sudo pip3 install appjar --upgrade</code> - this will upgrade <strong>appJar</strong> to the latest version.  </p>
 <pre><code class="python"># import the appJar library
 from appJar import gui
 </code></pre>
@@ -324,6 +349,7 @@ from appJar import gui
 <h2 id="single-user-set-up">Single-user Set-up</h2>
 <p>If you can't/don't want to install using pip, simply:  </p>
 <ul>
+<li><a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">DOWNLOAD</a> <strong>appjar</strong> and unzip it.  </li>
 <li>Put the <strong>appJar folder</strong> in your <strong>code folder</strong>, and you're done!  </li>
 </ul>
 <pre><code class="python"># import the appJar library
@@ -332,7 +358,7 @@ from appJar import gui
 
 <p>(As long as it's in the same folder as your code, it'll work...)  </p>
 <h2 id="multi-user-set-up">Multi-user Set-up</h2>
-<p>If you're trying to install appJar in a school, everyone can have their own copy (see above), or:  </p>
+<p>If you're trying to install appJar in a school, everyone can download their own copy (<a href="../install/#single-user-set-up">see above</a>), or:  </p>
 <ul>
 <li>Put the <strong>appJar folder</strong> in a <strong>shared location</strong> (eg. a network drive): <code>E:\PYLIB</code>  </li>
 <li>Then have pupils include the following 2-lines at the start of their code:</li>
@@ -402,7 +428,7 @@ from appJar import gui
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016</p></div>
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
             
         </footer>
 
