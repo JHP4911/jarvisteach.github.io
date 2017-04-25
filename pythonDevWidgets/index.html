@@ -470,27 +470,43 @@ It is possible to include buttons at the end of each row, and an additional row 
 
 <h4 id="add-grids">Add Grids</h4>
 <ul>
-<li><code>.addGrid(title, data, action=None, addRow=False)</code><br />
-    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.<br />
-    If action is set, a button will be created, at the end of each row,  calling the specified function.<br />
-    If addRow is True, then an additional row will appear at the end, with entry boxes and an additional button.  </li>
+<li>
+<p><code>.addGrid(title, data, action=None, addRow=False)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
+<p>If <code>action</code> is set, a button will be created, at the end of each row,  calling the specified function.<br />
+If <code>addRow</code> is True, then an additional row will appear at the end, with entry boxes and an additional button.  </p>
+<p>The <strong>Press</strong> button at the end of each data row will pass the values of that row to the function as a list.<br />
+The <strong>Press</strong> button at the end of the entry row will call the function, passing its name as a parameter.  </p>
+<p>NB. you shouldn't set <code>addRow</code> to be True, unless <code>action</code> has been set with a function.  </p>
+</li>
 </ul>
 <h4 id="get-grids">Get Grids</h4>
 <ul>
-<li><code>.getGridEntries(title)</code><br />
-    Get the contents of the entry boxes, if present.<br />
-    Returned as a list, in the same order as the entry boxes.  </li>
-<li><code>.getGridSelectedCells(title)</code><br />
+<li>
+<p><code>.getGridEntries(title)</code><br />
+    If <code>addRow</code> was set when the <em>Grid</em> was created, this function will get the contents of the entry boxes.<br />
+    They will be returned as a list, in the same order as the entry boxes.  </p>
+</li>
+<li>
+<p><code>.getGridSelectedCells(title)</code><br />
     Gets a dictionary of booleans, indicating the status of each cell.<br />
     True indicates the cell is selected, False indicates the cell is not selected.<br />
-    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </li>
+    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </p>
+</li>
 </ul>
 <h4 id="set-grids">Set Grids</h4>
 <ul>
 <li><code>.addGridRow(title, data)</code><br />
-    Add a single row of data to the existing grid.<br />
+    Adds a new row of data to the end of the existing grid.<br />
     It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
 </ul>
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
+<pre><code class="python">    def press(btn):
+        if btn == &quot;Press&quot;:     # the button on the entries row
+            data = app.getGridEntries(&quot;g1&quot;)
+            app.addGridRow(&quot;g1&quot;, data)
+</code></pre>
+
 <h3 id="matplotlib">MatPlotLib</h3>
 <hr />
 <p>Support for embedding very basic <a href="http://matplotlib.org">MatPlotLib</a> plots.  </p>
