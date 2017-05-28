@@ -42,7 +42,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.06 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -473,11 +473,11 @@ It is possible to include buttons at the end of each row, and an additional row 
 <li>
 <p><code>.addGrid(title, data, action=None, addRow=False)</code><br />
     Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
-<p>If <code>action</code> is set, a button will be created, at the end of each row,  calling the specified function.<br />
+<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function.<br />
 If <code>addRow</code> is True, then an additional row will appear at the end, with entry boxes and an additional button.  </p>
 <p>The <strong>Press</strong> button at the end of each data row will pass the values of that row to the function as a list.<br />
 The <strong>Press</strong> button at the end of the entry row will call the function, passing its name as a parameter.  </p>
-<p>NB. you shouldn't set <code>addRow</code> to be True, unless <code>action</code> has been set with a function.  </p>
+<p>NB. you shouldn't set <code>addRow</code> to be True, unless <code>action</code> has been set with a function.</p>
 </li>
 </ul>
 <h4 id="get-grids">Get Grids</h4>
@@ -500,11 +500,11 @@ The <strong>Press</strong> button at the end of the entry row will call the func
     Adds a new row of data to the end of the existing grid.<br />
     It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
 </ul>
-<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
-<pre><code class="python">    def press(btn):
-        if btn == &quot;Press&quot;:     # the button on the entries row
-            data = app.getGridEntries(&quot;g1&quot;)
-            app.addGridRow(&quot;g1&quot;, data)
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:</p>
+<pre><code class="python">def press(btn):
+    if btn == &quot;Press&quot;:     # the button on the entries row
+        data = app.getGridEntries(&quot;g1&quot;)
+        app.addGridRow(&quot;g1&quot;, data)
 </code></pre>
 
 <h3 id="matplotlib">MatPlotLib</h3>

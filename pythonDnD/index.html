@@ -42,7 +42,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.06 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -350,7 +350,7 @@ By default, python and tkinter don't provide it.</p>
 </ul>
 <h2 id="dragn-drop-between-applications">Drag'n Drop Between Applications</h2>
 <hr />
-<p>There is also a beta version of drag and drop between applications - at the moment, this is has been seen to work on Mac OSX and Windows 7 - let us know of success on other versions of Windows!  </p>
+<p>There is also a beta version of drag and drop between applications - at the moment, this has been seen to work on Mac OSX, Raspberry Pi, and Windows 7 - let us know of success on other versions of Windows!  </p>
 <p>Certain widgets can be registered to receive <em>Drop</em> events:  </p>
 <ul>
 <li><code>.setEntryDropTarget(title, function=None, replace=True)</code>  </li>
@@ -358,7 +358,8 @@ By default, python and tkinter don't provide it.</p>
 <li><code>.setImageDropTarget(title, function=None, replace=True)</code>  </li>
 <li><code>.setLabelDropTarget(title, function=None, replace=True)</code>  </li>
 </ul>
-<p>Then, if you drag a file or a URI onto one of these widgets, the filename/URI will be copied.  </p>
+<p>Then, if you drag a file or a URI onto one of these widgets, the filename/URI will be copied.<br />
+Or, if it's an image, the image will be replaced.  </p>
 <p>If no function has been set, the contents of the widget will be replaced with the filename/URI.<br />
 If you'd rather append the URI/filename - set <code>replace</code> to be False.<br />
 If a function has been set, it will be called, passing in the filename/URI as the only paramter.  </p>

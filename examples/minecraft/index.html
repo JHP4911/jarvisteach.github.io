@@ -42,7 +42,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.06 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -331,6 +331,8 @@
         
             <li><a href="#dropping-blocks">Dropping blocks</a></li>
         
+            <li><a href="#anything-from-the-menu">Anything from the menu?</a></li>
+        
     
     </ul>
 </div></div>
@@ -338,6 +340,7 @@
 
 <h1 id="minecraft">Minecraft</h1>
 <hr />
+<p>You can now see a version of this article in print!  Check out the <a href="https://www.raspberrypi.org/magpi-issues/MagPi58.pdf">MagPi, issue 58</a>.</p>
 <p>Linking appJar with Minecraft on the Raspberry Pi is super easy!<br />
 Simply import the Minecraft library and appJar library and have appJar call Minecraft functions...  </p>
 <h3 id="chat">Chat</h3>
@@ -465,6 +468,32 @@ BLOCKS={ &quot;AIR&quot;:0, &quot;STONE&quot;:1, &quot;GRASS&quot;:2, &quot;DIRT
 }
 blockNames=list(BLOCKS.keys())
 blockNames.sort()
+</code></pre>
+
+<h3 id="anything-from-the-menu">Anything from the menu?</h3>
+<p>Finally, let's add a menu.<br />
+Menus work just like buttons - when you click them, they simply call a function.<br />
+So, we're going to create a function for the menus, and have it operate the camera and create/restore checkpoints:</p>
+<pre><code class="python"># put this near the top of your code
+def clickMenu(choice):
+    if choice == &quot;Create&quot;:
+        mc.saveCheckpoint()
+        app.infoBox(&quot;Save&quot;, &quot;Checkpoint saved.&quot;)
+    elif choice == &quot;Restore&quot;:
+        if app.yesNoBox(&quot;Restore&quot;, &quot;Are you sure?&quot;):
+            mc.restoreCheckpoint()
+    elif choice == &quot;Normal&quot;:
+        mc.camera.setNormal()
+    elif choice == &quot;Fixed&quot;:
+        mc.camera.setFixed()
+    elif choice == &quot;Follow&quot;:
+        mc.camera.setFollow()
+</code></pre>
+
+<p>Then we add the code to our main GUI block, to show the menus:  </p>
+<pre><code class="python"># put this in the main GUI block
+app.addMenuList(&quot;Checkpoint&quot;, [&quot;Create&quot;, &quot;Restore&quot;], clickMenu)
+app.addMenuList(&quot;Camera&quot;, [&quot;Normal&quot;, &quot;Fixed&quot;, &quot;Follow&quot;], clickMenu)
 </code></pre></div>
         </div>
 
