@@ -323,15 +323,15 @@
     
         <li class="main active"><a href="#appjar">appJar</a></li>
         
-            <li><a href="#lets-make-a-sandwich">Let's make a sandwich</a></li>
+            <li><a href="#hello-appjar">Hello appJar</a></li>
         
-            <li><a href="#add-some-fillings">Add some fillings...</a></li>
+            <li><a href="#interactivity">Interactivity</a></li>
         
-            <li><a href="#foot-long-sub">Foot-long sub?</a></li>
+            <li><a href="#appearance-counts">Appearance counts</a></li>
         
-            <li><a href="#any-extras">Any extras?</a></li>
+            <li><a href="#make-your-own">Make your own</a></li>
         
-            <li><a href="#make-your-own">Make your own!</a></li>
+            <li><a href="#full-code-listing">Full code-listing</a></li>
         
     
     </ul>
@@ -339,117 +339,151 @@
             <div class="col-md-9" role="main">
 
 <h1 id="appjar">appJar</h1>
+<p><em>The easiest way to create GUIs in Python.</em>  </p>
 <hr />
-<p>This is a Python library for creating <strong>quick</strong> and <strong>easy</strong> GUIs, designed primarily for use in the <strong>classroom</strong>.  </p>
-<p>It has no dependencies, other than <a href="https://www.python.org/downloads/">Python</a> (Python 3.x or 2.7) and relies on Python's built-in <a href="https://docs.python.org/3.5/library/tkinter.html">tkinter</a> library.  </p>
-<p>It's designed to be as easy to set-up as possible, specifically with schools in mind, so can just be downloaded and used.<br />
-See the <a href="Install/">installation guidelines</a> for more information.</p>
-<h3 id="lets-make-a-sandwich">Let's make a sandwich</h3>
+<p>Written by a teacher, in the classroom, for students.  </p>
+<p><strong>appJar</strong> is designed to run on as many versions of <a href="https://www.python.org/downloads/">Python</a> as possible - so it should work in your school.  </p>
+<p>There are no other dependencies - simply <a href="https://github.com/RWBA/appJar/blob/appJar/releases/appJar.zip?raw=true">download</a>, unzip, and put it in your code folder.<br />
+Check out the <a href="./install">installation</a> instructions for other ways to get <strong>appJar</strong> working.  </p>
+<p>GUIs in Python are hard, there's a huge amount of <a href="https://en.wikipedia.org/wiki/Boilerplate_code">boilerplate code</a> required to get things working - so we hide all that.<br />
+We're also not big fans of lots of parameters, so we keep them to a minimum, instead giving functions to get &amp; set most things.  </p>
+<h3 id="hello-appjar">Hello appJar</h3>
 <hr />
-<p>Making a <a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a> (using appJar) is just like making a <a href="https://en.wikipedia.org/wiki/Sandwich">sandwich</a>!  </p>
-<p>You need a slice of bread on the top and bottom, and then a bunch of fillings in the middle ...</p>
+<p><a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUIs</a> in <strong>appJar</strong> require three steps.  </p>
+<ul>
+<li>Import the library &amp; create a GUI variable.<br />
+    ( From now on, we do everything to the GUI variable. )  </li>
+</ul>
 <pre><code class="python"># import the library
 from appJar import gui
-
-# top slice - CREATE the GUI
+# create the GUI
 app = gui()
-
-### fillings go here ###
-
-# bottom slice - START the GUI
-app.go()
 </code></pre>
 
-<p>If you forget a slice of bread - you haven't got a sandwich!<br />
-Oh, and if you try to put fillings under the bottom-slice, then they won't be in the sandwich!</p>
-<h3 id="add-some-fillings">Add some fillings...</h3>
-<hr />
-<p>When making a sandwich, you could just stuff it with fillings:  </p>
 <ul>
-<li><code>addFilling('cheese', 'cheddar')</code>  </li>
-<li><code>addFilling('ham', 'smoked')</code>  </li>
+<li>Add and configure some widgets:<br />
+    ( If you've tried <a href="https://docs.python.org/3.6/library/turtle.html">turtle</a> this will all look very familiar. )  </li>
 </ul>
-<p>But it's often nice to prepare the fillings too:  </p>
-<ul>
-<li><code>setFilling('cheese', 'grated')</code> </li>
-<li><code>setFilling('ham', 'sliced')</code> </li>
-</ul>
-<pre><code class="python"># import the library
-from appJar import gui
-
-# top slice - CREATE the GUI
-app = gui()
-
-### fillings go here ###
+<pre><code class="python"># add &amp; configure widgets
 app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)
 app.setLabelBg(&quot;title&quot;, &quot;red&quot;)
+</code></pre>
 
-# bottom slice - START the GUI
+<ul>
+<li>Start the GUI:<br />
+    ( <strong>NB.</strong> don't put any code after this line! )  </li>
+</ul>
+<pre><code class="python"># start the GUI
 app.go()
 </code></pre>
 
-<p><img alt="simpleApp" src="./img/simpleApp.png" /></p>
-<p>And, that's it...<br />
-The more <a href="pythonWidgets/">fillings</a> you put in your sandwich, and the more time you spend making them <a href="pythonWidgetOptions/">look nice</a>, the better it will taste!</p>
-<h3 id="foot-long-sub">Foot-long sub?</h3>
-<hr />
-<p>Of course, for most of us, a simple sandwich isn't enough...<br />
-We want to make a meal out of it!  </p>
-<p>In which case, you're going to want to arrange your fillings a bit more cleverly!</p>
 <ul>
-<li>3 slices of cheese along the bottom  </li>
-<li>Alternating slices of tomato &amp; cucumber on top  </li>
-<li>Then a mixture of onions and peppers  </li>
-<li>Finally, the sauce!  </li>
+<li>
+<p>And, that's it: </p>
+<p><img alt="simpleApp" src="./img/simpleApp.png" /></p>
+</li>
 </ul>
-<p>By default, in an appJar GUI, the fillings are simply stacked on top of each other.  </p>
-<p>However, filling a sub is very similar to filling a spreadsheet.<br />
-Simply tell each filling what layer (row) it's on, and what column it's in.<br />
-And, if you're not planning on chopping a filling, it might stretch (span) across more than one column.  </p>
-<p><a href="pythonWidgetLayout/">See here</a> for more.  </p>
-<pre><code class="python">from appJar import gui
-
-# function called by pressing the buttons
-def press(btn):
-    if btn==&quot;Cancel&quot;:
+<h3 id="interactivity">Interactivity</h3>
+<hr />
+<p>Of course, the whole point of making a GUI, is to be interactive - this requires <strong>events</strong>.  </p>
+<p>The idea behind <a href="https://en.wikipedia.org/wiki/Event-driven_programming">event-driven programming</a> is that each time the user clicks, presses or drags something (the event) the GUI should respond.  </p>
+<ul>
+<li>This requires making a function - a block of code to call, when the event happens:  </li>
+</ul>
+<pre><code class="python">def press(button):
+    if button == &quot;Cancel&quot;:
         app.stop()
     else:
-        print(&quot;User:&quot;, app.getEntry('user'), &quot;Pass:&quot;, app.getEntry('pass'))
-
-app = gui()
-
-app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;, 0, 0, 2)  # Row 0,Column 0,Span 2
-app.addLabel(&quot;user&quot;, &quot;Username:&quot;, 1, 0)              # Row 1,Column 0
-app.addEntry(&quot;user&quot;, 1, 1)                           # Row 1,Column 1
-app.addLabel(&quot;pass&quot;, &quot;Password:&quot;, 2, 0)              # Row 2,Column 0
-app.addSecretEntry(&quot;pass&quot;, 2, 1)                     # Row 2,Column 1
-app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press, 3, 0, 2) # Row 3,Column 0,Span 2
-
-app.setEntryFocus(&quot;user&quot;)
-
-app.go()
+        usr = app.getEntry(&quot;Username&quot;)
+        pwd = app.getEntry(&quot;Password&quot;)
+        print(&quot;User:&quot;, usr, &quot;Pass:&quot;, pwd)
 </code></pre>
 
+<ul>
+<li>Then add some more widgets, for the user to interact with:</li>
+</ul>
+<pre><code class="python">app.addLabelEntry(&quot;Username&quot;)
+app.addLabelSecretEntry(&quot;Password&quot;)
+</code></pre>
+
+<ul>
+<li>And, widgets to create events:  </li>
+</ul>
+<pre><code class="python"># give the name of the function - press
+app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press)
+</code></pre>
+
+<ul>
+<li>
+<p>We now have an interactive GUI: </p>
 <p><img alt="testLog" src="./img/testLog.png" /></p>
-<h3 id="any-extras">Any extras?</h3>
+</li>
+</ul>
+<p>Now, when the user presses a button, the <code>press()</code> function is called, passing the name of the button as a parameter.  </p>
+<h3 id="appearance-counts">Appearance counts</h3>
 <hr />
-<p>It's possible to make changes to how the GUI looks<br />
-For starters, you can specify a name and size for your GUI when you make it:  </p>
-<ul>
-<li><code>app=gui("Login Window", "400x200")</code>  </li>
-</ul>
-<p>And, you can choose what kind of bread, and whether it's toasted:   </p>
-<ul>
-<li><code>app.setBg("Brown")</code></li>
-<li><code>app.setFont(20)</code></li>
-</ul>
-<p><a href="pythonGuiOptions/">See here</a> for more.  </p>
+<p>As well as changing widgets, you can also change the way the <a href="./pythonGuiOptions">GUI looks</a>.  </p>
+<p>For starters, you can specify a name and size for your GUI when you make it:  </p>
+<pre><code class="python">app = gui(&quot;Login Window&quot;, &quot;400x200&quot;)
+</code></pre>
+
+<p>And, change the general appearance:  </p>
+<pre><code class="python">app.setBg(&quot;orange&quot;)
+app.setFont(18)
+</code></pre>
+
+<p>You can even specify where you want the cursor to be when the user starts typing:</p>
+<pre><code class="python">app.setFocus(&quot;Username&quot;)
+</code></pre>
+
 <p><img alt="testLog" src="./img/testLog2.png" /></p>
-<h3 id="make-your-own">Make your own!</h3>
+<p>( <strong>NB.</strong> We also set some other colours on the label - see <a href="#full-code-listing">below</a>. )  </p>
+<h3 id="make-your-own">Make your own</h3>
 <hr />
-<p>That's about it for now.<br />
-Have a look around, discover all of the different <a href="pythonWidgets/">fillings</a> available.<br />
-And, investigate how best to <a href="pythonWidgetGrouping/">present </a> your sandwich!</p></div>
+<p>And, that's all you need to know. Check out:  </p>
+<ul>
+<li>All the different <a href="./pythonWidgets">widgets</a> available.  </li>
+<li>Our support for <a href="./pythonImages">images</a> and <a href="./pythonSound">sound</a>.  </li>
+<li>How to include <a href="./pythonBars">toolbars, menubars &amp; statusbars</a>.  </li>
+<li>How to create simple <a href="./pythonDialogs">pop-ups</a>.  </li>
+<li>How to use a <a href="./pythonWidgetLayout">grid layout</a>.  </li>
+<li>How to use <a href="./pythonWidgetGrouping">containers</a> for more advanced layouts.  </li>
+</ul>
+<h3 id="full-code-listing">Full code-listing</h3>
+<hr />
+<p>Below is the full code-listing created on this page:  </p>
+<pre><code class="python"># import the library
+from appJar import gui
+
+# handle button events
+def press(button):
+    if button == &quot;Cancel&quot;:
+        app.stop()
+    else:
+        usr = app.getEntry(&quot;Username&quot;)
+        pwd = app.getEntry(&quot;Password&quot;)
+        print(&quot;User:&quot;, usr, &quot;Pass:&quot;, pwd)
+
+# create the GUI
+app = gui(&quot;Login Window&quot;, &quot;400x200&quot;)
+app.setBg(&quot;orange&quot;)
+app.setFont(18)
+
+# add &amp; configure widgets
+app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)
+app.setLabelBg(&quot;title&quot;, &quot;blue&quot;)
+app.setLabelFg(&quot;title&quot;, &quot;orange&quot;)
+
+app.addLabelEntry(&quot;Username&quot;)
+app.addLabelSecretEntry(&quot;Password&quot;)
+# give the name of the function - press
+app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press)
+
+app.setFocus(&quot;Username&quot;)
+
+# start the GUI
+app.go()
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
