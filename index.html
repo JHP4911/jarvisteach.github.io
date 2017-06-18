@@ -351,27 +351,27 @@ We're also not big fans of lots of parameters, so we keep them to a minimum, ins
 <hr />
 <p><a href="https://en.wikipedia.org/wiki/Graphical_user_interface">GUIs</a> in <strong>appJar</strong> require three steps.  </p>
 <ul>
-<li>Import the library &amp; create a GUI variable.<br />
-    ( From now on, we do everything to the GUI variable. )  </li>
+<li>First, import the library &amp; create a GUI variable.<br />
+    (from now on, we do everything to the GUI variable)  </li>
 </ul>
 <pre><code class="python"># import the library
 from appJar import gui
-# create the GUI
+# create a GUI variable called app
 app = gui()
 </code></pre>
 
 <ul>
-<li>Add and configure some widgets:<br />
-    ( If you've tried <a href="https://docs.python.org/3.6/library/turtle.html">turtle</a> this will all look very familiar. )  </li>
+<li>Then, using the gui variable, add and configure some widgets:<br />
+    (if you've tried <a href="https://docs.python.org/3.6/library/turtle.html">turtle</a> this will all look very familiar)  </li>
 </ul>
-<pre><code class="python"># add &amp; configure widgets
+<pre><code class="python"># add &amp; configure widgets - widgets get a name, to help referencing them later
 app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)
 app.setLabelBg(&quot;title&quot;, &quot;red&quot;)
 </code></pre>
 
 <ul>
-<li>Start the GUI:<br />
-    ( <strong>NB.</strong> don't put any code after this line! )  </li>
+<li>Finally, start the GUI:<br />
+    (<strong>NB.</strong> don't put any code after this line)  </li>
 </ul>
 <pre><code class="python"># start the GUI
 app.go()
@@ -380,7 +380,7 @@ app.go()
 <ul>
 <li>
 <p>And, that's it: </p>
-<p><img alt="simpleApp" src="./img/simpleApp.png" /></p>
+<p><img alt="simpleApp" src="./img/simpleApp.png" />  </p>
 </li>
 </ul>
 <h3 id="interactivity">Interactivity</h3>
@@ -388,7 +388,14 @@ app.go()
 <p>Of course, the whole point of making a GUI, is to be interactive - this requires <strong>events</strong>.  </p>
 <p>The idea behind <a href="https://en.wikipedia.org/wiki/Event-driven_programming">event-driven programming</a> is that each time the user clicks, presses or drags something (the event) the GUI should respond.  </p>
 <ul>
-<li>This requires making a function - a block of code to call, when the event happens:  </li>
+<li>First, add some more widgets (<a href="./pythonWidgets/#entry">Entry Boxes</a>), for the user to interact with:</li>
+</ul>
+<pre><code class="python">app.addLabelEntry(&quot;Username&quot;)
+app.addLabelSecretEntry(&quot;Password&quot;)
+</code></pre>
+
+<ul>
+<li>Then, we'll need a <strong>function</strong> - a block of code to call, when an event happens:  </li>
 </ul>
 <pre><code class="python">def press(button):
     if button == &quot;Cancel&quot;:
@@ -400,44 +407,48 @@ app.go()
 </code></pre>
 
 <ul>
-<li>Then add some more widgets, for the user to interact with:</li>
+<li>Finally, some widgets (<a href="./pythonWidgets/#button">buttons</a>) to create the events:  </li>
 </ul>
-<pre><code class="python">app.addLabelEntry(&quot;Username&quot;)
-app.addLabelSecretEntry(&quot;Password&quot;)
-</code></pre>
-
-<ul>
-<li>And, widgets to create events:  </li>
-</ul>
-<pre><code class="python"># give the name of the function - press
+<pre><code class="python"># link the buttons to the function called press
 app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press)
 </code></pre>
 
 <ul>
 <li>
-<p>We now have an interactive GUI: </p>
+<p>We now have an interactive GUI:  </p>
 <p><img alt="testLog" src="./img/testLog.png" /></p>
 </li>
 </ul>
-<p>Now, when the user presses a button, the <code>press()</code> function is called, passing the name of the button as a parameter.  </p>
+<p>When the user presses a button, the <code>press</code> function is called, passing the name of the button as a parameter.  </p>
 <h3 id="appearance-counts">Appearance counts</h3>
 <hr />
-<p>As well as changing widgets, you can also change the way the <a href="./pythonGuiOptions">GUI looks</a>.  </p>
-<p>For starters, you can specify a name and size for your GUI when you make it:  </p>
+<p>As well as changing widgets, you can also change the way the <a href="./pythonGuiOptions">GUI looks</a>:  </p>
+<ul>
+<li>For starters, you can specify a name and size for your GUI, when you create the variable:  </li>
+</ul>
 <pre><code class="python">app = gui(&quot;Login Window&quot;, &quot;400x200&quot;)
 </code></pre>
 
-<p>And, change the general appearance:  </p>
+<ul>
+<li>As well as changing widget appearance, you can also change the general GUI's appearance:  </li>
+</ul>
 <pre><code class="python">app.setBg(&quot;orange&quot;)
 app.setFont(18)
 </code></pre>
 
-<p>You can even specify where you want the cursor to be when the user starts typing:</p>
+<ul>
+<li>You can even specify where you want the cursor to be when the GUI starts:  </li>
+</ul>
 <pre><code class="python">app.setFocus(&quot;Username&quot;)
 </code></pre>
 
-<p><img alt="testLog" src="./img/testLog2.png" /></p>
-<p>( <strong>NB.</strong> We also set some other colours on the label - see <a href="#full-code-listing">below</a>. )  </p>
+<ul>
+<li>
+<p>It now looks a bit better:  </p>
+<p><img alt="testLog" src="./img/testLog2.png" />  </p>
+<p>(<strong>NB.</strong> We also set some other colours on the label - see <a href="#full-code-listing">below</a>) </p>
+</li>
+</ul>
 <h3 id="make-your-own">Make your own</h3>
 <hr />
 <p>And, that's all you need to know. Check out:  </p>
@@ -464,19 +475,20 @@ def press(button):
         pwd = app.getEntry(&quot;Password&quot;)
         print(&quot;User:&quot;, usr, &quot;Pass:&quot;, pwd)
 
-# create the GUI
+# create a GUI variable called app
 app = gui(&quot;Login Window&quot;, &quot;400x200&quot;)
 app.setBg(&quot;orange&quot;)
 app.setFont(18)
 
-# add &amp; configure widgets
+# add &amp; configure widgets - widgets get a name, to help referencing them later
 app.addLabel(&quot;title&quot;, &quot;Welcome to appJar&quot;)
 app.setLabelBg(&quot;title&quot;, &quot;blue&quot;)
 app.setLabelFg(&quot;title&quot;, &quot;orange&quot;)
 
 app.addLabelEntry(&quot;Username&quot;)
 app.addLabelSecretEntry(&quot;Password&quot;)
-# give the name of the function - press
+
+# link the buttons to the function called press
 app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], press)
 
 app.setFocus(&quot;Username&quot;)
