@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -341,22 +349,64 @@ By default, python and tkinter don't provide it.</p>
 <p>We've incorporated a couple of ways to include drag and drop functionality in <strong>appJar</strong>.  </p>
 <h2 id="dragn-drop-between-widgets">Drag'n Drop Between Widgets</h2>
 <hr />
-<p>There is a beta version of drag and drop between labels.  </p>
+<p>There is a beta version of drag and drop <strong>between labels</strong>.  </p>
 <ul>
 <li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction]</code>)<br />
-    Set functions to call whenever the mouse button is clicked and dragged.<br />
-    The first function will be called when the mouse is initially clicked.<br />
+    Set functions to call when the mouse button is dragged from the named widget, or released over any widget.<br />
+    The first function will be called when the mouse is initially draged.<br />
     The second function will be called when the mouse is released.  </li>
 </ul>
+<pre><code class="python">from appJar import gui
+
+def drag(widget):
+    print(&quot;Dragged from:&quot;, widget)
+
+def drop(widget):
+    print(&quot;Dropped on:&quot;, widget)
+
+app = gui(&quot;dnd Demo&quot;)
+
+app.setFont(20)
+app.setBg(&quot;SlateGrey&quot;)
+app.setFg(&quot;yellow&quot;)
+
+app.addLabel(&quot;dragLab&quot;, &quot;Drag Me&quot;)
+app.addHorizontalSeparator()
+app.addLabel(&quot;dropLab&quot;, &quot;Drop Here&quot;)
+
+app.setLabelDragFunction(&quot;dragLab&quot;, [drag, drop])
+
+app.go()
+</code></pre>
+
 <h2 id="dragn-drop-between-applications">Drag'n Drop Between Applications</h2>
 <hr />
-<p>There is also a beta version of drag and drop between applications - at the moment, this has been seen to work on Mac OSX, Raspberry Pi, and Windows 7 - let us know of success on other versions of Windows!  </p>
-<p>Certain widgets can be registered to receive <em>Drop</em> events:  </p>
+<p>There is also a beta version of drag and drop between applications - at the moment, this has been seen to work on Mac OSX 10.11, Raspberry Pi, and Windows 7 - let us know of success on other distributions!  </p>
+<pre><code class="python">from appJar import gui
+
+def externalDrop(data):
+    print(&quot;Data dropped:&quot;, data)
+
+app = gui(&quot;External dnd Demo&quot;)
+
+app.setFont(20)
+app.setBg(&quot;SlateGrey&quot;)
+app.setFg(&quot;yellow&quot;)
+
+app.addLabel(&quot;dropLab&quot;, &quot;Drop Here&quot;)
+app.setLabelDropTarget(&quot;dropLab&quot;, externalDrop)
+
+app.go()
+</code></pre>
+
+<p>Only certain widgets can be registered to receive <em>Drop</em> events:  </p>
 <ul>
 <li><code>.setEntryDropTarget(title, function=None, replace=True)</code>  </li>
 <li><code>.setTextAreaDropTarget(title, function=None, replace=True)</code>  </li>
 <li><code>.setImageDropTarget(title, function=None, replace=True)</code>  </li>
 <li><code>.setLabelDropTarget(title, function=None, replace=True)</code>  </li>
+<li><code>.setMessageDropTarget(title, function=None)</code>  </li>
+<li><code>.setListBoxDropTarget(title, function=None, replace=True)</code>  </li>
 </ul>
 <p>Then, if you drag a file or a URI onto one of these widgets, the filename/URI will be copied.<br />
 Or, if it's an image, the image will be replaced.  </p>
@@ -364,6 +414,9 @@ Or, if it's an image, the image will be replaced.  </p>
 If you'd rather append the URI/filename - set <code>replace</code> to be False.<br />
 If a function has been set, it will be called, passing in the filename/URI as the only paramter.  </p>
 <p>There is currently no support for registering <em>Drag</em> events.  </p>
+<ul>
+<li><code>.set XXX DragSource(title, function=None)</code>  </li>
+</ul>
 <h2 id="beta">Beta</h2>
 <hr />
 <p>Note, this is all in beta - long term, the plan is to combine all of this into one set of functions, and provide a unified drag and drop model, that will work across all widgets both within the application and between applications.  </p></div>

@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -327,6 +335,8 @@
         
             <li><a href="#change-images">Change Images</a></li>
         
+            <li><a href="#image-maps">Image Maps</a></li>
+        
             <li><a href="#change-image-animation">Change Image Animation</a></li>
         
             <li><a href="#set-background-images">Set Background Images</a></li>
@@ -343,7 +353,8 @@
 <p><img alt="ImageDemo" src="../img/imageDemo.png" />  </p>
 <p>Default image support in appJar assumes no extra libraries. That means it should only support <code>.GIF</code> and <code>.PPM</code> images.<br />
 However, code is included to allow the use of <code>.PNG</code> and <code>.JPG</code> files. appJar will convert these to <code>.GIF</code> files, before loading.<br />
-Converting image files is <strong>SLOW</strong>, so it's best to stick to <code>.GIF</code> files!  </p>
+Converting image files is <strong>SLOW</strong>, so it's best to stick to <code>.GIF</code> files!<br />
+Also, converting PNGs is temperamental in Python 2.7 - another reason to avoid.  </p>
 <p>Getting the path for images right can be <strong>TRICKY</strong><br />
 It's therefore best to put images in the same folder as your Python code.<br />
 Or, create an image folder and set it using the <code>.setImageLocation(location)</code> function.  </p>
@@ -447,6 +458,34 @@ app.stopLabelFrame()
 <li><code>.shrinkImage(title, mod)</code> &amp; <code>.growImage(title, mod)</code><br />
     These are wrappers for the above function, simply causing the image to shrink or grow accordingly.</li>
 </ul>
+<h3 id="image-maps">Image Maps</h3>
+<p>It is possible to set up a simple ImageMap - a clickable image, with names linked to different areas.<br />
+When one of those areas is clicked, a function will be called, passing the name of the area as a parameter.  </p>
+<ul>
+<li><code>.setImageMap(title, func, coords)</code><br />
+    This will associate an image map with the named image.<br />
+<code>coords</code> must contain a dictionary of areas on the map.<br />
+    When a position on the image is clicked, in one of the areas, the named function will be called, passing in the area's name.<br />
+    When an unknown position on the image is clicked, <em>UNKNOWN</em> will be passed to the function, along with the coordinates.  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+
+# each list of numbers contains the top left x/y and bottom right x/y
+coords = {
+    &quot;America&quot;:[32, 17, 242, 167],
+    &quot;South America&quot;:[126, 170, 226, 292],
+}
+
+def click(area):
+    app.setLabel(&quot;l1&quot;, area)
+
+app=gui()
+app.addImage(&quot;i1&quot;, &quot;map.gif&quot;)
+app.setImageMap(&quot;i1&quot;, click, coords)
+app.addLabel(&quot;l1&quot;, &quot;&lt;click the map&gt;&quot;)
+app.go()
+</code></pre>
+
 <h3 id="change-image-animation">Change Image Animation</h3>
 <p>If an image is animated, it's possible to control it.</p>
 <ul>

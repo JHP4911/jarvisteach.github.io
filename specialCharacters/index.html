@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -331,6 +339,8 @@
         
             <li><a href="#important">Important</a></li>
         
+            <li><a href="#compatability">Compatability</a></li>
+        
             <li><a href="#easter-egg">Easter Egg</a></li>
         
     
@@ -348,6 +358,16 @@
 Instead, you need to use a special code (<a href="https://en.wikipedia.org/wiki/Unicode">unicode</a>), for the character you want.</p>
 <p>For example, Unicode for the tick is <code>2714</code>, and the cross is <code>2716</code></p>
 <p>To represent these in Python, you need to use a special syntax:</p>
+<pre><code class="python">TICK=&quot;\u2714&quot;
+CROSS=&quot;\u2716&quot;
+
+app.addLabel(&quot;tick&quot;, TICK)
+app.addLabel(&quot;cross&quot;, CROSS)
+</code></pre>
+
+<p>By putting <code>\u</code> at the start of the String, you tell Python it is a Unicode character.<br />
+This works well in Python 3.x, as it knows what unicode characters are.</p>
+<p>If you're still using python 2.x (not recomended), you'll need to use a little extra magic:  </p>
 <pre><code class="python">TICK=u&quot;\u2714&quot;
 CROSS=u&quot;\u2716&quot;
 
@@ -355,17 +375,17 @@ app.addLabel(&quot;tick&quot;, TICK)
 app.addLabel(&quot;cross&quot;, CROSS)
 </code></pre>
 
-<p>By putting a <code>u</code> in front of the string, you tell Python it is a Unicode character.<br />
-(In fact, it calls the Unicode function, converting the string data into Unicode.)  </p>
+<p>By also putting a <code>u</code> before the string, you tell Python to expect a unicode character.
+(In fact, it calls the Unicode function, converting the string data into Unicode.)</p>
 <h3 id="example">Example</h3>
 <hr />
 <p>As demonstrated above, it's best to define any Unicode characters you want to use as constants, then you can use them in your code just like any other string.  </p>
 <p><img alt="MusicPlayer" src="../img/1_unicode.png" /></p>
-<pre><code class="python">PLAY  = u&quot;\u25B6&quot;  # 23F5 should work...
-PAUSE = u&quot;\u23F8&quot;
-RWD   = u&quot;\u23EA&quot;
-FWD   = u&quot;\u23E9&quot;
-STOP  = u&quot;\u23F9&quot;
+<pre><code class="python">PLAY  = &quot;\u25B6&quot;  # 23F5 should work...
+PAUSE = &quot;\u23F8&quot;
+RWD   = &quot;\u23EA&quot;
+FWD   = &quot;\u23E9&quot;
+STOP  = &quot;\u23F9&quot;
 
 def music(btn):
     if btn == PLAY:
@@ -387,15 +407,26 @@ app.addButtons([PLAY, PAUSE, STOP, RWD, FWD], music)
 <p>Identify the one you want, and take a note of the Unicode: 263C<br />
 (Note, these are hexadecimal codes, so the values will be between 0 and F)  </p>
 <p>You can then use this code in your gui: <img alt="UnicodeSun" src="../img/4_unicode.png" />  </p>
-<pre><code class="python">FLOWER = u&quot;\u263C&quot;
+<pre><code class="python">FLOWER = &quot;\u263C&quot;
 app.addButton(FLOWER, flowerPower)
 </code></pre>
 
 <h3 id="important">Important</h3>
 <hr />
 <p>Different platforms will (potentially) display these characters in different ways...<br />
-As you can see in the music example, for some reason, the PLAY character doesn't display like the other characters...<br />
+As you can see in the music example, for some reason, the PLAY character doesn't display like the other characters...  </p>
+<p>There is also an issue with Python GUIs in general, where they can't actually (yet) display all of the different Unicode characters.<br />
+If the character has more than 4 digits in its code, it probably won't work.<br />
+You may even get an error similar to: <code>character is above the range (U+0000-U+FFFF) allowed by Tcl</code><br />
 So, make sure you test them!  </p>
+<h3 id="compatability">Compatability</h3>
+<hr />
+<p>As you can see, it's hard to make your code work on all versions of Python.<br />
+The switch from Python2 to Python3 caused lots of problems, as the <code>u</code> prefix was removed.<br />
+That meant there were two different ways to get unicode to work: Python2: <code>u'\u23F9'</code>, Python3: <code>'\u23F9'</code>  </p>
+<p>As of Python 3.3, the <code>u</code> prefix was brought back (although it doesn't do anything), but that still meant Python3.0 to Python3.2 didn't support it.</p>
+<p>So, the best solution, if you want your code to work on all versions of Python, is to not use the <code>u</code> prefix, and instead change the way Python2 works.  </p>
+<p>If you include <code>from __future__ import unicode_literals</code> at the start of your code, you can include uncicode characters in Python2, without using the <code>u</code> prefix - <code>print('\u23F9')</code> will then work on every version of python.  </p>
 <h3 id="easter-egg">Easter Egg</h3>
 <hr />
 <p>Try holding the &lt;ALT&gt; key and typing different codes on a Windows computer...  </p></div>

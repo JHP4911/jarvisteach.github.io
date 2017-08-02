@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -446,8 +454,14 @@ app.getLabelWidget(&quot;l6&quot;).config(font=&quot;Courier 20&quot;)
 <ul>
 <li>
 <p><code>.set XXX Tooltip(name, value)</code><br />
-    Sets a tooltip for the widget.
-    The specified text will be displayed in a small pop-up, when the mouse is left over the widget.</p>
+    Sets a tooltip for the named widget, with the specified value.<br />
+    The specified value will be displayed in a small pop-up, when the mouse is left over the widget.<br />
+    If called a second time, it will update the text of the tooltip.<br />
+    See <a href="../pythonDialogs/#tooltips">Tooltips</a> for more info.  </p>
+</li>
+<li>
+<p><code>.enable XXX Tooltip(name)</code> &amp; <code>.disable XXX Tooltip(name)</code><br />
+    These will enable or disable the named tooltip. When disabled, it will not show-up.  </p>
 </li>
 <li>
 <p><code>.set XXX Cursor(name, value)</code><br />

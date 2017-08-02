@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -323,6 +331,8 @@
     
         <li class="main active"><a href="#change-log">Change-Log</a></li>
         
+            <li><a href="#version-007">Version (0.07)</a></li>
+        
             <li><a href="#version-0061">Version (0.061)</a></li>
         
             <li><a href="#version-006">Version (0.06)</a></li>
@@ -346,10 +356,47 @@
 
 <h1 id="change-log">Change-Log</h1>
 <hr />
+<h2 id="version-007">Version (0.07)</h2>
+<ul>
+<li>New widgets: <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a> - a widget to show a GoogleMap tile &amp; control widgets, <a href="../pythonImages/#image-maps">ImageMaps</a> - clickable ImageMap with linked functions, <a href="../pythonWidgets/#entry">FileEntries</a> - Entries linked with File/Directory dialogs  </li>
+<li>Widget enhancements: <a href="../pythonBars/#set-toolbars">Pinnable Toolbars</a>, <a href="../pythonWidgets/#add-labels">SelectableLabels</a>, better <a href="../pythonDialogs/#tooltips">Tooltips</a>, <a href="../pythonWidgets/#add-checkboxes">NamedCheckBoxes</a> &amp; settable <a href="../pythonWidgets/#set-listboxes">ListBoxes</a>  </li>
+<li>Update to event model and <a href="../pythonEvents">documentation</a> - now clearer how to perform different actions, and function names updated.  </li>
+<li>
+<p>Switched to Python's <a href="../pythonLogging">logging</a> feature</p>
+</li>
+<li>
+<p>Issues Resolved:</p>
+<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/192">#192</a> - Fixed PNG image support in pyhton 2.7 - specifically for toolbars  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/189">#189</a> - <strong>VERY</strong> basic support for <a href="../pythonDevWidgets/#ttk">ttk</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/186">#186</a> - Changes to <a href="../specialCharacters">Unicode</a> support  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/185">#185</a> - All add functions now return the widget  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/184">#184</a> - <a href="../pythonWidgets/#set-listboxes">Groupable List Boxes</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/182">#182</a> - Added a link to source for <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/181">#181</a> - <a href="../pythonBars/#set-toolbars">Disabling toolbars</a> will also disable a pinned icon</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/180">#180</a> - <a href="../pythonEvents/#slow-actions">SlowActions</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/176">#176</a> - Fixed issue with placing container in <a href="../pythonWidgetGrouping">containers</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/173">#173</a> - New functions to <a href="../pythonWidgets/#set-listboxes">Set ListBoxes</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/161">#161</a> - <a href="../pythonWidgets/#add-checkboxes">NamedCheckBoxes</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/148">#148</a> - Improved support for <a href="../pythonEvents/#user-actions">MouseOver Events</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/151">#151</a> &amp; <a href="https://github.com/jarvisteach/appJar/issues/158">#158</a> - Some fixes to <a href="../pythonDevWidgets/#grid">Grid Widget</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/138">#138</a> - Can now register a <a href="../pythonWidgets/#set-datepicker">Change Event</a> on DatePicker  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/137">#137</a> - <a href="../pythonWidgets/#entry">File Entries</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/136">#136</a> - Simple <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a> widget   </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/135">#135</a> - A clickable <a href="../pythonImages/#image-maps">Image Map</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/133">#133</a> - Improvements to <a href="../pythonDialogs/#tooltips">Tooltips</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/124">#124</a> - Switched to Python's <a href="../pythonLogging">logging</a> feature  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - More work implementing <a href="../pythonDnD">Drag n'Drop</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/73">#73</a> - Toolbars are now <a href="../pythonBars/#set-toolbars">pinnable</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/59">#59</a> - <a href="../pythonWidgets/#add-labels">SelectableLabels</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/7">#7</a> -  Can now <a href="../pythonGuiOptions/#colour">Set Foreground</a> across the whole GUI  </li>
+</ul>
+</li>
+</ul>
 <h2 id="version-0061">Version (0.061)</h2>
 <ul>
 <li>Issues Resolved:  <ul>
-<li><a href="https://github.com/jarvisteach/appJar/issues/154">#154</a> - Fixed bug with AutoEntry not showing drop-down in right position, when placed in a container</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/154">#154</a> - Fixed bug with AutoEntry not showing drop-down in right position, when placed in a container  </li>
 </ul>
 </li>
 </ul>
@@ -361,26 +408,26 @@
 <li>Work on events: <a href="../pythonEvents/#breakdown">stopping event propagation</a>, <a href="../pythonEvents/#make-stuff-happen">drag/over events</a>, <a href="../pythonDnD">drag'n drop</a>  </li>
 <li>Issues Resolved:  <ul>
 <li><a href="https://github.com/jarvisteach/appJar/issues/143">#143</a> - Fixed bug with setting defaults on AutoEntries  </li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/142">#142</a> - Finished documentation for <a href="../pythonDialogs/#file=boxes">popups</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/142">#142</a> - Finished documentation for <a href="../pythonDialogs/#file=boxes">popups</a>  </li>
 <li><a href="https://github.com/jarvisteach/appJar/issues/130">#130</a> - Documented how to use <a href="../specialCharacters">special characters</a>  </li>
 <li><a href="https://github.com/jarvisteach/appJar/issues/123">#123</a> - New features for <a href="../pythonWidgets/#set-entries">setting entries</a> - max length, auto uppercase/lowercase, validation  </li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/119">#119</a> - <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a> widget added</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/118">#118</a> - dynamic library imports</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/117">#117</a> - introduced documentation on <a href="../packaging/">packaging</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/116">#116</a> - configurable trough <a href="../pythonWidgets/#set-scales">increments</a> for a scale</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/115">#115</a> - fixed transparency in python 2.7</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/114">#114</a> - ability to stop events being propagated</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/112">#112</a> - now possible to start with a subWindow (specified in go()) as well as hide() &amp; show() main window</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/119">#119</a> - <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a> widget added  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/118">#118</a> - dynamic library imports  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/117">#117</a> - introduced documentation on <a href="../packaging/">packaging</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/116">#116</a> - configurable trough <a href="../pythonWidgets/#set-scales">increments</a> for a scale  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/115">#115</a> - fixed transparency in python 2.7  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/114">#114</a> - ability to stop events being propagated  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/112">#112</a> - now possible to start with a subWindow (specified in go()) as well as hide() &amp; show() main window  </li>
 <li><a href="https://github.com/jarvisteach/appJar/issues/110">#110</a> - can now configure the number of rows to <a href="../pythonWidgets/#set-entries">show</a> in an AutoEntry  </li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/108">#108</a> - Fixed issue with modal <a href="../pythonWidgetGrouping/#startstop-sub-windows">SubWindows</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/106">#106</a> - Function to add an <a href="../pythonWidgets/#add-buttons">image button</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/102">#102</a> - Updates to drag/over <a href="../pythonEvents/#make-stuff-happen">events</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/103">#103</a> - Can now manage event calling when <a href="../pythonEvents/#make-stuff-happen">widgets change</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - <a href="../pythonDnD/">Drag n'Drop</a> beta support for dnd between applications</li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/92">#92</a> - Function to <a href="../pythonWidgets/#get-entries">get all entries</a></li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/75">#75</a> - Fix to <a href="../pythonWidgetGrouping/#showhide-sub-windows">destroySubWindow</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/108">#108</a> - Fixed issue with modal <a href="../pythonWidgetGrouping/#startstop-sub-windows">SubWindows</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/106">#106</a> - Function to add an <a href="../pythonWidgets/#add-buttons">image button</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/102">#102</a> - Updates to drag/over <a href="../pythonEvents/#make-stuff-happen">events</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/103">#103</a> - Can now manage event calling when <a href="../pythonEvents/#make-stuff-happen">widgets change</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - <a href="../pythonDnD/">Drag n'Drop</a> beta support for dnd between applications  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/92">#92</a> - Function to <a href="../pythonWidgets/#get-entries">get all entries</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/75">#75</a> - Fix to <a href="../pythonWidgetGrouping/#showhide-sub-windows">destroySubWindow</a>  </li>
 <li><a href="https://github.com/jarvisteach/appJar/issues/46">#46</a> - Added version details to about box  </li>
-<li><a href="https://github.com/jarvisteach/appJar/issues/42">#42</a> - Added functionality to <a href="../pythonWidgets/#set-optionboxes">change TickOptionBoxes</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/42">#42</a> - Added functionality to <a href="../pythonWidgets/#set-optionboxes">change TickOptionBoxes</a>  </li>
 <li><a href="https://github.com/jarvisteach/appJar/issues/33">#33</a> - Added convenience function to <a href="../pythonDevWidgets/#tree">setTreeColours</a>  </li>
 </ul>
 </li>

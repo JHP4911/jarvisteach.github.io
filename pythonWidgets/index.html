@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -415,6 +423,12 @@ app.go()
     Does the same as add a <em>label</em>, except there's no parameter to set any text.</p>
 </li>
 <li>
+<p><code>.addSelectableLabel(title, text=None)</code><br />
+    This adds a label whose text can be selected with the mouse.<br />
+    This is really just a <em>read-only</em> entry, disguised to look like a label.<br />
+    But it seems to do the trick...  </p>
+</li>
+<li>
 <p><code>.addFlashLabel(title, text=None)</code><br />
     This adds a flashing <em>label</em>, that will alternate between the foreground and background colours.</p>
 </li>
@@ -473,8 +487,9 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 <li>AutoEntry - this takes a list of words to provide auto-completion.  </li>
 <li>ValidationEntry - can be set to valid/invalid/waiting - will colour the border green/red/black and show a ✔/✖/★  </li>
+<li>FileEntry/DirectoryEntry - provides a button to select a file/directory and auto-populates the entry  </li>
 </ul>
-<p><img alt="Entries" src="../img/1_entries.gif" /></p>
+<p><img alt="Entries" src="../img/1_entries.png" /></p>
 <pre><code class="python">from appJar import gui
 
 app=gui()
@@ -483,8 +498,11 @@ app.addEntry(&quot;e1&quot;)
 app.addEntry(&quot;e2&quot;)
 app.addEntry(&quot;e3&quot;)
 app.addLabelEntry(&quot;Name&quot;)
+app.addValidationEntry(&quot;v1&quot;)
+app.addFileEntry(&quot;f1&quot;)
 
 app.setEntryDefault(&quot;e2&quot;, &quot;Age here&quot;)
+app.setEntryValid(&quot;v1&quot;)
 
 app.go()
 </code></pre>
@@ -495,8 +513,10 @@ app.go()
 <li><code>.addNumericEntry(title)</code></li>
 <li><code>.addSecretEntry(title)</code></li>
 <li><code>.addAutoEntry(title, words)</code>  </li>
+<li><code>.addValidationEntry(title)</code>  </li>
+<li><code>.addFileEntry(title)</code>  </li>
 <li>
-<p><code>.addValidationEntry(title)</code>  </p>
+<p><code>.addDirectoryEntry(title)</code>  </p>
 <p>Each of these will add the specified type of Entry, using the title provided.</p>
 </li>
 </ul>
@@ -535,7 +555,8 @@ app.go()
 <li>
 <p><code>.setAutoEntryNumRows(title, rows)</code><br />
     This will set the number of rows to display in an AutoEntry.<br />
-    NB. this is limited to the depth of the GUI - if there is no space, then no rows will be displayed. </p>
+    NB. this is limited to the depth of the GUI - if there is no space, then no rows will be displayed. 
+    <img alt="AutoEntry" src="../img/1_autoEntry.png" />  </p>
 </li>
 <li>
 <p><code>.clearEntry(title, callFunction=True)</code><br />
@@ -700,8 +721,17 @@ app.go()
 
 <h4 id="add-checkboxes">Add CheckBoxes</h4>
 <ul>
-<li><code>.addCheckBox(title)</code><br />
-    This creates a CheckBox, with the specified title.  </li>
+<li>
+<p><code>.addCheckBox(title)</code><br />
+    This creates a CheckBox, with the specified title.  </p>
+</li>
+<li>
+<p><code>.addNamedCheckBox(name, title)</code><br />
+    By default, it's not possible to have two CheckBoxes with the same text.<br />
+    If that's required, a named CheckBox should be used.<br />
+    This creates a CheckBox, with the specified title.<br />
+    The name will be displayed next to the CheckBox, and the title passed to the function as a unique ID.  </p>
+</li>
 </ul>
 <h4 id="set-checkboxes">Set CheckBoxes</h4>
 <ul>
@@ -764,10 +794,11 @@ app.go()
 <h4 id="set-optionboxes">Set OptionBoxes</h4>
 <ul>
 <li>
-<p><code>.changeOptionBox(title, newOptions, index)</code><br />
+<p><code>.changeOptionBox(title, newOptions, index, callFunction=False)</code><br />
     This will replace the contents of the OptionBox, with the new list provided.<br />
     If specified, the indexed item will be selected - this can be a position or an item name.<br />
-    If setting a TickOptionBox, the old list will be replaced with the new list. None will be ticked. <code>index</code> will be ignored.  </p>
+    If setting a TickOptionBox, the old list will be replaced with the new list. None will be ticked. <code>index</code> will be ignored.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
 </li>
 <li>
 <p><code>.setOptionBox(title, position, value=True, callFunction=True)</code><br />
@@ -871,12 +902,26 @@ app.go()
 <h4 id="set-listboxes">Set ListBoxes</h4>
 <ul>
 <li>
-<p><code>.updateListItems(title, items)</code><br />
-    Replace the contents of the specified ListBox with the new values.  </p>
+<p><code>.setListItem(title, item, oldVal, newVal, first=False)</code><br />
+<code>.setListItemAtPos(title, item, pos, newVal)</code><br />
+    Changes the specified list item to the new value.<br />
+    If <code>first</code> is set to True, only the first item found will be changed.<br />
+    Otherwise, all occurences of the specified value will be changed.  </p>
 </li>
 <li>
 <p><code>.removeListItem(title, item)</code><br />
-    Remove the specified item from the  specified ListBox.  </p>
+<code>.removeListItemAtPos(title, pos)</code><br />
+    Remove the specified item from the  specified ListBox.<br />
+    Will only remove the first item that matches the parameter.  </p>
+</li>
+<li>
+<p><code>.clearListBox(title)</code><br />
+    Removes all items from the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.updateListBox(title, items, select=False)</code><br />
+    Replace the contents of the specified ListBox with the new values.<br />
+    If you set <code>select</code> to be True, the last item in the list will be selected.  </p>
 </li>
 </ul>
 <pre><code class="python">from appJar import gui
@@ -894,8 +939,10 @@ app.go()
 
 <ul>
 <li>
-<p><code>.clearListBox(title)</code><br />
-    Removes all items from the specified ListBox.  </p>
+<p><code>.selectListItem(title, item, callFunction=True)</code><br />
+<code>.selectListItemAtPos(title, pos, callFunction=True)</code><br />
+    Selects the specified item in the specified ListBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setListBoxRows(title, rows)</code><br />
@@ -906,9 +953,9 @@ app.go()
     Configures whether the specified ListBox is single or multi select.  </p>
 </li>
 <li>
-<p><code>.selectListItem(title, item, callFunction=True)</code><br />
-    Selects the specified item in the specified ListBox.<br />
-    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+<p><code>.setListBoxGroup(list, group=True)</code><br />
+    Adds the named ListBox to a group of selectable ListBoxes.<br />
+    All ListBoxes in the group can have items selected at the same time.  </p>
 </li>
 <li>
 <p><code>.setListItemBg(title, item, colour)</code> &amp; <code>.setListItemFg(title, item, colour)</code><br />
@@ -1298,12 +1345,12 @@ app.go()
 def showDate(btn):
     print(app.getDatePicker(&quot;dp&quot;))
 
-    app=gui()
-    app.addDatePicker(&quot;dp&quot;)
-    app.addButton(&quot;GET&quot;, showDate)
-    app.setDatePickerRange(&quot;dp&quot;, 1900, 2100)
-    app.setDatePicker(&quot;dp&quot;)
-    app.go()
+app=gui()
+app.addDatePicker(&quot;dp&quot;)
+app.addButton(&quot;GET&quot;, showDate)
+app.setDatePickerRange(&quot;dp&quot;, 1900, 2100)
+app.setDatePicker(&quot;dp&quot;)
+app.go()
 </code></pre>
 
 <h4 id="add-datepickers">Add DatePickers</h4>
@@ -1321,6 +1368,10 @@ def showDate(btn):
 <p><code>.setDatePickerRange(title, startYear, endYear=None)</code><br />
     Set the range for the named DatePicker.<br />
     If endYear is None, the current Year will be used.  </p>
+</li>
+<li>
+<p><code>.setDatePickerChangeFunction(title, function)</code><br />
+    Set a function to call when the DatePicker is changed.  </p>
 </li>
 </ul>
 <h4 id="get-datepickers">Get DatePickers</h4>

@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -323,6 +331,8 @@
     
         <li class="main active"><a href="#pop-ups">Pop-ups</a></li>
         
+            <li><a href="#tooltips">Tooltips</a></li>
+        
             <li><a href="#message-boxes">Message Boxes</a></li>
         
             <li><a href="#question-boxes">Question Boxes</a></li>
@@ -339,7 +349,25 @@
 <h1 id="pop-ups">Pop-ups</h1>
 <hr />
 <p>A number of pop-ups (aka dialogs) are available, to add a different user experience, notify the user of information, or get one off pieces of data.</p>
+<h3 id="tooltips">Tooltips</h3>
+<hr />
+<ul>
+<li>
+<p><code>.set XXX Tooltip(name, value)</code><br />
+    Sets a tooltip for the named widget, with the specified value.<br />
+    The specified value will be displayed in a small pop-up, when the mouse is left over the widget.</p>
+<p><img alt="toltip" src="../img/tooltip.png" /></p>
+<p>If called a second time, it will update the value of the tooltip.<br />
+NB. <code>XXX</code> must be the widget type, eg. <code>Label</code>  </p>
+</li>
+<li>
+<p><code>.enable XXX Tooltip(name)</code> &amp; <code>.disable XXX Tooltip(name)</code><br />
+    These will enable or disable the named tooltip.<br />
+    When disabled, it will not show-up.  </p>
+</li>
+</ul>
 <h3 id="message-boxes">Message Boxes</h3>
+<hr />
 <ul>
 <li>
 <p><code>.infoBox(title, message)</code><br />
@@ -358,6 +386,7 @@
 </li>
 </ul>
 <h3 id="question-boxes">Question Boxes</h3>
+<hr />
 <ul>
 <li>
 <p><code>.yesNoBox(title, message)</code><br />
@@ -391,6 +420,7 @@
 </li>
 </ul>
 <h3 id="file-boxes">File Boxes</h3>
+<hr />
 <ul>
 <li>
 <p><code>.openBox(title=None, dirName=None, fileTypes=None, asFile=False)</code><br />
@@ -430,6 +460,7 @@ This will set the allowed file extensions, it should be a list of tuples. They w
 </li>
 </ul>
 <h3 id="other-boxes">Other Boxes</h3>
+<hr />
 <ul>
 <li>
 <p><code>.colourBox(colour="#FF0000")</code>

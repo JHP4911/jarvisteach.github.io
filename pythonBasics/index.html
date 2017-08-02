@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -420,169 +428,42 @@ price = float(var3)
 
 <h3 id="arithmetic-operators">Arithmetic Operators</h3>
 <p>Python allows you to easily perform maths on your data</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>+</td>
-<td>Addition</td>
-<td>a = b + c</td>
-</tr>
-<tr>
-<td>-</td>
-<td>Subtraction</td>
-<td>a = b - c</td>
-</tr>
-<tr>
-<td>*</td>
-<td>Multiplication</td>
-<td>a = b * c</td>
-</tr>
-<tr>
-<td>/</td>
-<td>Division</td>
-<td>a = b / c</td>
-</tr>
-<tr>
-<td>//</td>
-<td>Modulus division</td>
-<td>a = b // c</td>
-</tr>
-<tr>
-<td>%</td>
-<td>Remainder division</td>
-<td>a = b % c</td>
-</tr>
-<tr>
-<td>**</td>
-<td>Exponent</td>
-<td>a**b</td>
-</tr>
-<tr>
-<td>round()</td>
-<td>Round</td>
-<td>Rounds the number to the nearest place</td>
-</tr>
-<tr>
-<td>floor()</td>
-<td>Round-down</td>
-<td>Rounds the number down</td>
-</tr>
-<tr>
-<td>ceil()</td>
-<td>Round-Up</td>
-<td>Rounds the number up</td>
-</tr>
-<tr>
-<td>sum()</td>
-<td>Sum</td>
-<td>Adds together all the items in the list</td>
-</tr>
-</tbody>
-</table>
+<p>| | 
+-|-|-
++ | Addition | a = b + c
+- | Subtraction | a = b - c
+* | Multiplication | a = b * c
+/ | Division | a = b / c
+// | Modulus division | a = b // c
+% | Remainder division | a = b % c
+<strong> | Exponent | a</strong>b
+round() | Round | Rounds the number to the nearest place
+floor() | Round-down | Rounds the number down<br />
+ceil() | Round-Up | Rounds the number up<br />
+sum() | Sum | Adds together all the items in the list</p>
 <h3 id="string-operations">String Operations</h3>
 <p>Python also lets us perform various actions on Strings.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>varName.upper()</code></td>
-<td>Uppercase</td>
-<td>Makes the entire string uppercase</td>
-</tr>
-<tr>
-<td><code>varName.lower()</code></td>
-<td>Lowercase</td>
-<td>Makes the entire string lowercase</td>
-</tr>
-<tr>
-<td><code>varName.split(" ")</code></td>
-<td>Split into a list</td>
-<td>Converts the String into a list, using spaces</td>
-</tr>
-<tr>
-<td><code>varName.split(",")</code></td>
-<td>Split into a list</td>
-<td>Converts the String into a list, using commas</td>
-</tr>
-<tr>
-<td><code>varName.count("a")</code></td>
-<td>Counts occurrences of the text</td>
-<td>Counts how many times <strong>a</strong> appears in the String</td>
-</tr>
-<tr>
-<td><code>varName.index("a")</code></td>
-<td>Finds the first position of the text</td>
-<td>Finds the first position of <strong>a</strong></td>
-</tr>
-<tr>
-<td><code>varName.startswith("Mr.")</code></td>
-<td>Checks what the String starts with</td>
-<td>Returns True if the String starts with <strong>Mr.</strong></td>
-</tr>
-<tr>
-<td><code>varName.endswith("Jarvis")</code></td>
-<td>Checks what the String ends with</td>
-<td>Returns True if the String ends with<strong>Jarvis</strong></td>
-</tr>
-</tbody>
-</table>
+<p>| | 
+-|-|-
+<code>varName.upper()</code> | Uppercase | Makes the entire string uppercase
+<code>varName.lower()</code> | Lowercase | Makes the entire string lowercase
+<code>varName.split(" ")</code> | Split into a list | Converts the String into a list, using spaces
+<code>varName.split(",")</code> | Split into a list | Converts the String into a list, using commas
+<code>varName.count("a")</code> | Counts occurrences of the text | Counts how many times <strong>a</strong> appears in the String
+<code>varName.index("a")</code> | Finds the first position of the text | Finds the first position of <strong>a</strong>
+<code>varName.startswith("Mr.")</code> | Checks what the String starts with | Returns True if the String starts with <strong>Mr.</strong>
+<code>varName.endswith("Jarvis")</code> | Checks what the String ends with | Returns True if the String ends with<strong>Jarvis</strong></p>
 <h3 id="string-splicing">String Splicing</h3>
 <p>Remember, Strings are just lists of characters.<br />
 It's also possible to access parts of a String using array square brackets.  </p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>varName[2]</code></td>
-<td>Gets a character</td>
-<td>Returns the third character</td>
-</tr>
-<tr>
-<td><code>varName[2:5]</code></td>
-<td>Gets a substring</td>
-<td>Returns characters from 2 to 4</td>
-</tr>
-<tr>
-<td><code>varName[2:]</code></td>
-<td>Gets a substring</td>
-<td>Returns characters from 2 to the end</td>
-</tr>
-<tr>
-<td><code>varName[:5]</code></td>
-<td>Gets a substring</td>
-<td>Returns characters from the beginning to 4</td>
-</tr>
-<tr>
-<td><code>varName[2:10:2]</code></td>
-<td>Gets a substring</td>
-<td>Returns characters from 2 to 9, skipping every other character</td>
-</tr>
-<tr>
-<td><code>varName[::-1]</code></td>
-<td>Reverse a String</td>
-<td>Returns the String in reverse order</td>
-</tr>
-</tbody>
-</table>
+<p>| | 
+-|-|-
+<code>varName[2]</code> | Gets a character | Returns the third character
+<code>varName[2:5]</code> | Gets a substring | Returns characters from 2 to 4
+<code>varName[2:]</code> | Gets a substring | Returns characters from 2 to the end
+<code>varName[:5]</code> | Gets a substring | Returns characters from the beginning to 4
+<code>varName[2:10:2]</code> | Gets a substring | Returns characters from 2 to 9, skipping every other character
+<code>varName[::-1]</code> | Reverse a String | Returns the String in reverse order</p>
 <hr />
 <h2 id="selection-operators">Selection &amp; Operators</h2>
 <p>Selection is the ability to make a decision. It allows us to do different things, depending on what information is in a variable.<br />
@@ -613,84 +494,27 @@ else:
 <p>To compare things we use standard operators, just like in maths.</p>
 <h3 id="equality-operators">Equality Operators</h3>
 <p>These let us test if things are equal or not:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>Equal to</td>
-<td>Check if two items are the same</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>Not equal to</td>
-<td>Check if two items are not the same</td>
-</tr>
-</tbody>
-</table>
+<p>| |                                   <br />
+-|-|-
+== | Equal to     | Check if two items are the same
+!= | Not equal to | Check if two items are not the same</p>
 <h3 id="comparison-operators">Comparison Operators</h3>
 <p>These let us compare things:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&gt;</td>
-<td>Greater than</td>
-<td>Check if the first item is bigger than the second item</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>Less than</td>
-<td>Check if the first item is smaller than the second item</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>Greater than or equal to</td>
-<td>Check if the first item is bigger than or the same as the second item</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>Less than or equal to</td>
-<td>Check if the first item is smaller than or the same as the second item</td>
-</tr>
-</tbody>
-</table>
+<p>| | 
+-|-|-</p>
+<blockquote>
+<p>| Greater than             | Check if the first item is bigger than the second item
+&lt;  | Less than                | Check if the first item is smaller than the second item
+= | Greater than or equal to | Check if the first item is bigger than or the same as the second item
+&lt;= | Less than or equal to    | Check if the first item is smaller than or the same as the second item</p>
+</blockquote>
 <h3 id="logical-operators">Logical Operators</h3>
 <p>These let us use logic to combine lots of operators:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>and</td>
-<td>Both comparisons have to be True</td>
-</tr>
-<tr>
-<td>or</td>
-<td>Either or both comparisons have to be True</td>
-</tr>
-<tr>
-<td>not</td>
-<td>This will change the result from True to False, or vice-versa</td>
-</tr>
-</tbody>
-</table>
+<p>|
+-|-
+and | Both comparisons have to be True
+or  | Either or both comparisons have to be True
+not | This will change the result from True to False, or vice-versa</p>
 <hr />
 <h2 id="iteration">Iteration</h2>
 <p>Being able to do selection (make decisions) on its own is nearly enough.<br />

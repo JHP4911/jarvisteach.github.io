@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -323,7 +331,11 @@
     
         <li class="main active"><a href="#beta-widgets">Beta Widgets</a></li>
         
+            <li><a href="#ttk">ttk</a></li>
+        
             <li><a href="#microbit-emulator">MicroBit Emulator</a></li>
+        
+            <li><a href="#googlemaps">GoogleMaps</a></li>
         
             <li><a href="#piechart">PieChart</a></li>
         
@@ -342,13 +354,27 @@
 <hr />
 <p>The following widgets are in <a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#BETA">beta</a>.<br />
 They're available and in use, they're just not quite complete, and not fully tested...  </p>
+<h3 id="ttk">ttk</h3>
+<hr />
+<p>If you want access to the <a href="https://docs.python.org/3/library/tkinter.ttk.html">Tk themed widget set</a> then you'll need to tell appJar to use it:</p>
+<pre><code class="python">from appJar import gui
+app = gui(&quot;ttk Demo&quot;)
+app.useTtk()
+app.addButton(&quot;Press Me&quot;, None)
+app.go()
+</code></pre>
+
+<p>At the moment, this simply imports ttk, so the standard widget set will be replaced with a ttk widget set.  </p>
 <h3 id="microbit-emulator">MicroBit Emulator</h3>
 <hr />
 <p>Widget to emulate a <a href="http://microbit.org">MicroBit</a></p>
 <p><img alt="MicroBit Emulator" src="../img/mb.png" /></p>
-<pre><code class="python">    app.addMicroBit(&quot;mb1&quot;)
-    app.setMicroBitImage(&quot;mb1&quot;, &quot;09090:90909:90009:09090:00900&quot;)
-    app.go()
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.addMicroBit(&quot;mb1&quot;)
+app.setMicroBitImage(&quot;mb1&quot;, &quot;09090:90909:90009:09090:00900&quot;)
+app.go()
 </code></pre>
 
 <h4 id="add-microbits">Add MicroBits</h4>
@@ -374,18 +400,91 @@ They're available and in use, they're just not quite complete, and not fully tes
     Will turn off all of the pixels - setting their brightness to 0.  </p>
 </li>
 </ul>
+<h3 id="googlemaps">GoogleMaps</h3>
+<hr />
+<p>A self-contained GoogleMaps widget.<br />
+It provides useful functionality for finding somewhere on Earth.<br />
+All requests for map data are performed in the background, so the UI shouldn't become unresponsive.  </p>
+<p><img alt="GoogleMaps" src="../img/gMap_2.png" /></p>
+<pre><code class="python">from appjar import gui
+
+app = gui()
+app.addGoogleMap(&quot;m1&quot;)
+app.setGoogleMapSize(&quot;m1&quot;, &quot;300x500&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-googlemaps">Add GoogleMaps</h4>
+<ul>
+<li><code>.addGoogleMap(title)</code><br />
+    Creates a GoogleMap widget.<br />
+    Displays a map image, and provides functionality to search, zoom, and change terrain, as well as a link to the original image.  </li>
+</ul>
+<h4 id="set-googlemaps">Set GoogleMaps</h4>
+<ul>
+<li>
+<p><code>.searchGoogleMap(title, location)</code><br />
+    Update the named GoogleMap widget to show the specified locaiton.  </p>
+</li>
+<li>
+<p><code>.zoomGoogleMap(title, mod)</code><br />
+    Change the zoom level of the named GoogleMap.<br />
+    Providing a <strong>+</strong> or <strong>-</strong> will cause the map to zoom in or out one level.<br />
+    Otherwise, a digit between 0 and 22 should be provided, to set the zoom level.  </p>
+</li>
+<li>
+<p><code>.setGoogleMapTerrain(title, terrain)</code>  </p>
+</li>
+<li>
+<p><code>.setGoogleMapSize(title, size)</code><br />
+    Set the size of the GoogleMap. Should be in the format <code>"300x300"</code>.<br />
+    Note, if you set it too small, the control widgets won't look good...  </p>
+</li>
+<li>
+<p><code>.setGoogleMapMarker(title, location)</code><br />
+    Will drop a marker on the specified location.<br />
+    The marker will only be visible if the current <code>location</code> &amp; <code>zoom level</code> permit.<br />
+    If an empty <code>location</code> is provided, all markers will be removed.  </p>
+</li>
+</ul>
+<h4 id="get-googlemaps">Get GoogleMaps</h4>
+<ul>
+<li>
+<p><code>.getGoogleMapLocation(title)</code><br />
+    Returns the current displayed location.<br />
+    Will return an empty String, if the user clicked the <strong>H</strong> button.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapZoom(title)</code><br />
+    Returns the current zoom level of the map tile.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapTerrain(title)</code><br />
+    Returns the current terrain setting for the map tile.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapSize(title)</code><br />
+    Returns the current size of the map tile.  </p>
+</li>
+</ul>
+<h4 id="save-googlemaps">Save GoogleMaps</h4>
+<ul>
+<li><code>.saveGoogleMap(title, fileName)</code><br />
+    Saves the currently displayed map to the named location.<br />
+    By default, all map tiles are GIFs.  </li>
+</ul>
 <h3 id="piechart">PieChart</h3>
 <hr />
 <p>Widget to depict a Pie Chart.<br />
 It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
-The PieChart is purely for display purposes, and is not interactive.<br />
+The PieChart is purely for display purposes, and is not interactive, other than a simple mouse-over effect with a tooltip.<br />
 <img alt="PieChart" src="../img/dev/pie.png" />  </p>
-<pre><code class="python">    from appJar import gui
+<pre><code class="python">from appJar import gui
 
-    app=gui()
-    app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
-                            &quot;beef&quot;:300, &quot;turkey&quot;:150})
-    app.go()
+app = gui()
+app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
+                        &quot;beef&quot;:300, &quot;turkey&quot;:150})
+app.go()
 </code></pre>
 
 <h4 id="add-piecharts">Add PieCharts</h4>
@@ -405,7 +504,7 @@ The PieChart is purely for display purposes, and is not interactive.<br />
 <p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
 <pre><code class="python">from appJar import gui
 
-app=gui()
+app = gui()
 app.addTree(&quot;t1&quot;,
             &quot;&quot;&quot;&lt;people&gt;
             &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
@@ -455,29 +554,30 @@ app.go()
 The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
 It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
 <p><img alt="Grid" src="../img/dev/grid.png" />  </p>
-<pre><code class="python">    from appJar import gui
+<pre><code class="python">from appJar import gui
 
-    app=gui()
-    app.setFont(20)
-    app.addGrid(&quot;g1&quot;,
-        [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
-        [&quot;Fred&quot;, 45, &quot;Male&quot;],
-        [&quot;Tina&quot;, 37, &quot;Female&quot;],
-        [&quot;Clive&quot;, 28, &quot;Male&quot;],
-        [&quot;Betty&quot;, 51, &quot;Female&quot;]])
-    app.go()
+app = gui()
+app.setFont(20)
+app.addGrid(&quot;g1&quot;,
+    [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+    [&quot;Fred&quot;, 45, &quot;Male&quot;],
+    [&quot;Tina&quot;, 37, &quot;Female&quot;],
+    [&quot;Clive&quot;, 28, &quot;Male&quot;],
+    [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+app.go()
 </code></pre>
 
 <h4 id="add-grids">Add Grids</h4>
 <ul>
 <li>
-<p><code>.addGrid(title, data, action=None, addRow=False)</code><br />
+<p><code>.addGrid(title, data, action=None, addRow=None)</code><br />
     Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
-<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function.<br />
-If <code>addRow</code> is True, then an additional row will appear at the end, with entry boxes and an additional button.  </p>
-<p>The <strong>Press</strong> button at the end of each data row will pass the values of that row to the function as a list.<br />
-The <strong>Press</strong> button at the end of the entry row will call the function, passing its name as a parameter.  </p>
-<p>NB. you shouldn't set <code>addRow</code> to be True, unless <code>action</code> has been set with a function.</p>
+<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function. It will pass a list of values, representing the selected row.   </p>
+<p><img alt="Grid" src="../img/dev/grid_2.png" />   </p>
+<p>If <code>addRow</code> is set, then an additional row will appear at the end of the grid, with entry boxes and a button to call the specified function.  </p>
+<p><img alt="Grid" src="../img/dev/grid_3.png" />   </p>
+<p>If both parameters are set to a function, then both buttons at the end of each rowm and a row of Entry boxes will be shown:  </p>
+<p><img alt="Grid" src="../img/dev/grid_4.png" />   </p>
 </li>
 </ul>
 <h4 id="get-grids">Get Grids</h4>
@@ -500,11 +600,11 @@ The <strong>Press</strong> button at the end of the entry row will call the func
     Adds a new row of data to the end of the existing grid.<br />
     It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
 </ul>
-<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:</p>
-<pre><code class="python">def press(btn):
-    if btn == &quot;Press&quot;:     # the button on the entries row
-        data = app.getGridEntries(&quot;g1&quot;)
-        app.addGridRow(&quot;g1&quot;, data)
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
+<pre><code class="python">    def press(btn):
+        if btn == &quot;Press&quot;:     # the button on the entries row
+            data = app.getGridEntries(&quot;g1&quot;)
+            app.addGridRow(&quot;g1&quot;, data)
 </code></pre>
 
 <h3 id="matplotlib">MatPlotLib</h3>

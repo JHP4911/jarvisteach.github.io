@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/algorithms/">
+        <link rel="canonical" href="http://appjar.info/pythonLogging/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Algorithms - appJar</title>
+        <title>Logging - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -132,7 +132,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -179,8 +179,8 @@
 
                     
                         
-<li >
-    <a href="../pythonLogging/">Logging</a>
+<li class="active">
+    <a href="./">Logging</a>
 </li>
 
                     
@@ -210,7 +210,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -233,8 +233,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">Algorithms</a>
+<li >
+    <a href="../algorithms/">Algorithms</a>
 </li>
 
                     
@@ -295,12 +295,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonBasics/">
+                    <a rel="next" href="../pythonInternationalisation/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../gitGuide/">
+                    <a rel="prev" href="../examples/minecraft/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -329,108 +329,59 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#algorithms">Algorithms</a></li>
+        <li class="main active"><a href="#logging-in-appjar">Logging in appJar</a></li>
         
-            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#logging-to-file">Logging to file</a></li>
         
-            <li><a href="#links">Links</a></li>
+            <li><a href="#external-logging">External Logging</a></li>
+        
+            <li><a href="#how-to-use">How to use</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="algorithms">Algorithms</h1>
+<h1 id="logging-in-appjar">Logging in appJar</h1>
 <hr />
-<p>Below are some comparisons of how to achieve the same thing in a flowchart, pseudocode &amp; Python.  </p>
-<p>This site was originally written using AQA suggested pseudocode, but will be updated to include OCR recommendations.<br />
-It will aso be extended, to include a lot more examples.  </p>
-<h2 id="comparison">Comparison</h2>
-<table>
-<thead>
-<tr>
-<th>Topic</th>
-<th>FlowChart</th>
-<th>PseudoCode</th>
-<th>Python</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Assigning a variable</td>
-<td><img alt="Assignment" src="../img/algorithms/1_a_eq_5.png" /></td>
-<td>a &#8592; 5</td>
-<td>a = 5</td>
-</tr>
-<tr>
-<td>Input</td>
-<td><img alt="Input" src="../img/algorithms/2_a_eq_inp.png" /></td>
-<td>a &#8592; USERINPUT</td>
-<td>a = input()</td>
-</tr>
-<tr>
-<td>Output</td>
-<td><img alt="Output" src="../img/algorithms/3_prt_a.png" /></td>
-<td>OUTPUT a</td>
-<td>print(a)</td>
-</tr>
-<tr>
-<td>Subtraction</td>
-<td><img alt="Subtraction" src="../img/algorithms/5_a_eq_b_mi_c.png" /></td>
-<td>a &#8592; b - c</td>
-<td>a = b - c</td>
-</tr>
-<tr>
-<td>Selection:<br>Greater than</td>
-<td><img alt="Selection-GT" src="../img/algorithms/6_a_gt_b.png" /></td>
-<td>IF a &gt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Less than</td>
-<td><img alt="Selection-LT" src="../img/algorithms/7_a_lt_b.png" /></td>
-<td>IF a &lt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Equal to</td>
-<td><img alt="Selection-EQ" src="../img/algorithms/8_a_eq_b.png" /></td>
-<td>IF a = b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a == b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Not equal to</td>
-<td><img alt="Selection-NEQ" src="../img/algorithms/9_a_ne_b.png" /></td>
-<td>IF a &#8800; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a != b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Iteration:<br>While loop</td>
-<td><img alt="Iteration-WHILE" src="../img/algorithms/10_while_a_ne_b.png" /></td>
-<td>WHILE a &#8800; b<br>&emsp;OUTPUT b<br>&emsp;a &#8592; USERINPUT<br>ENDWHILE</td>
-<td>while a != b:<br>&emsp;print(b)<br>&emsp;a = input()</td>
-</tr>
-<tr>
-<td>Iteration:<br>For loop (count-up)</td>
-<td><img alt="Iteration-FOR_UP" src="../img/algorithms/11_for_up.png" /></td>
-<td>FOR i &#8592; 0 TO 9<br>&emsp;OUTPUT i<br>ENDFOR</td>
-<td>for i in range(10):<br>&emsp;print(i)</td>
-</tr>
-<tr>
-<td>Iteration:<br>For loop (count-down)</td>
-<td><img alt="Iteration-FOR_DOWN" src="../img/algorithms/12_for_dn.png" /></td>
-<td>FOR i &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
-<td>for i in range(10, 0, -1):<br>&emsp;print(i)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="links">Links</h2>
-<p>Some useful Pseudocode links.  </p>
-<ol>
-<li><a href="../cheatSheets/PseudoCode%20CheatSheet.pdf">PseudoCode CheatSheet</a></li>
-<li><a href="http://pseudowar.appjar.info">PseudoWars</a></li>
-<li><a href="http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF">AQA PseudoCode Guidelines</a></li>
-</ol></div>
+<p><strong>appJar</strong> makes use of Python's built in <a href="https://docs.python.org/3.6/library/logging.html#levels">logging capabilities</a>.  </p>
+<p>Logging works in a similar way to the <code>print()</code> function, except you also provide a parameter indicating the importance of the message - the logger will then only display messages of the right importance.</p>
+<p>There are five levels of importance:  </p>
+<ul>
+<li><code>CRITICAL</code> - a very serious problem, the GUI may well stop</li>
+<li><code>ERROR</code> - a more serious problem, preventing something from happening</li>
+<li><code>WARNING</code> - something unexpected happened</li>
+<li><code>INFO</code> - confirmation that things are working as expected</li>
+<li><code>DEBUG</code> - detailed diagnostic information</li>
+</ul>
+<p>By default, <strong>appJar</strong> will only log messages of importance <code>WARNING</code> or above. And, by default, appJar will simply print them to the console (screen).  </p>
+<p><strong>appJar</strong> provides some useful functions for logging:</p>
+<ul>
+<li><code>.logMessage(msg, level)</code> - log a message, of the specified importance</li>
+<li><code>.setLogLevel(level)</code> - set the logging level, all messages of less importance than this will be ignored  </li>
+<li><code>.setLogFile(fileName)</code> - write all log messages to the named file, instead of the console  </li>
+</ul>
+<p>You can also use the following convenience functions for logging messages:</p>
+<ul>
+<li><code>.critical(msg)</code></li>
+<li><code>.error(msg)</code></li>
+<li><code>.warn(msg)</code></li>
+<li><code>.debug(msg)</code></li>
+<li><code>.info(msg)</code></li>
+</ul>
+<h2 id="logging-to-file">Logging to file</h2>
+<hr />
+<p>One of the benefits of using Python's logging capabilites, is the ability to have them logged to a file.<br />
+By setting a <code>fileName</code>, messages will no longer appear on the screen. Instead, they will be written to the named file.<br />
+The <code>logLevel</code> is also increased to <strong>DEBUG</strong>  </p>
+<h2 id="external-logging">External Logging</h2>
+<hr />
+<p>If you want to bypass the <strong>appJar</strong> functions, and use the logger directly in your code, simply request your own copy of the logger: <code>logger = logging.getLogger("appJar")</code>.  </p>
+<p>You can then talk directly to the same logging mechanism that <strong>appJar</strong> uses.  </p>
+<h2 id="how-to-use">How to use</h2>
+<hr />
+<p>The idea behind having different levels of logging, is that you don't have to remove all of your debug &amp; testing messages. It is common to include lots of testing messages during development, and then remove them once we're satisfied the code is working. However, these might sometimes prove useful in the future, when trying to diagnose something that has gone wrong.  </p>
+<p>With logging, you can register those messages as <strong>DEBUG</strong> or <strong>INFO</strong>. Then set the <code>logLevel</code> to be <strong>INFO</strong> during development, and <strong>WARNING</strong> once development is complete. Then, if you ever need them, you can simply change the <code>logLevel</code>.  </p></div>
         </div>
 
         <footer class="col-md-12">

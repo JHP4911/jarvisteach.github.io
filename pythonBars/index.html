@@ -38,11 +38,13 @@
             ga('send', 'pageview');
         </script>
         
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
     </head>
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.061 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -173,6 +175,12 @@
                         
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
 </li>
 
                     
@@ -341,8 +349,9 @@ Statusbars are also useful features, they allow you to show information about wh
 <h2 id="toolbar">Toolbar</h2>
 <hr />
 <p>Toolbars (sometimes known as ribbons) appear across the top of a GUI.<br />
-They offer a series of buttons to click, which can be used to change settings/functionality in a GUI.
-<img alt="Toolbar" src="../img/bars/toolbar_1.png" />  </p>
+They offer a series of buttons to click, which can be used to change settings/functionality in a GUI.</p>
+<p><strong>NB.</strong> Icons don't work in python 2.7, due to an issue showing PNG images.  </p>
+<p><img alt="Toolbar" src="../img/bars/toolbar_1.png" />  </p>
 <pre><code class="python">tools = [&quot;ABOUT&quot;, &quot;REFRESH&quot;, &quot;OPEN&quot;, &quot;CLOSE&quot;, &quot;SAVE&quot;,
         &quot;NEW&quot;, &quot;SETTINGS&quot;, &quot;PRINT&quot;, &quot;SEARCH&quot;, &quot;UNDO&quot;,
         &quot;REDO&quot;, &quot;PREFERENCES&quot;, &quot;HOME&quot;, &quot;HELP&quot;, &quot;CALENDAR&quot;,
@@ -359,6 +368,14 @@ app.addToolbar(tools, tbFunc, findIcon=True)
     A set of icons is available, if <code>findIcon</code> is set to True, then appJar will attempt to find an icon for each button.  </li>
 </ul>
 <h4 id="set-toolbars">Set Toolbars</h4>
+<ul>
+<li><code>.setToolbarPinned(pinned=True)</code><br />
+    Will configure the toolbar to be <em>pinnable</em><br />
+    When the mouse is not over the toolbar it will minimise.  </li>
+</ul>
+<p><img alt="ToolbarPinHidden" src="../img/bars/toolbar_pin_hidden.png" /></p>
+<p>The toolbar will also gain an extra button (a pin) allowing the user to configure it to be pinned or not.  </p>
+<p><img alt="ToolbarPin" src="../img/bars/toolbar_pin.png" />  </p>
 <ul>
 <li>
 <p><code>.setToolbarIcon(name, icon)</code><br />
