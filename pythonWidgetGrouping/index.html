@@ -359,7 +359,7 @@
 
 <h1 id="grouping-widgets">Grouping Widgets</h1>
 <hr />
-<p>The standard way of using appJar, is simply to place all widgets into a single window.<br />
+<p>The standard way of using <em>appJar</em>, is simply to place all widgets into a single window.<br />
 Everything is grouped into that single window, and any changes affect everything in that window.  </p>
 <p>It's sometimes desirable to group widgets together within a window.<br />
 Or to have multiple <em>pages</em> of widgets.<br />
@@ -384,8 +384,10 @@ Any <a href="../pythonGuiOptions">GUI Options</a> you set, within the container,
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
-Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em><br />
-<img alt="LabelFrame" src="../img/layouts/labelFrame.png" /></p>
+Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em>  </p>
+<p><strong>NB.</strong> <em>LabelFrames</em> have a different <a href="../pythonWidgetLayout/#widget-positioning">stickiness</a> to the <em>appJar</em> GUI - they only stick widgets to the <code>w</code> (left) side.<br />
+If you want your widgets to stretch across the <em>LabelFrame</em>, like the rest of <em>appJar</em>, you will need to call <code>app.setSticky("ew")</code> after starting the <em>LabelFrame</em>.  </p>
+<p><img alt="LabelFrame" src="../img/layouts/labelFrame.png" /></p>
 <pre><code class="python">from appJar import gui
 
 app=gui()
@@ -826,7 +828,7 @@ app.go()
 <ul>
 <li>
 <p><code>.go(startWindow=None)</code><br />
-    If you set a <em>SubWindow</em> as the <code>startWindow</code> appJar will start-up showing the named <em>SubWindow</em>.<br />
+    If you set a <em>SubWindow</em> as the <code>startWindow</code> <em>appJar</em> will start-up showing the named <em>SubWindow</em>.<br />
     The main window will be minimized.  </p>
 </li>
 <li>
