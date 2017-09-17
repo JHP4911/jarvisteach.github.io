@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonBars/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Bars - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Tutorials
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonSound/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonDialogs/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</a></li>
+        
+            <li><a href="#toolbar">Toolbar</a></li>
+        
+            <li><a href="#menubar">Menubar</a></li>
+        
+            <li><a href="#statusbar">Statusbar</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</h1>
+<hr />
+<p>Toolbars and Menubars are features common to most GUIs, you'll be used to seeing them along the top of apps, such as MS Word.<br />
+Statusbars are also useful features, they allow you to show information about what's going on in a GUI, usually along the bottom of the app.  </p>
+<h2 id="toolbar">Toolbar</h2>
+<hr />
+<p>Toolbars (sometimes known as ribbons) appear across the top of a GUI.<br />
+They offer a series of buttons to click, which can be used to change settings/functionality in a GUI.</p>
+<p><strong>NB.</strong> Icons don't work in python 2.7, due to an issue showing PNG images.  </p>
+<p><img alt="Toolbar" src="../img/bars/toolbar_1.png" />  </p>
+<pre><code class="python">tools = [&quot;ABOUT&quot;, &quot;REFRESH&quot;, &quot;OPEN&quot;, &quot;CLOSE&quot;, &quot;SAVE&quot;,
+        &quot;NEW&quot;, &quot;SETTINGS&quot;, &quot;PRINT&quot;, &quot;SEARCH&quot;, &quot;UNDO&quot;,
+        &quot;REDO&quot;, &quot;PREFERENCES&quot;, &quot;HOME&quot;, &quot;HELP&quot;, &quot;CALENDAR&quot;,
+        &quot;WEB&quot;, &quot;OFF&quot;]
+
+app.addToolbar(tools, tbFunc, findIcon=True)
+</code></pre>
+
+<h4 id="create-toolbars">Create Toolbars</h4>
+<ul>
+<li><code>.addToolbar(names, funcs, findIcon=False)</code><br />
+    Will add a list of buttons along the top, in a toolbar. Each button will call the corresponding function.<br />
+    If only one function is supplied, they will all call the same function, providing the button's name as a parameter.<br />
+    A set of icons is available, if <code>findIcon</code> is set to True, then appJar will attempt to find an icon for each button.  </li>
+</ul>
+<h4 id="set-toolbars">Set Toolbars</h4>
+<ul>
+<li><code>.setToolbarPinned(pinned=True)</code><br />
+    Will configure the toolbar to be <em>pinnable</em><br />
+    When the mouse is not over the toolbar it will minimise.  </li>
+</ul>
+<p><img alt="ToolbarPinHidden" src="../img/bars/toolbar_pin_hidden.png" /></p>
+<p>The toolbar will also gain an extra button (a pin) allowing the user to configure it to be pinned or not.  </p>
+<p><img alt="ToolbarPin" src="../img/bars/toolbar_pin.png" />  </p>
+<ul>
+<li>
+<p><code>.setToolbarIcon(name, icon)</code><br />
+    Will set an icon for the corresponding button in the toolbar.<br />
+    Use the name of any of the icons in the resource folder (without the folder or file extension).  </p>
+</li>
+<li>
+<p><code>.setToolbarImage(name, image)</code><br />
+    Will set an image for the corresponding button in the toolbar.  </p>
+</li>
+<li>
+<p><code>.setToolbarEnabled()</code> &amp; <code>.setToolbarDisabled()</code><br />
+    Will enable/disable all buttons on the toolbar.  </p>
+</li>
+<li>
+<p><code>.setToolbarButtonEnabled(name)</code> &amp; <code>.setToolbarButtonDisabled(name)</code><br />
+    Will enable/disable the named toolbar button.  </p>
+</li>
+<li>
+<p><code>.showToolbar()</code> &amp; <code>.hideToolbar()</code><br />
+    Will show/hide the toolbar.  </p>
+</li>
+</ul>
+<h2 id="menubar">Menubar</h2>
+<hr />
+<p>Adds a standard Menubar along the top of the GUI.<br />
+On Windows/Linux a menubar will only be shown, once the first menu has been added.<br />
+On Mac, a menubar is always present.<br />
+Menubars are made up of a series of menus, each containing a list of names.<br />
+These names can be menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
+<h4 id="create-menus">Create Menus</h4>
+<ul>
+<li><code>.addMenuList(menu, names, functions)</code><br />
+    Will create a new menu, with the specified title, containing the list of names.<br />
+    Pass a single function - all names will call that function, passing their name.<br />
+    Or a list of functions (the same length as the names), each menu will call the corresponding function.<br />
+    If a name is <code>-</code>, then a separator will be added to the menu.  </li>
+</ul>
+<p><img alt="MenuList" src="../img/menu_1.png" />    </p>
+<pre><code class="python">fileMenus = [&quot;Open&quot;, &quot;Save&quot;, &quot;Save as...&quot;, &quot;-&quot;, &quot;Export&quot;, &quot;Print&quot;, &quot;-&quot;, &quot;Close&quot;]
+app.addMenuList(&quot;File&quot;, fileMenus, menuPress)
+</code></pre>
+
+<ul>
+<li>
+<p><code>.createMenu(menu, tearable=False)</code><br />
+    Will create a new, empty menu, to add menu-items to.</p>
+</li>
+<li>
+<p><code>.addMenuItem(menu, name, func=None, shortcut=None, underline=-1)</code><br />
+    Add a menu-item to the named menu, with the specified function.<br />
+    If the named menu does not exist, it will be automatically created.<br />
+    If the name is <code>-</code>, then a separator will be added to the menu.  </p>
+</li>
+<li>
+<p><code>.addMenuSeparator(menu)</code><br />
+    Add a separator to the named menu.  </p>
+</li>
+<li>
+<p><code>.addMenuCheckBox(menu, name, function=None, shortcut=None, underline=-1)</code><br />
+    Add a check box, to the named menu, with the specified name.  </p>
+</li>
+<li>
+<p><code>.addMenuRadioButton(menu, name, value, function=None, shortcut=None, underline=-1)</code><br />
+    Add a radio button, to the named menu, grouped by name, with the specified value.  </p>
+</li>
+</ul>
+<p><img alt="MenuRB_CB" src="../img/menu_2.png" /></p>
+<pre><code class="python">app.createMenu(&quot;Config&quot;)
+
+for i in range(5):
+    app.addMenuRadioButton(&quot;Config&quot;, &quot;font&quot;, &quot;1&quot; + str(i), menuPress)
+
+app.addMenuSeparator(&quot;Config&quot;)
+
+for i in range(5):
+    app.addMenuCheckBox(&quot;Config&quot;, &quot;Size 1&quot; + str(i), menuPress)
+</code></pre>
+
+<ul>
+<li><code>.addSubMenu(menu, subMenu)</code><br />
+    Adds a sub-menu to the specified menu.<br />
+    Then add menu-items to this menu (using its name).  </li>
+</ul>
+<p><img alt="SubMenu" src="../img/menu_3.png" /></p>
+<pre><code class="python">app.createMenu(&quot;Config&quot;)
+app.addSubMenu(&quot;Config&quot;, &quot;Font Size&quot;)
+for i in range(5):
+    app.addMenuRadioButton(&quot;Font Size&quot;, &quot;font&quot;, &quot;1&quot; + str(i), menuPress)
+
+</code></pre>
+
+<ul>
+<li><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
+    Adds a single menu, with no list of menu-items,  that will call the specified function.  </li>
+</ul>
+<h4 id="set-menus">Set Menus</h4>
+<ul>
+<li>
+<p><code>.setMenuCheckBox(menu, name)</code><br />
+    Inverts the specified check box, in the named menu.</p>
+</li>
+<li>
+<p><code>.setMenuRadioButton(menu, name, value)</code><br />
+    Selects the specified value, of the specified radio button, in the named menu.</p>
+</li>
+<li>
+<p><code>.setMenuImage(menu, name, image, align='text')</code><br />
+    Will set the specified image for the specified menu-item.  </p>
+</li>
+<li>
+<p><code>.setMenuIcon(menu, name, icon, align='text')</code><br />
+    Will set the specified icon for the specified menu-item.  </p>
+</li>
+<li>
+<p><code>.disableMenuItem(menu, name)</code> &amp; <code>.enableMenuItem(menu, name)</code><br />
+    Will enable/disable the specified menu name.  </p>
+</li>
+<li>
+<p><code>.disableMenu(menu)</code> &amp; <code>.enableMenu(menu)</code><br />
+    Will disable/enable the specified menu.  </p>
+</li>
+<li>
+<p><code>.disableMenubar()</code> &amp; <code>.enableMenubar()</code><br />
+    Will disable/enable all menus.<br />
+    NB. currently doesn't disable entries in default Mac menus.  </p>
+</li>
+</ul>
+<h4 id="get-menus">Get Menus</h4>
+<ul>
+<li>
+<p><code>.getMenuCheckBox(menu, name)</code><br />
+    Get the value of the specified check box, from the named menu.<br />
+    Returns True or False.  </p>
+</li>
+<li>
+<p><code>.getMenuRadioButton(menu, name)</code><br />
+    Get the value of the specified radio button, from the named menu.<br />
+    Returns the name of the checked radio button, for this group.  </p>
+</li>
+</ul>
+<hr />
+<h4 id="extra-features">Extra Features:</h4>
+<ul>
+<li>
+<p><code>shortcut</code> These are keyboard shortcuts to call a menu-item.<br />
+    These should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
+    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code><br />
+    The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
+</li>
+<li>
+<p><code>underline</code> If set to an Integer, the corresponding character will be underlined.  </p>
+</li>
+<li>
+<p><code>tearable</code> If this is set to True, it's possible to undock the menu.  </p>
+</li>
+</ul>
+<hr />
+<h4 id="platform-specificcustom-menus">Platform Specific/Custom Menus</h4>
+<p>It's possible to interact with menus that are specific to particular platforms, or prebuilt for specific purposes.<br />
+Simply use the menu names given below when adding menu-items to a menu.  </p>
+<ul>
+<li>
+<p><strong>Generic</strong>  </p>
+<ul>
+<li>
+<p><strong>Right-click Menu</strong><br />
+    Call <code>.createRightClickMenu(menu, showInBar=False)</code> to create an empty <strong>right-click menu</strong> <br />
+    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.<br />
+    The right-click menu can be populated the same way as a regular menu.  </p>
+<p>To link the <strong>right-click menu</strong> to a widget, call <code>.setXXXRightClick(widgetName, menu)</code>  </p>
+</li>
+<li>
+<p><strong>Edit Menu</strong> - <code>EDIT</code> provides a right-click, <em>cut &amp; paste</em> menu automatically linked to all <strong>text</strong>, <strong>entry</strong> &amp; <strong>option boxes</strong>.<br />
+    Call <code>.addMenuEdit(inMenuBar=False)</code> to enable the <em>Edit</em> menu.<br />
+    Set the parameter to True, to also show it in the menu bar.<br />
+    This menu does its best to show the appropriate options, for all situations - but doesn't know when you can't <em>redo</em> an action.  </p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Windows</strong>  </p>
+<ul>
+<li><strong>System Menu</strong> - <code>WIN_SYS</code> accessed by clicking the icon in the top left corner of the GUI.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus-item. <br />
+    There are also a couple of menu-items the user can/should provide.  </p>
+<ul>
+<li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usually called <em>Python</em>.<br />
+    This menu is always present, and cannot be renamed - no matter how much I wish it could!<br />
+    Call <code>.addMenuPreferences(function)</code> to enable the <em>Preferences</em> menu-item, within the <em>Application Menu</em>.  </li>
+<li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu-items related to windows. <br />
+    To access this menu, you must first call <code>.addMenuWindow()</code>  </li>
+<li><strong>Help Menu</strong> - <code>MAC_HELP</code> provides a <em>Search</em> menu-item <br />
+    To access this menu, you must first call <code>.addMenuHelp(function)</code>, passing the function to call for the default <em>Python Help</em> menu-item.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Linux</strong> - by default, there is no menu, but it's easy enough to get access to the appJar menus:</p>
+</li>
+</ul>
+<p><img alt="Linux Menu" src="../img/menu_4.png" />  </p>
+<pre><code class="python">app.addMenuItem(&quot;appJar&quot;, &quot;Help&quot;, app.appJarHelp)
+app.addMenuItem(&quot;appJar&quot;, &quot;About&quot;, app.appJarAbout)
+</code></pre>
+
+<h2 id="statusbar">Statusbar</h2>
+<hr />
+<p>Adds a statusbar along the bottom of the GUI.
+This can be used for easy debugging, as info for the user, or to show current settings.  </p>
+<p><img alt="Statusbar" src="../img/bars/statusbar_1.png" />  </p>
+<pre><code class="python">app.addStatusbar(fields=3)
+app.setStatusbar(&quot;Line: 20&quot;, 0)
+app.setStatusbar(&quot;Column: 4&quot;, 1)
+app.setStatusbar(&quot;Mode: Edit&quot;, 2)
+</code></pre>
+
+<p><img alt="Statusbar" src="../img/bars/statusbar_2.png" />  </p>
+<pre><code class="python">app.addToolbar(tools, tbFunc, True)
+app.addStatusbar(fields=3, side=&quot;RIGHT&quot;)
+# NOTE: 0 is now on the right
+app.setStatusbarWidth(50, 2)
+app.setStatusbarBg(&quot;red&quot;, 2)
+app.setStatusbarFg(&quot;white&quot;, 2)
+</code></pre>
+
+<h4 id="create-statusbars">Create Statusbars</h4>
+<ul>
+<li><code>.addStatusbar(header="", fields=1, side=None)</code><br />
+    This turns the statusbar on, and if a header is supplied, will prepend the header before every status.<br />
+    If <code>fields</code> is populated, it's possible to have multiple status boxes, each addressable by a number.<br />
+<code>side</code> can be set as LEFT/RIGHT to make the fields appear from the left or right side, otherwise they will stretch equally.  </li>
+</ul>
+<h4 id="set-statusbars">Set Statusbars</h4>
+<ul>
+<li>
+<p><code>.setStatusbar(text, field=0)</code><br />
+    This updates the contents of the statusbar.<br />
+    Again, if a header was set when adding the statusbar, it will be prepended to the message.<br />
+    If multiple fields were created, a position should be supplied to populate (starting from 0).  </p>
+</li>
+<li>
+<p><code>.clearStatusbar(field=0)</code><br />
+    Clear anything displayed in the statusbar, along with any header that might be set.<br />
+    If multiple fields were created, specify which one, otherwise all fields will be cleared.  </p>
+</li>
+<li>
+<p><code>.setStatusbarWidth(width, field=0)</code><br />
+    Set the width of the specified statusbar field (in characters).  </p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

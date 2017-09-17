@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonWidgetGrouping/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Grouping widgets - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Tutorials
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonWidgetLayout/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonWidgetOptions/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#grouping-widgets">Grouping Widgets</a></li>
+        
+            <li><a href="#format">Format</a></li>
+        
+            <li><a href="#label-frame">Label Frame</a></li>
+        
+            <li><a href="#toggle-frame">Toggle Frame</a></li>
+        
+            <li><a href="#tabbed-frame">Tabbed Frame</a></li>
+        
+            <li><a href="#paned-frame">Paned Frame</a></li>
+        
+            <li><a href="#paged-window">Paged Window</a></li>
+        
+            <li><a href="#sub-window">Sub Window</a></li>
+        
+    
+        <li class="main "><a href="#in-beta">In Beta</a></li>
+        
+            <li><a href="#frame">Frame</a></li>
+        
+            <li><a href="#scroll-pane">Scroll Pane</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="grouping-widgets">Grouping Widgets</h1>
+<hr />
+<p>The standard way of using <em>appJar</em>, is simply to place all widgets into a single window.<br />
+Everything is grouped into that single window, and any changes affect everything in that window.  </p>
+<p>It's sometimes desirable to group widgets together within a window.<br />
+Or to have multiple <em>pages</em> of widgets.<br />
+A number of options are provided to make this easier.  </p>
+<h3 id="format">Format</h3>
+<p>All of these methods work in the same way.<br />
+You call the <code>start</code> function when you want to start a container, then the <code>stop</code> function when you're done.<br />
+When you call <code>start</code> you can pass in positional arguments like any other widget (row, column, rowspan, colspan).<br />
+Any <a href="../pythonGuiOptions">GUI Options</a> you set, within the container, will only affect that container.  </p>
+<h4 id="reopening-containers">Reopening Containers</h4>
+<p>If you want to dynamically add widgets to a container, once the gui has been started, you can open a specific container, perform the desired actions, then stop it again.</p>
+<pre><code class="python">def addRows(btn):
+    count = app.getEntry(&quot;numRows&quot;)
+    app.openTab(&quot;tabbedPane&quot;, &quot;Details Tab&quot;) # open the required tab
+    for rowLoop in range(count):
+        # add a new label, with a unique ID
+        # make sure to put it in the right place
+        app.addLabel(&quot;dyn&quot;+str(rowLoop), &quot;Dynamic Label&quot;, rowLoop+5)
+    app.stopTab()
+</code></pre>
+
+<h3 id="label-frame">Label Frame</h3>
+<hr />
+<p>A way of grouping widgets into a box, with a label at the top of the box.<br />
+Position the <em>LabelFrame</em> within the grid, then position widgets inside the <em>LabelFrame</em>  </p>
+<p><strong>NB.</strong> <em>LabelFrames</em> have a different <a href="../pythonWidgetLayout/#widget-positioning">stickiness</a> to the <em>appJar</em> GUI - they only stick widgets to the <code>w</code> (left) side.<br />
+If you want your widgets to stretch across the <em>LabelFrame</em>, like the rest of <em>appJar</em>, you will need to call <code>app.setSticky("ew")</code> after starting the <em>LabelFrame</em>.  </p>
+<p><img alt="LabelFrame" src="../img/layouts/labelFrame.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.startLabelFrame(&quot;Login Details&quot;)
+# these only affect the labelFrame
+app.setSticky(&quot;ew&quot;)
+app.setFont(20)
+
+app.addLabel(&quot;l1&quot;, &quot;Name&quot;, 0, 0)
+app.addEntry(&quot;Name&quot;, 0, 1)
+app.addLabel(&quot;l2&quot;, &quot;Password&quot;, 1, 0)
+app.addEntry(&quot;Password&quot;, 1, 1)
+app.addButtons([&quot;Submit&quot;, &quot;Cancel&quot;], None, 2, 0, 2)
+app.stopLabelFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-label-frames">Start/Stop Label Frames</h4>
+<ul>
+<li>
+<p><code>.startLabelFrame(name)</code> &amp; <code>.stopLabelFrame()</code><br />
+    Used to start and stop a <em>LabelFrame</em><br />
+    The specified title will be used as the label for the frame.  </p>
+</li>
+<li>
+<p><code>.openLabelFrame(title)</code><br />
+    Used to reopen the named <em>LabelFrame</em>.  </p>
+</li>
+</ul>
+<h4 id="set-label-frames">Set Label Frames</h4>
+<ul>
+<li><code>.setSticky(coords)</code><br />
+    By default, widgets in the frame will align on the left.<br />
+    If you want to change this, specify a different <code>sticky</code> value.<br />
+    For example, <code>.setSticky("ew")</code> will cause the widgets to stretch to fit the width, aligning in the centre.  </li>
+</ul>
+<h3 id="toggle-frame">Toggle Frame</h3>
+<hr />
+<p>A collapsible container for a group of related widgets.<br />
+By default, the contents of the frame are hidden.<br />
+They can be revealed/hidden again by clicking an associated button.<br />
+<img alt="ToggleFrame" src="../img/layouts/1_toggleFrame.png" />
+<img alt="ToggleFrame" src="../img/layouts/2_toggleFrame.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+
+app.startToggleFrame(&quot;Options&quot;)
+app.addCheckBox(&quot;Show this&quot;)
+app.addCheckBox(&quot;Show that&quot;)
+app.addCheckBox(&quot;Show the other&quot;)
+app.setCheckBox(&quot;Show that&quot;)
+app.stopToggleFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-toggle-frames">Start/Stop Toggle Frames</h4>
+<ul>
+<li>
+<p><code>.startToggleFrame(title)</code> &amp; <code>.stopToggleFrame(title)</code><br />
+    Used to start and stop a <em>ToggleFrame</em>.<br />
+    The <code>title</code> will be used as the title for the <em>ToggleFrame</em>.  </p>
+</li>
+<li>
+<p><code>.openToggleFrame(title)</code><br />
+    Used to reopen the named <em>ToggleFrame</em>.  </p>
+</li>
+</ul>
+<h4 id="set-toggle-frames">Set Toggle Frames</h4>
+<ul>
+<li>
+<p><code>.toggleToggleFrame(title)</code><br />
+    Will toggle the state of the specified <em>ToggleFrame</em>.  </p>
+</li>
+<li>
+<p><code>.disableToggleFrame(title, disabled=True)</code><br />
+    Will disable the specified <em>ToggleFrame</em>.<br />
+    If <code>disabled</code> is set to False, the <em>ToggleFrame</em> will be re-enabled.  </p>
+</li>
+</ul>
+<h4 id="get-toggle-frames">Get Toggle Frames</h4>
+<ul>
+<li><code>.getToggleFrameState(title)</code><br />
+    Will return True if the <em>ToggleFrame</em> is open, else will return False.  </li>
+</ul>
+<h3 id="tabbed-frame">Tabbed Frame</h3>
+<hr />
+<p>A way to create a (basic) tabbed-style interface.<br />
+Position the <em>TabbedFrame</em> within the grid, start a <em>Tab</em>, then position widgets inside the <em>Tab</em><br />
+<img alt="TabbedFrame" src="../img/layouts/tabbedFrame.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.startTabbedFrame(&quot;TabbedFrame&quot;)
+app.startTab(&quot;Tab1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Tab 1 Label&quot;)
+app.stopTab()
+
+app.startTab(&quot;Tab2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Tab 2 Label&quot;)
+app.stopTab()
+
+app.startTab(&quot;Tab3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Tab 3 Label&quot;)
+app.stopTab()
+app.stopTabbedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-tabbed-frames">Start/Stop Tabbed Frames</h4>
+<ul>
+<li>
+<p><code>.startTabbedFrame(name)</code> &amp; <code>.stopTabbedFrame()</code><br />
+    Used to start &amp; stop the a <em>TabbedFrame</em>, with the specified name.  </p>
+</li>
+<li>
+<p><code>.startTab(name)</code> &amp; <code>.stopTab()</code><br />
+    Used to start and stop each of the tabs in the <em>TabbedFrame</em>.<br />
+    The title for the tab will be the specified <em>name</em>.  </p>
+</li>
+<li>
+<p><code>.openTabbedFrame(title)</code> &amp; <code>.openTab(frameTitle, tabTitle)</code><br />
+    Used to reopen the named <em>TabbedFrame</em> or named <em>Tab</em>.  </p>
+</li>
+</ul>
+<h4 id="set-tabbedframe">Set TabbedFrame</h4>
+<ul>
+<li>
+<p><code>.setTabbedFrameTabExpand(title, expand=True)</code><br />
+    By default, the tabs take up the minimum amount of space necessary.<br />
+    Set this to True, to have the tabs fill the entire row.<br />
+<img alt="TabbedFrame" src="../img/layouts/2_tabbedFrame.png" />  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameSelectedTab(title, tab)</code><br />
+    Select the specified tab in the TabbedFrame.  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameDisabledTab(title, tab, disabled=True)</code><br />
+    Disable the specified tab in the TabbedFrame.<br />
+    Set disabled to False to re-enable it.<br />
+    This will also change the displayed tab, if the displayed tab is being disabled.  </p>
+</li>
+<li>
+<p><code>.setTabbedFrameDisableAllTabs(title, disabled=True)</code><br />
+    Will disable all tabs for the named TabFrame.<br />
+    Or, enable them if disabled is set to False.  </p>
+</li>
+</ul>
+<h4 id="changing-colours">Changing Colours</h4>
+<p>TabbedFrames have a set of colours that can be changed:  </p>
+<ul>
+<li>ActiveFg - Sets the colour of the text in the active tab  </li>
+<li>ActiveBg - Sets the background colour of the active tab  </li>
+<li>InactiveFg - Sets the colour of the text in all inactive tabs  </li>
+<li>InactiveBG - Sets the background colour of all inactive tabs  </li>
+<li>DisabledFg - Sets the colour of the text in all disabled tabs  </li>
+<li>DisabledBg - Sets the background colour of all disabled tabs  </li>
+<li>Bg - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
+</ul>
+<p>These are all changed via the standard property changing functions, eg:  </p>
+<ul>
+<li><code>.setTabbedFrameBg("t1", "red")</code></li>
+<li><code>.setTabbedFrameActiveBg("t1", "yellow")</code></li>
+</ul>
+<p>It is also possible to change the colour of individual panes.<br />
+Call <code>.setBg("colour")</code> while adding widgets to the specific pane.<br />
+Or <code>.setTabBg(title, tab, 'colour')</code> at other times.  </p>
+<h4 id="get-tabbedframe">Get TabbedFrame</h4>
+<ul>
+<li><code>.getTabbedFrameSelectedTab(title)</code><br />
+    Gets the name of the currently selected tab, for the named TabFrame.  </li>
+</ul>
+<h3 id="paned-frame">Paned Frame</h3>
+<hr />
+<p>A way to present re-sizable panes, separated by drag-bars.<br />
+Once the first pane is placed, all additional panes should be placed inside it.<br />
+By default, panes will be placed side-by-side (horizontally).<br />
+This can be changed by setting the pane to vertical, then they'll be placed underneath each other.  </p>
+<h4 id="startstop-paned-frames">Start/Stop Paned Frames</h4>
+<ul>
+<li>
+<p><code>.startPanedFrame(name)</code>, <code>.startPanedFrameVertical(name)</code> &amp; <code>.stopPanedFrame()</code><br />
+    Used to start &amp; stop <em>PanedFrames</em>, with the specified name.<br />
+    By default, any panes added to this pane will be added side-by-side (horizontally).<br />
+    Starting a vertical pane will cause additional panes to be stacked on top of each other.  </p>
+</li>
+<li>
+<p><code>.openPanedFrame(title)</code><br />
+    Used to reopen the named <em>PanedFrame</em>.  </p>
+</li>
+</ul>
+<h4 id="horizontal-pane-layout">Horizontal Pane Layout</h4>
+<p><img alt="Horizontal Panes" src="../img/layouts/pane1.png" />  </p>
+<ul>
+<li>Start an initial pane  </li>
+<li>Start all additional panes inside the initial pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial pane
+app.startPanedFrame(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start additional panes inside initial pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+app.stopPanedFrame()
+
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop initial pane
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="vertical-pane-layout">Vertical Pane Layout</h4>
+<p><img alt="Vertical Panes" src="../img/layouts/pane2.png" />  </p>
+<ul>
+<li>Start an initial, vertical pane  </li>
+<li>Start all additional panes inside the initial pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial, vertical pane
+app.startPanedFrameVertical(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start additional panes inside initial pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+app.stopPanedFrame()
+
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop initial pane
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="e-pane-layout">E-Pane Layout</h4>
+<p><img alt="E-Panes" src="../img/layouts/pane3.png" />  </p>
+<ul>
+<li>Start an initial pane  </li>
+<li>Start a second, vertical pane inside the intial pane  </li>
+<li>Start all additional panes inside the second pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start initial pane
+app.startPanedFrame(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start second, vertical pane inside initial pane
+app.startPanedFrameVertical(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+
+# start additional panes inside second pane
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop second &amp; initial panes
+app.stopPanedFrame()
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h4 id="t-pane-layout">T-Pane Layout</h4>
+<p><img alt="T-Panes" src="../img/layouts/pane4.png" />  </p>
+<ul>
+<li>Start an initial, vertical pane  </li>
+<li>Start a second pane, inside the initial pane  </li>
+<li>Start additional panes inside the second pane  </li>
+</ul>
+<pre><code class="python">from appJar import gui
+app = gui()
+
+# start intial, vertical pane
+app.startPanedFrameVertical(&quot;p1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Inside Pane 1&quot;)
+
+# start second pane
+app.startPanedFrame(&quot;p2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Inside Pane 2&quot;)
+
+# start additional panes inside second pane 
+app.startPanedFrame(&quot;p3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Inside Pane 3&quot;)
+app.stopPanedFrame()
+
+# stop second &amp; initial panes
+app.stopPanedFrame()
+app.stopPanedFrame()
+
+app.go()
+</code></pre>
+
+<h3 id="paged-window">Paged Window</h3>
+<hr />
+<p>A container that mimics a classic phone based interface.<br />
+It provides <strong>PREVIOUS</strong>/<strong>NEXT</strong> buttons to navigate through a series of pages.<br />
+It has an optional widget title, and shows the current page, in a page counter.<br />
+Keyboard bindings are provided to navigate with arrow key presses. CTRL-arrow will navigate to the beginning/end.<br />
+Events can be bound to page changes, the page can be changed via a function call, and the current page number can be queried.<br />
+<img alt="PagedWindow" src="../img/layouts/1_pagedWindow.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.setBg(&quot;DarkKhaki&quot;)
+app.setGeometry(280,400)
+
+app.startPagedWindow(&quot;Main Title&quot;)
+app.startPage()
+app.addLabel(&quot;l13&quot;, &quot;Label 1&quot;)
+app.stopPage()
+
+app.startPage()
+app.addLabel(&quot;l21&quot;, &quot;Label 2&quot;)
+app.stopPage()
+
+app.startPage()
+app.addLabel(&quot;l3&quot;, &quot;Label 3&quot;)
+app.stopPage()
+
+app.startPage()
+app.addLabel(&quot;l4&quot;, &quot;Label 4&quot;)
+app.stopPage()
+app.stopPagedWindow()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-paged-windows">Start/Stop Paged Windows</h4>
+<ul>
+<li>
+<p><code>.startPagedWindow(title)</code> &amp; <code>.stopPagedWindow()</code><br />
+    Used to start and stop a <em>PagedWindow</em>.<br />
+    The <code>title</code> will be used in the title section of the widget.  </p>
+</li>
+<li>
+<p><code>.startPage()</code> &amp; <code>.stopPage()</code><br />
+    Used to start and stop each new page.<br />
+    Navigation, page count, etc are all dealt with automatically.  </p>
+</li>
+<li>
+<p><code>.openPagedWindow(title)</code> &amp; <code>.openPage(windowTitle, pageNumber)</code> <br />
+    Used to reopen the named <em>PagedWindow</em> or <em>Page</em>.  </p>
+</li>
+</ul>
+<h4 id="set-paged-windows">Set Paged Windows</h4>
+<ul>
+<li>
+<p><code>.setPagedWindowTitle(title, title)</code> &amp; <code>.setPagedWindowButtons(title, [buttons])</code><br />
+    Used to change the text in the title and buttons.<br />
+    When changing the buttons, two values must be passed in: previous/next.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowButtonsTop(title, top=True)</code><br />
+    Used to position the navigation buttons.  By default, they are at the bottom.<br />
+    Call this funtion to move them to the top.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowPage(title, pageNum)</code><br />
+    Used to display the selected page.  </p>
+</li>
+<li>
+<p><code>.setPagedWindowFunction(title, function)</code><br />
+    Declare a function to call, each time the page is changed.  </p>
+</li>
+<li>
+<p><code>.showPagedWindowPageNumber(title, show=True)</code> &amp; <code>.showPagedWindowTitle(title, show=True)</code><br />
+    Use these to declare if you want the page title, page numbers to be shown.  </p>
+</li>
+</ul>
+<h4 id="get-paged-windows">Get Paged Windows</h4>
+<ul>
+<li><code>.getPagedWindowPageNumber(title)</code><br />
+    Used to get the page number currently being shown.  </li>
+</ul>
+<h3 id="sub-window">Sub Window</h3>
+<hr />
+<p>A way to add additional windows, which can be hidden and shown.<br />
+<img alt="SubWindow" src="../img/layouts/subWin.png" /></p>
+<pre><code class="python">from appJar import gui
+
+def launch(win):
+    app.showSubWindow(win)
+
+app=gui()
+
+app.startSubWindow(&quot;one&quot;, modal=True)
+app.addLabel(&quot;l1&quot;, &quot;SubWindow One&quot;)
+app.stopSubWindow()
+
+app.startSubWindow(&quot;two&quot;)
+app.addLabel(&quot;l2&quot;, &quot;SubWindow Two&quot;)
+app.stopSubWindow()
+
+app.addButtons([&quot;one&quot;, &quot;two&quot;], launch)
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-sub-windows">Start/Stop Sub Windows</h4>
+<ul>
+<li>
+<p><code>.startSubwindow(name, title=None, modal=False, transient=False, blocking=False)</code> &amp; <code>.stopSubwindow()</code><br />
+    Used to start and stop defining a <em>SubWindow</em><br />
+    Setting a <code>title</code> will override the <code>name</code> as a title for the <em>SubWindow</em>. <br />
+    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.<br />
+    Setting <code>transient</code> to True, will cause the <em>SubWindow</em> to respond to parent window events such as hide, show &amp; move.<br />
+    Setting <code>blocking</code> to True, will stop execution of your code once the <em>SubWindow</em> is shown, until the user closes it.  </p>
+</li>
+<li>
+<p><code>.openSubWindow(title)</code><br />
+    Used to reopen the named <em>SubWindow</em>.  </p>
+</li>
+</ul>
+<h4 id="showhide-sub-windows">Show/Hide Sub Windows</h4>
+<ul>
+<li>
+<p><code>.go(startWindow=None)</code><br />
+    If you set a <em>SubWindow</em> as the <code>startWindow</code> <em>appJar</em> will start-up showing the named <em>SubWindow</em>.<br />
+    The main window will be minimized.  </p>
+</li>
+<li>
+<p><code>.showSubWindow(title)</code><br />
+    Will cause the specified <em>SubWindow</em> to be shown.<br />
+    If it is set as <em>modal</em> the parent window will become uninteractive until the <em>SubWindow</em> is closed.  </p>
+</li>
+<li>
+<p><code>.hideSubWindow(title)</code><br />
+    Used to hide the specified <em>SubWindow</em>.<br />
+    This will not destroy the <em>SubWindow</em>, so it can be shown again later.  </p>
+</li>
+<li>
+<p><code>.destroySubWindow(title)</code><br />
+    This will hide and permanently destroy the specified <em>SubWindow</em>.<br />
+    It cannot be shown again.  </p>
+</li>
+</ul>
+<p>It's useful to be able to create a button that stops a SubWindow:<br />
+If you create a button, that calls <code>.hideSubWindow()</code> or <code>.destroySubWindow()</code>, and give it the same name as the <em>SubWindow</em>, then it will hide/destroy the <em>SubWindow</em>, and call any  associated <code>.stopFunction()</code>.  </p>
+<pre><code class="python">app.startSubWindow(&quot;Demo&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Press the button to close this window&quot;)
+# set the button's name to match the SubWindow's name
+app.addNamedButton(&quot;CLOSE&quot;, &quot;Demo&quot;, app.hideSubWindow)
+app.stopSubWindow()
+</code></pre>
+
+<h4 id="set-sub-windows">Set Sub Windows</h4>
+<p>Note, all functions available on the main window are also available on <em>SubWindows</em>.<br />
+Simply call those functions after starting a <em>SubWindow</em>.  </p>
+<pre><code class="python">app.startSubWindow(&quot;one&quot;, modal=True)
+app.setBg(&quot;orange&quot;)
+app.setGeometry(&quot;400x400&quot;)
+app.setTransparency(25)
+app.setStopFunction(checkDone)
+app.addLabel(&quot;l1&quot;, &quot;In sub window&quot;)
+app.stopSubWindow()
+</code></pre>
+
+<h1 id="in-beta">In Beta</h1>
+<hr />
+<h3 id="frame">Frame</h3>
+<p>A simple way of grouping together widgets.<br />
+Position the <em>Frame</em> within the grid, then position widgets inside the <em>Frame</em>  </p>
+<h4 id="startstop-frames">Start/Stop Frames</h4>
+<ul>
+<li>
+<p><code>.startFrame(name)</code> &amp; <code>.stopFrame()</code><br />
+    Used to start and stop a <em>Frame</em>.  </p>
+</li>
+<li>
+<p><code>.openFrame(title)</code><br />
+    Used to reopen the named <em>Frame</em>.  </p>
+</li>
+</ul>
+<h3 id="scroll-pane">Scroll Pane</h3>
+<hr />
+<p>A scrollable pane, to contain widgets.  </p>
+<ul>
+<li>Will respond to horizontal &amp; vertical scroll events on Mac &amp; Windows.  </li>
+<li>Will respond to horizontal scroll events, and interpret SHIFT-horizontal scroll events as vertical scroll events on Linux.  </li>
+<li>
+<p>Will also respond to key presses:  </p>
+<ul>
+<li>Up &amp; Down: Move up or down the equivalent of a line  </li>
+<li>Left &amp; Right: Move left or right the equivalent of a line  </li>
+<li>PageUp &amp; PageDown: Move up or down the equivalent of a page  </li>
+<li>Ctrl-PageUp &amp; Ctrl-PageDown: Move left or right the equivalent of a page  </li>
+<li>Ctrl-Up &amp; Ctrl-Down: Move up or down the equivalent of a page  </li>
+<li>Ctrl-Left &amp; Ctrl-Right: Move left or right the equivalent of a page   </li>
+<li>Home &amp; End: Move to the top or bottom  </li>
+<li>Ctrl-Home &amp; Ctrl-End: Move to the far-left or the far-right  </li>
+</ul>
+</li>
+<li>
+<p><code>.startScrollPane(title)</code> &amp; <code>.stopScrollPane()</code><br />
+    Used to start and stop the <em>ScrollPane</em>.  </p>
+</li>
+<li>
+<p><code>.openScrollPane(title)</code><br />
+    Used to reopen the named <em>ScrollPane</em>.  </p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

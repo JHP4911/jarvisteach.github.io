@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonWidgetLayout/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Arranging widgets - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li class="active">
+    <a href="./">Arranging widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Tutorials
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonDevWidgets/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonWidgetGrouping/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#arranging-widgets">Arranging Widgets</a></li>
+        
+            <li><a href="#sequential-layout">Sequential Layout</a></li>
+        
+            <li><a href="#grid-layout">Grid Layout</a></li>
+        
+            <li><a href="#layout-tricks">Layout Tricks</a></li>
+        
+            <li><a href="#widget-positioning">Widget Positioning</a></li>
+        
+            <li><a href="#widget-padding">Widget Padding</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="arranging-widgets">Arranging Widgets</h1>
+<hr />
+<p>You can make your GUIs as simple or as complicated as you want...  </p>
+<h3 id="sequential-layout">Sequential Layout</h3>
+<hr />
+<p>By default, each time you add a widget to a GUI, it is simply added on a new row:<br />
+<img alt="Simple Layout" src="../img/1_layout.png" /></p>
+<pre><code class="python">from appJar import gui  
+
+def changeLabel(btn):  
+    app.setLabel(&quot;l2&quot;, app.getEntry(&quot;text&quot;))  
+
+app = gui()  
+app.addLabel(&quot;l1&quot;, &quot;Simple Demo&quot;)
+app.addEntry(&quot;text&quot;)
+app.addButton(&quot;OK&quot;, changeLabel)
+app.addEmptyLabel(&quot;l2&quot;)
+app.go()
+</code></pre>
+
+<h3 id="grid-layout">Grid Layout</h3>
+<hr />
+<p>If, however, you want a bit more control, then you can treat your GUI like a <strong>GRID</strong>.<br />
+Think of it just like a spreadsheet, and position your widgets in whichever cell you want.  </p>
+<p>Each time you add a widget, simply specify the row and column it should appear in (always in that order):<br />
+<img alt="Grid Layout" src="../img/layouts/grid1.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui(&quot;Grid Demo&quot;, &quot;300x300&quot;)
+app.setSticky(&quot;news&quot;)
+app.setExpand(&quot;both&quot;)
+app.setFont(20)
+
+app.addLabel(&quot;l1&quot;, &quot;row=0\ncolumn=0&quot;, 0, 0)
+app.addLabel(&quot;l2&quot;, &quot;row=0\ncolumn=1&quot;, 0, 1)
+app.addLabel(&quot;l3&quot;, &quot;row=0\ncolumn=2&quot;, 0, 2)
+app.addLabel(&quot;l4&quot;, &quot;row=1\ncolumn=0&quot;, 1, 0)
+app.addLabel(&quot;l5&quot;, &quot;row=1\ncolumn=1&quot;, 1, 1)
+app.addLabel(&quot;l6&quot;, &quot;row=1\ncolumn=2&quot;, 1, 2)
+app.addLabel(&quot;l7&quot;, &quot;row=2\ncolumn=0&quot;, 2, 0)
+app.addLabel(&quot;l8&quot;, &quot;row=2\ncolumn=1&quot;, 2, 1)
+app.addLabel(&quot;l9&quot;, &quot;row=2\ncolumn=2&quot;, 2, 2)
+
+app.setLabelBg(&quot;l1&quot;, &quot;LightYellow&quot;)
+app.setLabelBg(&quot;l2&quot;, &quot;LemonChiffon&quot;)
+app.setLabelBg(&quot;l3&quot;, &quot;LightGoldenRodYellow&quot;)
+app.setLabelBg(&quot;l4&quot;, &quot;PapayaWhip&quot;)
+app.setLabelBg(&quot;l5&quot;, &quot;Moccasin&quot;)
+app.setLabelBg(&quot;l6&quot;, &quot;PeachPuff&quot;)
+app.setLabelBg(&quot;l7&quot;, &quot;PaleGoldenRod&quot;)
+app.setLabelBg(&quot;l8&quot;, &quot;Khaki&quot;)
+app.setLabelBg(&quot;l9&quot;, &quot;DarkKhaki&quot;)
+
+app.go()
+</code></pre>
+
+<p>If you're still not satisfied, you can configure widgets to span across multiple columns or rows.<br />
+Simply provide a third &amp; fourth parameter to specify how many rows and columns to span:  </p>
+<p><img alt="Grid Layout" src="../img/layouts/grid2.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui(&quot;Grid Demo&quot;, &quot;300x300&quot;)
+app.setSticky(&quot;news&quot;)
+app.setExpand(&quot;both&quot;)
+app.setFont(14)
+
+app.addLabel(&quot;l1&quot;, &quot;row=0\ncolumn=0&quot;)
+app.addLabel(&quot;l2&quot;, &quot;row=0\ncolumn=1\ncolspan=2&quot;, 0, 1, 2)
+app.addLabel(&quot;l4&quot;, &quot;row=1\ncolumn=0\ncolspan=2&quot;, 1, 0, 2)
+app.addLabel(&quot;l6&quot;, &quot;row=1\ncolumn=2\ncolspan=1\nrowspan=2&quot;, 1, 2, 1, 2)
+app.addLabel(&quot;l7&quot;, &quot;row=2\ncolumn=0&quot;, 2)
+app.addLabel(&quot;l8&quot;, &quot;row=2\ncolumn=1&quot;, 2, 1)
+
+app.setLabelBg(&quot;l1&quot;, &quot;red&quot;)
+app.setLabelBg(&quot;l2&quot;, &quot;blue&quot;)
+app.setLabelBg(&quot;l4&quot;, &quot;green&quot;)
+app.setLabelBg(&quot;l6&quot;, &quot;orange&quot;)
+app.setLabelBg(&quot;l7&quot;, &quot;yellow&quot;)
+
+app.go()
+</code></pre>
+
+<p>Note, the parameters are read from left to right, so:  </p>
+<ul>
+<li>If you're specifying a column, you must first specify a row  </li>
+<li>If you're specifying a row-span, you must first specify both the row &amp; column  </li>
+<li>And, if you're specifying a column-span, you must first specify a row, column &amp; column-span  </li>
+</ul>
+<h3 id="layout-tricks">Layout Tricks</h3>
+<p>There are a few tricks you can employ, to make life a bit easier...</p>
+<h4 id="named-arguments">Named Arguments</h4>
+<p>It can be annoying having to specify all of the positional parameters each time, so why not take advantage of Python's support for <em>Named Arguments</em>. These allow you to set specific parameters, using their name.<br />
+For example: <code>app.addLabel("l1", "text here", colspan=2)</code>, will set the <code>colspan</code> parameter, without having to set the preceding ones.   </p>
+<h4 id="row-helpers">Row Helpers</h4>
+<p>If you combine that with having appJar telling you the row you're on, things get even easier.  </p>
+<ul>
+<li><code>.getRow()</code> or <code>.gr()</code><br />
+    Returns the row number currently being used.<br />
+    Useful if you're mainly adding things sequentially, but want to modify one line out of sequence.  </li>
+</ul>
+<p><img alt="Grid Layout" src="../img/layouts/grid3.png" /></p>
+<pre><code class="python">from appJar import gui
+
+colours=[&quot;red&quot;,&quot;blue&quot;]
+
+app=gui()
+
+for loop in range(3):
+    app.addLabel(loop, &quot;New Row&quot;, colspan=2)
+    app.setLabelBg(loop, colours[loop%2])
+
+row = app.getRow() # get current row
+
+app.addLabel(&quot;a&quot;, &quot;LEFT&quot;, row, 0) 
+app.addLabel(&quot;b&quot;, &quot;RIGHT&quot;, row, 1) 
+
+app.setLabelBg(&quot;a&quot;, &quot;green&quot;)
+app.setLabelBg(&quot;b&quot;, &quot;orange&quot;)
+
+for loop in range(3, 6):
+    app.addLabel(loop, &quot;New Row&quot;, colspan=2)
+    app.setLabelBg(loop, colours[loop%2])
+
+app.go()
+</code></pre>
+
+<h2 id="widget-positioning">Widget Positioning</h2>
+<hr />
+<p>Once you've laid out your widgets, the next most important thing is how they line up in their rows and columns.  </p>
+<p>There are two things you can configure:    </p>
+<ul>
+<li>How columns and rows stretch to fill the GUI - <strong>stretchiness</strong>  </li>
+<li>How widgets stretch to fill their cells - <strong>stickiness</strong>  </li>
+</ul>
+<p>Note, you can also change these settings for <a href="../pythonWidgetOptions/#advanced-looks">individual widgets</a></p>
+<h4 id="set-stretch-sticky">Set Stretch &amp; Sticky</h4>
+<ul>
+<li><code>.setStretch(sides)</code><br />
+    This tells rows &amp; columns how to stretch when the GUI is resized.<br />
+    It allows them to adjust to fill the available space:<ul>
+<li><code>none</code> - don't stretch  </li>
+<li><code>row</code> - only rows should stretch down  </li>
+<li><code>column</code> - only columns should stretch across  </li>
+<li><code>both</code> - stretch rows &amp; columns  </li>
+</ul>
+</li>
+<li><code>.setSticky(sides)</code><br />
+    This determines which sides of the grid-cell the widget will stick to.<br />
+    It should be a string, made up of any combination of <code>n</code>, <code>e</code>, <code>s</code> or <code>w</code><br />
+    By default, most widgets use <code>"ew"</code></li>
+</ul>
+<h3 id="columns-rows-stretchiness">Columns &amp; Rows Stretchiness</h3>
+<p>By default, the columns stretch (equally) to fill the width of the GUI, but rows don't - they take up the minimum space required.    </p>
+<p><img alt="Expand" src="../img/conf/exp1.png" />  </p>
+<p>It's possible to tell the rows to stretch too:</p>
+<p><img alt="Expand" src="../img/conf/exp1.png" />  </p>
+<pre><code class="python">app.setStretch(&quot;both&quot;)
+</code></pre>
+
+<p>But, as you can see - this doesn't make much difference...</p>
+<h3 id="widget-stickiness">Widget Stickiness</h3>
+<p>Even if the cells in the columns &amp; rows are stretching, the widgets inside them might not.  </p>
+<p>Widgets have a <strong>stickiness</strong> which tells them which sides of their cells to stick to.  </p>
+<p>Again, widgets are configured to stick to the left &amp; right, but not the top &amp; bottom.  </p>
+<p>To change this, you need to set a new stickiness:  </p>
+<p><img alt="Expand" src="../img/conf/exp2.png" />  </p>
+<pre><code class="python">app.setStretch(&quot;both&quot;)
+app.setSticky(&quot;nesw&quot;)
+</code></pre>
+
+<p>If you remove all stickiness, you end up with this:</p>
+<p><img alt="Expand" src="../img/conf/exp3.png" />  </p>
+<pre><code class="python">app.setStretch(&quot;both&quot;)
+app.setSticky(&quot;&quot;)
+</code></pre>
+
+<p>It's even possible to give each widget its own <em>stickiness</em>:<br />
+<img alt="Expand" src="../img/conf/exp4.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.setBg(&quot;blue&quot;)
+app.setStretch(&quot;both&quot;)
+
+app.setSticky(&quot;nw&quot;)
+app.addLabel(&quot;l1&quot;, &quot;One&quot;, 0, 0)
+app.setLabelBg(&quot;l1&quot;, &quot;yellow&quot;)
+
+app.setSticky(&quot;ne&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Two&quot;, 0, 1)
+app.setLabelBg(&quot;l2&quot;, &quot;green&quot;)
+
+app.setSticky(&quot;sw&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Three&quot;, 1, 0)
+app.setLabelBg(&quot;l3&quot;, &quot;pink&quot;)
+
+app.setSticky(&quot;se&quot;)
+app.addLabel(&quot;l4&quot;, &quot;Four&quot;, 1, 1)
+app.setLabelBg(&quot;l4&quot;, &quot;Orange&quot;)
+
+app.go()
+</code></pre>
+
+<h2 id="widget-padding">Widget Padding</h2>
+<p>It's possible to configure how much empty space is around a widget.<br />
+This is known as padding. You can put padding both inside and outside a widget...  </p>
+<p><img alt="Padding" src="../img/conf/pos1.png" /></p>
+<pre><code class="python">app.setPadding([20,20]) # 20 pixels padding outside the widget [X, Y]
+app.setInPadding([20,20]) # 20 pixels padding inside the widget [X, Y]
+</code></pre>
+
+<h4 id="set-padding-inpadding">Set Padding &amp; InPadding</h4>
+<ul>
+<li><code>.setPadding([x,y])</code>
+    This sets the X &amp; Y padding outside a widget.  </li>
+<li><code>.setInPadding([x,y])</code>
+    This sets the X &amp; Y padding inside a widget.  </li>
+</ul>
+<p><img alt="Padding" src="../img/conf/pos2.png" /></p>
+<pre><code class="python">app.setPadding([20,20]) # padding outside the widget
+app.setInPadding([40,20]) # padding inside the widget
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

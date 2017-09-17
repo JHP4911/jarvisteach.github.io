@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonInternationalisation/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Internationalisation - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgetLayout/">Arranging widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonWidgetOptions/">Changing widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonEvents/">GUI Events</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../gitGuide/">Git</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Tutorials
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonDnD/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonLogging/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#internationalisation">Internationalisation</a></li>
+        
+            <li><a href="#file-format">File Format</a></li>
+        
+            <li><a href="#implementation">Implementation</a></li>
+        
+            <li><a href="#widget-support">Widget Support</a></li>
+        
+            <li><a href="#platform-support">Platform Support</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="internationalisation">Internationalisation</h1>
+<hr />
+<p>appJar offers a simple method for supporting multiple languages.  </p>
+<h3 id="file-format">File Format</h3>
+<p>A config file needs to be created, for each language, with translations for each widget:</p>
+<pre><code>&gt;&gt;&gt; ENGLISH.ini
+---
+[LABEL]
+l1: some text
+l2: some more text
+
+[BUTTON]
+b1: button a
+b2: button b
+
+[LINK]
+l1: New link title
+</code></pre>
+
+<p>When widgets are added, their ID will be used to look up a translation.<br />
+If no translation is found, the widget's initial value will be used as a default.  </p>
+<p>The filename should be in all uppercase, of type <code>.ini</code>  </p>
+<h3 id="implementation">Implementation</h3>
+<pre><code class="python">from appJar import gui
+
+app=gui(&quot;Languages&quot;)
+
+app.addLabel(&quot;l1&quot;, &quot;default text&quot;)
+app.addLabel(&quot;l2&quot;, &quot;default text&quot;)
+app.addLabel(&quot;l3&quot;, &quot;default text&quot;)
+
+# as long as the language file has the same name as the button
+# the button can call .changeLanguage directly
+app.addButtons([&quot;English&quot;, &quot;Francais&quot;, &quot;한글&quot;], app.changeLanguage)
+
+app.go(&quot;english&quot;)
+</code></pre>
+
+<p>The starting language must be set in the call to <code>.go(language)</code><br />
+To change the language, call <code>.changeLanguage(language)</code>  </p>
+<p>These will look for a file called <code>LANGUAGE.ini</code></p>
+<h3 id="widget-support">Widget Support</h3>
+<p>Not all widget's are supported, and some require a bit more effort to get them to work properly.<br />
+Note, changing the text of a widget through <code>setXXX()</code> method's will work, but will not be remembered if the language is changed.  </p>
+<ul>
+<li>
+<p><strong>Auto-labelled Widgets</strong><br />
+    Any widgets created with an <strong>auto-label</strong> can be changed under the <code>[LABEL]</code> option below.  </p>
+</li>
+<li>
+<p><code>[LABEL]</code>,  <code>[BUTTON]</code>, <code>[CHECKBOX]</code>, <code>[MESSAGE]</code>, <code>[LINK]</code><br />
+    The label id, followed by the text to put in it.<br />
+    Any widgets added with labels <code>.addLabelEntry()</code> are also changed here.  </p>
+</li>
+<li>
+<p><code>[RADIOBUTTON]</code><br />
+    Radio-buttons are a little tricky. The key has two parts: the <em>group</em> &amp; <em>item</em><br />
+    If you used: <code>.addRadioButton("Food", "f1")</code> the entry in the <code>.ini</code> file would be:
+    <code>Food-f1: french_food_name</code>  </p>
+</li>
+<li>
+<p><code>[ENTRY]</code><br />
+    The text provided here wil be used for the default value, if one is being used.  </p>
+</li>
+<li>
+<p><code>[SCALE]</code>, <code>[TEXTAREA]</code>, <code>[METER]</code><br />
+    These widgets have no text to change.  </p>
+</li>
+<li>
+<p><code>[LISTBOX]</code>, <code>[SPIN]</code>, <code>[OPTION]</code><br />
+    Each value should be on a new line<br />
+    Doesn't work for SpinBoxes, when generated from a range.  </p>
+</li>
+</ul>
+<pre><code>[LISTBOX]
+fruits:
+    apples
+    pears
+    grapes
+    bananas
+</code></pre>
+
+<ul>
+<li>
+<p>The following are currently in development:<br />
+<code>[LABELFRAME]</code>, <code>[TABBEDFRAME]</code>, <code>[PAGEDWINDOW]</code>, <code>[TOGGLEFRAME]</code><br />
+<code>[PROPERTIES]</code>, <code>[POPUP]</code>, <code>[PIECHART]</code>, <code>[TREE]</code>, <code>[GRID]</code><br />
+<code>[MENUBAR]</code>, <code>[STATUSBAR]</code>, <code>[TOOLBAR]</code>, <code>[TOOLTIP]</code>, <code>[TITLE]</code><br />
+<code>[SOUND]</code> &amp; <code>[IMAGE]</code>  </p>
+</li>
+<li>
+<p><code>[EXTERNAL]</code><br />
+    It will be possible to request translations for non appJar data.  </p>
+</li>
+</ul>
+<h3 id="platform-support">Platform Support</h3>
+<p>Note, your platform might not support the characters you want to display.<br />
+In which case, you'll need to install the relevant font.<br />
+For example, to get Korean characters to show on raspberry Pi, try:<br />
+<code>sudo apt-get install fonts-nanum</code>  </p>
+<p>If you're after other languages, you can try:<br />
+<code>apt-cache search chinese</code> and then install a likely looking font...  </p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
