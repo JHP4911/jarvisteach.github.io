@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Changing widgets - appJar</title>
+        <title>Configurtation - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li class="active">
+    <a href="./">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,17 +359,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonWidgetGrouping/">
+                    <a rel="next" href="../pythonWidgetLayout/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonGuiOptions/">
+                    <a rel="prev" href="../pythonWidgetGrouping/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -350,15 +419,15 @@
 
 <h1 id="changing-widgets">Changing Widgets</h1>
 <hr />
-<p>There are a lot of things that can be change in a widget.<br />
+<p>There are a lot of things that can be changed in a widget.<br />
 There is a pattern to how this works, you simply specify the widget type and the parameter, eg:</p>
 <ul>
 <li><code>.setLabelBg(name, value)</code></li>
 <li><code>.setButtonFg(name, value)</code></li>
 <li><code>.setListBoxState(name, value)</code></li>
 </ul>
-<p>The list of widgets is defined in <code>gui.WIDGETS</code>, it contains:
-Label, Message, Button, Entry, Scale, SpinBox, OptionBox, TextArea, Link, Meter, Image, RadioButton, CheckBox, ListBox, LabelFrame, PanedWindow, NoteBook</p>
+<p>This should work for most widgets &amp; containers.<br />
+Some widgets have different types, eg. TextArea &amp; ScrolledTextArea, all types can be configured with the main widget name.  </p>
 <h3 id="basic-looks">Basic  Looks</h3>
 <hr />
 <p>The following options are available for all widgets:</p>
@@ -534,7 +603,7 @@ app.getLabelWidget(&quot;l6&quot;).config(font=&quot;Courier 20&quot;)
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

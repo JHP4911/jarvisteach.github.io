@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Grouping widgets - appJar</title>
+        <title>Grouping - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,17 +359,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonWidgetLayout/">
+                    <a rel="next" href="../pythonWidgetOptions/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonWidgetOptions/">
+                    <a rel="prev" href="../pythonContextManager/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -410,9 +479,10 @@ app.go()
 <h4 id="startstop-label-frames">Start/Stop Label Frames</h4>
 <ul>
 <li>
-<p><code>.startLabelFrame(name)</code> &amp; <code>.stopLabelFrame()</code><br />
+<p><code>.startLabelFrame(name, hideTitle=False)</code> &amp; <code>.stopLabelFrame()</code><br />
     Used to start and stop a <em>LabelFrame</em><br />
-    The specified title will be used as the label for the frame.  </p>
+    The specified title will be used as the label for the frame.<br />
+    Set hideTitle to be True if you don;t want to show a title.  </p>
 </li>
 <li>
 <p><code>.openLabelFrame(title)</code><br />
@@ -421,10 +491,21 @@ app.go()
 </ul>
 <h4 id="set-label-frames">Set Label Frames</h4>
 <ul>
-<li><code>.setSticky(coords)</code><br />
+<li>
+<p><code>.setLabelFrameTitle(name, newTitle)</code><br />
+    Used to change the label displayed in the <em>LabelFrame</em>.  </p>
+</li>
+<li>
+<p><code>.setLabelFrameAnchor(name, position)</code><br />
+    Used to change the position of the label on the <em>LabelFrame</em>.<br />
+    Use compass coordinates, eg. <code>"ne"</code> or <code>"sw"</code>.  </p>
+</li>
+<li>
+<p><code>.setSticky(coords)</code><br />
     By default, widgets in the frame will align on the left.<br />
     If you want to change this, specify a different <code>sticky</code> value.<br />
-    For example, <code>.setSticky("ew")</code> will cause the widgets to stretch to fit the width, aligning in the centre.  </li>
+    For example, <code>.setSticky("ew")</code> will cause the widgets to stretch to fit the width, aligning in the centre.  </p>
+</li>
 </ul>
 <h3 id="toggle-frame">Toggle Frame</h3>
 <hr />
@@ -462,6 +543,10 @@ app.go()
 </ul>
 <h4 id="set-toggle-frames">Set Toggle Frames</h4>
 <ul>
+<li>
+<p><code>.setToggleFrameText(title, newText)</code><br />
+    Will update the text displayed in the <em>ToggleFrame</em>.  </p>
+</li>
 <li>
 <p><code>.toggleToggleFrame(title)</code><br />
     Will toggle the state of the specified <em>ToggleFrame</em>.  </p>
@@ -521,6 +606,11 @@ app.go()
 </ul>
 <h4 id="set-tabbedframe">Set TabbedFrame</h4>
 <ul>
+<li>
+<p><code>.setTabText(title, tab, newText=None)</code><br />
+    Change the text of the named tab in the specified <em>TabbedFrame</em>.<br />
+    If no <code>newText</code> is provided, the tab will revert back to its original text.  </p>
+</li>
 <li>
 <p><code>.setTabbedFrameTabExpand(title, expand=True)</code><br />
     By default, the tabs take up the minimum amount of space necessary.<br />
@@ -752,7 +842,8 @@ app.go()
 </li>
 <li>
 <p><code>.openPagedWindow(title)</code> &amp; <code>.openPage(windowTitle, pageNumber)</code> <br />
-    Used to reopen the named <em>PagedWindow</em> or <em>Page</em>.  </p>
+    Used to reopen the named <em>PagedWindow</em> or <em>Page</em>.<br />
+<strong>NB.</strong> <code>pageNumber</code> must be an integer, starting at 1 for the first page.  </p>
 </li>
 </ul>
 <h4 id="set-paged-windows">Set Paged Windows</h4>
@@ -789,85 +880,7 @@ app.go()
 <hr />
 <p>A way to add additional windows, which can be hidden and shown.<br />
 <img alt="SubWindow" src="../img/layouts/subWin.png" /></p>
-<pre><code class="python">from appJar import gui
-
-def launch(win):
-    app.showSubWindow(win)
-
-app=gui()
-
-app.startSubWindow(&quot;one&quot;, modal=True)
-app.addLabel(&quot;l1&quot;, &quot;SubWindow One&quot;)
-app.stopSubWindow()
-
-app.startSubWindow(&quot;two&quot;)
-app.addLabel(&quot;l2&quot;, &quot;SubWindow Two&quot;)
-app.stopSubWindow()
-
-app.addButtons([&quot;one&quot;, &quot;two&quot;], launch)
-
-app.go()
-</code></pre>
-
-<h4 id="startstop-sub-windows">Start/Stop Sub Windows</h4>
-<ul>
-<li>
-<p><code>.startSubwindow(name, title=None, modal=False, transient=False, blocking=False)</code> &amp; <code>.stopSubwindow()</code><br />
-    Used to start and stop defining a <em>SubWindow</em><br />
-    Setting a <code>title</code> will override the <code>name</code> as a title for the <em>SubWindow</em>. <br />
-    Setting <code>modal</code> to True, will prevent the user from interacting with the parent window until the <em>SubWindow</em> is closed.<br />
-    Setting <code>transient</code> to True, will cause the <em>SubWindow</em> to respond to parent window events such as hide, show &amp; move.<br />
-    Setting <code>blocking</code> to True, will stop execution of your code once the <em>SubWindow</em> is shown, until the user closes it.  </p>
-</li>
-<li>
-<p><code>.openSubWindow(title)</code><br />
-    Used to reopen the named <em>SubWindow</em>.  </p>
-</li>
-</ul>
-<h4 id="showhide-sub-windows">Show/Hide Sub Windows</h4>
-<ul>
-<li>
-<p><code>.go(startWindow=None)</code><br />
-    If you set a <em>SubWindow</em> as the <code>startWindow</code> <em>appJar</em> will start-up showing the named <em>SubWindow</em>.<br />
-    The main window will be minimized.  </p>
-</li>
-<li>
-<p><code>.showSubWindow(title)</code><br />
-    Will cause the specified <em>SubWindow</em> to be shown.<br />
-    If it is set as <em>modal</em> the parent window will become uninteractive until the <em>SubWindow</em> is closed.  </p>
-</li>
-<li>
-<p><code>.hideSubWindow(title)</code><br />
-    Used to hide the specified <em>SubWindow</em>.<br />
-    This will not destroy the <em>SubWindow</em>, so it can be shown again later.  </p>
-</li>
-<li>
-<p><code>.destroySubWindow(title)</code><br />
-    This will hide and permanently destroy the specified <em>SubWindow</em>.<br />
-    It cannot be shown again.  </p>
-</li>
-</ul>
-<p>It's useful to be able to create a button that stops a SubWindow:<br />
-If you create a button, that calls <code>.hideSubWindow()</code> or <code>.destroySubWindow()</code>, and give it the same name as the <em>SubWindow</em>, then it will hide/destroy the <em>SubWindow</em>, and call any  associated <code>.stopFunction()</code>.  </p>
-<pre><code class="python">app.startSubWindow(&quot;Demo&quot;)
-app.addLabel(&quot;l1&quot;, &quot;Press the button to close this window&quot;)
-# set the button's name to match the SubWindow's name
-app.addNamedButton(&quot;CLOSE&quot;, &quot;Demo&quot;, app.hideSubWindow)
-app.stopSubWindow()
-</code></pre>
-
-<h4 id="set-sub-windows">Set Sub Windows</h4>
-<p>Note, all functions available on the main window are also available on <em>SubWindows</em>.<br />
-Simply call those functions after starting a <em>SubWindow</em>.  </p>
-<pre><code class="python">app.startSubWindow(&quot;one&quot;, modal=True)
-app.setBg(&quot;orange&quot;)
-app.setGeometry(&quot;400x400&quot;)
-app.setTransparency(25)
-app.setStopFunction(checkDone)
-app.addLabel(&quot;l1&quot;, &quot;In sub window&quot;)
-app.stopSubWindow()
-</code></pre>
-
+<p>This has been moved to its own page: <a href="../pythonSubWindows">Multiple Windows</a>.  </p>
 <h1 id="in-beta">In Beta</h1>
 <hr />
 <h3 id="frame">Frame</h3>
@@ -917,7 +930,7 @@ Position the <em>Frame</em> within the grid, then position widgets inside the <e
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

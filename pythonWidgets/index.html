@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,7 +359,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
@@ -425,7 +494,7 @@ app.go()
 <li>
 <p><code>.addSelectableLabel(title, text=None)</code><br />
     This adds a label whose text can be selected with the mouse.<br />
-    This is really just a <em>read-only</em> entry, disguised to look like a label.<br />
+    This is really just a <em>read-only</em> Entry, disguised to look like a label.<br />
     But it seems to do the trick...  </p>
 </li>
 <li>
@@ -481,13 +550,13 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <h2 id="entry">Entry</h2>
 <hr />
 <p>Entries are used to capture input from the user. They take a single parameter - a title.</p>
-<p>There are four special-case entries:</p>
+<p>There are five special-case Entries:</p>
 <ul>
 <li>NumericEntry - this only allows numbers to be typed in - always returns a float.</li>
 <li>SecretEntry - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
 <li>AutoEntry - this takes a list of words to provide auto-completion.  </li>
 <li>ValidationEntry - can be set to valid/invalid/waiting - will colour the border green/red/black and show a ✔/✖/★  </li>
-<li>FileEntry/DirectoryEntry - provides a button to select a file/directory and auto-populates the entry  </li>
+<li>FileEntry/DirectoryEntry - provides a button to select a file/directory and auto-populates the Entry  </li>
 </ul>
 <p><img alt="Entries" src="../img/1_entries.png" /></p>
 <pre><code class="python">from appJar import gui
@@ -524,31 +593,31 @@ app.go()
 <ul>
 <li>
 <p><code>.setEntry(title, text, callFunction=True)</code><br />
-    This sets the contents of the specified entry box.
+    This sets the contents of the specified Entry.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setEntryDefault(title, text)</code><br />
-    This sets a default value to display in an entry box.<br />
+    This sets a default value to display in an Entry.<br />
     Once the user starts typing, it will disappear.<br />
     The text is centered, shown in a light gray font, and will not be returned by <code>.getEntry(title)</code>  </p>
 </li>
 <li>
 <p><code>.updateEntryDefault(title, text)</code><br />
-    This will update the default value for the specified entry box.  </p>
+    This will update the default value for the specified Entry.  </p>
 </li>
 <li>
 <p><code>.setEntryUpperCase(title)</code> &amp; <code>.setEntryLowerCase(title)</code> <br />
-    This will force all text typed into the entry to be uppercase/lowercase.  </p>
+    This will force all text typed into the Entry to be uppercase/lowercase.  </p>
 </li>
 <li>
 <p><code>.setEntryMaxLength(title, maxLength)</code><br />
-    This will set a maximum length for the specified entry.<br />
+    This will set a maximum length for the specified Entry.<br />
     Any additional characters typed will be discarded.  </p>
 </li>
 <li>
 <p><code>.setEntryValid(title)</code> &amp; <code>.setEntryInvalid(title)</code> &amp; <code>.setEntryWaitingValidaiton(title)</code><br />
-    These will set the relevant status of a validation entry.<br />
+    These will set the relevant status of a validation Entry.<br />
     (Have a look <a href="../specialCharacters">here</a> for help displaying special characters)<br />
 <img alt="EntryValidation" src="../img/entValidation.png" /></p>
 </li>
@@ -560,28 +629,29 @@ app.go()
 </li>
 <li>
 <p><code>.clearEntry(title, callFunction=True)</code><br />
-    This will clear the contents of the specified entry box.
+    This will clear the contents of the specified Entry.
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>.clearAllEntries(callFunction=True)</code><br />
-    This will clear all the entry boxes in the GUI.</p>
+<p><code>.clearAllEntries(callFunction=False)</code><br />
+    This will clear all Entries in the GUI.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.setFocus(title)</code><br />
-    This will put the cursor in the specified entry box, so that the user can start typing without needing to click.</p>
+    This will put the cursor in the specified Entry, so that the user can start typing without needing to click.</p>
 </li>
 </ul>
 <h4 id="get-entries">Get Entries</h4>
 <ul>
 <li>
 <p><code>.getEntry(title)</code><br />
-    This will return the contents of the specified entry box.<br />
+    This will return the contents of the specified Entry.<br />
     NB. <em>numericEntries</em> always return a float.  </p>
 </li>
 <li>
 <p><code>.getAllEntries()</code><br />
-    This will return the contents of all entries in the app, as a dictionary.<br />
+    This will return the contents of all Entries in the app, as a dictionary.<br />
     NB. <em>numericEntries</em> always return a float.  </p>
 </li>
 </ul>
@@ -613,7 +683,7 @@ That way, multiple widgets can use the same function, but different actions can 
 <li>
 <p><code>.addButton(title, function)</code><br />
     Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
-    A function should be specified, which will be called when the button is clicked.</p>
+    A function should be specified, which will be called when the button is clicked, where the title is passed as a parameter to the function.  </p>
 </li>
 <li>
 <p><code>.addButtons(titles, functions)</code><br />
@@ -623,8 +693,12 @@ That way, multiple widgets can use the same function, but different actions can 
     Or a list of functions can be passed, which MUST correspond to the buttons.  </p>
 </li>
 <li>
-<p><code>.addImageButton(name, title, function, imgFile)</code><br />
-    This creates the named button, as above, using the specified image.</p>
+<p><code>.addImageButton(title, function, imgFile)</code><br />
+    This creates the named button, as above, using the specified image.  </p>
+</li>
+<li>
+<p><code>.addIconButton(title, function, iconName)</code><br />
+    This creates the named button, as above, using the specified icon.  </p>
 </li>
 <li>
 <p><code>.addNamedButton(name, title, function)</code><br />
@@ -678,6 +752,11 @@ app.go()
     It is possible to use tick-boxes instead of the classic circular radio-button.<br />
     Setting tick to True will convert all the radio-buttons for this title to tick boxes.  </p>
 </li>
+<li>
+<p><code>.clearAllRadioButtons(callFunction=False)</code><br />
+    This will reset all RadioButtons in the app to their first value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-radiobuttons">Get RadioButtons</h4>
 <ul>
@@ -700,6 +779,10 @@ app.go()
     app.go()
 </code></pre>
 
+<ul>
+<li><code>.getAllRadioButtons()</code><br />
+    This will return the contents of all RadioButtons in the app, as a dictionary.  </li>
+</ul>
 <h2 id="checkbox">CheckBox</h2>
 <hr />
 <p>A simple tick-box, with a label, that can be either ON or OFF.  </p>
@@ -735,14 +818,27 @@ app.go()
 </ul>
 <h4 id="set-checkboxes">Set CheckBoxes</h4>
 <ul>
-<li><code>.setCheckBox(title, ticked=True, callFunction=True)</code><br />
+<li>
+<p><code>.setCheckBox(title, ticked=True, callFunction=True)</code><br />
     This will tick the CheckBox, or untick it if ticked is set to False.<br />
-    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </li>
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllCheckBoxes(callFunction=False)</code><br />
+    This will clear (untick) all CheckBoxes in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-checkboxes">Get CheckBoxes</h4>
 <ul>
-<li><code>.getCheckBox(title)</code><br />
-    This will return True or False, depending on the state of the CheckBox.  </li>
+<li>
+<p><code>.getCheckBox(title)</code><br />
+    This will return True or False, depending on the state of the CheckBox.  </p>
+</li>
+<li>
+<p><code>.getAllCheckBoxes()</code><br />
+    This will return the contents of all CheckBoxes in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h2 id="optionbox">OptionBox</h2>
 <hr />
@@ -801,11 +897,27 @@ app.go()
     Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
 </li>
 <li>
-<p><code>.setOptionBox(title, position, value=True, callFunction=True)</code><br />
+<p><code>.setOptionBox(title, position, value=True, callFunction=True, override=False)</code><br />
     This will select the item in the list, at the position specified.<br />
     Alternatively, the name of an item can be specified.<br />
     If changing a TickOptionBox, the specified item will be set to the specified value.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.<br />
+    By default, you can't select a disabled item. You can change this by setting <code>override</code> to be True.  </p>
+</li>
+<li>
+<p><code>.renameOptionBoxItem(title, item, newName, callFunction=False)</code><br />
+    This will rename the specified item in the named OptionBox.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
+</li>
+<li>
+<p><code>.clearOptionBox(title, callFunction=True)</code><br />
+    This will set the named OptionBox back to its first value (even if it's disabled).<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllOptionBoxes(callFunction=False)</code><br />
+    This will set all OptionBoxes in the app back to their first value (even if it's disabled).<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.deleteOptionBox(title, position)</code><br />
@@ -816,10 +928,16 @@ app.go()
 </ul>
 <h4 id="get-optionboxes">Get OptionBoxes</h4>
 <ul>
-<li><code>.getOptionBox(title)</code><br />
+<li>
+<p><code>.getOptionBox(title)</code><br />
     This will return the currently displayed value in an OptionBox.<br />
     Or a dictionary of names, and their boolean value if a TickOptionBox.<br />
-    Will return None, if an invalid option is currently selected.  </li>
+    Will return None, if an invalid option is currently selected.  </p>
+</li>
+<li>
+<p><code>.getAllOptionBoxes()</code><br />
+    This will return the contents of all OptionBoxes in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h2 id="spinbox">SpinBox</h2>
 <hr />
@@ -866,11 +984,22 @@ app.go()
     This will select the value at the specified position in the SpinBox.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
+<li>
+<p><code>.clearAllSpinBoxes(callFunction=False)</code><br />
+    This will set all SpinBoxes in the app to their first value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-spinboxes">Get SpinBoxes</h4>
 <ul>
-<li><code>.getSpinBox(title)</code><br />
-    This will get the selected value from the specified SpinBox.  </li>
+<li>
+<p><code>.getSpinBox(title)</code><br />
+    This will get the selected value from the specified SpinBox.  </p>
+</li>
+<li>
+<p><code>.getAllSpinBoxes()</code><br />
+    This will return the contents of all SpinBoxes in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h2 id="listbox">ListBox</h2>
 <hr />
@@ -902,8 +1031,8 @@ app.go()
 <h4 id="set-listboxes">Set ListBoxes</h4>
 <ul>
 <li>
-<p><code>.setListItem(title, item, oldVal, newVal, first=False)</code><br />
-<code>.setListItemAtPos(title, item, pos, newVal)</code><br />
+<p><code>.setListItem(title, item, newVal, first=False)</code><br />
+<code>.setListItemAtPos(title, pos, newVal)</code><br />
     Changes the specified list item to the new value.<br />
     If <code>first</code> is set to True, only the first item found will be changed.<br />
     Otherwise, all occurences of the specified value will be changed.  </p>
@@ -915,8 +1044,14 @@ app.go()
     Will only remove the first item that matches the parameter.  </p>
 </li>
 <li>
-<p><code>.clearListBox(title)</code><br />
-    Removes all items from the specified ListBox.  </p>
+<p><code>.clearListBox(title, callFunction=True)</code><br />
+    Removes all items from the specified ListBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllListBoxes(callFunction=False)</code><br />
+    This will remove all items from all ListBoxes in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
 <li>
 <p><code>.updateListBox(title, items, select=False)</code><br />
@@ -968,8 +1103,12 @@ app.go()
 <h4 id="get-listboxes">Get ListBoxes</h4>
 <ul>
 <li>
-<p><code>.getListItems(title)</code><br />
+<p><code>.getListBox(title)</code><br />
     Gets all of the selected items from the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.getAllListBoxes()</code><br />
+    This will return the contents of all ListBoxes in the app, as a dictionary.  </p>
 </li>
 <li>
 <p><code>.getAllListItems(title)</code><br />
@@ -1035,11 +1174,22 @@ app.go()
     Sets a function to call, each time the scale is changed.<br />
     The function must take one parameter, which will be populated with the scale's title.  </p>
 </li>
+<li>
+<p><code>.clearAllScales(callFunction=False)</code><br />
+    This will set all Scales in the app to their minimum value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-scales">Get Scales</h4>
 <ul>
-<li><code>.getScale(title)</code><br />
-    Gets the currently selected value from the scale.  </li>
+<li>
+<p><code>.getScale(title)</code><br />
+    Gets the currently selected value from the scale.  </p>
+</li>
+<li>
+<p><code>.getAllScales()</code><br />
+    This will return the contents of all Scales in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h2 id="message">Message</h2>
 <hr />
@@ -1079,7 +1229,7 @@ app.go()
 </ul>
 <h2 id="textarea">TextArea</h2>
 <hr />
-<p>Similar to an Entry box, but allows you to type text over multiple lines.  </p>
+<p>Similar to an Entry, but allows you to type text over multiple lines.  </p>
 <p><img alt="TextArea" src="../img/1_textArea.png" />  </p>
 <pre><code class="python">from appJar import gui
 
@@ -1103,8 +1253,10 @@ app.go()
 <h4 id="set-textareas">Set TextAreas</h4>
 <ul>
 <li>
-<p><code>.setTextArea(title, text, callFunction=True)</code><br />
-    Changes the contents of the specified TextArea, to the specified text.<br />
+<p><code>.setTextArea(title, text, end=True, callFunction=True)</code><br />
+    Adds the supplied text to the specified TextArea.<br />
+    By default, the text is added to the end.<br />
+    Set <code>end</code> to be False if you want to add at the beginning.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
@@ -1112,11 +1264,22 @@ app.go()
     Clears the contents of the specified TextArea.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
+<li>
+<p><code>.clearAllTextAreas(callFunction=False)</code><br />
+    This will clear the contents of all TextAreas in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-textareas">Get TextAreas</h4>
 <ul>
-<li><code>.getTextArea(title)</code><br />
-    Gets the contents of the specified TextArea.  </li>
+<li>
+<p><code>.getTextArea(title)</code><br />
+    Gets the contents of the specified TextArea.  </p>
+</li>
+<li>
+<p><code>.getAllTextAreas()</code><br />
+    This will return the contents of all TextAreas in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h2 id="meter">Meter</h2>
 <hr />
@@ -1148,28 +1311,34 @@ app.go()
 
 <h4 id="add-meters">Add Meters</h4>
 <ul>
-<li><code>addMeter(name)</code> &amp; <code>.addSplitMeter(name)</code> &amp;  <code>.addDualMeter(name)</code><br />
+<li><code>.addMeter(name)</code> &amp; <code>.addSplitMeter(name)</code> &amp;  <code>.addDualMeter(name)</code><br />
     Adds a meter with the specified name, of the specified type..  </li>
 </ul>
 <h4 id="set-meters">Set Meters</h4>
 <ul>
 <li>
-<p><code>setMeter(name, value, text=None)</code><br />
+<p><code>.setMeter(name, value, text=None)</code><br />
     Changes the specified meter to the specified value.<br />
     For <code>Meter</code> &amp; <code>SplitMeter</code>should be a value between 0 and 100.<br />
     For <code>DualMeter</code> should be a list of two values, each between 0 and 100.  </p>
 </li>
 <li>
-<p><code>setMeterFill(name, colour)</code><br />
+<p><code>.setMeterFill(name, colour)</code><br />
     Changes the fill colour of the specified meter.<br />
     For <code>SplitMeter</code> &amp; <code>DualMeter</code>should be a list of two colours.  </p>
 </li>
 </ul>
 <h4 id="get-meters">Get Meters</h4>
 <ul>
-<li><code>getMeter(name)</code><br />
+<li>
+<p><code>.getMeter(name)</code><br />
     Gets the value of the specified meter.<br />
-    As meters convert their data to a value between 0 and 1, this will return a list of two values: <code>(0.45, '45 %')</code>  </li>
+    As meters convert their data to a value between 0 and 1, this will return a list of two values: <code>(0.45, '45 %')</code>  </p>
+</li>
+<li>
+<p><code>.getAllMeters()</code><br />
+    This will return the contents of all Meters in the app, as a dictionary.  </p>
+</li>
 </ul>
 <h4 id="background-processing">Background Processing</h4>
 <p>Meters are designed to show progress over time.<br />
@@ -1203,37 +1372,66 @@ app.go()
 
 <h4 id="add-properties">Add Properties</h4>
 <ul>
-<li><code>addProperties(title, values)</code><br />
+<li><code>.addProperties(title, values)</code><br />
     Creates a new Properties widget, with the specified title.<br />
     If values is populated, then the dictionary items will be added to the widget.  </li>
 </ul>
 <h4 id="set-properties">Set Properties</h4>
 <ul>
 <li>
-<p><code>setProperties(title, props, callFunction=True)</code><br />
+<p><code>.setPropertyText(title, prop, newText=None)</code><br />
+    Change the displayed text for the named property.<br />
+    If no value is provided, the original vaue will be used.  </p>
+</li>
+<li>
+<p><code>.setProperties(title, props, callFunction=True)</code><br />
     Adds the dictionary of properties to the widget.<br />
     If any of them already exist, they will be updated.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>setProperty(title, prop, value=False, callFunction=True)</code><br />
+<p><code>.setProperty(title, prop, value=False, callFunction=True)</code><br />
     Sets the named property to the specified value.<br />
     If it doesn't exist, it will be added first, at the end of the widget.<br />
     Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>deleteProperty(title, prop)</code><br />
+<p><code>.deleteProperty(title, prop)</code><br />
     Deletes the named property from the widget.  </p>
+</li>
+<li>
+<p>`.resetProperties(title, callFunction=True):<br />
+    This will reset the specified Properties back to its original values.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p>`.clearProperties(title, callFunction=True):<br />
+    This will set all values in the specified Properties to False.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p>`.resetAllProperties(callFunction=False):<br />
+    This will reset all Properties in the app back to their original values.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+<li>
+<p>`.clearAllProperties(callFunction=False):<br />
+    This will set all values in all Properties in the app to False.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
 </ul>
 <h4 id="get-properties">Get Properties</h4>
 <ul>
 <li>
-<p><code>getProperties(title)</code><br />
+<p><code>.getProperties(title)</code><br />
     Gets a dictionary of the all items in the Properties widget.  </p>
 </li>
 <li>
-<p><code>getProperty(title, prop)</code><br />
+<p><code>.getAllProperties()</code><br />
+    This will return the contents of all Properties in the app, as a dictionary.  </p>
+</li>
+<li>
+<p><code>.getProperty(title, prop)</code><br />
     Gets the value of the named property.  </p>
 </li>
 </ul>
@@ -1373,18 +1571,34 @@ app.go()
 <p><code>.setDatePickerChangeFunction(title, function)</code><br />
     Set a function to call when the DatePicker is changed.  </p>
 </li>
+<li>
+<p><code>.clearDatePicker(title, callFunction=True)</code><br />
+    This will reset the specified DatePicker to the earliest available date.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllDatePickers(callFunction=False)</code><br />
+    This will reset all DatePickers in the app to their earliest available date.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
 </ul>
 <h4 id="get-datepickers">Get DatePickers</h4>
 <ul>
-<li><code>.getDatePicker(title)</code><br />
-    Will return the currently selected date.  </li>
+<li>
+<p><code>.getDatePicker(title)</code><br />
+    Will return the currently selected date.  </p>
+</li>
+<li>
+<p><code>.getAllDatePickers()</code><br />
+    This will return the contents of all DatePickers in the app, as a dictionary.  </p>
+</li>
 </ul></div>
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

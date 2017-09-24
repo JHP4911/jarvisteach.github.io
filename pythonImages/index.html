@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,7 +359,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
@@ -331,6 +400,8 @@
     
         <li class="main active"><a href="#images">Images</a></li>
         
+            <li><a href="#built-in-icons">Built-in icons</a></li>
+        
             <li><a href="#add-images">Add Images</a></li>
         
             <li><a href="#change-images">Change Images</a></li>
@@ -358,6 +429,11 @@ Also, converting PNGs is temperamental in Python 2.7 - another reason to avoid. 
 <p>Getting the path for images right can be <strong>TRICKY</strong><br />
 It's therefore best to put images in the same folder as your Python code.<br />
 Or, create an image folder and set it using the <code>.setImageLocation(location)</code> function.  </p>
+<h4 id="built-in-icons">Built-in icons</h4>
+<p>appJar has a host of built-in icons you can use.<br />
+They are all located in a folder called: <code>gui.icon_path</code><br />
+If you want to use one, you could just use <code>.addIcon()</code> or <code>.addIconButton()</code><br />
+Otherwise, concatenate <code>gui.icon_path</code> with the icon's name and <code>.png</code>  </p>
 <h3 id="add-images">Add Images</h3>
 <ul>
 <li><code>.addImage(title, file)</code><br />
@@ -373,9 +449,15 @@ app.stopLabelFrame()
 
 <ul>
 <li>
-<p><code>.addImageData(title, imgData)</code><br />
+<p><code>.addImageData(title, imgData, fmt="gif")</code><br />
     As above, but receives raw image data.<br />
-    Currently only supports base64 encoded GIF images.  </p>
+    Currently only supports base64 encoded GIF images.<br />
+    Alternatively, you can pass in a ready made PhotoImage, simply set <code>fmt</code> to be 'PhotoImage'.  </p>
+</li>
+<li>
+<p><code>.addIcon(title, iconName)</code><br />
+    This will create an image as above, but use one of appJar's inbuilt icons.<br />
+    Simply pass the name of one of the icons.  </p>
 </li>
 <li>
 <p><code>.setImageLocation(location)</code><br />
@@ -386,13 +468,13 @@ app.stopLabelFrame()
 <h3 id="change-images">Change Images</h3>
 <ul>
 <li>
-<p><code>.setImage(title, image)</code> &amp; <code>.setImageData(title, imgData)</code><br />
+<p><code>.setImage(title, image)</code> &amp; <code>.setImageData(title, imgData, fmt="gif")</code><br />
     This will replace the existing image with the new one.<br />
     If the image has the same path, it will not be changed.<br />
-    If imgData, will always be reloaded.  </p>
+    ImageData is always reloaded.  </p>
 </li>
 <li>
-<p><code>.reloadImage(title, image)</code> &amp; <code>.reloadImageData(title, imgData)</code><br />
+<p><code>.reloadImage(title, image)</code> &amp; <code>.reloadImageData(title, imgData, fmt="gif")</code><br />
     This will replace the existing image with the new one.<br />
     It will force an image reload, even if the file name hasn't changed.<br />
     Useful if an outside agency modifies the image file.  </p>
@@ -542,7 +624,7 @@ This speeds up processes such as mouse-overs, or setting images back-and-forth. 
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

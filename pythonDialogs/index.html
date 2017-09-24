@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,7 +359,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
@@ -300,7 +369,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../splash/">
+                    <a rel="prev" href="../pythonSubWindows/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -370,18 +439,21 @@ NB. <code>XXX</code> must be the widget type, eg. <code>Label</code>  </p>
 <hr />
 <ul>
 <li>
-<p><code>.infoBox(title, message)</code><br />
+<p><code>.infoBox(title, message, parent=None)</code><br />
     Shows a simple information message, with an OK button.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="InfoBox" src="../img/dialogs/info.gif" /></p>
 </li>
 <li>
-<p><code>.errorBox(title, message)</code><br />
+<p><code>.errorBox(title, message, parent=None)</code><br />
     Shows a simple error message, with an OK button.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="ErrorBox" src="../img/dialogs/error.gif" /></p>
 </li>
 <li>
-<p><code>.warningBox(title, message)</code><br />
+<p><code>.warningBox(title, message, parent=None)</code><br />
     Shows a simple warning message, with an OK message.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="WarningBox" src="../img/dialogs/warning.gif" /></p>
 </li>
 </ul>
@@ -389,33 +461,39 @@ NB. <code>XXX</code> must be the widget type, eg. <code>Label</code>  </p>
 <hr />
 <ul>
 <li>
-<p><code>.yesNoBox(title, message)</code><br />
+<p><code>.yesNoBox(title, message, parent=None)</code><br />
     Shows a question, with Yes/No buttons. Returns True/False.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="yesNoBox" src="../img/dialogs/yesno.gif" /></p>
 </li>
 <li>
-<p><code>.questionBox(title, message)</code><br />
+<p><code>.questionBox(title, message, parent=None)</code><br />
     Shows a question, with Yes/No buttons. Returns True/False.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="QuestionBox" src="../img/dialogs/question.gif" /></p>
 </li>
 <li>
-<p><code>.okBox(title, message)</code><br />
+<p><code>.okBox(title, message, parent=None)</code><br />
     Shows a question, with OK/Cancel buttons. Returns True/False.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="OkBox" src="../img/dialogs/ok.gif" /></p>
 </li>
 <li>
-<p><code>.retryBox(title, message)</code><br />
+<p><code>.retryBox(title, message, parent=None)</code><br />
     Shows a question, with Cancel/Retry buttons. Returns True/False.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="RetryBox" src="../img/dialogs/retry.gif" /></p>
 </li>
 <li>
-<p><code>.textBox(title, message)</code><br />
+<p><code>.textBox(title, message, parent=None)</code><br />
     Shows a question requesting a text response. Returns a String, or None if Cancel pressed.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="TextBox" src="../img/dialogs/text.gif" /></p>
 </li>
 <li>
-<p><code>.numberBox(title, message)</code><br />
+<p><code>.numberBox(title, message, parent=None)</code><br />
     Shows a question requesting a numeric response. Returns a number, or None if Cancel pressed.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.<br />
 <img alt="NumberBox" src="../img/dialogs/num.gif" /></p>
 </li>
 </ul>
@@ -423,8 +501,9 @@ NB. <code>XXX</code> must be the widget type, eg. <code>Label</code>  </p>
 <hr />
 <ul>
 <li>
-<p><code>.openBox(title=None, dirName=None, fileTypes=None, asFile=False)</code><br />
-    Shows an open file dialog.  </p>
+<p><code>.openBox(title=None, dirName=None, fileTypes=None, asFile=False, parent=None)</code><br />
+    Shows an open file dialog.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.  </p>
 <p><img alt="OpenBox" src="../img/dialogs/openBox_1.png" /><br />
 <img alt="OpenBox" src="../img/dialogs/openBox_2.png" /><br />
 Various parameters can be provided (although they don't work on all platforms):  </p>
@@ -437,21 +516,23 @@ This will set the allowed file extensions, it should be a list of tuples. They w
 </ul>
 </li>
 <li>
-<p><code>.saveBox(title=None, fileName=none, dirName=None, fileExt=".txt", fileTypes=None, asFile=None)</code><br />
-    Shows a save file dialog.  </p>
+<p><code>.saveBox(title=None, fileName=none, dirName=None, fileExt=".txt", fileTypes=None, asFile=None, parent=None)</code><br />
+    Shows a save file dialog.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.  </p>
 <p><img alt="SaveBox" src="../img/dialogs/save.png" />  </p>
 <p>Various parameters can be provided (although they don't work on all platforms):<br />
 <em> <code>title</code> this will set a title for the dialog<br />
 </em> <code>fileName</code> this will set a starting file name to save as<br />
 <em> <code>dirName</code> this will set a starting directory, defaults to the current working directory<br />
-<code>fileExt</code> this will set a file extension to start with
+<code>fileExt</code> this will set a file extension to start with<br />
 </em> <code>fileTypes=[('images', '*.png'), ('images', '*.jpg')]</code><br />
 This will set the allowed file extensions, it should be a list of tuples. They will be grouped by the name.<br />
 * <code>asFile</code> this will determine whether a path or actual Python file object is returned, defaults to filename   </p>
 </li>
 <li>
-<p><code>.directoryBox(title=None, dirName=None)</code>
-    Shows a choose directory dialog.  </p>
+<p><code>.directoryBox(title=None, dirName=None, parent=None)</code>
+    Shows a choose directory dialog.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.  </p>
 <p><img alt="DirectoryBox" src="../img/dialogs/directory.png" />  </p>
 <ul>
 <li><code>title</code> this will set a title for the dialog  </li>
@@ -463,8 +544,9 @@ This will set the allowed file extensions, it should be a list of tuples. They w
 <hr />
 <ul>
 <li>
-<p><code>.colourBox(colour="#FF0000")</code>
-    Shows a dialog for choosing colours.  </p>
+<p><code>.colourBox(colour="#FF0000", parent=None)</code>
+    Shows a dialog for choosing colours.<br />
+    If this dialog is being launched from a <a href="../pythonWidgetGrouping/#sub-window">subWindow</a> set <code>parent</code> to be the name of the subWindow.  </p>
 <p><img alt="ColourBox" src="../img/dialogs/colour.png" />  </p>
 <p>Can be passed a colour to start with, defaults to red.  </p>
 </li>
@@ -474,7 +556,7 @@ This will set the allowed file extensions, it should be a list of tuples. They w
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

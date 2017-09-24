@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li >
     <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,7 +359,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
@@ -366,6 +435,7 @@
 <li><strong>Sounds</strong> - a section on how to get your GUI to make some noise  </li>
 <li><strong>Bars</strong> - menubars, statusbars &amp; toolbars that can be added to your GUI  </li>
 <li><strong>Pop-ups</strong> - the different pop-ups that can be shown  </li>
+<li><strong>Multiple Windows</strong> - information on creating separate windows  </li>
 <li><strong>Splashscreen</strong> - a splashscreen to show at loadtime  </li>
 <li><strong>Special Characters</strong> - guidance on how to include special characters  </li>
 <li><strong>Beta widgets</strong> - some other available widgets, just not quite finished  </li>
@@ -373,13 +443,13 @@
 <h3 id="configuration">Configuration</h3>
 <p>These are ways of changing how the GUI looks or operates:  </p>
 <ul>
-<li><strong>Arranging Widgets</strong> - guidance on how to change the way widgets are laid out in the GUI  </li>
-<li><strong>Grouping Widgets</strong>a - various containers for grouping widgets together in a GUI  </li>
-<li><strong>Changing Widgets</strong> - how to change the way widgets look &amp; act  </li>
-<li><strong>GUI Options</strong> - how to change the general appearance/set-up of the entire GUI  </li>
-<li><strong>GUI Events</strong> - how to get the GUI to respond to various user interactions or repeat things in the background   </li>
-<li><strong>Drag'n Drop</strong> - how to implement drag and drop functionality  </li>
+<li><strong>GUI Options</strong> - options for configuring general GUI settings  </li>
+<li><strong>Widgets</strong> - options for configuring the layout and look &amp; feel of widgets  </li>
+<li><strong>Events</strong> - options for delaying actions, making them repeat or run in the background  </li>
 <li><strong>Internationalisation</strong> - how to support multiple languages in your GUI  </li>
+<li><strong>Logging</strong> - how to turn on/off appJar's logging capabilities  </li>
+<li><strong>Command Line Arguments</strong> - hw t use various command line arguments  </li>
+<li><strong>ttk</strong> - how to enable ttk support  </li>
 </ul>
 <h2 id="understanding-the-docs">Understanding the Docs</h2>
 <p>When I first started appJar, I didn't really know any Python. I grew up on Pascal &amp; Java, followed by JavaScript &amp; PHP - appjar is therefore all in <a href="https://en.wikipedia.org/wiki/Camel_case">CamelCase</a>.</p>
@@ -416,7 +486,7 @@ Some functions have now been <a href="https://en.wikipedia.org/wiki/Deprecation"
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 

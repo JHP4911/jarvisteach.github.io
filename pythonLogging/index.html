@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.07 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -111,6 +111,12 @@
                     
                         
 <li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../splash/">Splashscreen</a>
 </li>
 
@@ -138,38 +144,74 @@
                     
                         
 <li >
-    <a href="../pythonWidgetLayout/">Arranging widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping widgets</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../pythonWidgetOptions/">Changing widgets</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonEvents/">GUI Events</a>
+    <a href="../pythonWidgetLayout/">Layout</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configurtation</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                         
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
+
+        
+    </ul>
+  </li>
 
                     
                         
@@ -181,6 +223,18 @@
                         
 <li class="active">
     <a href="./">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk</a>
 </li>
 
                     
@@ -228,31 +282,7 @@
                     
                         
 <li >
-    <a href="../pythonBasics/">Python</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../algorithms/">Algorithms</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../gitGuide/">Git</a>
-</li>
-
-                    
-                        
-<li >
     <a href="../packaging/">Packaging</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../whatsNew/">Change-Log</a>
 </li>
 
                     
@@ -270,14 +300,53 @@
                     
                         
 <li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
     <a href="../contributing/">Contributing</a>
 </li>
 
                     
                         
 <li >
-    <a href="../Thanks/">Acknowledgements</a>
+    <a href="../whatsNew/">Change-Log</a>
 </li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                     
                     </ul>
@@ -290,7 +359,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/pythonLessons">
-                    <i class="fa fa-mortar-board"></i> Tutorials
+                    <i class="fa fa-mortar-board"></i> Lessons
                     </a>
                 </li>
 <!--
@@ -300,7 +369,7 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../examples/minecraft/">
+                    <a rel="prev" href="../pythonCommandLine/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -332,6 +401,8 @@
         <li class="main active"><a href="#logging-in-appjar">Logging in appJar</a></li>
         
             <li><a href="#logging-to-file">Logging to file</a></li>
+        
+            <li><a href="#command-line-arguments">Command Line Arguments</a></li>
         
             <li><a href="#external-logging">External Logging</a></li>
         
@@ -366,14 +437,25 @@
 <li><code>.critical(msg)</code></li>
 <li><code>.error(msg)</code></li>
 <li><code>.warn(msg)</code></li>
-<li><code>.debug(msg)</code></li>
 <li><code>.info(msg)</code></li>
+<li><code>.debug(msg)</code></li>
 </ul>
 <h2 id="logging-to-file">Logging to file</h2>
 <hr />
 <p>One of the benefits of using Python's logging capabilites, is the ability to have them logged to a file.<br />
 By setting a <code>fileName</code>, messages will no longer appear on the screen. Instead, they will be written to the named file.<br />
 The <code>logLevel</code> is also increased to <strong>DEBUG</strong>  </p>
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<hr />
+<p>It's possible to set the starting log level using a <a href="../pythonCommandLine/">command line argument</a>.<br />
+Simply use the first letter of the desired log level as an argument when you start your app:  </p>
+<pre><code class="sh">python3 logging.py -d  # log DEBUG messages and above
+</code></pre>
+
+<p>It's also possible to set the file name to log to:  </p>
+<pre><code class="sh">python3 logging.py -f debug.log  # log messages to a file called debug.log
+</code></pre>
+
 <h2 id="external-logging">External Logging</h2>
 <hr />
 <p>If you want to bypass the <strong>appJar</strong> functions, and use the logger directly in your code, simply request your own copy of the logger: <code>logger = logging.getLogger("appJar")</code>.  </p>
@@ -387,7 +469,7 @@ The <code>logLevel</code> is also increased to <strong>DEBUG</strong>  </p>
         <footer class="col-md-12">
             <hr>
             
-                <div style='text-align: center;'><p>Richard Jarvis, 2016-2017</p></div>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
             
         </footer>
 
