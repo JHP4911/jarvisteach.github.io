@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -234,7 +234,7 @@
                     
                         
 <li >
-    <a href="../pythonTtk/">ttk</a>
+    <a href="../pythonTtk/">ttk (BETA)</a>
 </li>
 
                     
@@ -436,7 +436,7 @@ app.addLabel(&quot;cross&quot;, CROSS)
 
 <p>By putting <code>\u</code> at the start of the String, you tell Python it is a Unicode character.<br />
 This works well in Python 3.x, as it knows what unicode characters are.</p>
-<p>If you're still using python 2.x (not recomended), you'll need to use a little extra magic:  </p>
+<p>If you're still using python 2.x (not recommended), you'll need to use a little extra magic:  </p>
 <pre><code class="python">TICK=u&quot;\u2714&quot;
 CROSS=u&quot;\u2716&quot;
 
@@ -495,7 +495,7 @@ The switch from Python2 to Python3 caused lots of problems, as the <code>u</code
 That meant there were two different ways to get unicode to work: Python2: <code>u'\u23F9'</code>, Python3: <code>'\u23F9'</code>  </p>
 <p>As of Python 3.3, the <code>u</code> prefix was brought back (although it doesn't do anything), but that still meant Python3.0 to Python3.2 didn't support it.</p>
 <p>So, the best solution, if you want your code to work on all versions of Python, is to not use the <code>u</code> prefix, and instead change the way Python2 works.  </p>
-<p>If you include <code>from __future__ import unicode_literals</code> at the start of your code, you can include uncicode characters in Python2, without using the <code>u</code> prefix - <code>print('\u23F9')</code> will then work on every version of python.  </p>
+<p>If you include <code>from __future__ import unicode_literals</code> at the start of your code, you can include unicode characters in Python2, without using the <code>u</code> prefix - <code>print('\u23F9')</code> will then work on every version of python.  </p>
 <h3 id="easter-egg">Easter Egg</h3>
 <hr />
 <p>Try holding the &lt;ALT&gt; key and typing different codes on a Windows computer...  </p></div>

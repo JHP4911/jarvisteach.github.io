@@ -44,7 +44,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.8 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -234,7 +234,7 @@
                     
                         
 <li >
-    <a href="../pythonTtk/">ttk</a>
+    <a href="../pythonTtk/">ttk (BETA)</a>
 </li>
 
                     
@@ -542,7 +542,7 @@ Address Book-nextButton: Danach
 
 <ul>
 <li><code>[LISTBOX]</code>, <code>[SPINBOX]</code>, <code>[OPTIONBOX]</code><br />
-    These have multiple values for a single widget, so each value should be on a new line, afet the ID.<br />
+    These have multiple values for a single widget, so each value should be on a new line, after the ID.<br />
 <strong>NB.</strong> You can't translate a SpinBox that was generated from a range.  </li>
 </ul>
 <pre><code class="sh">[LISTBOX]
@@ -576,12 +576,12 @@ SAVE-POPUP:
 </code></pre>
 
 <pre><code class="python">def saveFile(btn):
-    # SAVE-POPUP is a translation key, so the two parameters shoud be replaced
+    # SAVE-POPUP is a translation key, so the two parameters should be replaced
     if app.okBox(&quot;SAVE-POPUP&quot;, &quot;Confirm you want to save.&quot;):
         saveFile()
 
 def quit(btn):
-    # SAVE-POPUP is a translation key, so the two parameters shoud be replaced
+    # SAVE-POPUP is a translation key, so the two parameters should be replaced
     if app.okBox(&quot;EXIT-POPUP&quot;, &quot;Confirm you want to exit.&quot;):
         app.stop()
 </code></pre>
@@ -618,7 +618,7 @@ VALUE-3: This is the last piece of translated text.
 </code></pre>
 
 <p>These can then be accessed by using appJar's <code>.translate(key, default=None)</code> function.  </p>
-<pre><code class="python"># this funciton will print out some translated text
+<pre><code class="python"># this function will print out some translated text
 def showMessage():
     print(app.translate(&quot;VALUE-1&quot;))
     print(app.translate(&quot;VALUE-2&quot;))
