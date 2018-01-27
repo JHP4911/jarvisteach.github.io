@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/simpleAppJar/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Simple Naming - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Beta</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Widgets</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Simple Naming</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonDevWidgets/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonGuiOptions/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#appjar-v10">appJar v1.0</a></li>
+        
+            <li><a href="#operation">Operation</a></li>
+        
+            <li><a href="#positioning">Positioning</a></li>
+        
+            <li><a href="#gui-properties">GUI Properties</a></li>
+        
+            <li><a href="#events">Events</a></li>
+        
+            <li><a href="#label">Label</a></li>
+        
+            <li><a href="#message">Message</a></li>
+        
+            <li><a href="#entry">Entry</a></li>
+        
+            <li><a href="#text">Text</a></li>
+        
+            <li><a href="#button">Button</a></li>
+        
+            <li><a href="#link">Link</a></li>
+        
+            <li><a href="#check">Check</a></li>
+        
+            <li><a href="#radio">Radio</a></li>
+        
+            <li><a href="#option">Option</a></li>
+        
+            <li><a href="#spin">Spin</a></li>
+        
+            <li><a href="#listbox">Listbox</a></li>
+        
+            <li><a href="#slider">Slider</a></li>
+        
+            <li><a href="#meter">Meter</a></li>
+        
+            <li><a href="#grip">Grip</a></li>
+        
+            <li><a href="#separator">Separator</a></li>
+        
+            <li><a href="#image">Image</a></li>
+        
+            <li><a href="#properties">Properties</a></li>
+        
+            <li><a href="#date">Date</a></li>
+        
+            <li><a href="#canvas">Canvas</a></li>
+        
+            <li><a href="#popup">popUp</a></li>
+        
+    
+        <li class="main "><a href="#gui-properties_1">GUI Properties</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="appjar-v10">appJar v1.0</h1>
+<p>Some features we are working towards in the 1.0 release, are a simplified way of adding, setting &amp; getting widgets.<br />
+Each widget will have a single function that supports all three actions.  </p>
+<p>We're also simplifying GUI settings, exposing most settings as properties, as well as letting them be passed in the constructor.<br />
+This is available for BETA testing in the current release, but still needs a bit of work.  </p>
+<p>If you combine this with the context manager feature, building GUIs is getting even easier:</p>
+<pre><code class="python">from appJar import gui 
+
+def press(btnName):
+    app.popUp(&quot;INFO&quot;, &quot;You pressed &quot; + btnName)
+
+def update(value):
+    if value == &quot;list&quot;: app.slider(&quot;slider&quot;, app.listbox(value)[0])
+    elif value == &quot;slider&quot;: app.listbox(&quot;list&quot;, app.slider(value))
+    app.label(&quot;display&quot;, app.listbox(&quot;list&quot;)[0])
+
+with gui(&quot;Version 1.0&quot;, bg=&quot;teal&quot;) as app:
+    app.label(&quot;Version 1.0 Demo&quot;, colspan=2, bg=&quot;red&quot;)
+    with app.labelFrame(&quot;Big Buttons&quot;, colspan=2, sticky=&quot;news&quot;, expand=&quot;both&quot;):
+        app.button(&quot;BUTTON A&quot;, press)
+        app.button(&quot;BUTTON B&quot;, press)
+        app.button(&quot;BUTTON C&quot;, press)
+    app.listbox(&quot;list&quot;, [1, 2, 3, 4, 5], rows=5, selected=0, submit=update)
+    app.label(&quot;display&quot;, &quot;1&quot;, row=2, column=1, bg=&quot;yellow&quot;, sticky=&quot;news&quot;)
+    app.slider(&quot;slider&quot;, colspan=2, range=(1,5), change=update, interval=1)
+</code></pre>
+
+<p><img alt="SimpleAppJar" src="../img/simpleDemo.png" /></p>
+<h2 id="operation">Operation</h2>
+<hr />
+<p>As demonstrated above, each widget now has a single function - the name of the widget.<br />
+Call this function passing one or both of the key parameters, to determine what will happen:</p>
+<pre><code class="python">app.label(&quot;title&quot;, &quot;text&quot;)      # ADD a label if the title is new
+app.label(&quot;title&quot;, &quot;text_2&quot;)    # SET a label if the title exists
+print(app.label(&quot;title&quot;))       # GET a label if no widget is being created or set
+</code></pre>
+
+<p>The two key parameters are:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>A unique identifier for that widget type.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Any relevant information for the widget.</td>
+</tr>
+</tbody>
+</table>
+<p>The logic is as follows:</p>
+<ul>
+<li>If <code>title</code> doesn't exist - <strong>ADD</strong> the widget, using the <code>value</code>, or <code>title</code> if no <code>value</code> is specified.  </li>
+<li>If <code>title</code> already exists and a <code>value</code> is specified - <strong>SET</strong> the widget.  </li>
+<li>If <code>title</code> already exists and a <code>value</code> is not specified - <strong>GET</strong> the widget.  </li>
+</ul>
+<h2 id="positioning">Positioning</h2>
+<hr />
+<p>When adding a widget, it's also possible to set its position.<br />
+When no position is specified, each widget goes in the first column of a new row.  </p>
+<pre><code class="python">app.label(&quot;title&quot;, &quot;text&quot;, row=2, column=4, rowspan=3)      # ADD a label
+</code></pre>
+
+<p>The following positional parameters are available when adding widgets:  </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row</td>
+<td>integer</td>
+<td>&lt;next row&gt;</td>
+<td>The grid row to place the widget in.</td>
+</tr>
+<tr>
+<td>column</td>
+<td>integer</td>
+<td>0</td>
+<td>The grid column to place the widget in.</td>
+</tr>
+<tr>
+<td>rowspan</td>
+<td>integer</td>
+<td>1</td>
+<td>The number of grid rows to stretch the widget across.</td>
+</tr>
+<tr>
+<td>colspan</td>
+<td>integer</td>
+<td>1</td>
+<td>The number of grid columns to stretch the widget across.</td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, they can be specified as a tuple:  </p>
+<pre><code class="python">app.label(&quot;title0&quot;, &quot;text&quot;, pos=(1, 0))      # ADD a label in row 1, column 0
+app.label(&quot;title2&quot;, &quot;text&quot;, pos=(1, 1))      # ADD a label in row 1, column 1
+app.label(&quot;title3&quot;, &quot;text&quot;, pos=(2, 0, 2))   # ADD a label in row 2, column 0, spanning 2 columns
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pos</td>
+<td>list/tuple</td>
+<td>()</td>
+<td>Position paramters for the widget, in the order: row, column, colspan, rowspan</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gui-properties">GUI Properties</h2>
+<hr />
+<p>There are two GUI properties which affect how widgets are displayed <code>sticky</code> and <code>stretch</code>.<br />
+These can be modified when adding a widget, just bear in mind they are GUI settings, and will affect all future widgets in the current container.  </p>
+<pre><code class="python">app.label(&quot;title0&quot;, &quot;text&quot;, sticky=&quot;&quot;, strech=&quot;none&quot;)
+app.label(&quot;title2&quot;, &quot;text&quot;, sticky=&quot;ns&quot;, stretcj=&quot;row&quot;)
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sticky</td>
+<td>string</td>
+<td>&lt;Container specific&gt;</td>
+<td>Describes which sides the widget will stick to, one or more of: <code>n</code>, <code>e</code>, <code>w</code>, <code>s</code> in a single string.</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>string</td>
+<td>&lt;Container specific&gt;</td>
+<td>Describes how the widget will stretch to fill the row/column: <code>none</code>, <code>row</code>, <code>column</code> or <code>all</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<hr />
+<p>Most of the widgets also have some support for events (see the <a href="../pythonEvents/#types-of-event">events page</a> for more information).<br />
+<code>submit</code> &amp; <code>change</code> will pass the name of the widget to the function, <code>drop</code> will pass the data to the function:<br />
+<strong>NB.</strong> the parameter is only the name of the function, don't include any brackets.  </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>function</td>
+<td>None</td>
+<td>A function to call when the widget is <em>changed</em>.</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>function</td>
+<td>None</td>
+<td>A function to call when the widget is <em>submitted</em>.</td>
+</tr>
+<tr>
+<td>over</td>
+<td>function (list)</td>
+<td>None</td>
+<td>A function to call when the mouse <em>enters</em> the widget, with an optional second function to call when the mouse <em>leaves</em>.</td>
+</tr>
+<tr>
+<td>drop</td>
+<td>boolean/function</td>
+<td>None</td>
+<td>Update the widget with <em>dropped</em> data if True, otherwise call the function.</td>
+</tr>
+<tr>
+<td>drag</td>
+<td>function (list)</td>
+<td>None</td>
+<td>A function to call call when the widget is <em>dragged</em>, with an optional second function to call hwne the widget is <em>dropped</em>.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">def update(name):
+    if name == &quot;size&quot;:
+        updateSize()
+    elif name == &quot;toppings&quot;:
+        updateToppings()
+
+app.listbox(&quot;size&quot;, [&quot;small&quot;, &quot;medium&quot;, &quot;large&quot;], change=update)
+app.listbox(&quot;toppings&quot;, [&quot;corn&quot;, &quot;cheese&quot;, &quot;peppers&quot;], change=update)
+app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
+</code></pre>
+
+<h2 id="label">Label</h2>
+<hr />
+<p>A widget for displaying text in the GUI.  </p>
+<ul>
+<li><code>.label(title, value=None)</code><br />
+The <code>value</code> will be the text to show in the label.<br />
+Labels can receive a <code>submit</code> parameter, making them clickable.<br />
+Labels can receive <code>drop</code> data.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>Set to <code>selectable</code> or <code>flash</code> to create different labels.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="message">Message</h2>
+<p>A widget for displaying multi-line text in the GUI.  </p>
+<ul>
+<li><code>.message(title, value=None)</code><br />
+    The <code>value</code> will be the text to show in the message.<br />
+    Messages can receive <code>drop</code> data.  </li>
+</ul>
+<h2 id="entry">Entry</h2>
+<hr />
+<p>An interactive widget, for capturing user input in the GUI.  </p>
+<ul>
+<li><code>.entry(title, value=None)</code><br />
+    A <code>value</code> is not required, but if provided will populate the entry.<br />
+    Entries can receive a <code>change</code> parameter, and can link a <code>submit</code> parameter to pressing <ENTER>.<br />
+    Entries can receive <code>drop</code> data.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>boolean</td>
+<td>False</td>
+<td>Adds a Label before the widget.</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>One of: <code>standard</code>, <code>file</code>, <code>direcory</code>, <code>numeric</code>, <code>auto</code> or <code>validation</code>.</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>boolean</td>
+<td>False</td>
+<td>Configures the entry box to show stars instead of characters.</td>
+</tr>
+<tr>
+<td>default</td>
+<td>string</td>
+<td>None</td>
+<td>Sets default text to display in an empty entry.</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>boolean</td>
+<td>False</td>
+<td>Should the entry box be given focus?</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>integer</td>
+<td>10</td>
+<td>If the kind is <code>auto</code> this will set the number of rows to show.</td>
+</tr>
+</tbody>
+</table>
+<p>There are also some validation settings that can be applied:  </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>None</td>
+<td>Sets a maximum limit on the number of characters taht can be entered.</td>
+</tr>
+<tr>
+<td>case</td>
+<td>string</td>
+<td>None</td>
+<td>Set to <code>upper</code> to force upercase or <code>lower</code> to force lowercase.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text">Text</h2>
+<hr />
+<p>An interactive widget, for capturing multi-line user input in the GUI.  </p>
+<ul>
+<li><code>.text(title, value=None)</code><br />
+    A <code>value</code> is not required, but if provided will populate the text.<br />
+    Text boxes can receive a <code>change</code> parameter.<br />
+    Text boxes can receive <code>drop</code> data.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scroll</td>
+<td>boolean</td>
+<td>False</td>
+<td>Will configure this as a scrollable text area.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="button">Button</h2>
+<hr />
+<p>A clickable button for triggering events.  </p>
+<ul>
+<li><code>.button(title, value=None)</code><br />
+    The <code>value</code> should be a function to call when the button is pressed.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>None</td>
+<td>A path to an image to show in the button.</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>string</td>
+<td>None</td>
+<td>The name of an icon to show in the button.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="link">Link</h2>
+<hr />
+<p>A clickable <strong>hyperlink</strong> to trigger events or launch webpages.  </p>
+<ul>
+<li><code>.link(title, value=None)</code><br />
+    The <code>value</code> can be set to a function to call when the link is clicked, or a valid URI to open in a browser.  </li>
+</ul>
+<h2 id="check">Check</h2>
+<hr />
+<p>A checkbox style widget, that can be checked/unchecked.  </p>
+<ul>
+<li><code>.check(title, value=None)</code><br />
+    The <code>value</code> should be True or False, indicating if the check starts selected or not.<br />
+    Check boxes can receive a <code>change</code> parameter.  </li>
+</ul>
+<h2 id="radio">Radio</h2>
+<hr />
+<p>Radio buttons are used in groups, only one of them can be checked.<br />
+By default, the first radio button added to a group will be selected.</p>
+<ul>
+<li><code>.radio(title, value=None)</code><br />
+    The <code>title</code> is the radio button's group.<br />
+    The <code>value</code> is the text to display next to this radio button.<br />
+    Radio buttons can receive a <code>change</code> parameter, it will be linked to all radio buttons of the same <code>title</code>.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>selected</td>
+<td>boolean</td>
+<td>False</td>
+<td>Should this radio be selected?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="option">Option</h2>
+<hr />
+<p>When clicked, displays a drop-down of items, one of which can be selected.  </p>
+<ul>
+<li><code>.option(title, value=None)</code><br />
+    The <code>value</code> should contain a list of items to display in the drop-down.<br />
+    Options can receive a <code>change</code> parameter.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>Set this to <code>ticks</code> if you want tickable options.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spin">Spin</h2>
+<hr />
+<p>Shows a single value, with arrows to scroll up or down, allowing the user to change the value.  </p>
+<ul>
+<li><code>.spin(title, value=None, endValue=None)</code><br />
+    If only the <code>value</code> is set, it should be a list of values to display in the spin box.<br />
+    If <code>endValue</code> is also set, then both parameters should be integers, and appJar will generate a range of whole numbers between the two values.<br />
+    Spin boxes can receive a <code>change</code> parameter.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>endValue</td>
+<td>integer</td>
+<td>None</td>
+<td>If specified, value &amp; endValue should be integers, and will be used to generate a range.</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>integer</td>
+<td>0</td>
+<td>The position of an item to select.</td>
+</tr>
+<tr>
+<td>item</td>
+<td>string</td>
+<td>None</td>
+<td>The name of an item to select.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="listbox">Listbox</h2>
+<hr />
+<p>Displays a list of items, one (or more than one) of which can be selected.  </p>
+<ul>
+<li><code>.listbox(title, value=None)</code><br />
+    The <code>value</code> should contain a list of items to display in the listbox.<br />
+    Listboxes can receive a <code>change</code> parameter.<br />
+    Listboxes can receive <code>drop</code> data.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rows</td>
+<td>integer</td>
+<td>None</td>
+<td>Specifies how many rows to display in the listbox.</td>
+</tr>
+<tr>
+<td>multi</td>
+<td>boolean</td>
+<td>False</td>
+<td>Set the listbox to be multi-selectable.</td>
+</tr>
+<tr>
+<td>group</td>
+<td>boolean</td>
+<td>False</td>
+<td>Set the listbox to be part of a group.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slider">Slider</h2>
+<hr />
+<p>A draggable widget, where the user can select a number from a range.  </p>
+<ul>
+<li><code>.slider(title, value=None)</code><br />
+    The <code>value</code> is optional - it will set the starting position of the slider.<br />
+    Sliders can receive a <code>change</code> parameter.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td><code>horizontal</code></td>
+<td>Set the direction of the slider: <code>vertical</code> or <code>horizontal</code>.</td>
+</tr>
+<tr>
+<td>show</td>
+<td>boolean</td>
+<td>False</td>
+<td>Show the slider's value above the slider.</td>
+</tr>
+<tr>
+<td>increment</td>
+<td>integer</td>
+<td>10</td>
+<td>Configures how much the slider jumps, when the torugh is clicked.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>integer</td>
+<td>None</td>
+<td>Configures the slider to show interval values, along its length. In steps of the value specified.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="meter">Meter</h2>
+<hr />
+<p>Various styles of progress meter.  </p>
+<ul>
+<li><code>.meter(title, value=None)</code><br />
+    For <code>standard</code> and <code>split</code> meters <code>value</code> should be a number between 0 and 100.<br />
+    For <code>dual</code> meters, <code>value</code> should be a list of two numbers, each between 0 and 100.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>None</td>
+<td>Set text to show on the meter.</td>
+</tr>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>Choose the kind of meter: <code>standard</code>, <code>split</code> or <code>dual</code>.</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>boolean</td>
+<td>None</td>
+<td>Set the fill colour(s) for the slider (a list of two colours for <code>split</code> &amp; <code>dual</code>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grip">Grip</h2>
+<hr />
+<p>Displays a draggable icon, which allows the GUI to be moved.  </p>
+<ul>
+<li><code>.grip(title, value=None)</code><br />
+    A <code>value</code> is not required.  </li>
+</ul>
+<h2 id="separator">Separator</h2>
+<hr />
+<p>Displays a line, giving visual separation in the GUI.  </p>
+<ul>
+<li><code>.separator(title, value=None)</code><br />
+    A <code>value</code> is not required.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>horizontal</td>
+<td>Set the orientation of the separator: <code>horizontal</code> or <code>vertical</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="image">Image</h2>
+<hr />
+<p>Displays a picture.  </p>
+<ul>
+<li><code>.image(title, value=None)</code>
+    The <code>value</code> should be the image file, icon or data to show.<br />
+    Images can receive a <code>submit</code> parameter, making them clickable.<br />
+    Images can receive <code>drop</code> data.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>The kind of image, one of: <code>icon</code>, <code>data</code> or <code>standard</code>.</td>
+</tr>
+<tr>
+<td>fmt</td>
+<td>string</td>
+<td>None</td>
+<td>If the <code>kind</code> is <code>data</code> this will be used to determine the file type.</td>
+</tr>
+<tr>
+<td>compound</td>
+<td>string</td>
+<td>None</td>
+<td>Can be set to a position to show the title as well (<code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code> or <code>center</code>).</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>integer</td>
+<td>None</td>
+<td>If this is an animated image, the FPS to animate the image at.</td>
+</tr>
+<tr>
+<td>over</td>
+<td>string</td>
+<td>None</td>
+<td>The path to an alternative image to show, when the mouse goes over the image.</td>
+</tr>
+<tr>
+<td>map</td>
+<td>dictionary</td>
+<td>None</td>
+<td>A dictionary of name:coordinates to use as an image map. <code>submit</code> must also be set.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
+<hr />
+<p>Displays a list of checkboxes, stored in a dictionary.  </p>
+<ul>
+<li><code>.properties(title, value=None)</code>
+    The <code>value</code> should contain a dictionary of names and booleans.<br />
+    Properties can receive a <code>change</code> parameter.  </li>
+</ul>
+<h2 id="date">Date</h2>
+<hr />
+<p>Displays a simple date picker widget.  </p>
+<ul>
+<li><code>.date(title, value=None)</code>
+    The <code>value</code> should contain a date object.<br />
+    Date pickes can receive a <code>change</code> parameter.  </li>
+</ul>
+<h2 id="canvas">Canvas</h2>
+<hr />
+<p>Displays a the canvas widget.  </p>
+<ul>
+<li><code>.canvas(title)</code>
+    Creates a canvas with the specified title. </li>
+</ul>
+<h2 id="popup">popUp</h2>
+<hr />
+<p>Displays a popUp.  </p>
+<ul>
+<li><code>.popUp(title, message, kind="info", parent=None)</code><br />
+    This will show any of the availabel popUps.<br />
+<code>title</code>  will be displayed in the title bar.
+    <code>message</code> will be displayed as the text of the popUp.<br />
+<code>kind</code> defaults to <code>info</code>, but can be any of: <code>error</code>, <code>warning</code>, <code>yesno</code>, <code>question</code>, <code>ok</code>, <code>retry</code>, <code>string</code>, <code>integer</code>, <code>float</code>, <code>text</code> or <code>number</code>.<br />
+<code>parent</code> allows you to link this popUp to a named SubWindow, instead of the main window.  </li>
+</ul>
+<hr />
+<h1 id="gui-properties_1">GUI Properties</h1>
+<hr />
+<p>Most of the setters &amp; getters for GUI/widget configuration will now be available as properties.<br />
+This allows them to be set in a slightly simpler way:</p>
+<pre><code class="python">app.title = &quot;Property Demo&quot;
+app.bg = &quot;red&quot;
+app.fg = &quot;yellow&quot;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Pass a string for the title of the GUI</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>string</td>
+<td>Pass the path to an icon file</td>
+</tr>
+<tr>
+<td>transparency</td>
+<td>integer</td>
+<td>Pass a percentage (between 0 &amp; 100) to set the transparency</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>boolean</td>
+<td>Pass either <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>padding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td>inPadding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td>guiPadding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the width &amp; height (or the string <code>fullscreen</code>)</td>
+</tr>
+<tr>
+<td>location</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y coordinates (or the string <code>CENTER</code>)</td>
+</tr>
+<tr>
+<td>fullscreen</td>
+<td>boolean</td>
+<td>Pass either <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td>resizable</td>
+<td>boolean</td>
+<td>Pass either <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>sticky</td>
+<td>string</td>
+<td>Pass a string describing which sides to stick to (news).</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>string</td>
+<td>Pass a string describing if rows/columns should stretch.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fg</td>
+<td>string</td>
+<td>Pass a colour to use for the text colour of all label style widgets.</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>string</td>
+<td>Pass a colour to use for the background of all label style widgets.</td>
+</tr>
+<tr>
+<td>font</td>
+<td>integer</td>
+<td>Pass a value to set the size of the font.</td>
+</tr>
+<tr>
+<td>buttonFont</td>
+<td>integer</td>
+<td>Pass the font size to use for all button style widgets.</td>
+</tr>
+<tr>
+<td>labelFont</td>
+<td>integer</td>
+<td>Pass the font size to use for all label style widgets.</td>
+</tr>
+<tr>
+<td>ttkTheme</td>
+<td>string</td>
+<td>Only available in ttk mode - pass the name of the ttk theme you want to use.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>row</td>
+<td>integer</td>
+<td>Gets or sets the next row number to be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
