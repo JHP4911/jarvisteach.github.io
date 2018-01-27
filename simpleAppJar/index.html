@@ -630,7 +630,7 @@ app.label(&quot;title3&quot;, &quot;text&quot;, pos=(2, 0, 2))   # ADD a label i
 <td>pos</td>
 <td>list/tuple</td>
 <td>()</td>
-<td>Position paramters for the widget, in the order: row, column, colspan, rowspan</td>
+<td>Position parameters for the widget, in the order: row, column, colspan, rowspan</td>
 </tr>
 </tbody>
 </table>
@@ -638,8 +638,8 @@ app.label(&quot;title3&quot;, &quot;text&quot;, pos=(2, 0, 2))   # ADD a label i
 <hr />
 <p>There are two GUI properties which affect how widgets are displayed <code>sticky</code> and <code>stretch</code>.<br />
 These can be modified when adding a widget, just bear in mind they are GUI settings, and will affect all future widgets in the current container.  </p>
-<pre><code class="python">app.label(&quot;title0&quot;, &quot;text&quot;, sticky=&quot;&quot;, strech=&quot;none&quot;)
-app.label(&quot;title2&quot;, &quot;text&quot;, sticky=&quot;ns&quot;, stretcj=&quot;row&quot;)
+<pre><code class="python">app.label(&quot;title0&quot;, &quot;text&quot;, sticky=&quot;&quot;, stretch=&quot;none&quot;)
+app.label(&quot;title2&quot;, &quot;text&quot;, sticky=&quot;ns&quot;, stretch=&quot;row&quot;)
 </code></pre>
 
 <table>
@@ -709,7 +709,7 @@ app.label(&quot;title2&quot;, &quot;text&quot;, sticky=&quot;ns&quot;, stretcj=&
 <td>drag</td>
 <td>function (list)</td>
 <td>None</td>
-<td>A function to call call when the widget is <em>dragged</em>, with an optional second function to call hwne the widget is <em>dropped</em>.</td>
+<td>A function to call call when the widget is <em>dragged</em>, with an optional second function to call when the widget is <em>dropped</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -787,7 +787,7 @@ Labels can receive <code>drop</code> data.  </li>
 <td>kind</td>
 <td>string</td>
 <td><code>standard</code></td>
-<td>One of: <code>standard</code>, <code>file</code>, <code>direcory</code>, <code>numeric</code>, <code>auto</code> or <code>validation</code>.</td>
+<td>One of: <code>standard</code>, <code>file</code>, <code>directory</code>, <code>numeric</code>, <code>auto</code> or <code>validation</code>.</td>
 </tr>
 <tr>
 <td>secret</td>
@@ -830,13 +830,13 @@ Labels can receive <code>drop</code> data.  </li>
 <td>limit</td>
 <td>integer</td>
 <td>None</td>
-<td>Sets a maximum limit on the number of characters taht can be entered.</td>
+<td>Sets a maximum limit on the number of characters that can be entered.</td>
 </tr>
 <tr>
 <td>case</td>
 <td>string</td>
 <td>None</td>
-<td>Set to <code>upper</code> to force upercase or <code>lower</code> to force lowercase.</td>
+<td>Set to <code>upper</code> to force uppercase or <code>lower</code> to force lowercase.</td>
 </tr>
 </tbody>
 </table>
@@ -1079,7 +1079,7 @@ By default, the first radio button added to a group will be selected.</p>
 <td>increment</td>
 <td>integer</td>
 <td>10</td>
-<td>Configures how much the slider jumps, when the torugh is clicked.</td>
+<td>Configures how much the slider jumps, when the trough is clicked.</td>
 </tr>
 <tr>
 <td>interval</td>
@@ -1230,7 +1230,7 @@ By default, the first radio button added to a group will be selected.</p>
 <ul>
 <li><code>.date(title, value=None)</code>
     The <code>value</code> should contain a date object.<br />
-    Date pickes can receive a <code>change</code> parameter.  </li>
+    Date pickers can receive a <code>change</code> parameter.  </li>
 </ul>
 <h2 id="canvas">Canvas</h2>
 <hr />
@@ -1244,7 +1244,7 @@ By default, the first radio button added to a group will be selected.</p>
 <p>Displays a popUp.  </p>
 <ul>
 <li><code>.popUp(title, message, kind="info", parent=None)</code><br />
-    This will show any of the availabel popUps.<br />
+    This will show any of the available popUps.<br />
 <code>title</code>  will be displayed in the title bar.
     <code>message</code> will be displayed as the text of the popUp.<br />
 <code>kind</code> defaults to <code>info</code>, but can be any of: <code>error</code>, <code>warning</code>, <code>yesno</code>, <code>question</code>, <code>ok</code>, <code>retry</code>, <code>string</code>, <code>integer</code>, <code>float</code>, <code>text</code> or <code>number</code>.<br />
