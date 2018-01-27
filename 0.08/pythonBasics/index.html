@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonBasics/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Python - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Lessons
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../oldDocs/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../algorithms/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#python-basics">Python Basics</a></li>
+        
+            <li><a href="#cheat-sheets">Cheat Sheets</a></li>
+        
+            <li><a href="#data">Data</a></li>
+        
+            <li><a href="#selection-operators">Selection &amp; Operators</a></li>
+        
+            <li><a href="#iteration">Iteration</a></li>
+        
+            <li><a href="#lists">Lists</a></li>
+        
+            <li><a href="#modular-development">Modular Development</a></li>
+        
+            <li><a href="#writing-a-function">Writing a Function</a></li>
+        
+            <li><a href="#libraries">Libraries</a></li>
+        
+            <li><a href="#file-access">File Access</a></li>
+        
+            <li><a href="#databases-in-python">Databases in Python</a></li>
+        
+            <li><a href="#defensive-programming">Defensive Programming</a></li>
+        
+            <li><a href="#turtle-basics">Turtle Basics</a></li>
+        
+            <li><a href="#gui-basics">GUI Basics</a></li>
+        
+            <li><a href="#colour-map">Colour Map</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="python-basics">Python Basics</h1>
+<hr />
+<p>Below is a bunch of stuff explaining the basics of Python...  </p>
+<h2 id="cheat-sheets">Cheat Sheets</h2>
+<p>Help can be found at:</p>
+<ul>
+<li><a href="../cheatSheets/PythonCheatSheet.pdf">Python Cheat Sheet</a></li>
+<li><a href="../cheatSheets/Turtle%20T3%20CheatSheet.pdf">Turtle Cheat Sheet</a></li>
+<li><a href="../cheatSheets/GUI%20T3%20CheatSheet.pdf">GUI Cheat Sheet</a></li>
+</ul>
+<hr />
+<h2 id="data">Data</h2>
+<h3 id="variables">Variables</h3>
+<p>Variables are the most important things in programming.<br />
+They let your program remember information.<br />
+Variables can store someone's name, their age, or even their favourite food.<br />
+Variables simply point to a space in memory, where the data is stored.  </p>
+<p>A variable always has three things:</p>
+<ul>
+<li>An <strong>identifier</strong> - a name to refer to the variable by  </li>
+<li>A <strong>value</strong> - the information the variable is storing  </li>
+<li>A <strong>data type</strong> - the type of information being stored (words, numbers, lists, etc.)  </li>
+</ul>
+<pre><code class="python"># this declares three variables: name, age, male
+# and initialises each one with a starting value
+name = &quot;Alan Shearer&quot;
+age = 45
+male = True
+</code></pre>
+
+<p>Variables generally go through a three stage process:</p>
+<ul>
+<li><strong>Create</strong> - The variable identifier is declared, and the variable is initialised with a starting value</li>
+<li><strong>Change</strong> - The variable's value is modified</li>
+<li><strong>Check</strong> - The variable's value is checked, in decisions &amp; loops</li>
+</ul>
+<p>At various points along this route, the variable will be <strong>used</strong>.</p>
+<h3 id="constants">Constants</h3>
+<p>Sometimes, you need to store data that doesn't change - these are known as <strong>constants</strong>.<br />
+They are <em>created</em> in the same way, but can't be <em>changed</em>.<br />
+In Python, it is common to write the name of constants in <strong>all uppercase</strong>.</p>
+<pre><code class="python"># declare a constant, that we don't want to change
+WINNING_SCORE = 100
+</code></pre>
+
+<h3 id="data-types">Data Types</h3>
+<p>Data types are very important, as they allow the program to have rules: if you add two numbers together, the program should do some maths, but if you add two words together (<strong>concatenation</strong>) the program will just make a new sentence.</p>
+<p>There are five main data types:</p>
+<ul>
+<li><strong>String</strong> - words, letter, sentences. Defined using speech marks.</li>
+<li><strong>Int</strong> - whole numbers</li>
+<li><strong>Real</strong> - (floats) numbers with fractions (decimal points)</li>
+<li><strong>Boolean</strong> - True or False (On or Off)</li>
+<li><strong>List</strong> - a collection of things (any of the above, or even a collection of lists)</li>
+</ul>
+<p>Python tries to work out the data type automatically, but it occasionally needs some help, if you want to tell Python what the data type is, try one of the following:</p>
+<pre><code class="python"># create 3 new variables by changing the type of var1/var2/var3
+name = str(var1)
+age = int(var2)
+price = float(var3)
+</code></pre>
+
+<h3 id="arithmetic-operators">Arithmetic Operators</h3>
+<p>Python allows you to easily perform maths on your data</p>
+<p>| | 
+-|-|-
++ | Addition | a = b + c
+- | Subtraction | a = b - c
+* | Multiplication | a = b * c
+/ | Division | a = b / c
+// | Modulus division | a = b // c
+% | Remainder division | a = b % c
+<strong> | Exponent | a</strong>b
+round() | Round | Rounds the number to the nearest place
+floor() | Round-down | Rounds the number down<br />
+ceil() | Round-Up | Rounds the number up<br />
+sum() | Sum | Adds together all the items in the list</p>
+<h3 id="string-operations">String Operations</h3>
+<p>Python also lets us perform various actions on Strings.</p>
+<p>| | 
+-|-|-
+<code>varName.upper()</code> | Uppercase | Makes the entire string uppercase
+<code>varName.lower()</code> | Lowercase | Makes the entire string lowercase
+<code>varName.split(" ")</code> | Split into a list | Converts the String into a list, using spaces
+<code>varName.split(",")</code> | Split into a list | Converts the String into a list, using commas
+<code>varName.count("a")</code> | Counts occurrences of the text | Counts how many times <strong>a</strong> appears in the String
+<code>varName.index("a")</code> | Finds the first position of the text | Finds the first position of <strong>a</strong>
+<code>varName.startswith("Mr.")</code> | Checks what the String starts with | Returns True if the String starts with <strong>Mr.</strong>
+<code>varName.endswith("Jarvis")</code> | Checks what the String ends with | Returns True if the String ends with<strong>Jarvis</strong></p>
+<h3 id="string-splicing">String Splicing</h3>
+<p>Remember, Strings are just lists of characters.<br />
+It's also possible to access parts of a String using array square brackets.  </p>
+<p>| | 
+-|-|-
+<code>varName[2]</code> | Gets a character | Returns the third character
+<code>varName[2:5]</code> | Gets a substring | Returns characters from 2 to 4
+<code>varName[2:]</code> | Gets a substring | Returns characters from 2 to the end
+<code>varName[:5]</code> | Gets a substring | Returns characters from the beginning to 4
+<code>varName[2:10:2]</code> | Gets a substring | Returns characters from 2 to 9, skipping every other character
+<code>varName[::-1]</code> | Reverse a String | Returns the String in reverse order</p>
+<hr />
+<h2 id="selection-operators">Selection &amp; Operators</h2>
+<p>Selection is the ability to make a decision. It allows us to do different things, depending on what information is in a variable.<br />
+This is done using <strong>IF</strong> statements:</p>
+<pre><code class="python"># if they are 18 or over, print &quot;You can vote&quot;
+if age &gt;= 18:
+    print(&quot;You can vote&quot;)
+else:
+    print(&quot;You can't vote&quot;)
+</code></pre>
+
+<p>Making decisions is all about comparing things; is one variable bigger than another, are two other variables the same...</p>
+<pre><code class="python"># if they are 18 or over, print &quot;You can vote&quot;
+if favArtist == &quot;Picasso&quot;:
+    print(&quot;You like cubist paintings.&quot;)
+elif favArtist == &quot;Rembrandt&quot;:
+    print(&quot;You like realistic paintings.&quot;)
+elif favArtist == &quot;Monet&quot;:
+    print(&quot;You like impressionist paintings.&quot;)
+elif favArtist == &quot;Rembrandt&quot;:
+    print(&quot;You like realistic paintings.&quot;)
+elif favArtist == &quot;Cezanne&quot;:
+    print(&quot;You like post-impresionistic paintings.&quot;)
+else:
+    print(&quot;Unrecognised artist&quot;)
+</code></pre>
+
+<p>To compare things we use standard operators, just like in maths.</p>
+<h3 id="equality-operators">Equality Operators</h3>
+<p>These let us test if things are equal or not:</p>
+<p>| |                                   <br />
+-|-|-
+== | Equal to     | Check if two items are the same
+!= | Not equal to | Check if two items are not the same</p>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<p>These let us compare things:</p>
+<p>| | 
+-|-|-</p>
+<blockquote>
+<p>| Greater than             | Check if the first item is bigger than the second item
+&lt;  | Less than                | Check if the first item is smaller than the second item
+= | Greater than or equal to | Check if the first item is bigger than or the same as the second item
+&lt;= | Less than or equal to    | Check if the first item is smaller than or the same as the second item</p>
+</blockquote>
+<h3 id="logical-operators">Logical Operators</h3>
+<p>These let us use logic to combine lots of operators:</p>
+<p>|
+-|-
+and | Both comparisons have to be True
+or  | Either or both comparisons have to be True
+not | This will change the result from True to False, or vice-versa</p>
+<hr />
+<h2 id="iteration">Iteration</h2>
+<p>Being able to do selection (make decisions) on its own is nearly enough.<br />
+However, if we want our programs to be really useful, we want them to be able to repeat stuff.</p>
+<p>We call this <em>iteration</em>.</p>
+<h3 id="while-loops">While Loops</h3>
+<p>Let us repeat something until we can make a decision (this may never occur)</p>
+<h4 id="infinite-while-loops">Infinite While Loops</h4>
+<pre><code class="python">while True:
+    print ( &quot;Looping!&quot; )
+</code></pre>
+
+<h4 id="conditional-while-loops">Conditional While Loops</h4>
+<pre><code class="python">num = -1 # keep looping WHILE they don't guess 21
+while num != 21:
+    num = int ( input ( &quot;Guess a number: &quot; ) )
+    print ( &quot;You guessed:&quot;, num )
+print ( &quot;You finally got it!!!&quot; )
+</code></pre>
+
+<h3 id="for-loops">For Loops</h3>
+<p>Let us repeat something a set number of times </p>
+<h4 id="for-loop-through-an-array">For Loop Through an Array</h4>
+<pre><code class="python"># make a list of fruits
+fruits = ['banana', 'apple',  'mango']
+for item in fruits:
+    print ( 'Current fruit :', item)
+</code></pre>
+
+<h4 id="for-loop-x-times">For Loop x Times</h4>
+<pre><code class="python">for index in range ( 10 ):
+    print ( &quot;Position:&quot;, index )
+</code></pre>
+
+<h4 id="for-loop-from-x-to-y">For Loop from x to y</h4>
+<pre><code class="python">for index in range ( 0, 6 ):
+    print ( &quot;Position:&quot;, index )
+</code></pre>
+
+<h4 id="for-loop-in-steps">For Loop in Steps</h4>
+<pre><code class="python">for index in range ( 10, 21, 2 ):
+    print ( &quot;Position:&quot;, index )
+</code></pre>
+
+<h3 id="loop-control">Loop Control</h3>
+<p>Pyhton provides two really useful commands to help in loop control:</p>
+<ul>
+<li><code>break</code> - Ends the loop immediately</li>
+<li><code>continue</code> - Goes back to the start of the loop, skipping anything not yet done</li>
+</ul>
+<pre><code class="python">while True:
+    guess = int(input(&quot;Guess a number: &quot;))
+    if guess = answer:
+        print(&quot;You got it!&quot;)
+        break
+    else:
+        print(&quot;Wrong!&quot;)
+</code></pre>
+
+<hr />
+<h2 id="lists">Lists</h2>
+<p>This does exactly what it says on the tin - we can store lots of information all with the same name.
+If you have 100 books, you don't want to make 100 variables to remember all the names.<br />
+Instead, you make one variable called <em>books</em> and then give each book a number...</p>
+<pre><code class="python"># make a list
+pupils = [&quot;Edd&quot;, &quot;Clive&quot;, &quot;Kim&quot;, &quot;Kat&quot;, &quot;Tim&quot;, &quot;Tam&quot;]
+
+# print the first pupil in the list - item 0
+print(pupils[0])
+
+# add a pupil to the list
+pupils.append(&quot;Jordan&quot;)
+
+# get the number of pupils in the list
+num_of_pupils = len(pupils)
+
+# remove a pupil from the list
+list.remove(&quot;Edd&quot;)
+</code></pre>
+
+<p>We can also iterate through a list, make decisions based on a list, and change items in a list:</p>
+<pre><code class="python"># make a list
+pupils = [&quot;Edd&quot;, &quot;Clive&quot;, &quot;Kim&quot;, &quot;Kat&quot;, &quot;Tim&quot;, &quot;Tam&quot;]
+
+# print each pupil in the list
+for item in pupils:
+   print ( item )
+
+# change an item in the list
+pupils [ 2 ] = &quot;Kimberly&quot;
+
+# check if an item is in a list
+if &quot;Kat&quot; in pupils:
+   print ( &quot;Found her&quot; )
+</code></pre>
+
+<p>We can also slice up or join lists:</p>
+<pre><code class="python"># make a list
+pupils = [&quot;Edd&quot;, &quot;Clive&quot;, &quot;Kim&quot;, &quot;Kat&quot;, &quot;Tim&quot;, &quot;Tam&quot;]
+
+pupils[2:4]     # items from 2 until before 4 = Kim &amp; Kat
+pupils[2:]      # items from 2 until the end = Kim, Kat, Tim &amp; Tam
+pupils[:3]      # items from the beginning until before 3 = Edd, Clive &amp; Kim
+pupils[:]       # everything
+
+# you can also count backwards
+pupils[-1]      #last item in the array = Tam
+pupils[-2:]     # last two items in the array = Tim &amp; Tam
+pupils[:-2]     # items from the beginning until 2 before the end = Edd, CLive, Kim &amp; Kat
+pupils[1:-1]    # remove first &amp; last = Clive, Kim, Kat &amp; Ti
+
+# join an array into a String of items
+sentence = &quot;, &quot;.join(pupils)    # makes the String &quot;Edd, Clive, Kim, Kat, Tim, Tam&quot;
+</code></pre>
+
+<hr />
+<h2 id="modular-development">Modular Development</h2>
+<p>A modular program is made up of lots of separate parts (modules). Each of these should work independently of the others. In Python, we achieve this by writing <em>functions</em>.  </p>
+<p>Python has lots of <a href="https://docs.python.org/3.4/library/functions.html">built-in functions</a> that you might have met already: <code>print()</code>, <code>input()</code>, <code>int()</code>, <code>str()</code>, <code>len()</code>, <code>round()</code>, etc... These work by themselves, without needing to be changed. You simply give them some information to work with, and they (sometimes) give you some information back.  </p>
+<h2 id="writing-a-function">Writing a Function</h2>
+<p>So, how do we write a function? Well, it's pretty simple - you give it a name, and then everything that is indented after the name, is in that function:</p>
+<pre><code class="python">def myFunction():
+    print(&quot;This is in the function&quot;)
+    print(&quot;This is also in the function&quot;)
+
+print(&quot;This is not in the function.&quot;)
+
+</code></pre>
+
+<p>This function is called <em>myFunction</em>, but it could be called anything (except for the built-in function names or <a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">keywords</a>). Whenever you tell your program to do <em>myFunction</em> it should print the two messages inside.</p>
+<p>A more detailed example might be for when you want to keep repeating the same things again and again. It is not a good idea (or any fun) to keep typing the same stuff again and again. Sometimes a loop can solve this, but other times it might not be enough.</p>
+<pre><code class="python"># define a function to draw a square
+# the size parameter sets the length of the sides
+def square ( size ):
+   for loop in range ( 4 ) :
+        t.forward ( size )
+        t.right ( 90 )
+
+# call the function - very important
+# setting size to 77
+square ( 77 )
+</code></pre>
+
+<hr />
+<h2 id="libraries">Libraries</h2>
+<p>Libraries are just other people's code that we want to use. To access them, we simply import them. We have learnt about three libraries so far:</p>
+<ul>
+<li><code>random</code> - this lets us generate random numbers</li>
+<li><code>turtle</code> - this lets us draw turtle shapes</li>
+<li><code>appJar</code> - this lets us create simple GUIs</li>
+</ul>
+<p>Here is an example of importing and using a library:</p>
+<pre><code class="python">import random
+
+colours = [ &quot;red&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;blue&quot; ]
+
+# generate a random number between 1 &amp; 100
+num = random.randint ( 1, 100 )
+
+# generate a random colour (using the list above)
+colour = random.choice ( colours )
+</code></pre>
+
+<hr />
+<h2 id="file-access">File Access</h2>
+<p>Accessing files in Python is easy. You simply open the file, read from or write to it, then close it:</p>
+<pre><code class="python">outFile = open ( &quot;myfile.txt&quot;, &quot;a&quot; )
+outFile.write ( &quot;hi there\n&quot; )
+outFile.close ( )
+</code></pre>
+
+<p>This can be simplified even further, using the <strong>with</strong> command. The with command will ensure the file is closed once you've finished with it:</p>
+<pre><code class="python">with open ( &quot;myfile.txt&quot;, &quot;a&quot; ) as outFile :
+    outFile.write ( &quot;hi there\n&quot; )
+</code></pre>
+
+<p>When you open a file, you pass the name of the file you want, and an access mode. The following access modes are most commonly used:</p>
+<ul>
+<li><strong>r</strong> - opens a file for reading.</li>
+<li><strong>w</strong> - creates a new file for writing (overwrites existing file).</li>
+<li><strong>a</strong> - opens a file to append to (will create a file if needed).</li>
+</ul>
+<p>When reading from a file, it is most common to read it line-by-line. Again, it is more convenient to use <strong>with</strong>:</p>
+<pre><code class="python">with open ( &quot;myFile.txt&quot;, &quot;r&quot;) as inFile :
+    # read the file into data
+    data = inFile.read ( ) 
+    # make a list of lines
+    myList = data.splitlines ( ) 
+</code></pre>
+
+<p>This will create a list called <em>myList</em>, with one entry for each line.</p>
+<hr />
+<h2 id="databases-in-python">Databases in Python</h2>
+<h3 id="database-recap">Database Recap</h3>
+<p>In order to be able to follow this guide, you will need to understand the basics of a database:</p>
+<ul>
+<li><strong>Entity</strong> - an item in the real world, we want to model (pupils in a school)</li>
+<li><strong>Table</strong> - a container to hold information about an entity, often named after the entity (pupils)</li>
+<li><strong>Record</strong> - a single item/row in the table (an actual pupil)</li>
+<li><strong>Field</strong> - the columns in the table, each storing an attribute about the entity (name, age, etc)</li>
+<li><strong>Primary Key</strong> - something unique to each record in a table (pupil ID)</li>
+<li><strong>Foreign Key</strong> - when another table links to records in a table, you use their primary key</li>
+<li><strong>Relationships</strong> - how tables link to each other</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>So, to model pupils in the real world - we would create a table, let's call it <code>pupils</code><br />
+Each <code>field</code> in <code>pupils</code> will store a piece of information about a pupil<br />
+Each <code>record</code> in <code>pupils</code> will hold all the information about a single pupil<br />
+We can summarise this in a data-dictionary:</p>
+<p>| | | 
+-|-|-|-
+Field Name | Data Type | Information | Rules
+PupilID | Integer | Primary Key
+First Name | String | | <strong>between</strong> 1 and 30 characters 
+Last Name | String| | <strong>between</strong> 1 and 30 characters
+DOB | Date | | <strong>matches format</strong> DD/MM/YYYY 
+Gender | String | | <strong>one of</strong> Male/Female/Unspecified </p>
+<p>To talk to a database you use <strong>SQL</strong> (<em>Structured Query Language</em>). There are two parts to SQL:</p>
+<ul>
+<li>DDL (Data Definition Language) - used to build and modify tables<ul>
+<li>CREATE TABLE ...</li>
+<li>ALTER TABLE ...</li>
+<li>DROP TABLE ...</li>
+<li>TRUNCATE TABLE ...</li>
+</ul>
+</li>
+<li>DML (Data Manipulation Language) - used to get or modify data in tables<ul>
+<li>SELECT ... FROM ... WHERE ...</li>
+<li>INSERT INTO ... VALUES ...</li>
+<li>UPDATE ... SET ... WHERE ...</li>
+<li>DELETE FROM ... WHERE ...</li>
+</ul>
+</li>
+</ul>
+<p>Python comes with a built-in database: <a href="https://www.sqlite.org/">SQLite</a>. To gain access to it, you simply import the library:</p>
+<pre><code class="python">import sqlite3
+</code></pre>
+
+<p>Having done that, we simply connect to the database, perform some SQL, and disconnect:</p>
+<pre><code class="python">db = sqlite3.connect('pupils.db')
+# perform SQL statements
+db.close()
+</code></pre>
+
+<p>As with file access, this can be wrapped up using with, to ensure we always disconnect:</p>
+<pre><code class="python">with sqlite3.connect(&quot;pupils.db&quot;) as db:
+    # perform SQL statements
+</code></pre>
+
+<p>Both of these will either open an existing database called pupils.db or create a new one with that name. This means that the information will always be saved to a file, so every time you run your program, all the old data will still be there. If you don't want to create a file, and would instead like to temporarily create a database in RAM, replace the database name with the String <code>:memory:</code></p>
+<hr />
+<h2 id="defensive-programming">Defensive Programming</h2>
+<p>Defensive programming is a way of designing your program, so that it will continue to work, even when unexpected things happen.  </p>
+<p>Defensive programming should improve:  </p>
+<ul>
+<li><strong>Quality</strong> by reducing the number of bugs</li>
+<li><strong>Readability</strong> making your code more readable, and easier to understand</li>
+<li><strong>Reliability</strong> preventing the program from crashing when it receives unexpected inputs</li>
+</ul>
+<p>Defensive programming can sometimes go too far - you shouldn't try to prevent errors that can't happen, as this could slow your program down, and make it harder to maintain.  </p>
+<p>It's also important not to be too vague, otherwise you might miss important errors, that need to be found.</p>
+<h3 id="styles-of-defensive-programming">Styles of Defensive Programming</h3>
+<p>There are two primary styles of dealing with potential errors:  </p>
+<ul>
+<li><strong>EAFP</strong> - <strong>E</strong>asier to <strong>A</strong>sk for <strong>F</strong>orgiveness than <strong>P</strong>ermission</li>
+<li><strong>LBYL</strong> - <strong>L</strong>ook <strong>B</strong>efore <strong>Y</strong>ou <strong>L</strong>eap  </li>
+</ul>
+<p>Generally, <strong>EAFP</strong> is preferred in Python.</p>
+<h3 id="examples-of-defensive-programming">Examples of Defensive Programming</h3>
+<p>A common place programs can crash is when you expect NUMERIC input, but the user types a STRING:</p>
+<pre><code class="python">choice = int(input( &quot;Enter your choice: &quot; ))
+</code></pre>
+
+<h4 id="eafp">EAFP</h4>
+<p>Try to do what you wanted to do, then if it breaks, deal with it:</p>
+<pre><code class="python">try:
+    choice = int(input( &quot;Enter your choice: &quot; ))
+except ValueError:
+    print( &quot;Invalid number&quot; )
+</code></pre>
+
+<p>In this example we simply (try to) convert the input into a number - if it fails, we deal with it.</p>
+<p>We can then wrap this in a <em>loop</em>, to make it keep repeating until the data is valid:</p>
+<pre><code class="python">while True:
+    try:
+        choice = int(input( &quot;Enter your choice: &quot; ))
+        break
+    except ValueError:
+        print( &quot;Invalid number&quot; )
+        continue
+</code></pre>
+
+<h4 id="lbyl">LBYL</h4>
+<p>Check you can do something first, then only do it if it's OK.</p>
+<pre><code class="python">choice = input( &quot;Enter your choice: &quot; )
+if choice.isdigit():
+    choice = int(choice)
+else:
+    print( &quot;Invalid number&quot; )
+</code></pre>
+
+<p>In this example, we get the input, check it's a number, and then convert it.  </p>
+<p>We can then wrap this in a <em>loop</em>, to make it keep repeating until the data is valid:</p>
+<pre><code class="python">while True:
+    choice = input( &quot;Enter your choice: &quot; )
+    if choice.isdigit():
+        choice = int(choice)
+        break
+    else:
+        print( &quot;Invalid number&quot; )
+        continue
+</code></pre>
+
+<p>As can be seen, <strong>EAFP</strong> only catches <em>ValueErrors</em>, it will still crash if some other error occurs.<br />
+But that complies with what we said earlier, we don't want to miss strange/important errors.<br />
+And, in <strong>LBYL</strong>, it doesn't actually deal with any errors, but simply tries to prevent them - less reliable?</p>
+<hr />
+<h2 id="turtle-basics">Turtle Basics</h2>
+<p>To create a turtle, and get it to move, try the following:</p>
+<pre><code class="python"># get the library
+import turtle
+t = turtle.Pen()
+
+# draw a square
+for loop in range(4):
+    t.forward(100)
+    t.right(90)
+</code></pre>
+
+<hr />
+<h2 id="gui-basics">GUI Basics</h2>
+<p>To create a GUI, and show a label, try the following:</p>
+<pre><code class="python"># import the library
+from appJar import gui
+
+# create the GUI
+app = gui(&quot;Hello&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Hello World!&quot;)
+app.go()
+</code></pre>
+
+<hr />
+<h2 id="colour-map">Colour Map</h2>
+<p>Below is a useful colour map to use when doing Turtle or GUI programming.<br />
+<img alt="Python Colour Map" src="https://pythonhosted.org/ete2/_images/svg_colors.png" /></p>
+<hr /></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

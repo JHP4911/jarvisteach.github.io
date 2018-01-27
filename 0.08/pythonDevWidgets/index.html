@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonDevWidgets/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Beta Widgets... - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Lessons
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../specialCharacters/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonGuiOptions/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#beta-widgets">Beta Widgets</a></li>
+        
+            <li><a href="#ttk">ttk</a></li>
+        
+            <li><a href="#microbit-emulator">MicroBit Emulator</a></li>
+        
+            <li><a href="#googlemaps">GoogleMaps</a></li>
+        
+            <li><a href="#piechart">PieChart</a></li>
+        
+            <li><a href="#tree">Tree</a></li>
+        
+            <li><a href="#grid">Grid</a></li>
+        
+            <li><a href="#matplotlib">MatPlotLib</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="beta-widgets">Beta Widgets</h1>
+<hr />
+<p>The following widgets are in <a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#BETA">beta</a>.<br />
+They're available and in use, they're just not quite complete, and not fully tested...  </p>
+<h3 id="ttk">ttk</h3>
+<hr />
+<p>If you want access to the <a href="https://docs.python.org/3/library/tkinter.ttk.html">Tk themed widget set</a> then you'll need to tell appJar to use it:</p>
+<pre><code class="python">from appJar import gui
+app = gui(&quot;ttk Demo&quot;)
+app.useTtk()
+app.addButton(&quot;Press Me&quot;, None)
+app.go()
+</code></pre>
+
+<p>At the moment, this simply imports ttk, so the standard widget set will be replaced with a ttk widget set.  </p>
+<h3 id="microbit-emulator">MicroBit Emulator</h3>
+<hr />
+<p>Widget to emulate a <a href="http://microbit.org">MicroBit</a></p>
+<p><img alt="MicroBit Emulator" src="../img/mb.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.addMicroBit(&quot;mb1&quot;)
+app.setMicroBitImage(&quot;mb1&quot;, &quot;09090:90909:90009:09090:00900&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-microbits">Add MicroBits</h4>
+<ul>
+<li><code>.addMicroBit(title)</code><br />
+    Will create a 5x5 grid emulating the MicroBit LEDs.  </li>
+</ul>
+<h4 id="set-microbits">Set MicroBits</h4>
+<ul>
+<li>
+<p><code>.setMicroBitImage(title, image)</code><br />
+    This sets each pixel to the specified brightness (0 to 9).<br />
+    Each set of 5 digits represents a row of pixels, from top to bottom.  </p>
+</li>
+<li>
+<p><code>.setMicroBitPixel(title, x, y, brightness)</code><br />
+    Will set the brightness of the specified pixel.<br />
+<code>x</code> &amp; <code>y</code> should be between 0 &amp; 4.<br />
+<code>brightness</code> should be a value between 0 &amp; 9 to represent how <strong>bright</strong> to make the pixel.  </p>
+</li>
+<li>
+<p><code>.clearMicroBit(title)</code><br />
+    Will turn off all of the pixels - setting their brightness to 0.  </p>
+</li>
+</ul>
+<h3 id="googlemaps">GoogleMaps</h3>
+<hr />
+<p>A self-contained GoogleMaps widget.<br />
+It provides useful functionality for finding somewhere on Earth.<br />
+All requests for map data are performed in the background, so the UI shouldn't become unresponsive.  </p>
+<p><img alt="GoogleMaps" src="../img/gmap_2.png" /></p>
+<pre><code class="python">from appjar import gui
+
+app = gui()
+app.addGoogleMap(&quot;m1&quot;)
+app.setGoogleMapSize(&quot;m1&quot;, &quot;300x500&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-googlemaps">Add GoogleMaps</h4>
+<ul>
+<li><code>.addGoogleMap(title)</code><br />
+    Creates a GoogleMap widget.<br />
+    Displays a map image, and provides functionality to search, zoom, and change terrain, as well as a link to the original image.  </li>
+</ul>
+<h4 id="set-googlemaps">Set GoogleMaps</h4>
+<ul>
+<li>
+<p><code>.searchGoogleMap(title, location)</code><br />
+    Update the named GoogleMap widget to show the specified location.  </p>
+</li>
+<li>
+<p><code>.zoomGoogleMap(title, mod)</code><br />
+    Change the zoom level of the named GoogleMap.<br />
+    Providing a <strong>+</strong> or <strong>-</strong> will cause the map to zoom in or out one level.<br />
+    Otherwise, a digit between 0 and 22 should be provided, to set the zoom level.  </p>
+</li>
+<li>
+<p><code>.setGoogleMapTerrain(title, terrain)</code>  </p>
+</li>
+<li>
+<p><code>.setGoogleMapSize(title, size)</code><br />
+    Set the size of the GoogleMap. Should be in the format <code>"300x300"</code>.<br />
+    Note, if you set it too small, the control widgets won't look good...  </p>
+</li>
+<li>
+<p><code>.setGoogleMapMarker(title, location)</code><br />
+    Will drop a marker on the specified location.<br />
+    The marker will only be visible if the current <code>location</code> &amp; <code>zoom level</code> permit.<br />
+    If an empty <code>location</code> is provided, all markers will be removed.  </p>
+</li>
+</ul>
+<h4 id="get-googlemaps">Get GoogleMaps</h4>
+<ul>
+<li>
+<p><code>.getGoogleMapLocation(title)</code><br />
+    Returns the current displayed location.<br />
+    Will return an empty String, if the user clicked the <strong>H</strong> button.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapZoom(title)</code><br />
+    Returns the current zoom level of the map tile.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapTerrain(title)</code><br />
+    Returns the current terrain setting for the map tile.  </p>
+</li>
+<li>
+<p><code>.getGoogleMapSize(title)</code><br />
+    Returns the current size of the map tile.  </p>
+</li>
+</ul>
+<h4 id="save-googlemaps">Save GoogleMaps</h4>
+<ul>
+<li><code>.saveGoogleMap(title, fileName)</code><br />
+    Saves the currently displayed map to the named location.<br />
+    By default, all map tiles are GIFs.  </li>
+</ul>
+<h3 id="piechart">PieChart</h3>
+<hr />
+<p>Widget to depict a Pie Chart.<br />
+It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
+The PieChart is purely for display purposes, and is not interactive, other than a simple mouse-over effect with a tooltip.<br />
+<img alt="PieChart" src="../img/dev/pie.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
+                        &quot;beef&quot;:300, &quot;turkey&quot;:150})
+app.go()
+</code></pre>
+
+<h4 id="add-piecharts">Add PieCharts</h4>
+<ul>
+<li><code>.addPieChart(title, values)</code><br />
+    Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
+    The names will be used as part of tooltips that appear over each wedge of the PieChart.  </li>
+</ul>
+<h4 id="set-piecharts">Set PieCharts</h4>
+<ul>
+<li><code>.setPieChart(title, name, value)</code><br />
+    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </li>
+</ul>
+<h3 id="tree">Tree</h3>
+<hr />
+<p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
+<p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.addTree(&quot;t1&quot;,
+            &quot;&quot;&quot;&lt;people&gt;
+            &lt;person&gt;&lt;name&gt;Fred&lt;/name&gt;&lt;age&gt;45&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Tina&lt;/name&gt;&lt;age&gt;37&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;CLive&lt;/name&gt;&lt;age&gt;28&lt;/age&gt;&lt;gender&gt;Male&lt;/gender&gt;&lt;/person&gt;
+            &lt;person&gt;&lt;name&gt;Betty&lt;/name&gt;&lt;age&gt;51&lt;/age&gt;&lt;gender&gt;Female&lt;/gender&gt;&lt;/person&gt;
+            &lt;/people&gt;&quot;&quot;&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-trees">Add Trees</h4>
+<ul>
+<li><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </li>
+</ul>
+<h4 id="set-trees">Set Trees</h4>
+<ul>
+<li><code>.setTreeDoubleClickFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked  </li>
+<li><code>.setTreeEditFunction(title, func)</code><br />
+    Register a function to call when an item is edited  </li>
+<li><code>.setTreeEditable(title, value)</code><br />
+    Set whether the tree can be edited  </li>
+<li><code>.setTreeColours(title, fg, bg, fgH, bgH)</code><br />
+    Set the fg/bg/fg highlight/bg highlight colours of the tree  </li>
+<li><code>.setTreeBg(title, colour)</code><br />
+    Set the background colour of the tree  </li>
+<li><code>.setTreeFg(title, colour)</code><br />
+    Set the foreground colour of the tree  </li>
+<li><code>.setTreeHighlightBg(title, colour)</code><br />
+    Set the background colour of the highlighted node    </li>
+<li><code>.setTreeHighlightFg(title, colour)</code><br />
+    Set the foreground colour of the highlighted node  </li>
+</ul>
+<h4 id="get-trees">Get Trees</h4>
+<ul>
+<li><code>.getTreeXML(title)</code><br />
+    Return the tree as XML  </li>
+<li><code>.getTreeSelected(title)</code><br />
+    Return the selected node as a String</li>
+<li><code>.getTreeSelectedXML(title)</code><br />
+    Return the selected node (and any children) as XML</li>
+</ul>
+<h3 id="grid">Grid</h3>
+<hr />
+<p>Used to create a spreadsheet like interface.<br />
+The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
+It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
+<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.setFont(20)
+app.addGrid(&quot;g1&quot;,
+    [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+    [&quot;Fred&quot;, 45, &quot;Male&quot;],
+    [&quot;Tina&quot;, 37, &quot;Female&quot;],
+    [&quot;Clive&quot;, 28, &quot;Male&quot;],
+    [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+app.go()
+</code></pre>
+
+<h4 id="add-grids">Add Grids</h4>
+<ul>
+<li>
+<p><code>.addGrid(title, data, action=None, addRow=None)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
+<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function. It will pass a list of values, representing the selected row.   </p>
+<p><img alt="Grid" src="../img/dev/grid_2.png" />   </p>
+<p>If <code>addRow</code> is set, then an additional row will appear at the end of the grid, with entry boxes and a button to call the specified function.  </p>
+<p><img alt="Grid" src="../img/dev/grid_3.png" />   </p>
+<p>If both parameters are set to a function, then both buttons at the end of each row and a row of Entry boxes will be shown:  </p>
+<p><img alt="Grid" src="../img/dev/grid_4.png" />   </p>
+</li>
+</ul>
+<h4 id="get-grids">Get Grids</h4>
+<ul>
+<li>
+<p><code>.getGridEntries(title)</code><br />
+    If <code>addRow</code> was set when the <em>Grid</em> was created, this function will get the contents of the entry boxes.<br />
+    They will be returned as a list, in the same order as the entry boxes.  </p>
+</li>
+<li>
+<p><code>.getGridSelectedCells(title)</code><br />
+    Gets a dictionary of booleans, indicating the status of each cell.<br />
+    True indicates the cell is selected, False indicates the cell is not selected.<br />
+    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </p>
+</li>
+</ul>
+<h4 id="set-grids">Set Grids</h4>
+<ul>
+<li><code>.addGridRow(title, data)</code><br />
+    Adds a new row of data to the end of the existing grid.<br />
+    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
+</ul>
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
+<pre><code class="python">    def press(btn):
+        if btn == &quot;Press&quot;:     # the button on the entries row
+            data = app.getGridEntries(&quot;g1&quot;)
+            app.addGridRow(&quot;g1&quot;, data)
+</code></pre>
+
+<h3 id="matplotlib">MatPlotLib</h3>
+<hr />
+<p>Support for embedding very basic <a href="http://matplotlib.org">MatPlotLib</a> plots.  </p>
+<p><img alt="Plot" src="../img/1_plot.png" />  </p>
+<pre><code class="python">from numpy import sin, pi, arange
+from appJar import gui 
+import random
+
+def getXY():
+    x = arange(0.0, 3.0, 0.01)
+    y = sin(random.randint(1,10) * pi * x)
+    return x,y 
+
+def generate(btn):
+    # *getXY() will unpack the two return values
+    # and pass them as separate parameters
+    app.updatePlot(&quot;p1&quot;, *getXY())
+    showLabels()
+
+def showLabels():
+    axes.legend(['The curve'])
+    axes.set_xlabel(&quot;X Axes&quot;)
+    axes.set_ylabel(&quot;Y Axes&quot;)
+    app.refreshPlot(&quot;p1&quot;)
+
+app = gui()
+axes = app.addPlot(&quot;p1&quot;, *getXY())
+showLabels()
+app.addButton(&quot;Generate&quot;, generate)
+app.go()
+</code></pre>
+
+<ul>
+<li>
+<p><code>.addPlot(title, x, y)</code><br />
+    Create a plot with the specified x and y values.<br />
+    Returns the plot object, to allow further customisation.  </p>
+</li>
+<li>
+<p><code>.updatePlot(title, x, y, keepLabels=False)</code><br />
+    Update the specified plot with the specified x and y values.<br />
+<strong>NB.</strong> if you do this you will lose any customisations applied to the axes.<br />
+    If you set <code>keepLabels</code> to True, then the axis labels &amp; title will be retained.  </p>
+</li>
+<li>
+<p><code>.refreshPlot(title)</code><br />
+    Call this any time you modify the axes.  </p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/specialCharacters/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Special Characters - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Lessons
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../splash/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonDevWidgets/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#special-characters">Special Characters</a></li>
+        
+            <li><a href="#explanation">Explanation</a></li>
+        
+            <li><a href="#example">Example</a></li>
+        
+            <li><a href="#unicode-search">Unicode Search</a></li>
+        
+            <li><a href="#important">Important</a></li>
+        
+            <li><a href="#compatability">Compatability</a></li>
+        
+            <li><a href="#easter-egg">Easter Egg</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="special-characters">Special Characters</h1>
+<hr />
+<p>If you've ever tried a <a href="../pythonWidgets/#entry">ValidationEntry</a>, you'll notice we use some special characters:</p>
+<p><img alt="ValidationEntry" src="../img/entValidation.png" /></p>
+<h3 id="explanation">Explanation</h3>
+<hr />
+<p>You can't find these on the keyboard, so can't type them in your code.<br />
+Instead, you need to use a special code (<a href="https://en.wikipedia.org/wiki/Unicode">unicode</a>), for the character you want.</p>
+<p>For example, Unicode for the tick is <code>2714</code>, and the cross is <code>2716</code></p>
+<p>To represent these in Python, you need to use a special syntax:</p>
+<pre><code class="python">TICK=&quot;\u2714&quot;
+CROSS=&quot;\u2716&quot;
+
+app.addLabel(&quot;tick&quot;, TICK)
+app.addLabel(&quot;cross&quot;, CROSS)
+</code></pre>
+
+<p>By putting <code>\u</code> at the start of the String, you tell Python it is a Unicode character.<br />
+This works well in Python 3.x, as it knows what unicode characters are.</p>
+<p>If you're still using python 2.x (not recommended), you'll need to use a little extra magic:  </p>
+<pre><code class="python">TICK=u&quot;\u2714&quot;
+CROSS=u&quot;\u2716&quot;
+
+app.addLabel(&quot;tick&quot;, TICK)
+app.addLabel(&quot;cross&quot;, CROSS)
+</code></pre>
+
+<p>By also putting a <code>u</code> before the string, you tell Python to expect a unicode character.
+(In fact, it calls the Unicode function, converting the string data into Unicode.)</p>
+<h3 id="example">Example</h3>
+<hr />
+<p>As demonstrated above, it's best to define any Unicode characters you want to use as constants, then you can use them in your code just like any other string.  </p>
+<p><img alt="MusicPlayer" src="../img/1_unicode.png" /></p>
+<pre><code class="python">PLAY  = &quot;\u25B6&quot;  # 23F5 should work...
+PAUSE = &quot;\u23F8&quot;
+RWD   = &quot;\u23EA&quot;
+FWD   = &quot;\u23E9&quot;
+STOP  = &quot;\u23F9&quot;
+
+def music(btn):
+    if btn == PLAY:
+        # play music
+    elif btn == PAUSE:
+        # pause music
+
+app.setButtonFont(20)
+app.addButtons([PLAY, PAUSE, STOP, RWD, FWD], music)
+</code></pre>
+
+<h3 id="unicode-search">Unicode Search</h3>
+<hr />
+<p>So, now you just need to find the right Unicode...  </p>
+<p>Our favourite site is <a href="http://www.fileformat.info/info/unicode/char/search.htm">FileFormat.info</a>:<br />
+<img alt="UnicodeSearch" src="../img/2_unicode.png" /></p>
+<p>Simply type what you are looking for into the search box, and it will give you the best matches:<br />
+<img alt="UnicodeResults" src="../img/3_unicode.png" /></p>
+<p>Identify the one you want, and take a note of the Unicode: 263C<br />
+(Note, these are hexadecimal codes, so the values will be between 0 and F)  </p>
+<p>You can then use this code in your gui: <img alt="UnicodeSun" src="../img/4_unicode.png" />  </p>
+<pre><code class="python">FLOWER = &quot;\u263C&quot;
+app.addButton(FLOWER, flowerPower)
+</code></pre>
+
+<h3 id="important">Important</h3>
+<hr />
+<p>Different platforms will (potentially) display these characters in different ways...<br />
+As you can see in the music example, for some reason, the PLAY character doesn't display like the other characters...  </p>
+<p>There is also an issue with Python GUIs in general, where they can't actually (yet) display all of the different Unicode characters.<br />
+If the character has more than 4 digits in its code, it probably won't work.<br />
+You may even get an error similar to: <code>character is above the range (U+0000-U+FFFF) allowed by Tcl</code><br />
+So, make sure you test them!  </p>
+<h3 id="compatability">Compatability</h3>
+<hr />
+<p>As you can see, it's hard to make your code work on all versions of Python.<br />
+The switch from Python2 to Python3 caused lots of problems, as the <code>u</code> prefix was removed.<br />
+That meant there were two different ways to get unicode to work: Python2: <code>u'\u23F9'</code>, Python3: <code>'\u23F9'</code>  </p>
+<p>As of Python 3.3, the <code>u</code> prefix was brought back (although it doesn't do anything), but that still meant Python3.0 to Python3.2 didn't support it.</p>
+<p>So, the best solution, if you want your code to work on all versions of Python, is to not use the <code>u</code> prefix, and instead change the way Python2 works.  </p>
+<p>If you include <code>from __future__ import unicode_literals</code> at the start of your code, you can include unicode characters in Python2, without using the <code>u</code> prefix - <code>print('\u23F9')</code> will then work on every version of python.  </p>
+<h3 id="easter-egg">Easter Egg</h3>
+<hr />
+<p>Try holding the &lt;ALT&gt; key and typing different codes on a Windows computer...  </p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
