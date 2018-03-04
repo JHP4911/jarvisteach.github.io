@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/splash/">
+        <link rel="canonical" href="http://appjar.info/pythonSettings/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Splashscreen - appJar</title>
+        <title>Settings - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -83,7 +83,7 @@
             
                 
                     
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             
@@ -124,8 +124,8 @@
 
                             
                                 
-<li class="active">
-    <a href="./">Splashscreen</a>
+<li >
+    <a href="../splash/">Splashscreen</a>
 </li>
 
                             
@@ -163,7 +163,7 @@
             
                 
                     
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             
@@ -246,8 +246,8 @@
 
                             
                                 
-<li >
-    <a href="../pythonSettings/">Settings</a>
+<li class="active">
+    <a href="./">Settings</a>
 </li>
 
                             
@@ -409,12 +409,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonSubWindows/">
+                    <a rel="next" href="../pythonInternationalisation/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../specialCharacters/">
+                    <a rel="prev" href="../pythonLogging/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -443,28 +443,89 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#splashscreen">Splashscreen</a></li>
+        <li class="main active"><a href="#appjar-settings">appJar Settings</a></li>
+        
+            <li><a href="#settings">Settings</a></li>
+        
+            <li><a href="#usage">Usage</a></li>
+        
+            <li><a href="#command-line-arguments">Command Line Arguments</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="splashscreen">Splashscreen</h1>
-<p>It's possible to show a very simple SplashScreen when your GUI starts up.<br />
-It will fill the whole screen, and stay up for a couple of seconds, while your GUI loads.<br />
-<img alt="SplashScreen)" src="../img/splash.png" />  </p>
-<p>Simply call:  </p>
+<h1 id="appjar-settings">appJar Settings</h1>
+<p>appJar can remember various GUI settings, and restore them on launch.  </p>
+<h2 id="settings">Settings</h2>
+<p>appJar will store the following settings:</p>
+<pre><code class="sh">[GEOM]
+    # geometry = string - size, location
+    # fullscreen = True/False
+    # minsize = string - x,y
+    # state = string - withdrawn/zoomed
+[TOOLBAR]
+    # pinned = True/False
+
+[TOGGLES]
+    # name = True/False
+[TABS]
+    # name = selected tab
+[PAGES]
+    # name = selected page
+
+[SUBWINDOWS]
+    # name = True/False
+[SUBWINDOW_NAME]
+    # geometry = string - size, location
+    # fullscreen = True/False
+    # minsize = string - x,y
+    # state = string - withdrawn/zoomed
+
+[EXTERNAL]
+    # name = value
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<hr />
 <ul>
-<li><code>.showSplash(text, fill='red', stripe='black', fg='white', font=44)</code><br />
-    Pass in the text you want to show, plus any colours (not required).<br />
-<code>text</code> This should be a short message to show in the center of the screen.<br />
-<code>fill</code> - this is the bg colour for the splashscreen.<br />
-<code>stripe</code> - this is the bg colour of a stripe across the screen.<br />
-<code>fg</code> - this is the colour of the writing to put in the stripe.<br />
-<code>font</code> - the size of the text.  </li>
+<li>
+<p><code>gui(useSettings=False)</code><br />
+    Set this flag to <code>True</code> in the constructor to enable settings.<br />
+    This will cause them to be loaded &amp; saved automatically.  </p>
+</li>
+<li>
+<p><code>.loadSettings(fileName="appJar.ini", useSettings=True)</code><br />
+    This function can be called manually if you want to load settings at a later time.<br />
+    An alternative file can be specified.<br />
+    If <code>useSettings</code> is set to False, appjar won't save the settings back at the end.  </p>
+</li>
+<li>
+<p><code>.saveSettings(fileName="appJar.ini")</code><br />
+    This will save the current settings, with an optional file name.  </p>
+</li>
+<li>
+<p><code>.getSetting(name, default=None)</code><br />
+    This allows you to request a user setting of the specified name.<br />
+    If no setting is found, the <code>default</code> value will be returned.  </p>
+</li>
+<li>
+<p><code>.setSetting(name, value)</code><br />
+    This will store the named setting, with the specified value.<br />
+    You must make sure settings are being saved, for this to take effect.  </p>
+</li>
 </ul>
-<p>This is only a very simple splashScreen, eventually, it will be possible to arrange labels and images in it, just as is possible in the main GUI layout...</p></div>
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<hr />
+<p>It's possible to switch on settings from the command line.<br />
+Simply use the <code>-s</code> flag, with an optional  file name:  </p>
+<pre><code class="sh">python3 themes.py -s  # turn on settings
+</code></pre>
+
+<p>Turn on settings, with a specified filename:  </p>
+<pre><code class="sh">python3 themes.py -s myFile.txt  # turn on settings with a specified filename
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
