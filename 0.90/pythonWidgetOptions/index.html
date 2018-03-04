@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonWidgetOptions/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Configuration - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Lessons
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonWidgetLayout/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonWidgetGrouping/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#changing-widgets">Changing Widgets</a></li>
+        
+            <li><a href="#basic-looks">Basic  Looks</a></li>
+        
+            <li><a href="#advanced-looks">Advanced Looks</a></li>
+        
+            <li><a href="#fancy-options">Fancy Options</a></li>
+        
+            <li><a href="#widget-manipulation">Widget Manipulation</a></li>
+        
+            <li><a href="#grouped-options">Grouped Options</a></li>
+        
+            <li><a href="#tkinter-options">tkinter Options</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="changing-widgets">Changing Widgets</h1>
+<hr />
+<p>There are a lot of things that can be changed in a widget.<br />
+There is a pattern to how this works, you simply specify the widget type and the parameter, eg:</p>
+<ul>
+<li><code>.setLabelBg(name, value)</code></li>
+<li><code>.setButtonFg(name, value)</code></li>
+<li><code>.setListBoxState(name, value)</code></li>
+</ul>
+<p>This should work for most widgets &amp; containers.<br />
+Some widgets have different types, eg. TextArea &amp; ScrolledTextArea, all types can be configured with the main widget name.  </p>
+<h3 id="basic-looks">Basic  Looks</h3>
+<hr />
+<p>The following options are available for all widgets:</p>
+<ul>
+<li>
+<p><code>.set XXX Fg(name, value)</code><br />
+    Sets the foreground colour (usually the text) of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX Bg(name, value)</code><br />
+    Sets the background colour of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX DisabledFg(name, value)</code><br />
+    Sets the disabled foreground colour (usually the text) of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX DisabledBg(name, value)</code><br />
+    Sets the disabled background colour of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX ActiveFg(name, value)</code><br />
+    Sets the active foreground colour (usually the text) of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX ActiveBg(name, value)</code><br />
+    Sets the active background colour of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX Width(name, value)</code><br />
+    Sets the width of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX Height(name, value)</code><br />
+    Set the height of the named widget.</p>
+</li>
+<li>
+<p><code>.set XXX Relief(name, value)</code><br />
+    Sets the border of the named widget. One of: <code>"sunken"</code>, <code>"raised"</code>, <code>"groove"</code>, <code>"ridge"</code>, <code>"flat"</code>  </p>
+</li>
+<li>
+<p><code>.set XXX State(name, value)</code><br />
+    Sets the state of the named widget. One of: <code>"normal"</code>, <code>"active"</code>, <code>"disabled"</code>  </p>
+</li>
+</ul>
+<p>It's possible to change <a href="../pythonGuiOptions/#gui-design">global GUI settings</a>, such as the background and font.<br />
+If you need to modify individual settings of a widget, you can access it directly, and use the traditional tKinter methods.  </p>
+<p>To change the font for a specific widget, try the following:<br />
+<img alt="Font Styles" src="../img/fonts.png" /></p>
+<pre><code class="python">app.addLabel(&quot;l1&quot;, &quot;Times&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Comic Sans&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Helvetica&quot;)
+app.addLabel(&quot;l4&quot;, &quot;Sans Serif&quot;)
+app.addLabel(&quot;l5&quot;, &quot;Verdana&quot;)
+app.addLabel(&quot;l6&quot;, &quot;Courier&quot;)
+
+app.getLabelWidget(&quot;l1&quot;).config(font=&quot;Times 20 italic underline&quot;)
+app.getLabelWidget(&quot;l2&quot;).config(font=(&quot;Comic Sans&quot;, &quot;20&quot;, &quot;normal&quot;))
+app.getLabelWidget(&quot;l3&quot;).config(font=&quot;Helvetica 20 underline&quot;)
+app.getLabelWidget(&quot;l4&quot;).config(font=(&quot;Sans Serif&quot;, &quot;20&quot;, &quot;bold&quot;))
+app.getLabelWidget(&quot;l5&quot;).config(font=&quot;Verdana 20 overstrike&quot;)
+app.getLabelWidget(&quot;l6&quot;).config(font=&quot;Courier 20&quot;)
+</code></pre>
+
+<h3 id="advanced-looks">Advanced Looks</h3>
+<hr />
+<p>The following are supported by most widgets:</p>
+<ul>
+<li>
+<p><code>.set XXX Align(name, value)</code><br />
+    Specifies how to align text within the widget: <code>"left"</code>, <code>"right"</code>, <code>"center"</code><br />
+    Calls <code>justify</code> on the Entry widget, and anchor on all others (converting left/right into e/w)  .  </p>
+</li>
+<li>
+<p><code>.set XXX Anchor(name, value)</code><br />
+    Sets where the text is positioned within the widget. One of: <code>"center"</code>, <code>"n"</code>, <code>"s"</code>, <code>"e"</code>, <code>"w"</code>, <code>"ne"</code>, <code>"nw"</code>, <code>"se"</code>, <code>"sw"</code>  </p>
+</li>
+<li>
+<p><code>.set XXX Sticky(name, value)</code><br />
+    Specifies which side of the cell to stick the widget to, as the GUI expands: <code>"left"</code>, <code>"right"</code>, <code>"both"</code></p>
+</li>
+<li>
+<p><code>.set XXX Padding(name, [x, y])</code><br />
+    Set external padding of the named widget.  </p>
+</li>
+<li>
+<p><code>.set XXX InPadding(name, [x, y])</code><br />
+    Set internal padding of the named widget.  </p>
+</li>
+</ul>
+<h3 id="fancy-options">Fancy Options</h3>
+<hr />
+<ul>
+<li>
+<p><code>.set XXX Tooltip(name, value)</code><br />
+    Sets a tooltip for the named widget, with the specified value.<br />
+    The specified value will be displayed in a small pop-up, when the mouse is left over the widget.<br />
+    If called a second time, it will update the text of the tooltip.<br />
+    See <a href="../pythonDialogs/#tooltips">Tooltips</a> for more info.  </p>
+</li>
+<li>
+<p><code>.enable XXX Tooltip(name)</code> &amp; <code>.disable XXX Tooltip(name)</code><br />
+    These will enable or disable the named tooltip. When disabled, it will not show-up.  </p>
+</li>
+<li>
+<p><code>.set XXX Cursor(name, value)</code><br />
+    Sets the cursor shown, when the mouse goes over this widget.<br />
+    There are lots of cursors available, for different platforms, see <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/cursors.html">here</a></p>
+</li>
+<li>
+<p><code>.set XXX RightClickMenu(name, menu)</code><br />
+    Links the right-click menu to the specified widget.<br />
+    Make sure you have created a right-click menu first, <code>.createRightClickMenu(menu)</code> and added some menu-items to it.<br />
+    See <a href="../pythonBars/#menubar">Menubars</a> for more info.  </p>
+</li>
+<li>
+<p><code>.set XXX Focus(name)</code><br />
+    Gives focus to the specified widget. This is the widget where the user will be able to start typing.</p>
+</li>
+</ul>
+<h3 id="widget-manipulation">Widget Manipulation</h3>
+<hr />
+<p>The following allow widgets to be manipulated on screen:</p>
+<ul>
+<li>
+<p><code>.disable XXX (name)</code><br />
+    Disable the widget - stops the user from interacting with it, but keeps it visible.</p>
+</li>
+<li>
+<p><code>.enable XXX (name)</code><br />
+    Enable a disabled widget.</p>
+</li>
+<li>
+<p><code>.hide XXX (name)</code><br />
+    Temporarily hides the widget from view.</p>
+</li>
+<li>
+<p><code>.show XXX (name)</code><br />
+    Show the widget, if it was already hidden.</p>
+</li>
+<li>
+<p><code>.remove XXX (name)</code><br />
+    Permanently remove the widget (deletes it).</p>
+</li>
+<li>
+<p><code>.removeAllWidgets()</code><br />
+    Permanently remove all widgets.</p>
+</li>
+</ul>
+<h3 id="grouped-options">Grouped Options</h3>
+<hr />
+<p>The following are convenience functions, for modifying a group of widgets:  </p>
+<ul>
+<li>
+<p><code>.set XXX Widths(names, val)</code> &amp; <code>.set XXX Heights(names, val)</code><br />
+    Sets the widths/heights of the specified widgets.</p>
+</li>
+<li>
+<p><code>.setAll XXX Widths(val)</code> &amp; <code>.setAll XXX Heights(val)</code><br />
+    Sets the widths/heights of all widgets of the specified type.</p>
+</li>
+</ul>
+<h3 id="tkinter-options">tkinter Options</h3>
+<hr />
+<p>It's also possible to request a widget, and modify it directly:  </p>
+<ul>
+<li><code>.get XXX Widget(name)</code><br />
+    This will get the named widget of the specified type.<br />
+    Any standard tkinter options can then be changed.  </li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
