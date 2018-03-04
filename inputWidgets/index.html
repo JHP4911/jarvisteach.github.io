@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/inputWidgets/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Input Widgets - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <!--
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        -->
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../outputWidgets/">Output Widgets</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Input Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Containers</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Saving Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../outputWidgets/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonImages/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#input-widgets">Input Widgets</a></li>
+        
+            <li><a href="#entry">Entry</a></li>
+        
+            <li><a href="#textarea">TextArea</a></li>
+        
+            <li><a href="#button">Button</a></li>
+        
+            <li><a href="#linkweblink">Link/WebLink</a></li>
+        
+            <li><a href="#radiobutton">RadioButton</a></li>
+        
+            <li><a href="#checkbox">CheckBox</a></li>
+        
+            <li><a href="#optionbox">OptionBox</a></li>
+        
+            <li><a href="#spinbox">SpinBox</a></li>
+        
+            <li><a href="#listbox">ListBox</a></li>
+        
+            <li><a href="#scale">Scale</a></li>
+        
+            <li><a href="#properties">Properties</a></li>
+        
+            <li><a href="#datepicker">DatePicker</a></li>
+        
+            <li><a href="#auto-labelled-widgets">Auto-Labelled Widgets</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="input-widgets">Input Widgets</h1>
+<hr />
+<p>Input widgets are used for capturing user interactions, either by cicking, typing or dragging.  </p>
+<p>They usually provide three functions:  </p>
+<ul>
+<li><strong>ADD</strong> - this creates the widget  </li>
+<li><strong>GET</strong> - this gets the contents/state of the widget  </li>
+<li><strong>SET</strong> - this changes what's in the widget  </li>
+</ul>
+<p>As well as options to change the way they <a href="../pythonWidgetOptions/">look/act</a>.  </p>
+<p>For each of the above to work, we need to know which widget you are referring to - so every widget gets a <strong>unique title</strong>.  </p>
+<p>If you want your input widget to have a label, there are some <a href="#auto-labelled-widgets">auto-label functions</a></p>
+<h2 id="entry">Entry</h2>
+<hr />
+<p>Entries are used to capture typed input from the user. They take a single parameter - a title.</p>
+<p>There are five special-case Entries:</p>
+<ul>
+<li><strong>NumericEntry</strong> - this only allows numbers to be typed in - always returns a float (None if empty).</li>
+<li><strong>SecretEntry</strong> - this will show stars, instead of the letters typed - useful for capturing passwords.</li>
+<li><strong>AutoEntry</strong> - this takes a list of words to provide auto-completion.  </li>
+<li><strong>ValidationEntry</strong> - can be set to valid/invalid/waiting - will colour the border green/red/black and show a ✔/✖/★  </li>
+<li><strong>FileEntry/DirectoryEntry</strong> - provides a button to select a file/directory and auto-populates the Entry  </li>
+</ul>
+<p><img alt="Entries" src="../img/1_entries.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+
+app.addEntry(&quot;e1&quot;)
+app.addEntry(&quot;e2&quot;)
+app.addEntry(&quot;e3&quot;)
+app.addLabelEntry(&quot;Name&quot;)
+app.addValidationEntry(&quot;v1&quot;)
+app.addFileEntry(&quot;f1&quot;)
+
+app.setEntryDefault(&quot;e2&quot;, &quot;Age here&quot;)
+app.setEntryValid(&quot;v1&quot;)
+
+app.go()
+</code></pre>
+
+<h4 id="add-entries">Add Entries</h4>
+<ul>
+<li><code>.addEntry(title)</code></li>
+<li><code>.addNumericEntry(title)</code></li>
+<li><code>.addSecretEntry(title)</code></li>
+<li><code>.addValidationEntry(title)</code>  </li>
+<li><code>.addFileEntry(title)</code>  </li>
+<li><code>.addDirectoryEntry(title)</code>  </li>
+<li><code>.addAutoEntry(title, words)</code><br />
+    This also takes a <code>words</code> parameter, which must be a list, and is used to populate he drop-down.  </li>
+</ul>
+<p>Each of these will add the specified type of Entry, using the title provided.</p>
+<h4 id="set-entries">Set Entries</h4>
+<ul>
+<li>
+<p><code>.setEntry(title, text, callFunction=True)</code><br />
+    This sets the contents of the specified Entry.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setEntryDefault(title, text)</code><br />
+    This sets a default value to display in an Entry.<br />
+    Once the user starts typing, it will disappear.<br />
+    The text is centered, shown in a light gray font, and will not be returned by <code>.getEntry(title)</code>  </p>
+</li>
+<li>
+<p><code>.setEntryUpperCase(title)</code> &amp; <code>.setEntryLowerCase(title)</code> <br />
+    This will force all text typed into the Entry to be uppercase/lowercase.  </p>
+</li>
+<li>
+<p><code>.setEntryMaxLength(title, maxLength)</code><br />
+    This will set a maximum length for the specified Entry.<br />
+    Any additional characters typed will be discarded.  </p>
+</li>
+<li>
+<p><code>.setEntryValid(title)</code> &amp; <code>.setEntryInvalid(title)</code> &amp; <code>.setEntryWaitingValidation(title)</code><br />
+    These will set the relevant status of a Validation Entry (how it looks).<br />
+    (Have a look <a href="../specialCharacters">here</a> for help displaying special characters)<br />
+<img alt="EntryValidation" src="../img/entValidation.png" /></p>
+</li>
+<li>
+<p><code>.setValidationEntry(title, state="valid")</code><br />
+    Same as above, set flag to one of <code>valid</code>, <code>invalid</code> or <code>wait</code>.  </p>
+</li>
+<li>
+<p><code>.setAutoEntryNumRows(title, rows)</code><br />
+    This will set the number of rows to display in an AutoEntry.<br />
+    NB. this is limited to the depth of the GUI - if there is no space, then no rows will be displayed. 
+    <img alt="AutoEntry" src="../img/1_autoEntry.png" />  </p>
+</li>
+<li>
+<p><code>.appendAutoEntry(title, value)</code><br />
+    This will add the value/list of values to the specified AutoEntry.  </p>
+</li>
+<li>
+<p><code>.removeAutoEntry(title, value)</code><br />
+    This will remove the value from the specified AutoEntry.  </p>
+</li>
+<li>
+<p><code>.changeAutoEntry(title, value)</code><br />
+    This will replace all items in the specified AutoEntry with a new list of values.  </p>
+</li>
+<li>
+<p><code>.clearEntry(title, callFunction=True)</code><br />
+    This will clear the contents of the specified Entry.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllEntries(callFunction=False)</code><br />
+    This will clear all Entries in the GUI.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setFocus(title)</code><br />
+    This will put the cursor in the specified Entry, so that the user can start typing without needing to click.</p>
+</li>
+</ul>
+<h4 id="get-entries">Get Entries</h4>
+<ul>
+<li>
+<p><code>.getEntry(title)</code><br />
+    This will return the contents of the specified Entry.<br />
+    NB. <em>numericEntries</em> always return a float.  </p>
+</li>
+<li>
+<p><code>.getAllEntries()</code><br />
+    This will return the contents of all Entries in the app, as a dictionary.<br />
+    NB. <em>numericEntries</em> always return a float.  </p>
+</li>
+</ul>
+<h2 id="textarea">TextArea</h2>
+<hr />
+<p>Similar to an Entry, but allows you to type text over multiple lines.  </p>
+<p><img alt="TextArea" src="../img/1_textArea.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.addTextArea(&quot;t1&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-textareas">Add TextAreas</h4>
+<ul>
+<li>
+<p><code>.addTextArea(title)</code><br />
+    Adds an empty TextArea, with the specified title.  </p>
+</li>
+<li>
+<p><code>.addScrolledTextArea(title)</code><br />
+    Adds a scrollable TextArea with the specified title.  </p>
+</li>
+</ul>
+<p><img alt="ScrolledTextArea" src="../img/2_textArea.png" />  </p>
+<h4 id="set-textareas">Set TextAreas</h4>
+<ul>
+<li>
+<p><code>.setTextArea(title, text, end=True, callFunction=True)</code><br />
+    Adds the supplied text to the specified TextArea.<br />
+    By default, the text is added to the end.<br />
+    Set <code>end</code> to be False if you want to add at the beginning.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearTextArea(title, callFunction=True)</code><br />
+    Clears the contents of the specified TextArea.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllTextAreas(callFunction=False)</code><br />
+    This will clear the contents of all TextAreas in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-textareas">Get TextAreas</h4>
+<ul>
+<li>
+<p><code>.getTextArea(title)</code><br />
+    Gets the contents of the specified TextArea.  </p>
+</li>
+<li>
+<p><code>.getAllTextAreas()</code><br />
+    This will return the contents of all TextAreas in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="button">Button</h2>
+<hr />
+<p>A clickable button, that will call a function.<br />
+These are the key to starting an interactive application.<br />
+The GUI is looping, waiting for something to happen.<br />
+A button click is the classic way to start interacting with a GUI.</p>
+<p>Whenever any function is called by the GUI, the title of the widget that called it is passed as a parameter.<br />
+That way, multiple widgets can use the same function, but different actions can be performed, depending on the name passed as a parameter.</p>
+<p><img alt="Buttons" src="../img/1_buttons.gif" /></p>
+<pre><code class="python">    from appJar import gui
+
+    # the title of the button will be received as a parameter
+    def press(btn):
+        print(btn)
+
+    app=gui()
+    # 3 buttons, each calling the same function
+    app.addButton(&quot;One&quot;, press)
+    app.addButton(&quot;Two&quot;, press)
+    app.addButton(&quot;Three&quot;, press)
+    app.go()
+</code></pre>
+
+<h4 id="add-buttons">Add Buttons</h4>
+<ul>
+<li>
+<p><code>.addButton(title, function)</code><br />
+    Add a single button to the GUI, the text on the button will be the same as the button's title.<br />
+    A function should be specified, which will be called when the button is clicked, where the title is passed as a parameter to the function.<br />
+    Alternatively, the function can have no parameter, and appJar will not supply an argument.     </p>
+</li>
+<li>
+<p><code>.addButtons(titles, functions)</code><br />
+    It's possible to add a list of buttons to the GUI.<br />
+    Pass a 1-dimensional or 2-dimensional list, and they will be rendered accordingly.<br />
+    A single function can be passed, to use for all buttons.<br />
+    Or a list of functions can be passed, which MUST correspond to the buttons.  </p>
+</li>
+<li>
+<p><code>.addImageButton(title, function, imgFile, align=None)</code><br />
+    This creates the named button, as above, using the specified image.<br />
+    If align is set, the image will be aligned relative to the text, otherwise the image will replace the text.  </p>
+</li>
+<li>
+<p><code>.addIconButton(title, function, iconName, align=None)</code><br />
+    This creates the named button, as above, using the specified icon.<br />
+    If align is set, the image will be aligned relative to the text, otherwise the image will replace the text.  </p>
+</li>
+<li>
+<p><code>.addNamedButton(name, title, function)</code><br />
+    By default, it's not possible to have two buttons with the same text.<br />
+    If that's required, a named button should be used.<br />
+    This allows a name and title to be set for a button.<br />
+    The name will be displayed on the button, and the title passed to the function.</p>
+</li>
+</ul>
+<h4 id="set-buttons">Set Buttons</h4>
+<ul>
+<li>
+<p><code>.setButton(name, text)</code><br />
+    This will change the text displayed on a button, but <strong>NOT</strong> the value passed as a parameter to the function.  </p>
+</li>
+<li>
+<p><code>.setButtonImage(title, image, align=None)</code><br />
+    This allows an image to be placed on a button, instead of the usual text.<br />
+    If align is set, the image will be aligned relative to the text, otherwise the image will replace the text.  </p>
+</li>
+</ul>
+<h2 id="linkweblink">Link/WebLink</h2>
+<hr />
+<p>Clickable text to call a function or launch a URL</p>
+<p><img alt="Link" src="../img/1_link.png" />  </p>
+<pre><code class="python">from appJar import gui
+def press(link):
+    app.infoBox(&quot;Info&quot;, &quot;You clicked the link!&quot;)
+
+app=gui()
+app.setFont(20)
+app.addLink(&quot;Click me&quot;, press)
+app.addWebLink(&quot;appJar.info&quot;, &quot;http://appJar.info&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-links">Add Links</h4>
+<ul>
+<li>
+<p><code>.addLink(title, func)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will call the specified function.  </p>
+</li>
+<li>
+<p><code>.addWebLink(title, page)</code><br />
+    Adds a <strong>hyperlink</strong>, that when clicked, will launch the default browser, and load the specified page.<br />
+    It must be a fully formed link, including <code>http://</code>  </p>
+</li>
+</ul>
+<h4 id="get-links">Get Links</h4>
+<ul>
+<li><code>.getLink(title)</code><br />
+    Returns the text displayed in the link.  </li>
+</ul>
+<h4 id="set-links">Set Links</h4>
+<ul>
+<li><code>.setLink(title, func)</code><br />
+    Changes the function/webpage the link calls.  </li>
+</ul>
+<h2 id="radiobutton">RadioButton</h2>
+<hr />
+<p>A group of round boxes, only one of which can be selected.<br />
+These are great for getting a single value, for a multiple choice question.  </p>
+<p><img alt="Radios" src="../img/t_radios.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Parklife&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-radiobuttons">Add RadioButtons</h4>
+<ul>
+<li><code>.addRadioButton(title, name)</code><br />
+    This will create a RadioButton grouped by the specified title.<br />
+    This button will have the value of name.<br />
+    Radio buttons are usually used in groups.  </li>
+</ul>
+<h4 id="set-radiobuttons">Set RadioButtons</h4>
+<ul>
+<li>
+<p><code>.setRadioButton(title, value, callFunction=True)</code><br />
+    This will tick the specified RadioButton.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setRadioTick(title, tick=True)</code><br />
+    It is possible to use tick-boxes instead of the classic circular radio-button.<br />
+    Setting tick to True will convert all the radio-buttons for this title to tick boxes.  </p>
+</li>
+<li>
+<p><code>.clearAllRadioButtons(callFunction=False)</code><br />
+    This will reset all RadioButtons in the app to their first value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-radiobuttons">Get RadioButtons</h4>
+<ul>
+<li><code>.getRadioButton(title)</code><br />
+    Gets the value of the selected RadioButton, for the specified title.</li>
+</ul>
+<pre><code class="python">    from appJar import gui
+
+    def press(rb):
+        print(app.getRadioButton(&quot;song&quot;))
+
+    app=gui()
+    app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
+    app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
+
+    # call this function, when the RadioButton changes
+    app.setRadioButtonChangeFunction(&quot;song&quot;, press)
+
+    app.addButton(&quot;PLAY&quot;, press)
+    app.go()
+</code></pre>
+
+<ul>
+<li><code>.getAllRadioButtons()</code><br />
+    This will return the contents of all RadioButtons in the app, as a dictionary.  </li>
+</ul>
+<h2 id="checkbox">CheckBox</h2>
+<hr />
+<p>A simple tick-box, with a label, that can be either ON or OFF.  </p>
+<p><img alt="CheckBoxes" src="../img/1_checks.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+
+app.addCheckBox(&quot;Apples&quot;)
+app.addCheckBox(&quot;Pears&quot;)
+app.addCheckBox(&quot;Oranges&quot;)
+app.addCheckBox(&quot;Kiwis&quot;)
+
+app.setCheckBox(&quot;Oranges&quot;)
+
+app.go()
+</code></pre>
+
+<h4 id="add-checkboxes">Add CheckBoxes</h4>
+<ul>
+<li>
+<p><code>.addCheckBox(title)</code><br />
+    This creates a CheckBox, with the specified title.  </p>
+</li>
+<li>
+<p><code>.addNamedCheckBox(name, title)</code><br />
+    By default, it's not possible to have two CheckBoxes with the same text.<br />
+    If that's required, a named CheckBox should be used.<br />
+    This creates a CheckBox, with the specified title.<br />
+    The name will be displayed next to the CheckBox, and the title passed to the function as a unique ID.  </p>
+</li>
+</ul>
+<h4 id="set-checkboxes">Set CheckBoxes</h4>
+<ul>
+<li>
+<p><code>.setCheckBox(title, ticked=True, callFunction=True)</code><br />
+    This will tick the CheckBox, or untick it if ticked is set to False.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllCheckBoxes(callFunction=False)</code><br />
+    This will clear (untick) all CheckBoxes in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-checkboxes">Get CheckBoxes</h4>
+<ul>
+<li>
+<p><code>.getCheckBox(title)</code><br />
+    This will return True or False, depending on the state of the CheckBox.  </p>
+</li>
+<li>
+<p><code>.getAllCheckBoxes()</code><br />
+    This will return the contents of all CheckBoxes in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="optionbox">OptionBox</h2>
+<hr />
+<p>Creates a simple drop-down box.<br />
+It is only possible to select one option from this drop-down.<br />
+Pass in a list of values to show in the drop-down box.<br />
+They will be added in the same order, with the first item shown.<br />
+If the first item is empty, a simple title <code>- options -</code> will be created.<br />
+Any other empty items will be removed.<br />
+If an item starts with a dash (-), it will be treated as a separator, and can't be selected.  </p>
+<p><img alt="OptionBox" src="../img/1_optBox.png" /> <img alt="OptionBox" src="../img/2_optBox.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addLabelOptionBox(&quot;Options&quot;, [&quot;- Fruits -&quot;, &quot;Apple&quot;, &quot;Orange&quot;,
+                        &quot;Pear&quot;, &quot;kiwi&quot;, &quot;- Pets -&quot;, &quot;Dogs&quot;, &quot;Cats&quot;,
+                        &quot;Fish&quot;, &quot;Hamsters&quot;])
+app.go()
+</code></pre>
+
+<h4 id="add-optionboxes">Add OptionBoxes</h4>
+<ul>
+<li>
+<p><code>.addOptionBox(title, values)</code><br />
+    This will create an OptionBox, adding the contents of the values list, in the order specified.  </p>
+</li>
+<li>
+<p><code>.addTickOptionBox(title, values)</code><br />
+    This will create an OptionBox made up of check boxes.<br />
+    The <code>title</code> will always be displayed as the <em>selected</em> entry in the OptionBox, event though it can't be selected/ticked.<br />
+    Instead of selecting a single item, you tick the ones you want.<br />
+<img alt="TickOptionBox" src="../img/3_optBox.png" />  </p>
+<p>Calling <code>.getOptionBox(title)</code> will return a dictionary of the options along with a True/False value.  </p>
+</li>
+</ul>
+<pre><code class="python">from appJar import gui
+
+def get(btn):
+    print(app.getOptionBox(&quot;Favourite Pets&quot;))
+
+app=gui()
+app.setFont(20)
+app.addTickOptionBox(&quot;Favourite Pets&quot;, [&quot;Dogs&quot;, &quot;Cats&quot;, &quot;Hamsters&quot;, &quot;Fish&quot;])
+app.addButton(&quot;GET&quot;, get)
+app.go()
+</code></pre>
+
+<h4 id="set-optionboxes">Set OptionBoxes</h4>
+<ul>
+<li>
+<p><code>.changeOptionBox(title, newOptions, index, callFunction=False)</code><br />
+    This will replace the contents of the OptionBox, with the new list provided.<br />
+    If specified, the indexed item will be selected - this can be a position or an item name.<br />
+    If setting a TickOptionBox, the old list will be replaced with the new list. None will be ticked. <code>index</code> will be ignored.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
+</li>
+<li>
+<p><code>.setOptionBox(title, position, value=True, callFunction=True, override=False)</code><br />
+    This will select the item in the list, at the position specified.<br />
+    Alternatively, the name of an item can be specified.<br />
+    If changing a TickOptionBox, the specified item will be set to the specified value.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.<br />
+    By default, you can't select a disabled item. You can change this by setting <code>override</code> to be True.  </p>
+</li>
+<li>
+<p><code>.renameOptionBoxItem(title, item, newName, callFunction=False)</code><br />
+    This will rename the specified item in the named OptionBox.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
+</li>
+<li>
+<p><code>.clearOptionBox(title, callFunction=True)</code><br />
+    This will set the named OptionBox back to its first value (even if it's disabled).<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllOptionBoxes(callFunction=False)</code><br />
+    This will set all OptionBoxes in the app back to their first value (even if it's disabled).<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.deleteOptionBox(title, position)</code><br />
+    This will delete the item in the list, at the position specified.<br />
+    Alternatively, the name of an item can be specified.<br />
+    Not available on TickOptionBoxes.  </p>
+</li>
+</ul>
+<h4 id="get-optionboxes">Get OptionBoxes</h4>
+<ul>
+<li>
+<p><code>.getOptionBox(title)</code><br />
+    This will return the currently displayed value in an OptionBox.<br />
+    Or a dictionary of names, and their boolean value if a TickOptionBox.<br />
+    Will return None, if an invalid option is currently selected.  </p>
+</li>
+<li>
+<p><code>.getAllOptionBoxes()</code><br />
+    This will return the contents of all OptionBoxes in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="spinbox">SpinBox</h2>
+<hr />
+<p>A scrollable list of options. Up and down buttons are provided to scroll from one item to the next.<br />
+Unlike the OptionBox, you do not get a drop-down of choices, instead it spins to the next/previous option.  </p>
+<p><img alt="SpinBox" src="../img/1_spinBox.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addLabelSpinBox(&quot;options&quot;, [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Pear&quot;, &quot;kiwi&quot;])
+app.go()
+</code></pre>
+
+<h4 id="add-spinboxes">Add SpinBoxes</h4>
+<ul>
+<li>
+<p><code>.addSpinBox(title, values)</code><br />
+    This will create a SpinBox, adding the contents of the values list, in the order specified.</p>
+</li>
+<li>
+<p><code>.addSpinBoxRange(title, from, to)</code><br />
+    This will create a SpinBox, with a numeric range of items.  </p>
+<p><img alt="SpinBox" src="../img/3_spinBox.png" />  </p>
+</li>
+</ul>
+<pre><code class="python">    from appJar import gui
+
+    app=gui()
+    app.setFont(20)
+    app.addSpinBoxRange(&quot;Numbers&quot;, 1, 12)
+    app.go()
+</code></pre>
+
+<h4 id="set-spinboxes">Set SpinBoxes</h4>
+<ul>
+<li>
+<p><code>.setSpinBox(title, value, callFunction=True)</code><br />
+    This will select the specified value in the SpinBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setSpinBoxPos(title, pos, callFunction=True)</code><br />
+    This will select the value at the specified position in the SpinBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllSpinBoxes(callFunction=False)</code><br />
+    This will set all SpinBoxes in the app to their first value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-spinboxes">Get SpinBoxes</h4>
+<ul>
+<li>
+<p><code>.getSpinBox(title)</code><br />
+    This will get the selected value from the specified SpinBox.  </p>
+</li>
+<li>
+<p><code>.getAllSpinBoxes()</code><br />
+    This will return the contents of all SpinBoxes in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="listbox">ListBox</h2>
+<hr />
+<p>A box containing a list of items, single or multi-select</p>
+<p><img alt="ListBox" src="../img/1_listBox.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addListBox(&quot;list&quot;, [&quot;apple&quot;, &quot;orange&quot;, &quot;pear&quot;, &quot;kiwi&quot;])
+app.go()
+</code></pre>
+
+<h4 id="add-listboxes">Add ListBoxes</h4>
+<ul>
+<li>
+<p><code>.addListBox(title, values)</code><br />
+    Creates a ListBox with the specified values.  </p>
+</li>
+<li>
+<p><code>.addListItem(title, item)</code><br />
+    Adds a single item to the the end of the ListBox, and selects it.  </p>
+</li>
+<li>
+<p><code>.addListItems(title, items)</code><br />
+    Adds a list of items to the end of the List Box, selecting the last one.  </p>
+</li>
+</ul>
+<h4 id="set-listboxes">Set ListBoxes</h4>
+<ul>
+<li>
+<p><code>.setListItem(title, item, newVal, first=False)</code><br />
+<code>.setListItemAtPos(title, pos, newVal)</code><br />
+    Changes the specified list item to the new value.<br />
+    If <code>first</code> is set to True, only the first item found will be changed.<br />
+    Otherwise, all occurrences of the specified value will be changed.  </p>
+</li>
+<li>
+<p><code>.removeListItem(title, item)</code><br />
+<code>.removeListItemAtPos(title, pos)</code><br />
+    Remove the specified item from the  specified ListBox.<br />
+    Will only remove the first item that matches the parameter.  </p>
+</li>
+<li>
+<p><code>.clearListBox(title, callFunction=True)</code><br />
+    Removes all items from the specified ListBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllListBoxes(callFunction=False)</code><br />
+    This will remove all items from all ListBoxes in the app.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.updateListBox(title, items, select=False)</code><br />
+    Replace the contents of the specified ListBox with the new values.<br />
+    If you set <code>select</code> to be True, the last item in the list will be selected.  </p>
+</li>
+</ul>
+<pre><code class="python">from appJar import gui
+def press(btn):
+    items = app.getListItems(&quot;list&quot;)
+    if len(items)&gt; 0:
+        app.removeListItem(&quot;list&quot;, items[0])
+
+app=gui()
+app.setFont(20)
+app.addListBox(&quot;list&quot;, [&quot;apple&quot;, &quot;orange&quot;, &quot;pear&quot;, &quot;kiwi&quot;])
+app.addButton(&quot;press&quot;,  press)
+app.go()
+</code></pre>
+
+<ul>
+<li>
+<p><code>.selectListItem(title, item, callFunction=True)</code><br />
+<code>.selectListItemAtPos(title, pos, callFunction=False)</code><br />
+    Selects the specified item in the specified ListBox.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setListBoxRows(title, rows)</code><br />
+    Sets how many rows to display in the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.setListBoxMulti(list, multi=True)</code><br />
+    Configures whether the specified ListBox is single or multi select.  </p>
+</li>
+<li>
+<p><code>.setListBoxGroup(list, group=True)</code><br />
+    Adds the named ListBox to a group of selectable ListBoxes.<br />
+    All ListBoxes in the group can have items selected at the same time.  </p>
+</li>
+<li>
+<p><code>.setListItemBg(title, item, colour)</code> &amp; <code>.setListItemFg(title, item, colour)</code><br />
+<code>.setListItemAtPosBg(title, item, colour)</code> &amp; <code>.setListItemAtPosFg(title, item, colour)</code><br />
+    Sets the background or foreground colours the specified ListBox item.<br />
+    Can either specify a named item (will update all with that name) or the position of an item.  </p>
+</li>
+</ul>
+<p><img alt="LB Colours" src="../img/lbCols.png" />  </p>
+<h4 id="get-listboxes">Get ListBoxes</h4>
+<ul>
+<li>
+<p><code>.getListBox(title)</code><br />
+    Gets all of the selected items from the specified ListBox.  </p>
+</li>
+<li>
+<p><code>.getAllListBoxes()</code><br />
+    This will return the contents of all ListBoxes in the app, as a dictionary.  </p>
+</li>
+<li>
+<p><code>.getAllListItems(title)</code><br />
+    Gets all of the items from the specified ListBox.  </p>
+</li>
+</ul>
+<h2 id="scale">Scale</h2>
+<hr />
+<p>A slider, that has a minimum &amp; maximum value.  </p>
+<p><img alt="Scale" src="../img/1_scale.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app=gui()
+app.setFont(20)
+app.addLabelScale(&quot;scale&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-scales">Add Scales</h4>
+<ul>
+<li><code>.addScale(title)</code><br />
+    Adds a horizontal scale, with a default range between 0 and 100.  </li>
+</ul>
+<h4 id="set-scales">Set Scales</h4>
+<ul>
+<li>
+<p><code>.setScale(title, pos, callFunction=True)</code><br />
+    Sets the selected pos for the specified Scale.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setScaleRange(title from, to, curr=None)</code><br />
+    Allows you to change the range available in the Scale.<br />
+    If <code>curr</code> is provided, then the Scale will be set to that value.  </p>
+</li>
+<li>
+<p><code>.setScaleIncrement(title, increment)</code><br />
+    Configures how much the scale jumps, when the trough is clicked.<br />
+    It defaults to 10%.  </p>
+</li>
+<li>
+<p><code>.showScaleIntervals(title, intervals)</code><br />
+    Configures the Scale to show interval labels along its length.<br />
+<code>intervals</code> should be how often to show a value, eg. <code>25</code> would show 0, 25, 50, and so on...<br />
+<img alt="Scale" src="../img/4_scale.png" />  </p>
+</li>
+<li>
+<p><code>.showScaleValue(title, show=True)</code><br />
+    Configures the Scale to show the currently selected value.<br />
+<img alt="Scale" src="../img/2_scale.png" />  </p>
+</li>
+<li>
+<p><code>.setScaleHorizontal(title)</code> &amp; <code>.setScaleVertical(title)</code><br />
+    Changes the Scale's orientation to the specified value.  </p>
+<p><img alt="Scale" src="../img/3_scale.png" />  </p>
+</li>
+<li>
+<p><code>.setScaleWidth(title, width)</code> &amp; <code>.setScaleLength(title, length)</code><br />
+    Sets a width/length for the scale's slider.  </p>
+</li>
+<li>
+<p><code>.setScaleChangeFunction(title, func)</code><br />
+    Sets a function to call, each time the scale is changed.<br />
+    The function must take one parameter, which will be populated with the scale's title.  </p>
+</li>
+<li>
+<p><code>.clearAllScales(callFunction=False)</code><br />
+    This will set all Scales in the app to their minimum value.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-scales">Get Scales</h4>
+<ul>
+<li>
+<p><code>.getScale(title)</code><br />
+    Gets the currently selected value from the scale.  </p>
+</li>
+<li>
+<p><code>.getAllScales()</code><br />
+    This will return the contents of all Scales in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<hr />
+<p>A compound widget that shows multiple CheckButtons linked to a dictionary.<br />
+Note, dictionaries have no order, so when added as a dictionary, the items will be automatically sorted.  </p>
+<p><img alt="Properties" src="../img/1_props.png" />
+<img alt="Properties" src="../img/2_props.png" /></p>
+<pre><code class="python">from appJar import gui
+
+toppings={&quot;Cheese&quot;:False, &quot;Tomato&quot;:False, &quot;Bacon&quot;:False,
+            &quot;Corn&quot;:False, &quot;Mushroom&quot;:False}
+
+app=gui()
+app.setBg(&quot;lightBlue&quot;)
+app.setFont(20)
+app.addProperties(&quot;Toppings&quot;, toppings)
+app.setProperty(&quot;Toppings&quot;, &quot;Pepper&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-properties">Add Properties</h4>
+<ul>
+<li><code>.addProperties(title, values)</code><br />
+    Creates a new Properties widget, with the specified title.<br />
+    If values is populated, then the dictionary items will be added to the widget.  </li>
+</ul>
+<h4 id="set-properties">Set Properties</h4>
+<ul>
+<li>
+<p><code>.setPropertyText(title, prop, newText=None)</code><br />
+    Change the displayed text for the named property.<br />
+    If no value is provided, the original value will be used.  </p>
+</li>
+<li>
+<p><code>.setProperties(title, props, callFunction=True)</code><br />
+    Adds the dictionary of properties to the widget.<br />
+    If any of them already exist, they will be updated.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.setProperty(title, prop, value=False, callFunction=True)</code><br />
+    Sets the named property to the specified value.<br />
+    If it doesn't exist, it will be added first, at the end of the widget.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.deleteProperty(title, prop)</code><br />
+    Deletes the named property from the widget.  </p>
+</li>
+<li>
+<p><code>.resetProperties(title, callFunction=True)</code><br />
+    This will reset the specified Properties back to its original values.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearProperties(title, callFunction=True)</code><br />
+    This will set all values in the specified Properties to False.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.resetAllProperties(callFunction=False)</code><br />
+    This will reset all Properties in the app back to their original values.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllProperties(callFunction=False)</code><br />
+    This will set all values in all Properties in the app to False.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-properties">Get Properties</h4>
+<ul>
+<li>
+<p><code>.getProperties(title)</code><br />
+    Gets a dictionary of the all items in the Properties widget.  </p>
+</li>
+<li>
+<p><code>.getAllProperties()</code><br />
+    This will return the contents of all Properties in the app, as a dictionary.  </p>
+</li>
+<li>
+<p><code>.getProperty(title, prop)</code><br />
+    Gets the value of the named property.  </p>
+</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<p>It's possible to put Properties into ToggleFrames, and also set a Function to listen for any changes.  </p>
+<p><img alt="Properties" src="../img/3_props.png" />
+<img alt="Properties" src="../img/4_props.png" />
+<img alt="Properties" src="../img/5_props.png" /></p>
+<pre><code class="python">from appJar import gui
+
+def changed(props):
+    print(&quot;Changed&quot;, props)
+
+toppings={&quot;Cheese&quot;:False, &quot;Tomato&quot;:False, &quot;Bacon&quot;:False,
+            &quot;Corn&quot;:False, &quot;Mushroom&quot;:False}
+
+app=gui()
+app.setBg(&quot;lightBlue&quot;)
+app.setFont(20)
+
+app.startToggleFrame(&quot;Toppings&quot;)
+app.addProperties(&quot;Toppings&quot;, toppings)
+app.setPropertiesChangeFunction(&quot;Toppings&quot;, changed)
+app.stopToggleFrame()
+
+app.go()
+</code></pre>
+
+<h2 id="datepicker">DatePicker</h2>
+<hr />
+<p>A widget to capture a date - will handle presenting accurate drop-downs, and return a date.<br />
+<img alt="DatePicker" src="../img/dev/1_cal.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+def showDate(btn):
+    print(app.getDatePicker(&quot;dp&quot;))
+
+app=gui()
+app.addDatePicker(&quot;dp&quot;)
+app.addButton(&quot;GET&quot;, showDate)
+app.setDatePickerRange(&quot;dp&quot;, 1900, 2100)
+app.setDatePicker(&quot;dp&quot;)
+app.go()
+</code></pre>
+
+<h4 id="add-datepickers">Add DatePickers</h4>
+<ul>
+<li><code>.addDatePicker(title)</code><br />
+    Create a DatePicker, with a range from 1/1/1970 to 31/12/2020  </li>
+</ul>
+<h4 id="set-datepickers">Set DatePickers</h4>
+<ul>
+<li>
+<p><code>.setDatePicker(title, date=None)</code><br />
+    Will set the specified DatePicker to the specified date, or current date if no date is supplied.  </p>
+</li>
+<li>
+<p><code>.setDatePickerRange(title, startYear, endYear=None)</code><br />
+    Set the range for the named DatePicker.<br />
+    If endYear is None, the current Year will be used.  </p>
+</li>
+<li>
+<p><code>.setDatePickerChangeFunction(title, function)</code><br />
+    Set a function to call when the DatePicker is changed.  </p>
+</li>
+<li>
+<p><code>.clearDatePicker(title, callFunction=True)</code><br />
+    This will reset the specified DatePicker to the earliest available date.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
+</li>
+<li>
+<p><code>.clearAllDatePickers(callFunction=False)</code><br />
+    This will reset all DatePickers in the app to their earliest available date.<br />
+    Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
+</li>
+</ul>
+<h4 id="get-datepickers">Get DatePickers</h4>
+<ul>
+<li>
+<p><code>.getDatePicker(title)</code><br />
+    Will return the currently selected date.  </p>
+</li>
+<li>
+<p><code>.getAllDatePickers()</code><br />
+    This will return the contents of all DatePickers in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h2 id="auto-labelled-widgets">Auto-Labelled Widgets</h2>
+<hr />
+<p>It's possible to automatically include a <em>label</em> alongside some of widgets below.<br />
+Both the label and widget will be placed in the same grid space.<br />
+Simply add the word <code>Label</code> to the command when adding the widget:  </p>
+<ul>
+<li><code>.addLabelEntry(title)</code></li>
+<li><code>.addLabelNumericEntry(title)</code></li>
+<li><code>.addLabelSecretEntry(title)</code></li>
+<li><code>.addLabelAutoEntry(title, words)</code></li>
+<li><code>.addLabelScale(title)</code></li>
+<li><code>.addLabelOptionBox(title, values)</code></li>
+<li><code>.addLabelTickOptionBox(title, values)</code></li>
+<li><code>.addLabelSpinBox(title, values)</code></li>
+<li><code>.addLabelSpinBoxRange(title, from, to)</code>  </li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
