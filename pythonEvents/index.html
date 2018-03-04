@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -445,7 +469,9 @@
     
         <li class="main active"><a href="#events">Events</a></li>
         
-            <li><a href="#types-of-event">Types of Event</a></li>
+            <li><a href="#built-in-events">Built-in Events</a></li>
+        
+            <li><a href="#registering-other-events">Registering Other Events</a></li>
         
             <li><a href="#binding-keys">Binding Keys</a></li>
         
@@ -460,7 +486,7 @@
 <hr />
 <p>An <a href="https://en.wikipedia.org/wiki/Event-driven_programming">event</a> is just calling a function - you want an event to be generated every time the user does something, such as clicking a button, dragging a scale, or pressing a key...  </p>
 <p>The <code>Button</code> has an event automatically linked to it - whenever you press it, a function gets called. The other widgets don't.  </p>
-<h2 id="types-of-event">Types of Event</h2>
+<h2 id="built-in-events">Built-in Events</h2>
 <hr />
 <p>appJar currently has four basic types of event you can register:  </p>
 <ul>
@@ -469,7 +495,7 @@
 <li><code>.set XXX OverFunction(title, functions)</code> call function(s) when the mouse <em>enters/leaves</em> the widget  </li>
 <li><code>.set XXX DragFunction(title, functions)</code> call function(s) when the mouse is <em>dragged in/out</em> of the widget  </li>
 </ul>
-<h3 id="change-submit-functions">Change &amp; Submit Functions</h3>
+<h3 id="change-submit-events">Change &amp; Submit Events</h3>
 <p>These do similar things, so probably shouldn't both exist, but have evolved from a single <code>.set XXX Function()</code> which is now deprecated.  </p>
 <ul>
 <li>
@@ -493,8 +519,6 @@
 </ul>
 </li>
 </ul>
-<p><strong>WARNING</strong> - it's possible to generate a RuntimeError. If you've got two widgets changing the same variable, say a Scale and a SpinBox, and you want a change in one widget to cause an update in the other, you might inadvertently end up stuck in a recursive loop, until the <a href="https://en.wikipedia.org/wiki/Stack_overflow">stack overflows</a>.  </p>
-<p>In this case, make sure you set the optional parameter <code>callFunction = False</code> when you  call the <code>set XXX Function()</code> of a widget.  </p>
 <pre><code class="python">from appJar import gui
 
 def songChanged(rb):
@@ -512,20 +536,9 @@ app.addButton(&quot;Reset&quot;, reset)
 app.go()
 </code></pre>
 
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
-<h3 id="over-functions">Over Functions</h3>
+<p><strong>WARNING</strong> - it's possible to generate a RuntimeError. If you've got two widgets changing the same variable, say a Scale and a SpinBox, and you want a change in one widget to cause an update in the other, you might inadvertently end up stuck in a recursive loop, until the <a href="https://en.wikipedia.org/wiki/Stack_overflow">stack overflows</a>.  </p>
+<p>In this case, make sure you set the optional parameter <code>callFunction = False</code> when you  call the <code>set XXX Function()</code> of a widget.  </p>
+<h3 id="over-events">Over Events</h3>
 <hr />
 <p>Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.  </p>
 <ul>
@@ -551,7 +564,7 @@ app.go()
 <li><code>.setImageMouseOver(title, image)</code><br />
     Additional function, specific to <a href="../pythonImages/#change-images">images</a>, to change the specified image, while the mouse is over it.</li>
 </ul>
-<h3 id="drag-functions">Drag Functions</h3>
+<h3 id="drag-events">Drag Events</h3>
 <p>Set functions to call when the mouse button is clicked and dragged on a Label, then released.  </p>
 <ul>
 <li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction])</code><br />
@@ -560,14 +573,28 @@ app.go()
     The second function will be called when the mouse is released, this can happen anywhere.<br />
     The same rules for passing functions apply as above.  </li>
 </ul>
-<h3 id="registering-other-event-types">Registering Other Event Types</h3>
-<p>It's possible to register any of the standard event types with appJar widgets  </p>
-<pre><code class="python">app.getEntryWidget(&quot;widget_name&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+<h2 id="registering-other-events">Registering Other Events</h2>
+<p>It's possible to register any of the other <a href="http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm">tkinter event types</a> with appJar widgets.<br />
+Just get the widget, then call the tkinter <code>bind()</code> function, passing in the event name and function to call.<br />
+<strong>NB.</strong> The function you register must receive a single parameter, the event object.  </p>
+<pre><code class="python"># either grab the widget when it's created, and bind the event
+ent = app.addEntry(&quot;e1&quot;)
+ent.bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+
+# or do the above in one line
+app.addEntry(&quot;e1&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+
+# or, if doing later on, get the widget from appJar and bind the event
+ent = app.getEntryWidget(&quot;e1&quot;)
+ent.bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+
+# or do the above in one line
+app.getEntryWidget(&quot;e1&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
 </code></pre>
 
 <h2 id="binding-keys">Binding Keys</h2>
 <hr />
-<p>As well as changing widgets, we sometimes want keys to trigger events.<br />
+<p>We also sometimes want keys to trigger events.<br />
 The classic example is the <code>&lt;Enter&gt;</code> key, we often want to be able to hit the <code>&lt;Enter&gt;</code> key to submit a form...</p>
 <ul>
 <li>
@@ -631,6 +658,12 @@ However, you might want to let them do it in other ways - maybe by pressing a bu
     return app.yesNoBox(&quot;Confirm Exit&quot;, &quot;Are you sure you want to exit the application?&quot;)
 
 app.setStopFunction(checkStop)
+</code></pre>
+
+<p>If you have a <strong>LOT</strong> of widgets (maybe a Table with hundreds of rows), stopping the GUI can take a while...<br />
+In which case, you should enable <code>fastStop</code> on the GUI.<br />
+<strong>NB.</strong> this doesn't work from IDLE.  </p>
+<pre><code class="python">app.setFastStop(True)
 </code></pre></div>
         </div>
 
@@ -650,7 +683,7 @@ app.setStopFunction(checkStop)
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

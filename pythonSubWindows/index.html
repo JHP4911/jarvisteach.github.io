@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -409,7 +433,7 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonDialogs/">
+                    <a rel="next" href="../pythonWidgetGrouping/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -467,6 +491,9 @@ def launch(win):
 
 app=gui()
 
+# these go in the main window
+app.addButtons([&quot;one&quot;, &quot;two&quot;], launch)
+
 # this is a pop-up
 app.startSubWindow(&quot;one&quot;, modal=True)
 app.addLabel(&quot;l1&quot;, &quot;SubWindow One&quot;)
@@ -477,27 +504,11 @@ app.startSubWindow(&quot;two&quot;)
 app.addLabel(&quot;l2&quot;, &quot;SubWindow Two&quot;)
 app.stopSubWindow()
 
-# these go in the main window
-app.addButtons([&quot;one&quot;, &quot;two&quot;], launch)
-
 app.go()
 </code></pre>
 
 <p>Definition of SubWindows happens in the same part of the code as the rest of the GUI, but they default to being hidden.<br />
 Both SubWindows and the main window can be <em>shown</em> and <em>hidden</em> - this is usually done through button presses.  </p>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h3 id="startstop-sub-windows">Start/Stop Sub Windows</h3>
 <hr />
 <ul>
@@ -536,9 +547,10 @@ app.go(startWindow=&quot;Login&quot;)
 
 <ul>
 <li>
-<p><code>.showSubWindow(title)</code><br />
+<p><code>.showSubWindow(title, hide=False)</code><br />
     Will cause the specified <em>SubWindow</em> to be shown.<br />
-    If it is set as <em>modal</em> the parent window will become uninteractive until the <em>SubWindow</em> is closed.  </p>
+    If it is set as <em>modal</em> the parent window will become uninteractive until the <em>SubWindow</em> is closed.<br />
+    If <code>hide</code> is set to True, all other <em>SubWindows</em> will be hidden.  </p>
 </li>
 <li>
 <p><code>.hideSubWindow(title, useStopFunction=False)</code> &amp; <code>.confirmHideSubWindow(title)</code><br />
@@ -546,6 +558,11 @@ app.go(startWindow=&quot;Login&quot;)
     This will not destroy the <em>SubWindow</em>, so it can be shown again later.<br />
     By default it bypasses any <code>stopFunction</code>.<br />
     Set <code>useStopFunction</code> to be True or call <code>.confirmHideSubWindow()</code> to use the <code>stopFunction</code>.  </p>
+</li>
+<li>
+<p><code>.hideAllSubWindows(useStopFunction=False)</code><br />
+    Will hide all <em>SubWindows</em>.<br />
+    Set <code>useStopFunction</code> to be True to use the <code>stopFunction</code>.  </p>
 </li>
 <li>
 <p><code>.destroySubWindow(title)</code><br />
@@ -592,7 +609,7 @@ app.stopSubWindow()
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

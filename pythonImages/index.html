@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li class="active">
     <a href="./">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -409,12 +433,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonWidgets/">
+                    <a rel="next" href="../inputWidgets/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonSound/">
+                    <a rel="prev" href="../pythonWidgetGrouping/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -467,8 +491,8 @@
 <h1 id="images">Images</h1>
 <hr />
 <p><img alt="ImageDemo" src="../img/imageDemo.png" />  </p>
-<p>Default image support in appJar assumes no extra libraries. That means it should only support <code>.GIF</code> and <code>.PPM</code> images.<br />
-However, code is included to allow the use of <code>.PNG</code> and <code>.JPG</code> files. appJar will convert these to <code>.GIF</code> files, before loading.<br />
+<p>Default image support in appJar assumes no extra libraries, so it only has native support for <code>.GIF</code> and <code>.PPM</code> images.<br />
+However, extra code is included to allow the use of <code>.PNG</code> and <code>.JPG</code> files. appJar will convert these to <code>.GIF</code> files, before showing them.<br />
 Converting image files is <strong>SLOW</strong>, so it's best to stick to <code>.GIF</code> files!<br />
 Also, converting PNGs is temperamental in Python 2.7 - another reason to avoid.  </p>
 <p>Getting the path for images right can be <strong>TRICKY</strong><br />
@@ -515,7 +539,7 @@ app.go()
 <p><code>.addIcon(title, iconName, compound=None)</code><br />
     This will create an image as above, but use one of appJar's inbuilt icons.<br />
     Simply pass the name of one of the icons.<br />
-<code>compound</code> can be set to one of <em>top</em>, <em>bottom</em>, <em>left</em>, <em>right</em>, <em>center</em> - this will show the image tite in that position.  </p>
+<code>compound</code> can be set to one of <em>top</em>, <em>bottom</em>, <em>left</em>, <em>right</em>, <em>center</em> - this will show the image title in that position.  </p>
 </li>
 <li>
 <p><code>.setImageLocation(location)</code><br />
@@ -523,19 +547,6 @@ app.go()
     This will be put before the names of any image files used.  </p>
 </li>
 </ul>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h3 id="change-images">Change Images</h3>
 <hr />
 <ul>
@@ -692,7 +703,7 @@ If you have lots of grouped widgets, this can look quite <strong>UGLY</strong>, 
 Every time an image is loaded, it's added to the cache.<br />
 The next time an image of the same filename is referenced, it will be loaded from the cache.<br />
 This speeds up processes such as mouse-overs, or setting images back-and-forth.  </p>
-<p>Animatd images also have their own internal cache, storing each version of the image.  </p>
+<p>Animated images also have their own internal cache, storing each version of the image.  </p>
 <p>appJar attempts to preload mouse over images and animated images, to improve smoothness.  </p>
 <p>If there's ever a need to clear the image cache (maybe reduce memory footprint), call: <code>.clearImageCache()</code>  </p></div>
         </div>
@@ -713,7 +724,7 @@ This speeds up processes such as mouse-overs, or setting images back-and-forth. 
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

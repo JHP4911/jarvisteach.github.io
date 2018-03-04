@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Widgets - appJar</title>
+        <title>Beta Widgets - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li class="active">
+    <a href="./">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li class="active">
-    <a href="./">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -409,7 +433,7 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../specialCharacters/">
+                    <a rel="next" href="../pythonWidgetGrouping/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
@@ -445,21 +469,11 @@
     
         <li class="main active"><a href="#beta-widgets">Beta Widgets</a></li>
         
-            <li><a href="#microbit-emulator">MicroBit Emulator</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
         
-            <li><a href="#googlemaps">GoogleMaps</a></li>
-        
-            <li><a href="#piechart">PieChart</a></li>
+            <li><a href="#table">Table</a></li>
         
             <li><a href="#tree">Tree</a></li>
-        
-            <li><a href="#grid">Grid</a></li>
-        
-            <li><a href="#matplotlib">MatPlotLib</a></li>
-        
-            <li><a href="#canvas">Canvas</a></li>
-        
-            <li><a href="#turtle">Turtle</a></li>
         
     
     </ul>
@@ -469,148 +483,175 @@
 <h1 id="beta-widgets">Beta Widgets</h1>
 <hr />
 <p>The following widgets are in <a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#BETA">beta</a> - they're available and being used, they're just not quite finished...  </p>
-<h3 id="microbit-emulator">MicroBit Emulator</h3>
+<h2 id="accessibility">Accessibility</h2>
 <hr />
-<p>Widget to emulate a <a href="http://microbit.org">MicroBit</a></p>
-<p><img alt="MicroBit Emulator" src="../img/mb.png" /></p>
+<p>A pop-up to configure GUI settings.  </p>
+<p><img alt="Accessibility" src="../img/accessibility.png" /></p>
+<pre><code class="python">from appJar import gui
+
+with gui(&quot;Demo Access&quot;) as app:
+    app.button('Accessibility', app.showAccess, icon='ACCESS')
+</code></pre>
+
+<p>It allows you to configure:  </p>
+<ul>
+<li>Font Family</li>
+<li>Font Size</li>
+<li>Bold True/False</li>
+<li>Normal/Italic</li>
+<li>Underline True/False</li>
+<li>Overstrike True/False</li>
+<li>Foreground Colour</li>
+<li>Background Colour</li>
+</ul>
+<h2 id="table">Table</h2>
+<hr />
+<p>Used to create a spreadsheet like interface.<br />
+The Table has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
+It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
+<p><img alt="Table" src="../img/dev/grid.png" />  </p>
 <pre><code class="python">from appJar import gui
 
 app = gui()
-app.addMicroBit(&quot;mb1&quot;)
-app.setMicroBitImage(&quot;mb1&quot;, &quot;09090:90909:90009:09090:00900&quot;)
+app.setFont(20)
+app.addTable(&quot;g1&quot;,
+    [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+    [&quot;Fred&quot;, 45, &quot;Male&quot;],
+    [&quot;Tina&quot;, 37, &quot;Female&quot;],
+    [&quot;Clive&quot;, 28, &quot;Male&quot;],
+    [&quot;Betty&quot;, 51, &quot;Female&quot;]])
 app.go()
 </code></pre>
 
-<h4 id="add-microbits">Add MicroBits</h4>
-<ul>
-<li><code>.addMicroBit(title)</code><br />
-    Will create a 5x5 grid emulating the MicroBit LEDs.  </li>
-</ul>
-<h4 id="set-microbits">Set MicroBits</h4>
+<h4 id="add-tables">Add Tables</h4>
 <ul>
 <li>
-<p><code>.setMicroBitImage(title, image)</code><br />
-    This sets each pixel to the specified brightness (0 to 9).<br />
-    Each set of 5 digits represents a row of pixels, from top to bottom.  </p>
-</li>
-<li>
-<p><code>.setMicroBitPixel(title, x, y, brightness)</code><br />
-    Will set the brightness of the specified pixel.<br />
-<code>x</code> &amp; <code>y</code> should be between 0 &amp; 4.<br />
-<code>brightness</code> should be a value between 0 &amp; 9 to represent how <strong>bright</strong> to make the pixel.  </p>
-</li>
-<li>
-<p><code>.clearMicroBit(title)</code><br />
-    Will turn off all of the pixels - setting their brightness to 0.  </p>
+<p><code>.addTable(title, data, action=None, addRow=None)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the Table, the rest will contain each row of values.  </p>
+<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function. It will pass the row number (starting at 0).  </p>
+<p><img alt="Table" src="../img/dev/grid_2.png" />   </p>
+<p>If <code>addRow</code> is set, then an additional row will appear at the end of the Table, with entry boxes and a button to call the specified function.<br />
+The button will pass the string <code>newRow</code> to the specified function.  </p>
+<p><img alt="Table" src="../img/dev/grid_3.png" />   </p>
+<p>If both parameters are set to a function, then both buttons at the end of each row and a row of Entry boxes will be shown:  </p>
+<p><img alt="Table" src="../img/dev/grid_4.png" />   </p>
+<p>It's also possible to set the following parameters:<br />
+    * <code>actionHeading</code> - set the title of the right column<br />
+    * <code>actionButton</code> - set the button text for each row<br />
+    * <code>addButton</code> - set the button text for the Entry row<br />
+    * <code>showMenu</code> - boolean to show a right-click menu<br />
+    * <code>disabledEntries</code> - pass a list of numbers, to disable entry boxes in those positions<br />
+    * <code>border</code> - the style of the cell border: <code>sunken</code>, <code>solid</code>, etc</p>
+<p><img alt="Table" src="../img/dev/1_gridMenu.png" />   </p>
 </li>
 </ul>
-<h3 id="googlemaps">GoogleMaps</h3>
-<hr />
-<p>A self-contained GoogleMaps widget.<br />
-It provides useful functionality for finding somewhere on Earth.<br />
-All requests for map data are performed in the background, so the UI shouldn't become unresponsive.  </p>
-<p><img alt="GoogleMaps" src="../img/gmap_2.png" /></p>
-<pre><code class="python">from appjar import gui
-
-app = gui()
-app.addGoogleMap(&quot;m1&quot;)
-app.setGoogleMapSize(&quot;m1&quot;, &quot;300x500&quot;)
-app.go()
+<h4 id="connecting-to-databases">Connecting to Databases</h4>
+<ul>
+<li>
+<p><code>.addDbTable(title, db, table)</code><br />
+    Will connect to the specified database, and show all rows in the specified table.<br />
+    appJar will query the table to detect the PrimaryKey, and use this as the key when selecting the row.</p>
+</li>
+<li>
+<p><code>.replaceDBTable(title, db, table)</code><br />
+    Will replace the currently shown data in the Table, with the data found in the specified database/table.  </p>
+</li>
+<li>
+<p><code>.refreshDBTable(title)</code><br />
+    Will refresh the specified DB Table.  </p>
+</li>
+<li>
+<p><code>.addDbOptionBox(title, db, change=None)</code><br />
+    Will create an OptionBox, containing a list of all the tables available in the specified database.  </p>
+</li>
+<li>
+<p><code>.refreshDbOptionBox(title)</code><br />
+    Will reload the list of tables displayed in the specified DB OptionBox.  </p>
+</li>
+</ul>
+<h4 id="get-tables">Get Tables</h4>
+<ul>
+<li>
+<p><code>.getTableRow(title, rowNumber)</code><br />
+    Returns a list of values representing the specified row.  </p>
+</li>
+<li>
+<p><code>.getTableRowCount(title)</code><br />
+    Returns a count of how many rows are in the Table (not including the header row).  </p>
+</li>
+<li>
+<p><code>.getTableSelectedCells(title)</code><br />
+    Gets a dictionary of booleans, indicating the status of each cell.<br />
+    True indicates the cell is selected, False indicates the cell is not selected.<br />
+    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </p>
+</li>
+<li>
+<p><code>.getTableEntries(title)</code><br />
+    If <code>addRow</code> was set when the <em>Table</em> was created, this function will get the contents of the entry boxes.<br />
+    They will be returned as a list, in the same order as the entry boxes.  </p>
+</li>
+</ul>
+<h4 id="set-tables">Set Tables</h4>
+<ul>
+<li><code>.addTableRow(title, data)</code><br />
+    Adds a new row of data to the end of the existing Table.<br />
+    It will be positioned at the bottom of the Table, above the entry boxes if present.  </li>
+</ul>
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
+<pre><code class="python">    def press(btn):
+        if btn == &quot;addRow&quot;:     # the button on the entries row
+            data = app.getTableEntries(&quot;g1&quot;)
+            app.addTableRow(&quot;g1&quot;, data)
 </code></pre>
 
-<h4 id="add-googlemaps">Add GoogleMaps</h4>
-<ul>
-<li><code>.addGoogleMap(title)</code><br />
-    Creates a GoogleMap widget.<br />
-    Displays a map image, and provides functionality to search, zoom, and change terrain, as well as a link to the original image.  </li>
-</ul>
-<h4 id="set-googlemaps">Set GoogleMaps</h4>
 <ul>
 <li>
-<p><code>.searchGoogleMap(title, location)</code><br />
-    Update the named GoogleMap widget to show the specified location.  </p>
+<p><code>.addTableRows(title, data)</code><br />
+    Adds the new rows of data to the end of the existing Table.  </p>
 </li>
 <li>
-<p><code>.zoomGoogleMap(title, mod)</code><br />
-    Change the zoom level of the named GoogleMap.<br />
-    Providing a <strong>+</strong> or <strong>-</strong> will cause the map to zoom in or out one level.<br />
-    Otherwise, a digit between 0 and 22 should be provided, to set the zoom level.  </p>
+<p><code>.replaceTableRow(title, rowNum, data)</code><br />
+    Replace the values in the specified row with the new data.<br />
+    If the new data has fewer items, the remaining cells will be emptied.  </p>
 </li>
 <li>
-<p><code>.setGoogleMapTerrain(title, terrain)</code>  </p>
+<p><code>.replaceAllTableRows(title, rowNum, data)</code><br />
+    Removes all existing rows, before adding the new rows.  </p>
 </li>
 <li>
-<p><code>.setGoogleMapSize(title, size)</code><br />
-    Set the size of the GoogleMap. Should be in the format <code>"300x300"</code>.<br />
-    Note, if you set it too small, the control widgets won't look good...  </p>
+<p><code>.setTableHeaders(title, data)</code><br />
+    Replace the values in the header row.<br />
+    If the new data has fewer items, the remaining header cells will be emptied.  </p>
 </li>
 <li>
-<p><code>.setGoogleMapMarker(title, location, size=None, colour=None, label=None, replace=False)</code><br />
-    Will drop a marker on the specified location.<br />
-    The marker will only be visible if the current <code>location</code> &amp; <code>zoom level</code> permit.<br />
-    If an empty <code>location</code> is provided, all markers will be removed.<br />
-<code>colour</code> can be set to any of (black, brown, green, purple, yellow, blue, gray, orange, red, white) or a hex value (starting '0x').<br />
-<code>size</code> can be set to any of (tiny, mid, small).<br />
-<code>label</code> can be set to a single letter or digit.<br />
-    If <code>replace</code> is <code>True</code> this marker will replace the last one added.  </p>
+<p><code>.deleteTableRow(title, rowNum)</code><br />
+    Delete the specified row from the specified Table.</p>
 </li>
 <li>
-<p><code>.removeGoogleMapMarker(title, label)</code><br />
-    Will remove the specified marker, if found.  </p>
+<p><code>.deleteAllTableRows(title)</code><br />
+    Delete all rows from the specified Table (except the header row).  </p>
+</li>
+<li>
+<p><code>.addTableColumn(title, columnNumber, data)</code><br />
+    Add the column of data to the named Table, in the specified position.  </p>
+</li>
+<li>
+<p><code>.deleteTableColumn(title, columnNumber)</code><br />
+    Delete the specified column from the named Table.  </p>
+</li>
+<li>
+<p><code>.selectTableRow(title, row, highlight=None)</code> &amp; <code>.selectTableColumn(title, col, highlight=None)</code><br />
+    These will either select or highlight the specified row or column in the named Table.<br />
+    If you leave <code>highlight=None</code> the row/column will be toggled between selected &amp; deselected.<br />
+    If you set <code>highlight=True</code> the row/column will be highlighted (like a mouse over). 
+    If you set <code>highlight=False</code> the row/column will be un-highlighted (like a mouse over). </p>
+</li>
+<li>
+<p><code>.disableTableEntry(title, entryPos, disabled=True)</code><br />
+    Will disable the specified entry box (starting at 0) if entries are being displayed.  </p>
 </li>
 </ul>
-<h4 id="get-googlemaps">Get GoogleMaps</h4>
-<ul>
-<li>
-<p><code>.getGoogleMapLocation(title)</code><br />
-    Returns the current displayed location.<br />
-    Will return an empty String, if the user clicked the <strong>H</strong> button.  </p>
-</li>
-<li>
-<p><code>.getGoogleMapZoom(title)</code><br />
-    Returns the current zoom level of the map tile.  </p>
-</li>
-<li>
-<p><code>.getGoogleMapTerrain(title)</code><br />
-    Returns the current terrain setting for the map tile.  </p>
-</li>
-<li>
-<p><code>.getGoogleMapSize(title)</code><br />
-    Returns the current size of the map tile.  </p>
-</li>
-</ul>
-<h4 id="save-googlemaps">Save GoogleMaps</h4>
-<ul>
-<li><code>.saveGoogleMap(title, fileName)</code><br />
-    Saves the currently displayed map to the named location.<br />
-    By default, all map tiles are GIFs.  </li>
-</ul>
-<h3 id="piechart">PieChart</h3>
-<hr />
-<p>Widget to depict a Pie Chart.<br />
-It will automatically calculate percentages, and draw a pie chart, given a dictionary of items and their amount.<br />
-The PieChart is purely for display purposes, and is not interactive, other than a simple mouse-over effect with a tooltip.<br />
-<img alt="PieChart" src="../img/dev/pie.png" />  </p>
-<pre><code class="python">from appJar import gui
-
-app = gui()
-app.addPieChart(&quot;p1&quot;, {&quot;apples&quot;:50, &quot;oranges&quot;:200, &quot;grapes&quot;:75,
-                        &quot;beef&quot;:300, &quot;turkey&quot;:150})
-app.go()
-</code></pre>
-
-<h4 id="add-piecharts">Add PieCharts</h4>
-<ul>
-<li><code>.addPieChart(title, values)</code><br />
-    Takes a dictionary of names and values, which will be converted to percentages, and plotted on the chart.<br />
-    The names will be used as part of tooltips that appear over each wedge of the PieChart.  </li>
-</ul>
-<h4 id="set-piecharts">Set PieCharts</h4>
-<ul>
-<li><code>.setPieChart(title, name, value)</code><br />
-    Will update the PieChart, by either changing an existing value, adding a new value, or removing a value if it's set to 0.  </li>
-</ul>
-<h3 id="tree">Tree</h3>
+<h2 id="tree">Tree</h2>
 <hr />
 <p>Takes an arbitrary XML string, and converts it into a tree structure.  </p>
 <p><img alt="TreeWidget" src="../img/dev/tree.png" /></p>
@@ -659,305 +700,6 @@ app.go()
     Return the selected node as a String</li>
 <li><code>.getTreeSelectedXML(title)</code><br />
     Return the selected node (and any children) as XML</li>
-</ul>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
-<h3 id="grid">Grid</h3>
-<hr />
-<p>Used to create a spreadsheet like interface.<br />
-The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
-It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
-<p><img alt="Grid" src="../img/dev/grid.png" />  </p>
-<pre><code class="python">from appJar import gui
-
-app = gui()
-app.setFont(20)
-app.addGrid(&quot;g1&quot;,
-    [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
-    [&quot;Fred&quot;, 45, &quot;Male&quot;],
-    [&quot;Tina&quot;, 37, &quot;Female&quot;],
-    [&quot;Clive&quot;, 28, &quot;Male&quot;],
-    [&quot;Betty&quot;, 51, &quot;Female&quot;]])
-app.go()
-</code></pre>
-
-<h4 id="add-grids">Add Grids</h4>
-<ul>
-<li>
-<p><code>.addGrid(title, data, action=None, addRow=None)</code><br />
-    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
-<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function. It will pass the row number (starting at 0).  </p>
-<p><img alt="Grid" src="../img/dev/grid_2.png" />   </p>
-<p>If <code>addRow</code> is set, then an additional row will appear at the end of the grid, with entry boxes and a button to call the specified function.<br />
-The button will pass the string <code>newRow</code> to the specified function.  </p>
-<p><img alt="Grid" src="../img/dev/grid_3.png" />   </p>
-<p>If both parameters are set to a function, then both buttons at the end of each row and a row of Entry boxes will be shown:  </p>
-<p><img alt="Grid" src="../img/dev/grid_4.png" />   </p>
-<p>It's also possible to set the following parameters:<br />
-    * <code>actionHeading</code> - set the title of the right column<br />
-    * <code>actionButton</code> - set the button text for each row<br />
-    * <code>addButton</code> - set the button text for the Entry row<br />
-    * <code>showMenu</code> - boolean to show a right-click menu  </p>
-<p><img alt="Grid" src="../img/dev/1_gridMenu.png" />   </p>
-</li>
-</ul>
-<h4 id="connecting-to-databases">Connecting to Databases</h4>
-<ul>
-<li>
-<p><code>.addDbGrid(title, db, table)</code><br />
-    Will connect to the specified database, and show all rows in the specified table.<br />
-    appJar will query the table to detect the PrimaryKey, and use this as the key when selecting the row.</p>
-</li>
-<li>
-<p><code>.replaceDBGrid(title, db, table)</code><br />
-    Will replace the currently shown data in the grid, with the data found in the specified database/table.  </p>
-</li>
-</ul>
-<h4 id="get-grids">Get Grids</h4>
-<ul>
-<li>
-<p><code>.getGridRow(title, rowNumber)</code><br />
-    Returns a list of values representing the specified row.  </p>
-</li>
-<li>
-<p><code>.getGridRowCount(title)</code><br />
-    Returns a count of how many rows are in the grid (not including the header row).  </p>
-</li>
-<li>
-<p><code>.getGridSelectedCells(title)</code><br />
-    Gets a dictionary of booleans, indicating the status of each cell.<br />
-    True indicates the cell is selected, False indicates the cell is not selected.<br />
-    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </p>
-</li>
-<li>
-<p><code>.getGridEntries(title)</code><br />
-    If <code>addRow</code> was set when the <em>Grid</em> was created, this function will get the contents of the entry boxes.<br />
-    They will be returned as a list, in the same order as the entry boxes.  </p>
-</li>
-</ul>
-<h4 id="set-grids">Set Grids</h4>
-<ul>
-<li><code>.addGridRow(title, data)</code><br />
-    Adds a new row of data to the end of the existing grid.<br />
-    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
-</ul>
-<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
-<pre><code class="python">    def press(btn):
-        if btn == &quot;addRow&quot;:     # the button on the entries row
-            data = app.getGridEntries(&quot;g1&quot;)
-            app.addGridRow(&quot;g1&quot;, data)
-</code></pre>
-
-<ul>
-<li>
-<p><code>.addGridRows(title, data)</code><br />
-    Adds the new rows of data to the end of the existing grid.  </p>
-</li>
-<li>
-<p><code>.replaceGridRow(title, rowNum, data)</code><br />
-    Replace the values in the specified row with the new data.<br />
-    If the new data has fewer items, the remaining cells will be emptied.  </p>
-</li>
-<li>
-<p><code>.replaceAllGridRows(title, rowNum, data)</code><br />
-    Removes all existing rows, before adding the new rows.  </p>
-</li>
-<li>
-<p><code>.setGridHeaders(title, data)</code><br />
-    Replace the values in the header row.<br />
-    If the new data has fewer items, the remaining header cells will be emptied.  </p>
-</li>
-<li>
-<p><code>.deleteGridRow(title, rowNum)</code><br />
-    Delete the specified row from the specified grid.</p>
-</li>
-<li>
-<p><code>.deleteAllGridRows(title)</code><br />
-    Delete all rows from the specified grid (except the header row).  </p>
-</li>
-<li>
-<p><code>.addGridColumn(title, columnNumber, data)</code><br />
-    Add the column of data to the named grid, in the specified position.  </p>
-</li>
-<li>
-<p><code>.deleteGridColumn(title, columnNumber)</code><br />
-    Delete the specified column from the named grid.  </p>
-</li>
-</ul>
-<h3 id="matplotlib">MatPlotLib</h3>
-<hr />
-<p>Support for embedding very basic <a href="http://matplotlib.org">MatPlotLib</a> plots.  </p>
-<p><img alt="Plot" src="../img/1_plot.png" />  </p>
-<pre><code class="python">from numpy import sin, pi, arange
-from appJar import gui 
-import random
-
-def getXY():
-    x = arange(0.0, 3.0, 0.01)
-    y = sin(random.randint(1,10) * pi * x)
-    return x,y 
-
-def generate(btn):
-    # *getXY() will unpack the two return values
-    # and pass them as separate parameters
-    app.updatePlot(&quot;p1&quot;, *getXY())
-    showLabels()
-
-def showLabels():
-    axes.legend(['The curve'])
-    axes.set_xlabel(&quot;X Axes&quot;)
-    axes.set_ylabel(&quot;Y Axes&quot;)
-    app.refreshPlot(&quot;p1&quot;)
-
-app = gui()
-axes = app.addPlot(&quot;p1&quot;, *getXY())
-showLabels()
-app.addButton(&quot;Generate&quot;, generate)
-app.go()
-</code></pre>
-
-<ul>
-<li>
-<p><code>.addPlot(title, x, y)</code><br />
-    Create a plot with the specified x and y values.<br />
-    Returns the plot object, to allow further customisation.  </p>
-</li>
-<li>
-<p><code>.addPlotFig(title)</code><br />
-    Create an empty Figure, so that you can add your own plots.<br />
-    Returns the figure object, to allow further customisation.  </p>
-</li>
-</ul>
-<pre><code class="python">from appJar import gui 
-from mpl_toolkits.mplot3d import Axes3D
-
-with gui() as app:
-    fig = app.addPlotFig(&quot;p1&quot;)
-    ax = fig.add_subplot(111, projection='3d')
-    ax.scatter([1,2],[1,2],[1,2])
-</code></pre>
-
-<ul>
-<li>
-<p><code>.updatePlot(title, x, y, keepLabels=False)</code><br />
-    Update the specified plot with the specified x and y values.<br />
-<strong>NB.</strong> if you do this you will lose any customisations applied to the axes.<br />
-    If you set <code>keepLabels</code> to True, then the axis labels &amp; title will be retained.<br />
-    Also, your app will crash, if you call this after <code>.addPlotFig()</code>  </p>
-</li>
-<li>
-<p><code>.refreshPlot(title)</code><br />
-    Call this any time you modify the axes.  </p>
-</li>
-</ul>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
-<h3 id="canvas">Canvas</h3>
-<hr />
-<p>This lets you embed a canvas in appJar</p>
-<p><img alt="Canvas" src="../img/1_canvas.png" />  </p>
-<pre><code class="python">from appJar import gui
-app=gui()
-canvas = app.addCanvas(&quot;c1&quot;)
-canvas.create_oval(10, 10, 100, 100, fill=&quot;red&quot;, outline=&quot;blue&quot;, width=3)
-canvas.create_line(0, 0, 255, 255, width=5)
-canvas.create_line(0, 255, 255, 0, dash=123)
-app.go()
-</code></pre>
-
-<ul>
-<li>
-<p><code>.addCanvas(title)</code><br />
-    Creates a canvas widget.  </p>
-</li>
-<li>
-<p><code>.getCanvas(title)</code><br />
-    Gets the specified canvas widget.  </p>
-</li>
-</ul>
-<h4 id="drawing-on-a-canvas">Drawing on a Canvas</h4>
-<ul>
-<li>
-<p><code>.addCanvasCircle(title, x, y, diameter, **kwargs)</code><br />
-    Draws a circle on the canvas.  </p>
-</li>
-<li>
-<p><code>.addCanvasOval(title, x, y, xDiam, yDiam, **kwargs)</code><br />
-    Draws an oval on the canvas.  </p>
-</li>
-<li>
-<p><code>.addCanvasRectangle(title, x, y, w, h, **kwargs)</code><br />
-    Draws a rectangle on the canvas.  </p>
-</li>
-<li>
-<p><code>.addCanvasLine(title, x, y, x2, y2, **kwargs)</code><br />
-    Draws a line on the canvas.  </p>
-</li>
-<li>
-<p><code>.addCanvasText(title, x, y, text, **kwargs)</code><br />
-    Draws text on the canvas.  </p>
-</li>
-<li>
-<p>`.clearCanvas(title)<br />
-    Removes all drawings from the canvas.  </p>
-</li>
-</ul>
-<h3 id="turtle">Turtle</h3>
-<hr />
-<p>This lets you embed a <a href="https://docs.python.org/3.6/library/turtle.html">turtle</a> widget in appJar.  </p>
-<p><img alt="Turtle" src="../img/1_turtle.png" />  </p>
-<pre><code class="python">from appJar import gui 
-
-def press(b):
-    s = app.getTurtleScreen(&quot;t1&quot;)
-    t = app.getTurtle(&quot;t1&quot;)
-    s.bgcolor(&quot;blue&quot;)
-    t.pencolor(&quot;white&quot;)
-    for i in range(20):
-        t.forward(i * 10) 
-        t.right(144)
-
-app=gui()
-app.addTurtle(&quot;t1&quot;)
-app.addButton(&quot;DRAW&quot;, press)
-app.go()
-</code></pre>
-
-<ul>
-<li>
-<p><code>.addTurtle(title)</code><br />
-    Creates a turtle widget.  </p>
-</li>
-<li>
-<p><code>.getTurtle(title)</code><br />
-    Gets the specified turtle widget.  </p>
-</li>
-<li>
-<p><code>.getTurtleScreen(title)</code><br />
-    Gets the screen behind the turtle widget.  </p>
-</li>
 </ul></div>
         </div>
 
@@ -977,7 +719,7 @@ app.go()
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

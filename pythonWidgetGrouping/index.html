@@ -13,7 +13,7 @@
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Grouping - appJar</title>
+        <title>Grouping Widgets - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -83,26 +83,53 @@
             
                 
                     
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="./">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li class="active">
+    <a href="./">Grouping Widgets</a>
 </li>
 
                             
@@ -135,27 +174,6 @@
 </li>
 
                             
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
-
-                            
                             </ul>
                         </li>
                     
@@ -163,7 +181,7 @@
             
                 
                     
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li class="active">
-    <a href="./">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -409,12 +433,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonWidgetOptions/">
+                    <a rel="next" href="../pythonSound/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../pythonContextManager/">
+                    <a rel="prev" href="../pythonSubWindows/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -447,7 +471,11 @@
         
             <li><a href="#format">Format</a></li>
         
+            <li><a href="#frame">Frame</a></li>
+        
             <li><a href="#label-frame">Label Frame</a></li>
+        
+            <li><a href="#scroll-pane">Scroll Pane</a></li>
         
             <li><a href="#toggle-frame">Toggle Frame</a></li>
         
@@ -458,13 +486,6 @@
             <li><a href="#paged-window">Paged Window</a></li>
         
             <li><a href="#sub-window">Sub Window</a></li>
-        
-    
-        <li class="main "><a href="#in-beta">In Beta</a></li>
-        
-            <li><a href="#frame">Frame</a></li>
-        
-            <li><a href="#scroll-pane">Scroll Pane</a></li>
         
     
     </ul>
@@ -495,6 +516,65 @@ Any <a href="../pythonGuiOptions">GUI Options</a> you set, within the container,
     app.stopTab()
 </code></pre>
 
+<h3 id="frame">Frame</h3>
+<p>A way of grouping together widgets.<br />
+Position the <em>Frame</em> within the grid, then position widgets inside the <em>Frame</em>  </p>
+<p><img alt="Frame" src="../img/layouts/1_frame.png" /></p>
+<pre><code class="python">from appJar import gui 
+
+app=gui(&quot;FRAME DEMO&quot;, &quot;250x150&quot;)
+app.setBg(&quot;yellow&quot;)
+
+app.startFrame(&quot;LEFT&quot;, row=0, column=0)
+app.setBg(&quot;blue&quot;)
+app.setSticky(&quot;NEW&quot;)
+app.setStretch(&quot;COLUMN&quot;)
+
+app.addLabel(&quot;LEFT LABEL&quot;, &quot;Label on the left 1&quot;)
+app.setLabelBg(&quot;LEFT LABEL&quot;, &quot;red&quot;)
+app.addLabel(&quot;LEFT LABEL2&quot;, &quot;Label on the left 2&quot;)
+app.setLabelBg(&quot;LEFT LABEL2&quot;, &quot;orange&quot;)
+app.addLabel(&quot;LEFT LABEL3&quot;, &quot;Label on the left 3&quot;)
+app.setLabelBg(&quot;LEFT LABEL3&quot;, &quot;yellow&quot;)
+app.stopFrame()
+
+app.startFrame(&quot;RIGHT&quot;, row=0, column=1)
+app.setBg(&quot;green&quot;)
+app.setFg(&quot;white&quot;)
+for x in range(5):
+    app.addRadioButton(&quot;RADIO&quot;, &quot;Choice &quot; + str(x))
+app.stopFrame()
+
+app.go()
+
+</code></pre>
+
+<p>Or in v1.0:  </p>
+<pre><code class="python">from appJar import gui 
+
+with gui(&quot;FRAME DEMO&quot;, &quot;250x150&quot;, bg='yellow') as app:
+
+    with app.frame(&quot;LEFT&quot;, row=0, column=0, bg='blue', sticky='NEW', stretch='COLUMN'):
+        app.label(&quot;Label on the left 1&quot;, bg='red')
+        app.label(&quot;Label on the left 2&quot;, bg='orange')
+        app.label(&quot;Label on the left 3&quot;, bg='yellow')
+
+    with app.frame(&quot;RIGHT&quot;, row=0, column=1, bg='green', fg='white'):
+        for x in range(5):
+            app.radio(&quot;RADIO&quot;, &quot;Choice &quot; + str(x))
+</code></pre>
+
+<h4 id="startstop-frames">Start/Stop Frames</h4>
+<ul>
+<li>
+<p><code>.startFrame(name)</code> &amp; <code>.stopFrame()</code><br />
+    Used to start and stop a <em>Frame</em>.  </p>
+</li>
+<li>
+<p><code>.openFrame(title)</code><br />
+    Used to reopen the named <em>Frame</em>.  </p>
+</li>
+</ul>
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
@@ -531,7 +611,7 @@ app.go()
 </li>
 <li>
 <p><code>.openLabelFrame(title)</code><br />
-    Used to reopen the named <em>LabelFrame</em>.  </p>
+    Used to reopen the named <em>LabelFrame</em>, for later modification.  </p>
 </li>
 </ul>
 <h4 id="set-label-frames">Set Label Frames</h4>
@@ -550,6 +630,55 @@ app.go()
     By default, widgets in the frame will align on the left.<br />
     If you want to change this, specify a different <code>sticky</code> value.<br />
     For example, <code>.setSticky("ew")</code> will cause the widgets to stretch to fit the width, aligning in the centre.  </p>
+</li>
+</ul>
+<h3 id="scroll-pane">Scroll Pane</h3>
+<hr />
+<p>A scrollable pane, inside a frame, to contain widgets.<br />
+Allows you to have more widgets than will fit on the screen, or have a smaller window than required.</p>
+<p><img alt="ScrollPane" src="../img/layouts/1_scroll.png" /></p>
+<pre><code class="python">from appJar import gui 
+
+app=gui(&quot;SCROLLPABE DEMO&quot;, &quot;150x150&quot;)
+
+app.startScrollPane(&quot;PANE&quot;)
+for x in range(10):
+    for y in range(10):
+        name = str(x) + &quot;-&quot; + str(y)
+        app.addLabel(name, name, row=x, column=y)
+        app.setLabelBg(name, app.RANDOM_COLOUR())
+app.stopScrollPane()
+
+app.go()
+</code></pre>
+
+<h4 id="scrolling">Scrolling</h4>
+<p>The <em>ScrollPane</em> has been configured to allow scrolling through lots of different methods:  </p>
+<ul>
+<li>On Mac &amp; Windows horizontal &amp; vertical scroll events (generated by amouse/trackpad) will work as normal.  </li>
+<li>On Linux horizontal scroll events will work, &lt;SHIFT&gt; horizontal scroll events will scroll vertically.  </li>
+<li>The following key presses will also work:  <ul>
+<li>&lt;Up&gt; &amp; &lt;Down&gt;: Move up or down the equivalent of a line  </li>
+<li>&lt;Left&gt; &amp; &lt;Right&gt;: Move left or right the equivalent of a line  </li>
+<li>&lt;PageUp&gt; &amp; &lt;PageDown&gt;: Move up or down the equivalent of a page  </li>
+<li>&lt;Ctrl&gt;&lt;PageUp&gt; &amp; &lt;Ctrl&gt;&lt;PageDown&gt;: Move left or right the equivalent of a page  </li>
+<li>&lt;Ctrl&gt;&lt;Up&gt; &amp; &lt;Ctrl&gt;&lt;Down&gt;: Move up or down the equivalent of a page  </li>
+<li>&lt;Ctrl&gt;&lt;Left&gt; &amp; &lt;Ctrl&gt;&lt;Right&gt;: Move left or right the equivalent of a page   </li>
+<li>&lt;Home&gt; &amp; &lt;End&gt;: Move to the top or bottom  </li>
+<li>&lt;Ctrl&gt;&lt;Home&gt; &amp; &lt;Ctrl&gt;&lt;End&gt;: Move to the far-left or the far-right  </li>
+</ul>
+</li>
+</ul>
+<h4 id="startstop-scroll-panes">Start/Stop Scroll Panes</h4>
+<ul>
+<li>
+<p><code>.startScrollPane(title)</code> &amp; <code>.stopScrollPane()</code><br />
+    Used to start and stop the <em>ScrollPane</em>.<br />
+    Pass a <code>disabled</code> parameter of <strong>horizontal</strong> or <strong>vertical</strong> to disable one of the scrollbars.  </p>
+</li>
+<li>
+<p><code>.openScrollPane(title)</code><br />
+    Used to reopen the named <em>ScrollPane</em>, for later modification.  </p>
 </li>
 </ul>
 <h3 id="toggle-frame">Toggle Frame</h3>
@@ -607,19 +736,6 @@ app.go()
 <li><code>.getToggleFrameState(title)</code><br />
     Will return True if the <em>ToggleFrame</em> is open, else will return False.  </li>
 </ul>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h3 id="tabbed-frame">Tabbed Frame</h3>
 <hr />
 <p>A way to create a (basic) tabbed-style interface.<br />
@@ -694,13 +810,13 @@ app.go()
 <h4 id="changing-colours">Changing Colours</h4>
 <p>TabbedFrames have a set of colours that can be changed:  </p>
 <ul>
-<li>ActiveFg - Sets the colour of the text in the active tab  </li>
-<li>ActiveBg - Sets the background colour of the active tab  </li>
-<li>InactiveFg - Sets the colour of the text in all inactive tabs  </li>
-<li>InactiveBG - Sets the background colour of all inactive tabs  </li>
-<li>DisabledFg - Sets the colour of the text in all disabled tabs  </li>
-<li>DisabledBg - Sets the background colour of all disabled tabs  </li>
-<li>Bg - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
+<li><code>ActiveFg</code> - Sets the colour of the text in the active tab  </li>
+<li><code>ActiveBg</code> - Sets the background colour of the active tab  </li>
+<li><code>InactiveFg</code> - Sets the colour of the text in all inactive tabs  </li>
+<li><code>InactiveBg</code> - Sets the background colour of all inactive tabs  </li>
+<li><code>DisabledFg</code> - Sets the colour of the text in all disabled tabs  </li>
+<li><code>DisabledBg</code> - Sets the background colour of all disabled tabs  </li>
+<li><code>Bg</code> - Sets the background colour behind the widget - only visible at the end of the tabs  </li>
 </ul>
 <p>These are all changed via the standard property changing functions, eg:  </p>
 <ul>
@@ -934,68 +1050,11 @@ app.go()
 <li><code>.getPagedWindowPageNumber(title)</code><br />
     Used to get the page number currently being shown.  </li>
 </ul>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h3 id="sub-window">Sub Window</h3>
 <hr />
 <p>A way to add additional windows, which can be hidden and shown.<br />
 <img alt="SubWindow" src="../img/layouts/subWin.png" /></p>
-<p>This has been moved to its own page: <a href="../pythonSubWindows">Multiple Windows</a>.  </p>
-<h1 id="in-beta">In Beta</h1>
-<hr />
-<h3 id="frame">Frame</h3>
-<p>A simple way of grouping together widgets.<br />
-Position the <em>Frame</em> within the grid, then position widgets inside the <em>Frame</em>  </p>
-<h4 id="startstop-frames">Start/Stop Frames</h4>
-<ul>
-<li>
-<p><code>.startFrame(name)</code> &amp; <code>.stopFrame()</code><br />
-    Used to start and stop a <em>Frame</em>.  </p>
-</li>
-<li>
-<p><code>.openFrame(title)</code><br />
-    Used to reopen the named <em>Frame</em>.  </p>
-</li>
-</ul>
-<h3 id="scroll-pane">Scroll Pane</h3>
-<hr />
-<p>A scrollable pane, to contain widgets.  </p>
-<ul>
-<li>Will respond to horizontal &amp; vertical scroll events on Mac &amp; Windows.  </li>
-<li>Will respond to horizontal scroll events, and interpret SHIFT-horizontal scroll events as vertical scroll events on Linux.  </li>
-<li>
-<p>Will also respond to key presses:  </p>
-<ul>
-<li>Up &amp; Down: Move up or down the equivalent of a line  </li>
-<li>Left &amp; Right: Move left or right the equivalent of a line  </li>
-<li>PageUp &amp; PageDown: Move up or down the equivalent of a page  </li>
-<li>Ctrl-PageUp &amp; Ctrl-PageDown: Move left or right the equivalent of a page  </li>
-<li>Ctrl-Up &amp; Ctrl-Down: Move up or down the equivalent of a page  </li>
-<li>Ctrl-Left &amp; Ctrl-Right: Move left or right the equivalent of a page   </li>
-<li>Home &amp; End: Move to the top or bottom  </li>
-<li>Ctrl-Home &amp; Ctrl-End: Move to the far-left or the far-right  </li>
-</ul>
-</li>
-<li>
-<p><code>.startScrollPane(title)</code> &amp; <code>.stopScrollPane()</code><br />
-    Used to start and stop the <em>ScrollPane</em>.  </p>
-</li>
-<li>
-<p><code>.openScrollPane(title)</code><br />
-    Used to reopen the named <em>ScrollPane</em>.  </p>
-</li>
-</ul></div>
+<p>This has been moved to its own page: <a href="../pythonSubWindows">Multiple Windows</a>.  </p></div>
         </div>
 
         <footer class="col-md-12">
@@ -1014,7 +1073,7 @@ Position the <em>Frame</em> within the grid, then position widgets inside the <e
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

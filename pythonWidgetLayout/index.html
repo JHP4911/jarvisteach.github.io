@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -568,10 +592,10 @@ app.go()
 <p>It can be annoying having to specify all of the positional parameters each time, so why not take advantage of Python's support for <em>Named Arguments</em>. These allow you to set specific parameters, using their name.<br />
 For example: <code>app.addLabel("l1", "text here", colspan=2)</code>, will set the <code>colspan</code> parameter, without having to set the preceding ones.   </p>
 <h4 id="row-helpers">Row Helpers</h4>
-<p>If you combine that with having appJar telling you the row you're on, things get even easier.  </p>
+<p>appJar tracks the next available row.:</p>
 <ul>
 <li><code>.getRow()</code> or <code>.gr()</code><br />
-    Returns the row number currently being used.<br />
+    Returns the next free row.<br />
     Useful if you're mainly adding things sequentially, but want to modify one line out of sequence.  </li>
 </ul>
 <p><img alt="Grid Layout" src="../img/layouts/grid3.png" /></p>
@@ -598,6 +622,16 @@ for loop in range(3, 6):
     app.setLabelBg(loop, colours[loop%2])
 
 app.go()
+</code></pre>
+
+<p>Instead of calling <code>.getRow()</code>, you can specify the string "previous" or "p" to use the the previous row:  </p>
+<pre><code class="python">from appJar import gui 
+with gui(&quot;LABS&quot;, &quot;400x400&quot;, sticky=&quot;news&quot;) as app:
+    app.label(&quot;0-0&quot;, bg=&quot;red&quot;)
+    app.label(&quot;0-1&quot;, bg=&quot;orange&quot;, row=&quot;previous&quot;, column=1)
+    app.label(&quot;0-2&quot;, bg=&quot;yellow&quot;, row=&quot;previous&quot;, column=2)
+    app.label(&quot;1-0&quot;, bg=&quot;green&quot;)
+    app.label(&quot;1-1-2&quot;, bg=&quot;blue&quot;, row=&quot;previous&quot;, column=1, colspan=2)
 </code></pre>
 
 <hr />
@@ -729,7 +763,7 @@ app.setInPadding([40,20]) # padding inside the widget
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 

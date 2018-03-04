@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.91 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -88,21 +88,48 @@
                             <ul class="dropdown-menu">
                             
                                 
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
 <li >
-    <a href="../pythonWidgets/">Widgets</a>
+    <a href="../outputWidgets/">Output Widgets</a>
 </li>
 
-                            
-                                
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
 
-                            
-                                
+        
+            
 <li >
-    <a href="../pythonSound/">Sounds</a>
+    <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
 
                             
                                 
@@ -114,6 +141,18 @@
                                 
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
 
                             
@@ -133,27 +172,6 @@
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                                
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Beta</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="../pythonDevWidgets/">Widgets</a>
-</li>
-
-        
-            
-<li >
-    <a href="../simpleAppJar/">Simple Naming</a>
-</li>
-
-        
-    </ul>
-  </li>
 
                             
                             </ul>
@@ -187,12 +205,6 @@
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
-</li>
-
-        
-            
-<li >
-    <a href="../pythonWidgetGrouping/">Grouping</a>
 </li>
 
         
@@ -247,7 +259,7 @@
                             
                                 
 <li >
-    <a href="../pythonSettings/">Settings</a>
+    <a href="../pythonSettings/">Saving Settings</a>
 </li>
 
                             
@@ -266,6 +278,18 @@
                                 
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
 
                             
@@ -445,11 +469,9 @@
     
         <li class="main active"><a href="#packaging-appjar-apps">Packaging appJar Apps</a></li>
         
-            <li><a href="#setting-an-app-icon">Setting an app Icon</a></li>
+            <li><a href="#pyw-files-on-windows">.pyw files on Windows</a></li>
         
-            <li><a href="#including-images">Including Images</a></li>
-        
-            <li><a href="#platform-support">Platform Support</a></li>
+            <li><a href="#packaging-with-pyinstaller">Packaging with PyInstaller</a></li>
         
     
     </ul>
@@ -458,25 +480,18 @@
 
 <h1 id="packaging-appjar-apps">Packaging appJar Apps <img alt="PyInstaller" src="../img/pyinstaller-draft1a-100_trans.png" /></h1>
 <hr />
+<h2 id="pyw-files-on-windows">.pyw files on Windows</h2>
+<hr />
+<p>If you're on Windows, there is a clever way to make your python files act like executables.  </p>
+<p>If you change the file extension to be <code>.pyw</code> instead of <code>.py</code> then you will be able to double click the file, and launch it as a GUI application, with no terminal showing up.  </p>
+<h2 id="packaging-with-pyinstaller">Packaging with PyInstaller</h2>
+<hr />
 <p>The recommended way to package appJar is to use <a href="http://www.pyinstaller.org">PyInstaller</a>  </p>
-<p>Simply <a href="http://www.pyinstaller.org/downloads.html">download</a> and <a href="https://pyinstaller.readthedocs.io/en/stable/installation.html">install</a> PyInstaller.  </p>
+<p>First, <a href="http://www.pyinstaller.org/downloads.html">download</a> and <a href="https://pyinstaller.readthedocs.io/en/stable/installation.html">install</a> PyInstaller.  </p>
 <p>If everything has been installed via pip, then you should be able to package your application with the following command:</p>
 <p><code>pyinstaller -F -w demo.py</code></p>
 <p>If not, then you may need to specify the path of certain libraries:  </p>
 <p><code>pyinstaller -F -w -p &lt;path_to_appJar&gt; demo.py</code></p>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="../advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h3 id="setting-an-app-icon">Setting an app Icon</h3>
 <hr />
 <p>To set an icon for the app, include the following option:</p>
@@ -507,7 +522,7 @@
             </div>
             
                 <hr>
-                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
             
         </footer>
 
