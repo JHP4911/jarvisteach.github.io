@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -357,6 +363,12 @@
                             
                                 
 <li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -513,6 +525,8 @@
         
             <li><a href="#statusbar">Statusbar</a></li>
         
+            <li><a href="#toolbar">Toolbar</a></li>
+        
     
     </ul>
 </div></div>
@@ -549,8 +563,8 @@ with gui(&quot;Version 1.0&quot;, bg=&quot;teal&quot;) as app:
 <p>As demonstrated above, each widget now has a single function - the name of the widget.<br />
 Call this function passing one or both of the key parameters, to determine what should happen:</p>
 <pre><code class="python">app.label(&quot;title&quot;, &quot;text&quot;)      # ADD a label if the title is new
-app.label(&quot;title&quot;, &quot;text_2&quot;)    # SET a label if the title exists
-print(app.label(&quot;title&quot;))       # GET a label if no widget is being created or set
+app.label(&quot;title&quot;, &quot;text_2&quot;)    # SET a label if the title already exists
+print(app.label(&quot;title&quot;))       # GET a label if no widget is being added or set
 </code></pre>
 
 <h3 id="key-parameters">Key Parameters</h3>
@@ -579,7 +593,7 @@ print(app.label(&quot;title&quot;))       # GET a label if no widget is being cr
 <p>The logic is as follows:</p>
 <ul>
 <li>If <code>title</code> doesn't exist - <strong>ADD</strong> the widget, using the <code>value</code>, or <code>title</code> if no <code>value</code> is specified.  </li>
-<li>If <code>title</code> already exists and a <code>value</code> is specified - <strong>SET</strong> the widget.  </li>
+<li>If <code>title</code> already exists and a <code>value</code> is specified - <strong>SET</strong> the widget (either the values or state).  </li>
 <li>If <code>title</code> already exists and a <code>value</code> is not specified - <strong>GET</strong> the widget.  </li>
 </ul>
 <h3 id="positional-parameters">Positional Parameters</h3>
@@ -655,13 +669,13 @@ app.label(&quot;SubTitle&quot;, sticky=&quot;ns&quot;, stretch=&quot;row&quot;)
 <tr>
 <td>sticky</td>
 <td>string</td>
-<td>&lt;Variable&gt;</td>
+<td>&lt;varies&gt;</td>
 <td>Describes which sides the widget will stick to, one or more of: <code>n</code>, <code>e</code>, <code>w</code>, <code>s</code> in a single string.</td>
 </tr>
 <tr>
 <td>stretch</td>
 <td>string</td>
-<td>&lt;Variable&gt;</td>
+<td>&lt;varies&gt;</td>
 <td>Describes how the widget will stretch to fill the row/column: <code>none</code>, <code>row</code>, <code>column</code> or <code>all</code>.</td>
 </tr>
 </tbody>
@@ -696,6 +710,12 @@ app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
 <td>function</td>
 <td>None</td>
 <td>A function to call when the widget is <em>changed</em>.</td>
+</tr>
+<tr>
+<td>callFunction</td>
+<td>boolean</td>
+<td>True</td>
+<td>Set this to False, when <em>setting</em> the widget to stop the <code>change</code> function form being called.</td>
 </tr>
 <tr>
 <td>submit</td>
@@ -736,6 +756,12 @@ app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
 </thead>
 <tbody>
 <tr>
+<td>label</td>
+<td>boolean/string</td>
+<td>False</td>
+<td>Adds a Label before the widget (only some input widgets), either the label's title or the the text of this parameter.</td>
+</tr>
+<tr>
 <td>right</td>
 <td>string</td>
 <td>None</td>
@@ -772,17 +798,42 @@ Labels can receive <code>drop</code> data.  </li>
 <td>kind</td>
 <td>string</td>
 <td><code>standard</code></td>
-<td>Set to <code>selectable</code> or <code>flash</code> to create different labels.</td>
+<td>Set to <code>selectable</code> or <code>flash</code> to add different kinds of labels.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="message">Message</h2>
-<p>A widget for displaying multi-line text in the GUI.  </p>
+<p>A widget for displaying multi-line text in the GUI.<br />
+Will automatically wrap the text, based on either the <code>aspect</code> or <code>width</code> settings, defaulting to 50% wider than tall.  </p>
 <ul>
 <li><code>.message(title, value=None)</code><br />
     The <code>value</code> will be the text to show in the message.<br />
     Messages can receive <code>drop</code> data.  </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aspect</td>
+<td>integer</td>
+<td>150</td>
+<td>Set the ratio between the width &amp; height.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>integer</td>
+<td>None</td>
+<td>Set the number of characters per line. If None, then the aspect is used to calculate the width.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="entry">Entry</h2>
 <hr />
 <p>An interactive widget, for capturing user input in the GUI.  </p>
@@ -804,9 +855,9 @@ Labels can receive <code>drop</code> data.  </li>
 <tbody>
 <tr>
 <td>label</td>
-<td>boolean</td>
+<td>boolean/string</td>
 <td>False</td>
-<td>Adds a Label before the widget.</td>
+<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
 </tr>
 <tr>
 <td>kind</td>
@@ -837,6 +888,12 @@ Labels can receive <code>drop</code> data.  </li>
 <td>integer</td>
 <td>10</td>
 <td>If the kind is <code>auto</code> this will set the number of rows to show.</td>
+</tr>
+<tr>
+<td>labBg</td>
+<td>string</td>
+<td>None</td>
+<td>Special parameter to change the BG of the validation label in a validaiton entry.</td>
 </tr>
 </tbody>
 </table>
@@ -921,6 +978,12 @@ Labels can receive <code>drop</code> data.  </li>
 <td>None</td>
 <td>The name of an icon to show in the button.</td>
 </tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>None</td>
+<td>Alternative text to display on the button.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="link">Link</h2>
@@ -928,7 +991,7 @@ Labels can receive <code>drop</code> data.  </li>
 <p>A clickable <strong>hyperlink</strong> to trigger events or launch webpages.  </p>
 <ul>
 <li><code>.link(title, value=None)</code><br />
-    The <code>value</code> can be set to a function to call when the link is clicked, or a valid URI to open in a browser.  </li>
+    The <code>value</code> can be set to a function to call when the link is clicked, or a valid URL to open in a browser.  </li>
 </ul>
 <h2 id="check">Check</h2>
 <hr />
@@ -968,10 +1031,12 @@ By default, the first radio button added to a group will be selected.</p>
 </table>
 <h2 id="option">Option</h2>
 <hr />
-<p>When clicked, displays a drop-down of items, one of which can be selected.  </p>
+<p>When clicked, displays a drop-down of items, one of which can be selected.<br />
+Setting this widget won't change the values, but change which one is selected.  </p>
 <ul>
 <li><code>.option(title, value=None)</code><br />
-    The <code>value</code> should contain a list of items to display in the drop-down.<br />
+    When adding, the <code>value</code> should contain a list of items to display in the drop-down.<br />
+    When setting, the <code>value</code> should contain the item to select.<br />
     Options can receive a <code>change</code> parameter.  </li>
 </ul>
 <table>
@@ -996,15 +1061,35 @@ By default, the first radio button added to a group will be selected.</p>
 <td>None</td>
 <td>Start with the specified item/position selected.</td>
 </tr>
+<tr>
+<td>checked</td>
+<td>boolean</td>
+<td>True</td>
+<td>When setting the widget, this determines what to do to the specified value. None will delete the value.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>boolean/string</td>
+<td>False</td>
+<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>string</td>
+<td>-</td>
+<td>Sets the character used to indicate disabled menu options.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="spin">Spin</h2>
 <hr />
-<p>Shows a single value, with arrows to scroll up or down, allowing the user to change the value.  </p>
+<p>Shows a single value, with arrows to scroll up or down, allowing the user to change the value.<br />
+Setting this widget won't change the values, but change which one is selected.  </p>
 <ul>
 <li><code>.spin(title, value=None, endValue=None)</code><br />
     If only the <code>value</code> is set, it should be a list of values to display in the spin box.<br />
     If <code>endValue</code> is also set, then both parameters should be integers, and appJar will generate a range of whole numbers between the two values.<br />
+    When setting, the <code>value</code> will be selected.<br />
     Spin boxes can receive a <code>change</code> parameter.  </li>
 </ul>
 <table>
@@ -1035,14 +1120,22 @@ By default, the first radio button added to a group will be selected.</p>
 <td>None</td>
 <td>The name of an item to select.</td>
 </tr>
+<tr>
+<td>label</td>
+<td>boolean/string</td>
+<td>False</td>
+<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="listbox">Listbox</h2>
 <hr />
-<p>Displays a list of items, one (or more than one) of which can be selected.  </p>
+<p>Displays a list of items, one (or more than one) of which can be selected.<br />
+Setting this widget won't change the values, but change which one is selected.  </p>
 <ul>
 <li><code>.listbox(title, value=None)</code><br />
-    The <code>value</code> should contain a list of items to display in the listbox.<br />
+    When adding, the <code>value</code> should contain a list of items to display in the listbox.<br />
+    When setting, the <code>value</code> should contain the item(s) to select.<br />
     Listboxes can receive a <code>change</code> parameter.<br />
     Listboxes can receive <code>drop</code> data.  </li>
 </ul>
@@ -1073,6 +1166,12 @@ By default, the first radio button added to a group will be selected.</p>
 <td>boolean</td>
 <td>False</td>
 <td>Set the listbox to be part of a group.</td>
+</tr>
+<tr>
+<td>selected</td>
+<td>int</td>
+<td>None</td>
+<td>The position to select when the listbox is added.</td>
 </tr>
 </tbody>
 </table>
@@ -1116,7 +1215,13 @@ By default, the first radio button added to a group will be selected.</p>
 <td>interval</td>
 <td>integer</td>
 <td>None</td>
-<td>Configures the slider to show interval values, along its length. In steps of the value specified.</td>
+<td>Configures the slider to show values, along its length, in steps of the value specified.</td>
+</tr>
+<tr>
+<td>label</td>
+<td>boolean/string</td>
+<td>False</td>
+<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -1265,11 +1370,29 @@ By default, the first radio button added to a group will be selected.</p>
 </ul>
 <h2 id="canvas">Canvas</h2>
 <hr />
-<p>Displays a the canvas widget.  </p>
+<p>Displays a canvas widget.  </p>
 <ul>
 <li><code>.canvas(title)</code>
-    Creates a canvas with the specified title. </li>
+    Adds a canvas with the specified title. </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>map</td>
+<td>dictionary</td>
+<td>None</td>
+<td>A dictionary of name:coordinates to use as a canvas map. <code>submit</code> must also be set.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="popup">PopUp</h2>
 <hr />
 <p>Displays a popUp.  </p>
@@ -1303,7 +1426,51 @@ By default, the first radio button added to a group will be selected.</p>
 <li><code>field</code> the field numberis applicable.  </li>
 </ul>
 </li>
-</ul></div>
+</ul>
+<h2 id="toolbar">Toolbar</h2>
+<hr />
+<p>Displays the toolbar.  </p>
+<ul>
+<li><code>.toolbar(names, funcs, **kwargs)</code>
+    <code>names</code> should be th elist of button names to display on the toolbar.<br />
+<code>funcs</code> should contain either a single function, that all buttons will be linked to, or a list of functions for each button.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>icons</td>
+<td>boolean</td>
+<td>False</td>
+<td>Determines if appJar should try to find icons for each menu item.</td>
+</tr>
+<tr>
+<td>pinned</td>
+<td>boolean</td>
+<td>None</td>
+<td>If set, the toolbar will be pinnable. Setting to <code>True</code> wil start pinned, <code>False</code> not pinned.</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>False</td>
+<td>Determines if the toolbar should start disabed or not.</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>boolean</td>
+<td>False</td>
+<td>Determines if the toolbar should start hidden or not. When hidden it is completley removed from the GUI.</td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         <footer class="col-md-12">

@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -357,6 +363,12 @@
                             
                                 
 <li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -473,6 +485,8 @@
         
             <li><a href="#frame">Frame</a></li>
         
+            <li><a href="#frame-stack">Frame Stack</a></li>
+        
             <li><a href="#label-frame">Label Frame</a></li>
         
             <li><a href="#scroll-pane">Scroll Pane</a></li>
@@ -480,6 +494,8 @@
             <li><a href="#toggle-frame">Toggle Frame</a></li>
         
             <li><a href="#tabbed-frame">Tabbed Frame</a></li>
+        
+            <li><a href="#notebook">Notebook</a></li>
         
             <li><a href="#paned-frame">Paned Frame</a></li>
         
@@ -575,6 +591,144 @@ with gui(&quot;FRAME DEMO&quot;, &quot;250x150&quot;, bg='yellow') as app:
     Used to reopen the named <em>Frame</em>.  </p>
 </li>
 </ul>
+<h4 id="juggling-frames">Juggling Frames</h4>
+<ul>
+<li><code>.raiseFrame(name)</code><br />
+    Lifts the named frame to the top of the grid stack.<br />
+    If two frames are placed in the same grid square, this is used to determine which is on top.<br />
+    By default, the last frame added is on top.  </li>
+</ul>
+<pre><code class="python">from appJar import gui 
+
+with gui() as app:
+    with app.frame(&quot;ONE&quot;, 0,0):
+        app.label(&quot;In frame one&quot;)
+    with app.frame(&quot;TWO&quot;, 0,0):
+        app.label(&quot;In frame two&quot;)
+
+    app.buttons([&quot;ONE&quot;, &quot;TWO&quot;], app.raiseFrame)
+</code></pre>
+
+<h3 id="frame-stack">Frame Stack</h3>
+<hr />
+<p>A way of having mutiple frames on top of each other, with all but one hidden.<br />
+Each frame is created and added to the stack. Then they can be navigated through, using <code>first</code>, <code>next</code>, <code>prev</code> and <code>last</code>.  </p>
+<pre><code class="python">from appJar import gui
+
+def press(btn):
+    if btn == &quot;FIRST&quot;: app.firstFrame(&quot;Pages&quot;)
+    elif btn == &quot;NEXT&quot;: app.nextFrame(&quot;Pages&quot;)
+    elif btn == &quot;PREV&quot;: app.prevFrame(&quot;Pages&quot;)
+    elif btn == &quot;LAST&quot;: app.lastFrame(&quot;Pages&quot;)
+
+app=gui(&quot;FRAME STACK&quot;)
+
+app.startFrameStack(&quot;Pages&quot;)
+
+app.startFrame()
+for i in range(5):
+    app.addLabel(&quot;Text: &quot; + str(i))
+app.stopFrame()
+
+app.startFrame()
+for i in range(5):
+    app.addEntry(&quot;e&quot; + str(i))
+app.stopFrame()
+
+app.startFrame()
+for i in range(5):
+    app.addButton(str(i), None)
+app.stopFrame()
+
+app.stopFrameStack()
+
+app.addButtons([&quot;FIRST&quot;, &quot;PREV&quot;, &quot;NEXT&quot;, &quot;LAST&quot;], press)
+app.go()
+</code></pre>
+
+<p>Or in v1.0:  </p>
+<pre><code class="python">from appJar import gui 
+
+def press(btn):
+    if btn == &quot;FIRST&quot;: app.firstFrame(&quot;Pages&quot;)
+    elif btn == &quot;NEXT&quot;: app.nextFrame(&quot;Pages&quot;)
+    elif btn == &quot;PREV&quot;: app.prevFrame(&quot;Pages&quot;)
+    elif btn == &quot;LAST&quot;: app.lastFrame(&quot;Pages&quot;)
+
+with gui(&quot;FRAME STACK&quot;) as app:
+    with app.frameStack(&quot;Pages&quot;, start=0):
+        with app.frame():
+            for i in range(5):
+                app.label(&quot;Text: &quot; + str(i))
+        with app.frame():
+            for i in range(5):
+                app.entry(&quot;e&quot; + str(i))
+        with app.frame():
+            for i in range(5):
+                app.button(str(i), None)
+
+    app.buttons([&quot;FIRST&quot;, &quot;PREV&quot;, &quot;NEXT&quot;, &quot;LAST&quot;], press)
+</code></pre>
+
+<h4 id="startstop-frame-stacks">Start/Stop Frame Stacks</h4>
+<ul>
+<li>
+<p><code>.startFrameStack(title, change=None, start=-1)</code> &amp; <code>.stopFrameStack()</code><br />
+    Used to start &amp; stop a <em>FrameStack</em><br />
+    Multiple <em>Frames</em> should be added to the <em>FrameStack</em> and can then be navigated through.<br />
+    Set <code>start</code> to the frame you want initially displayed. Defaults to the last frame added.<br />
+    Set <code>change</code> to a function to call when the <em>FrameStack</em> is changed.  </p>
+</li>
+<li>
+<p><code>.openFrameStack(title)</code><br />
+    Used to reopen the named <em>FrameStack</em>, for later modification.  </p>
+</li>
+<li>
+<p><code>.setFrameStackChangeFunction(title, function)</code><br />
+    Sets a function to call whenever the <em>FrameStack</em> is changed.<br />
+    If this function returns <code>False</code>, then the frame won't change (if it returns nothing, then it will change).<br />
+    Useful when used in conjunction with <code>.getPreviousFrame(title)</code> as checks can be run before allowing the user to progress.  </p>
+</li>
+<li>
+<p><code>.setStartFrame(title, num)</code><br />
+    Sets the frame that will be displayed when the GUI starts.  </p>
+</li>
+</ul>
+<h4 id="navigating-frame-stacks">Navigating Frame Stacks</h4>
+<ul>
+<li>
+<p><code>.frameStackAtStart(title)</code> &amp; <code>.frameStackAtEnd(title)</code><br />
+    Returns True/False if the FrameStack is showing the first/last Frame.  </p>
+</li>
+<li>
+<p><code>.nextFrame(title, callFunction=True)</code><br />
+    Display the next frame in the stack.  </p>
+</li>
+<li>
+<p><code>.prevFrame(title, callFunction=True)</code><br />
+    Display the previous frame in the stack.  </p>
+</li>
+<li>
+<p><code>.firstFrame(title, callFunction=True)</code><br />
+    Display the first frame in the stack.  </p>
+</li>
+<li>
+<p><code>.lastFrame(title, callFunction=True)</code><br />
+    Display the last frame in the stack.  </p>
+</li>
+<li>
+<p><code>.selectFrame(title, num, callFunction=True)</code><br />
+    Display the frame ay the specified position in the stack (starting at 0).  </p>
+</li>
+<li>
+<p><code>.getPreviousFrame(title)</code> &amp; <code>.getCurrentFrame(title)</code><br />
+    Returns the frame number of the previously shown and currently show frame.  </p>
+</li>
+<li>
+<p><code>.countFrames(title)</code><br />
+    Returns the number of frames in the stack.  </p>
+</li>
+</ul>
 <h3 id="label-frame">Label Frame</h3>
 <hr />
 <p>A way of grouping widgets into a box, with a label at the top of the box.<br />
@@ -604,10 +758,11 @@ app.go()
 <h4 id="startstop-label-frames">Start/Stop Label Frames</h4>
 <ul>
 <li>
-<p><code>.startLabelFrame(name, hideTitle=False)</code> &amp; <code>.stopLabelFrame()</code><br />
+<p><code>.startLabelFrame(title, hideTitle=False, label=None)</code> &amp; <code>.stopLabelFrame()</code><br />
     Used to start and stop a <em>LabelFrame</em><br />
     The specified title will be used as the label for the frame.<br />
-    Set hideTitle to be True if you don;t want to show a title.  </p>
+    Set <code>label</code> if you want to show a different label for the frame.<br />
+    Set <code>hideTitle</code> to be True or <code>label</code> to be an empty String if you don't want to show a title.  </p>
 </li>
 <li>
 <p><code>.openLabelFrame(title)</code><br />
@@ -617,11 +772,11 @@ app.go()
 <h4 id="set-label-frames">Set Label Frames</h4>
 <ul>
 <li>
-<p><code>.setLabelFrameTitle(name, newTitle)</code><br />
+<p><code>.setLabelFrameTitle(title, newTitle)</code><br />
     Used to change the label displayed in the <em>LabelFrame</em>.  </p>
 </li>
 <li>
-<p><code>.setLabelFrameAnchor(name, position)</code><br />
+<p><code>.setLabelFrameAnchor(title, position)</code><br />
     Used to change the position of the label on the <em>LabelFrame</em>.<br />
     Use compass coordinates, eg. <code>"ne"</code> or <code>"sw"</code>.  </p>
 </li>
@@ -639,7 +794,7 @@ Allows you to have more widgets than will fit on the screen, or have a smaller w
 <p><img alt="ScrollPane" src="../img/layouts/1_scroll.png" /></p>
 <pre><code class="python">from appJar import gui 
 
-app=gui(&quot;SCROLLPABE DEMO&quot;, &quot;150x150&quot;)
+app=gui(&quot;SCROLLABLE DEMO&quot;, &quot;150x150&quot;)
 
 app.startScrollPane(&quot;PANE&quot;)
 for x in range(10):
@@ -831,6 +986,68 @@ Or <code>.setTabBg(title, tab, 'colour')</code> at other times.  </p>
 <li><code>.getTabbedFrameSelectedTab(title)</code><br />
     Gets the name of the currently selected tab, for the named TabFrame.  </li>
 </ul>
+<h3 id="notebook">Notebook</h3>
+<hr />
+<p><strong>NB.</strong> This will only work with <a href="../pythonTtk">ttk</a> enabled.<br />
+<strong>NB.</strong> <em>Notes</em> have a different <a href="../pythonWidgetLayout/#widget-positioning">stickiness</a> to the <em>appJar</em> GUI - they only stick widgets to the <code>w</code> (left) side.
+If you want your widgets to stretch across the <em>Note</em>, like the rest of <em>appJar</em>, you will need to call <code>app.setSticky("ew")</code> after starting the <em>Note</em>.</p>
+<p>Similar to the <a href="../pythonWidgetGrouping/#tabbed-frame"><em>Tabbed Frame</em></a>, it is a way of placing widgets in different tabs or 'notes'.
+Position the <em>Notebook</em> within the grid, start a <em>Note</em>, then position widgets inside the <em>Note</em>.</p>
+<p><img alt="Notebook" src="../img/layouts/1_notebook.png" /></p>
+<pre><code class="python">from appJar import gui
+
+app = gui(&quot;Notebook&quot;, useTtk=True)
+
+app.setTtkTheme(&quot;clam&quot;)
+
+app.startNotebook(&quot;Notebook&quot;)
+
+app.startNote(&quot;Note 1&quot;)
+app.addLabel(&quot;l1&quot;, &quot;Note 1&quot;)
+app.stopNote()
+
+app.startNote(&quot;Note 2&quot;)
+app.addLabel(&quot;l2&quot;, &quot;Note 2&quot;)
+app.stopNote()
+
+app.startNote(&quot;Note 3&quot;)
+app.addLabel(&quot;l3&quot;, &quot;Note 3&quot;)
+app.stopNote()
+
+app.stopNotebook()
+
+app.go()
+</code></pre>
+
+<h4 id="startstop-notebooks">Start/Stop Notebooks</h4>
+<ul>
+<li>
+<p><code>.startNotebook(name)</code> &amp; <code>.stopNotebook()</code><br />
+    Used to start &amp; stop <em>Notebooks</em>, with the specified name.</p>
+</li>
+<li>
+<p><code>.startNote(name)</code> &amp; <code>.stopNote()</code><br />
+    Used to start &amp; stop each of the notes in the <em>Notebook</em>.</p>
+</li>
+</ul>
+<h4 id="set-notebooks">Set Notebooks</h4>
+<ul>
+<li><code>.getNotebookWidget(name).select([index])</code><br />
+    Change the currently selected note, by putting the <em>Notebook's</em> name in <code>name</code> and putting the index of the note as an integer in <code>index</code>.<br />
+    Eg. To change the selected note to Note 3, then the index would be 2 (as 0 is the first note).</li>
+</ul>
+<h4 id="styles-colours">Styles &amp; Colours</h4>
+<ul>
+<li>
+<p>You will need to use a <a href="../pythonTtk/#styling-ttk-widgets">ttk Style and Map</a> to change the colour of notebook widget or its tabs.</p>
+</li>
+<li>
+<p>To change the style for the Notebook widget, use <code>TNotebook</code>.</p>
+</li>
+<li>
+<p>To change the style for the Notebook Tabs, use <code>TNotebook.Tab</code>.</p>
+</li>
+</ul>
 <h3 id="paned-frame">Paned Frame</h3>
 <hr />
 <p>A way to present re-sizable panes, separated by drag-bars.<br />
@@ -979,7 +1196,7 @@ Events can be bound to page changes, the page can be changed via a function call
 app=gui()
 
 app.setBg(&quot;DarkKhaki&quot;)
-app.setGeometry(280,400)
+app.setSize(280,400)
 
 app.startPagedWindow(&quot;Main Title&quot;)
 app.startPage()

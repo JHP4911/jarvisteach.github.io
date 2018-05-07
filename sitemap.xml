@@ -4,7 +4,7 @@
     
     <url>
      <loc>http://appjar.info/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -19,43 +19,49 @@
         
     <url>
      <loc>http://appjar.info/pythonBars/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonDialogs/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonSound/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonWidgetGrouping/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonSubWindows/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/multiplePages/</loc>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/splash/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/specialCharacters/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -65,7 +71,7 @@
         
     <url>
      <loc>http://appjar.info/pythonGuiOptions/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -83,43 +89,43 @@
         
     <url>
      <loc>http://appjar.info/pythonInternationalisation/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonSettings/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonLogging/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonCommandLine/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/pythonTtk/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/clipboard/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/simpleProperties/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -129,7 +135,7 @@
         
     <url>
      <loc>http://appjar.info/guidance/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -141,55 +147,61 @@
         
     <url>
      <loc>http://appjar.info/Install/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/packaging/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/License/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/Support/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://appjar.info/appJarLimitations/</loc>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/Thanks/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/advertising/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/contributing/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/whatsNew/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://appjar.info/oldDocs/</loc>
-     <lastmod>2018-03-10</lastmod>
+     <lastmod>2018-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

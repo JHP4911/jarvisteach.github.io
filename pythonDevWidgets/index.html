@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -352,6 +358,12 @@
                                 
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../appJarLimitations/">Limitations</a>
 </li>
 
                             
@@ -670,19 +682,41 @@ app.go()
 
 <h4 id="add-trees">Add Trees</h4>
 <ul>
-<li><code>.addTree(title, xml_data)</code><br />
-    Create a tree from the specified XML data  </li>
+<li>
+<p><code>.addTree(title, xml_data)</code><br />
+    Create a tree from the specified XML data  </p>
+</li>
+<li>
+<p><code>.generateTree(title)</code><br />
+    Load all the XML data into the tree.<br />
+    Gets called automatically when the GUI starts, but will need to be called manually, if a tree is created after the GUI has started.  </p>
+</li>
 </ul>
 <h4 id="set-trees">Set Trees</h4>
 <ul>
-<li><code>.setTreeDoubleClickFunction(title, func)</code><br />
-    Register a function to call when an item is double-clicked  </li>
-<li><code>.setTreeEditFunction(title, func)</code><br />
-    Register a function to call when an item is edited  </li>
-<li><code>.setTreeEditable(title, value)</code><br />
-    Set whether the tree can be edited  </li>
-<li><code>.setTreeColours(title, fg, bg, fgH, bgH)</code><br />
-    Set the fg/bg/fg highlight/bg highlight colours of the tree  </li>
+<li>
+<p><code>.setTreeClickFunction(title, func)</code><br />
+    Register a function to call when an item is clicked.
+    Will receive the name of the tree, and an <code>id</code> attribute, if set in the XML.  </p>
+</li>
+<li>
+<p><code>.setTreeDoubleClickFunction(title, func)</code><br />
+    Register a function to call when an item is double-clicked<br />
+    Will receive the name of the tree, and an <code>id</code> attribute, if set in the XML.  </p>
+</li>
+<li>
+<p><code>.setTreeEditFunction(title, func)</code><br />
+    Register a function to call when an item is edited<br />
+    Will receive the name of the tree.  </p>
+</li>
+<li>
+<p><code>.setTreeEditable(title, value)</code><br />
+    Set whether the tree can be edited  </p>
+</li>
+<li>
+<p><code>.setTreeColours(title, fg, bg, fgH, bgH)</code><br />
+    Set the fg/bg/fg highlight/bg highlight colours of the tree  </p>
+</li>
 <li><code>.setTreeBg(title, colour)</code><br />
     Set the background colour of the tree  </li>
 <li><code>.setTreeFg(title, colour)</code><br />

@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -357,6 +363,12 @@
                             
                                 
 <li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -493,12 +505,17 @@ Some of these are also available at a widget level, where you can specify indivi
 </li>
 <li>
 <p><code>.setIcon(fileName)</code><br />
-    Sets an icon for the GUI.
-    If you want to disable the icon, set the <code>showIcon</code> flag to True, when you call appJar's constructor.  </p>
+    Sets an icon for the GUI.<br />
+    If you want to disable the icon, set the <code>showIcon</code> flag to False, when you call appJar's constructor.  </p>
 </li>
 <li>
 <p><code>.setTransparency(percentage)</code><br />
-    Sets how transparent the GUI is. Between 0 and 100%.</p>
+    Sets how transparent the GUI is.<br />
+    Between 0 and 100%.  </p>
+</li>
+<li>
+<p><code>.setOnTop(stay=True)</code><br />
+    Configure the GUI to always stay on top of other windows.  </p>
 </li>
 </ul>
 <h3 id="size-location">Size &amp; Location</h3>
@@ -511,26 +528,26 @@ Some of these are also available at a widget level, where you can specify indivi
 <strong>NB.</strong> hiding the window, effectively minimizes it, it is still there...</p>
 </li>
 <li>
-<p><code>.setGeometry(geom)</code> &amp; <code>.setGeometry(width, height)</code><br />
+<p><code>.setSize(size)</code> &amp; <code>.setSize(width, height)</code><br />
     Sets the height &amp; width of the GUI:  </p>
 <ul>
-<li>Either as a single String <code>.setGeometry("200x100")</code> (widthxheight)  </li>
-<li>As two separate parameters <code>.setGeometry(200,100)</code></li>
-<li>Or to go <em>Fullscreen</em> <code>.setGeometry("Fullscreen")</code>  </li>
+<li>Either as a single String <code>.setSize("200x100")</code> (widthxheight)  </li>
+<li>As two separate parameters <code>.setSize(200,100)</code>  </li>
+<li>Or to go <em>Fullscreen</em> <code>.setSize("Fullscreen")</code>  </li>
 </ul>
 </li>
 <li>
 <p><code>.exitFullscreen()</code><br />
-    Leave fullscreen, if set in the geometry.  <br />
-    Returns True/False - if the app was able to leave fullscreen.
-    Can be called safely, even if app is not in fullscreen:
-    <code>&lt;Escape&gt;</code> will call this automatically, while in fullscreen.  </p>
+    Leave fullscreen, if set in the above.<br />
+    Returns True/False - if the app was able to leave fullscreen.<br />
+    Can be called safely, even if app is not in fullscreen:<br />
+<code>&lt;Escape&gt;</code> will call this automatically, while in fullscreen.  </p>
 </li>
 </ul>
 <pre><code class="python">if app.exitFullscreen():
     # do something
 else:
-    app.setGeometry(&quot;fullscreen&quot;)
+    app.setSize(&quot;fullscreen&quot;)
     # do something else
 </code></pre>
 

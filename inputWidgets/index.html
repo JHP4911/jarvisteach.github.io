@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -352,6 +358,12 @@
                                 
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../appJarLimitations/">Limitations</a>
 </li>
 
                             
@@ -586,6 +598,10 @@ app.go()
     Same as above, set flag to one of <code>valid</code>, <code>invalid</code> or <code>wait</code>.  </p>
 </li>
 <li>
+<p><code>.setValidationEntryLabelBg(title, bg)</code><br />
+    This allows you to change the colour of the validation label, in a validation entry.  </p>
+</li>
+<li>
 <p><code>.setAutoEntryNumRows(title, rows)</code><br />
     This will set the number of rows to display in an AutoEntry.<br />
     NB. this is limited to the depth of the GUI - if there is no space, then no rows will be displayed. 
@@ -645,11 +661,11 @@ app.go()
 <h4 id="add-textareas">Add TextAreas</h4>
 <ul>
 <li>
-<p><code>.addTextArea(title)</code><br />
+<p><code>.addTextArea(title, text=None)</code><br />
     Adds an empty TextArea, with the specified title.  </p>
 </li>
 <li>
-<p><code>.addScrolledTextArea(title)</code><br />
+<p><code>.addScrolledTextArea(title, text=None)</code><br />
     Adds a scrollable TextArea with the specified title.  </p>
 </li>
 </ul>
@@ -673,6 +689,11 @@ app.go()
     This will clear the contents of all TextAreas in the app.<br />
     Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
+<li>
+<p><code>.highlightTextArea(title, start, end=END)</code><br />
+    Highlights all text from start position, to the end position (defaults to the end of the text area).<br />
+<strong>NB.</strong> positions should be a string in the format <code>LINE.CHAR</code>, eg. <code>1.4</code> wil start on the 1st line at the 4th character.  </p>
+</li>
 </ul>
 <h4 id="get-textareas">Get TextAreas</h4>
 <ul>
@@ -683,6 +704,113 @@ app.go()
 <li>
 <p><code>.getAllTextAreas()</code><br />
     This will return the contents of all TextAreas in the app, as a dictionary.  </p>
+</li>
+</ul>
+<h4 id="search-textareas">Search TextAreas</h4>
+<ul>
+<li><code>.searchTextArea(title, pattern, start=None, stop=None, nocase=True, backwards=False)</code><br />
+    Will find, highlight and return the position of the specified pattern.<br />
+    If no <code>start</code> position is provided, appJar will start searching form the cursor's position.<br />
+    Set <code>nocase</code> to False, if you want the search to be case sensitive.<br />
+    Set <code>backwards</code> to True, if you want to search backwards.  </li>
+</ul>
+<h4 id="textarea-fonts">TextArea Fonts</h4>
+<p>Fonts are tricky on TextAreas, it's currently not possible to have different font sizes &amp; families on different parts of a TextArea.<br />
+However, it is possible to make parts of the TextArea <strong>bold</strong>, <strong>italic</strong> or <strong>underlined</strong>.  </p>
+<ul>
+<li>
+<p><code>.setTextAreaFont(title, **kwargs)</code> 
+    Used to change the family and size of the named TextArea's font.<br />
+    Pass <code>font</code> with a number to change the size of all text in the TextArea.<br />
+    Pass <code>family</code> with a strinf to change the font-family of all text in the TextArea.  </p>
+</li>
+<li>
+<p><code>.textAreaApplyFontRange(title, tag, start, end=END)</code><br />
+    Apply the specified font styling to the specified range.<br />
+    The tag should be one of <strong>BOLD</strong>, <strong>ITALIC</strong> or <strong>BOLD_ITALIC</strong> - it will replace the previous font tag.<br />
+    Additionally, the <strong>UNDERLINE</strong> tag can be used alongside the above.  </p>
+</li>
+<li>
+<p><code>.textAreaApplyFontSelected(title, tag)</code><br />
+    Apply the specified font styling to the currently selected text.  </p>
+</li>
+<li>
+<p><code>.textAreaToggleFontRange(title, tag, start, end=END)</code><br />
+    Invert the named tag on the specified range.  </p>
+</li>
+<li>
+<p><code>.textAreaToggleFontSelected(title, tag)</code><br />
+    Invert the named tag on the selected text.  </p>
+</li>
+</ul>
+<h4 id="tag-textareas">Tag TextAreas</h4>
+<p>A simple syntax highlighter:  </p>
+<pre><code class="python">from appJar import gui
+
+redWords = (&quot;string&quot;, &quot;integer&quot;, &quot;boolean&quot;, &quot;real&quot;)
+greenWords = (&quot;print&quot;, &quot;input&quot;)
+
+def highlightSyntax(param):
+    for w in redWords:
+        app.tagTextAreaPattern(&quot;ta&quot;, &quot;red&quot;, w)
+    for w in greenWords:
+        app.tagTextAreaPattern(&quot;ta&quot;, &quot;green&quot;, w)
+
+with gui(&quot;Text Editor&quot;, &quot;300x400&quot;) as app:
+    app.text(&quot;ta&quot;, focus=True, change=highlightSyntax)
+    app.tagTextArea(&quot;ta&quot;, &quot;red&quot;, background=&quot;red&quot;, foreground=&quot;white&quot;)
+    app.tagTextArea(&quot;ta&quot;, &quot;green&quot;, background=&quot;green&quot;, foreground=&quot;white&quot;)
+</code></pre>
+
+<ul>
+<li>
+<p><code>.textAreaCreateTag(title, **kwargs)</code><br />
+    Create the named tag, with the specified arguments.  </p>
+</li>
+<li>
+<p><code>.textAreaChangeTag(title, **kwargs)</code><br />
+    Change the named tag, with the specified arguments.  </p>
+</li>
+<li>
+<p><code>.textAreaDeleteTag(title, *tags)</code><br />
+    Delete the named tags.  </p>
+</li>
+<li>
+<p><code>.textAreaTagPattern(title, tag, pattern, regexp=False)</code><br />
+    Apply a previously made tag to the specified pattern.<br />
+    Set <code>regexp</code> to True if you want to use a regular expression.  </p>
+</li>
+<li>
+<p><code>.textAreaTagRange(title, tag, start, end)</code><br />
+    Apply a previously made tag to the specified range.  </p>
+</li>
+<li>
+<p><code>.textAreaTagSelected(title, tag)</code><br />
+    Apply a previously made tag to the currently selected text.  </p>
+</li>
+<li>
+<p><code>.textAreaUntagRange(title, tag, start, end)</code><br />
+    Remove the named tag from the specified range.  </p>
+</li>
+<li>
+<p><code>.textAreaUntagSelected(title, tag)</code><br />
+    Remove the named tag from the selected text.  </p>
+</li>
+<li>
+<p><code>.textAreaToggleTagRange(title, tag, start, end)</code><br />
+    Invert the named tag on the specified range.  </p>
+</li>
+<li>
+<p><code>.textAreaToggleTagSelected(title, tag)</code><br />
+    Invert the named tag on the selected text.  </p>
+</li>
+<li>
+<p><code>.getTextAreaTags(title)</code><br />
+    Gets a list of all tags on the text area.  </p>
+</li>
+<li>
+<p><code>.getTextAreaTag(title)</code><br />
+    Gets all details about the specified tag.  </p>
 </li>
 </ul>
 <h2 id="button">Button</h2>
@@ -976,6 +1104,10 @@ app.go()
     By default, you can't select a disabled item. You can change this by setting <code>override</code> to be True.  </p>
 </li>
 <li>
+<p><code>.setOptionBoxDisabledChar(title, disabled="-")</code><br />
+    Set the character used to indicate disabled options.  </p>
+</li>
+<li>
 <p><code>.renameOptionBoxItem(title, item, newName, callFunction=False)</code><br />
     This will rename the specified item in the named OptionBox.<br />
     Set <code>callFunction</code> to be True, if you want to call any associated <code>change</code> functions.  </p>
@@ -1125,9 +1257,10 @@ app.go()
     Set <code>callFunction</code> to be True, if you want to call any associated functions.  </p>
 </li>
 <li>
-<p><code>.updateListBox(title, items, select=False)</code><br />
+<p><code>.updateListBox(title, items, select=False, callFunction=True)</code><br />
     Replace the contents of the specified ListBox with the new values.<br />
-    If you set <code>select</code> to be True, the last item in the list will be selected.  </p>
+    If you set <code>select</code> to be True, the last item in the list will be selected.<br />
+    Set <code>callFunction</code> to be False, if you don't want to call any associated functions.  </p>
 </li>
 </ul>
 <pre><code class="python">from appJar import gui

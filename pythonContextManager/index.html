@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -357,6 +363,12 @@
                             
                                 
 <li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -467,7 +479,7 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#the-power-of-with">The Power of WITH</a></li>
+        <li class="main active"><a href="#the-power-of-with">The power of WITH</a></li>
         
             <li><a href="#available-containers">Available Containers</a></li>
         
@@ -476,7 +488,7 @@
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="the-power-of-with">The Power of WITH</h1>
+<h1 id="the-power-of-with">The power of WITH</h1>
 <p><em>Using ContextManagers to make GUIs even easier.</em>  </p>
 <hr />
 <p>One thing I really wanted to get into appJar, was some indentation - I wanted the code for the GUI to look more like the actual GUI.  </p>
@@ -507,19 +519,6 @@ with gui(&quot;My first GUI&quot;) as app:
 <p>And, that's all there is to it - this feature is available on all containers, and I think it's going to make things a lot simpler!</p>
 <p>The old start/stop functions all still exist, so there is no need to use the <code>with</code> command. But if you prefer this method, it's there.  </p>
 <p>An added bonus, is that the same syntax works for starting a container or opening a container!</p>
-<hr />
-<p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gw-13-4l+6+pt"
-    data-ad-client="ca-pub-6185596049817878"
-    data-ad-slot="5627392164"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div></p>
-<hr />
 <h2 id="available-containers">Available Containers</h2>
 <hr />
 <pre><code class="python">from appJar import gui
@@ -529,7 +528,7 @@ def press(btn):
         app.addLabel(&quot;newLab&quot;, &quot;New Label&quot;)
 
 with gui() as app:
-    app.setGeometry(250, 300)
+    app.setSize(250, 300)
     with app.pagedWindow(&quot;pages&quot;):
         with app.page():
             app.addLabel(&quot;l1&quot;, &quot;Page One&quot;)
@@ -543,10 +542,11 @@ with gui() as app:
 <p>The following can all be used in the same format to <em>start</em> or <em>open</em> a container:<br />
 Have a look on the <a href="../pythonWidgetGrouping">containers page</a> for usage information.  </p>
 <ul>
+<li><code>.frame(title)</code>  </li>
+<li><code>.frameStack(title)</code>  </li>
 <li><code>.labelFrame(title, hideTitle=False)</code>  </li>
 <li><code>.toggleFrame(title)</code>  </li>
 <li><code>.scrollPane(title)</code>  </li>
-<li><code>.frame(title)</code>  </li>
 <li><code>.tabbedFrame(title)</code>  </li>
 <li><code>.tab(title, tabTitle=None)</code>  </li>
 <li><code>.panedFrame(title)</code>  </li>

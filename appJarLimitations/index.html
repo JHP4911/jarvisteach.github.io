@@ -7,13 +7,13 @@
         <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
-        <link rel="canonical" href="http://appjar.info/algorithms/">
+        <link rel="canonical" href="http://appjar.info/appJarLimitations/">
         <link rel="shortcut icon" href="/img/favicon.ico">
         
         <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
         <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
 
-        <title>Algorithms - appJar</title>
+        <title>Limitations - appJar</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
@@ -362,8 +362,8 @@
 
                             
                                 
-<li >
-    <a href="../appJarLimitations/">Limitations</a>
+<li class="active">
+    <a href="./">Limitations</a>
 </li>
 
                             
@@ -409,8 +409,8 @@
 
         
             
-<li class="active">
-    <a href="./">Algorithms</a>
+<li >
+    <a href="../algorithms/">Algorithms</a>
 </li>
 
         
@@ -445,12 +445,12 @@
                 </li>
 <!--
                 <li >
-                    <a rel="next" href="../pythonBasics/">
+                    <a rel="next" href="../Support/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../gitGuide/">
+                    <a rel="prev" href="../Thanks/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -479,108 +479,48 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#algorithms">Algorithms</a></li>
+        <li class="main active"><a href="#limitations">Limitations</a></li>
         
-            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#general-limitations">General Limitations:</a></li>
         
-            <li><a href="#links">Links</a></li>
+            <li><a href="#platform-limitations">Platform Limitations:</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="algorithms">Algorithms</h1>
+<h1 id="limitations">Limitations</h1>
 <hr />
-<p>Below are some comparisons of how to achieve the same thing in a flowchart, pseudocode &amp; Python.  </p>
-<p>This site was originally written using AQA suggested pseudocode, but will be updated to include OCR recommendations.<br />
-It will aso be extended, to include a lot more examples.  </p>
-<h2 id="comparison">Comparison</h2>
-<table>
-<thead>
-<tr>
-<th>Topic</th>
-<th>FlowChart</th>
-<th>PseudoCode</th>
-<th>Python</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Assigning a variable</td>
-<td><img alt="Assignment" src="../img/algorithms/1_a_eq_5.png" /></td>
-<td>a &#8592; 5</td>
-<td>a = 5</td>
-</tr>
-<tr>
-<td>Input</td>
-<td><img alt="Input" src="../img/algorithms/2_a_eq_inp.png" /></td>
-<td>a &#8592; USERINPUT</td>
-<td>a = input()</td>
-</tr>
-<tr>
-<td>Output</td>
-<td><img alt="Output" src="../img/algorithms/3_prt_a.png" /></td>
-<td>OUTPUT a</td>
-<td>print(a)</td>
-</tr>
-<tr>
-<td>Subtraction</td>
-<td><img alt="Subtraction" src="../img/algorithms/5_a_eq_b_mi_c.png" /></td>
-<td>a &#8592; b - c</td>
-<td>a = b - c</td>
-</tr>
-<tr>
-<td>Selection:<br>Greater than</td>
-<td><img alt="Selection-GT" src="../img/algorithms/6_a_gt_b.png" /></td>
-<td>IF a &gt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a &gt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Less than</td>
-<td><img alt="Selection-LT" src="../img/algorithms/7_a_lt_b.png" /></td>
-<td>IF a &lt; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a &lt; b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Equal to</td>
-<td><img alt="Selection-EQ" src="../img/algorithms/8_a_eq_b.png" /></td>
-<td>IF a = b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a == b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Selection:<br>Not equal to</td>
-<td><img alt="Selection-NEQ" src="../img/algorithms/9_a_ne_b.png" /></td>
-<td>IF a &#8800; b THEN<br>&emsp;funcA()<br>ELSE<br>&emsp;funcB()<br>ENDIF</td>
-<td>if a != b:<br>&emsp;funcA()<br>else:<br>&emsp;funcB()</td>
-</tr>
-<tr>
-<td>Iteration:<br>While loop</td>
-<td><img alt="Iteration-WHILE" src="../img/algorithms/10_while_a_ne_b.png" /></td>
-<td>WHILE a &#8800; b<br>&emsp;OUTPUT b<br>&emsp;a &#8592; USERINPUT<br>ENDWHILE</td>
-<td>while a != b:<br>&emsp;print(b)<br>&emsp;a = input()</td>
-</tr>
-<tr>
-<td>Iteration:<br>For loop (count-up)</td>
-<td><img alt="Iteration-FOR_UP" src="../img/algorithms/11_for_up.png" /></td>
-<td>FOR i &#8592; 0 TO 9<br>&emsp;OUTPUT i<br>ENDFOR</td>
-<td>for i in range(10):<br>&emsp;print(i)</td>
-</tr>
-<tr>
-<td>Iteration:<br>For loop (count-down)</td>
-<td><img alt="Iteration-FOR_DOWN" src="../img/algorithms/12_for_dn.png" /></td>
-<td>FOR i &#8592; 10 TO 1<br>&emsp;OUTPUT i<br>ENDFOR</td>
-<td>for i in range(10, 0, -1):<br>&emsp;print(i)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="links">Links</h2>
-<p>Some useful Pseudocode links.  </p>
-<ol>
-<li><a href="../cheatSheets/PseudoCode%20CheatSheet.pdf">PseudoCode CheatSheet</a></li>
-<li><a href="http://pseudowar.appjar.info">PseudoWars</a></li>
-<li><a href="http://filestore.aqa.org.uk/subjects/AQA-GCSE-COMPSCI-W-TRB-PSEU.PDF">AQA PseudoCode Guidelines</a></li>
-</ol></div>
+<p>There are some things that we don't do well, or that just don't work.<br />
+These are usually caused by limitations in the underlying tkinter, and may be specific to a particular platform.  </p>
+<h2 id="general-limitations">General Limitations:</h2>
+<ul>
+<li><strong>Animated GIFs</strong> - appJar has its own way of animating GIFs, if animated GIFs don't have complete frames, the animation will break.    </li>
+<li><strong>Image Backgrounds</strong> - setting an image as a background doesn't work well - most widgets don't have their own transparency.  </li>
+<li><strong>ttk</strong> - appJar was never intended to work with ttk, but due to popular demand, we've tried to build it in, but there are still issues.  </li>
+</ul>
+<h2 id="platform-limitations">Platform Limitations:</h2>
+<p>appJar has been designed to work the same on the three major platforms: Windows, Mac &amp; Linux.<br />
+However, not all features are available on all platforms.  </p>
+<h3 id="linux">Linux:</h3>
+<ul>
+<li><strong>Transparency</strong> isn't supported on Linux  </li>
+<li><strong>app Icons</strong> aren't available on Linux  </li>
+<li><strong>Audio</strong> doesn't work on Linux  </li>
+</ul>
+<h3 id="mac">Mac:</h3>
+<ul>
+<li><strong>Pasting some special characters</strong> will crash appJar on Mac  </li>
+<li><strong>Tickable Menus &amp; OptionBoxes</strong> don't work on Mac  </li>
+<li><strong>Buttons</strong> don't support background colours and changing the height on Mac  </li>
+<li><strong>app Icons</strong> aren't available on Mac  </li>
+<li><strong>Audio</strong> doesn't work on Mac  </li>
+</ul>
+<h3 id="windows">Windows:</h3>
+<ul>
+<li>n/a  </li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

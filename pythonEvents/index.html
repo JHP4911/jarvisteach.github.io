@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -357,6 +363,12 @@
                             
                                 
 <li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
 
@@ -474,6 +486,8 @@
             <li><a href="#registering-other-events">Registering Other Events</a></li>
         
             <li><a href="#binding-keys">Binding Keys</a></li>
+        
+            <li><a href="#starting-the-gui">Starting the GUI</a></li>
         
             <li><a href="#stopping-the-gui">Stopping the GUI</a></li>
         
@@ -642,6 +656,13 @@ Unlink the specified key from any functions bound to it.</p>
 <p><code>.unbindKeys(keys)</code><br />
 Unlink the specified keys from any functions bound to them.</p>
 </li>
+</ul>
+<h2 id="starting-the-gui">Starting the GUI</h2>
+<hr />
+<p>If you want to call a function once the GUI starts, you can register it with the following call:  </p>
+<ul>
+<li><code>.setStartFunction(function)</code><br />
+    Set a function to call when the GUI starts up.  </li>
 </ul>
 <h2 id="stopping-the-gui">Stopping the GUI</h2>
 <hr />

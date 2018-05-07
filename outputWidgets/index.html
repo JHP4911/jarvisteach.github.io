@@ -54,7 +54,7 @@
 
     <body>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.92 out now!</a></div>
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
 
@@ -159,6 +159,12 @@
                                 
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
 </li>
 
                             
@@ -352,6 +358,12 @@
                                 
 <li >
     <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../appJarLimitations/">Limitations</a>
 </li>
 
                             
@@ -603,7 +615,9 @@ Simply add the word <code>Label</code> to the command when adding the widget:  <
 <p>See the relevant section for a description of what the widget does.</p>
 <h2 id="message">Message</h2>
 <hr />
-<p>Similar to a Label, except it will wrap the text over multiple lines.  </p>
+<p>Very similar to a Label, except it will wrap the text over multiple lines.<br />
+By default the text is laid out 50% wider than it is high.<br />
+This can be changed by setting a specific <code>width</code> or by changing the <code>aspect</code> ratio.  </p>
 <p><img alt="Message" src="../img/1_mess.png" />  </p>
 <pre><code class="python">from appJar import gui
 
@@ -636,6 +650,17 @@ app.go()
 <li>
 <p><code>.setMessage(title, text)</code><br />
     Sets the contents of the specified Message widget, to the specified text.  </p>
+</li>
+<li>
+<p><code>.setMessageAspect(title, aspect)</code><br />
+    Sets the aspect ratio at which text is wrapped.<br />
+    The default is 150, which means the text will be 50% wider than it is high.<br />
+    Ignored if a <code>width</code> has been set.  </p>
+</li>
+<li>
+<p><code>.setMessageWidth(title, width)</code><br />
+    Sets the number of characters per line for the widget.<br />
+    If not set, width is calculated using the default aspect ratio.  </p>
 </li>
 </ul>
 <h2 id="meter">Meter</h2>
@@ -757,8 +782,20 @@ app.go()
 </ul>
 <h2 id="canvas">Canvas</h2>
 <hr />
-<p>This lets you embed a canvas in appJar</p>
+<p>This lets you embed a canvas in appJar.<br />
+Canvases are very powerful, appJar will never provide wrappers for all their functions.<br />
+So, if you're looking to truly harness a canvas, add it and save the widget as a variable: <code>canvas = app.addCanvas("c1")</code>. Then, you can call all the canvas functions as you would a tKinter canvas.</p>
 <p><img alt="Canvas" src="../img/1_canvas.png" />  </p>
+<pre><code class="python">from appJar import gui
+app=gui()
+app.addCanvas(&quot;c1&quot;)
+app.addCanvasOval(&quot;c1&quot;, 10, 10, 100, 100, fill=&quot;red&quot;, outline=&quot;blue&quot;, width=3)
+app.addCanvasLine(&quot;c1&quot;, 0, 0, 255, 255, width=5)
+app.addCanvasLine(&quot;c1&quot;, 0, 255, 255, 0, dash=123)
+app.go()
+</code></pre>
+
+<p>Or, as mentioned above, you can work directly with the canvas object:  </p>
 <pre><code class="python">from appJar import gui
 app=gui()
 canvas = app.addCanvas(&quot;c1&quot;)
@@ -778,7 +815,22 @@ app.go()
     Gets the specified canvas widget.  </p>
 </li>
 </ul>
+<h4 id="setting-a-canvas">Setting a Canvas</h4>
+<ul>
+<li><code>.setCanvasMap(title, func, coords)</code><br />
+    It is possible to set up a simple CanvasMap - a clickable canvas, with names linked to different areas.
+    When one of those areas is clicked, a function will be called, passing the name of the area as a parameter.
+    <code>coords</code> must contain a dictionary of areas on the map.
+    When a position on the canavs is clicked, in one of the areas, the named function will be called, passing in the area's name.
+    When an unknown position on the canavs is clicked, UNKNOWN will be passed to the function, along with the coordinates.</li>
+</ul>
 <h4 id="drawing-on-a-canvas">Drawing on a Canvas</h4>
+<p><strong>NB.</strong> each of these functions returns the object being created, so you can later change it:</p>
+<pre><code class="python">canvas = app.addCanvas(&quot;c1&quot;)
+rect = app.addCanvasRectangle(&quot;c1&quot;, x=40, y=80, w=100, h=100, fill='green')
+canvas.itemconfig(rect, fill='pink')
+</code></pre>
+
 <ul>
 <li>
 <p><code>.addCanvasCircle(title, x, y, diameter, **kwargs)</code><br />
