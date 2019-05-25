@@ -4,538 +4,362 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
         <link rel="canonical" href="http://appjar.info/simpleAppJar/">
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        
-        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
-        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
-
+        <link rel="shortcut icon" href="../img/favicon.ico">
         <title>(v1.0 Naming) - appJar</title>
-
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.css" rel="stylesheet">
-        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="../extra.css" rel="stylesheet">
-
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-79206647-1', 'appjar.info');
             ga('send', 'pageview');
         </script>
-        
-
-        <!--
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-6185596049817878",
-            enable_page_level_ads: true
-            });
-        </script>
-        -->
-        
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+    <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
     </head>
 
     <body>
+    <div class="corner-ribbon">
+        <a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.94 out now!</a>
+    </div>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">appJar</a>
+                </div>
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="..">appJar</a>
-        </div>
-
-        
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-                
-            
-                
-                    
-                        <li class="dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Widgets</a>
+    <a href="#">Widgets</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../outputWidgets/">Output Widgets</a>
 </li>
-
-        
             
 <li >
     <a href="../inputWidgets/">Input Widgets</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonDevWidgets/">Beta Widgets</a>
 </li>
-
-        
             
 <li class="active">
     <a href="./">(v1.0 Naming)</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonBars/">Bars</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSound/">Sounds</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../multiplePages/">Multiple Pages</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../splash/">Splashscreen</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-                
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
 <li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Widgets</a>
+    <a href="#">Widgets</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonWidgetLayout/">Layout</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonContextManager/">The power of WITH</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Events</a>
+    <a href="#">Events</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonEvents/">Events</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonThreads/">Threads</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSettings/">Saving Settings</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonLogging/">Logging</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonCommandLine/">Command Line Arguments</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../clipboard/">Clipboard</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
-
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-                
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
 <li >
     <a href="../guidance/">Guidance</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Examples</a>
+    <a href="#">Examples</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
 </li>
-
-        
             
 <li >
     <a href="../examples/simple/">Simple Layout</a>
 </li>
-
-        
+            
+<li >
+    <a href="../examples/stylesheets/">Stylesheets</a>
+</li>
+            
+<li >
+    <a href="../examples/kanban/">Kanban/To Do</a>
+</li>
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Install/">Installation</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../packaging/">Packaging</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../License/">License</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Support/">Support</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../appJarLimitations/">Limitations</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../advertising/">Advertising</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../contributing/">Contributing</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../whatsNew/">Change-Log</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../oldDocs/">Old Documentation</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Other Help</a>
+    <a href="#">Other Help</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonBasics/">Python</a>
 </li>
-
-        
             
 <li >
     <a href="../algorithms/">Algorithms</a>
 </li>
-
-        
             
 <li >
     <a href="../gitGuide/">Git & PyPi</a>
 </li>
-
-        
     </ul>
   </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/pythonLessons" target="_blank">
-                    <i class="fa fa-mortar-board"></i> Learn
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
-                    <i class="fa fa-youtube"></i> Watch
-                    </a>
-                </li>
-<!--
-                <li >
-                    <a rel="next" href="../pythonDevWidgets/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../pythonBars/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
--->
-                
-                <li>
-                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-            </ul>
+                    <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+        <a href="/pythonLessons" target="_blank">
+            <i class="fa fa-mortar-board"></i> Learn
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+            <i class="fa fa-youtube"></i> Watch
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://github.com/jarvisteach/appJar/">
+            <i class="fa fa-github"></i> GitHub
+        </a>
+    </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                <i class="fa fa-search"></i> Search
+            </a>
+        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#v10-naming">v1.0 Naming</a></li>
-        
             <li><a href="#operation">Operation</a></li>
-        
             <li><a href="#label">Label</a></li>
-        
             <li><a href="#message">Message</a></li>
-        
             <li><a href="#entry">Entry</a></li>
-        
             <li><a href="#text">Text</a></li>
-        
             <li><a href="#button">Button</a></li>
-        
             <li><a href="#link">Link</a></li>
-        
             <li><a href="#check">Check</a></li>
-        
             <li><a href="#radio">Radio</a></li>
-        
             <li><a href="#option">Option</a></li>
-        
             <li><a href="#spin">Spin</a></li>
-        
             <li><a href="#listbox">Listbox</a></li>
-        
             <li><a href="#slider">Slider</a></li>
-        
             <li><a href="#meter">Meter</a></li>
-        
             <li><a href="#grip">Grip</a></li>
-        
             <li><a href="#separator">Separator</a></li>
-        
             <li><a href="#image">Image</a></li>
-        
             <li><a href="#properties">Properties</a></li>
-        
             <li><a href="#date">Date</a></li>
-        
             <li><a href="#canvas">Canvas</a></li>
-        
             <li><a href="#popup">PopUp</a></li>
-        
             <li><a href="#statusbar">Statusbar</a></li>
-        
             <li><a href="#toolbar">Toolbar</a></li>
-        
-    
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#tree">Tree</a></li>
+            <li><a href="#plot">Plot</a></li>
     </ul>
 </div></div>
-            <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="v10-naming">v1.0 Naming</h1>
 <p>One of the features we are working towards in the 1.0 release, is a simplified way of adding, setting &amp; getting widgets.<br />
 Each widget will have a single function that supports all three actions.  </p>
-<p>If you combine this with the <a href="../pythonContextManager">context manager</a> feature, this becomes possible:</p>
+<p>If you combine this with the <a href="/pythonContextManager">context manager</a> feature, this becomes possible:</p>
 <pre><code class="python">from appJar import gui 
 
 def press(btnName):
@@ -681,7 +505,7 @@ app.label(&quot;SubTitle&quot;, sticky=&quot;ns&quot;, stretch=&quot;row&quot;)
 </tbody>
 </table>
 <h3 id="event-parameters">Event Parameters</h3>
-<p>Most of the widgets also have some support for events (see the <a href="../pythonEvents/#types-of-event">events page</a> for more information).<br />
+<p>Most of the widgets also have some support for events (see the <a href="/pythonEvents/#types-of-event">events page</a> for more information).<br />
 <code>submit</code> &amp; <code>change</code> will pass the name of the widget to the function, <code>drop</code> will pass the data to the function:<br />
 <strong>NB.</strong> the parameter should only be the name of the function, don't include any brackets.  </p>
 <pre><code class="python">def update(name):
@@ -744,7 +568,7 @@ app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
 </tbody>
 </table>
 <h3 id="other-parameters">Other Parameters</h3>
-<p>There are a couple of other parameter that can be set on widgets.  </p>
+<p>There are some other parameter that can be set on widgets.  </p>
 <table>
 <thead>
 <tr>
@@ -773,6 +597,18 @@ app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
 <td>None</td>
 <td>Pass either a font size, or a dictionary of font properties to use for this widget's font.</td>
 </tr>
+<tr>
+<td>focus</td>
+<td>boolean</td>
+<td>False</td>
+<td>Give keyboard focus to the widget.</td>
+</tr>
+<tr>
+<td>tip</td>
+<td>string</td>
+<td>None</td>
+<td>Sets text to show in a mouse-over tooltip.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="label">Label</h2>
@@ -782,7 +618,7 @@ app.image(&quot;img1&quot;, &quot;placeholder.gif&quot;, drop=True)
 <li><code>.label(title, value=None)</code><br />
 The <code>value</code> will be the text to show in the label.<br />
 Labels can receive a <code>submit</code> parameter, making them clickable.<br />
-Labels can receive <code>drop</code> data.  </li>
+Labels can receive a <code>drop</code> parameter, allowing them to receive drop events.  </li>
 </ul>
 <table>
 <thead>
@@ -808,7 +644,7 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <ul>
 <li><code>.message(title, value=None)</code><br />
     The <code>value</code> will be the text to show in the message.<br />
-    Messages can receive <code>drop</code> data.  </li>
+    Messages can receive a <code>drop</code> parameter, allowing them to receive drop events.  </li>
 </ul>
 <table>
 <thead>
@@ -841,7 +677,8 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <li><code>.entry(title, value=None)</code><br />
     A <code>value</code> is not required, but if provided will populate the entry.<br />
     Entries can receive a <code>change</code> parameter, and can link a <code>submit</code> parameter to pressing <ENTER>.<br />
-    Entries can receive <code>drop</code> data.  </li>
+    Entries can receive a <code>drop</code> parameter, allowing them to receive drop events.<br />
+    Entries can receive a <code>label</code> parameter - boolean to use the label's title or text to display.  </li>
 </ul>
 <table>
 <thead>
@@ -854,16 +691,10 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 </thead>
 <tbody>
 <tr>
-<td>label</td>
-<td>boolean/string</td>
-<td>False</td>
-<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
-</tr>
-<tr>
 <td>kind</td>
 <td>string</td>
 <td><code>standard</code></td>
-<td>One of: <code>standard</code>, <code>file</code>, <code>directory</code>, <code>numeric</code>, <code>auto</code> or <code>validation</code>.</td>
+<td>One of: <code>standard</code>, <code>open</code>, <code>save</code>, <code>directory</code>, <code>numeric</code>, <code>auto</code> or <code>validation</code>.</td>
 </tr>
 <tr>
 <td>secret</td>
@@ -878,12 +709,6 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <td>Sets default text to display in an empty entry.</td>
 </tr>
 <tr>
-<td>focus</td>
-<td>boolean</td>
-<td>False</td>
-<td>Should the entry box be given focus?</td>
-</tr>
-<tr>
 <td>rows</td>
 <td>integer</td>
 <td>10</td>
@@ -894,6 +719,12 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <td>string</td>
 <td>None</td>
 <td>Special parameter to change the BG of the validation label in a validaiton entry.</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>None</td>
+<td>Special parameter to change the text of the file entry button.</td>
 </tr>
 </tbody>
 </table>
@@ -929,7 +760,7 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <li><code>.text(title, value=None)</code><br />
     A <code>value</code> is not required, but if provided will populate the text.<br />
     Text boxes can receive a <code>change</code> parameter.<br />
-    Text boxes can receive <code>drop</code> data.  </li>
+    Text boxes can receive a <code>drop</code> parameter, allowing them to receive drop events.  </li>
 </ul>
 <table>
 <thead>
@@ -946,6 +777,24 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <td>boolean</td>
 <td>False</td>
 <td>Will configure this as a scrollable text area.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>list</td>
+<td>[]</td>
+<td>A list of tags, where each tag contains a name and dictionary of values.</td>
+</tr>
+<tr>
+<td>end</td>
+<td>boolean</td>
+<td>True</td>
+<td>Whether to add the new text to the end (True) or beginning (False)</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>boolean</td>
+<td>False</td>
+<td>Will replace any existing text in the text area when updating.</td>
 </tr>
 </tbody>
 </table>
@@ -1006,9 +855,9 @@ Will automatically wrap the text, based on either the <code>aspect</code> or <co
 <p>Radio buttons are used in groups, only one of them can be checked.<br />
 By default, the first radio button added to a group will be selected.</p>
 <ul>
-<li><code>.radio(title, value=None)</code><br />
+<li><code>.radio(title, name=None)</code><br />
     The <code>title</code> is the radio button's group.<br />
-    The <code>value</code> is the text to display next to this radio button.<br />
+    The <code>name</code> is the text to display next to this radio button.<br />
     Radio buttons can receive a <code>change</code> parameter, it will be linked to all radio buttons of the same <code>title</code>.  </li>
 </ul>
 <table>
@@ -1021,6 +870,12 @@ By default, the first radio button added to a group will be selected.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td><code>standard</code></td>
+<td>Set this to <code>square</code> to change the style of the radio buttons.<br>Not supported in ttk or on Mac.</td>
+</tr>
 <tr>
 <td>selected</td>
 <td>boolean</td>
@@ -1036,8 +891,9 @@ Setting this widget won't change the values, but change which one is selected.  
 <ul>
 <li><code>.option(title, value=None)</code><br />
     When adding, the <code>value</code> should contain a list of items to display in the drop-down.<br />
-    When setting, the <code>value</code> should contain the item to select.<br />
-    Options can receive a <code>change</code> parameter.  </li>
+    When setting, the <code>value</code> should contain the item to select, unless a differetn <code>mode</code> is set.<br />
+    Options can receive a <code>change</code> parameter.<br />
+    Options can receive a <code>label</code> parameter - boolean to use the label's title or text to display.  </li>
 </ul>
 <table>
 <thead>
@@ -1062,25 +918,31 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>Start with the specified item/position selected.</td>
 </tr>
 <tr>
-<td>checked</td>
-<td>boolean</td>
-<td>True</td>
-<td>When setting the widget, this determines what to do to the specified value. None will delete the value.</td>
-</tr>
-<tr>
-<td>label</td>
-<td>boolean/string</td>
-<td>False</td>
-<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
-</tr>
-<tr>
 <td>disabled</td>
 <td>string</td>
 <td>-</td>
 <td>Sets the character used to indicate disabled menu options.</td>
 </tr>
+<tr>
+<td>checked</td>
+<td>boolean</td>
+<td>True</td>
+<td>When <em>setting</em> the widget, this determines what to do to the specified value. None will delete the value.</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td><code>select</code></td>
+<td>One of: <code>select</code>, <code>change</code>, <code>rename</code>. <code>clear</code> or <code>delete</code> - see below.</td>
+</tr>
 </tbody>
 </table>
+<p>Different modes can be used when <em>setting</em> the widget:<br />
+<em> <code>select</code> - the default, the specified <code>value</code> will be selected.<br />
+</em> <code>clear</code> - deselects all items in the option box.<br />
+<em> <code>change</code> - the contents of the list will be replaced with a new listi, with an optional <code>index</code>.<br />
+</em> <code>rename</code> - this will change the text of an item in the option box, to the <code>newName</code>.<br />
+* <code>delete</code> - this will delete the specified option from the option box.  </p>
 <h2 id="spin">Spin</h2>
 <hr />
 <p>Shows a single value, with arrows to scroll up or down, allowing the user to change the value.<br />
@@ -1090,7 +952,8 @@ Setting this widget won't change the values, but change which one is selected.  
     If only the <code>value</code> is set, it should be a list of values to display in the spin box.<br />
     If <code>endValue</code> is also set, then both parameters should be integers, and appJar will generate a range of whole numbers between the two values.<br />
     When setting, the <code>value</code> will be selected.<br />
-    Spin boxes can receive a <code>change</code> parameter.  </li>
+    Spin boxes can receive a <code>change</code> parameter.<br />
+    Spin boxes can receive a <code>label</code> parameter - boolean to use the label's title or text to display.  </li>
 </ul>
 <table>
 <thead>
@@ -1109,7 +972,7 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>If specified, value &amp; endValue should be integers, and will be used to generate a range.</td>
 </tr>
 <tr>
-<td>pos</td>
+<td>selected</td>
 <td>integer</td>
 <td>0</td>
 <td>The position of an item to select.</td>
@@ -1119,12 +982,6 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>string</td>
 <td>None</td>
 <td>The name of an item to select.</td>
-</tr>
-<tr>
-<td>label</td>
-<td>boolean/string</td>
-<td>False</td>
-<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -1137,7 +994,7 @@ Setting this widget won't change the values, but change which one is selected.  
     When adding, the <code>value</code> should contain a list of items to display in the listbox.<br />
     When setting, the <code>value</code> should contain the item(s) to select.<br />
     Listboxes can receive a <code>change</code> parameter.<br />
-    Listboxes can receive <code>drop</code> data.  </li>
+    Listboxes can receive a <code>drop</code> parameter, allowing them to receive drop events.  </li>
 </ul>
 <table>
 <thead>
@@ -1173,15 +1030,31 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>None</td>
 <td>The position to select when the listbox is added.</td>
 </tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td><code>select</code></td>
+<td>One of: <code>select</code>, <code>change</code>, <code>rename</code>. <code>clear</code> or <code>delete</code> - see below.</td>
+</tr>
 </tbody>
 </table>
+<p>Different modes can be used when <em>setting</em> the widget:<br />
+<em> <code>select</code> - default, select the specified item(s) or all<br />
+</em> <code>deselect</code> - deselect the specified item(s), or all<br />
+<em> <code>toggle</code> - toggle the specified item(s), or all<br />
+</em> <code>clear</code> - clear any selected items
+<em> <code>rename</code> - rename the specified item<br />
+</em> <code>replace</code> - replace all items<br />
+<em> <code>add</code> - add the specified item(s)
+</em> <code>delete</code> - delete the specified item, or all</p>
 <h2 id="slider">Slider</h2>
 <hr />
 <p>A draggable widget, where the user can select a number from a range.  </p>
 <ul>
 <li><code>.slider(title, value=None)</code><br />
     The <code>value</code> is optional - it will set the starting position of the slider.<br />
-    Sliders can receive a <code>change</code> parameter.  </li>
+    Sliders can receive a <code>change</code> parameter.<br />
+    Sliders can receive a <code>label</code> parameter - boolean to use the label's title or text to display.  </li>
 </ul>
 <table>
 <thead>
@@ -1218,10 +1091,10 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>Configures the slider to show values, along its length, in steps of the value specified.</td>
 </tr>
 <tr>
-<td>label</td>
-<td>boolean/string</td>
-<td>False</td>
-<td>Adds a Label before the widget, either the label's title or the the text of this parameter.</td>
+<td>range</td>
+<td>list/tuple</td>
+<td>()</td>
+<td>Sets a start value and end value for the slider.</td>
 </tr>
 </tbody>
 </table>
@@ -1267,15 +1140,13 @@ Setting this widget won't change the values, but change which one is selected.  
 <hr />
 <p>Displays a draggable icon, which allows the GUI to be moved.  </p>
 <ul>
-<li><code>.grip(title, value=None)</code><br />
-    A <code>value</code> is not required.  </li>
+<li><code>.grip()</code>  </li>
 </ul>
 <h2 id="separator">Separator</h2>
 <hr />
 <p>Displays a line, giving visual separation in the GUI.  </p>
 <ul>
-<li><code>.separator(title, value=None)</code><br />
-    A <code>value</code> is not required.  </li>
+<li><code>.separator()</code>  </li>
 </ul>
 <table>
 <thead>
@@ -1293,6 +1164,12 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>horizontal</td>
 <td>Set the orientation of the separator: <code>horizontal</code> or <code>vertical</code>.</td>
 </tr>
+<tr>
+<td>colour</td>
+<td>string</td>
+<td>None</td>
+<td>Set a colour for the separator.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="image">Image</h2>
@@ -1302,7 +1179,7 @@ Setting this widget won't change the values, but change which one is selected.  
 <li><code>.image(title, value=None)</code>
     The <code>value</code> should be the image file, icon or data to show.<br />
     Images can receive a <code>submit</code> parameter, making them clickable.<br />
-    Images can receive <code>drop</code> data.  </li>
+    Images can receive a <code>drop</code> parameter, allowing them to receive drop events.  </li>
 </ul>
 <table>
 <thead>
@@ -1397,10 +1274,11 @@ Setting this widget won't change the values, but change which one is selected.  
 <hr />
 <p>Displays a popUp.  </p>
 <ul>
-<li><code>.popUp(title, message, kind="info", parent=None)</code><br />
+<li><code>.popUp(title, message=None, kind="info", parent=None)</code><br />
     This will show any of the available popUps.<br />
 <code>title</code>  will be displayed in the title bar.
     <code>message</code> will be displayed as the text of the popUp.<br />
+    If no <code>message</code> is set, <code>message</code> will be set to <code>title</code> and <code>title</code> will be set to <code>kind</code><br />
 <code>kind</code> defaults to <code>info</code>, but can be any of: <code>error</code>, <code>warning</code>, <code>yesno</code>, <code>question</code>, <code>ok</code>, <code>retry</code>, <code>string</code>, <code>integer</code>, <code>float</code>, <code>text</code> or <code>number</code>.<br />
 <code>parent</code> allows you to link this popUp to a named SubWindow, instead of the main window.  </li>
 </ul>
@@ -1432,7 +1310,7 @@ Setting this widget won't change the values, but change which one is selected.  
 <p>Displays the toolbar.  </p>
 <ul>
 <li><code>.toolbar(names, funcs, **kwargs)</code>
-    <code>names</code> should be th elist of button names to display on the toolbar.<br />
+    <code>names</code> should be the list of button names to display on the toolbar.<br />
 <code>funcs</code> should contain either a single function, that all buttons will be linked to, or a list of functions for each button.</li>
 </ul>
 <table>
@@ -1447,9 +1325,15 @@ Setting this widget won't change the values, but change which one is selected.  
 <tbody>
 <tr>
 <td>icons</td>
-<td>boolean</td>
+<td>boolean/list</td>
 <td>False</td>
-<td>Determines if appJar should try to find icons for each menu item.</td>
+<td>Determines if appJar should try to find icons for each menu item (<code>True</code>) or a list of icon names.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>list</td>
+<td>[]</td>
+<td>The enabled status of each button (<code>False</code> to disable).</td>
 </tr>
 <tr>
 <td>pinned</td>
@@ -1470,59 +1354,294 @@ Setting this widget won't change the values, but change which one is selected.  
 <td>Determines if the toolbar should start hidden or not. When hidden it is completley removed from the GUI.</td>
 </tr>
 </tbody>
+</table>
+<h2 id="menu">Menu</h2>
+<hr />
+<p>Displays a menubar  </p>
+<ul>
+<li><code>.menu(menu, name, func, **kwargs)</code><br />
+<code>menu</code> the text of the menu to add the item to<br />
+<code>name</code> the text of the item to add, if a list is provided then multiple items will be created<br />
+<code>func</code> the function to call when the menu item is selected. If <code>name</code> is a list, this can be a corresponding list.  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td>string</td>
+<td>button</td>
+<td>The type of item to add: <code>button</code>, <code>sub</code>, <code>menu</code>, <code>sep</code>, <code>check</code>, <code>radio</code></td>
+</tr>
+<tr>
+<td>group</td>
+<td>string</td>
+<td>None</td>
+<td>Only used for radio buttons, the group to add the button to.<br>It's not necessary to set <code>kind</code> if this is set.</td>
+</tr>
+<tr>
+<td>shortcut</td>
+<td>string</td>
+<td>None</td>
+<td>A keyboard shortcut, to associate with the menu item.</td>
+</tr>
+<tr>
+<td>underline</td>
+<td>int</td>
+<td>-1</td>
+<td>Which letter in the item name to underline (not all platforms).</td>
+</tr>
+<tr>
+<td>tear</td>
+<td>boolean</td>
+<td>False</td>
+<td>Only used for toplevel menus, configures them to be tearable (not all platforms).</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>"enabled"</td>
+<td>Whether the menu item should be <code>enabled</code> or <code>disabled</code></td>
+</tr>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>None</td>
+<td>The path to an image to put alongside the menu item.</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>string</td>
+<td>None</td>
+<td>The name of an icon to put alongside the menu item.</td>
+</tr>
+<tr>
+<td>align</td>
+<td>string</td>
+<td>"left"</td>
+<td>If an image/icon is added, how to align it alongside the text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tree">Tree</h2>
+<hr />
+<p>Displays the tree widget.  </p>
+<ul>
+<li><code>.tree(title, value, **kwargs)</code>
+    The <code>value</code> should either by an XML string, or XML <code>Document</code> object  </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>function</td>
+<td>None</td>
+<td>A function to call when a node is clicked.</td>
+</tr>
+<tr>
+<td>dbl</td>
+<td>function</td>
+<td>None</td>
+<td>A function to call when a node is double-clicked.</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>function</td>
+<td>None</td>
+<td>A function to call when a node is edited.</td>
+</tr>
+<tr>
+<td>editable</td>
+<td>boolean</td>
+<td>None</td>
+<td>Determines if nodes are editable or not.</td>
+</tr>
+<tr>
+<td>attributes</td>
+<td>boolean</td>
+<td>None</td>
+<td>Determines if attributes should be shown in the tree.</td>
+</tr>
+<tr>
+<td>fg</td>
+<td>string</td>
+<td>None</td>
+<td>The foreground colour of the widget.</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>string</td>
+<td>None</td>
+<td>The background colour of the widget.</td>
+</tr>
+<tr>
+<td>fgH</td>
+<td>string</td>
+<td>None</td>
+<td>The foreground colour of a selected node.</td>
+</tr>
+<tr>
+<td>bgH</td>
+<td>string</td>
+<td>None</td>
+<td>The background colour of a selected node.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plot">Plot</h2>
+<hr />
+<p>Displays matplotlib widgets.  </p>
+<ul>
+<li><code>.plot(title, **kwargs)</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Data type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t</td>
+<td>list</td>
+<td>None</td>
+<td>The x values if required.</td>
+</tr>
+<tr>
+<td>s</td>
+<td>list</td>
+<td>None</td>
+<td>The y values if required.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>int</td>
+<td>None</td>
+<td>A width for the plot.</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int</td>
+<td>None</td>
+<td>A height for the plot.</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>boolean</td>
+<td>false</td>
+<td>Whether to show a navigation bar or not.</td>
+</tr>
+</tbody>
 </table></div>
         </div>
 
         <footer class="col-md-12">
-            <hr>
-            <div style='text-align: center;'>
-            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-            <br>
-            <br>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Footer -->
-            <ins class="adsbygoogle"
-                style="display:inline-block;width:728px;height:90px"
-                data-ad-client="ca-pub-6185596049817878"
-                data-ad-slot="2795191172"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-            
-                <hr>
-                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
-            
-        </footer>
+<!-- Google Ads -->
+    <hr>
+    <div style='text-align: center;'>
+    <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+    <br>
+    <br>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Footer -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:728px;height:90px"
+            data-ad-client="ca-pub-6185596049817878"
+            data-ad-slot="2795191172"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script>
+    <hr>
+        <p><p><a href='/License'>&#169; Richard Jarvis, 2015-2019</a></p></p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
     </body>
 </html>

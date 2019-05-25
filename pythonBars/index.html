@@ -4,493 +4,334 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
         
         <meta name="author" content="Richard Jarvis">
         <link rel="canonical" href="http://appjar.info/pythonBars/">
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        
-        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
-        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
-
+        <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Bars - appJar</title>
-
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.css" rel="stylesheet">
-        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <link href="../extra.css" rel="stylesheet">
-
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-79206647-1', 'appjar.info');
             ga('send', 'pageview');
         </script>
-        
-
-        <!--
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-6185596049817878",
-            enable_page_level_ads: true
-            });
-        </script>
-        -->
-        
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+    <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
     </head>
 
     <body>
+    <div class="corner-ribbon">
+        <a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.94 out now!</a>
+    </div>
 
-        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">appJar</a>
+                </div>
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="..">appJar</a>
-        </div>
-
-        
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-                
-            
-                
-                    
-                        <li class="dropdown active">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Widgets</a>
+    <a href="#">Widgets</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../outputWidgets/">Output Widgets</a>
 </li>
-
-        
             
 <li >
     <a href="../inputWidgets/">Input Widgets</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonImages/">Images</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonWidgetGrouping/">Containers</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonDevWidgets/">Beta Widgets</a>
 </li>
-
-        
             
 <li >
     <a href="../simpleAppJar/">(v1.0 Naming)</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li class="active">
     <a href="./">Bars</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonDialogs/">Pop-ups</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSound/">Sounds</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSubWindows/">Multiple Windows</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../multiplePages/">Multiple Pages</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../splash/">Splashscreen</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../specialCharacters/">Special Characters</a>
 </li>
-
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-                
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
 <li >
     <a href="../pythonGuiOptions/">GUI Options</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Widgets</a>
+    <a href="#">Widgets</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonWidgetLayout/">Layout</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonWidgetOptions/">Configuration</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonContextManager/">The power of WITH</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Events</a>
+    <a href="#">Events</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonEvents/">Events</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonThreads/">Threads</a>
 </li>
-
-        
             
 <li >
     <a href="../pythonDnD/">Drag'n Drop</a>
 </li>
-
-        
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonInternationalisation/">Internationalisation</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonSettings/">Saving Settings</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonLogging/">Logging</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonCommandLine/">Command Line Arguments</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../pythonTtk/">ttk (BETA)</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../clipboard/">Clipboard</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../simpleProperties/">(v1.0 Properties)</a>
 </li>
-
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-                
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            
-                                
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
 <li >
     <a href="../guidance/">Guidance</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Examples</a>
+    <a href="#">Examples</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
 </li>
-
-        
             
 <li >
     <a href="../examples/simple/">Simple Layout</a>
 </li>
-
-        
+            
+<li >
+    <a href="../examples/stylesheets/">Stylesheets</a>
+</li>
+            
+<li >
+    <a href="../examples/kanban/">Kanban/To Do</a>
+</li>
     </ul>
   </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Install/">Installation</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../packaging/">Packaging</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../License/">License</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Support/">Support</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../appJarLimitations/">Limitations</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../Thanks/">Acknowledgements</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../advertising/">Advertising</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../contributing/">Contributing</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../whatsNew/">Change-Log</a>
 </li>
-
-                            
-                                
+                                    
 <li >
     <a href="../oldDocs/">Old Documentation</a>
 </li>
-
-                            
-                                
+                                    
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">Other Help</a>
+    <a href="#">Other Help</a>
     <ul class="dropdown-menu">
-        
             
 <li >
     <a href="../pythonBasics/">Python</a>
 </li>
-
-        
             
 <li >
     <a href="../algorithms/">Algorithms</a>
 </li>
-
-        
             
 <li >
     <a href="../gitGuide/">Git & PyPi</a>
 </li>
-
-        
     </ul>
   </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                            
-                            </ul>
-                        </li>
-                    
-                
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/pythonLessons" target="_blank">
-                    <i class="fa fa-mortar-board"></i> Learn
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
-                    <i class="fa fa-youtube"></i> Watch
-                    </a>
-                </li>
-<!--
-                <li >
-                    <a rel="next" href="../simpleAppJar/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../pythonDialogs/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
--->
-                
-                <li>
-                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
-                        
-                            <i class="fa fa-github"></i>
-                        
-                        GitHub
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-            </ul>
+                    <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+        <a href="/pythonLessons" target="_blank">
+            <i class="fa fa-mortar-board"></i> Learn
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+            <i class="fa fa-youtube"></i> Watch
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://github.com/jarvisteach/appJar/">
+            <i class="fa fa-github"></i> GitHub
+        </a>
+    </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                <i class="fa fa-search"></i> Search
+            </a>
+        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</a></li>
-        
             <li><a href="#toolbar">Toolbar</a></li>
-        
             <li><a href="#menubar">Menubar</a></li>
-        
             <li><a href="#statusbar">Statusbar</a></li>
-        
-    
     </ul>
 </div></div>
-            <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="toolbars-menubars-statusbars">Toolbars, Menubars &amp; Statusbars</h1>
 <hr />
@@ -564,10 +405,15 @@ app.addToolbar(tools, tbFunc, findIcon=True)
     Will remove all buttons from the toolbar.<br />
     The empty toolbar will be hidden, unless <code>hide</code> is set to False.  </p>
 </li>
+<li>
+<p><code>.setToolbarBg(bg)</code><br />
+    Will change the toolbar to be the specified colour.<br />
+    The empty toolbar will be hidden, unless <code>hide</code> is set to False.  </p>
+</li>
 </ul>
 <hr />
 <p><div style='text-align: center;'>
-<em>Advertisement&nbsp;<sup><a href="../advertising">why?</a></sup></em>
+<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
     style="display:block"
@@ -580,46 +426,54 @@ app.addToolbar(tools, tbFunc, findIcon=True)
 <hr />
 <h2 id="menubar">Menubar</h2>
 <hr />
-<p>Adds a standard Menubar along the top of the GUI.<br />
-On Windows/Linux a menubar will only be shown, once the first menu has been added.<br />
-On Mac, a menubar is always present.<br />
-Menubars are made up of a series of menus, each containing a list of names.<br />
-These names can be menu-items, radio buttons, check boxes, separators, or sub-menus.  </p>
-<h4 id="create-menus">Create Menus</h4>
+<p>Adds a Menubar along the top of the GUI.  </p>
 <ul>
-<li><code>.addMenuList(menu, names, functions)</code><br />
-    Will create a new menu, with the specified title, containing the list of names.<br />
-    Pass a single function - all names will call that function, passing their name.<br />
-    Or a list of functions (the same length as the names), each menu will call the corresponding function.<br />
-    If a name is <code>-</code>, then a separator will be added to the menu.  </li>
+<li>On Windows/Linux a menubar will only be shown, once the first menu has been added.  </li>
+<li>On Mac, a menubar is always present.  </li>
 </ul>
+<p>Menubars are made up of a series of menus, each containing a list of items:  </p>
+<ul>
+<li>Menu-items - a clickable button, that calls a function  </li>
+<li>Radio-buttons - groups of options, only one of which can be selected  </li>
+<li>Checkboxes - boxes that can be ticked or unticked  </li>
+<li>Separators - lines to help group items together  </li>
+<li>Submenus - another menu, with its own list of items  </li>
+</ul>
+<h4 id="create-menus">Create Menus</h4>
 <p><img alt="MenuList" src="../img/menu_1.png" />    </p>
 <pre><code class="python">fileMenus = [&quot;Open&quot;, &quot;Save&quot;, &quot;Save as...&quot;, &quot;-&quot;, &quot;Export&quot;, &quot;Print&quot;, &quot;-&quot;, &quot;Close&quot;]
-app.addMenuList(&quot;File&quot;, fileMenus, menuPress)
+app.addMenuList(&quot;File&quot;, fileMenus, menuPress) # create the File menu, with the list of items
 </code></pre>
 
 <ul>
+<li>
+<p><code>.addMenuList(menu, names, functions)</code><br />
+    Will create a new menu, containing the list of names.<br />
+    Provide a single function - all names will call that function, passing their name.<br />
+    Or a list of functions (the same length as names), each menu will call the corresponding function.<br />
+    If a name is a <code>-</code>, then a separator will be added to the menu.  </p>
+</li>
 <li>
 <p><code>.createMenu(menu, tearable=False)</code><br />
     Will create a new, empty menu, to add menu-items to.</p>
 </li>
 <li>
 <p><code>.addMenuItem(menu, name, func=None, shortcut=None, underline=-1)</code><br />
-    Add a menu-item to the named menu, with the specified function.<br />
+    Add a menu-item to the menu, with the specified function.<br />
     If the named menu does not exist, it will be automatically created.<br />
     If the name is <code>-</code>, then a separator will be added to the menu.  </p>
 </li>
 <li>
 <p><code>.addMenuSeparator(menu)</code><br />
-    Add a separator to the named menu.  </p>
+    Add a separator to the menu.  </p>
 </li>
 <li>
 <p><code>.addMenuCheckBox(menu, name, function=None, shortcut=None, underline=-1)</code><br />
-    Add a check box, to the named menu, with the specified name.  </p>
+    Add a check box, to the menu, with the specified name.  </p>
 </li>
 <li>
 <p><code>.addMenuRadioButton(menu, name, value, function=None, shortcut=None, underline=-1)</code><br />
-    Add a radio button, to the named menu, grouped by name, with the specified value.  </p>
+    Add a radio button, to the menu, grouped by name, with the specified value.  </p>
 </li>
 </ul>
 <p><img alt="MenuRB_CB" src="../img/menu_2.png" /></p>
@@ -649,7 +503,8 @@ for i in range(5):
 
 <ul>
 <li><code>.addMenu(menu, function, shortcut=None, underline=-1)</code><br />
-    Adds a single menu, with no list of menu-items,  that will call the specified function.  </li>
+    This is a special case, and doesn't work on all platforms.
+    Adds a single menu, with no list of menu-items,  that calls the specified function.  </li>
 </ul>
 <h4 id="set-menus">Set Menus</h4>
 <ul>
@@ -671,7 +526,7 @@ for i in range(5):
 </li>
 <li>
 <p><code>.disableMenuItem(menu, name)</code> &amp; <code>.enableMenuItem(menu, name)</code><br />
-    Will enable/disable the specified menu name.  </p>
+    Will enable/disable the specified menu-item.  </p>
 </li>
 <li>
 <p><code>.disableMenu(menu)</code> &amp; <code>.enableMenu(menu)</code><br />
@@ -680,7 +535,11 @@ for i in range(5):
 <li>
 <p><code>.disableMenubar()</code> &amp; <code>.enableMenubar()</code><br />
     Will disable/enable all menus.<br />
-    NB. currently doesn't disable entries in default Mac menus.  </p>
+<strong>NB.</strong> currently doesn't disable entries in default Mac menus.  </p>
+</li>
+<li>
+<p><code>.deleteMenuItem(menu, name)</code><br />
+    Will delete the named item from the specified menu.  </p>
 </li>
 </ul>
 <h4 id="get-menus">Get Menus</h4>
@@ -698,64 +557,83 @@ for i in range(5):
 </ul>
 <hr />
 <h4 id="extra-features">Extra Features:</h4>
+<p>These options aren't available when you add a list of menu-items, only when you call the specific add function.  </p>
 <ul>
+<li><code>underline</code> - if set to an Integer, the corresponding character will be underlined.  </li>
+<li><code>tearable</code> - if set to True, it's possible to undock the menu.  </li>
 <li>
-<p><code>shortcut</code> These are keyboard shortcuts to call a menu-item.<br />
-    These should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
-    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code><br />
-    The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
-</li>
-<li>
-<p><code>underline</code> If set to an Integer, the corresponding character will be underlined.  </p>
-</li>
-<li>
-<p><code>tearable</code> If this is set to True, it's possible to undock the menu.  </p>
+<p><code>shortcut</code> - these are keyboard shortcuts you press, to call a menu-item.<br />
+    They should always be a combination of <em>special keys</em> and a <em>regular key</em>, separated by dashes.<br />
+    e.g. <code>"Control-s"</code> or <code>"Control-Shift-z"</code>  </p>
+<p>The following <em>special keys</em> are available: <code>Control</code>, <code>Option</code>, <code>Alt</code>, <code>Shift</code>, <code>Command</code>, <code>Meta</code>  </p>
+<p>There are some special cases:  </p>
+<ul>
+<li>If you want to use numbers, you need to use the format: <code>Control-Key-3</code>  </li>
+<li>If you want some of the special characters, you may need to use their name: <code>Control-slash</code>, <code>Control-Up</code>  </li>
+</ul>
+<p><strong>NB.</strong> don't include angle brackets <code>&lt;&gt;</code> around the shortcut.<br />
+<strong>NB.</strong> Lookout for clashes with regular <a href="/pythonEvents/#binding-keys">key bindings</a>  </p>
 </li>
 </ul>
 <hr />
 <h4 id="platform-specificcustom-menus">Platform Specific/Custom Menus</h4>
-<p>It's possible to interact with menus that are specific to particular platforms, or prebuilt for specific purposes.<br />
-Simply use the menu names given below when adding menu-items to a menu.  </p>
+<p>There are a few special menus available; pop-up menus, that appear when you right-click a widget and platform specific menus.
+To add items to these menus, use the menu names given below (eg. <code>app.addMenuItem('EDIT', 'Name', func)</code>)  </p>
 <ul>
 <li>
-<p><strong>Generic</strong>  </p>
+<p><strong>Right-Click Menus</strong>  </p>
 <ul>
 <li>
-<p><strong>Right-click Menu</strong><br />
-    Call <code>.createRightClickMenu(menu, showInBar=False)</code> to create an empty <strong>right-click menu</strong> <br />
-    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.<br />
-    The right-click menu can be populated the same way as a regular menu.  </p>
-<p>To link the <strong>right-click menu</strong> to a widget, call <code>.setXXXRightClick(widgetName, menu)</code>  </p>
-</li>
-<li>
-<p><strong>Edit Menu</strong> - <code>EDIT</code> provides a right-click, <em>cut &amp; paste</em> menu automatically linked to all <strong>text</strong>, <strong>entry</strong> &amp; <strong>option boxes</strong>.<br />
+<p><strong>Edit Menu</strong> (name: <code>EDIT</code>) - provides a <em>cut &amp; paste</em> style menu linked to all <strong>text</strong>, <strong>entry</strong> &amp; <strong>option boxes</strong>.<br />
     Call <code>.addMenuEdit(inMenuBar=False)</code> to enable the <em>Edit</em> menu.<br />
-    Set the parameter to True, to also show it in the menu bar.<br />
+    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.<br />
     This menu does its best to show the appropriate options, for all situations - but doesn't know when you can't <em>redo</em> an action.  </p>
 </li>
+<li>
+<p><strong>Generic Menu</strong><br />
+    Call <code>.createRightClickMenu(menu, showInBar=False)</code> to create an empty <strong>right-click menu</strong> <br />
+    If <code>showInBar</code> is set to <code>True</code>, the Menu will also appear in the topLevel Menubar.<br />
+    The right-click menu can be populated the same way as regular menus.  </p>
+<p>To link the <strong>right-click menu</strong> to a widget, call <code>.setXXXRightClick(widgetName, menu)</code>  </p>
+</li>
 </ul>
 </li>
-<li>
-<p><strong>Windows</strong>  </p>
+</ul>
+<p><img alt="Right-click Menu" src="../img/menu_5.png" />  </p>
+<pre><code class="python">app.createRightClickMenu(&quot;Information&quot;, False)
+app.addMenuList(&quot;Information&quot;, [&quot;Information&quot;, &quot;-&quot;, &quot;Option 1&quot;, &quot;Option 2&quot;, &quot;Option 3&quot;], infoMenu)
+app.disableMenuItem(&quot;Information&quot;, &quot;Information&quot;) # disable the title
+app.addLabel(&quot;Press me&quot;)
+app.setLabelRightClick(&quot;Press me&quot;, &quot;Information&quot;)
+</code></pre>
+
 <ul>
-<li><strong>System Menu</strong> - <code>WIN_SYS</code> accessed by clicking the icon in the top left corner of the GUI.  </li>
+<li><strong>Windows</strong>  <ul>
+<li><strong>System Menu</strong> (name: <code>WIN_SYS</code>) - accessed by clicking the icon in the top left corner of the GUI.<br />
+<br></li>
 </ul>
 </li>
 <li>
-<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menus-item. <br />
+<p><strong>Mac</strong> - there are three <em>default</em> menus, each containing platform specific menu-items. <br />
     There are also a couple of menu-items the user can/should provide.  </p>
 <ul>
-<li><strong>Application Menu</strong> - <code>MAC_APP</code> after the Apple logo (), usually called <em>Python</em>.<br />
+<li>
+<p><strong>Application Menu</strong> (name: <code>MAC_APP</code>) - after the Apple logo (), usually called <em>Python</em>.<br />
     This menu is always present, and cannot be renamed - no matter how much I wish it could!<br />
-    Call <code>.addMenuPreferences(function)</code> to enable the <em>Preferences</em> menu-item, within the <em>Application Menu</em>.  </li>
-<li><strong>Window Menu</strong> - <code>MAC_WIN</code> contains menu-items related to windows. <br />
-    To access this menu, you must first call <code>.addMenuWindow()</code>  </li>
-<li><strong>Help Menu</strong> - <code>MAC_HELP</code> provides a <em>Search</em> menu-item <br />
-    To access this menu, you must first call <code>.addMenuHelp(function)</code>, passing the function to call for the default <em>Python Help</em> menu-item.  </li>
+    Call <code>.addMenuPreferences(function)</code> to enable the <em>Preferences</em> menu-item, within the <em>Application Menu</em>.  </p>
+</li>
+<li>
+<p><strong>Window Menu</strong> (name: <code>MAC_WIN</code>) - contains menu-items related to windows. <br />
+    To access this menu, you must first call <code>.addMenuWindow()</code>  </p>
+</li>
+<li>
+<p><strong>Help Menu</strong> (name: <code>MAC_HELP</code>) - provides a <em>Search</em> menu-item <br />
+    To access this menu, you must first call <code>.addMenuHelp(function)</code>, passing the function to call for the default <em>Python Help</em> menu-item.  </p>
+</li>
 </ul>
 </li>
 <li>
-<p><strong>Linux</strong> - by default, there is no menu, but it's easy enough to get access to the appJar menus:</p>
+<p><strong>Linux</strong> - by default, there is no menu, but it's easy enough to include the appJar menus:</p>
 </li>
 </ul>
 <p><img alt="Linux Menu" src="../img/menu_4.png" />  </p>
@@ -823,55 +701,94 @@ app.setStatusbarFg(&quot;white&quot;, 2)
         </div>
 
         <footer class="col-md-12">
-            <hr>
-            <div style='text-align: center;'>
-            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
-            <br>
-            <br>
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Footer -->
-            <ins class="adsbygoogle"
-                style="display:inline-block;width:728px;height:90px"
-                data-ad-client="ca-pub-6185596049817878"
-                data-ad-slot="2795191172"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-            
-                <hr>
-                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
-            
-        </footer>
+<!-- Google Ads -->
+    <hr>
+    <div style='text-align: center;'>
+    <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+    <br>
+    <br>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Footer -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:728px;height:90px"
+            data-ad-client="ca-pub-6185596049817878"
+            data-ad-slot="2795191172"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script>
+    <hr>
+        <p><p><a href='/License'>&#169; Richard Jarvis, 2015-2019</a></p></p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
     </body>
 </html>

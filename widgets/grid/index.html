@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/widgets/grid/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Grid - appJar</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+    <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+    <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+    </head>
+
+    <body>
+    <div class="corner-ribbon">
+        <a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.94 out now!</a>
+    </div>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">appJar</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Widgets</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../outputWidgets/">Output Widgets</a>
+</li>
+            
+<li >
+    <a href="../../inputWidgets/">Input Widgets</a>
+</li>
+            
+<li >
+    <a href="../../pythonImages/">Images</a>
+</li>
+            
+<li >
+    <a href="../../pythonWidgetGrouping/">Containers</a>
+</li>
+            
+<li >
+    <a href="../../pythonDevWidgets/">Beta Widgets</a>
+</li>
+            
+<li >
+    <a href="../../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../pythonBars/">Bars</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonDialogs/">Pop-ups</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonSound/">Sounds</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonWidgetGrouping/">Grouping Widgets</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonSubWindows/">Multiple Windows</a>
+</li>
+                                    
+<li >
+    <a href="../../multiplePages/">Multiple Pages</a>
+</li>
+                                    
+<li >
+    <a href="../../splash/">Splashscreen</a>
+</li>
+                                    
+<li >
+    <a href="../../specialCharacters/">Special Characters</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../pythonGuiOptions/">GUI Options</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Widgets</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../pythonWidgetLayout/">Layout</a>
+</li>
+            
+<li >
+    <a href="../../pythonWidgetOptions/">Configuration</a>
+</li>
+            
+<li >
+    <a href="../../pythonContextManager/">The power of WITH</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Events</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../pythonEvents/">Events</a>
+</li>
+            
+<li >
+    <a href="../../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+            
+<li >
+    <a href="../../pythonThreads/">Threads</a>
+</li>
+            
+<li >
+    <a href="../../pythonDnD/">Drag'n Drop</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../pythonInternationalisation/">Internationalisation</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonSettings/">Saving Settings</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonLogging/">Logging</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonCommandLine/">Command Line Arguments</a>
+</li>
+                                    
+<li >
+    <a href="../../pythonTtk/">ttk (BETA)</a>
+</li>
+                                    
+<li >
+    <a href="../../clipboard/">Clipboard</a>
+</li>
+                                    
+<li >
+    <a href="../../simpleProperties/">(v1.0 Properties)</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../guidance/">Guidance</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Examples</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+            
+<li >
+    <a href="../../examples/simple/">Simple Layout</a>
+</li>
+            
+<li >
+    <a href="../../examples/stylesheets/">Stylesheets</a>
+</li>
+            
+<li >
+    <a href="../../examples/kanban/">Kanban/To Do</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../Install/">Installation</a>
+</li>
+                                    
+<li >
+    <a href="../../packaging/">Packaging</a>
+</li>
+                                    
+<li >
+    <a href="../../License/">License</a>
+</li>
+                                    
+<li >
+    <a href="../../Support/">Support</a>
+</li>
+                                    
+<li >
+    <a href="../../appJarLimitations/">Limitations</a>
+</li>
+                                    
+<li >
+    <a href="../../Thanks/">Acknowledgements</a>
+</li>
+                                    
+<li >
+    <a href="../../advertising/">Advertising</a>
+</li>
+                                    
+<li >
+    <a href="../../contributing/">Contributing</a>
+</li>
+                                    
+<li >
+    <a href="../../whatsNew/">Change-Log</a>
+</li>
+                                    
+<li >
+    <a href="../../oldDocs/">Old Documentation</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Other Help</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../pythonBasics/">Python</a>
+</li>
+            
+<li >
+    <a href="../../algorithms/">Algorithms</a>
+</li>
+            
+<li >
+    <a href="../../gitGuide/">Git & PyPi</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+    <li class="nav-item">
+        <a href="/pythonLessons" target="_blank">
+            <i class="fa fa-mortar-board"></i> Learn
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+            <i class="fa fa-youtube"></i> Watch
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="https://github.com/jarvisteach/appJar/">
+            <i class="fa fa-github"></i> GitHub
+        </a>
+    </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                <i class="fa fa-search"></i> Search
+            </a>
+        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#grid-beta">Grid (beta)</a></li>
+            <li><a href="#add-grids">Add Grids</a></li>
+            <li><a href="#connecting-to-databases">Connecting to Databases</a></li>
+            <li><a href="#get-grids">Get Grids</a></li>
+            <li><a href="#set-grids">Set Grids</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h3 id="grid-beta">Grid (<a href="https://en.wikipedia.org/wiki/Software_release_life_cycle#BETA">beta</a>)</h3>
+<hr />
+<p>Used to create a spreadsheet like interface.<br />
+The grid has mouse interactivity, with mouse-over highlighting, and mouse-click highlighting.<br />
+It is possible to include buttons at the end of each row, and an additional row of entry boxes, with their own button.  </p>
+<p><img alt="Grid" src="../../img/dev/grid.png" />  </p>
+<pre><code class="python">from appJar import gui
+
+app = gui()
+app.setFont(20)
+app.addGrid(&quot;g1&quot;,
+    [[&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;],
+    [&quot;Fred&quot;, 45, &quot;Male&quot;],
+    [&quot;Tina&quot;, 37, &quot;Female&quot;],
+    [&quot;Clive&quot;, 28, &quot;Male&quot;],
+    [&quot;Betty&quot;, 51, &quot;Female&quot;]])
+app.go()
+</code></pre>
+
+<h4 id="add-grids">Add Grids</h4>
+<ul>
+<li>
+<p><code>.addGrid(title, data, action=None, addRow=None)</code><br />
+    Receives a (jagged) 2D list of values. The first list should be the headers for the grid, the rest will contain each row of values.  </p>
+<p>If <code>action</code> is set, a button will be created, at the end of each row, calling the specified function. It will pass the row number (starting at 0).  </p>
+<p><img alt="Grid" src="../../img/dev/grid_2.png" />   </p>
+<p>If <code>addRow</code> is set, then an additional row will appear at the end of the grid, with entry boxes and a button to call the specified function.<br />
+The button will pass the string <code>newRow</code> to the specified function.  </p>
+<p><img alt="Grid" src="../../img/dev/grid_3.png" />   </p>
+<p>If both parameters are set to a function, then both buttons at the end of each row and a row of Entry boxes will be shown:  </p>
+<p><img alt="Grid" src="../../img/dev/grid_4.png" />   </p>
+<p>It's also possible to set the following parameters:<br />
+    * <code>actionHeading</code> - set the title of the right column<br />
+    * <code>actionButton</code> - set the button text for each row<br />
+    * <code>addButton</code> - set the button text for the Entry row<br />
+    * <code>showMenu</code> - boolean to show a right-click menu  </p>
+<p><img alt="Grid" src="../../img/dev/1_gridMenu.png" />   </p>
+</li>
+</ul>
+<h4 id="connecting-to-databases">Connecting to Databases</h4>
+<ul>
+<li>
+<p><code>.addDbGrid(title, db, table)</code><br />
+    Will connect to the specified database, and show all rows in the specified table.<br />
+    appJar will query the table to detect the PrimaryKey, and use this as the key when selecting the row.</p>
+</li>
+<li>
+<p><code>.replaceDBGrid(title, db, table)</code><br />
+    Will replace the currently shown data in the grid, with the data found in the specified database/table.  </p>
+</li>
+</ul>
+<h4 id="get-grids">Get Grids</h4>
+<ul>
+<li>
+<p><code>.getGridRow(title, rowNumber)</code><br />
+    Returns a list of values representing the specified row.  </p>
+</li>
+<li>
+<p><code>.getGridRowCount(title)</code><br />
+    Returns a count of how many rows are in the grid (not including the header row).  </p>
+</li>
+<li>
+<p><code>.getGridSelectedCells(title)</code><br />
+    Gets a dictionary of booleans, indicating the status of each cell.<br />
+    True indicates the cell is selected, False indicates the cell is not selected.<br />
+    The name of each entry on the dictionary will be in the format ROW-COLUMN, eg. 0-2  </p>
+</li>
+<li>
+<p><code>.getGridEntries(title)</code><br />
+    If <code>addRow</code> was set when the <em>Grid</em> was created, this function will get the contents of the entry boxes.<br />
+    They will be returned as a list, in the same order as the entry boxes.  </p>
+</li>
+</ul>
+<h4 id="set-grids">Set Grids</h4>
+<ul>
+<li><code>.addGridRow(title, data)</code><br />
+    Adds a new row of data to the end of the existing grid.<br />
+    It will be positioned at the bottom of the grid, above the entry boxes if present.  </li>
+</ul>
+<p>To have the <strong>Press</strong> button on the entries row add a new row of data, try the following:  </p>
+<pre><code class="python">    def press(btn):
+        if btn == &quot;addRow&quot;:     # the button on the entries row
+            data = app.getGridEntries(&quot;g1&quot;)
+            app.addGridRow(&quot;g1&quot;, data)
+</code></pre>
+
+<ul>
+<li>
+<p><code>.addGridRows(title, data)</code><br />
+    Adds the new rows of data to the end of the existing grid.  </p>
+</li>
+<li>
+<p><code>.replaceGridRow(title, rowNum, data)</code><br />
+    Replace the values in the specified row with the new data.<br />
+    If the new data has fewer items, the remaining cells will be emptied.  </p>
+</li>
+<li>
+<p><code>.replaceAllGridRows(title, rowNum, data)</code><br />
+    Removes all existing rows, before adding the new rows.  </p>
+</li>
+<li>
+<p><code>.setGridHeaders(title, data)</code><br />
+    Replace the values in the header row.<br />
+    If the new data has fewer items, the remaining header cells will be emptied.  </p>
+</li>
+<li>
+<p><code>.deleteGridRow(title, rowNum)</code><br />
+    Delete the specified row from the specified grid.</p>
+</li>
+<li>
+<p><code>.deleteAllGridRows(title)</code><br />
+    Delete all rows from the specified grid (except the header row).  </p>
+</li>
+<li>
+<p><code>.addGridColumn(title, columnNumber, data)</code><br />
+    Add the column of data to the named grid, in the specified position.  </p>
+</li>
+<li>
+<p><code>.deleteGridColumn(title, columnNumber)</code><br />
+    Delete the specified column from the named grid.  </p>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+<!-- Google Ads -->
+    <hr>
+    <div style='text-align: center;'>
+    <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+    <br>
+    <br>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Footer -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:728px;height:90px"
+            data-ad-client="ca-pub-6185596049817878"
+            data-ad-slot="2795191172"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <hr>
+        <p><p><a href='/License'>&#169; Richard Jarvis, 2015-2019</a></p></p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
