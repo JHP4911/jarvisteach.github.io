@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/whatsNew/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Change-Log - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <!--
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        -->
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Beta</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">Simple Naming</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li class="active">
+    <a href="./">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../contributing/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../oldDocs/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#change-log">Change-Log</a></li>
+        
+            <li><a href="#version-09">Version 0.9</a></li>
+        
+            <li><a href="#version-0821">Version 0.82.1</a></li>
+        
+            <li><a href="#version-082">Version 0.82</a></li>
+        
+            <li><a href="#version-08">Version 0.8</a></li>
+        
+            <li><a href="#version-007">Version 0.07</a></li>
+        
+            <li><a href="#version-0061">Version 0.061</a></li>
+        
+            <li><a href="#version-006">Version 0.06</a></li>
+        
+            <li><a href="#version-0052">Version 0.052</a></li>
+        
+            <li><a href="#version-0051">Version 0.051</a></li>
+        
+            <li><a href="#version-005">Version 0.05</a></li>
+        
+            <li><a href="#version-0042">Version 0.042</a></li>
+        
+            <li><a href="#version-0041">Version 0.041</a></li>
+        
+            <li><a href="#version-004">Version 0.04</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="change-log">Change-Log</h1>
+<hr />
+<h2 id="version-09">Version 0.9</h2>
+<ul>
+<li>Introduction of alternative <a href="../simpleAppJar">widget access functions</a> (<a href="https://github.com/jarvisteach/appJar/issues/235">#235</a>)  - now possible to <strong>ADD</strong>, <strong>SET</strong> &amp; <strong>GET</strong> widgets by just using their name.  </li>
+<li>Introduction of alternative <a href="../simpleAppJar">GUI properties</a> (<a href="https://github.com/jarvisteach/appJar/issues/340">#340</a>) - now possible to GET/SET properties with special property functions  </li>
+<li>Introduction of appJar <a href="../pythonSettings/">settings</a> - can now save/load GUI state to/from file.  </li>
+<li>Big improvements to <a href="../pythonDevWidgets/#grid">grids</a> - can add/remove/replace rows/columns, can sort data, can access a right-click menu, can connect to an sqlite database.  </li>
+<li>
+<p>More <a href="../pythonTtk">ttk</a> improvements - grouped widgets now work, introduced external themes.  </p>
+</li>
+<li>
+<p>Issues Resolved:</p>
+<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/344">#344</a> - <a href="../pythonWidgets/#add-labels">labels</a> now display the title when no text is provided, instead of an empty label.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/343">#343</a> - new parameter for appJar constructor: <code>showIcon</code> allows the icon to be ignored when running Windows</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/340">#340</a> - introduced <a href="../simpleAppJar">GUI properties</a> for most settings  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/339">#339</a> - new functions to remove <a href="../pythonBars/#set-toolbars">toolbars</a> and <a href="../pythonBars/#set-statusbars">statusbars</a>    </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/335">#335</a> - when setting functions for events, if no parameter is present in the function, no parameter will be passed by the event  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/333">#333</a> - started work on hide/show/delete <a href="../pythonWidgetGrouping/#tabbed-frame">tabs</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/325">#325</a> - fixed issue with <a href="../pythonBars/#platform-specificcustom-menus">right-click menus</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/324">#324</a> - fixed issue with losing <a href="../pythonWidgets/#entry">file/directory Entry</a> values  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/317">#317</a> - implemented fonts on <a href="../pythonWidgetGrouping/#tabbed-frame">tabbed frames</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/316">#316</a> - can now display compound images and text in <a href="../pythonWidgets/#button">buttons</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/309">#309</a> - cleaned up handling of <a href="../pythonGuiOptions/#font">fonts</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/303">#303</a> - added functions to <a href="../pythonEvents/#binding-keys">bind/unbind multiple keys</a> to a function  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/298">#298</a> - fixed issue in <a href="../pythonBars/#extra-features/">menubar shortcuts</a> where numeric shortcuts didn't work.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/296">#296</a> - two new widgets introduced <a href="../pythonDevWidgets/#turtle">turtle</a> and <a href="../pythonDevWidgets/#canvas">canvas</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/294">#294</a> &amp; <a href="https://github.com/jarvisteach/appJar/issues/292">#292</a> - fixes on <a href="../pythonWidgets/#entry">entries</a>: better handle arrow key presses on mac, defaults work better on secret entries &amp; file/directory entries  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/290">#290</a> - fixed issue showing <a href="../pythonWidgets/#entry">AutoEntries</a> in <a href="../pythonSubWindows">subWindows</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/289">#289</a> - new functions to change list in <a href="../pythonWidgets/#entry">AutoEntries</a> </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/288">#288</a> - fixed issue showing <a href="../pythonDialogs/#message-boxes">dialogs</a> in <a href="../pythonSubWindows">subWindows</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/286">#286</a> - added new <a href="../pythonThreads">threaded callback</a>, contributed by <a href="https://github.com/mpmc">@mpmc</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/284">#284</a> - new <a href="../pythonDialogs/#message-boxes">dialogs</a> for strings, integers &amp; floats  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/283">#283</a> - <a href="../pythonDialogs/#question-boxes">questionBox</a> now returns Booleans instead of yes/no  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/281">#281</a> - resolved issues with <a href="../pythonThreads">threads</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/279">#279</a> - tidied up <a href="../pythonWidgetOptions/#widget-manipulation">remove all widgets</a> - now leaves GUI looking better  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/271">#271</a>, <a href="https://github.com/jarvisteach/appJar/issues/266">#266</a>, <a href="https://github.com/jarvisteach/appJar/issues/255">#255</a> &amp; <a href="https://github.com/jarvisteach/appJar/issues/232">#232</a> - <a href="../pythonDevWidgets/#grid">Grid</a> improvements  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/242">#242</a>, <a href="https://github.com/jarvisteach/appJar/issues/259">#259</a>, <a href="https://github.com/jarvisteach/appJar/issues/267">#267</a> - work on <a href="../pythonDevWidgets/#matplotlib">MatPLotLib</a> now support multiple plot types, and retaining some settings  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/250">#250</a> - Can now add <a href="../pythonImages/#add-images">compound images</a> - images with a built in label  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/236">#236</a> - appJar can now save GUI <a href="../pythonSettings">settings</a> and load them again  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/233">#233</a> - <a href="../pythonWidgets/#entry">NumericEntries</a> return <code>None</code> when empty</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/218">#218</a> - Can no longer set <a href="../pythonWidgets/#entry">NumericEntries</a> to Strings  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0821">Version 0.82.1</h2>
+<ul>
+<li>Issues Resolved:<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/275">#275</a> - maps fix  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-082">Version 0.82</h2>
+<ul>
+<li>Issues Resolved:<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/189">#189</a> - some tweaks to <a href="../pythonTtk">ttk support</a>  </li>
+<li>Fixes to documentation</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-08">Version 0.8</h2>
+<ul>
+<li>Changed versioning - PyPi difficulties, combined with close to a 1.0 release...</li>
+<li>Create a GUI in <strong>TWO</strong> lines using <a href="../pythonContextManager/">context managers</a> - appJar now allows you to use <code>with</code> to create a GUI and <a href="../pythonWidgetGrouping">containers</a>  </li>
+<li><a href="../pythonEvents/">Events</a>, <a href="../pythonThreads/">Threads</a>, <a href="../pythonLoopsAndSleeps/">Loops &amp; Sleeps</a> have been improved. It's now possible to run background tasks (such as a download) and update the GUI safely.   </li>
+<li><a href="../pythonCommandLine">Command line arguments</a>: appJar now supports command line arguments for <a href="../pythonLogging">logging</a> and <a href="../pythonInternationalisation/">internationalisation</a> as well as help &amp; version information.  </li>
+<li><a href="../pythonInternationalisation/">Internationalisation</a> is now greatly improved - nearly everything supports multiple languages.  </li>
+<li><a href="../pythonWidgetGrouping/#scroll-pane">ScrollPanes</a> &amp; <a href="../pythonDevWidgets/#grid">Grids</a> greatly improved  </li>
+<li>
+<p>Much more friendly <a href="../License/">license</a>  </p>
+</li>
+<li>
+<p>Issues Resolved:</p>
+<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/249">#249</a> - Can now set a parent for <a href="../pythonDialogs/">dialogs</a> so that if they are launched from a <a href="../pythonWidgetGrouping/#sub-window">SubWindow</a> they behave properly.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/248">#248</a> - Can now <a href="../pythonImages/#add-images">add icons</a> and <a href="../pythonWidgets/#add-buttons">iconButtons</a> using inbuilt icon set.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/246">#246</a> - Can now hide titles on <a href="../pythonWidgetGrouping/#label-frame">labelFrames</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/243">#243</a> - Fixed bug in <a href="../pythonWidgetGrouping/#toggle-frame">ToggleFrames</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/241">#241</a> - Notes on installing on <a href="../Install/#single-user-set-up">linux</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/234">#234</a> - Support for <a href="../pythonContextManager/">ContextManagers</a> throughout appJar  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/228">#228</a> - appJar prevents you from creating more than one gui at a time  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/226">#226</a> - fixed issues on <a href="../pythonWidgets/#entry">file/directory entries</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/223">#223</a> - fixed issues with <a href="../pythonSound/">sound</a> import  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/217">#217</a> - Fixed issues with removing <a href="../pythonImages/#set-background-images">BG images</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/216">#216</a> - Improvements to <a href="https://travis-ci.org/jarvisteach/appJar">integrated testing</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/215">#215</a> - Changed <a href="../License/">licensing</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/213">#213</a> - Validation entries improved in <a href="../pythonInternationalisation">Internationalisation</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/212">#212</a> - Creating an empty <a href="../pythonDialogs/#tooltips">Tooltip</a> now doesn't create anything  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/211">#211</a> - <a href="../pythonLogging">Logging</a> now logs line number &amp; function name  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/209">#209</a> - Additional testing for <a href="../pythonWidgetGrouping/#scroll-pane">ScrollPanes</a> &amp; <a href="../pythonDevWidgets/#grid">Grids</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/207">#207</a> - Now possible to change the title and anchor of a <a href="../pythonWidgetGrouping/#label-frame">LabelFrame</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/206">#206</a> - New method for <a href="../pythonEvents/#user-actions">pausing functions</a> when stopping infinite loops  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/205">#205</a> - Now possible to <a href="../pythonWidgets/#set-optionboxes">select</a> a disabled item in an OptionBox.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/204">#204</a> - appJar now supports <a href="../pythonCommandLine">Command line arguments</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/203">#203</a> - updated docs on <a href="../pythonWidgetGrouping/#label-frame">LabelFrames</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/202">#202</a> - functions now provided to get or clear all values of a selected widget type  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/200">#200</a> - Switched <a href="../pythonDevWidgets/#grid">Grid</a> to use a <a href="../pythonWidgetGrouping/#scroll-pane">ScrollPane</a> &amp; changed ScrollPane to use AutoScrollbars.  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/196">#196</a> - Resolved issue with configuring <a href="../pythonWidgets/#textarea">ScrolledTextAreas</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/189">#189</a> - More work on <a href="../pythonTtk">ttk</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/177">#177</a> - <a href="../pythonGuiOptions/#size-location">setLocation</a> can now position windows in the center of the screen</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/162">#162</a> - PhotoImage objects can now be passed directly when <a href="../pythonImages/#add-images">adding/setting ImageData</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/132">#132</a> - Now possible to <a href="../pythonWidgets/#set-optionboxes">Delete and Rename</a> OptionBox items.</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/120">#120</a> - Improvements to <a href="../pythonEvents/">events</a> &amp; introduction of <a href="../pythonEvents/">threading</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/71">#71</a> - More work on <a href="../pythonInternationalisation/">Internationalisation</a> - now supports Images, LabelFrames, ToggleFrames, TabbedFrames, Properties, Grids, Toolbars, Tooltips, SubWindows, PagedWindows, SplashScreens &amp; Titles  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/69">#69</a> - Changes to <a href="../pythonWidgets/#textarea">TextAreas</a> - now, lines wrap on spaces &amp; <a href="../pythonWidgets/#set-textareas">setTextArea()</a> now appends to the text  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-007">Version 0.07</h2>
+<ul>
+<li>New widgets: <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a> - a widget to show a GoogleMap tile &amp; control widgets, <a href="../pythonImages/#image-maps">ImageMaps</a> - clickable ImageMap with linked functions, <a href="../pythonWidgets/#entry">FileEntries</a> - Entries linked with File/Directory dialogs  </li>
+<li>Widget enhancements: <a href="../pythonBars/#set-toolbars">Pinnable Toolbars</a>, <a href="../pythonWidgets/#add-labels">SelectableLabels</a>, better <a href="../pythonDialogs/#tooltips">Tooltips</a>, <a href="../pythonWidgets/#add-checkboxes">NamedCheckBoxes</a> &amp; settable <a href="../pythonWidgets/#set-listboxes">ListBoxes</a>  </li>
+<li>Update to event model and <a href="../pythonEvents">documentation</a> - now clearer how to perform different actions, and function names updated.  </li>
+<li>
+<p>Switched to Python's <a href="../pythonLogging">logging</a> feature</p>
+</li>
+<li>
+<p>Issues Resolved:</p>
+<ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/192">#192</a> - Fixed PNG image support in python 2.7 - specifically for toolbars  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/189">#189</a> - <strong>VERY</strong> basic support for <a href="../pythonDevWidgets/#ttk">ttk</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/186">#186</a> - Changes to <a href="../specialCharacters">Unicode</a> support  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/185">#185</a> - All add functions now return the widget  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/184">#184</a> - <a href="../pythonWidgets/#set-listboxes">Groupable List Boxes</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/182">#182</a> - Added a link to source for <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a></li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/181">#181</a> - <a href="../pythonBars/#set-toolbars">Disabling toolbars</a> will also disable a pinned icon</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/180">#180</a> - <a href="../pythonEvents/#slow-actions">SlowActions</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/176">#176</a> - Fixed issue with placing container in <a href="../pythonWidgetGrouping">containers</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/173">#173</a> - New functions to <a href="../pythonWidgets/#set-listboxes">Set ListBoxes</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/161">#161</a> - <a href="../pythonWidgets/#add-checkboxes">NamedCheckBoxes</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/148">#148</a> - Improved support for <a href="../pythonEvents/#user-actions">MouseOver Events</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/151">#151</a> &amp; <a href="https://github.com/jarvisteach/appJar/issues/158">#158</a> - Some fixes to <a href="../pythonDevWidgets/#grid">Grid Widget</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/138">#138</a> - Can now register a <a href="../pythonWidgets/#set-datepicker">Change Event</a> on DatePicker  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/137">#137</a> - <a href="../pythonWidgets/#entry">File Entries</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/136">#136</a> - Simple <a href="../pythonDevWidgets/#googlemaps">GoogleMaps</a> widget   </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/135">#135</a> - A clickable <a href="../pythonImages/#image-maps">Image Map</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/133">#133</a> - Improvements to <a href="../pythonDialogs/#tooltips">Tooltips</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/124">#124</a> - Switched to Python's <a href="../pythonLogging">logging</a> feature  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - More work implementing <a href="../pythonDnD">Drag n'Drop</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/73">#73</a> - Toolbars are now <a href="../pythonBars/#set-toolbars">pinnable</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/59">#59</a> - <a href="../pythonWidgets/#add-labels">SelectableLabels</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/7">#7</a> -  Can now <a href="../pythonGuiOptions/#colour">Set Foreground</a> across the whole GUI  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0061">Version 0.061</h2>
+<ul>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/154">#154</a> - Fixed bug with AutoEntry not showing drop-down in right position, when placed in a container  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-006">Version 0.06</h2>
+<ul>
+<li>New widgets: <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a>, <a href="../pythonWidgets/#entry">Validation Entries</a>  </li>
+<li>Widget enhancements: Can now set some rules for <a href="../pythonWidgets/#set-entries">entries</a>  </li>
+<li>New documentation: <a href="../packaging">packaging</a>, <a href="../specialCharacters">special characters</a>, <a href="../pythonEvents">events</a>, <a href="../pythonDnD">drag'n drop</a>  </li>
+<li>Work on events: <a href="../pythonEvents/#breakdown">stopping event propagation</a>, <a href="../pythonEvents/#make-stuff-happen">drag/over events</a>, <a href="../pythonDnD">drag'n drop</a>  </li>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/143">#143</a> - Fixed bug with setting defaults on AutoEntries  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/142">#142</a> - Finished documentation for <a href="../pythonDialogs/#file=boxes">popups</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/130">#130</a> - Documented how to use <a href="../specialCharacters">special characters</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/123">#123</a> - New features for <a href="../pythonWidgets/#set-entries">setting entries</a> - max length, auto uppercase/lowercase, validation  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/119">#119</a> - <a href="../pythonDevWidgets/#microbit-emulator">MicroBit</a> widget added  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/118">#118</a> - dynamic library imports  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/117">#117</a> - introduced documentation on <a href="../packaging/">packaging</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/116">#116</a> - configurable trough <a href="../pythonWidgets/#set-scales">increments</a> for a scale  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/115">#115</a> - fixed transparency in python 2.7  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/114">#114</a> - ability to stop events being propagated  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/112">#112</a> - now possible to start with a subWindow (specified in go()) as well as hide() &amp; show() main window  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/110">#110</a> - can now configure the number of rows to <a href="../pythonWidgets/#set-entries">show</a> in an AutoEntry  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/108">#108</a> - Fixed issue with modal <a href="../pythonWidgetGrouping/#startstop-sub-windows">SubWindows</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/106">#106</a> - Function to add an <a href="../pythonWidgets/#add-buttons">image button</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/102">#102</a> - Updates to drag/over <a href="../pythonEvents/#make-stuff-happen">events</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/103">#103</a> - Can now manage event calling when <a href="../pythonEvents/#make-stuff-happen">widgets change</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> - <a href="../pythonDnD/">Drag n'Drop</a> beta support for dnd between applications  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/92">#92</a> - Function to <a href="../pythonWidgets/#get-entries">get all entries</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/75">#75</a> - Fix to <a href="../pythonWidgetGrouping/#showhide-sub-windows">destroySubWindow</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/46">#46</a> - Added version details to about box  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/42">#42</a> - Added functionality to <a href="../pythonWidgets/#set-optionboxes">change TickOptionBoxes</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/33">#33</a> - Added convenience function to <a href="../pythonDevWidgets/#tree">setTreeColours</a>  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0052">Version 0.052</h2>
+<ul>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/114">#114</a> - ability to stop functions being called when a set method is activated</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0051">Version 0.051</h2>
+<ul>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/109">#109</a> - Labelled Auto Entry, contributed by <a href="https://github.com/jacobthetechy">jacobthetechy</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="version-005">Version 0.05</h2>
+<ul>
+<li><a href="../pythonWidgetGrouping/#reopening-containers">Open Container</a> - implemented issue <a href="https://github.com/jarvisteach/appJar/issues/83">#83</a>, can now reopen a container, perform operations on it, and close it.  </li>
+<li>Changed disable entry to readonly, allows entries to be copied (<a href="https://github.com/jarvisteach/appJar/issues/86">#86</a>)  </li>
+<li>Images now support <a href="../pythonImages/#add-images">raw image data</a>.  </li>
+<li>Setters now call any registered functions  </li>
+<li>Rewrite of <a href="../pythonWidgets/#meter">Meters</a>, proper inheritance, all use gradated fill, Dual/Split Meter swapped (<a href="https://github.com/jarvisteach/appJar/issues/65">#65</a>).  </li>
+<li>Rewrite of <a href="../pythonWidgetGrouping/#scroll-pane">ScrollPane</a>, multi-platform scrolling...</li>
+<li>Added functions to <a href="../pythonWidgets/#listbox">change the bg/fg</a> of ListBox items (<a href="https://github.com/jarvisteach/appJar/issues/97">#97</a>).  </li>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/101">#101</a> &amp; <a href="https://github.com/jarvisteach/appJar/issues/103">#103</a> - updates to documentation</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/99">#99</a> - ability to create empty containers  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/97">#97</a> - ability to set bg/fg colour of list items</li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/94">#94</a> - basic support for <a href="../pythonDevWidgets/#matplotlib">MatPlotLib</a>  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/90">#90</a> - raw image data  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/89">#89</a> - minimum speed for animated image  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/88">#88</a> - preload mouse over images  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/86">#86</a> - disabled entry now readonly  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/85">#85</a> - setters now call function (if available)  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/83">#83</a> - can now reopen container  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/65">#65</a> - Meter rewrite  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/34">#34</a>/<a href="https://github.com/jarvisteach/appJar/issues/35">#35</a> - ScrollPane rewrite</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0042">Version 0.042</h2>
+<ul>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/95">#95</a> - fixed issue launching ShowCase under Python 2 (removed icons)  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/93">#93</a> - fixed issue with numDialog/textDialog under python 2  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0041">Version 0.041</h2>
+<ul>
+<li>Continuous Integration - added <a href="https://landscape.io/github/jarvisteach/appJar/">landscape.io</a> to monitor code quality  </li>
+<li><a href="../pythonImages/#change-images">Reload Image</a> - function to force a reload of an image, bypassing the cache (issue <a href="https://github.com/jarvisteach/appJar/issues/87">#87</a>)  </li>
+<li>Minor fixes based off landscape report  </li>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/87">#87</a> - reloadImage()  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/84">#84</a> - Removed requirement for appJar icon in Windows  </li>
+</ul>
+</li>
+</ul>
+<h2 id="version-004">Version 0.04</h2>
+<ul>
+<li><a href="../pythonInternationalisation">Internationalisation</a> - it's now possible to support multiple languages, by adding simple config files.  </li>
+<li><a href="../splash">Splashscreen</a> - a simple splashscreen is now available.  </li>
+<li><a href="../pythonWidgets/#entry">AutoCompletion EntryBox</a> - added a new widget, giving autocompletion in EntryBoxes  </li>
+<li><a href="../pythonEvents/#make-stuff-happen">Function on change</a> in ListBox - now possible to call a function each time a ListBox changes  </li>
+<li><a href="https://docs.python.org/3.6/whatsnew/3.6.html#idlelib-and-idle">Python 3.6 Support</a> - now supports python3.6 - fixed issue with renamed idelib files  </li>
+<li>Continuous Integration - now uses <a href="https://travis-ci.org/jarvisteach/appJar">Travis-CI</a> and <a href="https://coveralls.io/github/jarvisteach/appJar">Coveralls</a> to check for errors on each commit  </li>
+<li>Updated documentation: Rearrangement of navigation bar, new pages for new features, minor modifications.  </li>
+<li>Issues Resolved:  <ul>
+<li><a href="https://github.com/jarvisteach/appJar/issues/81">#81</a> - now allows negative numbers/decimals to be entered correctly in NumericEntries  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/80">#80</a> - now support Python 3.6  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/78">#78</a> - fixed typo in documentation  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/74">#74</a> - SplashScreen  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/72">#72</a> - Unit testing  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/71">#71</a> - Internationalisation  </li>
+<li><a href="https://github.com/jarvisteach/appJar/issues/70">#70</a> - AutoComplete EntryBox  </li>
+</ul>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

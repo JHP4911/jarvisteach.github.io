@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonLoopsAndSleeps/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Loops & Sleeps - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <!--
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        -->
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../outputWidgets/">Output Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Containers</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Saving Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../simpleProperties/">(v1.0 Properties)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonEvents/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonThreads/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#loops-sleeps">Loops &amp; Sleeps</a></li>
+        
+            <li><a href="#sleeps">Sleeps</a></li>
+        
+            <li><a href="#infinite-loops">Infinite Loops</a></li>
+        
+            <li><a href="#conditional-loops">Conditional Loops</a></li>
+        
+            <li><a href="#advanced-loops">Advanced Loops</a></li>
+        
+            <li><a href="#long-tasks">Long Tasks</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="loops-sleeps">Loops &amp; Sleeps</h1>
+<hr />
+<p>When you call <code>app.go()</code> you start a loop in the GUI that is constantly checking for <a href="../pythonEvents/">events</a> - every time it finds an event, it processes it.  </p>
+<p><strong>But</strong>, if an event takes a long time to process, the GUI loop won't be checking for other events - this is when the GUI hangs (stops processing events).  </p>
+<p>That's why your events need to be quick - they shouldn't have <strong>loops</strong> or <strong>sleeps</strong>.  </p>
+<p>There are a few ways to get around this problem...  </p>
+<h2 id="sleeps">Sleeps</h2>
+<hr />
+<p>If you want to do something at a later date, you can use the <code>.after()</code> function to specify when it should happen.  </p>
+<ul>
+<li>
+<p><code>.after(delay_ms, function, *args)</code><br />
+This will cause the specified <code>function</code> to be executed after the specified number of milliseconds.<br />
+Additional parameters for the function can be specified, by setting <code>*args</code>.<br />
+It will return an ID, which can be used to cancel the function, if it hasn't already started.  </p>
+</li>
+<li>
+<p><code>.afterCancel(afterId)</code><br />
+This will cancel the specified function, if it hasn't already started.  </p>
+</li>
+</ul>
+<hr />
+<p><div style='text-align: center;'>
+<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gw-13-4l+6+pt"
+    data-ad-client="ca-pub-6185596049817878"
+    data-ad-slot="5627392164"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></p>
+<hr />
+<h2 id="infinite-loops">Infinite Loops</h2>
+<hr />
+<p>If you just want something to keep happening forever - maybe updating a statusbar or showing a clock, you can use appJar's built in loop.  </p>
+<p>Any functions registered in this way, are called at set intervals.  </p>
+<ul>
+<li>
+<p><code>.registerEvent(function)</code><br />
+This will cause the GUI to keep repeating the named function in the background.<br />
+By default, the function will repeat every second.  </p>
+</li>
+<li>
+<p><code>.setPollTime(time)</code><br />
+If you want your functions to be called more or less frequently, change the frequency here.</p>
+</li>
+</ul>
+<pre><code class="python">#function to set the status bar
+def getLocation():
+    x,y,z = mc.player.getPos()
+    app.setStatusbar(&quot;X: &quot;+ str(round(x,3)), 0)
+    app.setStatusbar(&quot;Y: &quot;+ str(round(y,3)), 1)
+    app.setStatusbar(&quot;Z: &quot;+ str(round(z,3)), 2)
+
+# call the getLocation function every second
+app.registerEvent(getLocation)
+</code></pre>
+
+<h2 id="conditional-loops">Conditional Loops</h2>
+<hr />
+<p>If you want your loop to only repeat a certain number of times or until a condition is met, you can put a decision at the beginning of the function and still use appJar's built in loop.  </p>
+<p>You can use this method to simulate both <code>while</code> and <code>for</code> loops.  </p>
+<pre><code class="python"># global variable to store the count
+counter = 10
+
+def countdown():
+    global counter
+    if counter &gt; 0:
+        app.setLabel(&quot;counter&quot;, str(counter))
+        counter -= 1
+
+app.registerEvent(countdown)
+</code></pre>
+
+<h2 id="advanced-loops">Advanced Loops</h2>
+<hr />
+<p>If you want more control over your loops, you can simulate your own...  </p>
+<p>Using the <code>.after()</code> function mentioned above, you can simulate a loop, by having your function call <code>.after()</code> again.  </p>
+<pre><code class="python"># global variable to store the count
+counter = 10
+
+def acceleratingCountdown():
+    global counter
+    if counter &gt; 0:
+        app.setLabel(&quot;counter&quot;, str(counter))
+        counter -= 1
+        app.after(100*counter, myLoop)
+
+app.after(0, acceleratingCountdown)
+</code></pre>
+
+<p>This will simulate a countdown, but each time there is a smaller delay between counts.  </p>
+<h2 id="long-tasks">Long Tasks</h2>
+<hr />
+<p>If you want to call a function that does something that takes a long time - such as working with files or networking, you will need a slightly different approach. Have a look at <a href="../pythonThreads/">thread support</a> in appJar.  </p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

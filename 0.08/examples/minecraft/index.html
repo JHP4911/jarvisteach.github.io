@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/examples/minecraft/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Raspberry Pi Minecraft - appJar</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.css" rel="stylesheet">
+        <link href="../../css/highlight.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://pypi.python.org/pypi/appJar/">Version 0.82 out now!</a></div>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">appJar</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Welcome</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../pythonWidgets/">Widgets</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonImages/">Images</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonSound/">Sounds</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonBars/">Bars</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonDialogs/">Pop-ups</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../splash/">Splashscreen</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../specialCharacters/">Special Characters</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonDevWidgets/">Beta Widgets...</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                        
+<li >
+    <a href="../../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonLogging/">Logging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li class="active">
+    <a href="./">Raspberry Pi Minecraft</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../simple/">Simple Layout</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../../guidance/">Guidance</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../Install/">Installation</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../packaging/">Packaging</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../License/">License</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../Support/">Support</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../Thanks/">Acknowledgements</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../contributing/">Contributing</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../whatsNew/">Change-Log</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../../oldDocs/">Old Documentation</a>
+</li>
+
+                    
+                        
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons">
+                    <i class="fa fa-mortar-board"></i> Lessons
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../../pythonTtk/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../simple/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#minecraft">Minecraft</a></li>
+        
+            <li><a href="#chat">Chat</a></li>
+        
+            <li><a href="#movement">Movement</a></li>
+        
+            <li><a href="#status">Status</a></li>
+        
+            <li><a href="#dropping-blocks">Dropping blocks</a></li>
+        
+            <li><a href="#anything-from-the-menu">Anything from the menu?</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="minecraft">Minecraft</h1>
+<hr />
+<p>You can now see a version of this article in print!  Check out the <a href="https://www.raspberrypi.org/magpi-issues/MagPi58.pdf">MagPi, issue 58</a>.</p>
+<p>Linking appJar with Minecraft on the Raspberry Pi is super easy!<br />
+Simply import the Minecraft library and appJar library and have appJar call Minecraft functions...  </p>
+<h3 id="chat">Chat</h3>
+<p>First, let's set up a simple chat entry box.<br />
+<img alt="Chat" src="../../img/pi/mc1.png" /></p>
+<pre><code class="python">from appJar import gui
+from mcpi.minecraft import Minecraft
+
+# function to send messages to minecraft server
+def sendMsg(btn):
+    msg = app.getEntry(&quot;Chat&quot;)
+    mc.postToChat(msg)
+
+mc = Minecraft.create() # minecraft connection
+
+# main GUI block
+app = gui(&quot;Minecraft&quot;) # GUI
+
+app.addLabelEntry(&quot;Chat&quot;, 0, )
+app.addButton(&quot;Send&quot;, sendMsg, 0, 1)
+
+app.go()
+</code></pre>
+
+<p>You can jazz this up a bit, by setting the focus and linking the <enter> key to submit chat messages, oh and set the location so it doesn't appear under the Minecraft window..</p>
+<pre><code class="python"># put this in the main GUI block
+app.setEntryFocus(&quot;Chat&quot;)
+app.setEntryFunction(&quot;Chat&quot;, sendMsg)
+app.setLocation(100,100)
+</code></pre>
+
+<h3 id="movement">Movement</h3>
+<p>Next, let's add some movement controls... 
+<img alt="Movement" src="../../img/pi/mc2.png" /></p>
+<pre><code class="python3">#function to move the minecraft character
+def move(btn):
+    x,y,z = mc.player.getPos()
+
+    if btn == &quot;LEFT&quot;:
+        x -= 1
+    elif btn == &quot;RIGHT&quot;:
+        x += 1
+    elif btn == &quot;FORWARD&quot;:
+        z -= 1
+    elif btn == &quot;BACKWARD&quot;:
+        z += 1
+    elif btn == &quot;JUMP&quot;:
+        y += 1
+        z -= 1 
+
+    mc.player.setPos(x, y, z)
+
+# put this in the main GUI block
+app.startLabelFrame(&quot;Move Me&quot;, colspan=2)
+app.setSticky(&quot;EW&quot;)
+app.addButton(&quot;FORWARD&quot;, move)
+app.addButtons([&quot;LEFT&quot;, &quot;JUMP&quot;, &quot;RIGHT&quot;], move)
+app.addButton(&quot;BACKWARD&quot;, move)
+app.stopLabelFrame()
+</code></pre>
+
+<p>You can jazz this up to, by linking keys up to the functions...  </p>
+<pre><code class="python"># add this to the main GUI block
+app.bindKey(&quot;&lt;Left&gt;&quot;, move)
+app.bindKey(&quot;&lt;Right&gt;&quot;, move)
+app.bindKey(&quot;&lt;Up&gt;&quot;, move)
+app.bindKey(&quot;&lt;Down&gt;&quot;, move)
+app.bindKey(&quot;&lt;Space&gt;&quot;, move)
+
+# then change the move function to register both events
+# if btn == &quot;LEFT&quot; or btn == &quot;&lt;Left&gt;&quot; ... and so on
+</code></pre>
+
+<h3 id="status">Status</h3>
+<p>Another cool feature, is a status bar that tells us where we're at...
+<img alt="Status" src="../../img/pi/mc3.png" /></p>
+<pre><code class="python">
+#function to set the status bar
+def getLocation():
+    x,y,z = mc.player.getPos()
+    app.setStatusbar(&quot;X: &quot;+ str(round(x,3)), 0)
+    app.setStatusbar(&quot;Y: &quot;+ str(round(y,3)), 1)
+    app.setStatusbar(&quot;Z: &quot;+ str(round(z,3)), 2)
+
+# put this in the main GUI block
+app.addStatusbar(fields=3)
+# call the update function every second
+app.registerEvent(getLocation)
+</code></pre>
+
+<h3 id="dropping-blocks">Dropping blocks</h3>
+<p>Next, let's add the ability to drop blocks.  </p>
+<p><img alt="Blocks" src="../../img/pi/mc4.png" /></p>
+<pre><code class="python"># function to drop a block just in front
+def drop(btn):
+    playerBlock = app.getOptionBox(&quot;Block&quot;)
+    blockId = BLOCKS[playerBlock]
+    x,y,z = mc.player.getPos()
+    mc.setBlock(x, y+1, z-1, blockId)
+
+# put this in the main GUI block
+app.addLabelOptionBox(&quot;Block&quot;, blockNames, colspan=2)
+app.addButton(&quot;Drop&quot;, drop, colspan=2)
+</code></pre>
+
+<p>The issue we have is building a dictionary of block names linked to block IDs. You can try this one out, or make your own...  </p>
+<pre><code class="python"># put this near the top of your code
+BLOCKS={ &quot;AIR&quot;:0, &quot;STONE&quot;:1, &quot;GRASS&quot;:2, &quot;DIRT&quot;:3, &quot;COBBLESTONE&quot;:4,
+    &quot;WOOD_PLANKS&quot;:5, &quot;SAPLING&quot;:6, &quot;BEDROCK&quot;:7, &quot;WATER_FLOWING&quot;:8, &quot;WATER&quot;:8,
+    &quot;WATER_STATIONARY&quot;:9, &quot;LAVA_FLOWING&quot;:10, &quot;LAVA&quot;:10, &quot;LAVA_STATIONARY&quot;:11,
+    &quot;SAND&quot;:12, &quot;GRAVEL&quot;:13, &quot;GOLD_ORE&quot;:14, &quot;IRON_ORE&quot;:15, &quot;COAL_ORE&quot;:16,
+    &quot;WOOD&quot;:17, &quot;LEAVES&quot;:18, &quot;GLASS&quot;:20, &quot;LAPIS_LAZULI_ORE&quot;:21,
+    &quot;LAPIS_LAZULI_BLOCK&quot;:22, &quot;SANDSTONE&quot;:24, &quot;BED&quot;:26, &quot;COBWEB&quot;:30,
+    &quot;GRASS_TALL&quot;:31, &quot;WOOL&quot;:35, &quot;FLOWER_YELLOW&quot;:37, &quot;FLOWER_CYAN&quot;:38,
+    &quot;MUSHROOM_BROWN&quot;:39, &quot;MUSHROOM_RED&quot;:40, &quot;GOLD_BLOCK&quot;:41, &quot;IRON_BLOCK&quot;:42,
+    &quot;STONE_SLAB_DOUBLE&quot;:43, &quot;STONE_SLAB&quot;:44, &quot;BRICK_BLOCK&quot;:45, &quot;TNT&quot;:46,
+    &quot;BOOKSHELF&quot;:47, &quot;MOSS_STONE&quot;:48, &quot;OBSIDIAN&quot;:49, &quot;TORCH&quot;:50, &quot;FIRE&quot;:51,
+    &quot;STAIRS_WOOD&quot;:53, &quot;CHEST&quot;:54, &quot;DIAMOND_ORE&quot;:56, &quot;DIAMOND_BLOCK&quot;:57,
+    &quot;CRAFTING_TABLE&quot;:58, &quot;FARMLAND&quot;:60, &quot;FURNACE_INACTIVE&quot;:61,
+    &quot;FURNACE_ACTIVE&quot;:62, &quot;DOOR_WOOD&quot;:64, &quot;LADDER&quot;:65, &quot;STAIRS_COBBLESTONE&quot;:67,
+    &quot;DOOR_IRON&quot;:71, &quot;REDSTONE_ORE&quot;:73, &quot;SNOW&quot;:78, &quot;ICE&quot;:79, &quot;SNOW_BLOCK&quot;:80,
+    &quot;CACTUS&quot;:81, &quot;CLAY&quot;:82, &quot;SUGAR_CANE&quot;:83, &quot;FENCE&quot;:85, &quot;GLOWSTONE_BLOCK&quot;:89,
+    &quot;BEDROCK_INVISIBLE&quot;:95, &quot;STONE_BRICK&quot;:98, &quot;GLASS_PANE&quot;:102, &quot;MELON&quot;:103,
+    &quot;FENCE_GATE&quot;:107, &quot;GLOWING_OBSIDIAN&quot;:246, &quot;NETHER_REACTOR_CORE&quot;:247 
+}
+blockNames=list(BLOCKS.keys())
+blockNames.sort()
+</code></pre>
+
+<h3 id="anything-from-the-menu">Anything from the menu?</h3>
+<p>Finally, let's add a menu.<br />
+Menus work just like buttons - when you click them, they simply call a function.<br />
+So, we're going to create a function for the menus, and have it operate the camera and create/restore checkpoints:</p>
+<pre><code class="python"># put this near the top of your code
+def clickMenu(choice):
+    if choice == &quot;Create&quot;:
+        mc.saveCheckpoint()
+        app.infoBox(&quot;Save&quot;, &quot;Checkpoint saved.&quot;)
+    elif choice == &quot;Restore&quot;:
+        if app.yesNoBox(&quot;Restore&quot;, &quot;Are you sure?&quot;):
+            mc.restoreCheckpoint()
+    elif choice == &quot;Normal&quot;:
+        mc.camera.setNormal()
+    elif choice == &quot;Fixed&quot;:
+        mc.camera.setFixed()
+    elif choice == &quot;Follow&quot;:
+        mc.camera.setFollow()
+</code></pre>
+
+<p>Then we add the code to our main GUI block, to show the menus:  </p>
+<pre><code class="python"># put this in the main GUI block
+app.addMenuList(&quot;Checkpoint&quot;, [&quot;Create&quot;, &quot;Restore&quot;], clickMenu)
+app.addMenuList(&quot;Camera&quot;, [&quot;Normal&quot;, &quot;Fixed&quot;, &quot;Follow&quot;], clickMenu)
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2017</p></div>
+            
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

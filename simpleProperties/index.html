@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/simpleProperties/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>(v1.0 Properties) - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <!--
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        -->
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.93 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../outputWidgets/">Output Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../inputWidgets/">Input Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Containers</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Beta Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">(v1.0 Naming)</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../multiplePages/">Multiple Pages</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonEvents/">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Saving Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../clipboard/">Clipboard</a>
+</li>
+
+                            
+                                
+<li class="active">
+    <a href="./">(v1.0 Properties)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../appJarLimitations/">Limitations</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../clipboard/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../guidance/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#v10-properties">v1.0 Properties</a></li>
+        
+            <li><a href="#gui-settings">GUI Settings</a></li>
+        
+            <li><a href="#padding">Padding</a></li>
+        
+            <li><a href="#size-location">Size &amp; Location</a></li>
+        
+            <li><a href="#grid-properties">Grid Properties</a></li>
+        
+            <li><a href="#looks">Looks</a></li>
+        
+            <li><a href="#other">Other</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="v10-properties">v1.0 Properties</h1>
+<hr />
+<p>appJar includes a number of properties that can be configured to change how the GUI looks/acts.<br />
+These are exposed as <strong>properties</strong>, so can be set uing the assignment operator, <code>=</code>.  </p>
+<pre><code class="python">app.title = &quot;Property Demo&quot;
+app.bg = &quot;red&quot;
+app.fg = &quot;yellow&quot;
+</code></pre>
+
+<p>If you want to set multiple properties at once, there is a <code>configure()</code> function to support this:</p>
+<ul>
+<li><code>.configure(**kwargs)</code>  </li>
+</ul>
+<pre><code class="python">app.configure(bg='red', fg='yellow', font={'size':20, 'family':'Helvetica'})
+</code></pre>
+
+<p>Nearly all properties can be got in the same way:  </p>
+<pre><code class="python">app.label('sizeLab', app.size)
+app.label('locLab', app.location)
+app.label('transLab', app.transparency)
+</code></pre>
+
+<h3 id="gui-settings">GUI Settings</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>Pass a string to display in the title bar of the GUI</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>string</td>
+<td>Pass the path to an icon file, to display in the title bar - only works on Windows.</td>
+</tr>
+<tr>
+<td>transparency</td>
+<td>integer</td>
+<td>Pass a percentage (between 0 &amp; 100) to set the transparency, of the GUI (not on Linux).</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>boolean</td>
+<td>Pass a boolean to hide or show the GUI.</td>
+</tr>
+<tr>
+<td>top</td>
+<td>boolean</td>
+<td>Pass a boolean to keep the GUI on top or not.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="padding">Padding</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>padding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td>inPadding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td>guiPadding</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y padding or a single integer for both x &amp; y</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="size-location">Size &amp; Location</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the width &amp; height (or the string <code>fullscreen</code>)</td>
+</tr>
+<tr>
+<td>location</td>
+<td>integer (list)</td>
+<td>Pass a tuple containing the x &amp; y coordinates (or the string <code>CENTER</code>)</td>
+</tr>
+<tr>
+<td>fullscreen</td>
+<td>boolean</td>
+<td>Pass either <code>True</code> or <code>False</code>, to enter/exit fullscreen.</td>
+</tr>
+<tr>
+<td>resizable</td>
+<td>boolean</td>
+<td>Pass either <code>True</code> or <code>False</code>, to set the GUI resizable or not.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="grid-properties">Grid Properties</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sticky</td>
+<td>string</td>
+<td>Pass a string describing which sides widegts should stick to (news).</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>string</td>
+<td>Pass a string describing if rows/columns should stretch, to fill the entire GUI.</td>
+</tr>
+<tr>
+<td>row</td>
+<td>integer</td>
+<td>Gets or sets the next row number to be used.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="looks">Looks</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fg</td>
+<td>string</td>
+<td>Pass a colour to use for the text colour of all label style widgets.</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>string</td>
+<td>Pass a colour to use for the background of all label style widgets.</td>
+</tr>
+<tr>
+<td>font</td>
+<td>integer/dict</td>
+<td>Pass either a font size, or a dictionary of font properties to use for all widgets.</td>
+</tr>
+<tr>
+<td>buttonFont</td>
+<td>integer/dict</td>
+<td>Pass either a font size, or dicitonary of font properties to use for all button style widgets.</td>
+</tr>
+<tr>
+<td>labelFont</td>
+<td>integer/dict</td>
+<td>Pass either a font size, or a dictionary of font properties to use for all label style widgets.</td>
+</tr>
+<tr>
+<td>ttkTheme</td>
+<td>string</td>
+<td>Only available in ttk mode - pass the name of the ttk theme you want to use.</td>
+</tr>
+<tr>
+<td>fonts</td>
+<td>string (list)</td>
+<td>(no SETTER) Returns a list of all available fonts.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other">Other</h3>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>editMenu</td>
+<td>Boolean</td>
+<td>Enables and disables the right-click edit menu for text based widgets.</td>
+</tr>
+<tr>
+<td>stopFunction</td>
+<td>function</td>
+<td>(no GETTER) Sets a function to call when the GUI is closed.</td>
+</tr>
+<tr>
+<td>startFunction</td>
+<td>function</td>
+<td>(no GETTER) Sets a function to call when the GUI starts up.</td>
+</tr>
+<tr>
+<td>fastStop</td>
+<td>Boolean</td>
+<td>Set this to True if you have a <strong>LOT</strong> of widgets, and stopping appJar has gotten slow (doesn't work from IDLE).</td>
+</tr>
+<tr>
+<td>enterKey</td>
+<td>function</td>
+<td>(no GETTER) Sets or disables (pass None) a function bound to the enter key.</td>
+</tr>
+<tr>
+<td>logLevel</td>
+<td>string</td>
+<td>Sets the logging level.</td>
+</tr>
+<tr>
+<td>logFile</td>
+<td>string</td>
+<td>Sets a file to log messages to.</td>
+</tr>
+<tr>
+<td>language</td>
+<td>string</td>
+<td>Sets the current language.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p><a href='/License'>&#169; Richard Jarvis, 2015-2018</a></p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="https://use.fontawesome.com/cd51af4656.js"></script>-->
+        
+        <meta name="author" content="Richard Jarvis">
+        <link rel="canonical" href="http://appjar.info/pythonEvents/">
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        
+        <meta name="keywords" content="Python, GUI, widgets, tkinter, appJar, label, button">
+        <meta name="title" content="Python library for building GUIs, using tkinter toolkit">
+
+        <title>Events - appJar</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/highlight.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../extra.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-79206647-1', 'appjar.info');
+            ga('send', 'pageview');
+        </script>
+        
+
+        <!--
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6185596049817878",
+            enable_page_level_ads: true
+            });
+        </script>
+        -->
+        
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
+
+    <body>
+
+        <div class="corner-ribbon"><a href="https://github.com/jarvisteach/appJar/blob/appJar/releases/appJar.zip?raw=true">Version 0.90 out now!</a></div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">appJar</a>
+        </div>
+
+        
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fillings <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonWidgets/">Widgets</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonImages/">Images</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSound/">Sounds</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonBars/">Bars</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonDialogs/">Pop-ups</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSubWindows/">Multiple Windows</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../splash/">Splashscreen</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../specialCharacters/">Special Characters</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Beta</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonDevWidgets/">Widgets</a>
+</li>
+
+        
+            
+<li >
+    <a href="../simpleAppJar/">Simple Naming</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../pythonGuiOptions/">GUI Options</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Widgets</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonWidgetLayout/">Layout</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetOptions/">Configuration</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonWidgetGrouping/">Grouping</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonContextManager/">The power of WITH</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Events</a>
+    <ul class="dropdown-menu">
+        
+            
+<li class="active">
+    <a href="./">Events</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonLoopsAndSleeps/">Loops & Sleeps</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonThreads/">Threads</a>
+</li>
+
+        
+            
+<li >
+    <a href="../pythonDnD/">Drag'n Drop</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../pythonInternationalisation/">Internationalisation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonSettings/">Settings</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonLogging/">Logging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonCommandLine/">Command Line Arguments</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../pythonTtk/">ttk (BETA)</a>
+</li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+                
+                    
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            
+                                
+<li >
+    <a href="../guidance/">Guidance</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Examples</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../examples/minecraft/">Raspberry Pi Minecraft</a>
+</li>
+
+        
+            
+<li >
+    <a href="../examples/simple/">Simple Layout</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                                
+<li >
+    <a href="../Install/">Installation</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../packaging/">Packaging</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../License/">License</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Support/">Support</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../Thanks/">Acknowledgements</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../advertising/">Advertising</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../contributing/">Contributing</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../whatsNew/">Change-Log</a>
+</li>
+
+                            
+                                
+<li >
+    <a href="../oldDocs/">Old Documentation</a>
+</li>
+
+                            
+                                
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Other Help</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../pythonBasics/">Python</a>
+</li>
+
+        
+            
+<li >
+    <a href="../algorithms/">Algorithms</a>
+</li>
+
+        
+            
+<li >
+    <a href="../gitGuide/">Git & PyPi</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                            
+                            </ul>
+                        </li>
+                    
+                
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/pythonLessons" target="_blank">
+                    <i class="fa fa-mortar-board"></i> Learn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCe_fC78lGgA-EHyK9nZXNVA" target="_blank">
+                    <i class="fa fa-youtube"></i> Watch
+                    </a>
+                </li>
+<!--
+                <li >
+                    <a rel="next" href="../pythonContextManager/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../pythonLoopsAndSleeps/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+-->
+                
+                <li>
+                    <a href="https://github.com/jarvisteach/appJar" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#events">Events</a></li>
+        
+            <li><a href="#types-of-event">Types of Event</a></li>
+        
+            <li><a href="#binding-keys">Binding Keys</a></li>
+        
+            <li><a href="#stopping-the-gui">Stopping the GUI</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="events">Events</h1>
+<hr />
+<p>An <a href="https://en.wikipedia.org/wiki/Event-driven_programming">event</a> is just calling a function - you want an event to be generated every time the user does something, such as clicking a button, dragging a scale, or pressing a key...  </p>
+<p>The <code>Button</code> has an event automatically linked to it - whenever you press it, a function gets called. The other widgets don't.  </p>
+<h2 id="types-of-event">Types of Event</h2>
+<hr />
+<p>appJar currently has four basic types of event you can register:  </p>
+<ul>
+<li><code>.set XXX ChangeFunction(title, function)</code> call a function whenever the widget <em>changes</em>  </li>
+<li><code>.set XXX SubmitFunction(title, function)</code> call a function when the widget is <em>submitted</em>    </li>
+<li><code>.set XXX OverFunction(title, functions)</code> call function(s) when the mouse <em>enters/leaves</em> the widget  </li>
+<li><code>.set XXX DragFunction(title, functions)</code> call function(s) when the mouse is <em>dragged in/out</em> of the widget  </li>
+</ul>
+<h3 id="change-submit-functions">Change &amp; Submit Functions</h3>
+<p>These do similar things, so probably shouldn't both exist, but have evolved from a single <code>.set XXX Function()</code> which is now deprecated.  </p>
+<ul>
+<li>
+<p><code>.set XXX ChangeFunction(title, function)</code><br />
+    Bind the specified function to the named widget:  </p>
+<ul>
+<li>Scales, OptionBoxes, SpinBoxes, ListBoxes, RadioButtons &amp; CheckBoxes, Entries &amp; TextAreas, and Properties - the function will be called each time the widget is changed.  </li>
+<li>Buttons, Labels &amp; Images - it is not available.  </li>
+<li>Other widgets - it will set the <em>command</em> property for the underlying tkinter widget; this may or may not do anything...<br />
+<br></li>
+</ul>
+</li>
+<li>
+<p><code>.set XXX SubmitFunction(title, function)</code><br />
+    Creates a <em>submit</em> option for some widgets:  </p>
+<ul>
+<li>Labels &amp; Images - it binds a function to the <code>&lt;Left-Mouse-Button&gt;</code>, making the widget clickable.  </li>
+<li>Entries &amp; Buttons - it binds a function to the <code>&lt;Enter&gt;</code> key  </li>
+<li>TextAreas - it's not available</li>
+<li>Other widgets - it does the same as <code>ChangeFunction</code>  </li>
+</ul>
+</li>
+</ul>
+<p><strong>WARNING</strong> - it's possible to generate a RuntimeError. If you've got two widgets changing the same variable, say a Scale and a SpinBox, and you want a change in one widget to cause an update in the other, you might inadvertently end up stuck in a recursive loop, until the <a href="https://en.wikipedia.org/wiki/Stack_overflow">stack overflows</a>.  </p>
+<p>In this case, make sure you set the optional parameter <code>callFunction = False</code> when you  call the <code>set XXX Function()</code> of a widget.  </p>
+<pre><code class="python">from appJar import gui
+
+def songChanged(rb):
+    print(app.getRadioButton(rb))
+
+def reset(btn):
+    # set back to the default, but don't call the change function
+    app.setRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;, callFunction=False)
+
+app=gui()
+app.addRadioButton(&quot;song&quot;, &quot;Killer Queen&quot;)
+app.addRadioButton(&quot;song&quot;, &quot;Paradise City&quot;)
+app.setRadioButtonChangeFunction(&quot;song&quot;, songChanged)
+app.addButton(&quot;Reset&quot;, reset)
+app.go()
+</code></pre>
+
+<hr />
+<p><div style='text-align: center;'>
+<em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gw-13-4l+6+pt"
+    data-ad-client="ca-pub-6185596049817878"
+    data-ad-slot="5627392164"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></p>
+<hr />
+<h3 id="over-functions">Over Functions</h3>
+<hr />
+<p>Set functions to call whenever the mouse enters (goes over) or leaves the specified widget.  </p>
+<ul>
+<li><code>.set XXX OverFunction(name, [inFunction, outFunction])</code><br />
+    The first function is called when the mouse first enters the widget.<br />
+    The second function is called when the mouse leaves the widget.<br />
+    If you only want a function to be called when the mouse leaves the widget, pass an array like: <code>[None, leave]</code>  </li>
+</ul>
+<pre><code class="python">    from appJar import gui
+
+    def enter(wdgt): 
+        print(&quot;IN&quot;, wdgt)
+    def leave(wdgt):
+        print(&quot;OUT&quot;, wdgt)
+
+    app=gui()
+    app.addLabel(&quot;l1&quot;, &quot;Testing...&quot;)
+    app.setLabelOverFunction(&quot;l1&quot;, [enter, leave])
+    app.go()
+</code></pre>
+
+<ul>
+<li><code>.setImageMouseOver(title, image)</code><br />
+    Additional function, specific to <a href="../pythonImages/#change-images">images</a>, to change the specified image, while the mouse is over it.</li>
+</ul>
+<h3 id="drag-functions">Drag Functions</h3>
+<p>Set functions to call when the mouse button is clicked and dragged on a Label, then released.  </p>
+<ul>
+<li><code>.set XXX DragFunction(name, [startDragFunction, stopDragFunction])</code><br />
+    The named Label will be the only one that can start a drag event.<br />
+    The first function will be called when the mouse is initially clicked on the Label.<br />
+    The second function will be called when the mouse is released, this can happen anywhere.<br />
+    The same rules for passing functions apply as above.  </li>
+</ul>
+<h3 id="registering-other-event-types">Registering Other Event Types</h3>
+<p>It's possible to register any of the standard event types with appJar widgets  </p>
+<pre><code class="python">app.getEntryWidget(&quot;widget_name&quot;).bind(&quot;&lt;FocusOut&gt;&quot;, function_name, add=&quot;+&quot;)
+</code></pre>
+
+<h2 id="binding-keys">Binding Keys</h2>
+<hr />
+<p>As well as changing widgets, we sometimes want keys to trigger events.<br />
+The classic example is the <code>&lt;Enter&gt;</code> key, we often want to be able to hit the <code>&lt;Enter&gt;</code> key to submit a form...</p>
+<ul>
+<li>
+<p><code>.enableEnter(function)</code><br />
+Link a function to the <code>&lt;Enter&gt;</code> key</p>
+</li>
+<li>
+<p><code>.disableEnter()</code><br />
+Unlink a function from the <code>&lt;Enter&gt;</code>  key</p>
+</li>
+</ul>
+<p>You may also want to bind other keys to events.<br />
+See <a href="http://effbot.org/tkinterbook/tkinter-events-and-bindings.htm">here</a> for a detailed list of the <em>Event Formats</em>.  </p>
+<pre><code class="python">from appJar import gui
+def keyPress(key):
+    if key == &quot;&lt;Up&gt;&quot;:
+        app.increaseFont()
+    elif key == &quot;&lt;Down&gt;&quot;:
+        app.decreaseFont()
+    elif key == &quot;&lt;F1&gt;&quot;:
+        app.setFont(12)
+
+app = gui(&quot;Button Demo&quot;)
+app.addLabel(&quot;title&quot;, &quot;Press the arrow keys to change the font&quot;)
+app.bindKey(&quot;&lt;Up&gt;&quot;, keyPress)
+app.bindKey(&quot;&lt;Down&gt;&quot;, keyPress)
+app.bindKey(&quot;&lt;F1&gt;&quot;, keyPress)
+app.go()
+</code></pre>
+
+<ul>
+<li>
+<p><code>.bindKey(key, function)</code><br />
+Link the specified key to the specified function.</p>
+</li>
+<li>
+<p><code>.bindKeys(keys, function)</code><br />
+Link the specified keys to the specified function.</p>
+</li>
+<li>
+<p><code>.unbindKey(key)</code><br />
+Unlink the specified key from any functions bound to it.</p>
+</li>
+<li>
+<p><code>.unbindKeys(keys)</code><br />
+Unlink the specified keys from any functions bound to them.</p>
+</li>
+</ul>
+<h2 id="stopping-the-gui">Stopping the GUI</h2>
+<hr />
+<p>Usually the user just presses the <strong>close icon</strong> to stop the GUI.<br />
+However, you might want to let them do it in other ways - maybe by pressing a button...  </p>
+<p>To stop the GUI, simply call <code>app.stop()</code>  </p>
+<p>If you want to add a feature to confirm the user really wants to exit, or to save some data, then you'll need a <strong>stop function</strong>.  </p>
+<ul>
+<li><code>.setStopFunction(function)</code><br />
+    Set a function to call, before allowing the GUI to be stopped.<br />
+    This function should return True/False to confirm if the GUI should stop.  </li>
+</ul>
+<pre><code class="python">def checkStop():
+    return app.yesNoBox(&quot;Confirm Exit&quot;, &quot;Are you sure you want to exit the application?&quot;)
+
+app.setStopFunction(checkStop)
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <div style='text-align: center;'>
+            <em>Advertisement&nbsp;<sup><a href="/advertising">why?</a></sup></em>
+            <br>
+            <br>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Footer -->
+            <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-6185596049817878"
+                data-ad-slot="2795191172"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            
+                <hr>
+                <div style='text-align: center;'><p>&#169; Richard Jarvis, 2015-2018</p></div>
+            
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
